@@ -1,0 +1,933 @@
+accounting_office_name,accounting_office_cvr,total_declarations,total_analyses,adoption_score,untapped_potential,potential_at_10_percent,potential_at_20_percent,potential_at_30_percent
+Beierholm,32895468,34002,38,0.001118,33964,3400,6800,10201
+BDO,45719375,18285,0,0.000000,18285,1828,3657,5486
+PricewaterhouseCoopers,33771231,14124,1,0.000071,14123,1412,2825,4237
+Deloitte,33963556,11739,0,0.000000,11739,1174,2348,3522
+EY,30700228,8326,20,0.002402,8306,833,1665,2498
+Martinsen,32285201,8150,13,0.001595,8137,815,1630,2445
+Grant Thornton,34209936,11366,4306,0.378849,7060,1137,2273,3410
+Redmark,29442789,6117,5,0.000817,6112,612,1223,1835
+Partner Revision,15807776,5415,13,0.002401,5402,542,1083,1624
+RSM,25492145,5029,0,0.000000,5029,503,1006,1509
+Baker Tilly Denmark,35257691,3789,0,0.000000,3789,379,758,1137
+Christensen Kjærulff,15915641,3037,0,0.000000,3037,304,607,911
+Inforevision,19263096,2932,0,0.000000,2932,293,586,880
+Roesgaard,37543128,2770,32,0.011552,2738,277,554,831
+Revisionshuset Tal & Tanker,37315664,1739,0,0.000000,1739,174,348,522
+Sønderjyllands revision,18061635,1561,0,0.000000,1561,156,312,468
+Aaen & Co.,33241763,1449,0,0.000000,1449,145,290,435
+"JS Revision, Godkendt Revisionsaktieselskab",37999687,1405,0,0.000000,1405,140,281,422
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,1497,162,0.108216,1335,150,299,449
+Piaster Revisorerne,25160037,1348,42,0.031157,1306,135,270,404
+Sønderup Godkendt Revisionsaktieselskab,45907880,1302,0,0.000000,1302,130,260,391
+Kovsted & Skovgård,38751646,1250,3,0.002400,1247,125,250,375
+Baagøe Schou,21148148,1183,3,0.002536,1180,118,237,355
+Aros,29690065,1178,0,0.000000,1178,118,236,353
+Kreston CM,39463113,1219,68,0.055783,1151,122,244,366
+Crowe,33256876,1113,0,0.000000,1113,111,223,334
+Addere Revision,34589992,1057,0,0.000000,1057,106,211,317
+Albjerg,35382879,1080,53,0.049074,1027,108,216,324
+RéVision+ Statsautoriseret Revisionsanpartsselskab,41695609,933,0,0.000000,933,93,187,280
+Dansk Revision Odense,82218912,917,0,0.000000,917,92,183,275
+Krøyer Pedersen Statsautoriserede Revisorer P/S,45922391,877,0,0.000000,877,88,175,263
+Øernes Revision,37121924,872,0,0.000000,872,87,174,262
+Revisionscentret Aabenraa,29695636,868,4,0.004608,864,87,174,260
+KPMG,25578198,839,0,0.000000,839,84,168,252
+Nærrevision,17524305,826,0,0.000000,826,83,165,248
+Dansk Revision Slagelse,29919801,822,18,0.021898,804,82,164,247
+Ullits & Winther,32093272,809,7,0.008653,802,81,162,243
+Dansk Revision Søborg,14649905,802,0,0.000000,802,80,160,241
+Kvalitetsrevision,36480254,783,0,0.000000,783,78,157,235
+Dansk Revision Holbæk,28853343,774,0,0.000000,774,77,155,232
+Blicher Revision & Rådgivning,78337818,752,0,0.000000,752,75,150,226
+Revision Ry & Hammel,26267439,733,0,0.000000,733,73,147,220
+Revision Sjælland,28309791,721,0,0.000000,721,72,144,216
+Kallermann Revision,30195264,720,0,0.000000,720,72,144,216
+PKF Munkebo Vindelev,14119299,716,6,0.008380,710,72,143,215
+Harboe Consult,35649417,697,0,0.000000,697,70,139,209
+VH Revision,17871080,663,0,0.000000,663,66,133,199
+Rådgivning & Revision,10158117,657,0,0.000000,657,66,131,197
+Søby Revisorer,19125742,638,0,0.000000,638,64,128,191
+Dansk Revision Esbjerg,26993695,637,0,0.000000,637,64,127,191
+Nejstgaard & Vetlov,12868693,625,0,0.000000,625,62,125,188
+Trekroner Revision,28991355,583,0,0.000000,583,58,117,175
+Revisionsfirmaet Albrechtsen,77926410,579,0,0.000000,579,58,116,174
+Revision og Rådgivningsgruppen,33771177,557,0,0.000000,557,56,111,167
+Status Revision,30707907,554,0,0.000000,554,55,111,166
+RevisorGården Holbæk A/S,45071391,551,0,0.000000,551,55,110,165
+TJEK Revision & Rådgivning,36563877,547,0,0.000000,547,55,109,164
+Kreston SR,33948794,546,3,0.005495,543,55,109,164
+Eco-Team,27966675,539,0,0.000000,539,54,108,162
+JL Revisorer,31332699,539,0,0.000000,539,54,108,162
+Robæk,33946406,531,0,0.000000,531,53,106,159
+Revisions-Partner,69305210,527,0,0.000000,527,53,105,158
+Danica,37603686,525,0,0.000000,525,52,105,158
+Sønderup,31824559,520,0,0.000000,520,52,104,156
+Bays Revisionskontor,20183497,517,0,0.000000,517,52,103,155
+Dansk Revision Roskilde,14678093,515,0,0.000000,515,52,103,154
+Advosion,37557064,514,0,0.000000,514,51,103,154
+Anker Høst,31626536,503,0,0.000000,503,50,101,151
+Lægård Revision,18437082,548,56,0.102190,492,55,110,164
+Boreco,36074981,492,0,0.000000,492,49,98,148
+Leif Mikkelsen & Partnere,32676421,614,127,0.206840,487,61,123,184
+Revisionsfirmaet Lars Olsen,37135119,485,0,0.000000,485,48,97,146
+Dansk Revision Århus,26717671,624,143,0.229167,481,62,125,187
+Nordkyst Revision Godkendt Revisionspartnerselskab,37605255,481,0,0.000000,481,48,96,144
+Optimal Revision,19233383,477,0,0.000000,477,48,95,143
+Bille & Buch-Andersen,18282046,456,0,0.000000,456,46,91,137
+REVISION & RÅD STATSAUTORISERET REVISIONSPARTNERSELSKAB,46125894,454,0,0.000000,454,45,91,136
+K.T. Revision Vejle,70969815,450,0,0.000000,450,45,90,135
+Tønder Revision,29142807,448,0,0.000000,448,45,90,134
+Rønne Revision,74717810,447,0,0.000000,447,45,89,134
+Revisionsfirmaet Edelbo,35486178,985,540,0.548223,445,98,197,296
+RevisorDK,38257846,445,0,0.000000,445,44,89,134
+LPOG ApS,33167288,452,8,0.017699,444,45,90,136
+Dansk Revision Viborg,20336390,444,0,0.000000,444,44,89,133
+Lou Revision,31579309,443,0,0.000000,443,44,89,133
+Sønderup & Partnere,27905072,439,0,0.000000,439,44,88,132
+Dansk Revision Hillerød,26580390,435,0,0.000000,435,44,87,130
+"Dalsgaard, Stahl & Wøldike",21696382,426,0,0.000000,426,43,85,128
+Revision 2,16968137,422,0,0.000000,422,42,84,127
+Dansk Revision Frederikssund,86141019,421,0,0.000000,421,42,84,126
+Revision København Godkendt Revisionspartnerselskab,34619654,414,0,0.000000,414,41,83,124
+Revisionsfirmaet John Schantz,28312393,408,0,0.000000,408,41,82,122
+BHA Statsautoriseret Revision,18967901,398,0,0.000000,398,40,80,119
+"Dahl, Rask & Partnere",10422183,389,0,0.000000,389,39,78,117
+Algade Revision,35663916,381,0,0.000000,381,38,76,114
+Aage Maagensen,12901038,386,7,0.018135,379,39,77,116
+Andersen Revision,32326706,364,0,0.000000,364,36,73,109
+Barrett revisionsanpartsselskab,28842562,364,0,0.000000,364,36,73,109
+Vadskær Krømmelbein,40689745,361,0,0.000000,361,36,72,108
+VKST Revision,34351961,356,0,0.000000,356,36,71,107
+Dansk Revision Wulff & Haaning,36920289,355,0,0.000000,355,36,71,106
+PJ Revision Statsautoriseret Revisionsanpartsselskab,33861044,355,0,0.000000,355,36,71,106
+ADDCO P/S Godkendte Revisorer,36464852,353,0,0.000000,353,35,71,106
+DLBR Revision,32451195,346,0,0.000000,346,35,69,104
+2+ Revision,39701863,342,0,0.000000,342,34,68,103
+W. Kragh,16206407,339,0,0.000000,339,34,68,102
+Revisionscentret Sønderborg,38951394,338,0,0.000000,338,34,68,101
+Revimidt,34480370,439,102,0.232346,337,44,88,132
+ReviTotal Statsautoriseret Revisionsfirma,19857298,334,0,0.000000,334,33,67,100
+Powered-By Statsautoriseret Revisionspartnerselskab,44282380,556,223,0.401079,333,56,111,167
+Talkompagniet,33534841,333,0,0.000000,333,33,67,100
+Dansk Revision Aalborg,17835998,330,0,0.000000,330,33,66,99
+Lokal Revision - statsautoriseret revisionsanpartsselskab,41943661,327,0,0.000000,327,33,65,98
+Ecovis Danmark,28939523,322,0,0.000000,322,32,64,97
+Revisionscentret Ribe,18936305,322,0,0.000000,322,32,64,97
+Revisions-Centret ApS,41578513,321,0,0.000000,321,32,64,96
+Complet Revision,30077288,318,0,0.000000,318,32,64,95
+RR Revision v/Benny Jakobsen,73953413,317,0,0.000000,317,32,63,95
+Ri Statsautoriseret Revisionspartnerselskab,44528045,313,0,0.000000,313,31,63,94
+Attent Statsautoriseret Revisionsanpartsselskab,36427205,312,0,0.000000,312,31,62,94
+SR Revision,19536890,312,0,0.000000,312,31,62,94
+Revisionsfirmaet Lars Jeppesen ApS,44585650,306,0,0.000000,306,31,61,92
+Revision & Data,12475780,305,0,0.000000,305,30,61,92
+Willads & Vibe-Hastrup,29619670,303,0,0.000000,303,30,61,91
+Revisionsfirmaet Tage Sørensen,34879753,299,0,0.000000,299,30,60,90
+ReviVision,76893713,299,0,0.000000,299,30,60,90
+Lidegaard Revision&Rådgivning,27511511,296,0,0.000000,296,30,59,89
+Revisionsfirmaet Edelbo & Lund-Larsen,32327249,296,0,0.000000,296,30,59,89
+Revisorerne i Skals,19952193,291,0,0.000000,291,29,58,87
+2TalRevision,29091331,289,0,0.000000,289,29,58,87
+Korsgaard Revision,13835640,288,0,0.000000,288,29,58,86
+Revisionsfirmaet Per Kronborg,26659817,288,0,0.000000,288,29,58,86
+Profil Revision,59051318,287,0,0.000000,287,29,57,86
+Christensen & Kjær,28320124,286,0,0.000000,286,29,57,86
+Revision 360 Statsautoriseret Revisionsinteressentskab,44775530,286,0,0.000000,286,29,57,86
+Midt Revision,39065797,284,0,0.000000,284,28,57,85
+Revisionsfirmaet Peder Holt,21872741,280,0,0.000000,280,28,56,84
+Agillix Fmba,45000370,277,0,0.000000,277,28,55,83
+Revisionsfirmaet Seiersen Revision,32697674,276,0,0.000000,276,28,55,83
+Revision Kjær,33037864,274,0,0.000000,274,27,55,82
+Revisorhuset,26593093,269,0,0.000000,269,27,54,81
+Din Revisor,35407359,266,0,0.000000,266,27,53,80
+Revision Vadestedet,27433863,266,0,0.000000,266,27,53,80
+Lidegaard Revision & Rådgivning,27096174,261,0,0.000000,261,26,52,78
+Revision & Råd,36923318,261,0,0.000000,261,26,52,78
+Advisor-Revision,34213798,260,0,0.000000,260,26,52,78
+GBH Revision & Rådgivning,17610430,258,0,0.000000,258,26,52,77
+Kreston JC,27619096,256,0,0.000000,256,26,51,77
+Dansk Revision Sønderborg,30816471,253,0,0.000000,253,25,51,76
+Sædding Revision,25510461,251,0,0.000000,251,25,50,75
+"Verum Cura, Godkendt Revisionsanpartsselskab",43340646,248,0,0.000000,248,25,50,74
+Revida,87948412,243,0,0.000000,243,24,49,73
+REVIFJORD Godkendt Revisionspartnerselskab,44401231,242,0,0.000000,242,24,48,73
+MunkStrunge,33088205,241,0,0.000000,241,24,48,72
+Mer Revision,32344720,238,0,0.000000,238,24,48,71
+Revice,32291090,238,0,0.000000,238,24,48,71
+Bjørnlaursen,32671594,235,0,0.000000,235,24,47,70
+"Dueholm & Partnere, Godkendt Revisionshus",21631930,234,0,0.000000,234,23,47,70
+BG Statsautoriserede revisorer ApS,43196863,233,0,0.000000,233,23,47,70
+Compu Revision,15618175,231,0,0.000000,231,23,46,69
+Talmennesker,39886227,230,0,0.000000,230,23,46,69
+Haamann Statsautoriseret Revisionspartnerselskab,39408198,229,0,0.000000,229,23,46,69
+Agenda Revision,32160565,227,0,0.000000,227,23,45,68
+Dansk Revision Skive,25172795,227,0,0.000000,227,23,45,68
+Multi Revision,31929342,226,0,0.000000,226,23,45,68
+Attiri,33357966,223,0,0.000000,223,22,45,67
+V & CO,34622310,223,0,0.000000,223,22,45,67
+DSH-Revision,19674193,220,0,0.000000,220,22,44,66
+Revisionsfirmaet KRH ApS,42040614,219,0,0.000000,219,22,44,66
+APEX Statsautoriserede revisorer ApS,42936847,218,0,0.000000,218,22,44,65
+Din Revisor Svaneke ApS Godkendte revisorer,45016501,217,0,0.000000,217,22,43,65
+Lindeberg Storm Fischer,37821055,215,0,0.000000,215,22,43,64
+Ib Rohde,30905652,214,0,0.000000,214,21,43,64
+N.G. Christensen Statsautoriseret Revisionsanpartsselskab,38695916,214,0,0.000000,214,21,43,64
+Aktiv Revision Silkeborg,14788107,210,0,0.000000,210,21,42,63
+Leth & Partnere,32789153,210,0,0.000000,210,21,42,63
+Center Revision Kjellerup,29618038,209,0,0.000000,209,21,42,63
+FER Fyns Erhvervsrevision,21447587,207,0,0.000000,207,21,41,62
+MBA Statsautoriseret Revisionsanpartsselskab,33150482,207,0,0.000000,207,21,41,62
+Revisorhuset Hinnerup,35679154,202,0,0.000000,202,20,40,61
+E-Revisor.com,36412143,201,0,0.000000,201,20,40,60
+Krogh & Thomsen,19154408,201,0,0.000000,201,20,40,60
+Kappelskov Revision,11790577,200,0,0.000000,200,20,40,60
+Revisionsfirmaet Ole Vestergaard,31501741,198,0,0.000000,198,20,40,59
+Sagro,27428843,198,0,0.000000,198,20,40,59
+Revisioncentret Tønder/Skærbæk,26812372,195,0,0.000000,195,20,39,58
+Danrevi Løgstør,27125611,191,0,0.000000,191,19,38,57
+Regnskabsfabrikanten,38980149,191,0,0.000000,191,19,38,57
+Revidata,37029815,191,0,0.000000,191,19,38,57
+Solveo Statsautoriseret Revisionspartnerselskab,40844899,188,0,0.000000,188,19,38,56
+CKF Revision ApS Godkendt revisionsfirma,31782139,186,0,0.000000,186,19,37,56
+Helledie Revision,39164388,183,0,0.000000,183,18,37,55
+Dansk Revision Brønderslev,14795707,182,0,0.000000,182,18,36,55
+HJ Revision ApS,38140515,182,0,0.000000,182,18,36,55
+Schyberg Lykke Registreret Revisionsanpartsselskab,32469345,180,0,0.000000,180,18,36,54
+TT REVISION,29168504,180,0,0.000000,180,18,36,54
+Revisorgruppen v/Eva Kristensen og Lars Gotfredsen,35071199,178,0,0.000000,178,18,36,53
+Bjarke Kjær,31885191,177,0,0.000000,177,18,35,53
+BJ Regnskab,14327746,175,0,0.000000,175,18,35,52
+Intension,26632315,175,0,0.000000,175,18,35,52
+Klar Revision,35827943,175,0,0.000000,175,18,35,52
+Bro Søndergaard Statsautoriseret Revisionsanpartsselskab,41657332,174,0,0.000000,174,17,35,52
+Revisor Finn Erik Rasmussen,54472455,171,0,0.000000,171,17,34,51
+Consens,39751445,169,0,0.000000,169,17,34,51
+Bornholms Revision,37858498,167,0,0.000000,167,17,33,50
+RevisorGruppen v/Lilly Jeppesen,18587246,167,0,0.000000,167,17,33,50
+Revisionscentret v/Jesper Thygesen,10352231,165,0,0.000000,165,16,33,50
+Møller-Jensen Statsautoriseret Revisionsanpartsselskab,68497817,164,0,0.000000,164,16,33,49
+Revisorerne Bastian og Krause,27335616,164,0,0.000000,164,16,33,49
+Nem Revisor ApS,35235892,163,0,0.000000,163,16,33,49
+Krøyer Pedersen Statsautoriserede Revisorer,89224918,185,23,0.124324,162,18,37,56
+Mazars Statsautoriseret Revisionspartnerselskab,31061741,162,0,0.000000,162,16,32,49
+RevisionsCentrum,36493372,162,0,0.000000,162,16,32,49
+Revsbæk Revision,17169483,162,0,0.000000,162,16,32,49
+Revision- og Regnskabskontoret,28902867,160,0,0.000000,160,16,32,48
+Gilfelt Revision,28108303,159,0,0.000000,159,16,32,48
+Prima Revision,21356190,159,0,0.000000,159,16,32,48
+Landbrugsrådgivning Syd,30719131,158,0,0.000000,158,16,32,47
+J H Regnskab v/Jan Ekmann Hørsel,20415991,156,0,0.000000,156,16,31,47
+ReviNord,16347299,156,0,0.000000,156,16,31,47
+Revisionsfirmaet Ivan Kjeldsen,30613791,156,0,0.000000,156,16,31,47
+Statsaut. Revisor J Løbner,29538565,156,0,0.000000,156,16,31,47
+Revisionsfirmaet Woiremose & Partner,25735560,155,0,0.000000,155,16,31,46
+DM Revision,14569391,154,0,0.000000,154,15,31,46
+Revisorkompagniet,34045607,154,0,0.000000,154,15,31,46
+Plus Revision,20452897,151,0,0.000000,151,15,30,45
+Harboe og B.,33649452,150,0,0.000000,150,15,30,45
+Revisionsfirmaet Tommy Larsen,98727558,150,0,0.000000,150,15,30,45
+Lerfeldt Revision,20142146,149,0,0.000000,149,15,30,45
+Slebo Revision Statsautoriseret Revisionsanpartsselskab,44984326,149,0,0.000000,149,15,30,45
+Abrahamsen Revision,41109483,148,0,0.000000,148,15,30,44
+Revisionscentret 5R Esbjerg,26279534,148,0,0.000000,148,15,30,44
+Buch&Nørgaard,71344517,147,0,0.000000,147,15,29,44
+FKS Revision,26306175,146,0,0.000000,146,15,29,44
+"JHL Revision, Esbjerg",40052992,146,0,0.000000,146,15,29,44
+Revisionsfirmaet Jan Kristensen,35383646,144,0,0.000000,144,14,29,43
+Erhvervsrevisorerne i Vejle,26273110,141,0,0.000000,141,14,28,42
+Revisionsfirmaet Christian Danielsen,16953199,141,0,0.000000,141,14,28,42
+Revisionskontoret i Faxe,16609331,140,0,0.000000,140,14,28,42
+ABL Revision,39702215,139,0,0.000000,139,14,28,42
+Vestjysk Landboforening,25076079,139,0,0.000000,139,14,28,42
+Revisionsfirmaet Gutfelt,13254192,142,5,0.035211,137,14,28,43
+velas I/S,30869052,136,0,0.000000,136,14,27,41
+eRevision Statsautoriseret Revisionsanpartsselskab,45086607,134,0,0.000000,134,13,27,40
+RN - Revision Nordjylland,28966571,134,0,0.000000,134,13,27,40
+Jørn m. Schmidt Statsautoriseret Revisionsanpartsselskab,28309724,133,0,0.000000,133,13,27,40
+Vedbæk Revision,14262172,133,0,0.000000,133,13,27,40
+Jysk Revision og Rådgivning ApS,43573810,130,0,0.000000,130,13,26,39
+Nyborg Erhvervsrevision,30546792,128,0,0.000000,128,13,26,38
+Plan Revision v/Per Petersen,12322143,127,0,0.000000,127,13,25,38
+Kolding Herreds Landbrugsforening,21111511,126,0,0.000000,126,13,25,38
+MP Revision,14119507,123,0,0.000000,123,12,25,37
+RND Partner,27492487,119,0,0.000000,119,12,24,36
+Dansk Revision Tønder,33219229,118,0,0.000000,118,12,24,35
+Asla Revision,28483902,117,0,0.000000,117,12,23,35
+Revisionsfirmaet Flemming Hansen,15270144,117,0,0.000000,117,12,23,35
+2A Revision,37903949,116,0,0.000000,116,12,23,35
+Revisionscentret Haderslev,13976295,116,0,0.000000,116,12,23,35
+Revisionsfirmaet Svend Dørffer,15659777,114,0,0.000000,114,11,23,34
+Grønlands Revision Godkendt Revisionspartnerselskab,46201515,113,0,0.000000,113,11,23,34
+MN Revision og Rådgivning,30318269,113,0,0.000000,113,11,23,34
+Tranberg,26063655,113,0,0.000000,113,11,23,34
+Kjær Revision,37984558,112,0,0.000000,112,11,22,34
+Kongevejens Revision,25273621,111,0,0.000000,111,11,22,33
+Nexø Revision A/S,41998407,111,0,0.000000,111,11,22,33
+Ostenfeld Revision,36071281,109,0,0.000000,109,11,22,33
+Revisionsfirmaet Mentor,28136196,108,0,0.000000,108,11,22,32
+CURA Revision,34330042,106,0,0.000000,106,11,21,32
+Revisionsfirmaet Erik Hultquist,15396105,106,0,0.000000,106,11,21,32
+REVISION THY Registreret Revisionsanpartsselskab,42825379,105,0,0.000000,105,10,21,32
+Damgaard Revision,33074441,103,0,0.000000,103,10,21,31
+Krydsrevision,38225804,103,0,0.000000,103,10,21,31
+Momentum Revision,35238050,103,0,0.000000,103,10,21,31
+Revisorgården i Odense,14335102,103,0,0.000000,103,10,21,31
+TANGSTAD - STATSAUTORISERET REVISIONSANPARTSSELSKAB,43661434,103,0,0.000000,103,10,21,31
+Lemvigegnens Landboforening,41503610,101,0,0.000000,101,10,20,30
+"Bornhøft & Lindemann, Registreret Revisionsanpartsselskab",41672625,99,0,0.000000,99,10,20,30
+ARIES,26454123,96,0,0.000000,96,10,19,29
+Revisionsfimaet W. Bach Nørgaard,18192195,96,0,0.000000,96,10,19,29
+Revisionsfirmaet Lars Bastholm,36696486,96,0,0.000000,96,10,19,29
+"Vibs Revision, registreret revisor ApS",39130335,96,0,0.000000,96,10,19,29
+Ellebæk Revision godkendt revisionsanpartsselskab,43325000,106,11,0.103774,95,11,21,32
+Agerbor Gruppen,31742781,95,0,0.000000,95,10,19,28
+Kvist Revision ApS,38818724,95,0,0.000000,95,10,19,28
+Rödl & Partner Danmark,39188678,95,0,0.000000,95,10,19,28
+MTMLB,36909935,94,0,0.000000,94,9,19,28
+PN Revision,37522945,93,0,0.000000,93,9,19,28
+Revfirma Georg Mathiasen,72430816,93,0,0.000000,93,9,19,28
+Team Revision,29423989,93,0,0.000000,93,9,19,28
+ECO Revision,35891986,92,0,0.000000,92,9,18,28
+THN Revision,32500145,92,0,0.000000,92,9,18,28
+Gronemanns,32563627,91,0,0.000000,91,9,18,27
+Centrum Revision V/Kurt Håkonsson,17037307,89,0,0.000000,89,9,18,27
+Østdansk Landboforening,20835400,89,0,0.000000,89,9,18,27
+Revisionsfirmaet Evan Klarholt,10686504,89,0,0.000000,89,9,18,27
+Revisionsfirmaet Jørgen Larsen I/S,14678085,89,0,0.000000,89,9,18,27
+Schmidt Revision,29529507,89,0,0.000000,89,9,18,27
+Revision Ryttergaarden,36908114,88,0,0.000000,88,9,18,26
+Realvision,18216833,86,0,0.000000,86,9,17,26
+Høffner Revision,76637415,85,0,0.000000,85,8,17,26
+DanRevision Statsautoriseret Revisionsanpartsselskab,41552204,84,0,0.000000,84,8,17,25
+Andersen & Novakovic statsautoriseret revisionsanpartsselskab,44535122,83,0,0.000000,83,8,17,25
+"Grønlands Revision A/S, statsautoriserede revisorer",41762667,83,0,0.000000,83,8,17,25
+Lejenregnskabschef.dk,30563670,83,0,0.000000,83,8,17,25
+ONreVISION,33043163,83,0,0.000000,83,8,17,25
+Revisionsfirmaet Hartvig & Aalund,11157203,83,0,0.000000,83,8,17,25
+Revisorhuset Halsnæs,20572043,83,0,0.000000,83,8,17,25
+Aage & Povl Holm,14759840,80,0,0.000000,80,8,16,24
+Vendelbo,10110807,78,0,0.000000,78,8,16,23
+Revision Hatting,13737096,77,0,0.000000,77,8,15,23
+Andersen og Partnere,26668840,76,0,0.000000,76,8,15,23
+Møller & Madsen,30835654,76,0,0.000000,76,8,15,23
+Revisionsfirmaet Hanne og Erling Lund,35143114,75,0,0.000000,75,8,15,22
+Revisto I/S,26730597,75,0,0.000000,75,8,15,22
+HE Revision,29404992,72,0,0.000000,72,7,14,22
+Juul & Blicher ApS,45395634,72,0,0.000000,72,7,14,22
+Registreret Revisionsvirksomhed Nordskov Revision,30348184,70,0,0.000000,70,7,14,21
+ReviØst,21164577,70,0,0.000000,70,7,14,21
+Revisionsfirmaet Jørgen Gilling,18619407,70,0,0.000000,70,7,14,21
+Fynbo Revision,19706974,69,0,0.000000,69,7,14,21
+Revisionsfirmaet Peder Albertsen,18743396,69,0,0.000000,69,7,14,21
+Egon Pedersen Revision,88248228,68,0,0.000000,68,7,14,20
+Nordisk Revision Godkendt Revisionsanpartsselskab,41835303,68,0,0.000000,68,7,14,20
+Revisionsfirmaet Kirch Andersen,18288389,68,0,0.000000,68,7,14,20
+Råd & Revision,25593995,67,0,0.000000,67,7,13,20
+Lars P Revision,33225172,66,0,0.000000,66,7,13,20
+Revision 1-2-3,10632684,66,0,0.000000,66,7,13,20
+Erhvervs Consult ApS,35868828,65,0,0.000000,65,6,13,20
+Nordmors Revision v/Peter Djernes,19941442,65,0,0.000000,65,6,13,20
+Unik-Revision,17128973,65,0,0.000000,65,6,13,20
+AB-Revision,26624479,64,0,0.000000,64,6,13,19
+Revision Nord,16145084,63,0,0.000000,63,6,13,19
+"Lorentzen & Partners, Statsautoriserede Revisorer ApS",45328988,62,0,0.000000,62,6,12,19
+Johnny Hansen Registreret Revisionsanpartsselskab,16933503,61,0,0.000000,61,6,12,18
+Kolding Erhvervsservice,30817222,61,0,0.000000,61,6,12,18
+Greve Strands Revision,52992753,60,0,0.000000,60,6,12,18
+LD&C Statsautoriseret Revisionsanpartsselskab,46080041,60,0,0.000000,60,6,12,18
+DVU,21860506,59,0,0.000000,59,6,12,18
+Egtved Revisionskontor,27910165,59,0,0.000000,59,6,12,18
+2TalRevision v/Jan Christensen,20935790,58,0,0.000000,58,6,12,17
+MS Revision ApS,40032622,58,0,0.000000,58,6,12,17
+RB Revision,21706833,58,0,0.000000,58,6,12,17
+Revision 1,91259850,58,0,0.000000,58,6,12,17
+Sydvestjysk Revision ApS Godkendt Revisionsselskab,42044040,58,0,0.000000,58,6,12,17
+TK Revision,30201795,58,0,0.000000,58,6,12,17
+Djurs Revision,19713830,57,0,0.000000,57,6,11,17
+Patriotisk Selskab,61676228,57,0,0.000000,57,6,11,17
+Registreret Revisor Per Obling,14913572,57,0,0.000000,57,6,11,17
+2+ Revision Grønland Statsautoriserede Revisorer ApS,42793744,56,0,0.000000,56,6,11,17
+"DM Revisionsfirma af 1993, Registreret Revisionsanpartsselskab",39473321,56,0,0.000000,56,6,11,17
+LJ Revision,28284160,56,0,0.000000,56,6,11,17
+Registreret Revisionsanpartsselskab Flemming Juhl Nielsen,14135308,56,0,0.000000,56,6,11,17
+Revisionsfirmaet Kim Jacobsen,36065346,56,0,0.000000,56,6,11,17
+Revisionsfirmaet Søren Askly,39846144,56,0,0.000000,56,6,11,17
+Revisionsfirmaet Revicon,12707789,55,0,0.000000,55,6,11,16
+Alt i Regnskab & Rådgivning ApS,44405016,54,0,0.000000,54,5,11,16
+Toldbodens Revision & Regnskab,12838840,54,0,0.000000,54,5,11,16
+Revisionsfirmaet Torlund,31165571,53,0,0.000000,53,5,11,16
+R3 Revision,33164076,52,0,0.000000,52,5,10,16
+Skatteinform,35394206,52,0,0.000000,52,5,10,16
+Lindholm Revision,38248677,51,0,0.000000,51,5,10,15
+Revision Horsens,17275100,51,0,0.000000,51,5,10,15
+S.J. Revision,25859138,51,0,0.000000,51,5,10,15
+Thrane Consult,32090516,51,0,0.000000,51,5,10,15
+Bisbjerg & Partners P/S,44742969,50,0,0.000000,50,5,10,15
+Nørgaard Schultz Godkendt Revisionsanpartsselskab,43629379,50,0,0.000000,50,5,10,15
+Revisionsfirmaet Peter Berg,21052302,50,0,0.000000,50,5,10,15
+Søhøjlandets revision,31888026,50,0,0.000000,50,5,10,15
+GE Revision & Rådgivning,25187091,49,0,0.000000,49,5,10,15
+PRO REVISION STATSAUTORISERET ANPARTSSELSKAB,45150437,49,0,0.000000,49,5,10,15
+CDO Revison,15897473,48,0,0.000000,48,5,10,14
+JBC Revision v/Jørgen Christensen,25979907,48,0,0.000000,48,5,10,14
+Luni Revisions Anpartsselskab,28970641,48,0,0.000000,48,5,10,14
+MBL Revision,40375260,48,0,0.000000,48,5,10,14
+RugaardRevision,29033609,48,0,0.000000,48,5,10,14
+CTM Revision,33160364,47,0,0.000000,47,5,9,14
+Grønborg Revision,75076118,47,0,0.000000,47,5,9,14
+Lægers & Tandlægers Revisionskontor,25685229,47,0,0.000000,47,5,9,14
+Nils Knudsen NK - REVI,11524192,47,0,0.000000,47,5,9,14
+Kirkhoff,30351002,46,0,0.000000,46,5,9,14
+Revisionsfirmaet Jørgen Larsen,54471556,46,0,0.000000,46,5,9,14
+"Revisionsfirmaet Ole Hansen, Statsautoriseret Revisionsanpartsselskab",17246496,46,0,0.000000,46,5,9,14
+AA revisionsanpartsselskabet,27607764,45,0,0.000000,45,4,9,14
+PM Revision,15279680,45,0,0.000000,45,4,9,14
+Revisionsfirmaet Arne Bang,78682418,45,0,0.000000,45,4,9,14
+AHJ Revision,27489559,44,0,0.000000,44,4,9,13
+RevisionsHuset-Viborg v/Mogens Bech,37054933,44,0,0.000000,44,4,9,13
+Revisionskontoret,69885055,44,0,0.000000,44,4,9,13
+Revisor/Lasse Larsen,70666758,44,0,0.000000,44,4,9,13
+Din Revisor Amager ApS Godkendte revisorer,44396033,43,0,0.000000,43,4,9,13
+Revirk Rådgivning Statsautoriseret revisionsfirma,20527986,43,0,0.000000,43,4,9,13
+Revisionsanpartsselskabet Jens Carl Nielsen,28505159,43,0,0.000000,43,4,9,13
+Broernes Revision,27616690,42,0,0.000000,42,4,8,13
+Gundsø Revision,76475512,42,0,0.000000,42,4,8,13
+Konsulent Jens H. Hedegaard,42746452,42,0,0.000000,42,4,8,13
+Regnskabs- og Revisionskontoret for Storkøbenhavn,37183024,42,0,0.000000,42,4,8,13
+GoAudit,37205907,41,0,0.000000,41,4,8,12
+Betternumbers P/S,42216011,40,0,0.000000,40,4,8,12
+Hedelund revision & rådgivning,36762454,40,0,0.000000,40,4,8,12
+Kompas Revision,26291593,40,0,0.000000,40,4,8,12
+Revisionvest,11901840,40,0,0.000000,40,4,8,12
+F I Revision,12576986,39,0,0.000000,39,4,8,12
+T. Rasmussen Revision,32942490,39,0,0.000000,39,4,8,12
+L.A. Revision,17022970,38,0,0.000000,38,4,8,11
+NU-REVI,29839328,38,0,0.000000,38,4,8,11
+Revision Køge,28053665,38,0,0.000000,38,4,8,11
+Revisionsfirmaet Axel Gram,16645699,289,252,0.871972,37,29,58,87
+Bæk Revision,16557390,37,0,0.000000,37,4,7,11
+Kobstrup,17294431,37,0,0.000000,37,4,7,11
+Landwirtschaftlicher Hauptverein für Nordschleswig,16342718,37,0,0.000000,37,4,7,11
+Multi Revision Ballerup,15553782,37,0,0.000000,37,4,7,11
+PKF Borup ApS,10290430,37,0,0.000000,37,4,7,11
+Revisionsfirmaet Lund & Christiansen,10623685,37,0,0.000000,37,4,7,11
+Fetterlein,36081848,36,0,0.000000,36,4,7,11
+Kreston AKC,35316957,36,0,0.000000,36,4,7,11
+Statsautoriseret Revisor Leif G. Rasmussen,91112353,36,0,0.000000,36,4,7,11
+Capture,28126131,35,0,0.000000,35,4,7,10
+Elite-Revision,25477367,35,0,0.000000,35,4,7,10
+Registreret revisionsfirma Torben Andersen,15681578,35,0,0.000000,35,4,7,10
+Revisionsfirmaet Bendt Stendahl,86046717,35,0,0.000000,35,4,7,10
+REVISIONSKONTORET AF 2004 ApS,13179638,35,0,0.000000,35,4,7,10
+Mogens Kibsgaard. Statsautoriseretrevisionsanpartsselskab,67425618,34,0,0.000000,34,3,7,10
+Revisionsfirmaet Zinnsgade,83005815,34,0,0.000000,34,3,7,10
+Revisionsselskabet Mougaard,21849588,34,0,0.000000,34,3,7,10
+Steen Koch Registrerede revisorer,34894949,34,0,0.000000,34,3,7,10
+Torben Jakobsen,72461312,34,0,0.000000,34,3,7,10
+Claus Carlsen,30553535,33,0,0.000000,33,3,7,10
+Lokalrevision,78646411,33,0,0.000000,33,3,7,10
+Rådgivningsgruppen,29316996,33,0,0.000000,33,3,7,10
+Centrum Revision v/ Henrik Søeborg,14548599,32,0,0.000000,32,3,6,10
+MQ Revision,16147591,32,0,0.000000,32,3,6,10
+DR Revision,36479760,31,0,0.000000,31,3,6,9
+Langelinierevisionen,11303870,31,0,0.000000,31,3,6,9
+Revisionsfirma Bent Madsen,13672970,31,0,0.000000,31,3,6,9
+Revisionsfirmaet Jens Søndergaard,18738007,31,0,0.000000,31,3,6,9
+Revisionskontoret i Asnæs,16603473,31,0,0.000000,31,3,6,9
+Bidstrup Revision,17578235,30,0,0.000000,30,3,6,9
+Revisionsfirmaet Ole Dahl,11328881,30,0,0.000000,30,3,6,9
+Lyngen Revision statsautoriseret revisionsanpartsselskab,35050175,29,0,0.000000,29,3,6,9
+PT af 27. juli 2004,28148585,29,0,0.000000,29,3,6,9
+Statsautoriseret revisor Ole Tønnesen,32821030,29,0,0.000000,29,3,6,9
+Hartvig & Aalund,31478383,28,0,0.000000,28,3,6,8
+Kjeld Linnebjerg Registreret Revisionsanpartsselskab,15587008,28,0,0.000000,28,3,6,8
+Verifica,33684096,28,0,0.000000,28,3,6,8
+Addvisers,32888658,27,0,0.000000,27,3,5,8
+CBK Revision,14604448,27,0,0.000000,27,3,5,8
+Eybye Invest,27527027,27,0,0.000000,27,3,5,8
+JE Regnskabsservice,17366270,27,0,0.000000,27,3,5,8
+Kerteminde Revision v/Charlotte Elwain,29573360,27,0,0.000000,27,3,5,8
+Revisionshuset,12848544,27,0,0.000000,27,3,5,8
+TALSTABLEREN REGISTRERET REVISIONSANPARTSSELSKAB,26310172,27,0,0.000000,27,3,5,8
+Toft Revision,20868546,27,0,0.000000,27,3,5,8
+Nigelema v/Niels Lemmeke Madsen,20113138,26,0,0.000000,26,3,5,8
+Nørgaard Revision,31131928,26,0,0.000000,26,3,5,8
+Regnskabsfirmaet Martin Engbjerg ApS,14165088,26,0,0.000000,26,3,5,8
+Revisionsfirmaet Lars Jeppesen,26923891,26,0,0.000000,26,3,5,8
+Revisionsselskabet v/ Anders Christian Mogensen,48569528,26,0,0.000000,26,3,5,8
+Torsten Rasmussen,34901295,26,0,0.000000,26,3,5,8
+Dupont Revision & Rådgivning,26887801,25,0,0.000000,25,2,5,8
+KOA CPH ApS,45107787,25,0,0.000000,25,2,5,8
+Tetras Statsautoriseret Revisionsanpartsselskab,45852652,25,0,0.000000,25,2,5,8
+Danborg Revision,27289940,24,0,0.000000,24,2,5,7
+FN Revision,29747792,24,0,0.000000,24,2,5,7
+Ødegaard Statsautoriseret Revisionsanpartsselskab,44304635,24,0,0.000000,24,2,5,7
+Pryds,21598402,24,0,0.000000,24,2,5,7
+Q-Revision,30276019,24,0,0.000000,24,2,5,7
+"RevisionPlus, Grindsted",10875781,24,0,0.000000,24,2,5,7
+Klinkby Revision v/Lars Klinkby,30006674,23,0,0.000000,23,2,5,7
+"Rudersdal Revision, Registrerede revisorer",14792074,23,0,0.000000,23,2,5,7
+Skanderborg Revision,30607236,23,0,0.000000,23,2,5,7
+Toprevi,11211585,23,0,0.000000,23,2,5,7
+BK-Revision,12967594,22,0,0.000000,22,2,4,7
+Egelund Revision,20474882,22,0,0.000000,22,2,4,7
+F.J. Revision,76534268,22,0,0.000000,22,2,4,7
+HK-revision,18767333,22,0,0.000000,22,2,4,7
+Lægers & Tandlægers Revisionskontor Sjælland,33877390,22,0,0.000000,22,2,4,7
+ON Regnskab & Rådgivning,40748083,22,0,0.000000,22,2,4,7
+Revisionsfirmaet A P MØLLER,72707710,22,0,0.000000,22,2,4,7
+aj2,21090174,21,0,0.000000,21,2,4,6
+B.F. Rådgivning Herning,29509026,21,0,0.000000,21,2,4,6
+CR Revison,31115086,21,0,0.000000,21,2,4,6
+Dupont Revision,26563976,21,0,0.000000,21,2,4,6
+EMV,35865136,21,0,0.000000,21,2,4,6
+GV Revision,25122402,21,0,0.000000,21,2,4,6
+IGM Revision v/iben green madsen,52886252,21,0,0.000000,21,2,4,6
+Kvist & Jensen,36717785,21,0,0.000000,21,2,4,6
+Registreret revisor Marianne Mortensen,15664908,21,0,0.000000,21,2,4,6
+Revisionsfirmaet Benny Jensen,17937987,21,0,0.000000,21,2,4,6
+Revisionsfirmaet Bent Jørgensen,57652551,21,0,0.000000,21,2,4,6
+Revisor-fællesskabet af 1976,57981717,21,0,0.000000,21,2,4,6
+Revisorfirmaet Skov Jeppesen,32688179,21,0,0.000000,21,2,4,6
+Bjarne Engbjerg-Pedersen,16579106,20,0,0.000000,20,2,4,6
+I.H. Revision v/ Hanne Henningsen,19617203,20,0,0.000000,20,2,4,6
+MA Revision v/Morten Andersen,12246099,20,0,0.000000,20,2,4,6
+Møller & Co.,20716142,20,0,0.000000,20,2,4,6
+Øresund Revision Statsautoriseret Revisionsanpartsselskab,40127720,20,0,0.000000,20,2,4,6
+Oxenvads Regnskabsservice ApS,12741766,20,0,0.000000,20,2,4,6
+SAa Revision,34880034,20,0,0.000000,20,2,4,6
+COMPTA,25072596,19,0,0.000000,19,2,4,6
+Dansk Center Revision,94431468,19,0,0.000000,19,2,4,6
+Registreret Revisor Per Skaarup Rasmussen,20592699,19,0,0.000000,19,2,4,6
+Revisionsfirmaet Bayer,15202580,19,0,0.000000,19,2,4,6
+Revisionsfirmaet Gert Ovesen,13364796,19,0,0.000000,19,2,4,6
+Vilstad Revision og Regnskabsservice,31888425,19,0,0.000000,19,2,4,6
+BMM Consult,18079739,18,0,0.000000,18,2,4,5
+Reg. Rev. Mogens Møller Nielsen,10261279,18,0,0.000000,18,2,4,5
+RevisionsHuset Viborg v/Leif Aasten,36871644,18,0,0.000000,18,2,4,5
+Valsgård Revision,27106595,18,0,0.000000,18,2,4,5
+"Kjeldsen Revision, Statsautoriseret Revisionsanpartsselskab",46115422,17,0,0.000000,17,2,3,5
+NF Plus Revision,36031719,17,0,0.000000,17,2,3,5
+OBK Revision,68216214,17,0,0.000000,17,2,3,5
+Revisionsfirmaet Poul Rexen Thomsen,81127115,17,0,0.000000,17,2,3,5
+Vendia Revision og Regnskab,43576577,17,0,0.000000,17,2,3,5
+Wyrwik,16563579,17,0,0.000000,17,2,3,5
+Fidura Statsautoriseret Revisionsanpartsselskab,45740986,16,0,0.000000,16,2,3,5
+HKP Revision,12354746,16,0,0.000000,16,2,3,5
+Konde ApS,38575694,16,0,0.000000,16,2,3,5
+Pandrup Revision,38897713,16,0,0.000000,16,2,3,5
+Revisionsfirmaet Else Høy,15275677,16,0,0.000000,16,2,3,5
+Revisor Fritzbøger,41982470,16,0,0.000000,16,2,3,5
+Statsaut. Rev. P.B. Matthiesen,70697319,16,0,0.000000,16,2,3,5
+Nordland Revision-Nordland,25518942,15,0,0.000000,15,2,3,4
+Registreret Revisor Mads Bødker,14662138,15,0,0.000000,15,2,3,4
+Revisionsfirmaet Michael Fræmohs,47808650,15,0,0.000000,15,2,3,4
+Revisionsfirmaet Obsen & Nielsen,26399610,15,0,0.000000,15,2,3,4
+Andersen Revision & Rådgivning,38347799,14,0,0.000000,14,1,3,4
+LandboNord,25049608,14,0,0.000000,14,1,3,4
+Revisionsfirmaet Kenneth Birkelund,32147437,14,0,0.000000,14,1,3,4
+Revisionsfirmaet Søren Kahr,41832096,14,0,0.000000,14,1,3,4
+Revisor Inge Linkamp ApS,26297974,14,0,0.000000,14,1,3,4
+RevisorGården,19720705,14,0,0.000000,14,1,3,4
+Delta Administration,13850232,13,0,0.000000,13,1,3,4
+JST Revision,26344735,13,0,0.000000,13,1,3,4
+Karin Juel Registreret Revisionsvirksomhed,12911580,13,0,0.000000,13,1,3,4
+Køge Nord Revision,14149341,13,0,0.000000,13,1,3,4
+Michael Kappelhøj,18485907,13,0,0.000000,13,1,3,4
+Osmark,27135730,13,0,0.000000,13,1,3,4
+Registreret Revisor Mette Storgaard Høffner,18897385,13,0,0.000000,13,1,3,4
+Statsautoriseret revisionsfirma Bent Andrup,15592354,13,0,0.000000,13,1,3,4
+Talkymisten v/Reg. revisor Susanne Nielsen,21304476,13,0,0.000000,13,1,3,4
+TimeVision,38267132,13,0,0.000000,13,1,3,4
+Uniconsult,10510945,13,0,0.000000,13,1,3,4
+Excell Revision,32428932,12,0,0.000000,12,1,2,4
+Revifirmaet,83827815,12,0,0.000000,12,1,2,4
+Statsaut. Rev. Jan Vegge,15083743,12,0,0.000000,12,1,2,4
+Statsaut. Revisor G. Holm-Nielsen,38518046,12,0,0.000000,12,1,2,4
+Statsautoriseret revisor Søren Cortsen,27909833,12,0,0.000000,12,1,2,4
+Counted ApS,46110099,11,0,0.000000,11,1,2,3
+Luni Revision,17811371,11,0,0.000000,11,1,2,3
+Revisionsfirmaet MBP,31167140,11,0,0.000000,11,1,2,3
+Talsnedkeren,36279079,11,0,0.000000,11,1,2,3
+Bjarne Bertelsen,28711395,10,0,0.000000,10,1,2,3
+Jes Revision,17016334,10,0,0.000000,10,1,2,3
+LP Revision & rådgivning,16368342,10,0,0.000000,10,1,2,3
+Nemli & Partnere Statsautoriserede Revisorer ApS,43514172,10,0,0.000000,10,1,2,3
+Nordjysk Revision HJ,33064543,10,0,0.000000,10,1,2,3
+Revisionsfirmaet Erik Reinsborg,25491742,10,0,0.000000,10,1,2,3
+Revisionsfirmaet Jens Vindfeldt,15897996,10,0,0.000000,10,1,2,3
+Revisor Gunnar Kjærgaard Larsen,46639715,10,0,0.000000,10,1,2,3
+Revisorgården v/Jane Lading Pedersen,16914800,10,0,0.000000,10,1,2,3
+"John Dalgaard, Statsautoriseret Revisionsanpartsselskab",27192939,9,0,0.000000,9,1,2,3
+Lars Ole Wiese,30220331,9,0,0.000000,9,1,2,3
+MN Revision v/statsaut. revisor Mogens Nielsen,15656042,9,0,0.000000,9,1,2,3
+Revisionsfirma Ulla Svenningsen,18393387,9,0,0.000000,9,1,2,3
+Revisionsfirmaet Per Abelsen,34066698,9,0,0.000000,9,1,2,3
+R-Vision,25107020,9,0,0.000000,9,1,2,3
+Søhøjlandets Regnskabskontor,27350755,9,0,0.000000,9,1,2,3
+Asgård Finans,26186897,8,0,0.000000,8,1,2,2
+B.C. Revision,45556158,8,0,0.000000,8,1,2,2
+Carsten Bjørn Jensen,25452313,8,0,0.000000,8,1,2,2
+HR Revision ApS,46151607,8,0,0.000000,8,1,2,2
+K2 TOP Registreret Revisionsanpartsselskab,30175905,8,0,0.000000,8,1,2,2
+"Larsen, Statsautoriseret Revisionsanpartsselskab",45756173,8,0,0.000000,8,1,2,2
+MPB Consult,30956400,8,0,0.000000,8,1,2,2
+Revisionsfirmaet Peter Deiborg,16346578,8,0,0.000000,8,1,2,2
+RH Revision Statsautoriseret Revisionsanpartsselskab,32319998,8,0,0.000000,8,1,2,2
+Vistisen & Lunde,35658432,8,0,0.000000,8,1,2,2
+Afrodite Hår og Trend v/Rita Truelsen,26916402,7,0,0.000000,7,1,1,2
+A-revisor,29105545,7,0,0.000000,7,1,1,2
+Borg Revision v/Olav Borg Christensen,20938692,7,0,0.000000,7,1,1,2
+DP Hillerød P/S,42491748,7,0,0.000000,7,1,1,2
+Hestehavens Revison,31579325,7,0,0.000000,7,1,1,2
+"Jens Rye, Statsautoriseret Revisor",41694939,7,0,0.000000,7,1,1,2
+Karsten Andersen Registreret Revisionsvirksomhed,34274657,7,0,0.000000,7,1,1,2
+Reg Revisor Uffe Berg Pedersen,12689039,7,0,0.000000,7,1,1,2
+Revisionsfirmaet Benny Lund Jensen,37230359,7,0,0.000000,7,1,1,2
+Revisionsfirmaet Peter Høg,65608154,7,0,0.000000,7,1,1,2
+Brønshøj Regnskab,36709030,6,0,0.000000,6,1,1,2
+Kruse Revision,43113577,6,0,0.000000,6,1,1,2
+"MADS MYRTUE THOMSEN, STATSAUTORISERET REVISIONSANPARTSSELSKAB",28663838,6,0,0.000000,6,1,1,2
+NET-Revision,29389918,6,0,0.000000,6,1,1,2
+PC-Revision Gentofte,30969103,6,0,0.000000,6,1,1,2
+Revisionsselskabet LKG,36735465,6,0,0.000000,6,1,1,2
+"Broernes Revision, Reg Revisorer",14310533,5,0,0.000000,5,0,1,2
+Buller Tex Flemming Olsen,32560164,5,0,0.000000,5,0,1,2
+Damborg Revision og Rådgivning,15710373,5,0,0.000000,5,0,1,2
+EC Økonomi og regnskab,35926585,5,0,0.000000,5,0,1,2
+PS Revision,28252102,5,0,0.000000,5,0,1,2
+Registreret Revisionsanpartsselskab j. Gilbert Nielsen,18137399,5,0,0.000000,5,0,1,2
+Revisionsfirmaet Svend Rosendahl,11163947,5,0,0.000000,5,0,1,2
+VERAX,31140986,5,0,0.000000,5,0,1,2
+Alter Audit ApS,44387263,4,0,0.000000,4,0,1,1
+Funder & Henriksen,29628777,4,0,0.000000,4,0,1,1
+Holm Hansen Statsautoriseret Revisionspartnerselskab,35042520,4,0,0.000000,4,0,1,1
+IHC Holding Kolding,31501601,4,0,0.000000,4,0,1,1
+JH Revision,55399719,4,0,0.000000,4,0,1,1
+Kara Statsautoriseret Revisionsanpartsselskab,45945189,4,0,0.000000,4,0,1,1
+Kildebjerg Revision,26631556,4,0,0.000000,4,0,1,1
+KPMG KOMPLEMENTARSELSKAB ApS,25504070,4,0,0.000000,4,0,1,1
+PJ Revision ApS Registrerede Revisorer,26429862,4,0,0.000000,4,0,1,1
+PwC Statsautoriseret Revisionsanpartsselskab,33773188,4,0,0.000000,4,0,1,1
+Registreret Revisor Peter Rose,50949656,4,0,0.000000,4,0,1,1
+RéVision+,38914766,4,0,0.000000,4,0,1,1
+Revisionsfirmaet Lars Bo,27022863,4,0,0.000000,4,0,1,1
+Veritas,35657975,4,0,0.000000,4,0,1,1
+C&J Revision,26326931,3,0,0.000000,3,0,1,1
+DataBalance,32983618,3,0,0.000000,3,0,1,1
+EBK Smørum ApS,43487469,3,0,0.000000,3,0,1,1
+Elley Revision,10938694,3,0,0.000000,3,0,1,1
+ESSET,27288537,3,0,0.000000,3,0,1,1
+EY,33946171,3,0,0.000000,3,0,1,1
+Furesø Revision,27969933,3,0,0.000000,3,0,1,1
+Revipoint,31611520,3,0,0.000000,3,0,1,1
+ReVision+ Brøndby ApS,20251883,3,0,0.000000,3,0,1,1
+Revisionsfirmaet Højmose,30771508,3,0,0.000000,3,0,1,1
+Asset,34901694,2,0,0.000000,2,0,0,1
+Beck Mortensen Revision ApS,46505190,2,0,0.000000,2,0,0,1
+BJERGGAARD Regnskab og Rådgivning v/ Steen Bjerggaard,72715454,2,0,0.000000,2,0,0,1
+Dansk Revision Randers,31778530,2,0,0.000000,2,0,0,1
+Global Revision,28121717,2,0,0.000000,2,0,0,1
+H D Consult,27796001,2,0,0.000000,2,0,0,1
+Hole Revision,30709470,2,0,0.000000,2,0,0,1
+J. S. Jakobsen,15515554,2,0,0.000000,2,0,0,1
+LDM Revision,19553876,2,0,0.000000,2,0,0,1
+Linda Lauritsen,37142042,2,0,0.000000,2,0,0,1
+One Revision,39090279,2,0,0.000000,2,0,0,1
+PK Revision,31495288,2,0,0.000000,2,0,0,1
+Registreret revisor Morten Rasmussen,40847170,2,0,0.000000,2,0,0,1
+Rehvidsion,82958118,2,0,0.000000,2,0,0,1
+Revico,27795188,2,0,0.000000,2,0,0,1
+Revikon,15728000,2,0,0.000000,2,0,0,1
+Revisionsfirmaet Allan Bernhard,26688027,2,0,0.000000,2,0,0,1
+Revisionsfirmaet Asger Wiuff Andersen,32149863,2,0,0.000000,2,0,0,1
+Revisionsfirmaet Erik Andersen,15534397,2,0,0.000000,2,0,0,1
+Revisionsfirmaet Højmose Christiansen ApS,43917455,2,0,0.000000,2,0,0,1
+Revisionsfirmaet Højvar & Skaaning,28248598,2,0,0.000000,2,0,0,1
+Revisionsfirmaet KRH,37596272,2,0,0.000000,2,0,0,1
+Revisionsfirmaet Tommy Jensen,20082097,2,0,0.000000,2,0,0,1
+Revisorteamet.dk,31634466,2,0,0.000000,2,0,0,1
+Søhøjlandets Rådgivning P/S,45265897,2,0,0.000000,2,0,0,1
+Svaneke Revision I/S,38294539,2,0,0.000000,2,0,0,1
+Verum Cura,39886871,2,0,0.000000,2,0,0,1
+A. Bjørn - Statsautoriseret revisionsanpartsselskab,30898664,1,0,0.000000,1,0,0,0
+ABM-Revision,29234590,1,0,0.000000,1,0,0,0
+AC Revision - Registreret Revisionsanpartsselskab,35050469,1,0,0.000000,1,0,0,0
+Aktiv Regnskab og Skat,39791374,1,0,0.000000,1,0,0,0
+Andersen,10108454,1,0,0.000000,1,0,0,0
+Atomwine ApS,37701424,1,0,0.000000,1,0,0,0
+Audit Advisor ApS,46127307,1,0,0.000000,1,0,0,0
+BAYER HOLDING ApS,15202548,1,0,0.000000,1,0,0,0
+DANSK REVISION A/S,31071097,1,0,0.000000,1,0,0,0
+DK Ejendomsadministration & Ejendomsservice ApS,36728027,1,0,0.000000,1,0,0,0
+Exacta Gruppen,33359128,1,0,0.000000,1,0,0,0
+FP Revision,37381136,1,0,0.000000,1,0,0,0
+gills-economics,39325608,1,0,0.000000,1,0,0,0
+GLB Revision,30821963,1,0,0.000000,1,0,0,0
+Haamann A/S,24256995,1,0,0.000000,1,0,0,0
+HALLERUP STATSAUTORISERET REVISOR ApS,79157511,1,0,0.000000,1,0,0,0
+Henrik Blixenkrone Registreret Revisionsanpartsselskab,10477549,1,0,0.000000,1,0,0,0
+HvidebækRevisoren,28931581,1,0,0.000000,1,0,0,0
+JBL Revision,36491817,1,0,0.000000,1,0,0,0
+JuelViborg,31438748,1,0,0.000000,1,0,0,0
+Karleby Revision ApS,26252687,1,0,0.000000,1,0,0,0
+KOA Rådgivning & Regnskab ApS,78168714,1,0,0.000000,1,0,0,0
+KOMPLEMENTARANPARTSSELSKABET ANDERSEN REVISION,35534156,1,0,0.000000,1,0,0,0
+"Kvist & Jensen, Grenaa",27478131,1,0,0.000000,1,0,0,0
+Landboforeningen Gefion,31123992,1,0,0.000000,1,0,0,0
+Lynge Revisor,31622565,1,0,0.000000,1,0,0,0
+National Revision,25635868,1,0,0.000000,1,0,0,0
+nf plus,27495753,1,0,0.000000,1,0,0,0
+NPM Quality Management ApS,32825915,1,0,0.000000,1,0,0,0
+OL Revision,10841976,1,0,0.000000,1,0,0,0
+Pilgaard Revision V/Elna Pilgaard,17230239,1,0,0.000000,1,0,0,0
+Registreret Revisionsvirksomhed FD Revision,35798153,1,0,0.000000,1,0,0,0
+Registreret Revisor N. C. Sørensen,17561391,1,0,0.000000,1,0,0,0
+Revicor,13929297,1,0,0.000000,1,0,0,0
+ReviDK,36956658,1,0,0.000000,1,0,0,0
+ReviGroup,39875926,1,0,0.000000,1,0,0,0
+Revirk Rådgivning,31934354,1,0,0.000000,1,0,0,0
+Revision Limfjord,41454555,1,0,0.000000,1,0,0,0
+Revision Nordjylland Hjørring ApS,40299637,1,0,0.000000,1,0,0,0
+Revisionsfirmaet Chr. Knudsen,21813400,1,0,0.000000,1,0,0,0
+Revisionsfirmaet Henrik Tange,37915718,1,0,0.000000,1,0,0,0
+Revisionskontoret Fredericia-Vejle,32348831,1,0,0.000000,1,0,0,0
+Revisorhuset Hasselager,12549679,1,0,0.000000,1,0,0,0
+RGD REVISIONSPARTNERSELSKAB,30506804,1,0,0.000000,1,0,0,0
+Rigsrevisionen,77806113,1,0,0.000000,1,0,0,0
+Skovborg & Co. P/S,41071222,1,0,0.000000,1,0,0,0
+SOKKELUND ApS,32291171,1,0,0.000000,1,0,0,0
+Statsautoriseret revisor Michael Stenskrog,30217152,1,0,0.000000,1,0,0,0
+Syddansk Revision,15681586,1,0,0.000000,1,0,0,0
+TimeVision Frederiksberg,31943582,1,0,0.000000,1,0,0,0
+Totalrevision Vordingborg,19261735,1,0,0.000000,1,0,0,0
+3H Revision,98088857,0,0,0.000000,0,0,0,0
+A Albrechtsen Revision,10291984,0,0,0.000000,0,0,0,0
+A Revision,18186144,0,0,0.000000,0,0,0,0
+A4 Revsion,29205043,0,0,0.000000,0,0,0,0
+Activ-Revision,90566059,0,0,0.000000,0,0,0,0
+Agri Nord,29038597,0,0,0.000000,0,0,0,0
+A-INVEST KONTOR- OG BOGFØRINGSASSISTANCE ApS,19154807,0,0,0.000000,0,0,0,0
+Aktiv Revision og Rådgivning,12488106,0,0,0.000000,0,0,0,0
+Alexandersen Revision,11916546,0,0,0.000000,0,0,0,0
+Alpha Revision v/Søren Nymann,38269216,0,0,0.000000,0,0,0,0
+Assistance og rådgivning ApS,21821578,0,0,0.000000,0,0,0,0
+Augusta,36445386,0,0,0.000000,0,0,0,0
+Badsted Revision,10838576,0,0,0.000000,0,0,0,0
+BB Revision,27917038,0,0,0.000000,0,0,0,0
+Beierholm,24207501,0,0,0.000000,0,0,0,0
+BENGT MØLLER REGISTRERET REVISOR,84473413,0,0,0.000000,0,0,0,0
+Berg Rådgivning ApS,41234253,0,0,0.000000,0,0,0,0
+Bergmann,54213255,0,0,0.000000,0,0,0,0
+BHS,15772573,0,0,0.000000,0,0,0,0
+Birkebæk Revision,16950394,0,0,0.000000,0,0,0,0
+BJ Administration,32651674,0,0,0.000000,0,0,0,0
+BK Revision ApS,12140363,0,0,0.000000,0,0,0,0
+BN Consult,73980828,0,0,0.000000,0,0,0,0
+BN Revision,46906012,0,0,0.000000,0,0,0,0
+Bogføring / Regnskab,16942375,0,0,0.000000,0,0,0,0
+Bornholms Landbrug & Fødevarer,29441677,0,0,0.000000,0,0,0,0
+"Breindal, statsautoriseret revisionsanpartsselskab",41733950,0,0,0.000000,0,0,0,0
+Brendstrup Revision,14371435,0,0,0.000000,0,0,0,0
+Brørup Revisionskontor,13260982,0,0,0.000000,0,0,0,0
+Brun Blaa ApS,41815043,0,0,0.000000,0,0,0,0
+Burholt Revision,20833696,0,0,0.000000,0,0,0,0
+CCH Revision,27015476,0,0,0.000000,0,0,0,0
+Centerrevision Billund,20806346,0,0,0.000000,0,0,0,0
+City Revision,37048755,0,0,0.000000,0,0,0,0
+CJ Partnership,53375812,0,0,0.000000,0,0,0,0
+CY Consult ApS,41474084,0,0,0.000000,0,0,0,0
+Damgaard & Enevoldsen,24257770,0,0,0.000000,0,0,0,0
+Danrevi Bramming,24257614,0,0,0.000000,0,0,0,0
+Dansk Revision København,32671608,0,0,0.000000,0,0,0,0
+Dansk Revision Silkeborg,21678309,0,0,0.000000,0,0,0,0
+Dask Gruppen,13889686,0,0,0.000000,0,0,0,0
+Datarevision FRR,54504055,0,0,0.000000,0,0,0,0
+DAVS,25319435,0,0,0.000000,0,0,0,0
+De Små Revisorer ApS,41583479,0,0,0.000000,0,0,0,0
+Deko Rådgivning ApS,44387255,0,0,0.000000,0,0,0,0
+Deloitte,24213714,0,0,0.000000,0,0,0,0
+Dissing Revision,42395358,0,0,0.000000,0,0,0,0
+Døssing & Partnere,54879911,0,0,0.000000,0,0,0,0
+DR af 15. august 2016,75938713,0,0,0.000000,0,0,0,0
+Ecomentor,26063221,0,0,0.000000,0,0,0,0
+Egedal Revision,38035169,0,0,0.000000,0,0,0,0
+EKL Revision,30175859,0,0,0.000000,0,0,0,0
+Elisabeth Jessen,11113575,0,0,0.000000,0,0,0,0
+Ellebæk Revision,26287030,0,0,0.000000,0,0,0,0
+EN Frederikshavn,16009644,0,0,0.000000,0,0,0,0
+Engelsted Petersen,20658231,0,0,0.000000,0,0,0,0
+ERC Revision,34205078,0,0,0.000000,0,0,0,0
+ERM Horsens,33501188,0,0,0.000000,0,0,0,0
+EXACTA REGNSKAB ApS,25914481,0,0,0.000000,0,0,0,0
+Exacta Revision ApS,24224724,0,0,0.000000,0,0,0,0
+Exante Revision,70694611,0,0,0.000000,0,0,0,0
+EY,35683194,0,0,0.000000,0,0,0,0
+FC regnskab,36971339,0,0,0.000000,0,0,0,0
+Finansion v/ revisor Jens Møller,41418737,0,0,0.000000,0,0,0,0
+Firat Group,21617881,0,0,0.000000,0,0,0,0
+Fischer & Kragh ApS,38392867,0,0,0.000000,0,0,0,0
+FJH Revision,18165406,0,0,0.000000,0,0,0,0
+Flemming Johannsen,31095018,0,0,0.000000,0,0,0,0
+Fokusrevision.dk,26996430,0,0,0.000000,0,0,0,0
+G2 Revision,32285538,0,0,0.000000,0,0,0,0
+Glud&Ko,31811694,0,0,0.000000,0,0,0,0
+GS Event + Revisionplus,73881412,0,0,0.000000,0,0,0,0
+Gunnar Bendixen,71220168,0,0,0.000000,0,0,0,0
+Hans Jørgen Nielsen,20080450,0,0,0.000000,0,0,0,0
+"Hartzberg+, statsautoriseret revisionsanpartsselskab",40535349,0,0,0.000000,0,0,0,0
+Henrik Hansen Revision,10054192,0,0,0.000000,0,0,0,0
+HH Bogføring og Regnskab,41316489,0,0,0.000000,0,0,0,0
+Holberg Invest ApS,42657638,0,0,0.000000,0,0,0,0
+Holberg revision,35638288,0,0,0.000000,0,0,0,0
+Hovedstadens Revisionshus ApS,36894415,0,0,0.000000,0,0,0,0
+Huset Under Linden,73643716,0,0,0.000000,0,0,0,0
+J. Aarøe Statsautoriseret Revisionsanpartsselskab,34058059,0,0,0.000000,0,0,0,0
+Jajaogatterja,40095179,0,0,0.000000,0,0,0,0
+JL Revision,11286380,0,0,0.000000,0,0,0,0
+Johnny Kofoed-Jensen,40992138,0,0,0.000000,0,0,0,0
+Joost & Partner Registreret Revisionsanpartsselskab,63778710,0,0,0.000000,0,0,0,0
+Jørn Haagensen Statsautoriseret Revisionsanpartsselskab,33759231,0,0,0.000000,0,0,0,0
+JP Management Holding,25709888,0,0,0.000000,0,0,0,0
+JT Adviser,14081844,0,0,0.000000,0,0,0,0
+JVBM Revision,36972912,0,0,0.000000,0,0,0,0
+Karsten Reher. Revisionsanpartsselskab,76477817,0,0,0.000000,0,0,0,0
+Kramer Consulting,38654217,0,0,0.000000,0,0,0,0
+Landbo Limfjord,26243076,0,0,0.000000,0,0,0,0
+LandboThy,41946717,0,0,0.000000,0,0,0,0
+Langelands Revisionscenter,61225811,0,0,0.000000,0,0,0,0
+LB Revision,14047107,0,0,0.000000,0,0,0,0
+LBV ApS,41358513,0,0,0.000000,0,0,0,0
+Legato Regnskab og bogføring,33836449,0,0,0.000000,0,0,0,0
+Lillebælt Revision,10122058,0,0,0.000000,0,0,0,0
+MB Revision ApS,33497326,0,0,0.000000,0,0,0,0
+Meneto Software ApS,39965003,0,0,0.000000,0,0,0,0
+Mentor TM,27477933,0,0,0.000000,0,0,0,0
+MPH Business Consulting ApS,37654728,0,0,0.000000,0,0,0,0
+N. K. Mortensen A/S Registrerede Revisorer,66090116,0,0,0.000000,0,0,0,0
+N. K. Mortensen Reg. Revisor ApS,42975958,0,0,0.000000,0,0,0,0
+ND REVISION SØNDERBORG ApS,56387013,0,0,0.000000,0,0,0,0
+Next Stage Ventures ApS,37519111,0,0,0.000000,0,0,0,0
+Noe & Kirkegaard,15050586,0,0,0.000000,0,0,0,0
+Nørbak,33065272,0,0,0.000000,0,0,0,0
+NORDISK ELEMENT BYG A/S,32287913,0,0,0.000000,0,0,0,0
+NUUK REVISION ApS,12479077,0,0,0.000000,0,0,0,0
+Økonomihuset,28368410,0,0,0.000000,0,0,0,0
+ON-Erklæring ApS,41210974,0,0,0.000000,0,0,0,0
+Østrup,32774296,0,0,0.000000,0,0,0,0
+OX-INVEST ApS,20799544,0,0,0.000000,0,0,0,0
+Parker Randall,26998549,0,0,0.000000,0,0,0,0
+PDG-Revision,36490977,0,0,0.000000,0,0,0,0
+Peter Madsen Registreret Revisionsanpartsselskab,25362403,0,0,0.000000,0,0,0,0
+PHA Revision,11392903,0,0,0.000000,0,0,0,0
+Pibe Mølle Revision,19123286,0,0,0.000000,0,0,0,0
+Pommerencke,33878370,0,0,0.000000,0,0,0,0
+Pro-Accounting ApS,38033638,0,0,0.000000,0,0,0,0
+R E V I - T E A M,10180384,0,0,0.000000,0,0,0,0
+Rasmussen Revision,46408314,0,0,0.000000,0,0,0,0
+Registreret Revisionsvirksomhed Peter Oldvig,11759092,0,0,0.000000,0,0,0,0
+Registreret Revisor Annie Mogensen,11972101,0,0,0.000000,0,0,0,0
+Registreret Revisor Bjarne Degerth,92943453,0,0,0.000000,0,0,0,0
+Registreret Revisor Jørgen T. Madsen,75964056,0,0,0.000000,0,0,0,0
+Registreret Revisor Verner Freundlich Larsen,91778750,0,0,0.000000,0,0,0,0
+Regn & Råd Mette Jørck,26380898,0,0,0.000000,0,0,0,0
+REV af 22/12 1989 ApS,10741092,0,0,0.000000,0,0,0,0
+Rev og Råd,32942660,0,0,0.000000,0,0,0,0
+ReviFyn,41992719,0,0,0.000000,0,0,0,0
+ReviPartner,25112822,0,0,0.000000,0,0,0,0
+Revision 80,16728691,0,0,0.000000,0,0,0,0
+Revision Fyn,31896444,0,0,0.000000,0,0,0,0
+Revision København Statsautoriseret Revisionsanpartsselskab,34452342,0,0,0.000000,0,0,0,0
+Revision Nordjylland,28481160,0,0,0.000000,0,0,0,0
+Revision og Review Partner,33082932,0,0,0.000000,0,0,0,0
+Revision Rosendal,30427483,0,0,0.000000,0,0,0,0
+Revision Varde,18072106,0,0,0.000000,0,0,0,0
+Revision+ Fyn ApS,42658561,0,0,0.000000,0,0,0,0
+Revisionscentralen i Nørre Alslev,71274012,0,0,0.000000,0,0,0,0
+Revisions-Centret v/Brian Vahlkvist,19723402,0,0,0.000000,0,0,0,0
+Revisionsfirma Børge Lorenzen,18798344,0,0,0.000000,0,0,0,0
+Revisionsfirma C. & Co,37905305,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Bent Rindom,51229428,0,0,0.000000,0,0,0,0
+REVISIONSFIRMAET CLAUS WINKEL ApS,13188491,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Freddy Rasmussen,15054840,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Højmose IVS,36988762,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Irene Sjølin ApS,37470996,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Kjeldgaard og Thulstrup,25900405,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Kurt Astrup,13068135,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Leif Vesterlund,10092159,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Lisbeth Bo Jørgensen,14052488,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Mogens Andersen,26386330,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Morten Schneider,33176996,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Niels Harder,44682915,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Niels Ole Hansen,26121884,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Nielsen & Olesen,21294306,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Ole Hansen,12155662,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Ole Poulsen,32008143,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Per Jacobsen,15319887,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Per Steen Hansen,38124315,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Poul Bernhardt Larsen,66660214,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Rathmann & Mortensen,27521975,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Svendsen,34581673,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Tage Kielsgaard Rasmussen,15137371,0,0,0.000000,0,0,0,0
+Revisionsfirmaet Torben Langebæk,19697274,0,0,0.000000,0,0,0,0
+RéVison+,35465979,0,0,0.000000,0,0,0,0
+Revisor Klaus Johansson,13206090,0,0,0.000000,0,0,0,0
+Revisor Niels Jørgen Hansen,36333154,0,0,0.000000,0,0,0,0
+Revisor Nielsen ApS,40832211,0,0,0.000000,0,0,0,0
+Revisor1,10740746,0,0,0.000000,0,0,0,0
+Revisorclaus IVS,37517623,0,0,0.000000,0,0,0,0
+REVISOREN I SISIMIUT REGISTRERET REVISIONSANPARTSSELSKAB,12506864,0,0,0.000000,0,0,0,0
+Revisor-Team,35519432,0,0,0.000000,0,0,0,0
+Rinto Godkendt Revisionsvirksomhed,42748668,0,0,0.000000,0,0,0,0
+Risskov Revision,31574994,0,0,0.000000,0,0,0,0
+ROSENLUND FINANS ApS,28153279,0,0,0.000000,0,0,0,0
+"Schwartz, Pio & Co",31933595,0,0,0.000000,0,0,0,0
+SEBISA ApS,35207422,0,0,0.000000,0,0,0,0
+Skoda & Partner,15806206,0,0,0.000000,0,0,0,0
+SKODSBORG FINANS ApS,35833803,0,0,0.000000,0,0,0,0
+SMV Regnskab ApS,44662574,0,0,0.000000,0,0,0,0
+Sømad ApS,38388002,0,0,0.000000,0,0,0,0
+Sønderjysk Landboforening,47437113,0,0,0.000000,0,0,0,0
+Statsautoriseret revisor Aksel Christensen,18770407,0,0,0.000000,0,0,0,0
+Statsautoriseret revisor Bjarne Bertelsen,13940207,0,0,0.000000,0,0,0,0
+Statsautoriseret revisor Finn Ellegaard,15935243,0,0,0.000000,0,0,0,0
+Statsautoriseret revisor Kresten Hyldahl,77931112,0,0,0.000000,0,0,0,0
+Stjerne Ejendomsservice ApS,38796526,0,0,0.000000,0,0,0,0
+Svaneke Revision v/ Michael Kuhre,13339287,0,0,0.000000,0,0,0,0
+Tal & Tanker Nord,35305890,0,0,0.000000,0,0,0,0
+Thorvald Rein,79355313,0,0,0.000000,0,0,0,0
+Thybo Revision,34586977,0,0,0.000000,0,0,0,0
+Torsten Blichert,90429868,0,0,0.000000,0,0,0,0
+Troense Regnskab & Bogføring,42162752,0,0,0.000000,0,0,0,0
+TS Revision,37201944,0,0,0.000000,0,0,0,0
+Ulla Lærke,25768108,0,0,0.000000,0,0,0,0
+Vejledal Bogføring og Regnskab,18235307,0,0,0.000000,0,0,0,0
+VL Revision,29817286,0,0,0.000000,0,0,0,0
+Wind Revision,34804699,0,0,0.000000,0,0,0,0
+Erhvervshus Midtjylland S/I,40084606,0,1,0.000000,-1,0,0,0
+Gaaga,42027995,0,1,0.000000,-1,0,0,0
+NM Regnskab ApS,44729989,0,1,0.000000,-1,0,0,0
+RegnskabsHuset.com,18067676,0,1,0.000000,-1,0,0,0
+RegnskabsHuset.com,42495654,0,1,0.000000,-1,0,0,0
+RevisorGruppen I/S,32938213,0,1,0.000000,-1,0,0,0
+Sand bogholderi,42269425,0,1,0.000000,-1,0,0,0
+Taleco ApS,39446235,0,1,0.000000,-1,0,0,0
+Vestjysk Consulting,30498674,0,1,0.000000,-1,0,0,0
+#VALUE!,27083978,0,1,0.000000,-1,0,0,0
+Stoisk,28919719,0,2,0.000000,-2,0,0,0
+ERASMUS & PARTNERE A/S,28493584,0,4,0.000000,-4,0,0,0
+Regnskabsfokus,33578628,0,4,0.000000,-4,0,0,0
+RevisorGruppen I/S,31481945,0,4,0.000000,-4,0,0,0
+The White Box,40612246,0,4,0.000000,-4,0,0,0
+PJ Køleteknik ApS,37654795,0,5,0.000000,-5,0,0,0
+Regnskabsvirksomheden Schaumburg/Bendtsen ApS,28655835,0,5,0.000000,-5,0,0,0
+Roknskaparfelagið skrásettir grannskoðarar Sp/f,413887,0,6,0.000000,-6,0,0,0
+E-conomia Consulting ApS,44268965,0,7,0.000000,-7,0,0,0
+Copenhagen Management Accounting Company ApS,33932464,0,8,0.000000,-8,0,0,0
+Taleco ApS,30525035,0,9,0.000000,-9,0,0,0
+"Ri, Statsautoriseret Revisionsaktieselskab",53371914,0,17,0.000000,-17,0,0,0
+Plature,38732420,0,26,0.000000,-26,0,0,0
+RevisorGruppen I/S,34953619,0,91,0.000000,-91,0,0,0
+Skov Revision,27525989,355,451,1.270423,-96,36,71,106
+Danrevi Løgstør,10019699,5,138,27.600000,-133,0,1,2

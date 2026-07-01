@@ -1,0 +1,1475 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pipen · Crediwire</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E📊%3C/text%3E%3C/svg%3E">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;800;900&display=swap");
+
+    :root {
+      --white: #ffffff;
+      --bg: #f6f5f8;
+      --cream: #fbfaf6;
+      --ink: #0e0e14;
+      --ink-mute: rgba(59,55,85,0.6);
+      --purple: #4f4b6b;
+      --purple-soft: rgba(123,90,247,0.08);
+      --green: #50cf88;
+      --green-soft: rgba(80,207,136,0.10);
+      --yellow: #f5c542;
+      --red: #e94f4f;
+      --border-soft: rgba(59,55,85,0.10);
+      --border-strong: rgba(59,55,85,0.18);
+      --mono: "ui-monospace", "SF Mono", Menlo, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 32px 24px 80px; }
+
+    /* HEAD */
+    .pipe-head { margin-bottom: 28px; }
+    .label { font-family: var(--mono); font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin-bottom: 6px; display: block; }
+    .pipe-head h1 { font-size: 28px; font-weight: 900; letter-spacing: -0.02em; margin: 0 0 8px; color: var(--ink); }
+    .pipe-head p { font-size: 13px; color: var(--ink-mute); margin: 0; max-width: 720px; }
+    .pipe-head p strong { color: var(--ink); font-weight: 700; }
+
+    /* SUMMARY KORT (5 hvide kort · KPI-strip stil) */
+    .summary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px; }
+    @media (min-width: 720px) { .summary { grid-template-columns: repeat(5, 1fr); } }
+    .sum-cell { background: var(--white); border: 1px solid var(--border-soft); border-radius: 16px; padding: 22px; }
+    .sum-val { font-size: 32px; font-weight: 900; letter-spacing: -0.025em; line-height: 1; color: var(--ink); display: block; margin-bottom: 8px; font-variant-numeric: tabular-nums; }
+    .sum-label { font-size: 11px; color: var(--ink-mute); font-weight: 700; line-height: 1.45; }
+    .sum-cell.green-tint .sum-val { color: var(--ink); }
+    .sum-cell.red-tint .sum-val { color: var(--ink-mute); }
+    .sum-cell.target .sum-label { font-weight: 800; color: var(--ink); }
+
+    /* FOLDABLE sektioner */
+    .fold { margin-bottom: 22px; background: var(--white); border: 1px solid var(--border-soft); border-radius: 14px; overflow: hidden; }
+    .fold[open] { border-color: var(--border-strong); }
+    .fold > summary { list-style: none; cursor: pointer; padding: 18px 24px; display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 14px; transition: background 0.15s; }
+    .fold > summary::-webkit-details-marker { display: none; }
+    .fold > summary:hover { background: rgba(59,55,85,0.025); }
+    .fold-title { font-size: 16px; font-weight: 800; color: var(--ink); }
+    .fold-meta { font-size: 12px; color: var(--ink-mute); justify-self: end; text-align: right; }
+    .fold-chev { font-size: 14px; color: var(--ink-mute); transition: transform 0.15s; font-family: var(--mono); }
+    .fold[open] > summary .fold-chev { transform: rotate(180deg); }
+    .fold-body { padding: 8px 24px 24px; border-top: 1px solid rgba(59,55,85,0.06); }
+
+    /* SCENARIE-BYGGER */
+    .scn-input-row { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+    .scn-input { flex: 1; min-width: 280px; padding: 12px 16px; font-size: 14px; border: 1.5px solid var(--border-strong); border-radius: 10px; font-family: inherit; background: var(--white); }
+    .scn-input:focus { outline: none; border-color: var(--purple); box-shadow: 0 0 0 3px var(--purple-soft); }
+    .scn-btn { padding: 12px 22px; font-size: 13px; font-weight: 800; border: 1.5px solid var(--ink); background: var(--ink); color: var(--white); border-radius: 10px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+    .scn-btn:hover { transform: translateY(-1px); }
+    .scn-btn.ghost { background: transparent; color: var(--ink); border-color: var(--border-strong); }
+    .scn-btn.ghost:hover { border-color: var(--ink); }
+    .scn-active { margin-top: 18px; }
+    .scn-active-chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; margin: 4px 4px 0 0; border-radius: 999px; font-size: 12px; font-weight: 700; }
+    .scn-active-chip.win { background: var(--green-soft); color: var(--ink); border: 1px solid rgba(80,207,136,0.3); }
+    .scn-active-chip.loss { background: rgba(233,79,79,0.06); color: var(--ink); border: 1px solid rgba(233,79,79,0.3); }
+    .scn-active-x { cursor: pointer; opacity: 0.5; }
+    .scn-active-x:hover { opacity: 1; }
+    .scn-active-empty { font-size: 13px; color: var(--ink-mute); font-style: italic; }
+    .scn-forecast { margin-top: 22px; padding: 18px 20px; background: var(--cream); border: 1px solid var(--border-soft); border-radius: 12px; }
+    .scn-forecast-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 13px; font-variant-numeric: tabular-nums; }
+    .scn-forecast-row.result { border-top: 1px solid var(--border-soft); margin-top: 6px; padding-top: 10px; font-weight: 800; font-size: 16px; }
+    .scn-forecast-row.gap { font-weight: 700; padding-top: 8px; }
+    .scn-hint { margin-top: 16px; padding: 14px 18px; background: var(--purple-soft); border-radius: 10px; }
+    .scn-hint h4 { margin: 0 0 8px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--purple); }
+    .scn-hint ul { margin: 0; padding-left: 18px; font-size: 13px; }
+    .scn-hint li { padding: 2px 0; }
+    .scn-presets { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 18px; }
+    .scn-saved { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--border-soft); }
+    .scn-saved h3 { margin: 0 0 12px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-mute); }
+    .scn-saved-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .scn-saved-row { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; padding: 10px 14px; background: var(--cream); border-radius: 10px; align-items: center; }
+    .scn-saved-name { font-weight: 700; font-size: 13px; cursor: pointer; }
+    .scn-saved-name:hover { color: var(--purple); }
+    .scn-saved-desc { font-size: 11px; color: var(--ink-mute); }
+    .scn-save-row { display: flex; gap: 8px; }
+    .scn-error { color: var(--red); font-size: 12px; margin-top: 8px; }
+
+    /* CATCH-UP */
+    .cu-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 8px; }
+    @media (min-width: 760px) { .cu-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .cu-card { background: var(--white); border: 1px solid var(--border-soft); border-radius: 16px; padding: 22px; }
+    .cu-label { font-family: var(--mono); font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin-bottom: 6px; }
+    .cu-val { display: flex; align-items: baseline; gap: 8px; }
+    .cu-input { font-family: inherit; font-size: 32px; font-weight: 900; border: 2px solid var(--purple); border-radius: 10px; background: var(--white); padding: 4px 10px; width: 130px; color: var(--purple); text-align: right; line-height: 1.1; letter-spacing: -0.02em; }
+    .cu-input.narrow { width: 70px; }
+    .cu-input:focus { outline: none; box-shadow: 0 0 0 3px var(--purple-soft); }
+    .cu-unit { font-size: 20px; font-weight: 700; color: var(--ink-mute); }
+    .cu-val .cu-stat { font-size: 32px; font-weight: 900; letter-spacing: -0.025em; color: var(--ink); }
+    .cu-sub { font-size: 12px; font-weight: 300; color: var(--ink); line-height: 1.5; margin: 10px 0 0; padding-top: 10px; border-top: 1px solid var(--border-soft); }
+
+    .cu-realisme { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+    @media (min-width: 720px) { .cu-realisme { grid-template-columns: repeat(4, 1fr); } }
+    .cu-conclusion { margin-top: 18px; padding: 18px 22px; background: var(--cream); border: 1px solid var(--border-soft); border-radius: 16px; font-size: 14px; line-height: 1.65; }
+    .cu-conclusion strong { font-weight: 800; }
+
+    /* OPERATIONELT */
+    .ops-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 22px; }
+    @media (min-width: 760px) { .ops-grid { grid-template-columns: 1fr 1fr; } }
+    .ops-card { background: var(--white); border: 1px solid var(--border-soft); border-radius: 14px; padding: 20px 22px; }
+    .ops-card h3 { font-family: var(--mono); font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin: 0 0 14px; }
+    .ops-list { display: flex; flex-direction: column; gap: 6px; max-height: 260px; overflow-y: auto; }
+    .ops-item { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; padding: 10px 12px; background: var(--cream); border-radius: 10px; cursor: pointer; align-items: center; transition: background 0.12s; }
+    .ops-item:hover { background: var(--purple-soft); }
+    .ops-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ink-mute); }
+    .ops-dot.green { background: var(--green); }
+    .ops-dot.yellow { background: var(--yellow); }
+    .ops-dot.red { background: var(--red); }
+    .ops-name { font-weight: 700; font-size: 13px; color: var(--ink); }
+    .ops-meta { font-size: 11px; color: var(--ink-mute); margin-top: 2px; }
+    .ops-side { font-size: 12px; font-weight: 700; color: var(--ink); white-space: nowrap; text-align: right; }
+    .ops-side small { display: block; font-size: 10px; color: var(--ink-mute); font-weight: 600; }
+    .ops-empty { font-size: 13px; color: var(--ink-mute); font-style: italic; padding: 8px 0; }
+
+    /* MÅNED-FOR-MÅNED */
+    .mv-list { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+    .mv-month { background: var(--cream); border: 1px solid var(--border-soft); border-radius: 12px; overflow: hidden; }
+    .mv-month[open] { border-color: var(--border-strong); }
+    .mv-month > summary { list-style: none; cursor: pointer; padding: 12px 16px; display: grid; grid-template-columns: 110px 80px 1fr auto; gap: 14px; align-items: center; }
+    .mv-month > summary::-webkit-details-marker { display: none; }
+    .mv-name { font-family: var(--mono); font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); }
+    .mv-cnt { font-size: 12px; color: var(--ink-mute); font-weight: 600; }
+    .mv-sum { font-size: 14px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; text-align: right; }
+    .mv-cum { font-size: 11px; color: var(--ink-mute); font-weight: 600; }
+    .mv-month-list { list-style: none; margin: 0; padding: 0 16px 12px; }
+    .mv-month-list li { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; padding: 6px 0; border-bottom: 1px dashed var(--border-soft); font-size: 12px; align-items: center; }
+    .mv-month-list li:last-child { border-bottom: none; }
+
+    /* PIPE-LISTEN */
+    .controls { margin-bottom: 14px; }
+    .filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 6px; }
+    .filter-row-lbl { font-family: var(--mono); font-size: 11px; font-weight: 800; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.1em; margin-right: 4px; }
+    .filter-btn { padding: 6px 12px; font-size: 12px; font-weight: 700; border: 1px solid var(--border-strong); background: var(--white); border-radius: 6px; cursor: pointer; font-family: inherit; color: var(--ink-mute); transition: all 0.12s; }
+    .filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+    .filter-btn.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .row2 { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 8px; }
+    .row2 input[type="search"], .row2 select { padding: 8px 12px; font-size: 13px; border: 1px solid var(--border-strong); border-radius: 8px; font-family: inherit; background: var(--white); }
+    .row2 input[type="search"] { flex: 1; min-width: 200px; }
+    .pl-tools { position: relative; }
+    .pl-tools > summary { list-style: none; padding: 8px 14px; font-size: 13px; font-weight: 700; border: 1px solid var(--border-strong); background: var(--white); border-radius: 8px; cursor: pointer; color: var(--ink); }
+    .pl-tools > summary::-webkit-details-marker { display: none; }
+    .pl-tools[open] > summary { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .pl-tools-menu { position: absolute; top: calc(100% + 6px); right: 0; min-width: 320px; background: var(--white); border: 1px solid var(--border-strong); border-radius: 12px; padding: 14px; box-shadow: 0 10px 30px rgba(14,14,20,0.10); display: flex; flex-direction: column; gap: 10px; z-index: 10; }
+    .pl-tools-menu button, .pl-tools-menu label { padding: 8px 14px; font-size: 13px; font-weight: 700; border: 1px solid var(--border-strong); background: var(--white); border-radius: 8px; cursor: pointer; font-family: inherit; color: var(--ink); }
+    .pl-tools-menu button:hover { border-color: var(--ink); }
+    .pl-meta { font-size: 12px; color: var(--ink-mute); margin: 8px 0 14px; }
+
+    .pl-table { width: 100%; border-collapse: collapse; }
+    .pl-table thead th { text-align: left; font-family: var(--mono); font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute); padding: 12px 14px; border-bottom: 1px solid var(--border-soft); }
+    .pl-table thead th.num { text-align: right; }
+    .pl-table tbody td { padding: 16px 14px; vertical-align: middle; border-bottom: 1px solid rgba(59,55,85,0.06); }
+    .pl-table tbody tr:last-child td { border-bottom: none; }
+    .pl-th-traffic { width: 70px; text-align: center; }
+    .pl-traffic-cell { text-align: center; cursor: pointer; transition: background 0.12s; }
+    .pl-traffic-cell:hover { background: var(--purple-soft); }
+    .traffic-dot { display: inline-block; width: 20px; height: 20px; border-radius: 50%; background: var(--ink-mute); box-shadow: 0 0 0 3px var(--white), 0 0 0 4px rgba(59,55,85,0.08); }
+    .traffic-dot.green { background: var(--green); box-shadow: 0 0 0 3px var(--white), 0 0 0 4px rgba(80,207,136,0.35); }
+    .traffic-dot.yellow { background: var(--yellow); box-shadow: 0 0 0 3px var(--white), 0 0 0 4px rgba(245,197,66,0.35); }
+    .traffic-dot.red { background: var(--red); box-shadow: 0 0 0 3px var(--white), 0 0 0 4px rgba(233,79,79,0.35); }
+    .ao-name { font-size: 16px; font-weight: 800; color: var(--ink); cursor: pointer; line-height: 1.3; }
+    .ao-name:hover { color: var(--purple); text-decoration: underline; }
+    .ao-name.edited::after { content: " *"; color: var(--purple); }
+    .ao-sub { font-size: 12px; color: var(--ink-mute); margin-top: 3px; }
+    .ao-jagter { font-size: 22px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; text-align: right; }
+    .ao-jagter.excluded { color: var(--ink-mute); text-decoration: line-through; }
+
+    /* AO-KORT MODAL */
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(14,14,20,0.45); backdrop-filter: blur(6px); display: none; align-items: flex-start; justify-content: center; padding: 36px 16px; overflow-y: auto; z-index: 9000; }
+    .modal-backdrop.open { display: flex; }
+    .modal { background: var(--white); border-radius: 20px; max-width: 880px; width: 100%; box-shadow: 0 30px 80px rgba(14,14,20,0.25); position: relative; padding: 32px 36px 40px; }
+    .modal-close { position: absolute; top: 18px; right: 18px; background: transparent; border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 22px; cursor: pointer; color: var(--ink-mute); line-height: 1; }
+    .modal-close:hover { background: rgba(59,55,85,0.08); color: var(--ink); }
+    .modal-body { display: flex; flex-direction: column; gap: 28px; }
+    .m-head { padding-bottom: 20px; border-bottom: 1px solid var(--border-soft); }
+    .m-name { font-size: 28px; font-weight: 800; color: var(--ink); margin: 0 0 6px; letter-spacing: -0.015em; line-height: 1.2; }
+    .m-meta { color: var(--ink-mute); font-size: 13px; line-height: 1.5; }
+    .m-section-label { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute); margin: 0 0 14px; }
+    .m-stage-row { display: flex; gap: 6px; flex-wrap: wrap; }
+    .m-stage-btn { padding: 7px 16px; border-radius: 999px; border: 1.5px solid var(--border-strong); background: transparent; font-weight: 700; font-size: 12px; cursor: pointer; font-family: inherit; color: var(--ink-mute); transition: all 0.12s; }
+    .m-stage-btn:hover { border-color: var(--ink); color: var(--ink); }
+    .m-stage-btn.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .m-stage-meta { display: flex; gap: 16px; align-items: center; font-size: 13px; color: var(--ink-mute); margin-top: 14px; }
+    .m-stage-meta strong { color: var(--ink); font-weight: 700; }
+    .m-stage-meta.warn strong { color: var(--ink); }
+
+    .m-pot-stack { display: flex; flex-direction: column; gap: 8px; }
+    .m-pot-row { display: grid; grid-template-columns: 200px 1fr auto; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 12px; background: rgba(59,55,85,0.035); }
+    .m-pot-label { font-size: 11px; font-weight: 800; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.1em; }
+    .m-pot-calc { font-size: 12px; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
+    .m-pot-val { font-size: 22px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; text-align: right; letter-spacing: -0.01em; }
+    .m-pot-row.target { background: var(--purple-soft); }
+    .m-pot-row.target .m-pot-val { color: var(--purple); }
+
+    .m-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .m-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .m-field { display: flex; flex-direction: column; gap: 4px; }
+    .m-field-label { font-size: 11px; color: var(--ink-mute); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+    .m-input, .m-select { font-family: inherit; font-size: 14px; padding: 10px 14px; border: 1.5px solid var(--border-strong); border-radius: 10px; background: var(--white); color: var(--ink); transition: all 0.12s; }
+    .m-input:focus, .m-select:focus { outline: none; border-color: var(--purple); box-shadow: 0 0 0 3px var(--purple-soft); }
+    .m-yn-row { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+    .m-yn-btn { padding: 6px 14px; font-size: 12px; font-weight: 700; border: 1.5px solid var(--border-strong); background: transparent; border-radius: 999px; cursor: pointer; font-family: inherit; color: var(--ink-mute); transition: all 0.12s; }
+    .m-yn-btn:hover { border-color: var(--ink); color: var(--ink); }
+    .m-yn-btn.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .m-yn-btn.active.yes { background: var(--green); color: var(--ink); border-color: var(--green); }
+
+    .m-traffic-row { display: flex; align-items: center; gap: 16px; padding: 14px 0 18px; }
+    .m-traffic-info { flex: 1; }
+    .m-traffic-headline { font-size: 16px; font-weight: 800; color: var(--ink); margin-bottom: 3px; }
+    .m-traffic-sub { font-size: 12px; color: var(--ink-mute); line-height: 1.5; }
+    .m-traffic-picker { display: flex; gap: 6px; flex-wrap: wrap; }
+    .m-traffic-btn { padding: 8px 16px; border-radius: 999px; border: 1.5px solid var(--border-strong); background: transparent; font-weight: 700; font-size: 12px; cursor: pointer; font-family: inherit; color: var(--ink-mute); display: inline-flex; align-items: center; gap: 8px; transition: all 0.12s; }
+    .m-traffic-btn:hover { border-color: var(--ink); color: var(--ink); }
+    .m-traffic-btn.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .m-traffic-btn.active.green { background: var(--green); color: var(--ink); border-color: var(--green); }
+    .m-traffic-btn.active.yellow { background: var(--yellow); color: var(--ink); border-color: var(--yellow); }
+    .m-traffic-btn.active.red { background: var(--red); color: var(--white); border-color: var(--red); }
+
+    .m-scn-picker { display: flex; gap: 6px; flex-wrap: wrap; }
+    .m-scn-btn { padding: 8px 16px; border-radius: 999px; border: 1.5px solid var(--border-strong); background: transparent; font-weight: 700; font-size: 12px; cursor: pointer; font-family: inherit; color: var(--ink-mute); transition: all 0.12s; }
+    .m-scn-btn:hover { border-color: var(--ink); color: var(--ink); }
+    .m-scn-btn.active.uncertain { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .m-scn-btn.active.win { background: var(--green); color: var(--ink); border-color: var(--green); }
+    .m-scn-btn.active.loss { background: var(--red); color: var(--white); border-color: var(--red); }
+
+    .m-checklist { display: flex; flex-direction: column; gap: 4px; }
+    .m-check-row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px; background: rgba(59,55,85,0.03); }
+    .m-check-row.done { background: var(--green-soft); }
+    .m-check-row.skip { background: rgba(245,197,66,0.06); opacity: 0.75; }
+    .m-check-status { display: flex; gap: 4px; }
+    .m-check-btn { padding: 4px 10px; font-size: 11px; font-weight: 700; border: 1px solid var(--border-strong); background: var(--white); border-radius: 6px; cursor: pointer; font-family: inherit; color: var(--ink-mute); }
+    .m-check-btn.active.done { background: var(--green); border-color: var(--green); color: var(--ink); }
+    .m-check-btn.active.skip { background: var(--yellow); border-color: var(--yellow); color: var(--ink); }
+    .m-check-label { font-size: 13px; color: var(--ink); }
+
+    .m-log { display: flex; flex-direction: column; gap: 4px; max-height: 220px; overflow-y: auto; }
+    .m-log-row { padding: 10px 14px; background: rgba(59,55,85,0.035); border-radius: 10px; font-size: 12px; color: var(--ink); }
+    .m-log-date { color: var(--ink-mute); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 8px; }
+    .m-empty { color: var(--ink-mute); font-style: italic; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="pipe-head">
+      <span class="label">Pipen · Crediwire</span>
+      <h1>Hvem · Hvor langt · Hvor mange penge · Hvilke actions</h1>
+      <p>Pipen viser <strong>ny ARR</strong> (oven i 866K nuværende). Forecast = nuværende + modne lukker + i gang vægtet − 60K churn.</p>
+    </header>
+
+    <section class="summary" id="summary"></section>
+
+    <details class="fold" id="foldScenario">
+      <summary>
+        <span class="fold-title">Scenarie-bygger</span>
+        <span class="fold-meta">Stress-test forecast med antagelser</span>
+        <span class="fold-chev">▾</span>
+      </summary>
+      <div class="fold-body">
+        <p style="margin:8px 0 0; color: var(--ink-mute); font-size: 13px;">Skriv én eller flere antagelser i naturlig sprog. Eksempel: "GT glipper, Beierholm lukker, Buus glipper".</p>
+        <div class="scn-input-row">
+          <input class="scn-input" id="scenarioInput" placeholder="Fx: GT glipper, Beierholm lukker">
+          <button class="scn-btn" id="scenarioApply">Anvend</button>
+        </div>
+        <div class="scn-error" id="scenarioError"></div>
+        <div class="scn-active" id="scenarioActive"></div>
+        <div class="scn-forecast" id="scenarioForecast"></div>
+        <div class="scn-hint" id="scenarioHint" style="display:none;"></div>
+        <div class="scn-presets">
+          <button class="scn-btn ghost" data-preset="gt-loss">Hvis GT glipper</button>
+          <button class="scn-btn ghost" data-preset="worst">Worst case · alle Demo glipper</button>
+          <button class="scn-btn ghost" data-preset="best">Best case · alle uncertain lukker</button>
+          <button class="scn-btn ghost" data-preset="reset">Reset alle til uncertain</button>
+        </div>
+        <div class="scn-saved">
+          <h3>Gemte scenarier</h3>
+          <div class="scn-saved-list" id="savedScenariosList"></div>
+          <div class="scn-save-row">
+            <input class="scn-input" id="scenarioNameInput" placeholder="Navngiv nuværende scenarie">
+            <button class="scn-btn" id="scenarioSaveBtn">Gem</button>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="fold" id="foldCatchup" open>
+      <summary>
+        <span class="fold-title">Mål · måneder · realisme</span>
+        <span class="fold-meta">Tast dit mål og deadline</span>
+        <span class="fold-chev">▾</span>
+      </summary>
+      <div class="fold-body">
+        <div class="cu-grid">
+          <div class="cu-card">
+            <div class="cu-label">Status (jun 2026)</div>
+            <div class="cu-val"><span class="cu-stat" id="cuStatus">867k</span></div>
+            <p class="cu-sub">Nuværende ARR fra betalende AOs. Live fra pipen.</p>
+          </div>
+          <div class="cu-card">
+            <div class="cu-label">Mål EOY 2026 · tast selv</div>
+            <div class="cu-val"><input type="number" class="cu-input" id="cuGoalInput" value="2.3" min="0" step="0.1"><span class="cu-unit">M</span></div>
+            <p class="cu-sub">Default: 2,3M fra Revenue budget.xlsx. Skift hvis du tester andet mål.</p>
+          </div>
+          <div class="cu-card">
+            <div class="cu-label">Måneder tilbage · tast selv</div>
+            <div class="cu-val"><input type="number" class="cu-input narrow" id="cuMonthsInput" value="4" min="1" max="12" step="1"><span class="cu-unit">mdr</span></div>
+            <p class="cu-sub">Effektive lukke-måneder du har tilbage. Default 4: aug-nov.</p>
+          </div>
+        </div>
+        <div class="cu-realisme" id="cuRealisme"></div>
+        <p class="cu-conclusion" id="cuConclusion">Beregnes når du taster mål og måneder.</p>
+      </div>
+    </details>
+
+    <section class="ops-grid">
+      <div class="ops-card">
+        <h3>Denne uges actions</h3>
+        <div class="ops-list" id="opsActions"></div>
+      </div>
+      <div class="ops-card">
+        <h3>AOs der står stille</h3>
+        <div class="ops-list" id="opsStuck"></div>
+      </div>
+    </section>
+
+    <details class="fold" id="foldMonth" open>
+      <summary>
+        <span class="fold-title">Måned-for-måned 2026</span>
+        <span class="fold-meta">Hvornår lander pengene</span>
+        <span class="fold-chev">▾</span>
+      </summary>
+      <div class="fold-body">
+        <div class="mv-list" id="monthView"></div>
+        <p style="margin-top:14px; color: var(--ink-mute); font-size: 12px;" id="monthMeta"></p>
+      </div>
+    </details>
+
+    <details class="fold" id="foldList" open>
+      <summary>
+        <span class="fold-title">Alle <span id="aoCountTitle">86</span> revisionshuse</span>
+        <span class="fold-meta">Klik AO-navn for kort · klik prik for trafiklys</span>
+        <span class="fold-chev">▾</span>
+      </summary>
+      <div class="fold-body">
+        <div class="controls">
+          <div class="filter-row" id="filtersSeg"></div>
+          <div class="filter-row" id="filtersTraffic"></div>
+          <div class="row2">
+            <input type="search" id="searchInput" placeholder="Søg AO-navn...">
+            <select id="sortSelect">
+              <option value="jagter">Sortér: Jagter ARR ↓</option>
+              <option value="erklaer">Erklæringer ↓</option>
+              <option value="current">Nuværende ARR ↓</option>
+              <option value="name">Navn (A-Å)</option>
+              <option value="stage">Stadie</option>
+            </select>
+            <details class="pl-tools">
+              <summary>Værktøjer</summary>
+              <div class="pl-tools-menu">
+                <button id="exportCSV">Eksportér CSV</button>
+                <button id="exportState">Gem state (JSON)</button>
+                <label style="cursor:pointer;" for="importStateInput">Indlæs state</label>
+                <input type="file" id="importStateInput" accept=".json" style="display:none;">
+                <button id="resetState">Reset alle overrides</button>
+              </div>
+            </details>
+          </div>
+        </div>
+        <p class="pl-meta" id="plMeta"></p>
+        <table class="pl-table" id="pipeTable"></table>
+      </div>
+    </details>
+  </main>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" type="button">×</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    // ============ KONSTANTER ============
+    const STORAGE_KEY = 'pipelineOverridesV2';
+    const SCENARIOS_KEY = 'pipeScenariosV1';
+    const CURRENT_ARR_BASE = 866572;
+    const CHURN_H2 = 60000;
+    const GOAL_DEFAULT_M = 2.3;
+    const YTD_PACE = 58000;
+
+    const STAGE_OPTIONS = ['Kold', 'Prospect', 'Demo', 'Trial', 'Contract', 'Won', 'Tabt'];
+    const STAGE_PROB = {Kold: 0, Prospect: 0.05, Demo: 0.15, Trial: 0.30, Contract: 0.90, Won: 1.00, Tabt: 0};
+    const STAGE_MAX_DAYS = {Kold: 365, Prospect: 30, Demo: 21, Trial: 60, Contract: 21, Won: 9999, Tabt: 9999};
+    const MONTHS_OPT = ['', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec', 'Q1 2027', 'Q2 2027', 'H2 2027', '2028+'];
+    const ACTION_TYPES = ['Ring', 'Møde', 'Mail', 'LinkedIn', 'Webinar', 'Træning', 'Onboarding', 'Andet'];
+
+    const PL_SEG = {
+      existing:       {label:'Eksisterende', rate:0.25, rateStr:'25%'},
+      top:            {label:'Top prospects', rate:0.05, rateStr:'5%'},
+      accru:          {label:'Accru', rate:0.02, rateStr:'2%'},
+      rgd:            {label:'RGD', rate:0.02, rateStr:'2%'},
+      next_20:        {label:'Næste 20 fokus', rate:0.02, rateStr:'2%'},
+      andre_fra_pipe: {label:'Andre fra pipe', rate:0.02, rateStr:'2%'},
+      won_other:      {label:'Won (ikke revisionshus)', rate:0, rateStr:'·'},
+    };
+
+    const STANDARD_PROCESS = {
+      'Prospect': [
+        {id:'identify_dm', label:'Identificeret beslutningstager'},
+        {id:'intro_sent', label:'Sendt introduktion (mail/LinkedIn)'},
+        {id:'demo_booked', label:'Demo booket'},
+      ],
+      'Demo': [
+        {id:'demo_held', label:'Demo afholdt'},
+        {id:'needs_mapped', label:'Behov, risici og potentiale afdækket'},
+        {id:'price_disc', label:'Pris drøftet'},
+        {id:'follow_mail', label:'Opfølgningsmail sendt'},
+        {id:'dm_engaged', label:'Beslutningstager på banen'},
+      ],
+      'Trial': [
+        {id:'created', label:'AO oprettet'},
+        {id:'onboarded', label:'Max 5 kunder onboardet'},
+        {id:'followup1', label:'Opfølgning ring/mail'},
+        {id:'followup2', label:'Møde: hvordan går trial'},
+        {id:'closing_mtg', label:'Slut-trial møde: hvor mange kunder'},
+        {id:'dm_confirmed', label:'Beslutningstager bekræftet engageret'},
+        {id:'contract_ok', label:'Vi har lov at sende kontrakt'},
+      ],
+      'Contract': [
+        {id:'sent', label:'Kontrakt sendt'},
+        {id:'reviewed', label:'Gennemgang afholdt'},
+        {id:'qa_cleared', label:'Spørgsmål afklaret'},
+      ],
+      'Won': [
+        {id:'signed', label:'Kontrakt underskrevet'},
+        {id:'invoiced', label:'Faktura sendt'},
+        {id:'onboard_plan', label:'Onboarding-plan lavet'},
+        {id:'impl_started', label:'Implementering startet'},
+        {id:'cs_active', label:'Løbende CS-touchpoints aktive'},
+      ],
+      'Tabt': [
+        {id:'reason', label:'Tabt-årsag dokumenteret'},
+        {id:'reactivate', label:'Genaktivering aftalt'},
+      ],
+      'Kold': [
+        {id:'note', label:'Markeret som kold'},
+      ],
+    };
+
+    // ============ DATA (PIPELINE_AOS embedded) ============
+    const PIPELINE_AOS = [{"name":"Grant Thornton","cvr":"34209936","segment":"existing","rate":0.25,"erklaeringer":11366,"current_smvs":740,"target_smvs":2841,"pris_per_smv":516,"current_arr":381603,"stage":"Trial"},{"name":"BUUS JENSEN I/S STATSAUTORISEREDE REVISORER","cvr":"36029374","segment":"existing","rate":0.25,"erklaeringer":1497,"current_smvs":5,"target_smvs":374,"pris_per_smv":3446,"current_arr":17232,"stage":"Trial"},{"name":"Kreston CM","cvr":"39463113","segment":"existing","rate":0.25,"erklaeringer":1219,"current_smvs":20,"target_smvs":304,"pris_per_smv":1211,"current_arr":24225,"stage":"Demo"},{"name":"Revisionsfirmaet Edelbo","cvr":"35486178","segment":"existing","rate":0.25,"erklaeringer":985,"current_smvs":100,"target_smvs":246,"pris_per_smv":588,"current_arr":58800,"stage":"Won"},{"name":"Dansk Revision Århus","cvr":"26717671","segment":"existing","rate":0.25,"erklaeringer":624,"current_smvs":20,"target_smvs":156,"pris_per_smv":1000,"current_arr":20000,"stage":"Kold"},{"name":"Leif Mikkelsen & Partnere","cvr":"32676421","segment":"existing","rate":0.25,"erklaeringer":614,"current_smvs":15,"target_smvs":153,"pris_per_smv":667,"current_arr":10000,"stage":"Trial"},{"name":"Powered-By Statsautoriseret Revisionspartnerselskab","cvr":"44282380","segment":"existing","rate":0.25,"erklaeringer":556,"current_smvs":110,"target_smvs":139,"pris_per_smv":991,"current_arr":109040,"stage":"Trial"},{"name":"Revimidt","cvr":"34480370","segment":"existing","rate":0.25,"erklaeringer":439,"current_smvs":38,"target_smvs":109,"pris_per_smv":1226,"current_arr":46588,"stage":"Trial"},{"name":"Skov Revision","cvr":"27525989","segment":"existing","rate":0.25,"erklaeringer":355,"current_smvs":122,"target_smvs":88,"pris_per_smv":512,"current_arr":62500,"stage":"Kold"},{"name":"Revisionsfirmaet Axel Gram","cvr":"16645699","segment":"existing","rate":0.25,"erklaeringer":289,"current_smvs":50,"target_smvs":72,"pris_per_smv":588,"current_arr":29400,"stage":"Kold"},{"name":"Danrevi Løgstør","cvr":"10019699","segment":"existing","rate":0.25,"erklaeringer":5,"current_smvs":15,"target_smvs":1,"pris_per_smv":667,"current_arr":10000,"stage":"Won"},{"name":"RevisorGruppen I/S","cvr":"34953619","segment":"existing","rate":0.25,"erklaeringer":0,"current_smvs":15,"target_smvs":0,"pris_per_smv":1626,"current_arr":13246,"stage":"Won"},{"name":"Beierholm","cvr":"32895468","segment":"top","rate":0.05,"erklaeringer":34002,"current_smvs":0,"target_smvs":1700,"pris_per_smv":1626,"current_arr":6138,"stage":"Trial"},{"name":"Martinsen","cvr":"32285201","segment":"top","rate":0.05,"erklaeringer":8150,"current_smvs":0,"target_smvs":407,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Redmark","cvr":"29442789","segment":"top","rate":0.05,"erklaeringer":6117,"current_smvs":0,"target_smvs":305,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"RSM","cvr":"25492145","segment":"top","rate":0.05,"erklaeringer":5029,"current_smvs":0,"target_smvs":251,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Baker Tilly Denmark","cvr":"35257691","segment":"top","rate":0.05,"erklaeringer":3789,"current_smvs":0,"target_smvs":189,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Christensen Kjærulff","cvr":"15915641","segment":"top","rate":0.05,"erklaeringer":3037,"current_smvs":0,"target_smvs":151,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Inforevision","cvr":"19263096","segment":"top","rate":0.05,"erklaeringer":2932,"current_smvs":0,"target_smvs":146,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Roesgaard","cvr":"37543128","segment":"top","rate":0.05,"erklaeringer":2770,"current_smvs":0,"target_smvs":138,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Revisionshuset Tal & Tanker","cvr":"37315664","segment":"top","rate":0.05,"erklaeringer":1739,"current_smvs":0,"target_smvs":86,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Sønderjyllands revision","cvr":"18061635","segment":"top","rate":0.05,"erklaeringer":1561,"current_smvs":0,"target_smvs":78,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Aaen & Co.","cvr":"33241763","segment":"top","rate":0.05,"erklaeringer":1449,"current_smvs":0,"target_smvs":72,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Piaster Revisorerne","cvr":"25160037","segment":"top","rate":0.05,"erklaeringer":1348,"current_smvs":0,"target_smvs":67,"pris_per_smv":1626,"current_arr":0,"stage":"Trial"},{"name":"Baagøe Schou","cvr":"21148148","segment":"top","rate":0.05,"erklaeringer":1183,"current_smvs":0,"target_smvs":59,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Albjerg","cvr":"35382879","segment":"top","rate":0.05,"erklaeringer":1080,"current_smvs":0,"target_smvs":54,"pris_per_smv":1626,"current_arr":0,"stage":"Contract"},{"name":"Addere Revision","cvr":"34589992","segment":"top","rate":0.05,"erklaeringer":1057,"current_smvs":0,"target_smvs":52,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Krøyer Pedersen Statsautoriserede Revisorer P/S","cvr":"45922391","segment":"top","rate":0.05,"erklaeringer":877,"current_smvs":0,"target_smvs":43,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Revisionscentret Aabenraa","cvr":"29695636","segment":"top","rate":0.05,"erklaeringer":868,"current_smvs":0,"target_smvs":43,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Dansk Revision Slagelse","cvr":"29919801","segment":"top","rate":0.05,"erklaeringer":822,"current_smvs":0,"target_smvs":41,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Dansk Revision Søborg","cvr":"14649905","segment":"top","rate":0.05,"erklaeringer":802,"current_smvs":0,"target_smvs":40,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Dansk Revision Holbæk","cvr":"28853343","segment":"top","rate":0.05,"erklaeringer":774,"current_smvs":0,"target_smvs":38,"pris_per_smv":1626,"current_arr":0,"stage":"Trial"},{"name":"Kallermann Revision","cvr":"30195264","segment":"top","rate":0.05,"erklaeringer":720,"current_smvs":0,"target_smvs":36,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"PKF Munkebo Vindelev","cvr":"14119299","segment":"top","rate":0.05,"erklaeringer":716,"current_smvs":0,"target_smvs":35,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"VH Revision","cvr":"17871080","segment":"top","rate":0.05,"erklaeringer":663,"current_smvs":0,"target_smvs":33,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Revisionsfirmaet Lars Olsen","cvr":"37135119","segment":"top","rate":0.05,"erklaeringer":485,"current_smvs":0,"target_smvs":24,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Dansk Revision Frederikssund","cvr":"86141019","segment":"top","rate":0.05,"erklaeringer":421,"current_smvs":0,"target_smvs":21,"pris_per_smv":1626,"current_arr":0,"stage":"Trial"},{"name":"Andersen Revision","cvr":"32326706","segment":"top","rate":0.05,"erklaeringer":364,"current_smvs":0,"target_smvs":18,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Revisionscentret Sønderborg","cvr":"38951394","segment":"top","rate":0.05,"erklaeringer":338,"current_smvs":0,"target_smvs":16,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Revisionscentret Ribe","cvr":"18936305","segment":"top","rate":0.05,"erklaeringer":322,"current_smvs":0,"target_smvs":16,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Revisions-Centret ApS","cvr":"41578513","segment":"top","rate":0.05,"erklaeringer":321,"current_smvs":0,"target_smvs":16,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Midt Revision","cvr":"39065797","segment":"top","rate":0.05,"erklaeringer":284,"current_smvs":0,"target_smvs":14,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Krøyer Pedersen Statsautoriserede Revisorer","cvr":"89224918","segment":"top","rate":0.05,"erklaeringer":185,"current_smvs":0,"target_smvs":9,"pris_per_smv":1626,"current_arr":0,"stage":"Trial"},{"name":"Revisionscentret v/Jesper Thygesen","cvr":"10352231","segment":"top","rate":0.05,"erklaeringer":165,"current_smvs":0,"target_smvs":8,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Revisionscentret 5R Esbjerg","cvr":"26279534","segment":"top","rate":0.05,"erklaeringer":148,"current_smvs":0,"target_smvs":7,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Revisionscentret Haderslev","cvr":"13976295","segment":"top","rate":0.05,"erklaeringer":116,"current_smvs":0,"target_smvs":5,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Rödl & Partner Danmark","cvr":"39188678","segment":"top","rate":0.05,"erklaeringer":95,"current_smvs":0,"target_smvs":4,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"JS Revision, Godkendt Revisionsaktieselskab","cvr":"37999687","segment":"accru","rate":0.02,"erklaeringer":1405,"current_smvs":0,"target_smvs":28,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Sønderup Godkendt Revisionsaktieselskab","cvr":"45907880","segment":"accru","rate":0.02,"erklaeringer":1302,"current_smvs":0,"target_smvs":26,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Nærrevision","cvr":"17524305","segment":"accru","rate":0.02,"erklaeringer":826,"current_smvs":0,"target_smvs":16,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Revision Sjælland","cvr":"28309791","segment":"accru","rate":0.02,"erklaeringer":721,"current_smvs":0,"target_smvs":14,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"TJEK Revision & Rådgivning","cvr":"36563877","segment":"accru","rate":0.02,"erklaeringer":547,"current_smvs":0,"target_smvs":10,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Robæk","cvr":"33946406","segment":"accru","rate":0.02,"erklaeringer":531,"current_smvs":0,"target_smvs":10,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Sønderup","cvr":"31824559","segment":"accru","rate":0.02,"erklaeringer":520,"current_smvs":0,"target_smvs":10,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Bille & Buch-Andersen","cvr":"18282046","segment":"accru","rate":0.02,"erklaeringer":456,"current_smvs":0,"target_smvs":9,"pris_per_smv":1626,"current_arr":0,"stage":"Prospect"},{"name":"Sønderup & Partnere","cvr":"27905072","segment":"accru","rate":0.02,"erklaeringer":439,"current_smvs":0,"target_smvs":8,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"W. Kragh","cvr":"16206407","segment":"accru","rate":0.02,"erklaeringer":339,"current_smvs":0,"target_smvs":6,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"SR Revision","cvr":"19536890","segment":"accru","rate":0.02,"erklaeringer":312,"current_smvs":0,"target_smvs":6,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Mer Revision","cvr":"32344720","segment":"accru","rate":0.02,"erklaeringer":238,"current_smvs":0,"target_smvs":4,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Partner Revision","cvr":"15807776","segment":"rgd","rate":0.02,"erklaeringer":5415,"current_smvs":0,"target_smvs":108,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Kovsted & Skovgård","cvr":"38751646","segment":"rgd","rate":0.02,"erklaeringer":1250,"current_smvs":0,"target_smvs":25,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Ullits & Winther","cvr":"32093272","segment":"rgd","rate":0.02,"erklaeringer":809,"current_smvs":0,"target_smvs":16,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Nejstgaard & Vetlov","cvr":"12868693","segment":"rgd","rate":0.02,"erklaeringer":625,"current_smvs":0,"target_smvs":12,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"REVISION & RÅD STATSAUTORISERET REVISIONSPARTNERSELSKAB","cvr":"46125894","segment":"rgd","rate":0.02,"erklaeringer":454,"current_smvs":0,"target_smvs":9,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Attent Statsautoriseret Revisionsanpartsselskab","cvr":"36427205","segment":"rgd","rate":0.02,"erklaeringer":312,"current_smvs":0,"target_smvs":6,"pris_per_smv":1626,"current_arr":0,"stage":"Prospect"},{"name":"Revision & Råd","cvr":"36923318","segment":"rgd","rate":0.02,"erklaeringer":261,"current_smvs":0,"target_smvs":5,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Slebo Revision Statsautoriseret Revisionsanpartsselskab","cvr":"44984326","segment":"rgd","rate":0.02,"erklaeringer":149,"current_smvs":0,"target_smvs":2,"pris_per_smv":1626,"current_arr":0,"stage":"Kold"},{"name":"Blicher Revision & Rådgivning","cvr":"78337818","segment":"next_20","rate":0.02,"erklaeringer":752,"current_smvs":0,"target_smvs":15,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Revisionsfirmaet Albrechtsen","cvr":"77926410","segment":"andre_fra_pipe","rate":0.02,"erklaeringer":579,"current_smvs":0,"target_smvs":11,"pris_per_smv":1626,"current_arr":0,"stage":"Prospect"},{"name":"Kreston SR","cvr":"33948794","segment":"andre_fra_pipe","rate":0.02,"erklaeringer":546,"current_smvs":0,"target_smvs":10,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Aage Maagensen","cvr":"12901038","segment":"andre_fra_pipe","rate":0.02,"erklaeringer":386,"current_smvs":0,"target_smvs":7,"pris_per_smv":1626,"current_arr":0,"stage":"Prospect"},{"name":"DLBR Revision","cvr":"32451195","segment":"andre_fra_pipe","rate":0.02,"erklaeringer":346,"current_smvs":0,"target_smvs":6,"pris_per_smv":1626,"current_arr":0,"stage":"Prospect"},{"name":"Revisionsfirmaet Seiersen Revision","cvr":"32697674","segment":"andre_fra_pipe","rate":0.02,"erklaeringer":276,"current_smvs":0,"target_smvs":5,"pris_per_smv":1626,"current_arr":0,"stage":"Prospect"},{"name":"Bjørnlaursen","cvr":"32671594","segment":"andre_fra_pipe","rate":0.02,"erklaeringer":235,"current_smvs":0,"target_smvs":4,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"Nem Revisor ApS","cvr":"35235892","segment":"andre_fra_pipe","rate":0.02,"erklaeringer":163,"current_smvs":0,"target_smvs":3,"pris_per_smv":1626,"current_arr":0,"stage":"Prospect"},{"name":"DM Revision","cvr":"14569391","segment":"andre_fra_pipe","rate":0.02,"erklaeringer":154,"current_smvs":0,"target_smvs":3,"pris_per_smv":1626,"current_arr":0,"stage":"Prospect"},{"name":"Harboe og B.","cvr":"33649452","segment":"andre_fra_pipe","rate":0.02,"erklaeringer":150,"current_smvs":0,"target_smvs":3,"pris_per_smv":1626,"current_arr":0,"stage":"Prospect"},{"name":"Revisionskontoret i Faxe","cvr":"16609331","segment":"andre_fra_pipe","rate":0.02,"erklaeringer":140,"current_smvs":0,"target_smvs":2,"pris_per_smv":1626,"current_arr":0,"stage":"Prospect"},{"name":"velas I/S","cvr":"30869052","segment":"andre_fra_pipe","rate":0.02,"erklaeringer":136,"current_smvs":0,"target_smvs":2,"pris_per_smv":1626,"current_arr":0,"stage":"Prospect"},{"name":"Revisionsfirmaet Obsen & Nielsen","cvr":"26399610","segment":"andre_fra_pipe","rate":0.02,"erklaeringer":15,"current_smvs":0,"target_smvs":0,"pris_per_smv":1626,"current_arr":0,"stage":"Demo"},{"name":"E-conomia Consulting ApS","cvr":"X1","segment":"won_other","rate":0,"erklaeringer":0,"current_smvs":87,"target_smvs":0,"pris_per_smv":290,"current_arr":25200,"stage":"Won"},{"name":"Erhvervshus Midtjylland","cvr":"X2","segment":"won_other","rate":0,"erklaeringer":0,"current_smvs":0,"target_smvs":0,"pris_per_smv":1626,"current_arr":18000,"stage":"Won"},{"name":"Ellebæk Revision","cvr":"X3","segment":"won_other","rate":0,"erklaeringer":0,"current_smvs":0,"target_smvs":0,"pris_per_smv":1626,"current_arr":10000,"stage":"Won"},{"name":"LPOG (opsagt)","cvr":"X4","segment":"won_other","rate":0,"erklaeringer":0,"current_smvs":5,"target_smvs":0,"pris_per_smv":1800,"current_arr":9000,"stage":"Tabt"},{"name":"Admin4you","cvr":"X5","segment":"won_other","rate":0,"erklaeringer":0,"current_smvs":0,"target_smvs":0,"pris_per_smv":1626,"current_arr":9000,"stage":"Won"},{"name":"Cloud Controlling ApS","cvr":"X6","segment":"won_other","rate":0,"erklaeringer":0,"current_smvs":0,"target_smvs":0,"pris_per_smv":1626,"current_arr":6600,"stage":"Won"}];
+
+    // Kortform-mapping for natural language parsing
+    const SHORT_NAMES = {
+      'gt': '34209936', 'grant thornton': '34209936',
+      'buus': '36029374', 'buus jensen': '36029374',
+      'kreston cm': '39463113', 'kreston': '39463113',
+      'edelbo': '35486178',
+      'pb': '44282380', 'powered-by': '44282380', 'powered by': '44282380',
+      'revimidt': '34480370',
+      'skov': '27525989', 'skov revision': '27525989',
+      'beierholm': '32895468',
+      'martinsen': '32285201',
+      'redmark': '29442789',
+      'rsm': '25492145',
+      'baker tilly': '35257691', 'baker': '35257691',
+      'christensen kjærulff': '15915641', 'ck': '15915641', 'christensen': '15915641',
+      'inforevision': '19263096',
+      'roesgaard': '37543128',
+      'tal & tanker': '37315664', 't&t': '37315664', 'tal og tanker': '37315664',
+      'sønderjyllands': '18061635',
+      'aaen': '33241763', 'aaen & co': '33241763',
+      'piaster': '25160037',
+      'baagøe': '21148148', 'baagøe schou': '21148148',
+      'albjerg': '35382879',
+      'addere': '34589992',
+      'pkf': '14119299',
+      'kallermann': '30195264',
+      'lars-olsen': '37135119', 'lars olsen': '37135119',
+      'kovsted': '38751646', 'kovsted & skovgård': '38751646',
+      'partner revision': '15807776',
+      'js revision': '37999687', 'js': '37999687',
+      'nærrevision': '17524305',
+      'revision sjælland': '28309791',
+      'tjek': '36563877', 'tjek revision': '36563877',
+      'blicher': '78337818',
+    };
+
+    // ============ PRE-POPULATED DATA (fra Mads' planlægnings-note 29 juni 2026) ============
+    // Auto-applies én gang ved første åbning (mergeres med eksisterende overrides)
+    const PRE_POP_VERSION = '29juni-v1';
+    const PRE_POP_KEY = 'pipePrePopApplied_' + PRE_POP_VERSION;
+    const PRE_POP_DATA = {"10019699":{"notes":"OK glad. Kan vokse med business casen."},"15807776":{"notes":"Har indgang men ikke den rigtige tror jeg."},"15915641":{"notes":"Et par indgang. De er afvisende. Skal finde bedre indgang. RGD måske nøglen."},"16645699":{"notes":"Super glade. Lidt mindre. Skal holdes til ilden.","trafficLight":"green","nextActionType":"Ring","nextActionDescription":"Hold dem til ilden"},"17524305":{"notes":"Ingen indgang.","trafficLight":"red"},"18061635":{"notes":"Dialog primært på rapporter. Fornemmer ikke det største behov. Prøver at få møde for at afdække."},"19263096":{"notes":"Tror ikke på dem.","trafficLight":"red","scenarioState":"locked_loss"},"21148148":{"notes":"Skal række ud. Har været kunder. God dialog.","nextActionType":"Mail","nextActionDescription":"Outreach"},"25160037":{"notes":"Har demoet og prøvet flere gange. Ikke bidt på. Mødes med partner i august via BNI.","nextActionType":"Møde","nextActionDate":"2026-08-12","nextActionDescription":"Partner-møde · sat op via BNI"},"25492145":{"notes":"Skal skabe et forhold. Også RGD."},"26717671":{"notes":"Største udfordring: de vil ikke mappe. Vi har løst den udfordring. Skal besøge og lave plan for udrulning.","nextActionType":"Møde","nextActionDate":"2026-08-15","nextActionDescription":"Besøg + plan for udrulning"},"27525989":{"notes":"Super glad. Mange mennesker i organisationen jeg kan trække på.","trafficLight":"green"},"27905072":{"notes":"Accru som indgang men ingen aktiv dialog."},"28309791":{"notes":"Møde i august.","nextActionType":"Møde","nextActionDate":"2026-08-15","nextActionDescription":"Møde aug"},"28853343":{"notes":"Mangler partner-støtte."},"29442789":{"notes":"Har indgang men der sker ikke noget. Skal tale med nogle andre.","trafficLight":"red"},"29695636":{"notes":"Siger vi skal være lige som Revibot før de gider os. Tror business case kommer til at gøre forskel."},"29919801":{"notes":"Muligheder. Skal have møde så hurtigt som muligt i august.","nextActionType":"Møde","nextActionDate":"2026-08-08","nextActionDescription":"Møde så hurtigt som muligt"},"30195264":{"notes":"Møde booket allerede.","trafficLight":"green","nextActionType":"Møde","nextActionDate":"2026-08-05","nextActionDescription":"Allerede booket møde"},"31824559":{"notes":"Accru som indgang men ingen aktiv dialog."},"32093272":{"notes":"Har adgang og skal prøve igen. Tror der er personer der ikke synes vi er seje · skal kigges på."},"32285201":{"notes":"Del af RGD men mangler solid indgang. Skal finde vej ind."},"32676421":{"notes":"OK glad. Lille deal. Kan vokse med business casen."},"32895468":{"notes":"Partneraftale på rapporter. Dialog på dataanalyser. Møde booket august. Webinar-plan. Aktivere medarbejdere og kunder.","trafficLight":"green","nextActionType":"Møde","nextActionDate":"2026-08-15","nextActionDescription":"Webinar-plan + dataanalyser"},"33241763":{"notes":"Mangler solid indgang. Har via BNI men ikke den rigtige. Håber han sender mig videre."},"34209936":{"notes":"Super glad. Mange mennesker i organisationen jeg kan trække på. Fokus på træning så hurtigt efter sommer som muligt. Rune fra GT er hovednavn på Revisor-undervisningen på Digitaliseringsdagen.","trafficLight":"green","scenarioState":"locked_win","nextActionType":"Træning","nextActionDate":"2026-08-25","nextActionDescription":"Træninger sat op slut august med faglig afdeling"},"34480370":{"notes":"Virker glade. Siger nogle af deres små kunder er for små. Måske passer assistance rigtig godt ind her. Skal have muligheden for at se det efter sommer.","nextActionType":"Møde","nextActionDate":"2026-08-10","nextActionDescription":"Vis assistance · efter sommer"},"34589992":{"notes":"Svært at komme igennem. Leo afvisende · opfattede mig som sælger.","trafficLight":"red"},"34953619":{"notes":"OK glad. Kan vokse med business casen."},"35257691":{"notes":"Dialog · skal følge op efter ferien.","nextActionType":"Mail","nextActionDate":"2026-07-28","nextActionDescription":"Opfølgning efter ferie"},"35382879":{"notes":"I trial. Vil rigtig gerne hjælpe mig. Fælles ven og god kemi. Møde i august · vise dem hvad vi har.","trafficLight":"green","nextActionType":"Møde","nextActionDate":"2026-08-15","nextActionDescription":"Møde · vise hvad vi har"},"35486178":{"notes":"Nogle er glade men ikke 100% implementeret. Kæmpe potentiale. Skal i mål med implementering.","nextActionType":"Møde","nextActionDescription":"Implementering plan"},"36029374":{"notes":"Glade. Stort potentiale. Vil gerne. Skal se business case.","trafficLight":"green","nextActionType":"Møde","nextActionDescription":"Vis business case"},"37315664":{"notes":"Har møde med dem. Skal højere op i organisationen.","nextActionType":"Møde","nextActionDate":"2026-08-15","nextActionDescription":"Møde · skal højere op i org"},"37543128":{"notes":"Tror ikke på dem.","trafficLight":"red","scenarioState":"locked_loss"},"37999687":{"notes":"Accru som indgang men ingen aktiv dialog."},"38751646":{"notes":"Dialog. Skal booke møde igen.","nextActionType":"Mail","nextActionDescription":"Book nyt møde"},"39463113":{"notes":"Nogle er glade men ikke 100% implementeret. Kæmpe potentiale. Skal i mål med implementering.","nextActionType":"Møde","nextActionDescription":"Implementering plan"},"44282380":{"notes":"Kæmpe potentiale og mange fans. Skal løse Silkeborg så de også bruger det · de er godt på vej og har lavet en 3-årig aftale.","trafficLight":"green"},"45907880":{"notes":"Accru som indgang men ingen aktiv dialog."},"45922391":{"notes":"God dialog · kan evt. arbejde på dialogen · svært. RGD kunne være nøglen."},"78337818":{"notes":"BNI-kontakt. Skal højere op. Kan prøve at aktivere min kontakt."},"86141019":{"notes":"Vil gerne på partner-niveau. Muligheder.","nextActionType":"Møde","nextActionDate":"2026-08-08","nextActionDescription":"Møde · partner-niveau"},"89224918":{"notes":"God dialog · kan evt. arbejde på dialogen · svært. RGD kunne være nøglen."}};
+
+    // ============ STATE ============
+    let plOverrides = {};
+    let savedScenarios = {};
+    let activeFilter = 'all';
+    let trafficFilter = 'all';
+    let searchQ = '';
+    let sortBy = 'jagter';
+    let modalCvr = null;
+
+    function loadState() {
+      try { plOverrides = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { plOverrides = {}; }
+      // Auto-apply pre-populated data fra Mads' note 29 juni · kun én gang
+      if (!localStorage.getItem(PRE_POP_KEY) && PRE_POP_DATA && Object.keys(PRE_POP_DATA).length > 0) {
+        for (const [cvr, data] of Object.entries(PRE_POP_DATA)) {
+          plOverrides[cvr] = { ...(plOverrides[cvr] || {}), ...data };
+        }
+        localStorage.setItem(PRE_POP_KEY, '1');
+        saveState();
+      }
+      try { savedScenarios = JSON.parse(localStorage.getItem(SCENARIOS_KEY) || '{}'); } catch(e) { savedScenarios = {}; }
+    }
+    function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(plOverrides)); }
+    function saveScenariosState() { localStorage.setItem(SCENARIOS_KEY, JSON.stringify(savedScenarios)); }
+
+    // ============ HJÆLPERE ============
+    function fmtK(n) {
+      if (Math.abs(n) >= 1000000) return (n/1000000).toFixed(2).replace(/\.?0+$/,'').replace('.', ',') + 'M';
+      if (Math.abs(n) >= 1000) return Math.round(n/1000) + 'k';
+      return Math.round(n).toString();
+    }
+    function fmtArr(n) {
+      if (Math.abs(n) >= 1000000) return (n/1000000).toFixed(2).replace(/\.?0+$/,'').replace('.', ',') + 'M';
+      return Math.round(n/1000) + 'k';
+    }
+    function fmtDiff(n) {
+      const s = n >= 0 ? '+' : '−';
+      const a = Math.abs(n);
+      if (a >= 1000000) return s + (a/1000000).toFixed(1).replace('.',',') + 'M';
+      return s + Math.round(a/1000) + 'k';
+    }
+
+    // ============ ROW COMPUTATION ============
+    function plGetRow(ao) {
+      const ov = plOverrides[ao.cvr] || {};
+      const stage = ov.stage !== undefined ? ov.stage : ao.stage;
+      const probability = ov.probability !== undefined ? ov.probability : (STAGE_PROB[stage] || 0);
+      const pris = ov.pris_per_smv !== undefined ? ov.pris_per_smv : ao.pris_per_smv;
+      const defNew = Math.max(0, ao.target_smvs - ao.current_smvs);
+      const new_smvs = ov.new_smvs !== undefined ? ov.new_smvs : defNew;
+      const closeMonth = ov.closeMonth !== undefined ? ov.closeMonth : '';
+      const jagter = new_smvs * pris; // jagter ARR = nye SMVs × pris
+      const fullPotential = ao.erklaeringer * pris;
+
+      const decisionMakerName = ov.decisionMakerName || '';
+      const decisionMakerContacted = !!ov.decisionMakerContacted;
+      const supporterName = ov.supporterName || '';
+      const supporterConfirmed = !!ov.supporterConfirmed;
+      const stageEnteredAt = ov.stageEnteredAt || null;
+      const nextActionType = ov.nextActionType || '';
+      const nextActionDate = ov.nextActionDate || '';
+      const nextActionDescription = ov.nextActionDescription || '';
+      const processChecklist = ov.processChecklist || {};
+      const activityLog = ov.activityLog || [];
+      const trafficLightOverride = ov.trafficLight || 'auto';
+      const scenarioState = ov.scenarioState || 'uncertain';
+      const notes = ov.notes || '';
+
+      let daysInStage = null;
+      if (stageEnteredAt) {
+        const ms = Date.now() - new Date(stageEnteredAt).getTime();
+        daysInStage = Math.max(0, Math.floor(ms / 86400000));
+      }
+      const stageMaxDays = STAGE_MAX_DAYS[stage] || 9999;
+      const timeWarn = daysInStage !== null && daysInStage > stageMaxDays;
+
+      // Trafiklys auto-beregning
+      const checklist = STANDARD_PROCESS[stage] || [];
+      const totalItems = checklist.length;
+      const doneItems = checklist.filter(it => processChecklist[it.id] === 'done' || processChecklist[it.id] === 'skip').length;
+      const pctDone = totalItems > 0 ? doneItems / totalItems : 0;
+      let autoLight = 'yellow';
+      if (stage === 'Won') autoLight = 'green';
+      else if (stage === 'Tabt') autoLight = 'red';
+      else if (stage === 'Kold') autoLight = 'yellow';
+      else if (pctDone >= 0.8 && decisionMakerContacted) autoLight = 'green';
+      else if (timeWarn && pctDone < 0.3) autoLight = 'red';
+      const trafficLight = trafficLightOverride === 'auto' ? autoLight : trafficLightOverride;
+      const isRed = trafficLight === 'red';
+
+      // Vægtet · 0 hvis rød
+      const weighted = isRed ? 0 : Math.round(jagter * probability);
+
+      return {
+        ...ao,
+        stage, probability, pris_per_smv: pris, new_smvs, closeMonth,
+        jagter, weighted, fullPotential,
+        edited: Object.keys(ov).length > 0,
+        decisionMakerName, decisionMakerContacted, supporterName, supporterConfirmed,
+        stageEnteredAt, daysInStage, timeWarn, stageMaxDays,
+        nextActionType, nextActionDate, nextActionDescription,
+        processChecklist, activityLog,
+        trafficLightOverride, autoLight, trafficLight, isRed,
+        scenarioState, notes,
+      };
+    }
+
+    // ============ FORECAST BEREGNING ============
+    function computeForecast(rows) {
+      const cur = rows.reduce((s, r) => s + (r.current_arr || 0), 0);
+      let lockedWins = 0, uncertainWeighted = 0, lockedLossesCount = 0;
+      let modneCount = 0, iGangCount = 0, ekskCount = 0;
+      let modneJagter = 0, iGangJagter = 0, ekskJagter = 0;
+      rows.forEach(r => {
+        if (r.scenarioState === 'locked_win' && !r.isRed) lockedWins += r.jagter;
+        else if (r.scenarioState === 'locked_loss') lockedLossesCount++;
+        else if (!r.isRed && !['Kold','Tabt'].includes(r.stage)) uncertainWeighted += r.weighted;
+
+        if (['Kold','Tabt'].includes(r.stage)) return;
+        if (r.trafficLight === 'green') { modneCount++; modneJagter += r.jagter; }
+        else if (r.trafficLight === 'yellow') { iGangCount++; iGangJagter += r.jagter; }
+        else if (r.trafficLight === 'red') { ekskCount++; ekskJagter += r.jagter; }
+      });
+      const forecast = cur + lockedWins + uncertainWeighted - CHURN_H2;
+      return {
+        cur, lockedWins, uncertainWeighted, lockedLossesCount, forecast,
+        modneCount, iGangCount, ekskCount, modneJagter, iGangJagter, ekskJagter,
+      };
+    }
+
+    // ============ SUMMARY KORT (5 kort) ============
+    function renderSummary() {
+      const rows = PIPELINE_AOS.map(plGetRow);
+      const f = computeForecast(rows);
+      const goal = (Number(document.getElementById('cuGoalInput')?.value) || GOAL_DEFAULT_M) * 1000000;
+      const gap = goal - (f.cur + f.modneJagter + f.iGangJagter * 0.3); // simpel gap-indikator
+      const total = f.modneJagter + f.iGangJagter;
+      const sumEl = document.getElementById('summary');
+      sumEl.innerHTML = `
+        <div class="sum-cell green-tint">
+          <span class="sum-val">${fmtK(f.modneJagter)}</span>
+          <span class="sum-label">Modne · ${f.modneCount} deals vi banker på</span>
+        </div>
+        <div class="sum-cell">
+          <span class="sum-val">${fmtK(f.iGangJagter)}</span>
+          <span class="sum-label">I gang · ${f.iGangCount} aktive deals</span>
+        </div>
+        <div class="sum-cell red-tint">
+          <span class="sum-val">${fmtK(f.ekskJagter)}</span>
+          <span class="sum-label">Ekskluderet · ${f.ekskCount} deals tæller ikke</span>
+        </div>
+        <div class="sum-cell target">
+          <span class="sum-val">${fmtK(total)}</span>
+          <span class="sum-label">Total jagter ARR · modne + i gang</span>
+        </div>
+        <div class="sum-cell">
+          <span class="sum-val">${gap >= 0 ? '−' + fmtK(gap) : '+' + fmtK(-gap)}</span>
+          <span class="sum-label">${gap >= 0 ? 'Under' : 'Over'} mål · ren jagter-matematik</span>
+        </div>
+      `;
+    }
+
+    // ============ CATCH-UP ============
+    function renderCatchup() {
+      const goalInput = document.getElementById('cuGoalInput');
+      const monthsInput = document.getElementById('cuMonthsInput');
+      if (!goalInput || !monthsInput) return;
+      const goalKr = Math.max(0, Number(goalInput.value) * 1000000) || 0;
+      const months = Math.max(1, Math.min(12, Number(monthsInput.value))) || 4;
+      const rows = PIPELINE_AOS.map(plGetRow);
+      const f = computeForecast(rows);
+      const trackerEoy = f.forecast;
+      const vsGoal = trackerEoy - goalKr;
+      const needed = Math.max(0, goalKr - f.cur);
+      const neededPerMonth = needed / months;
+      const accel = neededPerMonth / YTD_PACE;
+
+      document.getElementById('cuStatus').textContent = fmtK(f.cur);
+
+      const realEl = document.getElementById('cuRealisme');
+      realEl.innerHTML = `
+        <div class="cu-card">
+          <span class="cu-stat" style="font-size:32px; font-weight:900; letter-spacing:-0.025em; line-height:1;">${fmtArr(trackerEoy)}</span>
+          <p class="cu-sub">Pipe forecast EOY (nuværende + modne + i gang × sandsyn − churn)</p>
+        </div>
+        <div class="cu-card">
+          <span class="cu-stat" style="font-size:32px; font-weight:900; letter-spacing:-0.025em; line-height:1; color:${vsGoal >= 0 ? 'var(--green)' : 'var(--red)'};">${vsGoal >= 0 ? '+' + fmtK(vsGoal) : '−' + fmtK(-vsGoal)}</span>
+          <p class="cu-sub">${vsGoal >= 0 ? 'Over mål · pipe er foran' : 'Under mål · pipe er bagud'}</p>
+        </div>
+        <div class="cu-card">
+          <span class="cu-stat" style="font-size:32px; font-weight:900; letter-spacing:-0.025em; line-height:1;">${fmtK(neededPerMonth)}</span>
+          <p class="cu-sub">Krævet ny ARR pr. mdr (${months} mdr · mål − nuv. ARR)</p>
+        </div>
+        <div class="cu-card">
+          <span class="cu-stat" style="font-size:32px; font-weight:900; letter-spacing:-0.025em; line-height:1;">${accel >= 0.05 ? accel.toFixed(1) + 'x' : '·'}</span>
+          <p class="cu-sub">Krævet vs YTD-pace 58K/mdr (acceleration)</p>
+        </div>
+      `;
+
+      const concl = document.getElementById('cuConclusion');
+      if (trackerEoy >= goalKr) {
+        concl.innerHTML = '<strong>Du er foran mål.</strong> Pipe peger på ' + fmtArr(trackerEoy) + ' = +' + fmtK(vsGoal) + ' over mål. Det forudsætter pipen lukker som du har vægtet den. Største enkelt-risiko: GT (~50% af det vægtede).';
+      } else {
+        const v = accel > 3 ? 'Det er ambitiøst.' : (accel > 1.5 ? 'Det kræver fokuseret eksekvering.' : 'I rækkevidde.');
+        concl.innerHTML = '<strong>Du mangler ' + fmtK(-vsGoal) + ' for at ramme målet.</strong> Med ' + months + ' mdr tilbage er det <strong>' + fmtK(neededPerMonth) + ' pr. mdr</strong>. YTD-pace er 58K/mdr → <strong>' + accel.toFixed(1) + 'x acceleration</strong>. ' + v;
+      }
+    }
+
+    // ============ OPERATIONELLE VIEWS ============
+    function renderOps() {
+      const rows = PIPELINE_AOS.map(plGetRow);
+      const today = new Date();
+      const weekAhead = new Date(today.getTime() + 7*86400000);
+
+      const withActions = rows.filter(r => r.nextActionDate && r.nextActionType).map(r => ({
+        ...r, actionDateObj: new Date(r.nextActionDate)
+      })).filter(r => !isNaN(r.actionDateObj) && r.actionDateObj <= weekAhead).sort((a,b) => a.actionDateObj - b.actionDateObj);
+
+      const actEl = document.getElementById('opsActions');
+      if (withActions.length === 0) {
+        actEl.innerHTML = '<p class="ops-empty">Ingen actions registreret inden for 7 dage.</p>';
+      } else {
+        actEl.innerHTML = withActions.slice(0, 10).map(r => {
+          const overdue = r.actionDateObj < today;
+          const days = Math.round((r.actionDateObj - today) / 86400000);
+          const ds = overdue ? Math.abs(days) + ' dage forsinket' : (days === 0 ? 'i dag' : 'om ' + days + ' dage');
+          return `
+            <div class="ops-item" data-open="${r.cvr}">
+              <span class="ops-dot ${r.trafficLight}"></span>
+              <div>
+                <div class="ops-name">${r.name}</div>
+                <div class="ops-meta">${r.nextActionType}${r.nextActionDescription ? ' · ' + r.nextActionDescription : ''} · ${r.stage}</div>
+              </div>
+              <div class="ops-side">${r.nextActionDate}<small>${ds}</small></div>
+            </div>
+          `;
+        }).join('');
+        actEl.querySelectorAll('[data-open]').forEach(el => el.addEventListener('click', () => openModal(el.dataset.open)));
+      }
+
+      const stuck = rows.filter(r => r.timeWarn && !['Won','Tabt','Kold'].includes(r.stage)).sort((a,b) => (b.daysInStage - b.stageMaxDays) - (a.daysInStage - a.stageMaxDays));
+      const stuckEl = document.getElementById('opsStuck');
+      if (stuck.length === 0) {
+        stuckEl.innerHTML = '<p class="ops-empty">Ingen deals står stille. Alle aktive AOs er inden for forventet tid.</p>';
+      } else {
+        stuckEl.innerHTML = stuck.slice(0, 10).map(r => {
+          const over = r.daysInStage - r.stageMaxDays;
+          return `
+            <div class="ops-item" data-open="${r.cvr}">
+              <span class="ops-dot ${r.trafficLight}"></span>
+              <div>
+                <div class="ops-name">${r.name}</div>
+                <div class="ops-meta">${r.stage} · ${r.daysInStage} dage (max ${r.stageMaxDays})</div>
+              </div>
+              <div class="ops-side">+${over} dage<small>over max</small></div>
+            </div>
+          `;
+        }).join('');
+        stuckEl.querySelectorAll('[data-open]').forEach(el => el.addEventListener('click', () => openModal(el.dataset.open)));
+      }
+    }
+
+    // ============ MÅNED-FOR-MÅNED ============
+    function renderMonthView() {
+      const rows = PIPELINE_AOS.map(plGetRow);
+      const active = rows.filter(r => r.weighted > 0);
+      const MONTHS = [
+        {key:'Jul', label:'Juli', in2026:true},
+        {key:'Aug', label:'August', in2026:true},
+        {key:'Sep', label:'September', in2026:true},
+        {key:'Okt', label:'Oktober', in2026:true},
+        {key:'Nov', label:'November', in2026:true},
+        {key:'Dec', label:'December', in2026:true},
+        {key:'Q1 2027', label:'Q1 2027', in2026:false},
+        {key:'Q2 2027', label:'Q2 2027', in2026:false},
+        {key:'H2 2027', label:'H2 2027', in2026:false},
+        {key:'2028+', label:'2028+', in2026:false},
+        {key:'', label:'TBD (uden måned)', in2026:true},
+      ];
+      let cum = PIPELINE_AOS.reduce((s,a) => s + (a.current_arr || 0), 0);
+      const html = MONTHS.map(m => {
+        const deals = active.filter(r => (r.closeMonth || '') === m.key).sort((a,b) => b.weighted - a.weighted);
+        const sum = deals.reduce((s,r) => s + r.weighted, 0);
+        if (m.in2026 && deals.length === 0 && m.key !== '') {
+          return `
+            <details class="mv-month">
+              <summary>
+                <span class="mv-name">${m.label}</span>
+                <span class="mv-cnt">0 deals</span>
+                <span class="mv-sum">0 kr</span>
+                <span class="mv-cum"></span>
+              </summary>
+            </details>
+          `;
+        }
+        if (!m.in2026 && deals.length === 0) return '';
+        const open = deals.length > 0 && m.key !== '';
+        if (m.key !== '' && m.in2026) cum += sum;
+        return `
+          <details class="mv-month" ${open ? 'open' : ''}>
+            <summary>
+              <span class="mv-name">${m.label}</span>
+              <span class="mv-cnt">${deals.length} deals</span>
+              <span class="mv-sum">${fmtK(sum)} vægtet</span>
+              <span class="mv-cum">${m.in2026 && m.key !== '' ? '→ ' + fmtArr(cum) + ' kumulativ' : (m.in2026 ? 'ikke planlagt' : 'udenfor 2026')}</span>
+            </summary>
+            ${deals.length > 0 ? '<ul class="mv-month-list">' + deals.map(d => `
+              <li>
+                <span class="traffic-dot ${d.trafficLight}" style="width:8px; height:8px; box-shadow:none;"></span>
+                <span><strong>${d.name}</strong> · ${d.stage} (${Math.round(d.probability*100)}%) · ${d.new_smvs} SMVs × ${d.pris_per_smv.toLocaleString('da-DK')} kr</span>
+                <span style="font-weight: 800;">${fmtK(d.weighted)}</span>
+              </li>`).join('') + '</ul>' : ''}
+          </details>
+        `;
+      }).join('');
+      document.getElementById('monthView').innerHTML = html;
+      const tbd = active.filter(r => !r.closeMonth).length;
+      const sched = active.filter(r => r.closeMonth).length;
+      document.getElementById('monthMeta').innerHTML = `${active.length} aktive deals · ${sched} planlagt · ${tbd} TBD · samlet vægtet ny ARR ${fmtK(active.reduce((s,r)=>s+r.weighted,0))}`;
+    }
+
+    // ============ PIPE-LISTEN ============
+    function renderFilters() {
+      const counts = {all: PIPELINE_AOS.length, existing:0, top:0, accru:0, rgd:0, next_20:0, andre_fra_pipe:0, won_other:0};
+      const trafCounts = {all: 0, green: 0, yellow: 0, red: 0};
+      PIPELINE_AOS.forEach(ao => {
+        counts[ao.segment]++;
+        const r = plGetRow(ao);
+        trafCounts.all++;
+        trafCounts[r.trafficLight] = (trafCounts[r.trafficLight] || 0) + 1;
+      });
+      const segs = [
+        {key:'all', label:'Alle'},
+        {key:'existing', label:'Eksisterende · 25%'},
+        {key:'top', label:'Top prospects · 5%'},
+        {key:'accru', label:'Accru · 2%'},
+        {key:'rgd', label:'RGD · 2%'},
+        {key:'next_20', label:'Næste 20 · 2%'},
+        {key:'andre_fra_pipe', label:'Andre fra pipe · 2%'},
+        {key:'won_other', label:'Won ikke-revisionshus'},
+      ];
+      const trafs = [
+        {key:'all', label:'Alle'},
+        {key:'green', label:'Modne'},
+        {key:'yellow', label:'I gang'},
+        {key:'red', label:'Ekskluderet'},
+      ];
+      document.getElementById('filtersSeg').innerHTML = '<span class="filter-row-lbl">Segment</span>' + segs.map(s => `<button class="filter-btn ${activeFilter === s.key ? 'active' : ''}" data-seg="${s.key}">${s.label} ${counts[s.key]}</button>`).join('');
+      document.getElementById('filtersTraffic').innerHTML = '<span class="filter-row-lbl">Trafiklys</span>' + trafs.map(t => `<button class="filter-btn ${trafficFilter === t.key ? 'active' : ''}" data-traf="${t.key}">${t.label} ${trafCounts[t.key]}</button>`).join('');
+      document.querySelectorAll('[data-seg]').forEach(b => b.addEventListener('click', () => { activeFilter = b.dataset.seg; renderPipe(); renderFilters(); }));
+      document.querySelectorAll('[data-traf]').forEach(b => b.addEventListener('click', () => { trafficFilter = b.dataset.traf; renderPipe(); renderFilters(); }));
+    }
+
+    function renderPipe() {
+      let rows = PIPELINE_AOS.map(plGetRow);
+      if (activeFilter !== 'all') rows = rows.filter(r => r.segment === activeFilter);
+      if (trafficFilter !== 'all') rows = rows.filter(r => r.trafficLight === trafficFilter);
+      if (searchQ) {
+        const q = searchQ.toLowerCase();
+        rows = rows.filter(r => r.name.toLowerCase().includes(q));
+      }
+      rows.sort((a,b) => {
+        if (sortBy === 'name') return a.name.localeCompare(b.name);
+        if (sortBy === 'stage') {
+          const st = {Won:0,Contract:1,Trial:2,Demo:3,Prospect:4,Kold:5,Tabt:6};
+          return (st[a.stage] ?? 9) - (st[b.stage] ?? 9);
+        }
+        if (sortBy === 'erklaer') return b.erklaeringer - a.erklaeringer;
+        if (sortBy === 'current') return b.current_arr - a.current_arr;
+        return b.jagter - a.jagter;
+      });
+
+      const table = document.getElementById('pipeTable');
+      table.innerHTML = `
+        <thead><tr>
+          <th class="pl-th-traffic">Trafik</th>
+          <th>Revisionshus</th>
+          <th class="num">Jagter ARR</th>
+        </tr></thead>
+        <tbody>
+          ${rows.map(r => {
+            const scnBadge = r.scenarioState === 'locked_win' ? ' · LUKKER' : r.scenarioState === 'locked_loss' ? ' · GLIPPER' : '';
+            return `
+              <tr data-cvr="${r.cvr}">
+                <td class="pl-traffic-cell" data-cycle="${r.cvr}" title="Klik for at skifte trafiklys">
+                  <span class="traffic-dot ${r.trafficLight}"></span>
+                </td>
+                <td>
+                  <div class="ao-name${r.edited ? ' edited' : ''}" data-open="${r.cvr}">${r.name}</div>
+                  <div class="ao-sub">${PL_SEG[r.segment].label} · ${r.stage}${r.closeMonth ? ' · luk ' + r.closeMonth : ''}${r.timeWarn ? ' · ' + r.daysInStage + ' dage' : ''}${r.isRed ? ' · ekskluderet' : ''}${scnBadge}</div>
+                </td>
+                <td><span class="ao-jagter${r.isRed ? ' excluded' : ''}">${fmtArr(r.jagter)}</span></td>
+              </tr>
+            `;
+          }).join('')}
+        </tbody>
+      `;
+      document.getElementById('plMeta').textContent = `Viser ${rows.length} af ${PIPELINE_AOS.length} AOs · ændringer gemmes lokalt`;
+      table.querySelectorAll('[data-open]').forEach(el => el.addEventListener('click', () => openModal(el.dataset.open)));
+      table.querySelectorAll('[data-cycle]').forEach(el => el.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const cvr = el.dataset.cycle;
+        const cur = (plOverrides[cvr] && plOverrides[cvr].trafficLight) || 'auto';
+        const cycle = {auto:'green', green:'yellow', yellow:'red', red:'auto'};
+        if (!plOverrides[cvr]) plOverrides[cvr] = {};
+        plOverrides[cvr].trafficLight = cycle[cur];
+        saveState();
+        renderAll();
+      }));
+    }
+
+    // ============ AO-KORT MODAL ============
+    function openModal(cvr) {
+      const ao = PIPELINE_AOS.find(a => a.cvr === cvr);
+      if (!ao) return;
+      modalCvr = cvr;
+      if (!plOverrides[cvr]) plOverrides[cvr] = {};
+      if (!plOverrides[cvr].stageEnteredAt) { plOverrides[cvr].stageEnteredAt = new Date().toISOString().slice(0,10); saveState(); }
+      renderModal();
+      document.getElementById('modalBackdrop').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('modalBackdrop').classList.remove('open');
+      document.body.style.overflow = '';
+      modalCvr = null;
+    }
+    function modSet(field, value) {
+      if (!modalCvr) return;
+      if (!plOverrides[modalCvr]) plOverrides[modalCvr] = {};
+      plOverrides[modalCvr][field] = value;
+      saveState();
+      renderModal();
+      renderAll();
+    }
+    function logActivity(text) {
+      if (!modalCvr) return;
+      if (!plOverrides[modalCvr]) plOverrides[modalCvr] = {};
+      if (!plOverrides[modalCvr].activityLog) plOverrides[modalCvr].activityLog = [];
+      plOverrides[modalCvr].activityLog.unshift({date: new Date().toISOString().slice(0,10), text});
+      if (plOverrides[modalCvr].activityLog.length > 50) plOverrides[modalCvr].activityLog.length = 50;
+      saveState();
+    }
+    function modSetStage(newStage) {
+      if (!modalCvr) return;
+      const old = plGetRow(PIPELINE_AOS.find(a => a.cvr === modalCvr));
+      if (!plOverrides[modalCvr]) plOverrides[modalCvr] = {};
+      plOverrides[modalCvr].stage = newStage;
+      plOverrides[modalCvr].probability = STAGE_PROB[newStage];
+      plOverrides[modalCvr].stageEnteredAt = new Date().toISOString().slice(0,10);
+      logActivity('Stadie ændret: ' + old.stage + ' → ' + newStage);
+      saveState();
+      renderModal();
+      renderAll();
+    }
+    function modToggleCheck(itemId, status) {
+      if (!modalCvr) return;
+      if (!plOverrides[modalCvr]) plOverrides[modalCvr] = {};
+      if (!plOverrides[modalCvr].processChecklist) plOverrides[modalCvr].processChecklist = {};
+      const cur = plOverrides[modalCvr].processChecklist[itemId] || 'todo';
+      const next = (cur === status) ? 'todo' : status;
+      plOverrides[modalCvr].processChecklist[itemId] = next;
+      const r = plGetRow(PIPELINE_AOS.find(a => a.cvr === modalCvr));
+      const item = (STANDARD_PROCESS[r.stage] || []).find(i => i.id === itemId);
+      if (item) logActivity((next === 'done' ? 'Færdig: ' : next === 'skip' ? 'Sprunget: ' : 'Reset: ') + item.label);
+      saveState();
+      renderModal();
+      renderAll();
+    }
+
+    function renderModal() {
+      if (!modalCvr) return;
+      const ao = PIPELINE_AOS.find(a => a.cvr === modalCvr);
+      const r = plGetRow(ao);
+      const lightLabel = {green:'Moden · høj sandsynlighed', yellow:'I gang · noget mangler', red:'Ekskluderet · ikke i forecast'};
+      const seg = PL_SEG[r.segment];
+      const checklist = STANDARD_PROCESS[r.stage] || [];
+
+      document.getElementById('modalBody').innerHTML = `
+        <div class="m-head">
+          <h2 class="m-name">${ao.name}</h2>
+          <div class="m-meta">CVR ${ao.cvr} · ${seg.label} · ${seg.rateStr} · ${ao.erklaeringer.toLocaleString('da-DK')} erklæringer · nuværende ARR ${fmtK(ao.current_arr)}</div>
+        </div>
+
+        <div>
+          <p class="m-section-label">Note · kontekst</p>
+          <textarea class="m-input" id="mNotes" rows="3" placeholder="Fri tekst om relation, indgange, status. Fx: Super glad. Mange mennesker i org. Skal løse Silkeborg." style="width:100%; resize:vertical; min-height:72px; font-family: inherit; line-height: 1.5;">${r.notes.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</textarea>
+        </div>
+
+        <div>
+          <p class="m-section-label">Stadie</p>
+          <div class="m-stage-row">
+            ${STAGE_OPTIONS.map(s => `<button type="button" class="m-stage-btn ${s === r.stage ? 'active' : ''}" data-stage="${s}">${s}</button>`).join('')}
+          </div>
+          <div class="m-stage-meta ${r.timeWarn ? 'warn' : ''}">
+            ${r.daysInStage !== null ? `<span>Tid i stadie: <strong>${r.daysInStage} dage</strong></span>` : '<span>Nyt stadie</span>'}
+            <span>· Forventet max: <strong>${r.stageMaxDays} dage</strong></span>
+            ${r.timeWarn ? '<span>· over forventet tid</span>' : ''}
+          </div>
+        </div>
+
+        <div>
+          <p class="m-section-label">Potentiale · 3 lag</p>
+          <div class="m-pot-stack">
+            <div class="m-pot-row">
+              <span class="m-pot-label">Fuldt potentiale</span>
+              <span class="m-pot-calc">${ao.erklaeringer.toLocaleString('da-DK')} erklær × ${r.pris_per_smv.toLocaleString('da-DK')} kr</span>
+              <span class="m-pot-val">${fmtArr(r.fullPotential)}</span>
+            </div>
+            <div class="m-pot-row target">
+              <span class="m-pot-label">Jagter ARR (${seg.rateStr})</span>
+              <span class="m-pot-calc">${r.new_smvs} nye SMVs × ${r.pris_per_smv.toLocaleString('da-DK')} kr</span>
+              <span class="m-pot-val">${fmtArr(r.jagter)}</span>
+            </div>
+            <div class="m-pot-row">
+              <span class="m-pot-label">Vægtet ny ARR</span>
+              <span class="m-pot-calc">jagter × ${Math.round(r.probability*100)}% (${r.stage})${r.isRed ? ' · nul-vægtet' : ''}</span>
+              <span class="m-pot-val">${fmtK(r.weighted)}</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="m-section-label">Deal-størrelse · juster</p>
+          <div class="m-grid-3">
+            <div class="m-field">
+              <label class="m-field-label">Nye SMVs target</label>
+              <input type="number" class="m-input" id="mNewSmvs" value="${r.new_smvs}" min="0" step="10">
+            </div>
+            <div class="m-field">
+              <label class="m-field-label">Pris/SMV (kr/år)</label>
+              <input type="number" class="m-input" id="mPris" value="${r.pris_per_smv}" min="0" step="10">
+            </div>
+            <div class="m-field">
+              <label class="m-field-label">Sandsynlighed %</label>
+              <input type="number" class="m-input" id="mProb" value="${Math.round(r.probability*100)}" min="0" max="100" step="5">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="m-section-label">Beslutningstager vs supporter</p>
+          <div class="m-grid-2">
+            <div class="m-field">
+              <label class="m-field-label">Beslutningstager (navn)</label>
+              <input type="text" class="m-input" id="mDmName" value="${r.decisionMakerName.replace(/"/g,'&quot;')}" placeholder="fx Lars Jensen (partner)">
+              <div class="m-yn-row">
+                <span style="font-size:12px;color:var(--ink-mute);">Har vi talt med dem?</span>
+                <button type="button" class="m-yn-btn ${r.decisionMakerContacted ? 'active yes' : ''}" data-dmy="true">Ja</button>
+                <button type="button" class="m-yn-btn ${!r.decisionMakerContacted ? 'active' : ''}" data-dmy="false">Nej</button>
+              </div>
+            </div>
+            <div class="m-field">
+              <label class="m-field-label">Supporter (navn)</label>
+              <input type="text" class="m-input" id="mSupName" value="${r.supporterName.replace(/"/g,'&quot;')}" placeholder="fx Mette (revisor)">
+              <div class="m-yn-row">
+                <span style="font-size:12px;color:var(--ink-mute);">Er de på vores side?</span>
+                <button type="button" class="m-yn-btn ${r.supporterConfirmed ? 'active yes' : ''}" data-supy="true">Ja</button>
+                <button type="button" class="m-yn-btn ${!r.supporterConfirmed ? 'active' : ''}" data-supy="false">Nej</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="m-section-label">Trafiklys · modenhed</p>
+          <div class="m-traffic-row">
+            <span class="traffic-dot ${r.trafficLight}" style="width:36px; height:36px;"></span>
+            <div class="m-traffic-info">
+              <div class="m-traffic-headline">${lightLabel[r.trafficLight]}</div>
+              <div class="m-traffic-sub">Auto-forslag: <strong>${r.autoLight}</strong> · ${r.isRed ? 'ekskluderet fra forecast' : 'tæller med i forecast'}</div>
+            </div>
+          </div>
+          <div class="m-traffic-picker">
+            <button type="button" class="m-traffic-btn ${r.trafficLightOverride === 'auto' ? 'active' : ''}" data-traffic="auto">Auto</button>
+            <button type="button" class="m-traffic-btn green ${r.trafficLightOverride === 'green' ? 'active' : ''}" data-traffic="green"><span class="traffic-dot green" style="width:12px;height:12px;box-shadow:none;"></span> Moden</button>
+            <button type="button" class="m-traffic-btn yellow ${r.trafficLightOverride === 'yellow' ? 'active' : ''}" data-traffic="yellow"><span class="traffic-dot yellow" style="width:12px;height:12px;box-shadow:none;"></span> I gang</button>
+            <button type="button" class="m-traffic-btn red ${r.trafficLightOverride === 'red' ? 'active' : ''}" data-traffic="red"><span class="traffic-dot red" style="width:12px;height:12px;box-shadow:none;"></span> Ekskluderet</button>
+          </div>
+        </div>
+
+        <div>
+          <p class="m-section-label">Scenarie-state · stress-test</p>
+          <p style="margin:0 0 12px; font-size:12px; color: var(--ink-mute);">Brug ved scenarie-bygger. Default: uncertain (deal'en vægtes normalt). Locked win/loss påvirker scenarie-forecast.</p>
+          <div class="m-scn-picker">
+            <button type="button" class="m-scn-btn ${r.scenarioState === 'uncertain' ? 'active uncertain' : ''}" data-scn="uncertain">Uncertain</button>
+            <button type="button" class="m-scn-btn ${r.scenarioState === 'locked_win' ? 'active win' : ''}" data-scn="locked_win">Lukker</button>
+            <button type="button" class="m-scn-btn ${r.scenarioState === 'locked_loss' ? 'active loss' : ''}" data-scn="locked_loss">Glipper</button>
+          </div>
+        </div>
+
+        <div>
+          <p class="m-section-label">Forventet lukke-måned</p>
+          <select class="m-select" id="mCloseMonth">
+            ${MONTHS_OPT.map(m => `<option value="${m}"${m === r.closeMonth ? ' selected' : ''}>${m || 'TBD (ikke planlagt)'}</option>`).join('')}
+          </select>
+        </div>
+
+        <div>
+          <p class="m-section-label">Proces-checklist · ${r.stage}</p>
+          ${checklist.length === 0 ? '<p class="m-empty">Ingen aktiviteter defineret for dette stadie.</p>' : `
+            <div class="m-checklist">
+              ${checklist.map(item => {
+                const st = r.processChecklist[item.id] || 'todo';
+                const icon = st === 'done' ? '·' : st === 'skip' ? '·' : '·';
+                return `
+                  <div class="m-check-row ${st === 'done' ? 'done' : st === 'skip' ? 'skip' : ''}">
+                    <span style="font-size:14px; color:${st === 'done' ? 'var(--green)' : st === 'skip' ? 'var(--yellow)' : 'var(--ink-mute)'}; font-weight:800;">${st === 'done' ? '✓' : st === 'skip' ? '~' : '·'}</span>
+                    <span class="m-check-label">${item.label}</span>
+                    <span class="m-check-status">
+                      <button type="button" class="m-check-btn ${st === 'done' ? 'active done' : ''}" data-check="${item.id}" data-cstate="done">Færdig</button>
+                      <button type="button" class="m-check-btn ${st === 'skip' ? 'active skip' : ''}" data-check="${item.id}" data-cstate="skip">Spring</button>
+                    </span>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          `}
+        </div>
+
+        <div>
+          <p class="m-section-label">Næste action</p>
+          <div class="m-grid-3">
+            <div class="m-field">
+              <label class="m-field-label">Type</label>
+              <select class="m-select" id="mActionType">
+                <option value="">vælg</option>
+                ${ACTION_TYPES.map(t => `<option value="${t}"${t === r.nextActionType ? ' selected' : ''}>${t}</option>`).join('')}
+              </select>
+            </div>
+            <div class="m-field">
+              <label class="m-field-label">Dato</label>
+              <input type="date" class="m-input" id="mActionDate" value="${r.nextActionDate}">
+            </div>
+            <div class="m-field">
+              <label class="m-field-label">Hvad / til hvem</label>
+              <input type="text" class="m-input" id="mActionDesc" value="${r.nextActionDescription.replace(/"/g,'&quot;')}" placeholder="fx Ring til Lars om Møde 2">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="m-section-label">Aktivitets-historik (seneste 50)</p>
+          ${r.activityLog.length === 0 ? '<p class="m-empty">Ingen aktivitet logget endnu.</p>' : `
+            <div class="m-log">
+              ${r.activityLog.map(a => `<div class="m-log-row"><span class="m-log-date">${a.date}</span> · ${a.text}</div>`).join('')}
+            </div>
+          `}
+        </div>
+      `;
+
+      // Wire events
+      const body = document.getElementById('modalBody');
+      body.querySelectorAll('[data-stage]').forEach(b => b.addEventListener('click', () => modSetStage(b.dataset.stage)));
+      body.querySelectorAll('[data-check]').forEach(b => b.addEventListener('click', () => modToggleCheck(b.dataset.check, b.dataset.cstate)));
+      body.querySelectorAll('[data-traffic]').forEach(b => b.addEventListener('click', () => { modSet('trafficLight', b.dataset.traffic); logActivity('Trafiklys: ' + b.dataset.traffic); }));
+      body.querySelectorAll('[data-scn]').forEach(b => b.addEventListener('click', () => { modSet('scenarioState', b.dataset.scn); logActivity('Scenarie-state: ' + b.dataset.scn); updateScenarioPanel(); }));
+      body.querySelectorAll('[data-dmy]').forEach(b => b.addEventListener('click', () => modSet('decisionMakerContacted', b.dataset.dmy === 'true')));
+      body.querySelectorAll('[data-supy]').forEach(b => b.addEventListener('click', () => modSet('supporterConfirmed', b.dataset.supy === 'true')));
+      const ids = {mDmName:'decisionMakerName', mSupName:'supporterName', mActionDesc:'nextActionDescription'};
+      Object.entries(ids).forEach(([id, field]) => {
+        const el = body.querySelector('#' + id);
+        if (el) el.addEventListener('change', () => modSet(field, el.value));
+      });
+      body.querySelector('#mNewSmvs')?.addEventListener('change', e => modSet('new_smvs', Math.max(0, Number(e.target.value))));
+      body.querySelector('#mPris')?.addEventListener('change', e => modSet('pris_per_smv', Math.max(0, Number(e.target.value))));
+      body.querySelector('#mProb')?.addEventListener('change', e => modSet('probability', Math.max(0, Math.min(1, Number(e.target.value)/100))));
+      body.querySelector('#mActionType')?.addEventListener('change', e => modSet('nextActionType', e.target.value));
+      body.querySelector('#mActionDate')?.addEventListener('change', e => modSet('nextActionDate', e.target.value));
+      body.querySelector('#mCloseMonth')?.addEventListener('change', e => modSet('closeMonth', e.target.value));
+      body.querySelector('#mNotes')?.addEventListener('change', e => modSet('notes', e.target.value));
+    }
+
+    // ============ SCENARIE-BYGGER ============
+    function parseAssumption(text) {
+      if (!text || !text.trim()) return [];
+      const parts = text.split(/,| og /i).map(p => p.trim()).filter(p => p.length);
+      const results = [];
+      const errors = [];
+      for (const part of parts) {
+        const lower = part.toLowerCase();
+        let state = null;
+        if (/glipper|taber|tabt|går\s+ned|forsvinder|slipper|går\b/i.test(lower)) state = 'locked_loss';
+        else if (/lukker|vinder|won|kommer\s+i|går\s+igennem|lander/i.test(lower)) state = 'locked_win';
+        if (!state) { errors.push('Forstår ikke "' + part + '" (mangler "lukker" eller "glipper")'); continue; }
+        let found = null;
+        for (const [key, cvr] of Object.entries(SHORT_NAMES)) {
+          if (lower.includes(key)) { found = cvr; break; }
+        }
+        if (!found) {
+          for (const ao of PIPELINE_AOS) {
+            const aoLower = ao.name.toLowerCase();
+            const firstWord = aoLower.split(/\s+/)[0];
+            if (lower.includes(aoLower) || (firstWord.length >= 4 && lower.includes(firstWord))) { found = ao.cvr; break; }
+          }
+        }
+        if (!found) errors.push('Genkender ikke AO i "' + part + '"');
+        else results.push({cvr: found, state});
+      }
+      return {results, errors};
+    }
+
+    function applyScenarioParse(text) {
+      const errEl = document.getElementById('scenarioError');
+      errEl.textContent = '';
+      const {results, errors} = parseAssumption(text);
+      results.forEach(({cvr, state}) => {
+        if (!plOverrides[cvr]) plOverrides[cvr] = {};
+        plOverrides[cvr].scenarioState = state;
+      });
+      saveState();
+      if (errors.length) errEl.innerHTML = errors.join('<br>');
+      document.getElementById('scenarioInput').value = '';
+      renderAll();
+    }
+
+    function updateScenarioPanel() {
+      const rows = PIPELINE_AOS.map(plGetRow);
+      const lockedWins = rows.filter(r => r.scenarioState === 'locked_win');
+      const lockedLosses = rows.filter(r => r.scenarioState === 'locked_loss');
+      const uncertain = rows.filter(r => r.scenarioState === 'uncertain' && !r.isRed && !['Kold','Tabt'].includes(r.stage));
+      const cur = rows.reduce((s,r) => s + r.current_arr, 0);
+      const winsSum = lockedWins.reduce((s,r) => s + r.jagter, 0);
+      const uncWeighted = uncertain.reduce((s,r) => s + r.weighted, 0);
+      const forecast = cur + winsSum + uncWeighted - CHURN_H2;
+      const goal = (Number(document.getElementById('cuGoalInput')?.value) || GOAL_DEFAULT_M) * 1000000;
+      const gap = goal - forecast;
+
+      const actEl = document.getElementById('scenarioActive');
+      if (lockedWins.length === 0 && lockedLosses.length === 0) {
+        actEl.innerHTML = '<p class="scn-active-empty">Ingen aktive antagelser. Skriv en eller klik et preset.</p>';
+      } else {
+        actEl.innerHTML = lockedWins.map(r => `
+          <span class="scn-active-chip win">${r.name} lukker (${fmtK(r.jagter)})<span class="scn-active-x" data-clearcvr="${r.cvr}">×</span></span>
+        `).join('') + lockedLosses.map(r => `
+          <span class="scn-active-chip loss">${r.name} glipper<span class="scn-active-x" data-clearcvr="${r.cvr}">×</span></span>
+        `).join('');
+        actEl.querySelectorAll('[data-clearcvr]').forEach(el => el.addEventListener('click', () => {
+          const cvr = el.dataset.clearcvr;
+          if (plOverrides[cvr]) plOverrides[cvr].scenarioState = 'uncertain';
+          saveState();
+          renderAll();
+        }));
+      }
+
+      const fcEl = document.getElementById('scenarioForecast');
+      fcEl.innerHTML = `
+        <div class="scn-forecast-row"><span>Nuværende ARR</span><span>${fmtK(cur)}</span></div>
+        <div class="scn-forecast-row"><span>+ Låst som lukker (${lockedWins.length})</span><span>${fmtK(winsSum)}</span></div>
+        <div class="scn-forecast-row"><span>+ Uncertain vægtet (${uncertain.length})</span><span>${fmtK(uncWeighted)}</span></div>
+        <div class="scn-forecast-row"><span>− Churn H2 (60K)</span><span>−${fmtK(CHURN_H2)}</span></div>
+        <div class="scn-forecast-row result"><span>= Forecast</span><span style="color:${forecast >= goal ? 'var(--green)' : 'var(--red)'};">${fmtArr(forecast)}</span></div>
+        <div class="scn-forecast-row gap"><span>Mål: ${fmtArr(goal)}</span><span style="color:${gap <= 0 ? 'var(--green)' : 'var(--red)'};">${gap <= 0 ? '+' + fmtK(-gap) + ' over' : '−' + fmtK(gap) + ' under'}</span></div>
+      `;
+
+      const hintEl = document.getElementById('scenarioHint');
+      if (gap > 0 && uncertain.length > 0) {
+        const ranked = [...uncertain].sort((a,b) => (b.jagter * b.probability) - (a.jagter * a.probability));
+        let cumWeighted = 0;
+        const toClose = [];
+        for (const r of ranked) {
+          toClose.push(r);
+          cumWeighted += r.weighted;
+          if (cumWeighted >= gap) break;
+        }
+        hintEl.style.display = 'block';
+        hintEl.innerHTML = `
+          <h4>For at lukke gap'et på ${fmtK(gap)} skal du have følgende uncertain deals lukke (sorteret efter sandsynlig værdi)</h4>
+          <ul>
+            ${toClose.map(r => `<li><strong>${r.name}</strong> · ${r.stage} ${Math.round(r.probability*100)}% · jagter ${fmtK(r.jagter)} · vægtet ${fmtK(r.weighted)}</li>`).join('')}
+          </ul>
+        `;
+      } else if (gap <= 0) {
+        hintEl.style.display = 'block';
+        hintEl.innerHTML = `<h4>Du er foran mål med ${fmtK(-gap)}</h4><p style="margin:0; font-size:13px;">Forecast er ${fmtArr(forecast)} · mål er ${fmtArr(goal)}. Forudsat din pipe holder.</p>`;
+      } else {
+        hintEl.style.display = 'none';
+      }
+    }
+
+    function applyPreset(p) {
+      const rows = PIPELINE_AOS.map(plGetRow);
+      if (p === 'reset') {
+        rows.forEach(r => { if (plOverrides[r.cvr]) plOverrides[r.cvr].scenarioState = 'uncertain'; });
+      } else if (p === 'gt-loss') {
+        if (!plOverrides['34209936']) plOverrides['34209936'] = {};
+        plOverrides['34209936'].scenarioState = 'locked_loss';
+      } else if (p === 'worst') {
+        rows.forEach(r => {
+          if (plOverrides[r.cvr]) plOverrides[r.cvr].scenarioState = 'uncertain';
+          if (r.stage === 'Demo') {
+            if (!plOverrides[r.cvr]) plOverrides[r.cvr] = {};
+            plOverrides[r.cvr].scenarioState = 'locked_loss';
+          }
+        });
+      } else if (p === 'best') {
+        rows.forEach(r => {
+          if (!['Kold','Tabt','Won'].includes(r.stage) && !r.isRed) {
+            if (!plOverrides[r.cvr]) plOverrides[r.cvr] = {};
+            plOverrides[r.cvr].scenarioState = 'locked_win';
+          }
+        });
+      }
+      saveState();
+      renderAll();
+    }
+
+    function renderSavedScenarios() {
+      const list = document.getElementById('savedScenariosList');
+      const names = Object.keys(savedScenarios);
+      if (names.length === 0) {
+        list.innerHTML = '<p class="scn-active-empty">Ingen gemte scenarier endnu.</p>';
+        return;
+      }
+      list.innerHTML = names.map(name => {
+        const data = savedScenarios[name];
+        const winCount = Object.values(data.states || {}).filter(v => v === 'locked_win').length;
+        const lossCount = Object.values(data.states || {}).filter(v => v === 'locked_loss').length;
+        return `
+          <div class="scn-saved-row">
+            <div>
+              <div class="scn-saved-name" data-load="${name.replace(/"/g,'&quot;')}">${name}</div>
+              <div class="scn-saved-desc">${winCount} lukker · ${lossCount} glipper · gemt ${data.date || ''}</div>
+            </div>
+            <button class="scn-btn ghost" data-load="${name.replace(/"/g,'&quot;')}">Load</button>
+            <button class="scn-btn ghost" data-del="${name.replace(/"/g,'&quot;')}" style="color:var(--red); border-color:var(--red);">Slet</button>
+          </div>
+        `;
+      }).join('');
+      list.querySelectorAll('[data-load]').forEach(el => el.addEventListener('click', () => {
+        const name = el.dataset.load;
+        const data = savedScenarios[name];
+        if (!data) return;
+        // Reset all to uncertain first
+        PIPELINE_AOS.forEach(ao => { if (plOverrides[ao.cvr]) plOverrides[ao.cvr].scenarioState = 'uncertain'; });
+        Object.entries(data.states || {}).forEach(([cvr, state]) => {
+          if (!plOverrides[cvr]) plOverrides[cvr] = {};
+          plOverrides[cvr].scenarioState = state;
+        });
+        saveState();
+        renderAll();
+      }));
+      list.querySelectorAll('[data-del]').forEach(el => el.addEventListener('click', () => {
+        delete savedScenarios[el.dataset.del];
+        saveScenariosState();
+        renderSavedScenarios();
+      }));
+    }
+
+    function saveCurrentScenario() {
+      const name = document.getElementById('scenarioNameInput').value.trim();
+      if (!name) { alert('Giv scenariet et navn'); return; }
+      const states = {};
+      PIPELINE_AOS.forEach(ao => {
+        const ov = plOverrides[ao.cvr];
+        if (ov && ov.scenarioState && ov.scenarioState !== 'uncertain') states[ao.cvr] = ov.scenarioState;
+      });
+      savedScenarios[name] = {states, date: new Date().toISOString().slice(0,10)};
+      saveScenariosState();
+      document.getElementById('scenarioNameInput').value = '';
+      renderSavedScenarios();
+    }
+
+    // ============ EXPORT / IMPORT ============
+    function exportStateJSON() {
+      const payload = {exported_at: new Date().toISOString(), edited_aos: Object.keys(plOverrides).length, overrides: plOverrides, scenarios: savedScenarios};
+      const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'pipe-state-' + new Date().toISOString().slice(0,10) + '.json';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+    function importStateJSON(file) {
+      const reader = new FileReader();
+      reader.onload = e => {
+        try {
+          const data = JSON.parse(e.target.result);
+          const ov = data.overrides || data;
+          if (typeof ov !== 'object') throw new Error('Invalid format');
+          if (!confirm('Indlæs ' + Object.keys(ov).length + ' AO-ændringer? Dette overskriver nuværende.')) return;
+          plOverrides = ov;
+          if (data.scenarios) savedScenarios = data.scenarios;
+          saveState();
+          saveScenariosState();
+          renderAll();
+        } catch (err) { alert('Kunne ikke læse fil: ' + err.message); }
+      };
+      reader.readAsText(file);
+    }
+    function exportCSV() {
+      const header = ['Navn','CVR','Segment','Rate','Erklær','Nuværende SMVs','Nye SMVs','Pris/SMV','Jagter ARR','Stadie','Sandsynlighed','Trafiklys','Scenarie-state','Lukke-måned','Eksisterende ARR'];
+      const lines = [header.join(';')];
+      PIPELINE_AOS.map(plGetRow).forEach(r => {
+        lines.push(['"'+r.name.replace(/"/g,'""')+'"', r.cvr, PL_SEG[r.segment].label, PL_SEG[r.segment].rateStr, r.erklaeringer, r.current_smvs, r.new_smvs, r.pris_per_smv, r.jagter, r.stage, Math.round(r.probability*100)+'%', r.trafficLight, r.scenarioState, r.closeMonth || '', r.current_arr].join(';'));
+      });
+      const blob = new Blob(['﻿' + lines.join('\n')], {type:'text/csv;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'pipe-' + new Date().toISOString().slice(0,10) + '.csv';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // ============ MASTER RENDER ============
+    function renderAll() {
+      renderSummary();
+      renderCatchup();
+      renderFilters();
+      renderPipe();
+      renderOps();
+      renderMonthView();
+      updateScenarioPanel();
+      renderSavedScenarios();
+    }
+
+    // ============ INIT ============
+    function init() {
+      loadState();
+      document.getElementById('aoCountTitle').textContent = PIPELINE_AOS.length;
+
+      // Wire scenario builder
+      document.getElementById('scenarioApply').addEventListener('click', () => {
+        applyScenarioParse(document.getElementById('scenarioInput').value);
+      });
+      document.getElementById('scenarioInput').addEventListener('keydown', e => {
+        if (e.key === 'Enter') applyScenarioParse(e.target.value);
+      });
+      document.querySelectorAll('[data-preset]').forEach(b => b.addEventListener('click', () => applyPreset(b.dataset.preset)));
+      document.getElementById('scenarioSaveBtn').addEventListener('click', saveCurrentScenario);
+
+      // Catch-up inputs
+      document.getElementById('cuGoalInput').addEventListener('input', () => { renderCatchup(); renderSummary(); updateScenarioPanel(); });
+      document.getElementById('cuMonthsInput').addEventListener('input', renderCatchup);
+
+      // Search + sort
+      document.getElementById('searchInput').addEventListener('input', e => { searchQ = e.target.value; renderPipe(); });
+      document.getElementById('sortSelect').addEventListener('change', e => { sortBy = e.target.value; renderPipe(); });
+
+      // Tools
+      document.getElementById('exportCSV').addEventListener('click', exportCSV);
+      document.getElementById('exportState').addEventListener('click', exportStateJSON);
+      document.getElementById('importStateInput').addEventListener('change', e => { if (e.target.files[0]) importStateJSON(e.target.files[0]); e.target.value = ''; });
+      document.getElementById('resetState').addEventListener('click', () => {
+        if (!confirm('Reset alle ændringer? Kan ikke fortrydes.')) return;
+        plOverrides = {}; saveState(); renderAll();
+      });
+
+      // Modal
+      document.getElementById('modalClose').addEventListener('click', closeModal);
+      document.getElementById('modalBackdrop').addEventListener('click', e => { if (e.target.id === 'modalBackdrop') closeModal(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && modalCvr) closeModal(); });
+
+      renderAll();
+    }
+    init();
+  </script>
+</body>
+</html>

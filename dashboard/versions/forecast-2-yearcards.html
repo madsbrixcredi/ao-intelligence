@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forecast 2 — Year Cards</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;800;900&display=swap");
+
+      :root {
+        --bg: #FBFAFD;
+        --bg-tint: #F5F2F9;
+        --ink: #0E0E14;
+        --ink-mute: #4F4B6B;
+        --purple: #3B3755;
+        --purple-light: #6F6A92;
+        --purple-dark: #2A2740;
+        --green: #33FF87;
+        --green-dark: #145C32;
+        --orange: #E08D33;
+        --white: #fff;
+        --col: 1080px;
+        --mono: ui-monospace, "SF Mono", Menlo, monospace;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        line-height: 1.6;
+        padding: 80px 24px;
+      }
+
+      .container { max-width: var(--col); margin: 0 auto; }
+
+      .label {
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--purple);
+        margin-bottom: 16px;
+        display: inline-block;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: 64px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.035em;
+        color: var(--ink);
+      }
+
+      .lead {
+        font-size: 19px;
+        font-weight: 300;
+        line-height: 1.55;
+        color: var(--ink-mute);
+        max-width: 720px;
+        margin: 0 0 48px;
+      }
+
+      .tabs {
+        display: inline-flex;
+        gap: 6px;
+        background: rgba(59, 55, 85, 0.06);
+        padding: 6px;
+        border-radius: 999px;
+        margin-bottom: 40px;
+      }
+      .tab {
+        padding: 10px 22px;
+        background: transparent;
+        border: none;
+        border-radius: 999px;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        color: var(--purple);
+        cursor: pointer;
+      }
+      .tab.active {
+        background: var(--purple);
+        color: var(--white);
+        box-shadow: 0 4px 12px rgba(59, 55, 85, 0.18);
+      }
+
+      /* Year card grid */
+      .year-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      @media (min-width: 880px) {
+        .year-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
+      }
+
+      .year-card {
+        background: linear-gradient(135deg, rgba(59,55,85,0.04), rgba(51,255,135,0.10)), var(--white);
+        border: 1px solid rgba(14,14,20,0.06);
+        border-radius: 26px;
+        padding: 36px 28px 32px;
+        box-shadow: 0 2px 12px rgba(14,14,20,0.03);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+      .year-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(14,14,20,0.08);
+      }
+
+      .year-card.is-target {
+        background:
+          radial-gradient(ellipse at top right, rgba(51,255,135,0.18) 0%, transparent 60%),
+          linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
+        color: var(--white);
+        box-shadow: 0 12px 32px rgba(59,55,85,0.22);
+      }
+
+      .year-card .label-mono {
+        font-family: var(--mono);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--purple);
+        margin-bottom: 10px;
+      }
+      .year-card.is-target .label-mono { color: var(--green); }
+
+      .year-card .big {
+        font-size: 52px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        color: var(--ink);
+        margin-bottom: 12px;
+      }
+      .year-card.is-target .big { color: var(--white); }
+
+      .year-card .delta {
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--green-dark);
+        margin-bottom: 22px;
+      }
+      .year-card.is-target .delta { color: var(--green); }
+
+      .year-card .desc {
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 1.55;
+        color: var(--ink-mute);
+        padding-top: 18px;
+        border-top: 1px solid rgba(14,14,20,0.08);
+      }
+      .year-card.is-target .desc {
+        color: rgba(255,255,255,0.85);
+        border-top-color: rgba(255,255,255,0.15);
+      }
+
+      .year-card .delta-arrow {
+        display: inline-block;
+        margin-right: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <span class="label">Design 2 — Year cards</span>
+      <h1>Et kort pr. år.</h1>
+      <p class="lead">2026 (vores mål) er fremhævet med mørk lilla. 2027/28/29 vises som lyse premium-tiles. Stort tal øverst, deltas der viser vækst. Klik et kort for detaljer.</p>
+
+      <div class="tabs">
+        <button class="tab">Conservative</button>
+        <button class="tab active">Base · MÅL</button>
+        <button class="tab">Stretch</button>
+      </div>
+
+      <div class="year-grid">
+        <div class="year-card is-target">
+          <div class="label-mono">2026 · Mål</div>
+          <div class="big">1,3M</div>
+          <div class="delta"><span class="delta-arrow">↑</span> +50% siden juni · 2,5M signed</div>
+          <div class="desc">Vores aktive mål inden 31.12.26. End-of-year invoiced ARR. Run-rate jan 2027: ~3,4M.</div>
+        </div>
+
+        <div class="year-card">
+          <div class="label-mono">2027</div>
+          <div class="big">4,5M</div>
+          <div class="delta"><span class="delta-arrow">↑</span> +246% vs 2026</div>
+          <div class="desc">NRR + new biz fra 2027 + Annual Reports compound. Forudsætter at H2 2026-mål rammes.</div>
+        </div>
+
+        <div class="year-card">
+          <div class="label-mono">2028</div>
+          <div class="big">6,0M</div>
+          <div class="delta"><span class="delta-arrow">↑</span> +33% vs 2027</div>
+          <div class="desc">Mid-market konsolidering. Beierholm whale-deal. Annual Reports adoption rammer 65-70%.</div>
+        </div>
+
+        <div class="year-card">
+          <div class="label-mono">2029</div>
+          <div class="big">8,0M</div>
+          <div class="delta"><span class="delta-arrow">↑</span> +33% vs 2028</div>
+          <div class="desc">Crediwire som dansk standard. Premium-produkter løfter ARR pr. SMV. Mature scale-up niveau.</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

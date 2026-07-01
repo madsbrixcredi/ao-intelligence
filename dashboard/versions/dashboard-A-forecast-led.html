@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Version A — Forecast-led Dashboard</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;800;900&display=swap");
+
+      :root {
+        --bg: #FBFAFD;
+        --bg-tint: #F5F2F9;
+        --ink: #0E0E14;
+        --ink-mute: #4F4B6B;
+        --purple: #3B3755;
+        --purple-light: #6F6A92;
+        --purple-dark: #2A2740;
+        --green: #33FF87;
+        --green-dark: #145C32;
+        --orange: #E08D33;
+        --red: #C95032;
+        --white: #fff;
+        --col: 1080px;
+        --mono: ui-monospace, "SF Mono", Menlo, monospace;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        line-height: 1.6;
+      }
+
+      .container { max-width: var(--col); margin: 0 auto; padding: 0 24px; }
+
+      .label {
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--purple);
+        margin-bottom: 16px;
+        display: inline-block;
+      }
+
+      h1 {
+        font-size: 64px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.035em;
+        color: var(--ink);
+        margin: 0 0 12px;
+      }
+
+      .lead {
+        font-size: 19px;
+        font-weight: 300;
+        line-height: 1.55;
+        color: var(--ink-mute);
+        max-width: 720px;
+        margin: 0 0 48px;
+      }
+
+      .section-divider {
+        padding: 100px 0 80px;
+      }
+
+      h2 {
+        font-size: 44px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        margin: 0 0 12px;
+      }
+
+      h3 {
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        margin: 48px 0 16px;
+      }
+
+      h4 {
+        font-size: 16px;
+        font-weight: 900;
+        letter-spacing: -0.005em;
+        margin: 32px 0 10px;
+      }
+
+      p { font-size: 15px; line-height: 1.7; margin: 0 0 14px; color: var(--ink); }
+
+      /* Mono small labels */
+      .mono-sm {
+        font-family: var(--mono);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        color: var(--purple);
+        text-transform: uppercase;
+      }
+
+      /* KPI tiles */
+      .kpi-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+      @media (min-width: 760px) {
+        .kpi-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
+      }
+      .kpi {
+        background: linear-gradient(135deg, rgba(59,55,85,0.04), rgba(51,255,135,0.10)), var(--white);
+        border: 1px solid rgba(14,14,20,0.06);
+        border-radius: 22px;
+        padding: 28px 26px;
+        box-shadow: 0 2px 12px rgba(14,14,20,0.03);
+      }
+      .kpi .k-label {
+        font-family: var(--mono);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--purple);
+        margin-bottom: 6px;
+      }
+      .kpi .k-val {
+        font-size: 42px;
+        font-weight: 900;
+        letter-spacing: -0.035em;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .kpi .k-context {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--ink-mute);
+      }
+      .kpi .k-story {
+        margin-top: 6px;
+        font-size: 12px;
+        font-weight: 300;
+        color: var(--ink);
+        line-height: 1.5;
+      }
+
+      /* Solo highlight */
+      .solo {
+        background:
+          radial-gradient(ellipse at top right, rgba(51,255,135,0.15) 0%, transparent 60%),
+          linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
+        color: var(--white);
+        border-radius: 26px;
+        padding: 40px 36px;
+        margin: 24px 0 40px;
+      }
+      .solo .solo-label {
+        font-family: var(--mono);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        color: var(--green);
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .solo .solo-headline {
+        font-size: 36px;
+        font-weight: 900;
+        line-height: 1.05;
+        letter-spacing: -0.025em;
+        margin: 0 0 18px;
+      }
+      .solo .solo-body { font-size: 16px; color: rgba(255,255,255,0.88); margin: 0 0 12px; max-width: 720px; }
+      .solo .hi {
+        background-image: linear-gradient(to top, transparent 0.06em, var(--green) 0.06em, var(--green) 0.32em, transparent 0.32em);
+        padding: 0 0.04em;
+        color: var(--ink);
+      }
+
+      /* Forecast chart card */
+      .forecast-card {
+        background: var(--white);
+        border: 1px solid rgba(14,14,20,0.06);
+        border-radius: 26px;
+        padding: 40px 36px;
+        box-shadow: 0 4px 24px rgba(14,14,20,0.04);
+      }
+
+      .tabs {
+        display: inline-flex;
+        gap: 6px;
+        background: rgba(59,55,85,0.06);
+        padding: 6px;
+        border-radius: 999px;
+        margin-bottom: 28px;
+      }
+      .tab {
+        padding: 10px 22px;
+        background: transparent;
+        border: none;
+        border-radius: 999px;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        color: var(--purple);
+        cursor: pointer;
+      }
+      .tab.active {
+        background: var(--purple);
+        color: var(--white);
+        box-shadow: 0 4px 12px rgba(59,55,85,0.18);
+      }
+
+      .chart-svg { width: 100%; height: 320px; margin-bottom: 24px; }
+
+      .legend {
+        display: flex; gap: 16px; flex-wrap: wrap;
+        font-size: 12px; font-weight: 700; color: var(--ink-mute);
+        margin-bottom: 20px;
+      }
+      .legend-item { display: flex; align-items: center; gap: 8px; }
+      .legend-swatch { width: 14px; height: 4px; border-radius: 4px; }
+      .sw-actual { background: var(--purple); }
+      .sw-base { background: var(--green); }
+      .sw-cons { background: var(--orange); }
+      .sw-stretch { background: var(--purple-light); }
+
+      /* Year cards */
+      .year-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-top: 24px;
+      }
+      @media (min-width: 760px) {
+        .year-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
+      }
+      .yc {
+        background: linear-gradient(135deg, rgba(59,55,85,0.04), rgba(51,255,135,0.10)), var(--white);
+        border: 1px solid rgba(14,14,20,0.06);
+        border-radius: 18px;
+        padding: 22px 20px;
+      }
+      .yc.target {
+        background:
+          radial-gradient(ellipse at top right, rgba(51,255,135,0.18) 0%, transparent 60%),
+          linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
+        color: var(--white);
+      }
+      .yc .yc-label {
+        font-family: var(--mono);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        color: var(--purple);
+        margin-bottom: 6px;
+      }
+      .yc.target .yc-label { color: var(--green); }
+      .yc .yc-val { font-size: 36px; font-weight: 900; letter-spacing: -0.03em; line-height: 1; }
+      .yc.target .yc-val { color: var(--white); }
+      .yc .yc-delta { font-size: 11px; font-weight: 800; color: var(--green-dark); margin-top: 4px; }
+      .yc.target .yc-delta { color: var(--green); }
+
+      /* Section header */
+      .section {
+        padding: 80px 0;
+      }
+      .section.tint { background: var(--bg-tint); margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px; }
+
+      /* Action grid */
+      .action-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 24px;
+      }
+      @media (min-width: 880px) {
+        .action-grid { grid-template-columns: 1fr 1fr; }
+      }
+      .act {
+        background: var(--white);
+        border: 1px solid rgba(14,14,20,0.08);
+        border-radius: 16px;
+        padding: 24px;
+      }
+      .act.mine { background: linear-gradient(135deg, var(--white), rgba(59,55,85,0.06)); }
+      .act.cust { background: linear-gradient(135deg, var(--white), rgba(51,255,135,0.10)); }
+      .act h4 { margin-top: 0; }
+      .act ul { padding-left: 20px; font-size: 14px; line-height: 1.6; }
+      .act li { margin-bottom: 6px; }
+
+      /* Risk card */
+      .risk {
+        background: linear-gradient(135deg, var(--white), rgba(201,80,50,0.05));
+        border: 1px solid rgba(201,80,50,0.18);
+        border-radius: 16px;
+        padding: 24px 28px;
+        margin-top: 32px;
+      }
+      .risk h4 { color: var(--red); margin: 0 0 8px; }
+      .risk ul { font-size: 14px; line-height: 1.6; padding-left: 20px; }
+
+      .hi {
+        background-image: linear-gradient(to top, transparent 0.06em, var(--green) 0.06em, var(--green) 0.32em, transparent 0.32em);
+        padding: 0 0.04em;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- VERSION HEADER -->
+    <div style="background: var(--purple-dark); color: var(--white); padding: 20px 24px;">
+      <div class="container">
+        <strong style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; color: var(--green);">VERSION A · FORECAST-LED</strong>
+      </div>
+    </div>
+
+    <!-- ===== SEKTION 01: BESTYRELSESOVERBLIK ===== -->
+    <section class="section">
+      <div class="container">
+        <span class="label">01 — Bestyrelsesoverblik</span>
+        <h1>Vores fundament i juni 2026.</h1>
+        <p class="lead">Hvor vi er, hvad vi har leveret, og hvorfor metrics i den her kombination peger på en virksomhed lige før hockey-stick'en.</p>
+
+        <!-- Headline KPIs -->
+        <div class="kpi-grid">
+          <div class="kpi">
+            <div class="k-label">ARR</div>
+            <div class="k-val">866K</div>
+            <div class="k-context">+132% siden 2024-lavpunkt</div>
+            <div class="k-story">Recovery fra 373k. CAGR +52%/år.</div>
+          </div>
+          <div class="kpi">
+            <div class="k-label">YoY ARR</div>
+            <div class="k-val">+68%</div>
+            <div class="k-context">Top-decile B2B SaaS</div>
+            <div class="k-story">Typisk 50-80% på vores stage.</div>
+          </div>
+          <div class="kpi">
+            <div class="k-label">NRR</div>
+            <div class="k-val">165%</div>
+            <div class="k-context">World-class · Snowflake-niveau</div>
+            <div class="k-story">Eksisterende vokser 65% af sig selv.</div>
+          </div>
+          <div class="kpi">
+            <div class="k-label">GRR</div>
+            <div class="k-val">94%</div>
+            <div class="k-context">Top-quartile retention</div>
+            <div class="k-story">Vi mister stort set ingen.</div>
+          </div>
+        </div>
+
+        <!-- Solo team highlight -->
+        <div class="solo">
+          <div class="solo-label">Den vigtigste enkelt-pointe</div>
+          <h3 class="solo-headline">Alt det her er sket med <span class="hi">1 person</span> i den kommercielle afdeling.</h3>
+          <p class="solo-body">Fra 14 ansatte i 2022 til 2 i 2025 til solo siden september 2025. ARR pr. kommerciel FTE: 866k — en 20x stigning siden 2022. Burn rate er faldet markant i samme periode.</p>
+          <p class="solo-body">Det signalerer at vores unit economics er stærke, og at vi har operationel leverage vi endnu ikke har høstet. Én Mads-type-ansættelse mere parallelliserer central-system-konverteringen. Vi er kapital-effektive, ikke kapital-tørstige.</p>
+        </div>
+
+        <!-- Engagement -->
+        <h3>Engagement +91% YoY — det stærkeste leading indicator</h3>
+        <p>Dataanalyser kørt i platformen er fordoblet på ét år: fra 1.686 til 3.217 (YTD jan-maj). Aktive brugere fordoblet (+101%). Hele 2025 brugte vi 3.123 analyser; vi har kørt 3.449 alene i H1 2026.</p>
+        <p>Det her er det signal der typisk kommer <em>før</em> ARR-væksten. Folk bruger produktet mere før de betaler mere. Det forklarer hvorfor expand-historikken peger op (GT, PoweredBy, Skov), og det forklarer hvorfor vi tør sigte <span class="hi">2,5M signed</span> kontrakter i 2026.</p>
+
+        <h3>NRR 165% — hvad det reelt betyder</h3>
+        <p>For hver krone vi havde fra eksisterende kunder i 2025, har vi <strong>1,65 kr</strong> fra de samme kunder i 2026. Selv hvis vi aldrig vandt en ny kunde igen, ville vores ARR vokse 65% år-over-år alene fra eksisterende base.</p>
+        <p>De fleste SaaS rammer 110-120%. Snowflake i deres bedste år lå på 158-178%. <strong>Vi er i den absolutte top</strong>.</p>
+
+        <h3>Vores ene strukturelle risiko: GT-koncentration</h3>
+        <p>Grant Thornton bidrager 44% af aktuel ARR. Det er enkelt-vores største eksponering. Modvægten: GT-relationen er aktiv, voksende og dyb. GT går fra 370 slots (jan) til 740 i juni, mål for H2 er 2.000 slots. Opside hvis GT signer for 25% af deres 11.366 erklæringer = 2.842 slots.</p>
+      </div>
+    </section>
+
+    <!-- ===== SEKTION 02: FREMTIDEN ===== -->
+    <section class="section tint">
+      <div class="container">
+        <span class="label">02 — Fremtiden</span>
+        <h1>Hvad vi vil omsætte for — og hvordan.</h1>
+        <p class="lead">2,5M signed kontrakter inden 31.12.26 er målet. Forecasten frem til 2029 er forankret i implementeringsmodellen. Forecastet er det første du ser.</p>
+
+        <!-- BIG FORECAST CHART -->
+        <div class="forecast-card">
+          <div class="tabs">
+            <button class="tab">Conservative</button>
+            <button class="tab active">Base · MÅL</button>
+            <button class="tab">Stretch</button>
+          </div>
+
+          <h3 style="margin: 0 0 8px;">ARR-trajectory 2022 → 2029</h3>
+          <div class="legend">
+            <div class="legend-item"><span class="legend-swatch sw-actual"></span>Faktisk</div>
+            <div class="legend-item"><span class="legend-swatch sw-cons"></span>Conservative</div>
+            <div class="legend-item"><span class="legend-swatch sw-base"></span>Base</div>
+            <div class="legend-item"><span class="legend-swatch sw-stretch"></span>Stretch</div>
+          </div>
+
+          <svg class="chart-svg" viewBox="0 0 980 320" preserveAspectRatio="xMidYMid meet">
+            <g stroke="#E8E5EE" stroke-width="1">
+              <line x1="60" y1="20" x2="940" y2="20"/>
+              <line x1="60" y1="90" x2="940" y2="90"/>
+              <line x1="60" y1="160" x2="940" y2="160"/>
+              <line x1="60" y1="230" x2="940" y2="230"/>
+              <line x1="60" y1="290" x2="940" y2="290"/>
+            </g>
+            <g font-family="ui-monospace" font-size="11" fill="#7A77A0" font-weight="700">
+              <text x="46" y="24" text-anchor="end">9M</text>
+              <text x="46" y="94" text-anchor="end">7M</text>
+              <text x="46" y="164" text-anchor="end">5M</text>
+              <text x="46" y="234" text-anchor="end">3M</text>
+              <text x="46" y="294" text-anchor="end">1M</text>
+            </g>
+            <g font-family="ui-monospace" font-size="11" fill="#3B3755" font-weight="800" letter-spacing="1">
+              <text x="100" y="312" text-anchor="middle">2022</text>
+              <text x="200" y="312" text-anchor="middle">2023</text>
+              <text x="300" y="312" text-anchor="middle">2024</text>
+              <text x="400" y="312" text-anchor="middle">2025</text>
+              <text x="500" y="312" text-anchor="middle">2026</text>
+              <text x="640" y="312" text-anchor="middle">2027</text>
+              <text x="780" y="312" text-anchor="middle">2028</text>
+              <text x="920" y="312" text-anchor="middle">2029</text>
+            </g>
+            <line x1="500" y1="10" x2="500" y2="300" stroke="#3B3755" stroke-width="2" stroke-dasharray="4,4" opacity="0.4"/>
+            <text x="505" y="12" font-family="ui-monospace" font-size="10" fill="#3B3755" font-weight="800">FORECAST →</text>
+
+            <polyline points="100,272 200,275 300,278 400,275 500,265 545,258"
+                      fill="none" stroke="#3B3755" stroke-width="3" stroke-linecap="round"/>
+            <g fill="#3B3755">
+              <circle cx="100" cy="272" r="5"/><circle cx="200" cy="275" r="5"/>
+              <circle cx="300" cy="278" r="5"/><circle cx="400" cy="275" r="5"/>
+              <circle cx="500" cy="265" r="5"/><circle cx="545" cy="258" r="5"/>
+            </g>
+
+            <polyline points="545,258 640,258 780,243 920,210"
+                      fill="none" stroke="#E08D33" stroke-width="3" stroke-dasharray="6,6" opacity="0.85"/>
+            <g fill="#E08D33"><circle cx="640" cy="258" r="5"/><circle cx="780" cy="243" r="5"/><circle cx="920" cy="210" r="5"/></g>
+
+            <polyline points="545,258 640,150 780,105 920,40"
+                      fill="none" stroke="#33FF87" stroke-width="4" stroke-linecap="round"/>
+            <g fill="#33FF87" stroke="#145C32" stroke-width="2">
+              <circle cx="640" cy="150" r="6"/><circle cx="780" cy="105" r="6"/><circle cx="920" cy="40" r="6"/>
+            </g>
+            <g font-family="Montserrat" font-size="13" fill="#145C32" font-weight="900">
+              <text x="640" y="140">4,5M</text>
+              <text x="780" y="95">6M</text>
+              <text x="920" y="32" text-anchor="end">8M</text>
+            </g>
+
+            <polyline points="545,258 640,105 780,40 920,15"
+                      fill="none" stroke="#6F6A92" stroke-width="3" stroke-dasharray="6,6" opacity="0.85"/>
+            <g fill="#6F6A92">
+              <circle cx="640" cy="105" r="5"/><circle cx="780" cy="40" r="5"/><circle cx="920" cy="15" r="5"/>
+            </g>
+          </svg>
+
+          <!-- Year cards under chart -->
+          <div class="year-grid">
+            <div class="yc target">
+              <div class="yc-label">2026 · MÅL</div>
+              <div class="yc-val">1,3M</div>
+              <div class="yc-delta">↑ +50% siden juni</div>
+            </div>
+            <div class="yc">
+              <div class="yc-label">2027</div>
+              <div class="yc-val">4,5M</div>
+              <div class="yc-delta">↑ +246% vs 2026</div>
+            </div>
+            <div class="yc">
+              <div class="yc-label">2028</div>
+              <div class="yc-val">6,0M</div>
+              <div class="yc-delta">↑ +33% vs 2027</div>
+            </div>
+            <div class="yc">
+              <div class="yc-label">2029</div>
+              <div class="yc-val">8,0M</div>
+              <div class="yc-delta">↑ +33% vs 2028</div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Komponenter — hvor de 2,5M signed i 2026 kommer fra</h3>
+        <div class="kpi-grid">
+          <div class="kpi"><div class="k-label">GT slot-expand</div><div class="k-val" style="font-size: 26px;">+735k</div><div class="k-story">740 → 2.000 slots · sep-okt</div></div>
+          <div class="kpi"><div class="k-label">15 nye AOs</div><div class="k-val" style="font-size: 26px;">+400k</div><div class="k-story">Gns. 25-30k · Q4-tunge</div></div>
+          <div class="kpi"><div class="k-label">Annual Reports</div><div class="k-val" style="font-size: 26px;">+300k</div><div class="k-story">10 af 14 healthy AOs</div></div>
+          <div class="kpi"><div class="k-label">Mid-market</div><div class="k-val" style="font-size: 26px;">+250k</div><div class="k-story">Buus, Edelbo, Revimidt, Kreston</div></div>
+          <div class="kpi"><div class="k-label">Beierholm pilot</div><div class="k-val" style="font-size: 26px;">+100k</div><div class="k-story">150-200 SMVs</div></div>
+          <div class="kpi"><div class="k-label">Top prospects (5)</div><div class="k-val" style="font-size: 26px;">+750k</div><div class="k-story">Gns. 150k pr. deal</div></div>
+        </div>
+
+        <div class="action-grid">
+          <div class="act mine">
+            <h4>Mine actions</h4>
+            <ul>
+              <li>GT-møde med Jonas inden juli · 2.000-slot plan med 25% opside</li>
+              <li>Annual Reports launch i H2 · Skov som case study</li>
+              <li>Beierholm webinar-serie · pilot signed senest dec</li>
+              <li>15 nye AOs via Digitaliseringsdagen + webinarer</li>
+              <li>Mid-market value-review i Q3</li>
+              <li>Top 5 prospects: 2 i Q3, 3 i Q4</li>
+            </ul>
+          </div>
+          <div class="act cust">
+            <h4>Kundernes actions</h4>
+            <ul>
+              <li>GT: Lukke 2.000-slot-aftalen sep-okt</li>
+              <li>Skov: Lancere Annual Reports</li>
+              <li>Beierholm: Signere pilot på 150-200 SMVs</li>
+              <li>Mid-market: Beslutte expand-niveau</li>
+              <li>10 healthy AOs: Opt-in til Annual Reports</li>
+              <li>5 top prospects: Signere kontrakter</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="risk">
+          <h4>Den ærlige risiko</h4>
+          <ul>
+            <li><strong>Solo-kapacitet:</strong> Én udskudt aftale forsinker andre</li>
+            <li><strong>GT-koncentration 44%:</strong> Strukturel risk — modvirkes ved at brede basen</li>
+            <li><strong>Annual Reports launch:</strong> Kritisk for 2027-28 trajectory</li>
+            <li><strong>Prismodel:</strong> 200 kr arbejdspriser — potentielt 30-50% upside</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>

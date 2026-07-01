@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>H2 2026 Budget · Crediwire</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #fafafa;
+        --panel: #ffffff;
+        --border: #e6e8ee;
+        --text: #1f2330;
+        --muted: #5b6378;
+        --accent: #4f46e5;
+        --good: #16a34a;
+        --warn: #d97706;
+        --bad: #dc2626;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: 'Montserrat', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 32px; }
+      header { max-width: 1280px; margin: 0 auto 24px; }
+      h1 { font-size: 26px; font-weight: 800; margin: 0 0 4px; }
+      h2 { font-size: 20px; margin: 0 0 12px; font-weight: 800; }
+      h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 8px; font-weight: 600; }
+      .lead { color: var(--muted); margin: 0; font-size: 14px; }
+      main { max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+      .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+      .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 12px; }
+      .summary-card { padding: 18px; border: 1px solid var(--border); border-radius: 12px; }
+      .summary-card span { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+      .summary-card strong { display: block; font-size: 26px; font-weight: 800; }
+      .summary-card small { color: var(--muted); font-size: 12px; }
+      .price-row { display: flex; gap: 12px; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border); }
+      .price-row label { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+      .price-row input { width: 90px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; font: inherit; text-align: right; }
+      .lock-exclude-status { margin-left: auto; font-size: 12px; color: var(--muted); }
+      .reset-btn { padding: 6px 12px; background: white; border: 1px solid var(--border); border-radius: 8px; font: inherit; font-size: 12px; color: var(--muted); cursor: pointer; }
+      .reset-btn:hover { background: #fef2f2; border-color: var(--bad); color: var(--bad); }
+
+      .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+      .tab { padding: 10px 18px; background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer; font: inherit; color: var(--muted); font-weight: 600; }
+      .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+      .scenario-head { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+      .gap-status { display: flex; gap: 24px; }
+      .gap-stat { font-size: 13px; color: var(--muted); }
+      .gap-stat strong { display: block; color: var(--text); font-size: 22px; font-weight: 800; margin-top: 2px; }
+      .gap-stat.ok strong { color: var(--good); }
+      .gap-stat.warn strong { color: var(--warn); }
+      .gap-stat.bad strong { color: var(--bad); }
+
+      .shuffle-btn { padding: 12px 24px; background: var(--accent); color: white; border: none; border-radius: 10px; cursor: pointer; font: inherit; font-weight: 600; font-size: 14px; }
+      .shuffle-btn:hover { opacity: 0.9; }
+
+      .pool-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+      .pool-table th { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border); font-size: 11px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.06em; font-weight: 600; }
+      .pool-table td { padding: 10px 8px; border-bottom: 1px solid var(--border); }
+      .pool-table tr.selected { background: #f3f4ff; }
+      .pool-table tr.fixed { background: #fff7ed; }
+      .pool-table .numeric { text-align: right; font-variant-numeric: tabular-nums; }
+      .pool-table .seg-badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+      .seg-existing { background: #dcfce7; color: #166534; }
+      .seg-top { background: #dbeafe; color: #1e40af; }
+      .seg-next20 { background: #fef3c7; color: #92400e; }
+      .seg-accru { background: #f3e8ff; color: #6b21a8; }
+      .seg-rgd { background: #fce7f3; color: #9d174d; }
+      .seg-gt { background: #fed7aa; color: #9a3412; font-weight: 700; }
+
+      .footer-summary { margin-top: 16px; padding-top: 16px; border-top: 2px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+      .footer-summary strong { font-size: 20px; }
+
+      details { margin-top: 12px; }
+      summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+      .row-actions { display: flex; gap: 4px; }
+      .exclude-btn, .lock-btn, .unlock-btn { background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 50%; width: 26px; height: 26px; font-size: 14px; cursor: pointer; padding: 0; line-height: 1; }
+      .exclude-btn:hover { background: var(--bad); color: white; border-color: var(--bad); }
+      .lock-btn:hover { background: #fbbf24; color: white; border-color: #fbbf24; }
+      .unlock-btn:hover { background: var(--muted); color: white; }
+      .lock-badge { display: inline-block; padding: 2px 8px; background: #fef3c7; color: #92400e; border-radius: 6px; font-size: 11px; font-weight: 700; margin-left: 6px; }
+      .pool-table tr.locked { background: #fefce8; }
+      .pool-table tr.locked td { font-weight: 600; }
+      .excluded-section { margin-top: 20px; padding: 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; }
+      .excluded-section h4 { margin: 0 0 10px; font-size: 13px; color: #991b1b; font-weight: 600; }
+      .excluded-list { display: flex; flex-wrap: wrap; gap: 8px; }
+      .excluded-tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px 4px 10px; background: white; border: 1px solid #fca5a5; border-radius: 16px; font-size: 12px; color: #7f1d1d; }
+      .excluded-tag button { background: none; border: none; cursor: pointer; color: #7f1d1d; font-size: 14px; padding: 0; }
+      .excluded-tag button:hover { color: var(--good); }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>H2 2026 Budget · Tre veje til 2,3M</h1>
+      <p class="lead">Bestyrelsesoverblik over hvordan vi lukker gappet fra 866K til 2,3M på tre forskellige måder. Hvert scenarie viser konkrete AOs der skal levere.</p>
+    </header>
+    <main>
+      <section class="panel">
+        <h3>Udgangspunkt</h3>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <span>Nuværende ARR</span>
+            <strong id="kpiCurrent">866K</strong>
+            <small>Pr. juni 2026 · alle statuses</small>
+          </div>
+          <div class="summary-card">
+            <span>Mål EOY 2026</span>
+            <strong id="kpiTarget">2.300K</strong>
+            <small>Fra Revenue budget</small>
+          </div>
+          <div class="summary-card">
+            <span>H2-gap</span>
+            <strong id="kpiGap">1.434K</strong>
+            <small>Mål − nuværende</small>
+          </div>
+          <div class="summary-card">
+            <span>Pool kapacitet</span>
+            <strong id="kpiPoolCapacity">0K</strong>
+            <small id="kpiPoolCapacityHelp">Max ARR alle ikke-GT AOs kan levere</small>
+          </div>
+        </div>
+        <div class="price-row">
+          <label>Pris pr. ny SMV (alle ikke-GT AOs)
+            <input id="newSmvPrice" type="number" value="558" min="0" step="50" />
+            <span>kr/år</span>
+          </label>
+          <span id="lockExcludeStatus" class="lock-exclude-status">⭐ 0 låst · ✕ 0 ekskluderet</span>
+          <button type="button" id="resetBtn" class="reset-btn" title="Nulstil alle låste + ekskluderede AOs">Nulstil låst/ekskluderet</button>
+          <label>GT-pris (kun GT-bidrag)
+            <input id="gtPrice" type="number" value="544" min="0" step="50" />
+            <span>kr/SMV</span>
+          </label>
+          <label>Nuværende ARR
+            <input id="currentArr" type="number" value="866000" min="0" step="1000" />
+            <span>kr</span>
+          </label>
+          <label>Mål EOY
+            <input id="targetArr" type="number" value="2300000" min="0" step="10000" />
+            <span>kr</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="tabs" id="tabs">
+          <button class="tab active" data-tab="0">Scenarie 1 · Med GT fuld</button>
+          <button class="tab" data-tab="1">Scenarie 2 · Med 50% GT</button>
+          <button class="tab" data-tab="2">Scenarie 3 · Uden GT</button>
+        </div>
+        <div id="scenarioView"></div>
+      </section>
+
+      <section class="panel">
+        <h3>Sådan virker det</h3>
+        <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
+          <strong>Hver AO kan kun tælle én gang.</strong> Hvis et hus er på flere lister (fx Albjerg er på Top, Accru og RGD) tildeles det <strong>højeste rate</strong>: Existing (25%) > Top (5%) > Næste 20 (2%) > Accru (2%) > RGD (2%).
+          <br><br>
+          <strong>Maks-bidrag pr. AO</strong> = total erklæringer × segment-rate × pris. Det er hvad et hus kan levere ved fuld implementering af sin rate.
+          <br><br>
+          <strong>Shuffle</strong>-knappen vælger tilfældigt fra poolen indtil gappet er lukket. Det viser at vi har <strong>flere veje til samme mål</strong> · ikke kun én plan der skal lykkes.
+        </p>
+      </section>
+    </main>
+
+    <script src="budget.js?v=20260629-reset-btn"></script>
+  </body>
+</html>

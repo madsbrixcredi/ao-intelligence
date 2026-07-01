@@ -1,0 +1,524 @@
+week_start,accounting_office_name,accounting_office_cvr,analyses,active_users,distinct_clients
+2024-11-18,Danrevi Løgstør,10019699,1,1,1
+2024-11-25,Danrevi Løgstør,10019699,1,1,1
+2024-12-02,Danrevi Løgstør,10019699,3,1,1
+2025-01-13,Danrevi Løgstør,10019699,2,1,1
+2025-02-03,Danrevi Løgstør,10019699,1,1,1
+2025-02-17,Danrevi Løgstør,10019699,1,1,1
+2025-02-24,Danrevi Løgstør,10019699,3,1,1
+2025-03-03,Danrevi Løgstør,10019699,4,2,2
+2025-03-10,Danrevi Løgstør,10019699,3,2,2
+2025-03-17,Danrevi Løgstør,10019699,9,2,3
+2025-03-31,Danrevi Løgstør,10019699,3,1,1
+2025-04-07,Danrevi Løgstør,10019699,2,1,1
+2025-05-05,Danrevi Løgstør,10019699,1,1,1
+2025-06-02,Danrevi Løgstør,10019699,2,1,1
+2025-06-09,Danrevi Løgstør,10019699,1,1,1
+2025-06-16,Danrevi Løgstør,10019699,1,1,1
+2025-09-01,Danrevi Løgstør,10019699,5,3,2
+2025-09-08,Danrevi Løgstør,10019699,7,1,1
+2025-09-15,Danrevi Løgstør,10019699,21,3,3
+2025-10-06,Danrevi Løgstør,10019699,4,2,2
+2025-11-17,Danrevi Løgstør,10019699,1,1,1
+2025-12-08,Danrevi Løgstør,10019699,1,1,1
+2026-02-09,Danrevi Løgstør,10019699,2,1,1
+2026-03-16,Danrevi Løgstør,10019699,8,2,2
+2026-03-23,Danrevi Løgstør,10019699,19,2,2
+2026-04-13,Danrevi Løgstør,10019699,8,1,1
+2026-04-27,Danrevi Løgstør,10019699,2,1,1
+2026-05-04,Danrevi Løgstør,10019699,5,1,1
+2026-06-01,Danrevi Løgstør,10019699,12,2,2
+2026-06-08,Danrevi Løgstør,10019699,5,1,1
+2025-10-06,Aage Maagensen,12901038,5,1,1
+2025-10-20,Aage Maagensen,12901038,2,1,1
+2024-11-04,Revisionsfirmaet Gutfelt,13254192,5,1,1
+2026-01-05,PKF Munkebo Vindelev,14119299,6,1,1
+2024-05-27,Partner Revision,15807776,6,1,1
+2024-08-12,Partner Revision,15807776,7,1,1
+2024-03-11,Revisionsfirmaet Axel Gram,16645699,4,1,1
+2024-04-01,Revisionsfirmaet Axel Gram,16645699,4,1,1
+2025-02-24,Revisionsfirmaet Axel Gram,16645699,4,1,1
+2025-03-10,Revisionsfirmaet Axel Gram,16645699,1,1,1
+2025-03-17,Revisionsfirmaet Axel Gram,16645699,10,1,1
+2025-03-31,Revisionsfirmaet Axel Gram,16645699,11,2,3
+2025-04-07,Revisionsfirmaet Axel Gram,16645699,14,2,3
+2025-04-14,Revisionsfirmaet Axel Gram,16645699,37,1,8
+2025-04-21,Revisionsfirmaet Axel Gram,16645699,2,1,1
+2025-04-28,Revisionsfirmaet Axel Gram,16645699,14,2,3
+2025-05-05,Revisionsfirmaet Axel Gram,16645699,3,1,1
+2025-05-12,Revisionsfirmaet Axel Gram,16645699,7,1,2
+2025-05-19,Revisionsfirmaet Axel Gram,16645699,27,4,7
+2025-06-16,Revisionsfirmaet Axel Gram,16645699,6,2,2
+2025-06-23,Revisionsfirmaet Axel Gram,16645699,8,3,4
+2025-07-28,Revisionsfirmaet Axel Gram,16645699,6,1,1
+2025-09-15,Revisionsfirmaet Axel Gram,16645699,12,1,1
+2025-09-29,Revisionsfirmaet Axel Gram,16645699,1,1,1
+2025-10-20,Revisionsfirmaet Axel Gram,16645699,7,2,2
+2025-10-27,Revisionsfirmaet Axel Gram,16645699,6,1,1
+2025-11-10,Revisionsfirmaet Axel Gram,16645699,2,1,1
+2025-12-08,Revisionsfirmaet Axel Gram,16645699,4,1,1
+2026-01-12,Revisionsfirmaet Axel Gram,16645699,6,1,1
+2026-02-02,Revisionsfirmaet Axel Gram,16645699,1,1,1
+2026-03-02,Revisionsfirmaet Axel Gram,16645699,4,1,1
+2026-03-23,Revisionsfirmaet Axel Gram,16645699,10,2,3
+2026-04-13,Revisionsfirmaet Axel Gram,16645699,2,1,1
+2026-04-20,Revisionsfirmaet Axel Gram,16645699,10,2,4
+2026-04-27,Revisionsfirmaet Axel Gram,16645699,7,1,1
+2026-05-04,Revisionsfirmaet Axel Gram,16645699,13,2,4
+2026-05-11,Revisionsfirmaet Axel Gram,16645699,4,1,1
+2026-05-18,Revisionsfirmaet Axel Gram,16645699,3,1,1
+2026-06-08,Revisionsfirmaet Axel Gram,16645699,2,1,2
+2025-05-19,RegnskabsHuset.com,18067676,1,1,1
+2024-03-25,Lægård Revision,18437082,5,1,1
+2024-04-01,Lægård Revision,18437082,7,1,1
+2024-04-08,Lægård Revision,18437082,8,1,1
+2024-04-22,Lægård Revision,18437082,13,1,1
+2024-11-11,Lægård Revision,18437082,2,1,2
+2024-12-09,Lægård Revision,18437082,6,1,2
+2025-02-24,Lægård Revision,18437082,11,1,1
+2025-04-28,Lægård Revision,18437082,4,1,1
+2024-08-12,Baagøe Schou,21148148,3,1,1
+2025-10-06,Piaster Revisorerne,25160037,29,1,4
+2025-10-27,Piaster Revisorerne,25160037,8,1,1
+2025-11-17,Piaster Revisorerne,25160037,5,1,1
+2024-04-29,Dansk Revision Århus,26717671,1,1,1
+2024-05-06,Dansk Revision Århus,26717671,2,1,1
+2024-09-09,Dansk Revision Århus,26717671,4,1,1
+2024-12-09,Dansk Revision Århus,26717671,76,12,11
+2025-03-17,Dansk Revision Århus,26717671,6,3,3
+2025-03-24,Dansk Revision Århus,26717671,3,2,2
+2025-03-31,Dansk Revision Århus,26717671,3,1,1
+2025-06-02,Dansk Revision Århus,26717671,10,2,3
+2025-06-09,Dansk Revision Århus,26717671,4,1,1
+2026-01-05,Dansk Revision Århus,26717671,20,1,3
+2026-04-20,Dansk Revision Århus,26717671,2,1,1
+2026-05-25,Dansk Revision Århus,26717671,10,2,3
+2026-06-08,Dansk Revision Århus,26717671,2,1,1
+2025-09-29,#VALUE!,27083978,1,1,1
+2024-04-01,Skov Revision,27525989,1,1,1
+2024-06-17,Skov Revision,27525989,7,1,1
+2024-08-05,Skov Revision,27525989,1,1,1
+2024-08-12,Skov Revision,27525989,6,1,1
+2024-08-19,Skov Revision,27525989,1,1,1
+2024-09-02,Skov Revision,27525989,2,1,1
+2024-11-18,Skov Revision,27525989,73,13,11
+2024-12-02,Skov Revision,27525989,3,1,1
+2025-01-13,Skov Revision,27525989,7,1,1
+2025-01-20,Skov Revision,27525989,3,2,2
+2025-01-27,Skov Revision,27525989,7,2,1
+2025-02-03,Skov Revision,27525989,9,3,3
+2025-02-10,Skov Revision,27525989,1,1,1
+2025-02-17,Skov Revision,27525989,7,1,2
+2025-02-24,Skov Revision,27525989,5,3,3
+2025-03-03,Skov Revision,27525989,8,3,4
+2025-03-10,Skov Revision,27525989,41,4,7
+2025-03-17,Skov Revision,27525989,9,3,4
+2025-03-24,Skov Revision,27525989,7,3,5
+2025-03-31,Skov Revision,27525989,6,2,2
+2025-04-07,Skov Revision,27525989,13,2,2
+2025-04-21,Skov Revision,27525989,5,1,1
+2025-05-12,Skov Revision,27525989,2,2,2
+2025-05-19,Skov Revision,27525989,1,1,1
+2025-06-09,Skov Revision,27525989,4,1,1
+2025-06-30,Skov Revision,27525989,1,1,1
+2025-07-07,Skov Revision,27525989,3,1,1
+2025-07-14,Skov Revision,27525989,1,1,1
+2025-08-04,Skov Revision,27525989,5,1,1
+2025-08-11,Skov Revision,27525989,6,1,1
+2025-08-18,Skov Revision,27525989,1,1,1
+2025-09-01,Skov Revision,27525989,1,1,1
+2025-09-22,Skov Revision,27525989,2,2,1
+2025-10-20,Skov Revision,27525989,2,1,1
+2025-11-03,Skov Revision,27525989,3,1,1
+2025-11-10,Skov Revision,27525989,28,4,3
+2025-11-17,Skov Revision,27525989,6,3,3
+2025-11-24,Skov Revision,27525989,10,4,4
+2025-12-01,Skov Revision,27525989,5,2,3
+2025-12-08,Skov Revision,27525989,1,1,1
+2026-01-19,Skov Revision,27525989,4,1,1
+2026-01-26,Skov Revision,27525989,5,1,1
+2026-02-02,Skov Revision,27525989,6,2,1
+2026-02-09,Skov Revision,27525989,7,2,3
+2026-02-16,Skov Revision,27525989,19,3,4
+2026-02-23,Skov Revision,27525989,6,2,2
+2026-03-02,Skov Revision,27525989,7,2,2
+2026-03-09,Skov Revision,27525989,8,3,4
+2026-03-16,Skov Revision,27525989,9,3,2
+2026-03-23,Skov Revision,27525989,5,2,2
+2026-04-06,Skov Revision,27525989,23,3,8
+2026-04-13,Skov Revision,27525989,9,2,7
+2026-05-04,Skov Revision,27525989,9,3,3
+2026-05-11,Skov Revision,27525989,7,2,2
+2026-05-18,Skov Revision,27525989,7,1,1
+2026-05-25,Skov Revision,27525989,4,2,2
+2026-06-01,Skov Revision,27525989,2,2,2
+2026-06-08,Skov Revision,27525989,10,4,4
+2024-11-04,ERASMUS & PARTNERE A/S,28493584,4,1,1
+2024-10-28,Regnskabsvirksomheden Schaumburg/Bendtsen ApS,28655835,5,1,1
+2025-04-14,Stoisk,28919719,1,1,1
+2025-10-20,Stoisk,28919719,1,1,1
+2025-04-07,Redmark,29442789,5,1,1
+2024-09-02,Revisionscentret Aabenraa,29695636,4,1,1
+2025-03-17,Dansk Revision Slagelse,29919801,16,1,1
+2025-06-23,Dansk Revision Slagelse,29919801,1,1,1
+2025-09-22,Dansk Revision Slagelse,29919801,1,1,1
+2024-10-07,Vestjysk Consulting,30498674,1,1,1
+2024-09-16,Taleco ApS,30525035,2,1,1
+2026-02-16,Taleco ApS,30525035,7,1,1
+2024-09-09,EY,30700228,5,2,2
+2024-09-16,EY,30700228,2,1,2
+2024-09-30,EY,30700228,4,1,1
+2024-10-21,EY,30700228,2,1,2
+2024-10-28,EY,30700228,1,1,1
+2024-11-18,EY,30700228,2,2,2
+2024-12-16,EY,30700228,2,1,1
+2025-02-10,EY,30700228,2,1,1
+2026-02-16,RevisorGruppen I/S,31481945,4,1,1
+2024-10-28,Ullits & Winther,32093272,7,1,1
+2024-09-23,Martinsen,32285201,10,1,2
+2024-10-07,Martinsen,32285201,3,1,1
+2024-04-01,Leif Mikkelsen & Partnere,32676421,2,1,1
+2024-04-08,Leif Mikkelsen & Partnere,32676421,11,1,1
+2024-04-15,Leif Mikkelsen & Partnere,32676421,2,1,1
+2024-05-06,Leif Mikkelsen & Partnere,32676421,4,1,1
+2024-05-27,Leif Mikkelsen & Partnere,32676421,3,1,1
+2024-11-04,Leif Mikkelsen & Partnere,32676421,4,1,1
+2024-11-11,Leif Mikkelsen & Partnere,32676421,3,1,1
+2025-01-06,Leif Mikkelsen & Partnere,32676421,1,1,1
+2025-01-13,Leif Mikkelsen & Partnere,32676421,5,1,1
+2025-01-20,Leif Mikkelsen & Partnere,32676421,3,1,1
+2025-02-17,Leif Mikkelsen & Partnere,32676421,3,1,1
+2025-05-12,Leif Mikkelsen & Partnere,32676421,1,1,1
+2025-06-09,Leif Mikkelsen & Partnere,32676421,4,1,1
+2025-06-16,Leif Mikkelsen & Partnere,32676421,8,1,1
+2025-06-23,Leif Mikkelsen & Partnere,32676421,2,1,1
+2025-07-28,Leif Mikkelsen & Partnere,32676421,1,1,1
+2025-08-04,Leif Mikkelsen & Partnere,32676421,13,1,2
+2025-10-06,Leif Mikkelsen & Partnere,32676421,11,2,2
+2025-10-20,Leif Mikkelsen & Partnere,32676421,4,1,1
+2025-12-08,Leif Mikkelsen & Partnere,32676421,4,1,1
+2026-01-05,Leif Mikkelsen & Partnere,32676421,5,2,2
+2026-01-12,Leif Mikkelsen & Partnere,32676421,8,1,1
+2026-02-16,Leif Mikkelsen & Partnere,32676421,4,1,1
+2026-02-23,Leif Mikkelsen & Partnere,32676421,3,2,2
+2026-03-09,Leif Mikkelsen & Partnere,32676421,1,1,1
+2026-03-23,Leif Mikkelsen & Partnere,32676421,3,1,1
+2026-04-27,Leif Mikkelsen & Partnere,32676421,1,1,1
+2026-05-04,Leif Mikkelsen & Partnere,32676421,9,2,2
+2026-05-18,Leif Mikkelsen & Partnere,32676421,4,1,1
+2024-06-10,Beierholm,32895468,1,1,1
+2024-08-26,Beierholm,32895468,6,1,3
+2024-09-02,Beierholm,32895468,4,1,2
+2024-09-09,Beierholm,32895468,2,2,2
+2024-09-23,Beierholm,32895468,8,4,4
+2024-10-21,Beierholm,32895468,1,1,1
+2024-10-28,Beierholm,32895468,2,1,1
+2024-11-04,Beierholm,32895468,1,1,1
+2025-03-03,Beierholm,32895468,1,1,1
+2025-09-22,Beierholm,32895468,1,1,1
+2025-11-17,Beierholm,32895468,4,1,1
+2026-04-27,Beierholm,32895468,5,1,1
+2026-05-11,Beierholm,32895468,2,1,1
+2025-11-24,RevisorGruppen I/S,32938213,1,1,1
+2024-10-07,LPOG ApS,33167288,8,2,2
+2026-01-05,Regnskabsfokus,33578628,4,1,1
+2024-12-16,PricewaterhouseCoopers,33771231,1,1,1
+2024-09-23,Copenhagen Management Accounting Company ApS,33932464,2,1,1
+2024-10-07,Copenhagen Management Accounting Company ApS,33932464,1,1,1
+2024-10-14,Copenhagen Management Accounting Company ApS,33932464,5,1,1
+2024-11-25,Kreston SR,33948794,3,1,1
+2024-06-03,Grant Thornton,34209936,4,2,2
+2024-06-10,Grant Thornton,34209936,7,2,3
+2024-06-17,Grant Thornton,34209936,1,1,1
+2024-08-19,Grant Thornton,34209936,12,1,3
+2024-09-09,Grant Thornton,34209936,8,1,1
+2024-09-16,Grant Thornton,34209936,1,1,1
+2024-09-23,Grant Thornton,34209936,9,2,3
+2024-11-04,Grant Thornton,34209936,5,3,2
+2024-12-09,Grant Thornton,34209936,7,2,3
+2024-12-16,Grant Thornton,34209936,5,1,2
+2025-01-06,Grant Thornton,34209936,4,1,1
+2025-01-13,Grant Thornton,34209936,6,1,2
+2025-01-27,Grant Thornton,34209936,5,2,2
+2025-02-03,Grant Thornton,34209936,15,2,4
+2025-02-10,Grant Thornton,34209936,16,1,2
+2025-02-17,Grant Thornton,34209936,58,5,10
+2025-02-24,Grant Thornton,34209936,46,7,8
+2025-03-03,Grant Thornton,34209936,84,8,10
+2025-03-10,Grant Thornton,34209936,92,5,14
+2025-03-17,Grant Thornton,34209936,104,7,14
+2025-03-24,Grant Thornton,34209936,45,8,9
+2025-03-31,Grant Thornton,34209936,86,3,13
+2025-04-07,Grant Thornton,34209936,58,3,9
+2025-04-14,Grant Thornton,34209936,83,3,9
+2025-04-21,Grant Thornton,34209936,38,6,10
+2025-04-28,Grant Thornton,34209936,45,5,9
+2025-05-05,Grant Thornton,34209936,59,6,14
+2025-05-12,Grant Thornton,34209936,49,4,7
+2025-05-19,Grant Thornton,34209936,40,3,6
+2025-05-26,Grant Thornton,34209936,18,4,4
+2025-06-02,Grant Thornton,34209936,48,3,8
+2025-06-09,Grant Thornton,34209936,31,4,6
+2025-06-16,Grant Thornton,34209936,94,7,15
+2025-06-23,Grant Thornton,34209936,26,5,5
+2025-06-30,Grant Thornton,34209936,19,2,4
+2025-07-07,Grant Thornton,34209936,43,2,6
+2025-07-28,Grant Thornton,34209936,12,1,2
+2025-08-04,Grant Thornton,34209936,18,3,4
+2025-08-11,Grant Thornton,34209936,16,2,2
+2025-08-25,Grant Thornton,34209936,27,2,4
+2025-09-01,Grant Thornton,34209936,57,4,10
+2025-09-08,Grant Thornton,34209936,17,3,4
+2025-09-15,Grant Thornton,34209936,48,3,10
+2025-09-22,Grant Thornton,34209936,60,7,10
+2025-09-29,Grant Thornton,34209936,37,2,4
+2025-10-06,Grant Thornton,34209936,2,1,1
+2025-10-13,Grant Thornton,34209936,22,2,3
+2025-10-20,Grant Thornton,34209936,8,2,2
+2025-10-27,Grant Thornton,34209936,34,6,8
+2025-11-03,Grant Thornton,34209936,83,4,13
+2025-11-10,Grant Thornton,34209936,13,2,3
+2025-11-17,Grant Thornton,34209936,10,1,2
+2025-11-24,Grant Thornton,34209936,25,2,2
+2025-12-01,Grant Thornton,34209936,23,2,3
+2025-12-08,Grant Thornton,34209936,27,4,6
+2025-12-15,Grant Thornton,34209936,38,5,8
+2025-12-29,Grant Thornton,34209936,2,1,1
+2026-01-05,Grant Thornton,34209936,21,3,4
+2026-01-12,Grant Thornton,34209936,91,2,12
+2026-01-19,Grant Thornton,34209936,65,8,12
+2026-01-26,Grant Thornton,34209936,92,8,15
+2026-02-02,Grant Thornton,34209936,96,9,22
+2026-02-09,Grant Thornton,34209936,112,12,20
+2026-02-16,Grant Thornton,34209936,203,12,24
+2026-02-23,Grant Thornton,34209936,235,15,31
+2026-03-02,Grant Thornton,34209936,186,14,36
+2026-03-09,Grant Thornton,34209936,152,15,28
+2026-03-16,Grant Thornton,34209936,146,24,34
+2026-03-23,Grant Thornton,34209936,164,17,40
+2026-03-30,Grant Thornton,34209936,22,5,6
+2026-04-06,Grant Thornton,34209936,116,15,21
+2026-04-13,Grant Thornton,34209936,78,18,18
+2026-04-20,Grant Thornton,34209936,103,19,23
+2026-04-27,Grant Thornton,34209936,60,15,16
+2026-05-04,Grant Thornton,34209936,135,19,28
+2026-05-11,Grant Thornton,34209936,72,7,13
+2026-05-18,Grant Thornton,34209936,96,15,17
+2026-05-25,Grant Thornton,34209936,36,6,8
+2026-06-01,Grant Thornton,34209936,51,11,13
+2026-06-08,Grant Thornton,34209936,105,10,21
+2026-06-15,Grant Thornton,34209936,19,3,3
+2026-01-26,Revimidt,34480370,24,4,5
+2026-02-02,Revimidt,34480370,6,1,2
+2026-02-09,Revimidt,34480370,1,1,1
+2026-02-16,Revimidt,34480370,9,1,2
+2026-03-09,Revimidt,34480370,2,1,1
+2026-03-16,Revimidt,34480370,4,1,2
+2026-03-23,Revimidt,34480370,1,1,1
+2026-03-30,Revimidt,34480370,18,3,4
+2026-04-06,Revimidt,34480370,6,2,2
+2026-04-13,Revimidt,34480370,9,2,3
+2026-04-20,Revimidt,34480370,2,1,1
+2026-05-04,Revimidt,34480370,15,3,3
+2026-05-11,Revimidt,34480370,3,1,1
+2026-05-25,Revimidt,34480370,2,1,1
+2025-03-17,RevisorGruppen I/S,34953619,9,2,4
+2025-03-24,RevisorGruppen I/S,34953619,1,1,1
+2025-04-07,RevisorGruppen I/S,34953619,5,1,1
+2025-04-14,RevisorGruppen I/S,34953619,1,1,1
+2025-05-19,RevisorGruppen I/S,34953619,1,1,1
+2025-05-26,RevisorGruppen I/S,34953619,1,1,1
+2025-06-30,RevisorGruppen I/S,34953619,1,1,1
+2025-07-14,RevisorGruppen I/S,34953619,1,1,1
+2025-09-08,RevisorGruppen I/S,34953619,4,1,2
+2025-09-15,RevisorGruppen I/S,34953619,6,2,3
+2025-09-22,RevisorGruppen I/S,34953619,11,3,3
+2025-09-29,RevisorGruppen I/S,34953619,1,1,1
+2025-10-06,RevisorGruppen I/S,34953619,2,1,1
+2025-10-13,RevisorGruppen I/S,34953619,2,1,1
+2025-11-10,RevisorGruppen I/S,34953619,3,1,2
+2026-01-05,RevisorGruppen I/S,34953619,8,3,3
+2026-01-19,RevisorGruppen I/S,34953619,5,1,1
+2026-02-16,RevisorGruppen I/S,34953619,1,1,1
+2026-03-02,RevisorGruppen I/S,34953619,17,1,2
+2026-03-09,RevisorGruppen I/S,34953619,1,1,1
+2026-03-30,RevisorGruppen I/S,34953619,2,1,1
+2026-04-20,RevisorGruppen I/S,34953619,1,1,1
+2026-04-27,RevisorGruppen I/S,34953619,2,1,1
+2026-05-04,RevisorGruppen I/S,34953619,5,1,1
+2025-09-15,Albjerg,35382879,5,1,1
+2026-01-12,Albjerg,35382879,3,1,1
+2026-01-19,Albjerg,35382879,3,1,1
+2026-01-26,Albjerg,35382879,7,1,1
+2026-02-02,Albjerg,35382879,7,1,1
+2026-03-16,Albjerg,35382879,3,1,1
+2026-03-23,Albjerg,35382879,17,1,1
+2026-04-06,Albjerg,35382879,4,1,1
+2026-06-08,Albjerg,35382879,4,1,1
+2024-11-11,Revisionsfirmaet Edelbo,35486178,9,1,1
+2024-11-25,Revisionsfirmaet Edelbo,35486178,2,1,1
+2025-01-06,Revisionsfirmaet Edelbo,35486178,59,13,12
+2025-01-13,Revisionsfirmaet Edelbo,35486178,30,5,6
+2025-01-27,Revisionsfirmaet Edelbo,35486178,9,2,2
+2025-02-03,Revisionsfirmaet Edelbo,35486178,14,3,3
+2025-02-10,Revisionsfirmaet Edelbo,35486178,6,2,2
+2025-02-17,Revisionsfirmaet Edelbo,35486178,11,3,3
+2025-02-24,Revisionsfirmaet Edelbo,35486178,12,3,2
+2025-03-03,Revisionsfirmaet Edelbo,35486178,26,4,6
+2025-03-10,Revisionsfirmaet Edelbo,35486178,14,4,5
+2025-03-17,Revisionsfirmaet Edelbo,35486178,13,2,2
+2025-03-24,Revisionsfirmaet Edelbo,35486178,11,3,4
+2025-03-31,Revisionsfirmaet Edelbo,35486178,8,2,2
+2025-04-07,Revisionsfirmaet Edelbo,35486178,1,1,1
+2025-04-14,Revisionsfirmaet Edelbo,35486178,5,1,1
+2025-04-21,Revisionsfirmaet Edelbo,35486178,4,1,2
+2025-04-28,Revisionsfirmaet Edelbo,35486178,1,1,1
+2025-05-05,Revisionsfirmaet Edelbo,35486178,6,3,4
+2025-05-12,Revisionsfirmaet Edelbo,35486178,5,3,3
+2025-05-26,Revisionsfirmaet Edelbo,35486178,3,1,3
+2025-06-02,Revisionsfirmaet Edelbo,35486178,1,1,1
+2025-06-09,Revisionsfirmaet Edelbo,35486178,6,3,3
+2025-06-16,Revisionsfirmaet Edelbo,35486178,6,3,4
+2025-06-23,Revisionsfirmaet Edelbo,35486178,7,2,2
+2025-06-30,Revisionsfirmaet Edelbo,35486178,7,1,2
+2025-07-07,Revisionsfirmaet Edelbo,35486178,1,1,1
+2025-08-11,Revisionsfirmaet Edelbo,35486178,2,1,1
+2025-08-18,Revisionsfirmaet Edelbo,35486178,3,1,2
+2025-09-01,Revisionsfirmaet Edelbo,35486178,2,2,2
+2025-09-29,Revisionsfirmaet Edelbo,35486178,3,1,1
+2025-10-06,Revisionsfirmaet Edelbo,35486178,4,1,1
+2025-10-13,Revisionsfirmaet Edelbo,35486178,1,1,1
+2025-10-20,Revisionsfirmaet Edelbo,35486178,44,4,7
+2025-10-27,Revisionsfirmaet Edelbo,35486178,37,4,5
+2025-11-10,Revisionsfirmaet Edelbo,35486178,16,2,3
+2025-11-17,Revisionsfirmaet Edelbo,35486178,6,1,1
+2025-12-08,Revisionsfirmaet Edelbo,35486178,4,1,1
+2025-12-15,Revisionsfirmaet Edelbo,35486178,6,1,1
+2026-01-05,Revisionsfirmaet Edelbo,35486178,5,1,1
+2026-01-12,Revisionsfirmaet Edelbo,35486178,2,1,1
+2026-01-19,Revisionsfirmaet Edelbo,35486178,7,1,2
+2026-01-26,Revisionsfirmaet Edelbo,35486178,4,2,2
+2026-02-02,Revisionsfirmaet Edelbo,35486178,18,2,4
+2026-02-09,Revisionsfirmaet Edelbo,35486178,7,1,2
+2026-02-16,Revisionsfirmaet Edelbo,35486178,5,2,3
+2026-02-23,Revisionsfirmaet Edelbo,35486178,12,3,4
+2026-03-02,Revisionsfirmaet Edelbo,35486178,7,1,1
+2026-03-09,Revisionsfirmaet Edelbo,35486178,14,4,5
+2026-03-16,Revisionsfirmaet Edelbo,35486178,5,1,1
+2026-03-23,Revisionsfirmaet Edelbo,35486178,17,5,6
+2026-04-06,Revisionsfirmaet Edelbo,35486178,1,1,1
+2026-04-13,Revisionsfirmaet Edelbo,35486178,3,1,1
+2026-05-04,Revisionsfirmaet Edelbo,35486178,7,1,1
+2026-05-18,Revisionsfirmaet Edelbo,35486178,1,1,1
+2026-05-25,Revisionsfirmaet Edelbo,35486178,7,2,3
+2026-06-01,Revisionsfirmaet Edelbo,35486178,6,2,3
+2026-06-08,Revisionsfirmaet Edelbo,35486178,5,3,4
+2026-06-15,Revisionsfirmaet Edelbo,35486178,2,1,1
+2024-11-11,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,7,1,1
+2024-11-18,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2,1,1
+2025-02-24,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,26,1,3
+2025-03-03,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,6,1,2
+2025-03-10,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,10,1,1
+2025-03-17,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,1,1,1
+2025-04-14,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,1,1,1
+2025-06-30,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,5,1,1
+2025-07-07,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,3,1,1
+2025-08-25,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,7,1,1
+2025-10-20,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,5,1,1
+2025-11-17,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,4,1,1
+2025-11-24,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,5,1,1
+2026-01-26,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,1,1,1
+2026-02-23,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,26,1,4
+2026-03-30,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,4,1,1
+2026-04-06,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,28,3,4
+2026-04-13,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,4,2,2
+2026-04-20,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,6,1,1
+2026-04-27,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,5,1,2
+2026-05-04,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,4,1,1
+2026-05-18,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2,1,1
+2025-01-27,Roesgaard,37543128,2,1,1
+2025-05-12,Roesgaard,37543128,10,1,2
+2025-09-01,Roesgaard,37543128,2,1,1
+2025-10-27,Roesgaard,37543128,1,1,1
+2025-11-03,Roesgaard,37543128,14,1,3
+2026-02-23,Roesgaard,37543128,3,1,1
+2024-09-23,PJ Køleteknik ApS,37654795,5,1,1
+2025-11-17,Plature,38732420,11,1,1
+2025-11-24,Plature,38732420,1,1,1
+2025-12-01,Plature,38732420,4,1,1
+2025-12-08,Plature,38732420,3,1,1
+2025-12-29,Plature,38732420,2,1,1
+2026-01-26,Plature,38732420,1,1,1
+2026-03-09,Plature,38732420,2,1,1
+2026-04-13,Plature,38732420,2,1,1
+2025-03-24,Kovsted & Skovgård,38751646,3,1,1
+2024-05-06,Taleco ApS,39446235,1,1,1
+2024-11-25,Kreston CM,39463113,1,1,1
+2025-01-20,Kreston CM,39463113,6,1,2
+2025-03-03,Kreston CM,39463113,6,1,1
+2025-03-10,Kreston CM,39463113,2,1,1
+2025-04-28,Kreston CM,39463113,8,1,2
+2025-05-19,Kreston CM,39463113,11,2,2
+2025-06-16,Kreston CM,39463113,3,1,1
+2025-08-18,Kreston CM,39463113,6,1,1
+2025-09-08,Kreston CM,39463113,1,1,1
+2025-10-06,Kreston CM,39463113,1,1,1
+2025-10-20,Kreston CM,39463113,2,1,1
+2025-12-01,Kreston CM,39463113,1,1,1
+2026-02-23,Kreston CM,39463113,2,1,1
+2026-03-02,Kreston CM,39463113,6,1,1
+2026-03-09,Kreston CM,39463113,7,3,2
+2026-03-16,Kreston CM,39463113,1,1,1
+2026-04-27,Kreston CM,39463113,2,1,1
+2026-06-15,Kreston CM,39463113,2,1,2
+2025-02-03,Erhvervshus Midtjylland S/I,40084606,1,1,1
+2025-07-14,The White Box,40612246,4,1,1
+2025-10-27,Roknskaparfelagið skrásettir grannskoðarar Sp/f,413887,3,1,1
+2025-11-03,Roknskaparfelagið skrásettir grannskoðarar Sp/f,413887,1,1,1
+2025-11-17,Roknskaparfelagið skrásettir grannskoðarar Sp/f,413887,1,1,1
+2025-12-01,Roknskaparfelagið skrásettir grannskoðarar Sp/f,413887,1,1,1
+2025-12-15,Gaaga,42027995,1,1,1
+2025-10-20,Sand bogholderi,42269425,1,1,1
+2025-05-19,RegnskabsHuset.com,42495654,1,1,1
+2025-09-29,Ellebæk Revision godkendt revisionsanpartsselskab,43325000,1,1,1
+2025-11-10,Ellebæk Revision godkendt revisionsanpartsselskab,43325000,1,1,1
+2026-02-09,Ellebæk Revision godkendt revisionsanpartsselskab,43325000,9,1,1
+2024-05-06,E-conomia Consulting ApS,44268965,3,1,1
+2024-10-14,E-conomia Consulting ApS,44268965,4,1,2
+2024-10-21,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,1,1,1
+2025-04-28,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,9,1,1
+2025-05-05,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,15,1,2
+2025-05-12,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,4,1,1
+2025-08-11,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,9,1,1
+2025-10-20,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,6,1,2
+2025-10-27,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,1,1,1
+2025-11-17,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,2,2,2
+2025-11-24,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,1,1,1
+2026-01-05,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,16,7,7
+2026-02-02,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,1,1,1
+2026-02-09,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,4,2,4
+2026-02-16,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,7,2,2
+2026-02-23,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,14,3,4
+2026-03-02,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,19,3,3
+2026-03-09,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,12,4,4
+2026-03-16,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,10,2,5
+2026-03-23,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,12,3,3
+2026-03-30,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,17,3,9
+2026-04-06,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,21,2,12
+2026-04-13,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,14,2,2
+2026-04-27,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,3,2,3
+2026-05-04,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,11,2,2
+2026-05-18,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,5,1,1
+2026-05-25,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,4,1,1
+2026-06-01,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,3,1,2
+2026-06-08,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,2,2,2
+2024-09-23,NM Regnskab ApS,44729989,1,1,1
+2024-09-23,"Ri, Statsautoriseret Revisionsaktieselskab",53371914,1,1,1
+2024-10-14,"Ri, Statsautoriseret Revisionsaktieselskab",53371914,13,2,5
+2024-10-28,"Ri, Statsautoriseret Revisionsaktieselskab",53371914,3,1,1
+2024-11-04,Krøyer Pedersen Statsautoriserede Revisorer,89224918,3,2,1
+2024-11-11,Krøyer Pedersen Statsautoriserede Revisorer,89224918,13,1,2
+2024-11-18,Krøyer Pedersen Statsautoriserede Revisorer,89224918,4,1,1
+2024-11-25,Krøyer Pedersen Statsautoriserede Revisorer,89224918,1,1,1
+2025-02-24,Krøyer Pedersen Statsautoriserede Revisorer,89224918,1,1,1
+2025-06-02,Krøyer Pedersen Statsautoriserede Revisorer,89224918,1,1,1

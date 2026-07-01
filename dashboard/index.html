@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crediwire Intelligence Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260629-drop-resterende" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Crediwire Intelligence</h1>
+        <p>Globalt management dashboard baseret på validerede aktivitets-, erklærings- og forbindelsesdata.</p>
+      </div>
+      <div class="header-actions">
+        <label class="filter ao-search">
+          <span>Vælg revisionshus</span>
+          <input id="aoSearch" type="search" placeholder="Søg efter revisionshus eller CVR" autocomplete="off" aria-controls="aoSearchResults" aria-expanded="false" />
+          <input id="aoFilter" type="hidden" value="" />
+          <div id="aoSearchResults" class="search-results" role="listbox"></div>
+        </label>
+        <label class="mode-toggle" title="Slå avanceret budget- og scenariovisning til">
+          <input id="advancedModeToggle" type="checkbox" />
+          <span class="mode-toggle-track"><span class="mode-toggle-thumb"></span></span>
+          <span class="mode-toggle-label">Avanceret</span>
+        </label>
+        <button id="pdfExportButton" class="export-button" type="button">Eksportér til PDF</button>
+      </div>
+    </header>
+
+    <section id="pdfExecutiveSummary" class="print-only pdf-page pdf-executive-summary" aria-label="Executive Summary"></section>
+    <section id="pdfImplementationBusinessCase" class="print-only pdf-page pdf-implementation-business-case" aria-label="Business Case"></section>
+    <section id="pdfUsageAdoption" class="print-only pdf-page pdf-usage-adoption" aria-label="Brug og adoption"></section>
+
+    <main>
+      <div id="connectionsSnapshot" hidden></div>
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Fakta</h2>
+          <span class="badge muted">Værdi skabt og potentiale</span>
+        </div>
+        <div id="primaryKpis" class="kpi-grid value-kpis"></div>
+        <h3 class="subheading">Adoption</h3>
+        <div id="supportingKpis" class="kpi-grid adoption-kpis"></div>
+      </section>
+
+      <section class="panel business-case-panel">
+        <div id="businessCaseDetails" class="business-case-details">
+          <div class="business-case-summary">
+            <div>
+              <h2>Business Case</h2>
+            </div>
+          </div>
+          <h3 class="subheading">Business Case</h3>
+          <div class="roi-output">
+            <div id="roiRealisticPotentialCard" class="implementation-business-card">
+              <span>Implementeringsmål</span>
+              <strong id="businessCaseImplementationStatus">0 aktive virksomheder</strong>
+              <div id="businessCaseImplementationProgress" class="business-case-progress"></div>
+            </div>
+            <div id="futureInvestmentCard" class="investment-output implementation-business-card">
+              <span>Værdi</span>
+              <strong id="futureInvestmentValue">0 DKK</strong>
+              <em class="inline-roi inline-roi-placeholder" aria-hidden="true">&nbsp;</em>
+              <div id="futureInvestmentHelp" class="card-detail">Total værdi ved valgt implementering.</div>
+            </div>
+            <div id="futureNetValueCard" class="investment-output implementation-business-card">
+              <span>Investering</span>
+              <strong id="selectedImplementationNetValue">0 DKK</strong>
+              <em class="inline-roi inline-roi-placeholder" aria-hidden="true">&nbsp;</em>
+              <div id="remainingPotentialHelp" class="card-detail">Software, årsrapport og assistance.</div>
+            </div>
+            <div id="futureRoiCard" class="investment-output implementation-business-card">
+              <span>Nettoværdi</span>
+              <strong id="futureNetValue">Indtast investering</strong>
+              <em id="futureRoiInline" class="inline-roi"></em>
+              <div id="futureGainHelp" class="card-detail">Efter samlet investering ved målet.</div>
+            </div>
+            <div id="businessCaseRoiCard" class="investment-output implementation-business-card">
+              <span>ROI</span>
+              <strong id="businessCaseRoiValue">Ved mål: ikke beregnet</strong>
+              <em id="businessCaseTargetRoiInline" class="inline-roi">I dag: ikke beregnet</em>
+              <div id="businessCaseRoiHelp" class="card-detail">Afkast ved mål med status i dag som reference.</div>
+            </div>
+          </div>
+          <div id="businessCaseEquation" class="business-case-equation" aria-label="Business Case sammenhæng"></div>
+          <div id="pdfBusinessCaseInsight" class="print-only pdf-insight-block"></div>
+
+          <details class="calculation-details calculator-details" open>
+            <summary><span class="details-indicator" aria-hidden="true"></span>Business Case Regnemaskine</summary>
+            <h3 class="subheading">Antagelser</h3>
+            <div class="roi-grid">
+              <label>
+                <span>Gennemsnitlig tidsbesparelse pr. dataanalyse</span>
+                <input id="hoursInput" type="number" min="0" step="0.25" value="4" />
+              </label>
+              <label>
+                <span>Timepris</span>
+                <input id="rateInput" type="number" min="0" step="50" value="1200" />
+              </label>
+              <label>
+                <span>Kvalitetsfaktor</span>
+                <select id="qualityFactorInput">
+                  <option value="1">x1</option>
+                  <option value="1.5">x1,5</option>
+                  <option value="2" selected>x2</option>
+                  <option value="2.5">x2,5</option>
+                  <option value="3">x3</option>
+                  <option value="3.5">x3,5</option>
+                  <option value="4">x4</option>
+                  <option value="4.5">x4,5</option>
+                  <option value="5">x5</option>
+                </select>
+              </label>
+              <label>
+                <span>Forventet implementeringsgrad</span>
+                <select id="implementationRateInput">
+                  <option value="0.02">2%</option>
+                  <option value="0.05">5%</option>
+                  <option value="0.10">10%</option>
+                  <option value="0.15">15%</option>
+                  <option value="0.20">20%</option>
+                  <option value="0.25">25%</option>
+                  <option value="0.50">50%</option>
+                  <option value="0.60">60%</option>
+                  <option value="0.70" selected>70%</option>
+                  <option value="0.80">80%</option>
+                  <option value="0.90">90%</option>
+                  <option value="1.00">100%</option>
+                </select>
+              </label>
+              <label>
+                <span>Timer sparet pr. årsrapport</span>
+                <input id="annualReportHoursInput" type="number" min="0" step="0.25" value="0" />
+              </label>
+              <label>
+                <span>Timer sparet pr. assistance</span>
+                <input id="assistanceHoursInput" type="number" min="0" step="0.25" value="0" />
+              </label>
+              <label>
+                <span>Rapporteringskunder</span>
+                <input id="reportingCustomersInput" type="number" min="0" step="1" value="0" />
+              </label>
+              <label>
+                <span>Timer sparet pr. rapporteringskunde</span>
+                <input id="reportingHoursInput" type="number" min="0" step="0.25" value="0" />
+              </label>
+            </div>
+            <p class="calculator-help">Værdi beregnes som antal opgaver eller kunder × timer sparet × timepris.</p>
+            <h3 class="subheading">Investering</h3>
+            <div id="investmentSection" class="investment-section">
+              <label class="investment-panel investment-price-panel">
+                <span>Softwarepris pr. aktiv virksomhed pr. år</span>
+                <div class="price-input-wrap">
+                  <input id="pricePerActiveCompanyInput" type="text" inputmode="numeric" value="1.988" />
+                  <span>kr.</span>
+                </div>
+              </label>
+              <label class="investment-panel investment-price-panel">
+                <span>Pris pr. årsrapport</span>
+                <div class="price-input-wrap">
+                  <input id="annualReportPriceInput" type="text" inputmode="numeric" value="0" />
+                  <span>kr.</span>
+                </div>
+              </label>
+              <label class="investment-panel investment-price-panel">
+                <span>Pris pr. assistanceopgave</span>
+                <div class="price-input-wrap">
+                  <input id="assistancePriceInput" type="text" inputmode="numeric" value="0" />
+                  <span>kr.</span>
+                </div>
+              </label>
+              <div class="investment-panel investment-result">
+                <span>I dag</span>
+                <strong id="investmentCalculationValue">0 DKK</strong>
+                <p id="investmentCalculationFormula"><span id="investmentCurrentCustomers">0</span> kunder × pris.</p>
+                <p id="currentRoiStatus" class="investment-roi-status">ROI i dag: ikke beregnet</p>
+              </div>
+              <div class="investment-panel investment-result">
+                <span>Investering for expand</span>
+                <strong id="expandInvestmentValue">0 DKK</strong>
+                <p id="expandInvestmentFormula"><span id="investmentExpandCustomers">0</span> nye kunder × pris.</p>
+              </div>
+              <div class="investment-panel investment-result expected-investment">
+                <span id="targetInvestmentLabel">Samlet investering ved valgt implementering</span>
+                <strong id="targetInvestmentValue">0 DKK</strong>
+                <p id="targetInvestmentFormula"><span id="investmentTargetCustomers">0</span> kunder × pris (i dag + expand).</p>
+              </div>
+            </div>
+            <p id="businessCaseInvestmentNote" class="investment-note">Business Casen bruger samlet investering ved den valgte implementeringsgrad.</p>
+
+            <input id="advisoryHoursInput" type="hidden" value="0" />
+          </details>
+        </div>
+      </section>
+
+      <section class="trend-layout">
+        <article class="panel trend-summary-panel">
+          <div class="panel-header">
+            <h2>Går brugen frem eller tilbage?</h2>
+            <div class="segmented-control" role="group" aria-label="Trendperiode">
+              <label><input type="radio" name="trendMode" value="ytd" checked /> <span>YTD</span></label>
+              <label><input type="radio" name="trendMode" value="mom" /> <span>MoM</span></label>
+            </div>
+          </div>
+          <div id="trendCards" class="trend-grid"></div>
+        </article>
+        <article class="panel chart-panel">
+          <div class="panel-header">
+            <h2>Dataanalyser over tid</h2>
+          </div>
+          <div id="analysesChart" class="chart large-chart"></div>
+        </article>
+        <article class="panel chart-panel">
+          <div class="panel-header">
+            <h2>Aktive brugere over tid</h2>
+          </div>
+          <div id="usersChart" class="chart large-chart"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Top 10 brugere</h2>
+          <span class="badge muted">Hvem driver brugen?</span>
+        </div>
+        <div id="pdfTopUserInsights" class="print-only pdf-insight-grid"></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Navn</th>
+                <th>Email</th>
+                <th>Revisionshus</th>
+                <th>Dataanalyser i alt</th>
+                <th>Seneste afsluttede måned</th>
+                <th>Forrige afsluttede måned</th>
+                <th>Ændring i antal</th>
+                <th>Ændring i %</th>
+              </tr>
+            </thead>
+            <tbody id="topUsers"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2 id="opportunityTitle">Hvor skal vi fokusere næste gang?</h2>
+          <span id="opportunityScopeBadge" class="badge muted">Sorteret efter uudnyttet potentiale</span>
+        </div>
+        <div id="pdfOpportunityRecommendation" class="print-only pdf-recommendation"></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Revisionshus</th>
+                <th>Prioritet</th>
+                <th>Næste fokus</th>
+                <th>Værdi ved valgt implementering</th>
+                <th>Investering for expand</th>
+                <th>Samlet investering ved valgt implementering</th>
+                <th>Nettoværdi ved valgt implementering</th>
+                <th>Manglende aktive virksomheder</th>
+                <th>Samlede erklæringer</th>
+                <th class="analysed-column">Virksomheder analyseret</th>
+              </tr>
+            </thead>
+            <tbody id="opportunities"></tbody>
+          </table>
+        </div>
+        <label class="toggle-row">
+          <input id="showAnalysedCompaniesInput" type="checkbox" />
+          <span>Vis virksomheder analyseret</span>
+        </label>
+      </section>
+
+      <section class="panel implementation-plan-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Implementeringsplan</h2>
+            <p class="panel-intro">Interne aktiviteter der gør Crediwire let at vælge i erklæringsarbejdet.</p>
+          </div>
+          <span class="badge muted">Handlinger for revisionshuset</span>
+        </div>
+        <div class="implementation-plan-control">
+          <label for="implementationTimelineInput">
+            <span>Tidshorisont</span>
+            <strong id="implementationTimelineLabel">90 dage</strong>
+          </label>
+          <input id="implementationTimelineInput" type="range" min="0" max="4" step="1" value="2" list="implementationTimelineTicks" />
+          <datalist id="implementationTimelineTicks">
+            <option value="0" label="30 dage"></option>
+            <option value="1" label="60 dage"></option>
+            <option value="2" label="90 dage"></option>
+            <option value="3" label="6 mdr."></option>
+            <option value="4" label="12 mdr."></option>
+          </datalist>
+          <div class="timeline-labels" aria-hidden="true">
+            <span>30 dage</span>
+            <span>60 dage</span>
+            <span>90 dage</span>
+            <span>6 mdr.</span>
+            <span>12 mdr.</span>
+          </div>
+        </div>
+        <div id="implementationPlan"></div>
+      </section>
+
+      <section id="advancedView" class="advanced-view" hidden>
+
+        <section class="advanced-section" id="advancedSection1">
+          <header class="advanced-section-header">
+            <span class="advanced-section-num">01 — Bestyrelsesoverblik</span>
+            <h2>Vores fundament i juni 2026.</h2>
+            <p>Hvor vi er, hvad vi har leveret, og hvad det betyder for fortællingen.</p>
+          </header>
+
+          <section class="panel board-overview" id="boardOverview">
+            <div id="boardSections" class="board-sections"></div>
+          </section>
+
+          <article class="advanced-module advanced-module-history" id="arrHistoryModule">
+            <header class="advanced-module-header">
+              <div>
+                <h3>ARR-udvikling</h3>
+                <p>Faktisk ARR pr. år fra <code>Data for ARR</code>-pivot. 2026 er år-til-dato.</p>
+              </div>
+              <div class="arr-history-summary" id="arrHistorySummary"></div>
+            </header>
+            <div class="arr-history-chart" id="arrHistoryChart"></div>
+          </article>
+
+          <article class="advanced-module advanced-module-movement" id="arrMovementModule">
+            <header class="advanced-module-header">
+              <div>
+                <h3>ARR-bevægelse · 2025 → 2026</h3>
+                <p>Brydning af 2026-ARR i New / Expand / Recurring / Contraction / Churn.</p>
+              </div>
+              <div class="arr-history-summary" id="arrMovementSummary"></div>
+            </header>
+            <div class="arr-movement-cards" id="arrMovementCards"></div>
+            <details class="arr-movement-details">
+              <summary>Vis detaljer pr. revisionshus</summary>
+              <div class="table-wrap arr-movement-table-wrap">
+                <table class="arr-table">
+                  <thead>
+                    <tr>
+                      <th>Revisionshus</th>
+                      <th class="numeric">2025</th>
+                      <th class="numeric">2026</th>
+                      <th class="numeric">Δ</th>
+                      <th>Kategori</th>
+                    </tr>
+                  </thead>
+                  <tbody id="arrMovementTableBody"></tbody>
+                </table>
+              </div>
+            </details>
+          </article>
+
+          <article class="advanced-module advanced-module-yearwheel" id="arrModule">
+            <header class="advanced-module-header">
+              <div>
+                <h3>ARR · Årshjul AO</h3>
+                <p>Faktisk ARR pr. revisionshus baseret på <code>Årshjul AO</code>-arket.</p>
+              </div>
+              <div class="advanced-period-selector" role="tablist" aria-label="Periode">
+                <button type="button" class="period-btn" data-period="full" role="tab" aria-selected="true">Hele året</button>
+                <button type="button" class="period-btn" data-period="h1" role="tab" aria-selected="false">H1</button>
+                <button type="button" class="period-btn" data-period="h2" role="tab" aria-selected="false">H2</button>
+              </div>
+            </header>
+            <div class="arr-kpis" id="arrKpis"></div>
+            <div class="table-wrap arr-table-wrap">
+              <table class="arr-table">
+                <thead>
+                  <tr>
+                    <th>Revisionshus</th>
+                    <th class="numeric">SMEs faktureret</th>
+                    <th class="numeric">ARR · valgt periode</th>
+                    <th class="numeric">Andel</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="arrTableBody"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section class="advanced-section" id="advancedSection2">
+          <header class="advanced-section-header">
+            <span class="advanced-section-num">02 — Fremtiden</span>
+            <h2>Hvad vi vil omsætte for — og hvordan.</h2>
+            <p>Konkrete actions går ind i målet, både fra os og fra kunderne. Tre scenarier viser hvor vi lander ved forskellige antagelser.</p>
+          </header>
+
+          <section class="panel future-overview" id="futureOverview">
+            <div id="futureSections" class="board-sections"></div>
+          </section>
+
+          <section class="panel master-list-panel" id="masterListPanel">
+          <div class="panel-header">
+            <div>
+              <h2>Master list · Per-AO commits</h2>
+              <p class="panel-intro">Indtast committed ARR pr. periode, sandsynlighed og handlingsplan pr. AO. Total rulles op nedenfor med sandsynlighedsvægtning.</p>
+            </div>
+            <div class="master-list-controls">
+              <label class="master-list-filter">
+                <span>Vis</span>
+                <select id="masterListFilter">
+                  <option value="all">Alle relevante AOs</option>
+                  <option value="existing">Eksisterende kunder</option>
+                  <option value="top_prospects">Top prospects</option>
+                  <option value="next_20">Næste 20 fokus</option>
+                  <option value="accru">Accru Partners</option>
+                  <option value="rgd">RGD</option>
+                  <option value="committed">Kun med commits</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div id="masterListSummary" class="master-list-summary"></div>
+          <div class="table-wrap master-list-table-wrap">
+            <table class="master-list-table" id="masterListTable">
+              <thead>
+                <tr>
+                  <th>AO</th>
+                  <th>Gruppe</th>
+                  <th class="numeric">ARR nu</th>
+                  <th class="numeric">Aktive SMVs</th>
+                  <th class="numeric">Erkl.</th>
+                  <th class="numeric">H2 2026</th>
+                  <th class="numeric">2027</th>
+                  <th class="numeric">2028</th>
+                  <th class="numeric">2029</th>
+                  <th class="numeric">%</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="masterListBody"></tbody>
+              <tfoot id="masterListFoot"></tfoot>
+            </table>
+          </div>
+        </section>
+
+        </section>
+
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Datastatus</h2>
+        </div>
+        <ul id="dataStatus" class="status-list"></ul>
+      </section>
+    </main>
+
+    <section id="pdfCalculationDocumentation" class="print-only pdf-page pdf-calculation-documentation" aria-label="Sådan er Business Casen beregnet"></section>
+
+    <div id="aoOverrideModal" class="ao-override-modal" hidden>
+      <div class="ao-override-backdrop" data-ao-override-close></div>
+      <div class="ao-override-card" role="dialog" aria-labelledby="aoOverrideTitle">
+        <header class="ao-override-header">
+          <div>
+            <p class="ao-override-eyebrow">Tilpas antagelser</p>
+            <h3 id="aoOverrideTitle">—</h3>
+          </div>
+          <button type="button" class="ao-override-close" data-ao-override-close aria-label="Luk">×</button>
+        </header>
+        <p class="ao-override-help">Lad et felt være tomt for at bruge den globale antagelse. Tomme felter arver fra øverste indstillinger.</p>
+        <div class="ao-override-fields">
+          <label class="ao-override-field">
+            <span>Implementeringsgrad</span>
+            <div class="ao-override-input-wrap">
+              <input type="number" min="0" max="100" step="1" data-ao-field="implementationRate" placeholder="—" />
+              <span class="ao-override-suffix">%</span>
+            </div>
+            <small data-ao-default="implementationRate">Global: —</small>
+          </label>
+          <label class="ao-override-field">
+            <span>Softwarepris pr. aktiv virksomhed</span>
+            <div class="ao-override-input-wrap">
+              <input type="number" min="0" step="1" data-ao-field="pricePerActiveCompany" placeholder="—" />
+              <span class="ao-override-suffix">kr.</span>
+            </div>
+            <small data-ao-default="pricePerActiveCompany">Global: —</small>
+          </label>
+          <label class="ao-override-field">
+            <span>Pris pr. årsrapport</span>
+            <div class="ao-override-input-wrap">
+              <input type="number" min="0" step="1" data-ao-field="annualReportPrice" placeholder="—" />
+              <span class="ao-override-suffix">kr.</span>
+            </div>
+            <small data-ao-default="annualReportPrice">Global: —</small>
+          </label>
+          <label class="ao-override-field">
+            <span>Pris pr. assistanceopgave</span>
+            <div class="ao-override-input-wrap">
+              <input type="number" min="0" step="1" data-ao-field="assistancePrice" placeholder="—" />
+              <span class="ao-override-suffix">kr.</span>
+            </div>
+            <small data-ao-default="assistancePrice">Global: —</small>
+          </label>
+        </div>
+
+        <div class="ao-override-section ao-override-budget-section" data-advanced-only>
+          <h4>Mit budget for denne kunde</h4>
+          <p class="ao-override-section-help">Forventet ARR i hver periode. Indtast 0 hvis denne kunde ikke skal med i scenariet.</p>
+          <div class="ao-override-fields ao-override-fields-grid4">
+            <label class="ao-override-field">
+              <span>H2 2026</span>
+              <div class="ao-override-input-wrap">
+                <input type="number" min="0" step="1000" data-ao-forecast="h2_2026" placeholder="0" />
+                <span class="ao-override-suffix">kr.</span>
+              </div>
+            </label>
+            <label class="ao-override-field">
+              <span>2027</span>
+              <div class="ao-override-input-wrap">
+                <input type="number" min="0" step="1000" data-ao-forecast="2027" placeholder="0" />
+                <span class="ao-override-suffix">kr.</span>
+              </div>
+            </label>
+            <label class="ao-override-field">
+              <span>2028</span>
+              <div class="ao-override-input-wrap">
+                <input type="number" min="0" step="1000" data-ao-forecast="2028" placeholder="0" />
+                <span class="ao-override-suffix">kr.</span>
+              </div>
+            </label>
+            <label class="ao-override-field">
+              <span>2029</span>
+              <div class="ao-override-input-wrap">
+                <input type="number" min="0" step="1000" data-ao-forecast="2029" placeholder="0" />
+                <span class="ao-override-suffix">kr.</span>
+              </div>
+            </label>
+          </div>
+          <label class="ao-override-field ao-override-action">
+            <span>Handlingsplan</span>
+            <textarea data-ao-action placeholder="Hvad skal der ske for at lande dette? Fx 'Q3-samtale med GT om SMV-onboarding · Workshop Q4 · Tilbud på årsrapport-modul Q1 2027'."></textarea>
+          </label>
+        </div>
+        <footer class="ao-override-footer">
+          <button type="button" class="ao-override-button ghost" id="aoOverrideReset">Nulstil</button>
+          <div class="ao-override-footer-right">
+            <button type="button" class="ao-override-button ghost" data-ao-override-close>Annullér</button>
+            <button type="button" class="ao-override-button primary" id="aoOverrideApply">Anvend</button>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="app.js?v=20260629-drop-resterende"></script>
+  </body>
+</html>

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forecast 3 — Comparison Table</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;800;900&display=swap");
+
+      :root {
+        --bg: #FBFAFD;
+        --ink: #0E0E14;
+        --ink-mute: #4F4B6B;
+        --purple: #3B3755;
+        --purple-light: #6F6A92;
+        --purple-dark: #2A2740;
+        --green: #33FF87;
+        --green-dark: #145C32;
+        --orange: #E08D33;
+        --white: #fff;
+        --col: 1080px;
+        --mono: ui-monospace, "SF Mono", Menlo, monospace;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        line-height: 1.6;
+        padding: 80px 24px;
+      }
+
+      .container { max-width: var(--col); margin: 0 auto; }
+
+      .label {
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--purple);
+        margin-bottom: 16px;
+        display: inline-block;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: 64px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.035em;
+        color: var(--ink);
+      }
+
+      .lead {
+        font-size: 19px;
+        font-weight: 300;
+        line-height: 1.55;
+        color: var(--ink-mute);
+        max-width: 720px;
+        margin: 0 0 48px;
+      }
+
+      .comparison {
+        background: var(--white);
+        border: 1px solid rgba(14,14,20,0.06);
+        border-radius: 26px;
+        padding: 8px;
+        box-shadow: 0 4px 24px rgba(14,14,20,0.04);
+        overflow: hidden;
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 200px 1fr 1fr 1fr;
+        align-items: center;
+        padding: 24px 28px;
+        border-bottom: 1px solid rgba(14,14,20,0.06);
+      }
+      .row:last-child { border-bottom: none; }
+
+      .row.header {
+        background: rgba(59,55,85,0.04);
+        border-radius: 18px;
+        padding: 20px 28px;
+      }
+
+      .row .row-label {
+        font-family: var(--mono);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+      }
+
+      .row .col {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: -0.025em;
+        color: var(--ink);
+        line-height: 1;
+      }
+
+      .row .col.base {
+        color: var(--green-dark);
+      }
+
+      .row .col.subtle {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--ink-mute);
+      }
+
+      .row.header .col {
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 0;
+        color: var(--purple);
+      }
+      .row.header .col.base {
+        background: var(--purple);
+        color: var(--white);
+        padding: 12px 16px;
+        border-radius: 12px;
+        position: relative;
+      }
+      .row.header .col.base::before {
+        content: "DIT MÅL";
+        position: absolute;
+        top: -10px; left: 50%; transform: translateX(-50%);
+        background: var(--green);
+        color: var(--ink);
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: 0.15em;
+        padding: 3px 8px;
+        border-radius: 10px;
+      }
+
+      .scale {
+        font-size: 13px;
+        color: var(--ink-mute);
+        font-weight: 700;
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <span class="label">Design 3 — Comparison table</span>
+      <h1>Tre scenarier. Side om side.</h1>
+      <p class="lead">Alle år, alle scenarier — i én tabel. Base er fremhævet som dit mål. Conservative og Stretch står ved siden af så du kan italesætte gulvet og loftet.</p>
+
+      <div class="comparison">
+        <div class="row header">
+          <div class="row-label">Periode</div>
+          <div class="col">Conservative</div>
+          <div class="col base">Base · MÅL</div>
+          <div class="col">Stretch</div>
+        </div>
+
+        <div class="row">
+          <div class="row-label">Signed 2026</div>
+          <div class="col">1,5M</div>
+          <div class="col base">2,5M</div>
+          <div class="col">3,5M</div>
+        </div>
+
+        <div class="row">
+          <div class="row-label">End-2026<br><span class="scale">invoiced</span></div>
+          <div class="col">1,0M</div>
+          <div class="col base">1,3M</div>
+          <div class="col">1,7M</div>
+        </div>
+
+        <div class="row">
+          <div class="row-label">Jan 2027<br><span class="scale">run-rate</span></div>
+          <div class="col">2,1M</div>
+          <div class="col base">3,4M</div>
+          <div class="col">4,4M</div>
+        </div>
+
+        <div class="row">
+          <div class="row-label">End-2027</div>
+          <div class="col">2,8-3,4M</div>
+          <div class="col base">4,0-5,0M</div>
+          <div class="col">5,5-7,0M</div>
+        </div>
+
+        <div class="row">
+          <div class="row-label">End-2028</div>
+          <div class="col">3,4-4,2M</div>
+          <div class="col base">5,5-7,0M</div>
+          <div class="col">7,5-9,5M</div>
+        </div>
+
+        <div class="row">
+          <div class="row-label">End-2029</div>
+          <div class="col">4,2-5,2M</div>
+          <div class="col base">7,0-9,0M</div>
+          <div class="col">10-13M</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
