@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forecast 1 — Hero Chart</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;800;900&display=swap");
+
+      :root {
+        --bg: #FBFAFD;
+        --bg-tint: #F5F2F9;
+        --ink: #0E0E14;
+        --ink-mute: #4F4B6B;
+        --purple: #3B3755;
+        --purple-light: #6F6A92;
+        --purple-dark: #2A2740;
+        --green: #33FF87;
+        --green-dark: #145C32;
+        --orange: #E08D33;
+        --white: #fff;
+        --col: 1080px;
+        --mono: ui-monospace, "SF Mono", Menlo, monospace;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        line-height: 1.6;
+        padding: 80px 24px;
+      }
+
+      .container { max-width: var(--col); margin: 0 auto; }
+
+      .label {
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--purple);
+        margin-bottom: 16px;
+        display: inline-block;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: 64px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.035em;
+        color: var(--ink);
+      }
+
+      .lead {
+        font-size: 19px;
+        font-weight: 300;
+        line-height: 1.55;
+        color: var(--ink-mute);
+        max-width: 720px;
+        margin: 0 0 48px;
+      }
+
+      /* Scenario tabs */
+      .tabs {
+        display: inline-flex;
+        gap: 6px;
+        background: rgba(59, 55, 85, 0.06);
+        padding: 6px;
+        border-radius: 999px;
+        margin-bottom: 40px;
+      }
+      .tab {
+        padding: 10px 22px;
+        background: transparent;
+        border: none;
+        border-radius: 999px;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        color: var(--purple);
+        cursor: pointer;
+        transition: all 0.18s ease;
+      }
+      .tab.active {
+        background: var(--purple);
+        color: var(--white);
+        box-shadow: 0 4px 12px rgba(59, 55, 85, 0.18);
+      }
+
+      /* Chart container */
+      .chart-card {
+        background: var(--white);
+        border: 1px solid rgba(14, 14, 20, 0.06);
+        border-radius: 26px;
+        padding: 48px 48px 60px;
+        box-shadow: 0 4px 24px rgba(14, 14, 20, 0.04);
+        margin-bottom: 32px;
+      }
+
+      .chart-meta {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 20px;
+        margin-bottom: 32px;
+        align-items: end;
+      }
+
+      .chart-meta .title-block h2 {
+        margin: 0 0 8px;
+        font-size: 30px;
+        font-weight: 900;
+        letter-spacing: -0.025em;
+      }
+      .chart-meta .title-block p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--ink-mute);
+      }
+
+      .legend {
+        display: flex;
+        gap: 18px;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--ink-mute);
+      }
+      .legend-item { display: flex; align-items: center; gap: 8px; }
+      .legend-swatch {
+        width: 16px; height: 4px; border-radius: 4px;
+      }
+      .sw-actual { background: var(--purple); }
+      .sw-base { background: var(--green); }
+      .sw-conservative { background: var(--orange); }
+      .sw-stretch { background: var(--purple-light); }
+
+      /* SVG chart */
+      .chart-svg {
+        width: 100%;
+        height: 360px;
+      }
+
+      /* KPI strip below chart */
+      .strip {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+      .strip-card {
+        background: linear-gradient(135deg, rgba(59,55,85,0.04), rgba(51,255,135,0.10)), var(--white);
+        border: 1px solid rgba(14,14,20,0.06);
+        border-radius: 18px;
+        padding: 22px 24px;
+        box-shadow: 0 2px 12px rgba(14,14,20,0.03);
+      }
+      .strip-card .year {
+        font-family: var(--mono);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        color: var(--purple);
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+      .strip-card .val {
+        font-size: 30px;
+        font-weight: 900;
+        letter-spacing: -0.025em;
+        line-height: 1;
+        color: var(--ink);
+        margin-bottom: 4px;
+      }
+      .strip-card .delta {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--green-dark);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <span class="label">Design 1 — Hero forecast chart</span>
+      <h1>Hvor lander vi i 2027, 28 og 29?</h1>
+      <p class="lead">Vi viser forecast'en stort og forrest — så du ikke skal lede efter den. Tre scenarier overlejret på samme tidslinje. Klik en tab for at fokusere.</p>
+
+      <div class="tabs">
+        <button class="tab">Conservative</button>
+        <button class="tab active">Base · MÅL</button>
+        <button class="tab">Stretch</button>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-meta">
+          <div class="title-block">
+            <h2>ARR-trajectory 2022 → 2029</h2>
+            <p>Faktisk historik (2022-2026) + scenarie-forecast. Tal i mio kr.</p>
+          </div>
+          <div class="legend">
+            <div class="legend-item"><span class="legend-swatch sw-actual"></span>Faktisk</div>
+            <div class="legend-item"><span class="legend-swatch sw-conservative"></span>Conservative</div>
+            <div class="legend-item"><span class="legend-swatch sw-base"></span>Base</div>
+            <div class="legend-item"><span class="legend-swatch sw-stretch"></span>Stretch</div>
+          </div>
+        </div>
+
+        <svg class="chart-svg" viewBox="0 0 980 360" preserveAspectRatio="xMidYMid meet">
+          <!-- Grid lines -->
+          <g stroke="#E8E5EE" stroke-width="1">
+            <line x1="60" y1="30" x2="940" y2="30"/>
+            <line x1="60" y1="100" x2="940" y2="100"/>
+            <line x1="60" y1="170" x2="940" y2="170"/>
+            <line x1="60" y1="240" x2="940" y2="240"/>
+            <line x1="60" y1="310" x2="940" y2="310"/>
+          </g>
+          <!-- Y-axis labels -->
+          <g font-family="ui-monospace" font-size="11" fill="#7A77A0" font-weight="700">
+            <text x="46" y="34" text-anchor="end">9M</text>
+            <text x="46" y="104" text-anchor="end">7M</text>
+            <text x="46" y="174" text-anchor="end">5M</text>
+            <text x="46" y="244" text-anchor="end">3M</text>
+            <text x="46" y="314" text-anchor="end">1M</text>
+          </g>
+          <!-- X-axis labels -->
+          <g font-family="ui-monospace" font-size="12" fill="#3B3755" font-weight="800" letter-spacing="1">
+            <text x="100" y="340" text-anchor="middle">2022</text>
+            <text x="200" y="340" text-anchor="middle">2023</text>
+            <text x="300" y="340" text-anchor="middle">2024</text>
+            <text x="400" y="340" text-anchor="middle">2025</text>
+            <text x="500" y="340" text-anchor="middle">2026</text>
+            <text x="640" y="340" text-anchor="middle">2027</text>
+            <text x="780" y="340" text-anchor="middle">2028</text>
+            <text x="920" y="340" text-anchor="middle">2029</text>
+          </g>
+          <!-- Divider line between actual and forecast -->
+          <line x1="500" y1="20" x2="500" y2="320" stroke="#3B3755" stroke-width="2" stroke-dasharray="4,4" opacity="0.4"/>
+          <text x="505" y="22" font-family="ui-monospace" font-size="10" fill="#3B3755" font-weight="800">FORECAST →</text>
+
+          <!-- Actual ARR line: 608, 530, 373, 509, 866→1300 -->
+          <!-- Y values: y = 310 - (val / 9000) * 280 -->
+          <!-- 608k → y=291, 530k → y=294, 373k → y=298, 509k → y=294, 866k → y=283, 1300k → y=270 -->
+          <polyline points="100,291 200,294 300,298 400,294 500,283 545,275"
+                    fill="none" stroke="#3B3755" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Actual points -->
+          <g fill="#3B3755">
+            <circle cx="100" cy="291" r="5"/>
+            <circle cx="200" cy="294" r="5"/>
+            <circle cx="300" cy="298" r="5"/>
+            <circle cx="400" cy="294" r="5"/>
+            <circle cx="500" cy="283" r="5"/>
+            <circle cx="545" cy="275" r="5"/>
+          </g>
+          <!-- "I dag" annotation -->
+          <text x="500" y="270" text-anchor="middle" font-family="Montserrat" font-size="11" fill="#3B3755" font-weight="800">866k · I dag</text>
+
+          <!-- Conservative forecast: 1.0M, 1.6M, 2.0M, 2.6M -->
+          <!-- y = 310 - (val/9000)*280; 1000k → 279, 1600k → 261, 2000k → 248, 2600k → 229 -->
+          <polyline points="545,275 640,275 780,261 920,229"
+                    fill="none" stroke="#E08D33" stroke-width="3" stroke-dasharray="6,6" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+          <g fill="#E08D33">
+            <circle cx="640" cy="275" r="5"/>
+            <circle cx="780" cy="261" r="5"/>
+            <circle cx="920" cy="229" r="5"/>
+          </g>
+
+          <!-- Base forecast: 1.3M, 4.5M, 6.0M, 8.0M -->
+          <!-- y for 1300 → 270, 4500 → 170, 6000 → 124, 8000 → 62 -->
+          <polyline points="545,275 640,170 780,124 920,62"
+                    fill="none" stroke="#33FF87" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <g fill="#33FF87" stroke="#145C32" stroke-width="2">
+            <circle cx="640" cy="170" r="6"/>
+            <circle cx="780" cy="124" r="6"/>
+            <circle cx="920" cy="62" r="6"/>
+          </g>
+          <!-- Base point labels -->
+          <g font-family="Montserrat" font-size="13" fill="#145C32" font-weight="900">
+            <text x="640" y="158">4,5M</text>
+            <text x="780" y="112">6,0M</text>
+            <text x="920" y="50" text-anchor="end">8,0M</text>
+          </g>
+
+          <!-- Stretch forecast: 1.7M, 6.0M, 8.0M, 11.0M -->
+          <!-- y for 1700 → 257, 6000 → 124, 8000 → 62, 11000 → no, max 9 -->
+          <polyline points="545,275 640,124 780,62 920,30"
+                    fill="none" stroke="#6F6A92" stroke-width="3" stroke-dasharray="6,6" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+          <g fill="#6F6A92">
+            <circle cx="640" cy="124" r="5"/>
+            <circle cx="780" cy="62" r="5"/>
+            <circle cx="920" cy="30" r="5"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="strip">
+        <div class="strip-card">
+          <div class="year">End-2026</div>
+          <div class="val">1,3M</div>
+          <div class="delta">+50% siden i dag</div>
+        </div>
+        <div class="strip-card">
+          <div class="year">End-2027</div>
+          <div class="val">4,5M</div>
+          <div class="delta">+246% vs 2026</div>
+        </div>
+        <div class="strip-card">
+          <div class="year">End-2028</div>
+          <div class="val">6,0M</div>
+          <div class="delta">+33% vs 2027</div>
+        </div>
+        <div class="strip-card">
+          <div class="year">End-2029</div>
+          <div class="val">8,0M</div>
+          <div class="delta">+33% vs 2028</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,933 @@
+accounting_office_name,accounting_office_cvr,active_users,total_analyses,top_3_user_share,implementation_risk
+Grant Thornton,34209936,83,4306,0.430562,LOW
+Revisionsfirmaet Edelbo,35486178,19,540,0.472222,LOW
+Skov Revision,27525989,17,451,0.503326,LOW
+Revisionsfirmaet Axel Gram,16645699,6,252,0.742063,MEDIUM
+Powered-By Statsautoriseret Revisionspartnerselskab,44282380,17,223,0.547085,LOW
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,3,162,1.000000,HIGH
+Dansk Revision Århus,26717671,15,143,0.552448,LOW
+Danrevi Løgstør,10019699,7,138,0.782609,MEDIUM
+Leif Mikkelsen & Partnere,32676421,7,127,0.708661,MEDIUM
+Revimidt,34480370,6,102,0.647059,MEDIUM
+RevisorGruppen I/S,34953619,8,91,0.725275,MEDIUM
+Kreston CM,39463113,7,68,0.779412,MEDIUM
+Lægård Revision,18437082,1,56,1.000000,HIGH
+Albjerg,35382879,2,53,1.000000,HIGH
+Piaster Revisorerne,25160037,1,42,1.000000,HIGH
+Beierholm,32895468,9,38,0.763158,MEDIUM
+Roesgaard,37543128,1,32,1.000000,HIGH
+Plature,38732420,1,26,1.000000,HIGH
+Krøyer Pedersen Statsautoriserede Revisorer,89224918,2,23,1.000000,HIGH
+EY,30700228,5,20,0.850000,HIGH
+Dansk Revision Slagelse,29919801,1,18,1.000000,HIGH
+"Ri, Statsautoriseret Revisionsaktieselskab",53371914,3,17,1.000000,HIGH
+Martinsen,32285201,1,13,1.000000,HIGH
+Partner Revision,15807776,1,13,1.000000,HIGH
+Ellebæk Revision godkendt revisionsanpartsselskab,43325000,2,11,1.000000,HIGH
+Taleco ApS,30525035,1,9,1.000000,HIGH
+LPOG ApS,33167288,2,8,1.000000,HIGH
+Copenhagen Management Accounting Company ApS,33932464,1,8,1.000000,HIGH
+Aage Maagensen,12901038,1,7,1.000000,HIGH
+Ullits & Winther,32093272,1,7,1.000000,HIGH
+E-conomia Consulting ApS,44268965,1,7,1.000000,HIGH
+PKF Munkebo Vindelev,14119299,1,6,1.000000,HIGH
+Roknskaparfelagið skrásettir grannskoðarar Sp/f,413887,2,6,1.000000,HIGH
+Redmark,29442789,1,5,1.000000,HIGH
+Revisionsfirmaet Gutfelt,13254192,1,5,1.000000,HIGH
+PJ Køleteknik ApS,37654795,1,5,1.000000,HIGH
+Regnskabsvirksomheden Schaumburg/Bendtsen ApS,28655835,1,5,1.000000,HIGH
+Revisionscentret Aabenraa,29695636,1,4,1.000000,HIGH
+ERASMUS & PARTNERE A/S,28493584,1,4,1.000000,HIGH
+Regnskabsfokus,33578628,1,4,1.000000,HIGH
+RevisorGruppen I/S,31481945,1,4,1.000000,HIGH
+The White Box,40612246,1,4,1.000000,HIGH
+Baagøe Schou,21148148,1,3,1.000000,HIGH
+Kovsted & Skovgård,38751646,1,3,1.000000,HIGH
+Kreston SR,33948794,1,3,1.000000,HIGH
+Stoisk,28919719,1,2,1.000000,HIGH
+PricewaterhouseCoopers,33771231,1,1,1.000000,HIGH
+Erhvervshus Midtjylland S/I,40084606,1,1,1.000000,HIGH
+Gaaga,42027995,1,1,1.000000,HIGH
+NM Regnskab ApS,44729989,1,1,1.000000,HIGH
+RegnskabsHuset.com,18067676,1,1,1.000000,HIGH
+RegnskabsHuset.com,42495654,1,1,1.000000,HIGH
+RevisorGruppen I/S,32938213,1,1,1.000000,HIGH
+Sand bogholderi,42269425,1,1,1.000000,HIGH
+Taleco ApS,39446235,1,1,1.000000,HIGH
+Vestjysk Consulting,30498674,1,1,1.000000,HIGH
+#VALUE!,27083978,1,1,1.000000,HIGH
+2+ Revision,39701863,0,0,0.000000,HIGH
+2+ Revision Grønland Statsautoriserede Revisorer ApS,42793744,0,0,0.000000,HIGH
+2A Revision,37903949,0,0,0.000000,HIGH
+2TalRevision,29091331,0,0,0.000000,HIGH
+2TalRevision v/Jan Christensen,20935790,0,0,0.000000,HIGH
+3H Revision,98088857,0,0,0.000000,HIGH
+A Albrechtsen Revision,10291984,0,0,0.000000,HIGH
+A Revision,18186144,0,0,0.000000,HIGH
+A. Bjørn - Statsautoriseret revisionsanpartsselskab,30898664,0,0,0.000000,HIGH
+A4 Revsion,29205043,0,0,0.000000,HIGH
+AA revisionsanpartsselskabet,27607764,0,0,0.000000,HIGH
+Aaen & Co.,33241763,0,0,0.000000,HIGH
+Aage & Povl Holm,14759840,0,0,0.000000,HIGH
+ABL Revision,39702215,0,0,0.000000,HIGH
+ABM-Revision,29234590,0,0,0.000000,HIGH
+Abrahamsen Revision,41109483,0,0,0.000000,HIGH
+AB-Revision,26624479,0,0,0.000000,HIGH
+AC Revision - Registreret Revisionsanpartsselskab,35050469,0,0,0.000000,HIGH
+Activ-Revision,90566059,0,0,0.000000,HIGH
+ADDCO P/S Godkendte Revisorer,36464852,0,0,0.000000,HIGH
+Addere Revision,34589992,0,0,0.000000,HIGH
+Addvisers,32888658,0,0,0.000000,HIGH
+Advisor-Revision,34213798,0,0,0.000000,HIGH
+Advosion,37557064,0,0,0.000000,HIGH
+Afrodite Hår og Trend v/Rita Truelsen,26916402,0,0,0.000000,HIGH
+Agenda Revision,32160565,0,0,0.000000,HIGH
+Agerbor Gruppen,31742781,0,0,0.000000,HIGH
+Agillix Fmba,45000370,0,0,0.000000,HIGH
+Agri Nord,29038597,0,0,0.000000,HIGH
+AHJ Revision,27489559,0,0,0.000000,HIGH
+A-INVEST KONTOR- OG BOGFØRINGSASSISTANCE ApS,19154807,0,0,0.000000,HIGH
+aj2,21090174,0,0,0.000000,HIGH
+Aktiv Regnskab og Skat,39791374,0,0,0.000000,HIGH
+Aktiv Revision og Rådgivning,12488106,0,0,0.000000,HIGH
+Aktiv Revision Silkeborg,14788107,0,0,0.000000,HIGH
+Alexandersen Revision,11916546,0,0,0.000000,HIGH
+Algade Revision,35663916,0,0,0.000000,HIGH
+Alpha Revision v/Søren Nymann,38269216,0,0,0.000000,HIGH
+Alt i Regnskab & Rådgivning ApS,44405016,0,0,0.000000,HIGH
+Alter Audit ApS,44387263,0,0,0.000000,HIGH
+Andersen,10108454,0,0,0.000000,HIGH
+Andersen & Novakovic statsautoriseret revisionsanpartsselskab,44535122,0,0,0.000000,HIGH
+Andersen og Partnere,26668840,0,0,0.000000,HIGH
+Andersen Revision,32326706,0,0,0.000000,HIGH
+Andersen Revision & Rådgivning,38347799,0,0,0.000000,HIGH
+Anker Høst,31626536,0,0,0.000000,HIGH
+APEX Statsautoriserede revisorer ApS,42936847,0,0,0.000000,HIGH
+A-revisor,29105545,0,0,0.000000,HIGH
+ARIES,26454123,0,0,0.000000,HIGH
+Aros,29690065,0,0,0.000000,HIGH
+Asgård Finans,26186897,0,0,0.000000,HIGH
+Asla Revision,28483902,0,0,0.000000,HIGH
+Asset,34901694,0,0,0.000000,HIGH
+Assistance og rådgivning ApS,21821578,0,0,0.000000,HIGH
+Atomwine ApS,37701424,0,0,0.000000,HIGH
+Attent Statsautoriseret Revisionsanpartsselskab,36427205,0,0,0.000000,HIGH
+Attiri,33357966,0,0,0.000000,HIGH
+Audit Advisor ApS,46127307,0,0,0.000000,HIGH
+Augusta,36445386,0,0,0.000000,HIGH
+B.C. Revision,45556158,0,0,0.000000,HIGH
+B.F. Rådgivning Herning,29509026,0,0,0.000000,HIGH
+Badsted Revision,10838576,0,0,0.000000,HIGH
+Bæk Revision,16557390,0,0,0.000000,HIGH
+Baker Tilly Denmark,35257691,0,0,0.000000,HIGH
+Barrett revisionsanpartsselskab,28842562,0,0,0.000000,HIGH
+BAYER HOLDING ApS,15202548,0,0,0.000000,HIGH
+Bays Revisionskontor,20183497,0,0,0.000000,HIGH
+BB Revision,27917038,0,0,0.000000,HIGH
+BDO,45719375,0,0,0.000000,HIGH
+Beck Mortensen Revision ApS,46505190,0,0,0.000000,HIGH
+Beierholm,24207501,0,0,0.000000,HIGH
+BENGT MØLLER REGISTRERET REVISOR,84473413,0,0,0.000000,HIGH
+Berg Rådgivning ApS,41234253,0,0,0.000000,HIGH
+Bergmann,54213255,0,0,0.000000,HIGH
+Betternumbers P/S,42216011,0,0,0.000000,HIGH
+BG Statsautoriserede revisorer ApS,43196863,0,0,0.000000,HIGH
+BHA Statsautoriseret Revision,18967901,0,0,0.000000,HIGH
+BHS,15772573,0,0,0.000000,HIGH
+Bidstrup Revision,17578235,0,0,0.000000,HIGH
+Bille & Buch-Andersen,18282046,0,0,0.000000,HIGH
+Birkebæk Revision,16950394,0,0,0.000000,HIGH
+Bisbjerg & Partners P/S,44742969,0,0,0.000000,HIGH
+BJ Administration,32651674,0,0,0.000000,HIGH
+BJ Regnskab,14327746,0,0,0.000000,HIGH
+Bjarke Kjær,31885191,0,0,0.000000,HIGH
+Bjarne Bertelsen,28711395,0,0,0.000000,HIGH
+Bjarne Engbjerg-Pedersen,16579106,0,0,0.000000,HIGH
+BJERGGAARD Regnskab og Rådgivning v/ Steen Bjerggaard,72715454,0,0,0.000000,HIGH
+Bjørnlaursen,32671594,0,0,0.000000,HIGH
+BK Revision ApS,12140363,0,0,0.000000,HIGH
+BK-Revision,12967594,0,0,0.000000,HIGH
+Blicher Revision & Rådgivning,78337818,0,0,0.000000,HIGH
+BMM Consult,18079739,0,0,0.000000,HIGH
+BN Consult,73980828,0,0,0.000000,HIGH
+BN Revision,46906012,0,0,0.000000,HIGH
+Bogføring / Regnskab,16942375,0,0,0.000000,HIGH
+Boreco,36074981,0,0,0.000000,HIGH
+Borg Revision v/Olav Borg Christensen,20938692,0,0,0.000000,HIGH
+"Bornhøft & Lindemann, Registreret Revisionsanpartsselskab",41672625,0,0,0.000000,HIGH
+Bornholms Landbrug & Fødevarer,29441677,0,0,0.000000,HIGH
+Bornholms Revision,37858498,0,0,0.000000,HIGH
+"Breindal, statsautoriseret revisionsanpartsselskab",41733950,0,0,0.000000,HIGH
+Brendstrup Revision,14371435,0,0,0.000000,HIGH
+Bro Søndergaard Statsautoriseret Revisionsanpartsselskab,41657332,0,0,0.000000,HIGH
+Broernes Revision,27616690,0,0,0.000000,HIGH
+"Broernes Revision, Reg Revisorer",14310533,0,0,0.000000,HIGH
+Brønshøj Regnskab,36709030,0,0,0.000000,HIGH
+Brørup Revisionskontor,13260982,0,0,0.000000,HIGH
+Brun Blaa ApS,41815043,0,0,0.000000,HIGH
+Buch&Nørgaard,71344517,0,0,0.000000,HIGH
+Buller Tex Flemming Olsen,32560164,0,0,0.000000,HIGH
+Burholt Revision,20833696,0,0,0.000000,HIGH
+C&J Revision,26326931,0,0,0.000000,HIGH
+Capture,28126131,0,0,0.000000,HIGH
+Carsten Bjørn Jensen,25452313,0,0,0.000000,HIGH
+CBK Revision,14604448,0,0,0.000000,HIGH
+CCH Revision,27015476,0,0,0.000000,HIGH
+CDO Revison,15897473,0,0,0.000000,HIGH
+Center Revision Kjellerup,29618038,0,0,0.000000,HIGH
+Centerrevision Billund,20806346,0,0,0.000000,HIGH
+Centrum Revision v/ Henrik Søeborg,14548599,0,0,0.000000,HIGH
+Centrum Revision V/Kurt Håkonsson,17037307,0,0,0.000000,HIGH
+Christensen & Kjær,28320124,0,0,0.000000,HIGH
+Christensen Kjærulff,15915641,0,0,0.000000,HIGH
+City Revision,37048755,0,0,0.000000,HIGH
+CJ Partnership,53375812,0,0,0.000000,HIGH
+CKF Revision ApS Godkendt revisionsfirma,31782139,0,0,0.000000,HIGH
+Claus Carlsen,30553535,0,0,0.000000,HIGH
+Complet Revision,30077288,0,0,0.000000,HIGH
+COMPTA,25072596,0,0,0.000000,HIGH
+Compu Revision,15618175,0,0,0.000000,HIGH
+Consens,39751445,0,0,0.000000,HIGH
+Counted ApS,46110099,0,0,0.000000,HIGH
+CR Revison,31115086,0,0,0.000000,HIGH
+Crowe,33256876,0,0,0.000000,HIGH
+CTM Revision,33160364,0,0,0.000000,HIGH
+CURA Revision,34330042,0,0,0.000000,HIGH
+CY Consult ApS,41474084,0,0,0.000000,HIGH
+"Dahl, Rask & Partnere",10422183,0,0,0.000000,HIGH
+"Dalsgaard, Stahl & Wøldike",21696382,0,0,0.000000,HIGH
+Damborg Revision og Rådgivning,15710373,0,0,0.000000,HIGH
+Damgaard & Enevoldsen,24257770,0,0,0.000000,HIGH
+Damgaard Revision,33074441,0,0,0.000000,HIGH
+Danborg Revision,27289940,0,0,0.000000,HIGH
+Danica,37603686,0,0,0.000000,HIGH
+Danrevi Bramming,24257614,0,0,0.000000,HIGH
+Danrevi Løgstør,27125611,0,0,0.000000,HIGH
+DanRevision Statsautoriseret Revisionsanpartsselskab,41552204,0,0,0.000000,HIGH
+Dansk Center Revision,94431468,0,0,0.000000,HIGH
+DANSK REVISION A/S,31071097,0,0,0.000000,HIGH
+Dansk Revision Aalborg,17835998,0,0,0.000000,HIGH
+Dansk Revision Brønderslev,14795707,0,0,0.000000,HIGH
+Dansk Revision Esbjerg,26993695,0,0,0.000000,HIGH
+Dansk Revision Frederikssund,86141019,0,0,0.000000,HIGH
+Dansk Revision Hillerød,26580390,0,0,0.000000,HIGH
+Dansk Revision Holbæk,28853343,0,0,0.000000,HIGH
+Dansk Revision København,32671608,0,0,0.000000,HIGH
+Dansk Revision Odense,82218912,0,0,0.000000,HIGH
+Dansk Revision Randers,31778530,0,0,0.000000,HIGH
+Dansk Revision Roskilde,14678093,0,0,0.000000,HIGH
+Dansk Revision Silkeborg,21678309,0,0,0.000000,HIGH
+Dansk Revision Skive,25172795,0,0,0.000000,HIGH
+Dansk Revision Søborg,14649905,0,0,0.000000,HIGH
+Dansk Revision Sønderborg,30816471,0,0,0.000000,HIGH
+Dansk Revision Tønder,33219229,0,0,0.000000,HIGH
+Dansk Revision Viborg,20336390,0,0,0.000000,HIGH
+Dansk Revision Wulff & Haaning,36920289,0,0,0.000000,HIGH
+Dask Gruppen,13889686,0,0,0.000000,HIGH
+DataBalance,32983618,0,0,0.000000,HIGH
+Datarevision FRR,54504055,0,0,0.000000,HIGH
+DAVS,25319435,0,0,0.000000,HIGH
+De Små Revisorer ApS,41583479,0,0,0.000000,HIGH
+Deko Rådgivning ApS,44387255,0,0,0.000000,HIGH
+Deloitte,24213714,0,0,0.000000,HIGH
+Deloitte,33963556,0,0,0.000000,HIGH
+Delta Administration,13850232,0,0,0.000000,HIGH
+Din Revisor,35407359,0,0,0.000000,HIGH
+Din Revisor Amager ApS Godkendte revisorer,44396033,0,0,0.000000,HIGH
+Din Revisor Svaneke ApS Godkendte revisorer,45016501,0,0,0.000000,HIGH
+Dissing Revision,42395358,0,0,0.000000,HIGH
+Djurs Revision,19713830,0,0,0.000000,HIGH
+DK Ejendomsadministration & Ejendomsservice ApS,36728027,0,0,0.000000,HIGH
+DLBR Revision,32451195,0,0,0.000000,HIGH
+DM Revision,14569391,0,0,0.000000,HIGH
+"DM Revisionsfirma af 1993, Registreret Revisionsanpartsselskab",39473321,0,0,0.000000,HIGH
+Døssing & Partnere,54879911,0,0,0.000000,HIGH
+DP Hillerød P/S,42491748,0,0,0.000000,HIGH
+DR af 15. august 2016,75938713,0,0,0.000000,HIGH
+DR Revision,36479760,0,0,0.000000,HIGH
+DSH-Revision,19674193,0,0,0.000000,HIGH
+"Dueholm & Partnere, Godkendt Revisionshus",21631930,0,0,0.000000,HIGH
+Dupont Revision,26563976,0,0,0.000000,HIGH
+Dupont Revision & Rådgivning,26887801,0,0,0.000000,HIGH
+DVU,21860506,0,0,0.000000,HIGH
+EBK Smørum ApS,43487469,0,0,0.000000,HIGH
+EC Økonomi og regnskab,35926585,0,0,0.000000,HIGH
+ECO Revision,35891986,0,0,0.000000,HIGH
+Ecomentor,26063221,0,0,0.000000,HIGH
+Eco-Team,27966675,0,0,0.000000,HIGH
+Ecovis Danmark,28939523,0,0,0.000000,HIGH
+Egedal Revision,38035169,0,0,0.000000,HIGH
+Egelund Revision,20474882,0,0,0.000000,HIGH
+Egon Pedersen Revision,88248228,0,0,0.000000,HIGH
+Egtved Revisionskontor,27910165,0,0,0.000000,HIGH
+EKL Revision,30175859,0,0,0.000000,HIGH
+Elisabeth Jessen,11113575,0,0,0.000000,HIGH
+Elite-Revision,25477367,0,0,0.000000,HIGH
+Ellebæk Revision,26287030,0,0,0.000000,HIGH
+Elley Revision,10938694,0,0,0.000000,HIGH
+EMV,35865136,0,0,0.000000,HIGH
+EN Frederikshavn,16009644,0,0,0.000000,HIGH
+Engelsted Petersen,20658231,0,0,0.000000,HIGH
+ERC Revision,34205078,0,0,0.000000,HIGH
+eRevision Statsautoriseret Revisionsanpartsselskab,45086607,0,0,0.000000,HIGH
+E-Revisor.com,36412143,0,0,0.000000,HIGH
+Erhvervs Consult ApS,35868828,0,0,0.000000,HIGH
+Erhvervsrevisorerne i Vejle,26273110,0,0,0.000000,HIGH
+ERM Horsens,33501188,0,0,0.000000,HIGH
+ESSET,27288537,0,0,0.000000,HIGH
+Exacta Gruppen,33359128,0,0,0.000000,HIGH
+EXACTA REGNSKAB ApS,25914481,0,0,0.000000,HIGH
+Exacta Revision ApS,24224724,0,0,0.000000,HIGH
+Exante Revision,70694611,0,0,0.000000,HIGH
+Excell Revision,32428932,0,0,0.000000,HIGH
+EY,33946171,0,0,0.000000,HIGH
+EY,35683194,0,0,0.000000,HIGH
+Eybye Invest,27527027,0,0,0.000000,HIGH
+F I Revision,12576986,0,0,0.000000,HIGH
+F.J. Revision,76534268,0,0,0.000000,HIGH
+FC regnskab,36971339,0,0,0.000000,HIGH
+FER Fyns Erhvervsrevision,21447587,0,0,0.000000,HIGH
+Fetterlein,36081848,0,0,0.000000,HIGH
+Fidura Statsautoriseret Revisionsanpartsselskab,45740986,0,0,0.000000,HIGH
+Finansion v/ revisor Jens Møller,41418737,0,0,0.000000,HIGH
+Firat Group,21617881,0,0,0.000000,HIGH
+Fischer & Kragh ApS,38392867,0,0,0.000000,HIGH
+FJH Revision,18165406,0,0,0.000000,HIGH
+FKS Revision,26306175,0,0,0.000000,HIGH
+Flemming Johannsen,31095018,0,0,0.000000,HIGH
+FN Revision,29747792,0,0,0.000000,HIGH
+Fokusrevision.dk,26996430,0,0,0.000000,HIGH
+FP Revision,37381136,0,0,0.000000,HIGH
+Funder & Henriksen,29628777,0,0,0.000000,HIGH
+Furesø Revision,27969933,0,0,0.000000,HIGH
+Fynbo Revision,19706974,0,0,0.000000,HIGH
+G2 Revision,32285538,0,0,0.000000,HIGH
+GBH Revision & Rådgivning,17610430,0,0,0.000000,HIGH
+GE Revision & Rådgivning,25187091,0,0,0.000000,HIGH
+Gilfelt Revision,28108303,0,0,0.000000,HIGH
+gills-economics,39325608,0,0,0.000000,HIGH
+GLB Revision,30821963,0,0,0.000000,HIGH
+Global Revision,28121717,0,0,0.000000,HIGH
+Glud&Ko,31811694,0,0,0.000000,HIGH
+GoAudit,37205907,0,0,0.000000,HIGH
+Greve Strands Revision,52992753,0,0,0.000000,HIGH
+Grønborg Revision,75076118,0,0,0.000000,HIGH
+Gronemanns,32563627,0,0,0.000000,HIGH
+"Grønlands Revision A/S, statsautoriserede revisorer",41762667,0,0,0.000000,HIGH
+Grønlands Revision Godkendt Revisionspartnerselskab,46201515,0,0,0.000000,HIGH
+GS Event + Revisionplus,73881412,0,0,0.000000,HIGH
+Gundsø Revision,76475512,0,0,0.000000,HIGH
+Gunnar Bendixen,71220168,0,0,0.000000,HIGH
+GV Revision,25122402,0,0,0.000000,HIGH
+H D Consult,27796001,0,0,0.000000,HIGH
+Haamann A/S,24256995,0,0,0.000000,HIGH
+Haamann Statsautoriseret Revisionspartnerselskab,39408198,0,0,0.000000,HIGH
+HALLERUP STATSAUTORISERET REVISOR ApS,79157511,0,0,0.000000,HIGH
+Hans Jørgen Nielsen,20080450,0,0,0.000000,HIGH
+Harboe Consult,35649417,0,0,0.000000,HIGH
+Harboe og B.,33649452,0,0,0.000000,HIGH
+Hartvig & Aalund,31478383,0,0,0.000000,HIGH
+"Hartzberg+, statsautoriseret revisionsanpartsselskab",40535349,0,0,0.000000,HIGH
+HE Revision,29404992,0,0,0.000000,HIGH
+Hedelund revision & rådgivning,36762454,0,0,0.000000,HIGH
+Helledie Revision,39164388,0,0,0.000000,HIGH
+Henrik Blixenkrone Registreret Revisionsanpartsselskab,10477549,0,0,0.000000,HIGH
+Henrik Hansen Revision,10054192,0,0,0.000000,HIGH
+Hestehavens Revison,31579325,0,0,0.000000,HIGH
+HH Bogføring og Regnskab,41316489,0,0,0.000000,HIGH
+HJ Revision ApS,38140515,0,0,0.000000,HIGH
+HKP Revision,12354746,0,0,0.000000,HIGH
+HK-revision,18767333,0,0,0.000000,HIGH
+Høffner Revision,76637415,0,0,0.000000,HIGH
+Holberg Invest ApS,42657638,0,0,0.000000,HIGH
+Holberg revision,35638288,0,0,0.000000,HIGH
+Hole Revision,30709470,0,0,0.000000,HIGH
+Holm Hansen Statsautoriseret Revisionspartnerselskab,35042520,0,0,0.000000,HIGH
+Hovedstadens Revisionshus ApS,36894415,0,0,0.000000,HIGH
+HR Revision ApS,46151607,0,0,0.000000,HIGH
+Huset Under Linden,73643716,0,0,0.000000,HIGH
+HvidebækRevisoren,28931581,0,0,0.000000,HIGH
+I.H. Revision v/ Hanne Henningsen,19617203,0,0,0.000000,HIGH
+Ib Rohde,30905652,0,0,0.000000,HIGH
+IGM Revision v/iben green madsen,52886252,0,0,0.000000,HIGH
+IHC Holding Kolding,31501601,0,0,0.000000,HIGH
+Inforevision,19263096,0,0,0.000000,HIGH
+Intension,26632315,0,0,0.000000,HIGH
+J H Regnskab v/Jan Ekmann Hørsel,20415991,0,0,0.000000,HIGH
+J. Aarøe Statsautoriseret Revisionsanpartsselskab,34058059,0,0,0.000000,HIGH
+J. S. Jakobsen,15515554,0,0,0.000000,HIGH
+Jajaogatterja,40095179,0,0,0.000000,HIGH
+JBC Revision v/Jørgen Christensen,25979907,0,0,0.000000,HIGH
+JBL Revision,36491817,0,0,0.000000,HIGH
+JE Regnskabsservice,17366270,0,0,0.000000,HIGH
+"Jens Rye, Statsautoriseret Revisor",41694939,0,0,0.000000,HIGH
+Jes Revision,17016334,0,0,0.000000,HIGH
+JH Revision,55399719,0,0,0.000000,HIGH
+"JHL Revision, Esbjerg",40052992,0,0,0.000000,HIGH
+JL Revision,11286380,0,0,0.000000,HIGH
+JL Revisorer,31332699,0,0,0.000000,HIGH
+"John Dalgaard, Statsautoriseret Revisionsanpartsselskab",27192939,0,0,0.000000,HIGH
+Johnny Hansen Registreret Revisionsanpartsselskab,16933503,0,0,0.000000,HIGH
+Johnny Kofoed-Jensen,40992138,0,0,0.000000,HIGH
+Joost & Partner Registreret Revisionsanpartsselskab,63778710,0,0,0.000000,HIGH
+Jørn Haagensen Statsautoriseret Revisionsanpartsselskab,33759231,0,0,0.000000,HIGH
+Jørn m. Schmidt Statsautoriseret Revisionsanpartsselskab,28309724,0,0,0.000000,HIGH
+JP Management Holding,25709888,0,0,0.000000,HIGH
+"JS Revision, Godkendt Revisionsaktieselskab",37999687,0,0,0.000000,HIGH
+JST Revision,26344735,0,0,0.000000,HIGH
+JT Adviser,14081844,0,0,0.000000,HIGH
+JuelViborg,31438748,0,0,0.000000,HIGH
+Juul & Blicher ApS,45395634,0,0,0.000000,HIGH
+JVBM Revision,36972912,0,0,0.000000,HIGH
+Jysk Revision og Rådgivning ApS,43573810,0,0,0.000000,HIGH
+K.T. Revision Vejle,70969815,0,0,0.000000,HIGH
+K2 TOP Registreret Revisionsanpartsselskab,30175905,0,0,0.000000,HIGH
+Kallermann Revision,30195264,0,0,0.000000,HIGH
+Kappelskov Revision,11790577,0,0,0.000000,HIGH
+Kara Statsautoriseret Revisionsanpartsselskab,45945189,0,0,0.000000,HIGH
+Karin Juel Registreret Revisionsvirksomhed,12911580,0,0,0.000000,HIGH
+Karleby Revision ApS,26252687,0,0,0.000000,HIGH
+Karsten Andersen Registreret Revisionsvirksomhed,34274657,0,0,0.000000,HIGH
+Karsten Reher. Revisionsanpartsselskab,76477817,0,0,0.000000,HIGH
+Kerteminde Revision v/Charlotte Elwain,29573360,0,0,0.000000,HIGH
+Kildebjerg Revision,26631556,0,0,0.000000,HIGH
+Kirkhoff,30351002,0,0,0.000000,HIGH
+Kjær Revision,37984558,0,0,0.000000,HIGH
+Kjeld Linnebjerg Registreret Revisionsanpartsselskab,15587008,0,0,0.000000,HIGH
+"Kjeldsen Revision, Statsautoriseret Revisionsanpartsselskab",46115422,0,0,0.000000,HIGH
+Klar Revision,35827943,0,0,0.000000,HIGH
+Klinkby Revision v/Lars Klinkby,30006674,0,0,0.000000,HIGH
+KOA CPH ApS,45107787,0,0,0.000000,HIGH
+KOA Rådgivning & Regnskab ApS,78168714,0,0,0.000000,HIGH
+Kobstrup,17294431,0,0,0.000000,HIGH
+Køge Nord Revision,14149341,0,0,0.000000,HIGH
+Kolding Erhvervsservice,30817222,0,0,0.000000,HIGH
+Kolding Herreds Landbrugsforening,21111511,0,0,0.000000,HIGH
+Kompas Revision,26291593,0,0,0.000000,HIGH
+KOMPLEMENTARANPARTSSELSKABET ANDERSEN REVISION,35534156,0,0,0.000000,HIGH
+Konde ApS,38575694,0,0,0.000000,HIGH
+Kongevejens Revision,25273621,0,0,0.000000,HIGH
+Konsulent Jens H. Hedegaard,42746452,0,0,0.000000,HIGH
+Korsgaard Revision,13835640,0,0,0.000000,HIGH
+KPMG,25578198,0,0,0.000000,HIGH
+KPMG KOMPLEMENTARSELSKAB ApS,25504070,0,0,0.000000,HIGH
+Kramer Consulting,38654217,0,0,0.000000,HIGH
+Kreston AKC,35316957,0,0,0.000000,HIGH
+Kreston JC,27619096,0,0,0.000000,HIGH
+Krogh & Thomsen,19154408,0,0,0.000000,HIGH
+Krøyer Pedersen Statsautoriserede Revisorer P/S,45922391,0,0,0.000000,HIGH
+Kruse Revision,43113577,0,0,0.000000,HIGH
+Krydsrevision,38225804,0,0,0.000000,HIGH
+Kvalitetsrevision,36480254,0,0,0.000000,HIGH
+Kvist & Jensen,36717785,0,0,0.000000,HIGH
+"Kvist & Jensen, Grenaa",27478131,0,0,0.000000,HIGH
+Kvist Revision ApS,38818724,0,0,0.000000,HIGH
+L.A. Revision,17022970,0,0,0.000000,HIGH
+Lægers & Tandlægers Revisionskontor,25685229,0,0,0.000000,HIGH
+Lægers & Tandlægers Revisionskontor Sjælland,33877390,0,0,0.000000,HIGH
+Landbo Limfjord,26243076,0,0,0.000000,HIGH
+Landboforeningen Gefion,31123992,0,0,0.000000,HIGH
+LandboNord,25049608,0,0,0.000000,HIGH
+LandboThy,41946717,0,0,0.000000,HIGH
+Landbrugsrådgivning Syd,30719131,0,0,0.000000,HIGH
+Landwirtschaftlicher Hauptverein für Nordschleswig,16342718,0,0,0.000000,HIGH
+Langelands Revisionscenter,61225811,0,0,0.000000,HIGH
+Langelinierevisionen,11303870,0,0,0.000000,HIGH
+Lars Ole Wiese,30220331,0,0,0.000000,HIGH
+Lars P Revision,33225172,0,0,0.000000,HIGH
+"Larsen, Statsautoriseret Revisionsanpartsselskab",45756173,0,0,0.000000,HIGH
+LB Revision,14047107,0,0,0.000000,HIGH
+LBV ApS,41358513,0,0,0.000000,HIGH
+LD&C Statsautoriseret Revisionsanpartsselskab,46080041,0,0,0.000000,HIGH
+LDM Revision,19553876,0,0,0.000000,HIGH
+Legato Regnskab og bogføring,33836449,0,0,0.000000,HIGH
+Lejenregnskabschef.dk,30563670,0,0,0.000000,HIGH
+Lemvigegnens Landboforening,41503610,0,0,0.000000,HIGH
+Lerfeldt Revision,20142146,0,0,0.000000,HIGH
+Leth & Partnere,32789153,0,0,0.000000,HIGH
+Lidegaard Revision & Rådgivning,27096174,0,0,0.000000,HIGH
+Lidegaard Revision&Rådgivning,27511511,0,0,0.000000,HIGH
+Lillebælt Revision,10122058,0,0,0.000000,HIGH
+Linda Lauritsen,37142042,0,0,0.000000,HIGH
+Lindeberg Storm Fischer,37821055,0,0,0.000000,HIGH
+Lindholm Revision,38248677,0,0,0.000000,HIGH
+LJ Revision,28284160,0,0,0.000000,HIGH
+Lokal Revision - statsautoriseret revisionsanpartsselskab,41943661,0,0,0.000000,HIGH
+Lokalrevision,78646411,0,0,0.000000,HIGH
+"Lorentzen & Partners, Statsautoriserede Revisorer ApS",45328988,0,0,0.000000,HIGH
+Lou Revision,31579309,0,0,0.000000,HIGH
+LP Revision & rådgivning,16368342,0,0,0.000000,HIGH
+Luni Revision,17811371,0,0,0.000000,HIGH
+Luni Revisions Anpartsselskab,28970641,0,0,0.000000,HIGH
+Lynge Revisor,31622565,0,0,0.000000,HIGH
+Lyngen Revision statsautoriseret revisionsanpartsselskab,35050175,0,0,0.000000,HIGH
+MA Revision v/Morten Andersen,12246099,0,0,0.000000,HIGH
+"MADS MYRTUE THOMSEN, STATSAUTORISERET REVISIONSANPARTSSELSKAB",28663838,0,0,0.000000,HIGH
+Mazars Statsautoriseret Revisionspartnerselskab,31061741,0,0,0.000000,HIGH
+MB Revision ApS,33497326,0,0,0.000000,HIGH
+MBA Statsautoriseret Revisionsanpartsselskab,33150482,0,0,0.000000,HIGH
+MBL Revision,40375260,0,0,0.000000,HIGH
+Meneto Software ApS,39965003,0,0,0.000000,HIGH
+Mentor TM,27477933,0,0,0.000000,HIGH
+Mer Revision,32344720,0,0,0.000000,HIGH
+Michael Kappelhøj,18485907,0,0,0.000000,HIGH
+Midt Revision,39065797,0,0,0.000000,HIGH
+MN Revision og Rådgivning,30318269,0,0,0.000000,HIGH
+MN Revision v/statsaut. revisor Mogens Nielsen,15656042,0,0,0.000000,HIGH
+Mogens Kibsgaard. Statsautoriseretrevisionsanpartsselskab,67425618,0,0,0.000000,HIGH
+Møller & Co.,20716142,0,0,0.000000,HIGH
+Møller & Madsen,30835654,0,0,0.000000,HIGH
+Møller-Jensen Statsautoriseret Revisionsanpartsselskab,68497817,0,0,0.000000,HIGH
+Momentum Revision,35238050,0,0,0.000000,HIGH
+MP Revision,14119507,0,0,0.000000,HIGH
+MPB Consult,30956400,0,0,0.000000,HIGH
+MPH Business Consulting ApS,37654728,0,0,0.000000,HIGH
+MQ Revision,16147591,0,0,0.000000,HIGH
+MS Revision ApS,40032622,0,0,0.000000,HIGH
+MTMLB,36909935,0,0,0.000000,HIGH
+Multi Revision,31929342,0,0,0.000000,HIGH
+Multi Revision Ballerup,15553782,0,0,0.000000,HIGH
+MunkStrunge,33088205,0,0,0.000000,HIGH
+N. K. Mortensen A/S Registrerede Revisorer,66090116,0,0,0.000000,HIGH
+N. K. Mortensen Reg. Revisor ApS,42975958,0,0,0.000000,HIGH
+N.G. Christensen Statsautoriseret Revisionsanpartsselskab,38695916,0,0,0.000000,HIGH
+Nærrevision,17524305,0,0,0.000000,HIGH
+National Revision,25635868,0,0,0.000000,HIGH
+ND REVISION SØNDERBORG ApS,56387013,0,0,0.000000,HIGH
+Nejstgaard & Vetlov,12868693,0,0,0.000000,HIGH
+Nem Revisor ApS,35235892,0,0,0.000000,HIGH
+Nemli & Partnere Statsautoriserede Revisorer ApS,43514172,0,0,0.000000,HIGH
+NET-Revision,29389918,0,0,0.000000,HIGH
+Nexø Revision A/S,41998407,0,0,0.000000,HIGH
+Next Stage Ventures ApS,37519111,0,0,0.000000,HIGH
+nf plus,27495753,0,0,0.000000,HIGH
+NF Plus Revision,36031719,0,0,0.000000,HIGH
+Nigelema v/Niels Lemmeke Madsen,20113138,0,0,0.000000,HIGH
+Nils Knudsen NK - REVI,11524192,0,0,0.000000,HIGH
+Noe & Kirkegaard,15050586,0,0,0.000000,HIGH
+Nørbak,33065272,0,0,0.000000,HIGH
+NORDISK ELEMENT BYG A/S,32287913,0,0,0.000000,HIGH
+Nordisk Revision Godkendt Revisionsanpartsselskab,41835303,0,0,0.000000,HIGH
+Nordjysk Revision HJ,33064543,0,0,0.000000,HIGH
+Nordkyst Revision Godkendt Revisionspartnerselskab,37605255,0,0,0.000000,HIGH
+Nordland Revision-Nordland,25518942,0,0,0.000000,HIGH
+Nordmors Revision v/Peter Djernes,19941442,0,0,0.000000,HIGH
+Nørgaard Revision,31131928,0,0,0.000000,HIGH
+Nørgaard Schultz Godkendt Revisionsanpartsselskab,43629379,0,0,0.000000,HIGH
+NPM Quality Management ApS,32825915,0,0,0.000000,HIGH
+NU-REVI,29839328,0,0,0.000000,HIGH
+NUUK REVISION ApS,12479077,0,0,0.000000,HIGH
+Nyborg Erhvervsrevision,30546792,0,0,0.000000,HIGH
+OBK Revision,68216214,0,0,0.000000,HIGH
+Ødegaard Statsautoriseret Revisionsanpartsselskab,44304635,0,0,0.000000,HIGH
+Øernes Revision,37121924,0,0,0.000000,HIGH
+Økonomihuset,28368410,0,0,0.000000,HIGH
+OL Revision,10841976,0,0,0.000000,HIGH
+ON Regnskab & Rådgivning,40748083,0,0,0.000000,HIGH
+One Revision,39090279,0,0,0.000000,HIGH
+ON-Erklæring ApS,41210974,0,0,0.000000,HIGH
+ONreVISION,33043163,0,0,0.000000,HIGH
+Optimal Revision,19233383,0,0,0.000000,HIGH
+Øresund Revision Statsautoriseret Revisionsanpartsselskab,40127720,0,0,0.000000,HIGH
+Osmark,27135730,0,0,0.000000,HIGH
+Østdansk Landboforening,20835400,0,0,0.000000,HIGH
+Ostenfeld Revision,36071281,0,0,0.000000,HIGH
+Østrup,32774296,0,0,0.000000,HIGH
+Oxenvads Regnskabsservice ApS,12741766,0,0,0.000000,HIGH
+OX-INVEST ApS,20799544,0,0,0.000000,HIGH
+Pandrup Revision,38897713,0,0,0.000000,HIGH
+Parker Randall,26998549,0,0,0.000000,HIGH
+Patriotisk Selskab,61676228,0,0,0.000000,HIGH
+PC-Revision Gentofte,30969103,0,0,0.000000,HIGH
+PDG-Revision,36490977,0,0,0.000000,HIGH
+Peter Madsen Registreret Revisionsanpartsselskab,25362403,0,0,0.000000,HIGH
+PHA Revision,11392903,0,0,0.000000,HIGH
+Pibe Mølle Revision,19123286,0,0,0.000000,HIGH
+Pilgaard Revision V/Elna Pilgaard,17230239,0,0,0.000000,HIGH
+PJ Revision ApS Registrerede Revisorer,26429862,0,0,0.000000,HIGH
+PJ Revision Statsautoriseret Revisionsanpartsselskab,33861044,0,0,0.000000,HIGH
+PK Revision,31495288,0,0,0.000000,HIGH
+PKF Borup ApS,10290430,0,0,0.000000,HIGH
+Plan Revision v/Per Petersen,12322143,0,0,0.000000,HIGH
+Plus Revision,20452897,0,0,0.000000,HIGH
+PM Revision,15279680,0,0,0.000000,HIGH
+PN Revision,37522945,0,0,0.000000,HIGH
+Pommerencke,33878370,0,0,0.000000,HIGH
+Prima Revision,21356190,0,0,0.000000,HIGH
+PRO REVISION STATSAUTORISERET ANPARTSSELSKAB,45150437,0,0,0.000000,HIGH
+Pro-Accounting ApS,38033638,0,0,0.000000,HIGH
+Profil Revision,59051318,0,0,0.000000,HIGH
+Pryds,21598402,0,0,0.000000,HIGH
+PS Revision,28252102,0,0,0.000000,HIGH
+PT af 27. juli 2004,28148585,0,0,0.000000,HIGH
+PwC Statsautoriseret Revisionsanpartsselskab,33773188,0,0,0.000000,HIGH
+Q-Revision,30276019,0,0,0.000000,HIGH
+R E V I - T E A M,10180384,0,0,0.000000,HIGH
+R3 Revision,33164076,0,0,0.000000,HIGH
+Råd & Revision,25593995,0,0,0.000000,HIGH
+Rådgivning & Revision,10158117,0,0,0.000000,HIGH
+Rådgivningsgruppen,29316996,0,0,0.000000,HIGH
+Rasmussen Revision,46408314,0,0,0.000000,HIGH
+RB Revision,21706833,0,0,0.000000,HIGH
+Realvision,18216833,0,0,0.000000,HIGH
+Reg Revisor Uffe Berg Pedersen,12689039,0,0,0.000000,HIGH
+Reg. Rev. Mogens Møller Nielsen,10261279,0,0,0.000000,HIGH
+Registreret Revisionsanpartsselskab Flemming Juhl Nielsen,14135308,0,0,0.000000,HIGH
+Registreret Revisionsanpartsselskab j. Gilbert Nielsen,18137399,0,0,0.000000,HIGH
+Registreret revisionsfirma Torben Andersen,15681578,0,0,0.000000,HIGH
+Registreret Revisionsvirksomhed FD Revision,35798153,0,0,0.000000,HIGH
+Registreret Revisionsvirksomhed Nordskov Revision,30348184,0,0,0.000000,HIGH
+Registreret Revisionsvirksomhed Peter Oldvig,11759092,0,0,0.000000,HIGH
+Registreret Revisor Annie Mogensen,11972101,0,0,0.000000,HIGH
+Registreret Revisor Bjarne Degerth,92943453,0,0,0.000000,HIGH
+Registreret Revisor Jørgen T. Madsen,75964056,0,0,0.000000,HIGH
+Registreret Revisor Mads Bødker,14662138,0,0,0.000000,HIGH
+Registreret revisor Marianne Mortensen,15664908,0,0,0.000000,HIGH
+Registreret Revisor Mette Storgaard Høffner,18897385,0,0,0.000000,HIGH
+Registreret revisor Morten Rasmussen,40847170,0,0,0.000000,HIGH
+Registreret Revisor N. C. Sørensen,17561391,0,0,0.000000,HIGH
+Registreret Revisor Per Obling,14913572,0,0,0.000000,HIGH
+Registreret Revisor Per Skaarup Rasmussen,20592699,0,0,0.000000,HIGH
+Registreret Revisor Peter Rose,50949656,0,0,0.000000,HIGH
+Registreret Revisor Verner Freundlich Larsen,91778750,0,0,0.000000,HIGH
+Regn & Råd Mette Jørck,26380898,0,0,0.000000,HIGH
+Regnskabs- og Revisionskontoret for Storkøbenhavn,37183024,0,0,0.000000,HIGH
+Regnskabsfabrikanten,38980149,0,0,0.000000,HIGH
+Regnskabsfirmaet Martin Engbjerg ApS,14165088,0,0,0.000000,HIGH
+Rehvidsion,82958118,0,0,0.000000,HIGH
+REV af 22/12 1989 ApS,10741092,0,0,0.000000,HIGH
+Rev og Råd,32942660,0,0,0.000000,HIGH
+Revfirma Georg Mathiasen,72430816,0,0,0.000000,HIGH
+Revice,32291090,0,0,0.000000,HIGH
+Revico,27795188,0,0,0.000000,HIGH
+Revicor,13929297,0,0,0.000000,HIGH
+Revida,87948412,0,0,0.000000,HIGH
+Revidata,37029815,0,0,0.000000,HIGH
+ReviDK,36956658,0,0,0.000000,HIGH
+Revifirmaet,83827815,0,0,0.000000,HIGH
+REVIFJORD Godkendt Revisionspartnerselskab,44401231,0,0,0.000000,HIGH
+ReviFyn,41992719,0,0,0.000000,HIGH
+ReviGroup,39875926,0,0,0.000000,HIGH
+Revikon,15728000,0,0,0.000000,HIGH
+ReviNord,16347299,0,0,0.000000,HIGH
+ReviØst,21164577,0,0,0.000000,HIGH
+ReviPartner,25112822,0,0,0.000000,HIGH
+Revipoint,31611520,0,0,0.000000,HIGH
+Revirk Rådgivning,31934354,0,0,0.000000,HIGH
+Revirk Rådgivning Statsautoriseret revisionsfirma,20527986,0,0,0.000000,HIGH
+Revision & Data,12475780,0,0,0.000000,HIGH
+Revision & Råd,36923318,0,0,0.000000,HIGH
+REVISION & RÅD STATSAUTORISERET REVISIONSPARTNERSELSKAB,46125894,0,0,0.000000,HIGH
+Revision 1,91259850,0,0,0.000000,HIGH
+Revision 1-2-3,10632684,0,0,0.000000,HIGH
+Revision 2,16968137,0,0,0.000000,HIGH
+Revision 360 Statsautoriseret Revisionsinteressentskab,44775530,0,0,0.000000,HIGH
+Revision 80,16728691,0,0,0.000000,HIGH
+Revision Fyn,31896444,0,0,0.000000,HIGH
+Revision Hatting,13737096,0,0,0.000000,HIGH
+Revision Horsens,17275100,0,0,0.000000,HIGH
+Revision Kjær,33037864,0,0,0.000000,HIGH
+Revision København Godkendt Revisionspartnerselskab,34619654,0,0,0.000000,HIGH
+Revision København Statsautoriseret Revisionsanpartsselskab,34452342,0,0,0.000000,HIGH
+Revision Køge,28053665,0,0,0.000000,HIGH
+Revision Limfjord,41454555,0,0,0.000000,HIGH
+Revision Nord,16145084,0,0,0.000000,HIGH
+Revision Nordjylland,28481160,0,0,0.000000,HIGH
+Revision Nordjylland Hjørring ApS,40299637,0,0,0.000000,HIGH
+Revision og Rådgivningsgruppen,33771177,0,0,0.000000,HIGH
+Revision- og Regnskabskontoret,28902867,0,0,0.000000,HIGH
+Revision og Review Partner,33082932,0,0,0.000000,HIGH
+Revision Rosendal,30427483,0,0,0.000000,HIGH
+Revision Ry & Hammel,26267439,0,0,0.000000,HIGH
+Revision Ryttergaarden,36908114,0,0,0.000000,HIGH
+Revision Sjælland,28309791,0,0,0.000000,HIGH
+REVISION THY Registreret Revisionsanpartsselskab,42825379,0,0,0.000000,HIGH
+Revision Vadestedet,27433863,0,0,0.000000,HIGH
+Revision Varde,18072106,0,0,0.000000,HIGH
+RéVision+,38914766,0,0,0.000000,HIGH
+ReVision+ Brøndby ApS,20251883,0,0,0.000000,HIGH
+Revision+ Fyn ApS,42658561,0,0,0.000000,HIGH
+RéVision+ Statsautoriseret Revisionsanpartsselskab,41695609,0,0,0.000000,HIGH
+Revisioncentret Tønder/Skærbæk,26812372,0,0,0.000000,HIGH
+"RevisionPlus, Grindsted",10875781,0,0,0.000000,HIGH
+Revisionsanpartsselskabet Jens Carl Nielsen,28505159,0,0,0.000000,HIGH
+Revisionscentralen i Nørre Alslev,71274012,0,0,0.000000,HIGH
+Revisionscentret 5R Esbjerg,26279534,0,0,0.000000,HIGH
+Revisions-Centret ApS,41578513,0,0,0.000000,HIGH
+Revisionscentret Haderslev,13976295,0,0,0.000000,HIGH
+Revisionscentret Ribe,18936305,0,0,0.000000,HIGH
+Revisionscentret Sønderborg,38951394,0,0,0.000000,HIGH
+Revisions-Centret v/Brian Vahlkvist,19723402,0,0,0.000000,HIGH
+Revisionscentret v/Jesper Thygesen,10352231,0,0,0.000000,HIGH
+RevisionsCentrum,36493372,0,0,0.000000,HIGH
+Revisionsfimaet W. Bach Nørgaard,18192195,0,0,0.000000,HIGH
+Revisionsfirma Bent Madsen,13672970,0,0,0.000000,HIGH
+Revisionsfirma Børge Lorenzen,18798344,0,0,0.000000,HIGH
+Revisionsfirma C. & Co,37905305,0,0,0.000000,HIGH
+Revisionsfirma Ulla Svenningsen,18393387,0,0,0.000000,HIGH
+Revisionsfirmaet A P MØLLER,72707710,0,0,0.000000,HIGH
+Revisionsfirmaet Albrechtsen,77926410,0,0,0.000000,HIGH
+Revisionsfirmaet Allan Bernhard,26688027,0,0,0.000000,HIGH
+Revisionsfirmaet Arne Bang,78682418,0,0,0.000000,HIGH
+Revisionsfirmaet Asger Wiuff Andersen,32149863,0,0,0.000000,HIGH
+Revisionsfirmaet Bayer,15202580,0,0,0.000000,HIGH
+Revisionsfirmaet Bendt Stendahl,86046717,0,0,0.000000,HIGH
+Revisionsfirmaet Benny Jensen,17937987,0,0,0.000000,HIGH
+Revisionsfirmaet Benny Lund Jensen,37230359,0,0,0.000000,HIGH
+Revisionsfirmaet Bent Jørgensen,57652551,0,0,0.000000,HIGH
+Revisionsfirmaet Bent Rindom,51229428,0,0,0.000000,HIGH
+Revisionsfirmaet Chr. Knudsen,21813400,0,0,0.000000,HIGH
+Revisionsfirmaet Christian Danielsen,16953199,0,0,0.000000,HIGH
+REVISIONSFIRMAET CLAUS WINKEL ApS,13188491,0,0,0.000000,HIGH
+Revisionsfirmaet Edelbo & Lund-Larsen,32327249,0,0,0.000000,HIGH
+Revisionsfirmaet Else Høy,15275677,0,0,0.000000,HIGH
+Revisionsfirmaet Erik Andersen,15534397,0,0,0.000000,HIGH
+Revisionsfirmaet Erik Hultquist,15396105,0,0,0.000000,HIGH
+Revisionsfirmaet Erik Reinsborg,25491742,0,0,0.000000,HIGH
+Revisionsfirmaet Evan Klarholt,10686504,0,0,0.000000,HIGH
+Revisionsfirmaet Flemming Hansen,15270144,0,0,0.000000,HIGH
+Revisionsfirmaet Freddy Rasmussen,15054840,0,0,0.000000,HIGH
+Revisionsfirmaet Gert Ovesen,13364796,0,0,0.000000,HIGH
+Revisionsfirmaet Hanne og Erling Lund,35143114,0,0,0.000000,HIGH
+Revisionsfirmaet Hartvig & Aalund,11157203,0,0,0.000000,HIGH
+Revisionsfirmaet Henrik Tange,37915718,0,0,0.000000,HIGH
+Revisionsfirmaet Højmose,30771508,0,0,0.000000,HIGH
+Revisionsfirmaet Højmose Christiansen ApS,43917455,0,0,0.000000,HIGH
+Revisionsfirmaet Højmose IVS,36988762,0,0,0.000000,HIGH
+Revisionsfirmaet Højvar & Skaaning,28248598,0,0,0.000000,HIGH
+Revisionsfirmaet Irene Sjølin ApS,37470996,0,0,0.000000,HIGH
+Revisionsfirmaet Ivan Kjeldsen,30613791,0,0,0.000000,HIGH
+Revisionsfirmaet Jan Kristensen,35383646,0,0,0.000000,HIGH
+Revisionsfirmaet Jens Søndergaard,18738007,0,0,0.000000,HIGH
+Revisionsfirmaet Jens Vindfeldt,15897996,0,0,0.000000,HIGH
+Revisionsfirmaet John Schantz,28312393,0,0,0.000000,HIGH
+Revisionsfirmaet Jørgen Gilling,18619407,0,0,0.000000,HIGH
+Revisionsfirmaet Jørgen Larsen,54471556,0,0,0.000000,HIGH
+Revisionsfirmaet Jørgen Larsen I/S,14678085,0,0,0.000000,HIGH
+Revisionsfirmaet Kenneth Birkelund,32147437,0,0,0.000000,HIGH
+Revisionsfirmaet Kim Jacobsen,36065346,0,0,0.000000,HIGH
+Revisionsfirmaet Kirch Andersen,18288389,0,0,0.000000,HIGH
+Revisionsfirmaet Kjeldgaard og Thulstrup,25900405,0,0,0.000000,HIGH
+Revisionsfirmaet KRH,37596272,0,0,0.000000,HIGH
+Revisionsfirmaet KRH ApS,42040614,0,0,0.000000,HIGH
+Revisionsfirmaet Kurt Astrup,13068135,0,0,0.000000,HIGH
+Revisionsfirmaet Lars Bastholm,36696486,0,0,0.000000,HIGH
+Revisionsfirmaet Lars Bo,27022863,0,0,0.000000,HIGH
+Revisionsfirmaet Lars Jeppesen,26923891,0,0,0.000000,HIGH
+Revisionsfirmaet Lars Jeppesen ApS,44585650,0,0,0.000000,HIGH
+Revisionsfirmaet Lars Olsen,37135119,0,0,0.000000,HIGH
+Revisionsfirmaet Leif Vesterlund,10092159,0,0,0.000000,HIGH
+Revisionsfirmaet Lisbeth Bo Jørgensen,14052488,0,0,0.000000,HIGH
+Revisionsfirmaet Lund & Christiansen,10623685,0,0,0.000000,HIGH
+Revisionsfirmaet MBP,31167140,0,0,0.000000,HIGH
+Revisionsfirmaet Mentor,28136196,0,0,0.000000,HIGH
+Revisionsfirmaet Michael Fræmohs,47808650,0,0,0.000000,HIGH
+Revisionsfirmaet Mogens Andersen,26386330,0,0,0.000000,HIGH
+Revisionsfirmaet Morten Schneider,33176996,0,0,0.000000,HIGH
+Revisionsfirmaet Niels Harder,44682915,0,0,0.000000,HIGH
+Revisionsfirmaet Niels Ole Hansen,26121884,0,0,0.000000,HIGH
+Revisionsfirmaet Nielsen & Olesen,21294306,0,0,0.000000,HIGH
+Revisionsfirmaet Obsen & Nielsen,26399610,0,0,0.000000,HIGH
+Revisionsfirmaet Ole Dahl,11328881,0,0,0.000000,HIGH
+Revisionsfirmaet Ole Hansen,12155662,0,0,0.000000,HIGH
+"Revisionsfirmaet Ole Hansen, Statsautoriseret Revisionsanpartsselskab",17246496,0,0,0.000000,HIGH
+Revisionsfirmaet Ole Poulsen,32008143,0,0,0.000000,HIGH
+Revisionsfirmaet Ole Vestergaard,31501741,0,0,0.000000,HIGH
+Revisionsfirmaet Peder Albertsen,18743396,0,0,0.000000,HIGH
+Revisionsfirmaet Peder Holt,21872741,0,0,0.000000,HIGH
+Revisionsfirmaet Per Abelsen,34066698,0,0,0.000000,HIGH
+Revisionsfirmaet Per Jacobsen,15319887,0,0,0.000000,HIGH
+Revisionsfirmaet Per Kronborg,26659817,0,0,0.000000,HIGH
+Revisionsfirmaet Per Steen Hansen,38124315,0,0,0.000000,HIGH
+Revisionsfirmaet Peter Berg,21052302,0,0,0.000000,HIGH
+Revisionsfirmaet Peter Deiborg,16346578,0,0,0.000000,HIGH
+Revisionsfirmaet Peter Høg,65608154,0,0,0.000000,HIGH
+Revisionsfirmaet Poul Bernhardt Larsen,66660214,0,0,0.000000,HIGH
+Revisionsfirmaet Poul Rexen Thomsen,81127115,0,0,0.000000,HIGH
+Revisionsfirmaet Rathmann & Mortensen,27521975,0,0,0.000000,HIGH
+Revisionsfirmaet Revicon,12707789,0,0,0.000000,HIGH
+Revisionsfirmaet Seiersen Revision,32697674,0,0,0.000000,HIGH
+Revisionsfirmaet Søren Askly,39846144,0,0,0.000000,HIGH
+Revisionsfirmaet Søren Kahr,41832096,0,0,0.000000,HIGH
+Revisionsfirmaet Svend Dørffer,15659777,0,0,0.000000,HIGH
+Revisionsfirmaet Svend Rosendahl,11163947,0,0,0.000000,HIGH
+Revisionsfirmaet Svendsen,34581673,0,0,0.000000,HIGH
+Revisionsfirmaet Tage Kielsgaard Rasmussen,15137371,0,0,0.000000,HIGH
+Revisionsfirmaet Tage Sørensen,34879753,0,0,0.000000,HIGH
+Revisionsfirmaet Tommy Jensen,20082097,0,0,0.000000,HIGH
+Revisionsfirmaet Tommy Larsen,98727558,0,0,0.000000,HIGH
+Revisionsfirmaet Torben Langebæk,19697274,0,0,0.000000,HIGH
+Revisionsfirmaet Torlund,31165571,0,0,0.000000,HIGH
+Revisionsfirmaet Woiremose & Partner,25735560,0,0,0.000000,HIGH
+Revisionsfirmaet Zinnsgade,83005815,0,0,0.000000,HIGH
+Revisionshuset,12848544,0,0,0.000000,HIGH
+Revisionshuset Tal & Tanker,37315664,0,0,0.000000,HIGH
+RevisionsHuset Viborg v/Leif Aasten,36871644,0,0,0.000000,HIGH
+RevisionsHuset-Viborg v/Mogens Bech,37054933,0,0,0.000000,HIGH
+Revisionskontoret,69885055,0,0,0.000000,HIGH
+REVISIONSKONTORET AF 2004 ApS,13179638,0,0,0.000000,HIGH
+Revisionskontoret Fredericia-Vejle,32348831,0,0,0.000000,HIGH
+Revisionskontoret i Asnæs,16603473,0,0,0.000000,HIGH
+Revisionskontoret i Faxe,16609331,0,0,0.000000,HIGH
+Revisions-Partner,69305210,0,0,0.000000,HIGH
+Revisionsselskabet LKG,36735465,0,0,0.000000,HIGH
+Revisionsselskabet Mougaard,21849588,0,0,0.000000,HIGH
+Revisionsselskabet v/ Anders Christian Mogensen,48569528,0,0,0.000000,HIGH
+Revisionvest,11901840,0,0,0.000000,HIGH
+RéVison+,35465979,0,0,0.000000,HIGH
+Revisor Finn Erik Rasmussen,54472455,0,0,0.000000,HIGH
+Revisor Fritzbøger,41982470,0,0,0.000000,HIGH
+Revisor Gunnar Kjærgaard Larsen,46639715,0,0,0.000000,HIGH
+Revisor Inge Linkamp ApS,26297974,0,0,0.000000,HIGH
+Revisor Klaus Johansson,13206090,0,0,0.000000,HIGH
+Revisor Niels Jørgen Hansen,36333154,0,0,0.000000,HIGH
+Revisor Nielsen ApS,40832211,0,0,0.000000,HIGH
+Revisor/Lasse Larsen,70666758,0,0,0.000000,HIGH
+Revisor1,10740746,0,0,0.000000,HIGH
+Revisorclaus IVS,37517623,0,0,0.000000,HIGH
+RevisorDK,38257846,0,0,0.000000,HIGH
+REVISOREN I SISIMIUT REGISTRERET REVISIONSANPARTSSELSKAB,12506864,0,0,0.000000,HIGH
+Revisorerne Bastian og Krause,27335616,0,0,0.000000,HIGH
+Revisorerne i Skals,19952193,0,0,0.000000,HIGH
+Revisor-fællesskabet af 1976,57981717,0,0,0.000000,HIGH
+Revisorfirmaet Skov Jeppesen,32688179,0,0,0.000000,HIGH
+RevisorGården,19720705,0,0,0.000000,HIGH
+RevisorGården Holbæk A/S,45071391,0,0,0.000000,HIGH
+Revisorgården i Odense,14335102,0,0,0.000000,HIGH
+Revisorgården v/Jane Lading Pedersen,16914800,0,0,0.000000,HIGH
+Revisorgruppen v/Eva Kristensen og Lars Gotfredsen,35071199,0,0,0.000000,HIGH
+RevisorGruppen v/Lilly Jeppesen,18587246,0,0,0.000000,HIGH
+Revisorhuset,26593093,0,0,0.000000,HIGH
+Revisorhuset Halsnæs,20572043,0,0,0.000000,HIGH
+Revisorhuset Hasselager,12549679,0,0,0.000000,HIGH
+Revisorhuset Hinnerup,35679154,0,0,0.000000,HIGH
+Revisorkompagniet,34045607,0,0,0.000000,HIGH
+Revisor-Team,35519432,0,0,0.000000,HIGH
+Revisorteamet.dk,31634466,0,0,0.000000,HIGH
+Revisto I/S,26730597,0,0,0.000000,HIGH
+ReviTotal Statsautoriseret Revisionsfirma,19857298,0,0,0.000000,HIGH
+ReviVision,76893713,0,0,0.000000,HIGH
+Revsbæk Revision,17169483,0,0,0.000000,HIGH
+RGD REVISIONSPARTNERSELSKAB,30506804,0,0,0.000000,HIGH
+RH Revision Statsautoriseret Revisionsanpartsselskab,32319998,0,0,0.000000,HIGH
+Ri Statsautoriseret Revisionspartnerselskab,44528045,0,0,0.000000,HIGH
+Rigsrevisionen,77806113,0,0,0.000000,HIGH
+Rinto Godkendt Revisionsvirksomhed,42748668,0,0,0.000000,HIGH
+Risskov Revision,31574994,0,0,0.000000,HIGH
+RN - Revision Nordjylland,28966571,0,0,0.000000,HIGH
+RND Partner,27492487,0,0,0.000000,HIGH
+Robæk,33946406,0,0,0.000000,HIGH
+Rödl & Partner Danmark,39188678,0,0,0.000000,HIGH
+Rønne Revision,74717810,0,0,0.000000,HIGH
+ROSENLUND FINANS ApS,28153279,0,0,0.000000,HIGH
+RR Revision v/Benny Jakobsen,73953413,0,0,0.000000,HIGH
+RSM,25492145,0,0,0.000000,HIGH
+"Rudersdal Revision, Registrerede revisorer",14792074,0,0,0.000000,HIGH
+RugaardRevision,29033609,0,0,0.000000,HIGH
+R-Vision,25107020,0,0,0.000000,HIGH
+S.J. Revision,25859138,0,0,0.000000,HIGH
+SAa Revision,34880034,0,0,0.000000,HIGH
+Sædding Revision,25510461,0,0,0.000000,HIGH
+Sagro,27428843,0,0,0.000000,HIGH
+Schmidt Revision,29529507,0,0,0.000000,HIGH
+"Schwartz, Pio & Co",31933595,0,0,0.000000,HIGH
+Schyberg Lykke Registreret Revisionsanpartsselskab,32469345,0,0,0.000000,HIGH
+SEBISA ApS,35207422,0,0,0.000000,HIGH
+Skanderborg Revision,30607236,0,0,0.000000,HIGH
+Skatteinform,35394206,0,0,0.000000,HIGH
+Skoda & Partner,15806206,0,0,0.000000,HIGH
+SKODSBORG FINANS ApS,35833803,0,0,0.000000,HIGH
+Skovborg & Co. P/S,41071222,0,0,0.000000,HIGH
+Slebo Revision Statsautoriseret Revisionsanpartsselskab,44984326,0,0,0.000000,HIGH
+SMV Regnskab ApS,44662574,0,0,0.000000,HIGH
+Søby Revisorer,19125742,0,0,0.000000,HIGH
+Søhøjlandets Rådgivning P/S,45265897,0,0,0.000000,HIGH
+Søhøjlandets Regnskabskontor,27350755,0,0,0.000000,HIGH
+Søhøjlandets revision,31888026,0,0,0.000000,HIGH
+SOKKELUND ApS,32291171,0,0,0.000000,HIGH
+Solveo Statsautoriseret Revisionspartnerselskab,40844899,0,0,0.000000,HIGH
+Sømad ApS,38388002,0,0,0.000000,HIGH
+Sønderjyllands revision,18061635,0,0,0.000000,HIGH
+Sønderjysk Landboforening,47437113,0,0,0.000000,HIGH
+Sønderup,31824559,0,0,0.000000,HIGH
+Sønderup & Partnere,27905072,0,0,0.000000,HIGH
+Sønderup Godkendt Revisionsaktieselskab,45907880,0,0,0.000000,HIGH
+SR Revision,19536890,0,0,0.000000,HIGH
+Statsaut. Rev. Jan Vegge,15083743,0,0,0.000000,HIGH
+Statsaut. Rev. P.B. Matthiesen,70697319,0,0,0.000000,HIGH
+Statsaut. Revisor G. Holm-Nielsen,38518046,0,0,0.000000,HIGH
+Statsaut. Revisor J Løbner,29538565,0,0,0.000000,HIGH
+Statsautoriseret revisionsfirma Bent Andrup,15592354,0,0,0.000000,HIGH
+Statsautoriseret revisor Aksel Christensen,18770407,0,0,0.000000,HIGH
+Statsautoriseret revisor Bjarne Bertelsen,13940207,0,0,0.000000,HIGH
+Statsautoriseret revisor Finn Ellegaard,15935243,0,0,0.000000,HIGH
+Statsautoriseret revisor Kresten Hyldahl,77931112,0,0,0.000000,HIGH
+Statsautoriseret Revisor Leif G. Rasmussen,91112353,0,0,0.000000,HIGH
+Statsautoriseret revisor Michael Stenskrog,30217152,0,0,0.000000,HIGH
+Statsautoriseret revisor Ole Tønnesen,32821030,0,0,0.000000,HIGH
+Statsautoriseret revisor Søren Cortsen,27909833,0,0,0.000000,HIGH
+Status Revision,30707907,0,0,0.000000,HIGH
+Steen Koch Registrerede revisorer,34894949,0,0,0.000000,HIGH
+Stjerne Ejendomsservice ApS,38796526,0,0,0.000000,HIGH
+Svaneke Revision I/S,38294539,0,0,0.000000,HIGH
+Svaneke Revision v/ Michael Kuhre,13339287,0,0,0.000000,HIGH
+Syddansk Revision,15681586,0,0,0.000000,HIGH
+Sydvestjysk Revision ApS Godkendt Revisionsselskab,42044040,0,0,0.000000,HIGH
+T. Rasmussen Revision,32942490,0,0,0.000000,HIGH
+Tal & Tanker Nord,35305890,0,0,0.000000,HIGH
+Talkompagniet,33534841,0,0,0.000000,HIGH
+Talkymisten v/Reg. revisor Susanne Nielsen,21304476,0,0,0.000000,HIGH
+Talmennesker,39886227,0,0,0.000000,HIGH
+Talsnedkeren,36279079,0,0,0.000000,HIGH
+TALSTABLEREN REGISTRERET REVISIONSANPARTSSELSKAB,26310172,0,0,0.000000,HIGH
+TANGSTAD - STATSAUTORISERET REVISIONSANPARTSSELSKAB,43661434,0,0,0.000000,HIGH
+Team Revision,29423989,0,0,0.000000,HIGH
+Tetras Statsautoriseret Revisionsanpartsselskab,45852652,0,0,0.000000,HIGH
+THN Revision,32500145,0,0,0.000000,HIGH
+Thorvald Rein,79355313,0,0,0.000000,HIGH
+Thrane Consult,32090516,0,0,0.000000,HIGH
+Thybo Revision,34586977,0,0,0.000000,HIGH
+TimeVision,38267132,0,0,0.000000,HIGH
+TimeVision Frederiksberg,31943582,0,0,0.000000,HIGH
+TJEK Revision & Rådgivning,36563877,0,0,0.000000,HIGH
+TK Revision,30201795,0,0,0.000000,HIGH
+Toft Revision,20868546,0,0,0.000000,HIGH
+Toldbodens Revision & Regnskab,12838840,0,0,0.000000,HIGH
+Tønder Revision,29142807,0,0,0.000000,HIGH
+Toprevi,11211585,0,0,0.000000,HIGH
+Torben Jakobsen,72461312,0,0,0.000000,HIGH
+Torsten Blichert,90429868,0,0,0.000000,HIGH
+Torsten Rasmussen,34901295,0,0,0.000000,HIGH
+Totalrevision Vordingborg,19261735,0,0,0.000000,HIGH
+Tranberg,26063655,0,0,0.000000,HIGH
+Trekroner Revision,28991355,0,0,0.000000,HIGH
+Troense Regnskab & Bogføring,42162752,0,0,0.000000,HIGH
+TS Revision,37201944,0,0,0.000000,HIGH
+TT REVISION,29168504,0,0,0.000000,HIGH
+Ulla Lærke,25768108,0,0,0.000000,HIGH
+Uniconsult,10510945,0,0,0.000000,HIGH
+Unik-Revision,17128973,0,0,0.000000,HIGH
+V & CO,34622310,0,0,0.000000,HIGH
+Vadskær Krømmelbein,40689745,0,0,0.000000,HIGH
+Valsgård Revision,27106595,0,0,0.000000,HIGH
+Vedbæk Revision,14262172,0,0,0.000000,HIGH
+Vejledal Bogføring og Regnskab,18235307,0,0,0.000000,HIGH
+velas I/S,30869052,0,0,0.000000,HIGH
+Vendelbo,10110807,0,0,0.000000,HIGH
+Vendia Revision og Regnskab,43576577,0,0,0.000000,HIGH
+VERAX,31140986,0,0,0.000000,HIGH
+Verifica,33684096,0,0,0.000000,HIGH
+Veritas,35657975,0,0,0.000000,HIGH
+Verum Cura,39886871,0,0,0.000000,HIGH
+"Verum Cura, Godkendt Revisionsanpartsselskab",43340646,0,0,0.000000,HIGH
+Vestjysk Landboforening,25076079,0,0,0.000000,HIGH
+VH Revision,17871080,0,0,0.000000,HIGH
+"Vibs Revision, registreret revisor ApS",39130335,0,0,0.000000,HIGH
+Vilstad Revision og Regnskabsservice,31888425,0,0,0.000000,HIGH
+Vistisen & Lunde,35658432,0,0,0.000000,HIGH
+VKST Revision,34351961,0,0,0.000000,HIGH
+VL Revision,29817286,0,0,0.000000,HIGH
+W. Kragh,16206407,0,0,0.000000,HIGH
+Willads & Vibe-Hastrup,29619670,0,0,0.000000,HIGH
+Wind Revision,34804699,0,0,0.000000,HIGH
+Wyrwik,16563579,0,0,0.000000,HIGH

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forecast 4 — Stat Statements</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;800;900&display=swap");
+
+      :root {
+        --bg: #FBFAFD;
+        --bg-tint: #F5F2F9;
+        --ink: #0E0E14;
+        --ink-mute: #4F4B6B;
+        --purple: #3B3755;
+        --purple-dark: #2A2740;
+        --green: #33FF87;
+        --white: #fff;
+        --col: 1080px;
+        --mono: ui-monospace, "SF Mono", Menlo, monospace;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        line-height: 1.4;
+      }
+
+      .header {
+        padding: 80px 24px 40px;
+      }
+
+      .container { max-width: var(--col); margin: 0 auto; }
+
+      .label {
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--purple);
+        margin-bottom: 16px;
+        display: inline-block;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: 56px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.035em;
+        color: var(--ink);
+      }
+
+      .lead {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.55;
+        color: var(--ink-mute);
+        max-width: 720px;
+      }
+
+      .stat-block {
+        padding: 100px 24px;
+        text-align: left;
+      }
+      .stat-block.tint {
+        background:
+          radial-gradient(ellipse 60% 80% at 50% 50%, rgba(59,55,85,0.05) 0%, transparent 70%),
+          var(--bg-tint);
+      }
+      .stat-block.dark {
+        background:
+          radial-gradient(ellipse at top right, rgba(51,255,135,0.15) 0%, transparent 60%),
+          linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
+        color: var(--white);
+      }
+
+      .stat-num {
+        font-family: var(--mono);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        color: var(--purple);
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+      .stat-block.dark .stat-num { color: var(--green); }
+
+      .stat {
+        font-size: 76px;
+        font-weight: 900;
+        line-height: 0.92;
+        letter-spacing: -0.04em;
+        margin: 0 0 16px;
+      }
+
+      .stat .hi {
+        background-image: linear-gradient(to top, transparent 0.06em, var(--green) 0.06em, var(--green) 0.32em, transparent 0.32em);
+        padding: 0 0.04em;
+      }
+
+      .stat-context {
+        font-size: 19px;
+        font-weight: 300;
+        line-height: 1.55;
+        color: var(--ink-mute);
+        max-width: 680px;
+        margin: 0;
+      }
+      .stat-block.dark .stat-context { color: rgba(255,255,255,0.85); }
+
+      @media (min-width: 880px) {
+        .stat { font-size: 124px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header container">
+      <span class="label">Design 4 — Stat statements</span>
+      <h1>Hvert år får sin egen scene.</h1>
+      <p class="lead">Ét massivt tal pr. periode — fortællingen står for sig. Inspireret af landing page'ens "stat-wrap" hvor enkelt-statements bærer beskeden.</p>
+    </div>
+
+    <section class="stat-block">
+      <div class="container">
+        <div class="stat-num">2026</div>
+        <p class="stat">Vi sigter <span class="hi">2,5M</span> signed kontrakter inden årsskiftet.</p>
+        <p class="stat-context">Vi går fra 866k ARR i juni til run-rate 3,4M ved jan 2027. End-of-year invoiced ~1,3M.</p>
+      </div>
+    </section>
+
+    <section class="stat-block dark">
+      <div class="container">
+        <div class="stat-num">2027 · MÅL</div>
+        <p class="stat">4,5M ARR. <span class="hi">+246%</span> vs 2026.</p>
+        <p class="stat-context">NRR-drevet vækst på eksisterende base + new biz fra Q1-pipeline + Annual Reports adoption rammer 45%.</p>
+      </div>
+    </section>
+
+    <section class="stat-block tint">
+      <div class="container">
+        <div class="stat-num">2028</div>
+        <p class="stat">6M ARR.</p>
+        <p class="stat-context">Mid-market konsolidering. Beierholm whale-deal. 65-70% Annual Reports adoption. Vi bliver "voksen" SaaS.</p>
+      </div>
+    </section>
+
+    <section class="stat-block">
+      <div class="container">
+        <div class="stat-num">2029</div>
+        <p class="stat"><span class="hi">8M ARR.</span> Crediwire som dansk standard.</p>
+        <p class="stat-context">Premium-produkter løfter ARR pr. SMV mod 900 kr. Mature scale-up niveau. 10x dagens ARR.</p>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,260 @@
+user_name,user_email,accounting_office_name,accounting_office_cvr,total_analyses,distinct_clients,first_activity_date,latest_activity_date
+Thomas Thinghuus-Jensen,thomas.thinghuus-jensen@dk.gt.com,Grant Thornton,34209936,820,116,2025-03-14,2026-06-09
+Alexander Logan,alexander.logan@dk.gt.com,Grant Thornton,34209936,548,80,2025-02-04,2026-05-21
+Nicolas Lindegaard Thrue,nicolas.thrue@dk.gt.com,Grant Thornton,34209936,486,60,2025-02-26,2026-05-20
+Jens Junker Andersen,jens.andersen@dk.gt.com,Grant Thornton,34209936,304,47,2026-01-29,2026-06-01
+Kasper Trampedach Schultz,kasper.schultz@dk.gt.com,Grant Thornton,34209936,286,36,2026-02-06,2026-06-12
+Lasse Lund Storvang,lasse.storvang@dk.gt.com,Grant Thornton,34209936,251,35,2025-02-28,2025-09-26
+Jesper Due Christensen,jesper.christensen@dk.gt.com,Grant Thornton,34209936,216,28,2026-01-13,2026-06-10
+Liva Kring Timmermann,liva.timmermann@dk.gt.com,Grant Thornton,34209936,196,29,2026-02-16,2026-06-08
+Regitze Jessen,regitze.jessen@dk.gt.com,Grant Thornton,34209936,166,22,2025-02-17,2026-06-15
+Peter Leth Keller,plk@buusjensen.dk,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,130,15,2024-11-11,2026-05-23
+MALENE STEMPIN,ms@edelbo.dk,Revisionsfirmaet Edelbo,35486178,123,16,2025-01-08,2026-06-08
+Rune Bach,rune@skov-revision.dk,Skov Revision,27525989,95,12,2024-12-06,2026-05-28
+SIMON LILLELUND MICHAELSEN,slm@edelbo.dk,Revisionsfirmaet Edelbo,35486178,85,16,2025-01-07,2026-04-10
+Anders Ahlmann,anders.ahlmann@dk.gt.com,Grant Thornton,34209936,79,14,2025-03-14,2026-05-28
+Annemette Nielsen,amn@axelgram.dk,Revisionsfirmaet Axel Gram,16645699,79,11,2025-03-10,2026-03-27
+Emil Tanggaard,emil.tanggaard@dk.gt.com,Grant Thornton,34209936,75,19,2025-02-05,2026-03-03
+Søren Christensen,soeren.christensen@dk.gt.com,Grant Thornton,34209936,71,12,2024-06-07,2026-05-20
+Martin Rasmussen,mrasmussen@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,68,5,2025-05-01,2026-05-21
+Nadia Horup Fiil,nadia@skov-revision.dk,Skov Revision,27525989,66,11,2024-04-05,2026-06-08
+Michelle Nielsen,michelle@skov-revision.dk,Skov Revision,27525989,66,16,2024-06-18,2026-06-08
+Tina Buus,tb@axelgram.dk,Revisionsfirmaet Axel Gram,16645699,63,13,2025-04-08,2025-05-20
+Chresta Egeberg Salling,chresta.salling@dk.gt.com,Grant Thornton,34209936,60,8,2025-02-21,2026-05-21
+Mark Herholdt Munkebæk,mark.munkebaek@dk.gt.com,Grant Thornton,34209936,57,13,2026-02-09,2026-06-15
+,oa@laegaard.dk,Lægård Revision,18437082,56,7,2024-03-25,2025-04-29
+Claus Guldborg Nyvold,cgn@danskrevision.dk,Dansk Revision Århus,26717671,51,6,2024-09-09,2026-05-28
+ANITA HOLM SÆRSLUND,asl@edelbo.dk,Revisionsfirmaet Edelbo,35486178,47,7,2025-01-29,2026-03-13
+Mathias Folman Juhl,mathias.folman@dk.gt.com,Grant Thornton,34209936,45,3,2026-02-16,2026-04-16
+Rikke Lund Nielsen,rln@axelgram.dk,Revisionsfirmaet Axel Gram,16645699,45,9,2024-03-13,2026-06-13
+,maiken@skov-revision.dk,Skov Revision,27525989,45,13,2024-11-19,2026-06-10
+Julie Hejlskov Sørensen,jhs@danrevi.dk,Danrevi Løgstør,10019699,43,7,2025-04-04,2026-06-10
+RAJIPAN RAJAEASPARAN,rr@edelbo.dk,Revisionsfirmaet Edelbo,35486178,43,10,2025-01-07,2026-03-13
+Tina Rasmussen,tina.r@dk.gt.com,Grant Thornton,34209936,42,7,2026-02-23,2026-05-20
+,jsk@piaster.dk,Piaster Revisorerne,25160037,42,5,2025-10-07,2025-11-19
+Martin Bylov Nørregaard,mn@edelbo.dk,Revisionsfirmaet Edelbo,35486178,40,9,2025-01-07,2026-05-18
+Sofie  Mols Bacher,sofie@skov-revision.dk,Skov Revision,27525989,39,7,2024-11-19,2026-06-13
+Anne Gunnersen,ag@danrevi.dk,Danrevi Løgstør,10019699,38,5,2025-03-10,2026-06-01
+,kaspar.mieritz@dk.gt.com,Grant Thornton,34209936,38,3,2025-02-13,2025-03-20
+Jonas Bødker-Iversen,jonas.boedker-iversen@dk.gt.com,Grant Thornton,34209936,37,10,2024-06-06,2026-06-03
+Michel Laursen,ml@albjerg.dk,Albjerg,35382879,36,6,2025-09-16,2026-06-11
+Andreas Jensen,aj@leifmikkelsen.dk,Leif Mikkelsen & Partnere,32676421,36,4,2025-01-10,2026-05-19
+Mahdi Jafari,mahdi@skov-revision.dk,Skov Revision,27525989,36,7,2024-11-19,2026-05-08
+DAN HOLLEGAARD,ds@edelbo.dk,Revisionsfirmaet Edelbo,35486178,35,6,2025-01-07,2026-06-03
+,eldimitrova@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,34,14,2026-01-09,2026-04-08
+,pmj@roesgaard.dk,Roesgaard,37543128,32,3,2025-01-31,2026-02-24
+,casper@skov-revision.dk,Skov Revision,27525989,30,12,2024-11-19,2026-06-02
+JAN MADSEN,jm@edelbo.dk,Revisionsfirmaet Edelbo,35486178,29,2,2025-01-07,2025-03-19
+Sofie Ulvø Rasmussen,sofie.ulvoe@dk.gt.com,Grant Thornton,34209936,28,14,2026-01-22,2026-06-09
+Thomas Ringgaard,tr@leifmikkelsen.dk,Leif Mikkelsen & Partnere,32676421,28,4,2025-02-20,2026-05-06
+Kristoffer Kragh,kmk@axelgram.dk,Revisionsfirmaet Axel Gram,16645699,28,5,2025-05-20,2026-05-04
+ALEXANDER GERTZ,ag@edelbo.dk,Revisionsfirmaet Edelbo,35486178,28,6,2025-02-09,2026-06-10
+Jacob Skov Kristiensen,jsk@danrevi.dk,Danrevi Løgstør,10019699,27,9,2024-12-04,2026-04-29
+Henrik Sørensen,hs@leifmikkelsen.dk,Leif Mikkelsen & Partnere,32676421,26,8,2024-04-03,2026-05-08
+,pr@plature.com,Plature,38732420,26,1,2025-11-18,2026-04-17
+Søren Tofte Jensen,soeren@revigruppen.dk,RevisorGruppen I/S,34953619,26,7,2025-09-12,2026-05-06
+Annemette Strøm Kristensen,ank@revi-midt.dk,Revimidt,34480370,25,6,2026-01-27,2026-05-13
+Jonathan Farkas Binderup Hansen,jbh@krestoncm.dk,Kreston CM,39463113,24,4,2025-05-02,2026-06-15
+Solveig Jørgensen,solveig.jorgensen@dk.gt.com,Grant Thornton,34209936,23,5,2025-03-18,2026-04-01
+,lva@kroyerpedersen.dk,Krøyer Pedersen Statsautoriserede Revisorer,89224918,22,3,2024-11-05,2025-06-03
+,mikkel.reinbach@dk.gt.com,Grant Thornton,34209936,21,2,2026-04-28,2026-06-03
+,emma.schultz@dk.gt.com,Grant Thornton,34209936,21,4,2026-03-19,2026-04-29
+Sofie Hall Nielsen,sofie.hall@dk.gt.com,Grant Thornton,34209936,21,8,2025-08-06,2026-04-21
+Kevin Klitgaard Lindgaard,klj@krestoncm.dk,Kreston CM,39463113,21,6,2025-01-20,2025-10-06
+Dennis Damborg Jensen,ddj@revi-midt.dk,Revimidt,34480370,21,4,2026-03-30,2026-05-28
+Oliver Blankensteiner,oliver.blankensteiner@dk.gt.com,Grant Thornton,34209936,20,3,2026-04-13,2026-05-07
+Mike Ballin,mike.ballin@dk.gt.com,Grant Thornton,34209936,20,2,2026-03-19,2026-04-24
+Magnus Sonne Hansen,mhansen@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,20,4,2026-02-20,2026-05-01
+Astrid Kragballe,ask@revi-midt.dk,Revimidt,34480370,20,4,2026-01-28,2026-04-21
+,rof@axelgram.dk,Revisionsfirmaet Axel Gram,16645699,20,7,2026-04-17,2026-05-08
+Louise Greve,lg@edelbo.dk,Revisionsfirmaet Edelbo,35486178,20,3,2024-11-12,2025-06-16
+Lars Gotfredsen,lars@revigruppen.dk,RevisorGruppen I/S,34953619,20,6,2025-03-20,2026-04-27
+Gitte Mejldal,gm@revigruppen.dk,RevisorGruppen I/S,34953619,20,3,2025-03-26,2026-03-10
+Andreas Sørup Jepsen,aso@beierholm.dk,Beierholm,32895468,19,5,2024-08-28,2025-11-18
+,alni@danskrevision.dk,Dansk Revision Slagelse,29919801,18,1,2025-03-17,2025-09-23
+Thor Pauli Skaarup Svendsen,thor.svendsen@dk.gt.com,Grant Thornton,34209936,18,5,2026-03-16,2026-04-29
+Michael Kirkebæk Andreasen,mka@revi-midt.dk,Revimidt,34480370,18,2,2026-01-27,2026-04-14
+Mads Sebastian Avnsbo,msa@albjerg.dk,Albjerg,35382879,17,1,2026-03-23,2026-03-24
+,jkc@danrevi.dk,Danrevi Løgstør,10019699,17,2,2025-09-10,2025-09-17
+Jakob Sønderbæk,jakob.soenderbaek@dk.gt.com,Grant Thornton,34209936,17,3,2026-04-20,2026-06-10
+Frederik Hansen,frederik.hansen@dk.gt.com,Grant Thornton,34209936,17,3,2026-03-27,2026-04-17
+Pernille Wedel-Svensson,pws@axelgram.dk,Revisionsfirmaet Axel Gram,16645699,17,5,2025-06-17,2026-05-18
+Marie Louise Lindstrøm,mll@buusjensen.dk,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,16,5,2026-04-08,2026-05-05
+Christian Olsen,co@buusjensen.dk,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,16,3,2024-11-22,2026-04-10
+,sophie.sattelberger@dk.gt.com,Grant Thornton,34209936,16,2,2026-02-09,2026-05-05
+Ditte Yacoubi Nyborg Madsen,ditte.madsen@dk.gt.com,Grant Thornton,34209936,16,2,2024-09-12,2024-09-26
+CECILIE BIRK,cb@edelbo.dk,Revisionsfirmaet Edelbo,35486178,16,8,2025-10-24,2026-06-15
+Henriette Edelbo,he@edelbo.dk,Revisionsfirmaet Edelbo,35486178,16,4,2025-01-07,2026-03-23
+,medine@skov-revision.dk,Skov Revision,27525989,16,3,2025-11-11,2026-03-27
+Mogens Saabye,msa@danskrevision.dk,Dansk Revision Århus,26717671,15,4,2024-12-12,2025-06-06
+Steffen Hansen,steffen.hansen@dk.gt.com,Grant Thornton,34209936,15,4,2026-04-13,2026-06-08
+Anders Dahl Christensen,anders.christensen@dk.gt.com,Grant Thornton,34209936,15,4,2026-04-22,2026-06-02
+Fie Nimand Madsen,fnmadsen@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,15,8,2025-10-21,2026-06-10
+,casper@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,15,8,2026-01-09,2026-04-07
+,ap@ri.dk,"Ri, Statsautoriseret Revisionsaktieselskab",53371914,15,4,2024-10-15,2024-11-01
+Jonas Bredal Thomsen,jonas.thomsen@dk.gt.com,Grant Thornton,34209936,14,4,2024-11-05,2025-03-25
+Lars Kristian Poulsen,lpoulsen@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,14,4,2026-03-03,2026-06-08
+Martin Kruse Frølund,makf@danskrevision.dk,Dansk Revision Århus,26717671,13,1,2024-12-12,2024-12-12
+Sebastian  Pedersen,sepe@danskrevision.dk,Dansk Revision Århus,26717671,13,4,2024-12-11,2024-12-12
+,kathrine.andersen@dk.gt.com,Grant Thornton,34209936,13,3,2026-02-27,2026-02-27
+Shannon Viuf,sv@leifmikkelsen.dk,Leif Mikkelsen & Partnere,32676421,13,2,2024-04-11,2024-04-18
+,uco@martinsen.dk,Martinsen,32285201,13,2,2024-09-23,2024-10-07
+,aoe@partner-revision.dk,Partner Revision,15807776,13,1,2024-05-27,2024-08-13
+KENNETH MADSEN,km@edelbo.dk,Revisionsfirmaet Edelbo,35486178,13,3,2025-03-03,2026-05-26
+Line Havsager,line.havsager@dk.gt.com,Grant Thornton,34209936,12,2,2026-03-19,2026-05-06
+Camilla Alminde Poulsen,cap@leifmikkelsen.dk,Leif Mikkelsen & Partnere,32676421,12,2,2026-01-05,2026-02-24
+Liva Svenningsen,lsven@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,12,4,2026-03-31,2026-04-30
+,pia@skov-revision.dk,Skov Revision,27525989,12,1,2025-08-06,2025-09-05
+Tom Cortsen,tc@danrevi.dk,Danrevi Løgstør,10019699,11,5,2024-11-29,2025-12-10
+Anne Marie Laursen,anne.laursen@dk.gt.com,Grant Thornton,34209936,11,2,2026-03-17,2026-05-19
+Emma Johansen,emma.johansen@dk.gt.com,Grant Thornton,34209936,11,3,2026-03-19,2026-03-30
+KIM MOSEBO HANSEN,kmh@edelbo.dk,Revisionsfirmaet Edelbo,35486178,11,1,2025-01-07,2025-01-07
+Jens Jacob Slott Jensen,jj@skov-revision.dk,Skov Revision,27525989,11,3,2024-08-07,2024-11-19
+Steen Ellebæk Nielsen,se@ellebaekrevision.dk,Ellebæk Revision godkendt revisionsanpartsselskab,43325000,10,2,2025-10-03,2026-02-13
+Marcus Djurslev,marcus.djurslev@dk.gt.com,Grant Thornton,34209936,10,3,2026-05-22,2026-06-08
+Nicolai Rosenorn,nicolai.rosenorn@dk.gt.com,Grant Thornton,34209936,10,3,2026-04-22,2026-06-04
+Daniel Storgaard Bærentzen,daniel.storgaard@dk.gt.com,Grant Thornton,34209936,10,1,2026-04-21,2026-04-22
+Nadja Christensen,nadja.christensen@dk.gt.com,Grant Thornton,34209936,10,2,2026-03-19,2026-03-26
+Karina Bach Nielsen,kbs@revi-midt.dk,Revimidt,34480370,10,2,2026-01-29,2026-03-30
+Lene Isak Borud,lis@danskrevision.dk,Dansk Revision Århus,26717671,9,1,2024-12-12,2024-12-12
+,daniel.h.petersen@dk.ey.com,EY,30700228,9,3,2024-09-20,2024-11-21
+Johan Printtans,johan.printtans@dk.gt.com,Grant Thornton,34209936,9,1,2026-04-07,2026-04-07
+,tdamsgaard@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,9,2,2026-01-09,2026-05-05
+LOUISE HANSEN,lh@edelbo.dk,Revisionsfirmaet Edelbo,35486178,9,3,2025-01-07,2025-02-06
+,lilly@revigruppen.dk,RevisorGruppen I/S,34953619,9,4,2025-03-20,2026-01-08
+Janni Sørensen,janni@skov-revision.dk,Skov Revision,27525989,9,4,2024-11-19,2025-10-23
+,mm@taleco.dk,Taleco ApS,30525035,9,1,2024-09-16,2026-02-20
+,joachimelmegaard@gmail.com,Copenhagen Management Accounting Company ApS,33932464,8,1,2024-09-26,2024-10-14
+,lars.bundgaard@dk.gt.com,Grant Thornton,34209936,8,2,2026-05-06,2026-05-26
+,sia@krestoncm.dk,Kreston CM,39463113,8,2,2025-05-19,2025-05-19
+Weronika Wanda Lincer,weronikawl@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,8,2,2026-03-12,2026-03-16
+,sc@revi-midt.dk,Revimidt,34480370,8,1,2026-05-05,2026-05-07
+,tbj@edelbo.dk,Revisionsfirmaet Edelbo,35486178,8,2,2026-02-27,2026-03-03
+,solveig@skov-revision.dk,Skov Revision,27525989,8,3,2024-11-19,2025-09-23
+Mark Meyer Jensen,mmj@beierholm.dk,Beierholm,32895468,7,1,2026-04-29,2026-05-12
+Michael Siim Frølunde,misf@danskrevision.dk,Dansk Revision Århus,26717671,7,1,2024-12-12,2024-12-12
+Rasmus Fogh Hansen,rfha@danskrevision.dk,Dansk Revision Århus,26717671,7,2,2024-12-11,2024-12-12
+Rune Westensee,westenseeconsulting@gmail.com,E-conomia Consulting ApS,44268965,7,3,2024-05-06,2024-10-20
+Simun Dam,simun.dam@dk.gt.com,Grant Thornton,34209936,7,3,2026-03-17,2026-05-13
+,julie.hansen@dk.gt.com,Grant Thornton,34209936,7,2,2026-05-05,2026-05-06
+Bettina Schoppe,bettina.schoppe@dk.gt.com,Grant Thornton,34209936,7,2,2025-11-05,2026-04-11
+,bo.lysen@dk.gt.com,Grant Thornton,34209936,7,3,2026-03-09,2026-04-09
+Lars True,lars.true@dk.gt.com,Grant Thornton,34209936,7,3,2026-03-09,2026-04-08
+Catharina Nadine Jacqueline Cailloux,catharina.cailloux@dk.gt.com,Grant Thornton,34209936,7,1,2026-04-07,2026-04-07
+,christoffer.salmon@dk.gt.com,Grant Thornton,34209936,7,3,2025-09-25,2026-01-22
+Peter Munk Nielsen,pmn@krestoncm.dk,Kreston CM,39463113,7,4,2025-10-21,2026-04-28
+Helle Krushave,hk@leifmikkelsen.dk,Leif Mikkelsen & Partnere,32676421,7,1,2024-11-07,2024-11-11
+MARTIN LARSEN,ml@edelbo.dk,Revisionsfirmaet Edelbo,35486178,7,4,2025-01-07,2025-05-08
+,kenneth@revigruppen.dk,RevisorGruppen I/S,34953619,7,1,2025-05-22,2026-01-21
+,jane@revigruppen.dk,RevisorGruppen I/S,34953619,7,1,2025-09-26,2025-10-02
+Hans Nygaard,hans@skov-revision.dk,Skov Revision,27525989,7,2,2024-08-12,2025-02-25
+,as@uwit.dk,Ullits & Winther,32093272,7,1,2024-10-29,2024-10-29
+,slf@aa-m.dk,Aage Maagensen,12901038,7,1,2025-10-09,2025-10-23
+Anne  Sophie Møller,anmo@danskrevision.dk,Dansk Revision Århus,26717671,6,3,2024-12-12,2025-03-24
+,mads.mortensen@dk.gt.com,Grant Thornton,34209936,6,1,2026-06-15,2026-06-15
+Julie Bodin,julie.bodin@dk.gt.com,Grant Thornton,34209936,6,2,2026-05-07,2026-05-19
+Morten Kertész,morten.kertesz@dk.gt.com,Grant Thornton,34209936,6,1,2026-05-05,2026-05-05
+Karen Kildevang,karen.kildevang@dk.gt.com,Grant Thornton,34209936,6,1,2026-03-29,2026-03-30
+Kristina Grøndahl Larsen,kristina.larsen@dk.gt.com,Grant Thornton,34209936,6,2,2024-12-09,2025-03-12
+,t.funch@pkf.dk,PKF Munkebo Vindelev,14119299,6,1,2026-01-05,2026-01-05
+Line B Hansen,linebhansen@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,6,3,2025-11-18,2026-03-27
+Aatif Zarrok,azarrok@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,6,2,2026-03-04,2026-03-09
+,peter@skov-revision.dk,Skov Revision,27525989,6,2,2024-11-19,2024-11-19
+Patrick Hagelskjær,paha@danskrevision.dk,Dansk Revision Århus,26717671,5,2,2024-12-12,2024-12-12
+Mikkel Norup Jakobsen,minj@danskrevision.dk,Dansk Revision Århus,26717671,5,1,2024-12-12,2024-12-12
+Philip Just Paulsen,philip.paulsen@dk.gt.com,Grant Thornton,34209936,5,1,2026-06-03,2026-06-03
+Casper Lund,casper.lund@dk.gt.com,Grant Thornton,34209936,5,2,2026-04-22,2026-04-23
+,ldr@krestoncm.dk,Kreston CM,39463113,5,1,2026-03-13,2026-03-16
+,cla@leifmikkelsen.dk,Leif Mikkelsen & Partnere,32676421,5,2,2025-10-08,2025-10-08
+Anders Pedersen,ap@lpog.dk,LPOG ApS,33167288,5,1,2024-10-11,2024-10-11
+,faktura@pjkoeleteknik.dk,PJ Køleteknik ApS,37654795,5,1,2024-09-23,2024-09-24
+,jlarsen@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,5,3,2026-01-09,2026-06-04
+,jhp@redmark.dk,Redmark,29442789,5,1,2025-04-08,2025-04-08
+,ks@rvsb.dk,Regnskabsvirksomheden Schaumburg/Bendtsen ApS,28655835,5,1,2024-10-28,2024-10-29
+MORTEN PEDERSEN,mp@edelbo.dk,Revisionsfirmaet Edelbo,35486178,5,1,2025-01-07,2025-01-07
+,js@gutfelt.com,Revisionsfirmaet Gutfelt,13254192,5,1,2024-11-05,2024-11-05
+,klin@danskrevision.dk,Dansk Revision Århus,26717671,4,2,2026-05-29,2026-06-11
+,lasse@erasmus.dk,ERASMUS & PARTNERE A/S,28493584,4,1,2024-11-05,2024-11-07
+,alexander.r.overkaer@dk.ey.com,EY,30700228,4,1,2024-12-17,2025-02-10
+,mads.k.nielsen@dk.ey.com,EY,30700228,4,1,2024-09-10,2024-09-10
+Helene Petersen,helene.petersen@dk.gt.com,Grant Thornton,34209936,4,2,2026-06-09,2026-06-09
+Mads Holt Larsen,mads.h.larsen@dk.gt.com,Grant Thornton,34209936,4,1,2026-06-03,2026-06-03
+,aladin.avdic@dk.gt.com,Grant Thornton,34209936,4,2,2026-03-19,2026-04-20
+,victor.hansen@dk.gt.com,Grant Thornton,34209936,4,1,2025-01-27,2025-02-28
+,benjamin@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,4,1,2026-02-27,2026-02-27
+,suastinidesak@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,4,2,2026-01-09,2026-01-09
+,bo@regnskabsfokus.dk,Regnskabsfokus,33578628,4,1,2026-01-05,2026-01-05
+,mh@revisor.dk,Revisionscentret Aabenraa,29695636,4,1,2024-09-03,2024-09-03
+Birgit Strandmark Larsen,birgit@revigruppen.dk,RevisorGruppen I/S,31481945,4,1,2026-02-17,2026-02-18
+,torur@roknskap.fo,Roknskaparfelagið skrásettir grannskoðarar Sp/f,413887,4,1,2025-10-30,2025-11-07
+,rlh@thewhitebox.dk,The White Box,40612246,4,1,2025-07-16,2025-07-16
+,kisp@beierholm.dk,Beierholm,32895468,3,1,2024-09-26,2025-03-05
+Nickie Prangsgaard Meyer,npm@beierholm.dk,Beierholm,32895468,3,1,2024-09-26,2024-09-26
+,rvh@bsrev.dk,Baagøe Schou,21148148,3,1,2024-08-13,2024-08-13
+,joha@danskrevision.dk,Dansk Revision Århus,26717671,3,1,2024-05-03,2024-05-07
+Dan Milsø Laursen,dan.laursen@dk.gt.com,Grant Thornton,34209936,3,2,2026-04-30,2026-05-07
+Frederik Wamberg,frederik.wamberg@dk.gt.com,Grant Thornton,34209936,3,1,2026-04-22,2026-04-22
+Brian Kielgast,brian.kielgast@dk.gt.com,Grant Thornton,34209936,3,1,2026-03-19,2026-03-19
+Frederik Küpper Søgaard,frederik.soegaard@dk.gt.com,Grant Thornton,34209936,3,1,2024-09-26,2024-12-09
+,dgr@kovsted.dk,Kovsted & Skovgård,38751646,3,1,2025-03-26,2025-03-26
+,chn@krestonsr.dk,Kreston SR,33948794,3,1,2024-11-25,2024-11-25
+Thomas Balle,tb@lpog.dk,LPOG ApS,33167288,3,1,2024-10-11,2024-10-11
+KARINA BERNTH NØRGAARD,kbn@edelbo.dk,Revisionsfirmaet Edelbo,35486178,3,1,2025-01-07,2025-01-07
+,steen@skov-revision.dk,Skov Revision,27525989,3,1,2024-11-19,2024-11-19
+Pernille Nørtved Bjergager,pnb@beierholm.dk,Beierholm,32895468,2,1,2024-09-26,2024-09-26
+Kristian Hansen,kuha@danskrevision.dk,Dansk Revision Århus,26717671,2,2,2024-12-12,2024-12-12
+Frederik Hagelskjær,fhag@danskrevision.dk,Dansk Revision Århus,26717671,2,1,2024-12-12,2024-12-12
+,mia.joergensen@dk.ey.com,EY,30700228,2,1,2024-10-31,2024-11-18
+Nicolai B. Nielsen,nicolai.b.nielsen@dk.gt.com,Grant Thornton,34209936,2,1,2026-05-21,2026-05-21
+Michelle Butturini,michelle.butturini@dk.gt.com,Grant Thornton,34209936,2,1,2026-05-05,2026-05-05
+Jasmin Shamma,jasmin.shamma@dk.gt.com,Grant Thornton,34209936,2,1,2026-04-21,2026-04-23
+,andreas.johansen@dk.gt.com,Grant Thornton,34209936,2,1,2026-03-27,2026-03-27
+Carsten Syberg,carsten.syberg@dk.gt.com,Grant Thornton,34209936,2,2,2026-03-17,2026-03-24
+,camilla.christensen@dk.gt.com,Grant Thornton,34209936,2,2,2026-02-16,2026-03-12
+Frederik Feldborg,frederik.feldborg@dk.gt.com,Grant Thornton,34209936,2,2,2025-09-25,2026-02-02
+,rune.nielsen@dk.gt.com,Grant Thornton,34209936,2,1,2024-11-05,2024-11-05
+Jacob Hjort,jac@krestoncm.dk,Kreston CM,39463113,2,2,2024-11-29,2025-09-10
+,on@edelbo.dk,Revisionsfirmaet Edelbo,35486178,2,1,2025-01-07,2025-01-07
+,ragnhild@roknskap.fo,Roknskaparfelagið skrásettir grannskoðarar Sp/f,413887,2,2,2025-11-17,2025-12-01
+,nvo@stoiskregnskab.dk,Stoisk,28919719,2,1,2025-04-14,2025-10-23
+,sae@beierholm.dk,Beierholm,32895468,1,1,2024-11-05,2024-11-05
+Lukas Jacobsen,luj@beierholm.dk,Beierholm,32895468,1,1,2024-09-26,2024-09-26
+,ckg@beierholm.dk,Beierholm,32895468,1,1,2024-09-10,2024-09-10
+,mbd@beierholm.dk,Beierholm,32895468,1,1,2024-06-13,2024-06-13
+,kh@danrevi.dk,Danrevi Løgstør,10019699,1,1,2025-03-03,2025-03-03
+Jens Hedegaard,jh@danrevi.dk,Danrevi Løgstør,10019699,1,1,2024-11-18,2024-11-18
+,alni@danskrevision.dk,Dansk Revision Århus,26717671,1,1,2025-03-17,2025-03-17
+,sbs@ellebaekrevision.dk,Ellebæk Revision godkendt revisionsanpartsselskab,43325000,1,1,2025-11-12,2025-11-12
+Peter Bausager,pba@ehhs.dk,Erhvervshus Midtjylland S/I,40084606,1,1,2025-02-06,2025-02-06
+,rasmus.krogh@dk.ey.com,EY,30700228,1,1,2024-09-10,2024-09-10
+Vicky Bak,vicky.bak@dk.gt.com,Grant Thornton,34209936,1,1,2026-06-10,2026-06-10
+Kasper Rømer,kasper.kappelhoej@dk.gt.com,Grant Thornton,34209936,1,1,2026-05-18,2026-05-18
+,amalieh.wiberg@dk.gt.com,Grant Thornton,34209936,1,1,2026-04-29,2026-04-29
+,asa.abouhamzeh@dk.gt.com,Grant Thornton,34209936,1,1,2026-04-27,2026-04-27
+Liljana Naumovska,liljana.naumovska@dk.gt.com,Grant Thornton,34209936,1,1,2026-03-25,2026-03-25
+Magnus Larsen,magnus.larsen@dk.gt.com,Grant Thornton,34209936,1,1,2026-03-19,2026-03-19
+Martin Dahl,martin.dahl@dk.gt.com,Grant Thornton,34209936,1,1,2026-03-17,2026-03-17
+,sebastian.gude@dk.gt.com,Grant Thornton,34209936,1,1,2026-02-17,2026-02-17
+Mette Skak Brokmann,mette.brokmann@dk.gt.com,Grant Thornton,34209936,1,1,2026-01-27,2026-01-27
+,claus.koskelin@dk.gt.com,Grant Thornton,34209936,1,1,2024-11-05,2024-11-05
+,thomas@gaaga.dk,Gaaga,42027995,1,1,2025-12-17,2025-12-17
+,dgb@krestoncm.dk,Kreston CM,39463113,1,1,2026-03-13,2026-03-13
+,en@kroyerpedersen.dk,Krøyer Pedersen Statsautoriserede Revisorer,89224918,1,1,2024-11-06,2024-11-06
+,nikola.mikulovic@nmregnskab.dk,NM Regnskab ApS,44729989,1,1,2024-09-29,2024-09-29
+,nepetterson@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,1,1,2026-01-09,2026-01-09
+,mthomsen@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,1,1,2025-10-30,2025-10-30
+Christian Sværke,csvaerke@powered-by.dk,Powered-By Statsautoriseret Revisionspartnerselskab,44282380,1,1,2024-10-23,2024-10-23
+,due@pro-accounting.dk,"Ri, Statsautoriseret Revisionsaktieselskab",53371914,1,1,2024-10-17,2024-10-17
+,us@pro-accounting.dk,"Ri, Statsautoriseret Revisionsaktieselskab",53371914,1,1,2024-09-23,2024-09-23
+,anna.monika.bremner@pwc.com,PricewaterhouseCoopers,33771231,1,1,2024-12-16,2024-12-16
+,fs@regnskabshuset.com,RegnskabsHuset.com,18067676,1,1,2025-05-20,2025-05-20
+,fs@regnskabshuset.com,RegnskabsHuset.com,42495654,1,1,2025-05-20,2025-05-20
+Birgit Strandmark Larsen,birgit@revigruppen.dk,RevisorGruppen I/S,34953619,1,1,2026-02-17,2026-02-17
+Gitte Christoffersen,gitte@revigruppen.dk,RevisorGruppen I/S,32938213,1,1,2025-11-28,2025-11-28
+Jesper Beese,jesper@revigruppen.dk,RevisorGruppen I/S,34953619,1,1,2025-09-23,2025-09-23
+,csp@sandbogholderi.dk,Sand bogholderi,42269425,1,1,2025-10-21,2025-10-21
+Maiken Vegener,mv@skov-revision.dk,Skov Revision,27525989,1,1,2024-11-19,2024-11-19
+,laj@skov-revision.dk,Skov Revision,27525989,1,1,2024-11-19,2024-11-19
+,mm@taleco.dk,Taleco ApS,39446235,1,1,2024-05-08,2024-05-08
+,st@vestjysk-consulting.dk,Vestjysk Consulting,30498674,1,1,2024-10-10,2024-10-10
+,maria@konditorbager.dk,#VALUE!,27083978,1,1,2025-10-02,2025-10-02

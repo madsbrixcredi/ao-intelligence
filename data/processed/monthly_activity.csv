@@ -1,0 +1,275 @@
+accounting_office_name,accounting_office_cvr,year,month,analyses,active_users,distinct_clients
+Danrevi Løgstør,10019699,2024,11,2,2,2
+Danrevi Løgstør,10019699,2024,12,3,1,1
+Danrevi Løgstør,10019699,2025,1,2,1,1
+Danrevi Løgstør,10019699,2025,2,5,2,3
+Danrevi Løgstør,10019699,2025,3,16,4,6
+Danrevi Løgstør,10019699,2025,4,5,1,2
+Danrevi Løgstør,10019699,2025,5,1,1,1
+Danrevi Løgstør,10019699,2025,6,4,3,3
+Danrevi Løgstør,10019699,2025,9,33,4,4
+Danrevi Løgstør,10019699,2025,10,4,2,2
+Danrevi Løgstør,10019699,2025,11,1,1,1
+Danrevi Løgstør,10019699,2025,12,1,1,1
+Danrevi Løgstør,10019699,2026,2,2,1,1
+Danrevi Løgstør,10019699,2026,3,27,3,3
+Danrevi Løgstør,10019699,2026,4,10,2,2
+Danrevi Løgstør,10019699,2026,5,5,1,1
+Danrevi Løgstør,10019699,2026,6,17,2,3
+Aage Maagensen,12901038,2025,10,7,1,1
+Revisionsfirmaet Gutfelt,13254192,2024,11,5,1,1
+PKF Munkebo Vindelev,14119299,2026,1,6,1,1
+Partner Revision,15807776,2024,5,6,1,1
+Partner Revision,15807776,2024,8,7,1,1
+Revisionsfirmaet Axel Gram,16645699,2024,3,4,1,1
+Revisionsfirmaet Axel Gram,16645699,2024,4,4,1,1
+Revisionsfirmaet Axel Gram,16645699,2025,2,4,1,1
+Revisionsfirmaet Axel Gram,16645699,2025,3,11,1,2
+Revisionsfirmaet Axel Gram,16645699,2025,4,78,3,17
+Revisionsfirmaet Axel Gram,16645699,2025,5,37,4,9
+Revisionsfirmaet Axel Gram,16645699,2025,6,14,3,5
+Revisionsfirmaet Axel Gram,16645699,2025,7,6,1,1
+Revisionsfirmaet Axel Gram,16645699,2025,9,12,1,1
+Revisionsfirmaet Axel Gram,16645699,2025,10,14,3,3
+Revisionsfirmaet Axel Gram,16645699,2025,11,2,1,1
+Revisionsfirmaet Axel Gram,16645699,2025,12,4,1,1
+Revisionsfirmaet Axel Gram,16645699,2026,1,6,1,1
+Revisionsfirmaet Axel Gram,16645699,2026,2,1,1,1
+Revisionsfirmaet Axel Gram,16645699,2026,3,14,2,4
+Revisionsfirmaet Axel Gram,16645699,2026,4,17,2,6
+Revisionsfirmaet Axel Gram,16645699,2026,5,22,4,6
+Revisionsfirmaet Axel Gram,16645699,2026,6,2,1,2
+RegnskabsHuset.com,18067676,2025,5,1,1,1
+Lægård Revision,18437082,2024,3,5,1,1
+Lægård Revision,18437082,2024,4,28,1,3
+Lægård Revision,18437082,2024,11,2,1,2
+Lægård Revision,18437082,2024,12,6,1,2
+Lægård Revision,18437082,2025,2,11,1,1
+Lægård Revision,18437082,2025,4,4,1,1
+Baagøe Schou,21148148,2024,8,3,1,1
+Piaster Revisorerne,25160037,2025,10,37,1,5
+Piaster Revisorerne,25160037,2025,11,5,1,1
+Dansk Revision Århus,26717671,2024,5,3,1,1
+Dansk Revision Århus,26717671,2024,9,4,1,1
+Dansk Revision Århus,26717671,2024,12,76,12,11
+Dansk Revision Århus,26717671,2025,3,9,3,5
+Dansk Revision Århus,26717671,2025,4,3,1,1
+Dansk Revision Århus,26717671,2025,6,14,2,3
+Dansk Revision Århus,26717671,2026,1,20,1,3
+Dansk Revision Århus,26717671,2026,4,2,1,1
+Dansk Revision Århus,26717671,2026,5,10,2,3
+Dansk Revision Århus,26717671,2026,6,2,1,1
+#VALUE!,27083978,2025,10,1,1,1
+Skov Revision,27525989,2024,4,1,1,1
+Skov Revision,27525989,2024,6,7,1,1
+Skov Revision,27525989,2024,8,8,2,3
+Skov Revision,27525989,2024,9,2,1,1
+Skov Revision,27525989,2024,11,73,13,11
+Skov Revision,27525989,2024,12,3,1,1
+Skov Revision,27525989,2025,1,17,3,3
+Skov Revision,27525989,2025,2,22,4,6
+Skov Revision,27525989,2025,3,65,6,10
+Skov Revision,27525989,2025,4,24,3,4
+Skov Revision,27525989,2025,5,3,2,3
+Skov Revision,27525989,2025,6,4,1,1
+Skov Revision,27525989,2025,7,5,1,1
+Skov Revision,27525989,2025,8,12,2,2
+Skov Revision,27525989,2025,9,3,3,2
+Skov Revision,27525989,2025,10,2,1,1
+Skov Revision,27525989,2025,11,47,6,6
+Skov Revision,27525989,2025,12,6,2,3
+Skov Revision,27525989,2026,1,9,2,2
+Skov Revision,27525989,2026,2,38,4,8
+Skov Revision,27525989,2026,3,29,6,8
+Skov Revision,27525989,2026,4,32,3,9
+Skov Revision,27525989,2026,5,27,4,6
+Skov Revision,27525989,2026,6,12,5,5
+ERASMUS & PARTNERE A/S,28493584,2024,11,4,1,1
+Regnskabsvirksomheden Schaumburg/Bendtsen ApS,28655835,2024,10,5,1,1
+Stoisk,28919719,2025,4,1,1,1
+Stoisk,28919719,2025,10,1,1,1
+Redmark,29442789,2025,4,5,1,1
+Revisionscentret Aabenraa,29695636,2024,9,4,1,1
+Dansk Revision Slagelse,29919801,2025,3,16,1,1
+Dansk Revision Slagelse,29919801,2025,6,1,1,1
+Dansk Revision Slagelse,29919801,2025,9,1,1,1
+Vestjysk Consulting,30498674,2024,10,1,1,1
+Taleco ApS,30525035,2024,9,2,1,1
+Taleco ApS,30525035,2026,2,7,1,1
+EY,30700228,2024,9,7,3,4
+EY,30700228,2024,10,7,2,3
+EY,30700228,2024,11,2,2,2
+EY,30700228,2024,12,2,1,1
+EY,30700228,2025,2,2,1,1
+RevisorGruppen I/S,31481945,2026,2,4,1,1
+Ullits & Winther,32093272,2024,10,7,1,1
+Martinsen,32285201,2024,9,10,1,2
+Martinsen,32285201,2024,10,3,1,1
+Leif Mikkelsen & Partnere,32676421,2024,4,15,2,3
+Leif Mikkelsen & Partnere,32676421,2024,5,7,1,2
+Leif Mikkelsen & Partnere,32676421,2024,11,7,1,1
+Leif Mikkelsen & Partnere,32676421,2025,1,9,1,1
+Leif Mikkelsen & Partnere,32676421,2025,2,3,1,1
+Leif Mikkelsen & Partnere,32676421,2025,5,1,1,1
+Leif Mikkelsen & Partnere,32676421,2025,6,14,2,3
+Leif Mikkelsen & Partnere,32676421,2025,8,14,1,2
+Leif Mikkelsen & Partnere,32676421,2025,10,15,3,3
+Leif Mikkelsen & Partnere,32676421,2025,12,4,1,1
+Leif Mikkelsen & Partnere,32676421,2026,1,13,2,2
+Leif Mikkelsen & Partnere,32676421,2026,2,7,3,3
+Leif Mikkelsen & Partnere,32676421,2026,3,4,2,2
+Leif Mikkelsen & Partnere,32676421,2026,5,14,3,3
+Beierholm,32895468,2024,6,1,1,1
+Beierholm,32895468,2024,8,6,1,3
+Beierholm,32895468,2024,9,14,6,7
+Beierholm,32895468,2024,10,3,1,1
+Beierholm,32895468,2024,11,1,1,1
+Beierholm,32895468,2025,3,1,1,1
+Beierholm,32895468,2025,9,1,1,1
+Beierholm,32895468,2025,11,4,1,1
+Beierholm,32895468,2026,4,5,1,1
+Beierholm,32895468,2026,5,2,1,1
+RevisorGruppen I/S,32938213,2025,11,1,1,1
+LPOG ApS,33167288,2024,10,8,2,2
+Regnskabsfokus,33578628,2026,1,4,1,1
+PricewaterhouseCoopers,33771231,2024,12,1,1,1
+Copenhagen Management Accounting Company ApS,33932464,2024,9,2,1,1
+Copenhagen Management Accounting Company ApS,33932464,2024,10,6,1,1
+Kreston SR,33948794,2024,11,3,1,1
+Grant Thornton,34209936,2024,6,12,2,3
+Grant Thornton,34209936,2024,8,12,1,3
+Grant Thornton,34209936,2024,9,18,3,4
+Grant Thornton,34209936,2024,11,5,3,2
+Grant Thornton,34209936,2024,12,12,3,5
+Grant Thornton,34209936,2025,1,15,3,3
+Grant Thornton,34209936,2025,2,132,9,18
+Grant Thornton,34209936,2025,3,346,13,47
+Grant Thornton,34209936,2025,4,275,8,41
+Grant Thornton,34209936,2025,5,183,9,34
+Grant Thornton,34209936,2025,6,199,8,32
+Grant Thornton,34209936,2025,7,62,3,10
+Grant Thornton,34209936,2025,8,73,5,11
+Grant Thornton,34209936,2025,9,182,9,32
+Grant Thornton,34209936,2025,10,103,6,16
+Grant Thornton,34209936,2025,11,131,8,20
+Grant Thornton,34209936,2025,12,88,7,15
+Grant Thornton,34209936,2026,1,271,13,44
+Grant Thornton,34209936,2026,2,646,22,83
+Grant Thornton,34209936,2026,3,668,39,127
+Grant Thornton,34209936,2026,4,347,40,70
+Grant Thornton,34209936,2026,5,351,31,63
+Grant Thornton,34209936,2026,6,175,20,37
+Revimidt,34480370,2026,1,24,4,5
+Revimidt,34480370,2026,2,16,2,4
+Revimidt,34480370,2026,3,24,4,6
+Revimidt,34480370,2026,4,18,3,4
+Revimidt,34480370,2026,5,20,3,5
+RevisorGruppen I/S,34953619,2025,3,10,3,4
+RevisorGruppen I/S,34953619,2025,4,6,1,1
+RevisorGruppen I/S,34953619,2025,5,2,1,1
+RevisorGruppen I/S,34953619,2025,6,1,1,1
+RevisorGruppen I/S,34953619,2025,7,1,1,1
+RevisorGruppen I/S,34953619,2025,9,21,4,6
+RevisorGruppen I/S,34953619,2025,10,5,3,3
+RevisorGruppen I/S,34953619,2025,11,3,1,2
+RevisorGruppen I/S,34953619,2026,1,13,4,4
+RevisorGruppen I/S,34953619,2026,2,1,1,1
+RevisorGruppen I/S,34953619,2026,3,18,1,2
+RevisorGruppen I/S,34953619,2026,4,5,2,3
+RevisorGruppen I/S,34953619,2026,5,5,1,1
+Albjerg,35382879,2025,9,5,1,1
+Albjerg,35382879,2026,1,13,1,2
+Albjerg,35382879,2026,2,7,1,1
+Albjerg,35382879,2026,3,20,2,2
+Albjerg,35382879,2026,4,4,1,1
+Albjerg,35382879,2026,6,4,1,1
+Revisionsfirmaet Edelbo,35486178,2024,11,11,1,1
+Revisionsfirmaet Edelbo,35486178,2025,1,98,15,19
+Revisionsfirmaet Edelbo,35486178,2025,2,43,6,8
+Revisionsfirmaet Edelbo,35486178,2025,3,64,9,15
+Revisionsfirmaet Edelbo,35486178,2025,4,18,5,6
+Revisionsfirmaet Edelbo,35486178,2025,5,15,5,10
+Revisionsfirmaet Edelbo,35486178,2025,6,20,6,7
+Revisionsfirmaet Edelbo,35486178,2025,7,8,1,2
+Revisionsfirmaet Edelbo,35486178,2025,8,5,2,3
+Revisionsfirmaet Edelbo,35486178,2025,9,5,3,3
+Revisionsfirmaet Edelbo,35486178,2025,10,86,6,12
+Revisionsfirmaet Edelbo,35486178,2025,11,22,2,4
+Revisionsfirmaet Edelbo,35486178,2025,12,10,2,2
+Revisionsfirmaet Edelbo,35486178,2026,1,18,4,6
+Revisionsfirmaet Edelbo,35486178,2026,2,42,7,12
+Revisionsfirmaet Edelbo,35486178,2026,3,43,8,12
+Revisionsfirmaet Edelbo,35486178,2026,4,4,2,2
+Revisionsfirmaet Edelbo,35486178,2026,5,15,4,5
+Revisionsfirmaet Edelbo,35486178,2026,6,13,4,7
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2024,11,9,2,2
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2025,2,26,1,3
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2025,3,17,1,4
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2025,4,1,1,1
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2025,7,8,1,2
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2025,8,7,1,1
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2025,10,5,1,1
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2025,11,9,1,2
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2026,1,1,1,1
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2026,2,26,1,4
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2026,3,4,1,1
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2026,4,43,3,6
+BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,36029374,2026,5,6,2,2
+Roesgaard,37543128,2025,1,2,1,1
+Roesgaard,37543128,2025,5,10,1,2
+Roesgaard,37543128,2025,9,2,1,1
+Roesgaard,37543128,2025,10,1,1,1
+Roesgaard,37543128,2025,11,14,1,3
+Roesgaard,37543128,2026,2,3,1,1
+PJ Køleteknik ApS,37654795,2024,9,5,1,1
+Plature,38732420,2025,11,12,1,1
+Plature,38732420,2025,12,7,1,1
+Plature,38732420,2026,1,3,1,1
+Plature,38732420,2026,3,2,1,1
+Plature,38732420,2026,4,2,1,1
+Kovsted & Skovgård,38751646,2025,3,3,1,1
+Taleco ApS,39446235,2024,5,1,1,1
+Kreston CM,39463113,2024,11,1,1,1
+Kreston CM,39463113,2025,1,6,1,2
+Kreston CM,39463113,2025,3,8,1,1
+Kreston CM,39463113,2025,5,19,3,4
+Kreston CM,39463113,2025,6,3,1,1
+Kreston CM,39463113,2025,8,6,1,1
+Kreston CM,39463113,2025,9,1,1,1
+Kreston CM,39463113,2025,10,3,2,1
+Kreston CM,39463113,2025,12,1,1,1
+Kreston CM,39463113,2026,2,2,1,1
+Kreston CM,39463113,2026,3,14,4,3
+Kreston CM,39463113,2026,4,2,1,1
+Kreston CM,39463113,2026,6,2,1,2
+Erhvervshus Midtjylland S/I,40084606,2025,2,1,1,1
+The White Box,40612246,2025,7,4,1,1
+Roknskaparfelagið skrásettir grannskoðarar Sp/f,413887,2025,10,3,1,1
+Roknskaparfelagið skrásettir grannskoðarar Sp/f,413887,2025,11,2,2,2
+Roknskaparfelagið skrásettir grannskoðarar Sp/f,413887,2025,12,1,1,1
+Gaaga,42027995,2025,12,1,1,1
+Sand bogholderi,42269425,2025,10,1,1,1
+RegnskabsHuset.com,42495654,2025,5,1,1,1
+Ellebæk Revision godkendt revisionsanpartsselskab,43325000,2025,10,1,1,1
+Ellebæk Revision godkendt revisionsanpartsselskab,43325000,2025,11,1,1,1
+Ellebæk Revision godkendt revisionsanpartsselskab,43325000,2026,2,9,1,1
+E-conomia Consulting ApS,44268965,2024,5,3,1,1
+E-conomia Consulting ApS,44268965,2024,10,4,1,2
+Powered-By Statsautoriseret Revisionspartnerselskab,44282380,2024,10,1,1,1
+Powered-By Statsautoriseret Revisionspartnerselskab,44282380,2025,5,28,1,4
+Powered-By Statsautoriseret Revisionspartnerselskab,44282380,2025,8,9,1,1
+Powered-By Statsautoriseret Revisionspartnerselskab,44282380,2025,10,7,2,3
+Powered-By Statsautoriseret Revisionspartnerselskab,44282380,2025,11,3,2,3
+Powered-By Statsautoriseret Revisionspartnerselskab,44282380,2026,1,16,7,7
+Powered-By Statsautoriseret Revisionspartnerselskab,44282380,2026,2,26,6,7
+Powered-By Statsautoriseret Revisionspartnerselskab,44282380,2026,3,66,10,15
+Powered-By Statsautoriseret Revisionspartnerselskab,44282380,2026,4,41,5,18
+Powered-By Statsautoriseret Revisionspartnerselskab,44282380,2026,5,21,4,5
+Powered-By Statsautoriseret Revisionspartnerselskab,44282380,2026,6,5,3,4
+NM Regnskab ApS,44729989,2024,9,1,1,1
+"Ri, Statsautoriseret Revisionsaktieselskab",53371914,2024,9,1,1,1
+"Ri, Statsautoriseret Revisionsaktieselskab",53371914,2024,10,13,2,5
+"Ri, Statsautoriseret Revisionsaktieselskab",53371914,2024,11,3,1,1
+Krøyer Pedersen Statsautoriserede Revisorer,89224918,2024,11,21,2,3
+Krøyer Pedersen Statsautoriserede Revisorer,89224918,2025,2,1,1,1
+Krøyer Pedersen Statsautoriserede Revisorer,89224918,2025,6,1,1,1
