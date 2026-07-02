@@ -74,8 +74,10 @@ const MONTH_LABELS = { jul: "Jul", aug: "Aug", sep: "Sep", okt: "Okt", nov: "Nov
 const SEGMENTS = ["existing", "top", "next20", "accru", "rgd"];
 const SEGMENT_LABELS = { existing: "Existing", top: "Top Prospects", next20: "Næste 20", accru: "Accru", rgd: "RGD" };
 
-// Stadier fra pipe.html
-const STAGES = ["Kold", "Prospect", "Demo", "Trial", "Contract", "Won", "Tabt"];
+// Stadier · to grupper alt efter om det er ny kunde eller eksisterende
+const STAGES_NEW = ["Kold", "Prospect", "Demo", "Trial", "Contract", "Won", "Tabt"];
+const STAGES_EXISTING = ["Tvivlsom", "Expand indikation", "Expand klar", "Won", "Tabt"];
+const ALL_STAGES = [...new Set([...STAGES_NEW, ...STAGES_EXISTING])];
 
 // Default deadline (deadline måned pr segment)
 const DEFAULT_DEADLINES = { existing: "sep", top: "okt", next20: "okt", accru: "nov", rgd: "nov" };
@@ -128,6 +130,18 @@ const EROSION_KEY = "timelineErosion_v1";
 const DEADLINES_KEY = "timelineDeadlines_v1";
 const RATES_KEY = "timelineRates_v1";
 const AO_OVERRIDES_KEY = "timelineAoOverrides_v1"; // { cvr → { price?, deadline? } }
+const CALC_SETTINGS_KEY = "timelineCalcSettings_v1"; // globale defaults til business case regnemaskine
+const DEFAULT_CALC_SETTINGS = {
+  hours: 4,           // timer sparet pr. dataanalyse
+  rate: 1200,         // timepris
+  qualityFactor: 2,   // kvalitetsfaktor
+  annualReportHours: 0,
+  assistanceHours: 0,
+  reportingCustomers: 0,
+  reportingHours: 0,
+  annualReportPrice: 0,
+  assistancePrice: 0,
+};
 const AO_NOTES_KEY = "timelineAoNotes_v1"; // { cvr → { trafiklys, note } }
 const AO_DECL_TYPES_KEY = "timelineAoDeclTypes_v1"; // { cvr → { audits, reviews, extended_reviews, assistance } }
 const SCENARIO_KEY = "timelineScenario_v1";
@@ -154,6 +168,7 @@ const state = {
   aoOverrides: loadJson(AO_OVERRIDES_KEY, {}), // { cvr → { price, deadline } }
   aoNotes: loadJson(AO_NOTES_KEY, {}), // { cvr → { trafiklys: 'green'|'yellow'|'red', note: '...' } }
   aoDeclTypes: loadJson(AO_DECL_TYPES_KEY, {}), // { cvr → { audits, reviews, extended_reviews, assistance } } · default = alle true
+  calcSettings: { ...DEFAULT_CALC_SETTINGS, ...loadJson(CALC_SETTINGS_KEY, {}) },
   scenario: localStorage.getItem(SCENARIO_KEY) || "basis",
   gtScenario: localStorage.getItem(GT_SCENARIO_KEY) || "full",
 };
@@ -241,6 +256,70 @@ function effectiveDeclarationsAndExpand(ao) {
   const targetAtRate = ao.active + expandSmvs;
   const percentOfDecl = decl > 0 ? (targetAtRate / decl) * 100 : 0;
   return { decl, targetAtRate, expandSmvs, percentOfDecl, isCustom: customExtra != null, defaultExtra };
+}
+
+function businessCaseFor(ao) {
+  const cs = state.calcSettings;
+  const ov = state.aoOverrides[ao.cvr] || {};
+  const locked = new Set(ov.lockedFields || []);
+  // Per-AO override hvis låst · ellers global default
+  const readField = (name) => locked.has(name) && ov[name] != null ? Number(ov[name]) : cs[name];
+  const hours = readField('hours');
+  const rate = readField('rate');
+  const quality = readField('qualityFactor');
+  const annualReportHours = readField('annualReportHours');
+  const assistanceHours = readField('assistanceHours');
+  const reportingCustomers = readField('reportingCustomers');
+  const reportingHours = readField('reportingHours');
+  const annualReportPrice = readField('annualReportPrice');
+  const assistancePrice = readField('assistancePrice');
+  const softwarePrice = getAoPrice(ao.cvr, ao);
+
+  const eff = effectiveDeclarationsAndExpand(ao);
+  const activeConnections = ao.active;
+  const targetActive = eff.targetAtRate;
+
+  // Værdi-side (som index.html)
+  const realistiskPopulation = targetActive;
+  const realisticHours = realistiskPopulation * hours;
+  const realisticDeclarationValue = realisticHours * rate * quality;
+  const realisticAnnualReportValue = realistiskPopulation * annualReportHours * rate * quality;
+  const realisticAssistanceValue = realistiskPopulation * assistanceHours * rate * quality;
+  const reportingPop = reportingCustomers > 0 ? reportingCustomers : realistiskPopulation;
+  const realisticReportingValue = reportingPop * reportingHours * rate * quality;
+  const realisticPotential = realisticDeclarationValue + realisticAnnualReportValue + realisticAssistanceValue + realisticReportingValue;
+
+  // Realiseret værdi i dag (kun dataanalyse · som index.html)
+  const realizedValue = activeConnections * hours * rate * quality;
+
+  // Investering
+  const currentSoftwareInvestment = activeConnections * softwarePrice;
+  const currentInvestment = currentSoftwareInvestment; // årsrapport + assistance er 0 i dag
+  const futureSoftwareInvestment = targetActive * softwarePrice;
+  const futureAnnualReportInvestment = targetActive * annualReportPrice;
+  const futureAssistanceInvestment = targetActive * assistancePrice;
+  const futureInvestment = futureSoftwareInvestment + futureAnnualReportInvestment + futureAssistanceInvestment;
+  const expandCustomers = Math.max(targetActive - activeConnections, 0);
+  const expandInvestment = expandCustomers * (softwarePrice + annualReportPrice + assistancePrice);
+
+  // Netto + ROI
+  const currentNetValue = currentInvestment > 0 ? realizedValue - currentInvestment : null;
+  const futureNetValue = futureInvestment > 0 ? realisticPotential - futureInvestment : null;
+  const currentValueMultiple = currentInvestment > 0 ? realizedValue / currentInvestment : null;
+  const futureValueMultiple = futureInvestment > 0 ? realisticPotential / futureInvestment : null;
+
+  return {
+    hours, rate, quality, annualReportHours, assistanceHours, reportingCustomers, reportingHours,
+    annualReportPrice, assistancePrice, softwarePrice,
+    activeConnections, targetActive, expandCustomers,
+    realisticPotential, realizedValue,
+    currentInvestment, futureInvestment, expandInvestment,
+    currentNetValue, futureNetValue,
+    currentValueMultiple, futureValueMultiple,
+    percentOfDecl: eff.percentOfDecl,
+    effectiveDecl: eff.decl,
+    totalDeclarations: ao.declarations,
+  };
 }
 
 function contributionOf(ao) {
@@ -411,7 +490,7 @@ function renderAoTable() {
     const status = getAoStatus(ao.cvr);
     const dot = status.trafiklys ? `<span class="tl-dot tl-${status.trafiklys}" title="${status.trafiklys === 'green' ? 'Grøn · god sandsynlighed' : status.trafiklys === 'yellow' ? 'Gul · i dialog' : 'Rød · i risiko'}"></span>` : "";
     const noteDot = status.note ? `<span class="note-icon" title="Har note">✏</span>` : "";
-    const stageBadge = status.stage ? `<span class="stage-badge stage-${status.stage.toLowerCase()}" title="Stadie">${status.stage}</span>` : "";
+    const stageBadge = status.stage ? `<span class="stage-badge stage-${status.stage.toLowerCase().replace(/\s+/g, '-')}" title="Stadie">${status.stage}</span>` : "";
     return `<tr data-cvr="${ao.cvr}" onclick="openAoModal('${ao.cvr}')">
       <td><span class="seg-badge seg-${ao.segment}">${SEGMENT_LABELS[ao.segment]} ${(ao.rate*100).toFixed(0)}%</span></td>
       <td>${dot}${ao.name}${ao.isGt ? " ⭐" : ""} ${stageBadge}${hasOverride ? ' <span class="ao-override-badge">Tilpasset</span>' : ""}${noteDot}</td>
@@ -531,6 +610,98 @@ function rerender() {
 }
 
 // ---- AO Modal ----
+function renderBusinessCaseSection(ao) {
+  const bc = businessCaseFor(ao);
+  const pctToTarget = bc.targetActive > 0 ? Math.min(100, (bc.activeConnections / bc.targetActive) * 100) : 0;
+  const missing = Math.max(bc.targetActive - bc.activeConnections, 0);
+
+  const card = (title, valueHtml, subHtml = "") => `
+    <div class="bc-card">
+      <div class="bc-card-label">${title}</div>
+      <div class="bc-card-value">${valueHtml}</div>
+      ${subHtml ? `<div class="bc-card-sub">${subHtml}</div>` : ""}
+    </div>`;
+
+  return `
+    <div class="modal-section">
+      <h3>Business Case</h3>
+      <div class="bc-cards">
+        ${card("Implementeringsmål",
+          `${dkNum.format(bc.activeConnections)} / ${dkNum.format(bc.targetActive)} <small>virksomheder</small>`,
+          `<div class="bc-progress"><div class="bc-progress-labels"><span>Aktive i dag</span><span>Mål</span></div>
+           <div class="bc-progress-bar"><span style="width:${pctToTarget.toFixed(1)}%"></span></div>
+           <div class="bc-progress-values"><strong>${dkNum.format(bc.activeConnections)}</strong><strong>${dkNum.format(bc.targetActive)}</strong></div>
+           <p>${pctToTarget.toFixed(1)}% af målet opnået · ${dkNum.format(missing)} mangler</p></div>`)}
+        ${card("Værdi", dkCur.format(bc.realisticPotential), "Total værdi før investering ved valgt implementering")}
+        ${card("Investering", dkCur.format(bc.futureInvestment), "Samlet investering ved valgt implementering")}
+        ${card("Nettoværdi", bc.futureNetValue === null ? "–" : dkCur.format(bc.futureNetValue), "Værdi efter samlet investering ved målet")}
+        ${card("ROI",
+          bc.futureValueMultiple === null ? "Ved mål: ikke beregnet" : `Ved mål: ${bc.futureValueMultiple.toFixed(1)}x`,
+          bc.currentValueMultiple === null ? "" : `I dag: ${bc.currentValueMultiple.toFixed(1)}x`)}
+      </div>
+    </div>
+
+    <details class="modal-section" open>
+      <summary><h3 style="display:inline">▼ Business Case Regnemaskine</h3></summary>
+      <h4 class="bc-subhead">Antagelser</h4>
+      <div class="bc-calc-grid">
+        ${bcCalcInput("Timer sparet pr. dataanalyse", "hours", bc.hours, 0.25, ao.cvr)}
+        ${bcCalcInput("Timepris", "rate", bc.rate, 50, ao.cvr)}
+        ${bcCalcSelect("Kvalitetsfaktor", "qualityFactor", bc.quality, [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5], v => `x${v}`.replace('.', ','), ao.cvr)}
+        ${bcCalcInput("Timer sparet pr. årsrapport", "annualReportHours", bc.annualReportHours, 0.25, ao.cvr)}
+        ${bcCalcInput("Timer sparet pr. assistance", "assistanceHours", bc.assistanceHours, 0.25, ao.cvr)}
+        ${bcCalcInput("Rapporteringskunder", "reportingCustomers", bc.reportingCustomers, 1, ao.cvr)}
+        ${bcCalcInput("Timer sparet pr. rapporteringskunde", "reportingHours", bc.reportingHours, 0.25, ao.cvr)}
+      </div>
+      <p class="bc-hint">Værdi beregnes som antal opgaver eller kunder × timer sparet × timepris. Klik 🔓 for at låse en værdi pr AO.</p>
+
+      <h4 class="bc-subhead">Investering</h4>
+      <div class="bc-calc-grid">
+        ${bcCalcInput("Softwarepris pr. aktiv virksomhed pr. år (kr)", "price", bc.softwarePrice, 50, ao.cvr)}
+        ${bcCalcInput("Pris pr. årsrapport (kr)", "annualReportPrice", bc.annualReportPrice, 10, ao.cvr)}
+        ${bcCalcInput("Pris pr. assistanceopgave (kr)", "assistancePrice", bc.assistancePrice, 10, ao.cvr)}
+      </div>
+      <div class="bc-invest-result">
+        <div class="bc-invest-card">
+          <span>Investering i dag</span>
+          <strong>${dkCur.format(bc.currentInvestment)}</strong>
+          <small>Software · ${dkNum.format(bc.activeConnections)} aktive × ${dkNum.format(bc.softwarePrice)} kr</small>
+        </div>
+        <div class="bc-invest-card">
+          <span>Investering for expand</span>
+          <strong>${dkCur.format(bc.expandInvestment)}</strong>
+          <small>${dkNum.format(bc.expandCustomers)} nye × pris</small>
+        </div>
+        <div class="bc-invest-card highlight">
+          <span>Samlet ved valgt implementering</span>
+          <strong>${dkCur.format(bc.futureInvestment)}</strong>
+          <small>${dkNum.format(bc.targetActive)} kunder × pris (software + årsrapport + assistance)</small>
+        </div>
+      </div>
+      <p class="bc-hint">Investering i dag bruger kun software. Målscenariet kan inkludere software, årsrapport og assistance.</p>
+    </details>
+  `;
+}
+
+function bcCalcInput(label, field, value, step, cvr) {
+  const ov = state.aoOverrides[cvr] || {};
+  const isLocked = (ov.lockedFields || []).includes(field);
+  return `<label class="bc-calc-field">
+    <span>${label} <button type="button" class="lock-toggle ${isLocked ? 'locked' : ''}" data-lock-field="${field}" title="${isLocked ? 'Låst pr AO · klik for at bruge global' : 'Global værdi · klik for at låse pr AO'}">${isLocked ? '🔒' : '🔓'}</button></span>
+    <input type="number" min="0" step="${step}" value="${value}" data-modal-field="${field}" data-calc-input="1" />
+  </label>`;
+}
+function bcCalcSelect(label, field, value, options, fmt, cvr) {
+  const ov = state.aoOverrides[cvr] || {};
+  const isLocked = (ov.lockedFields || []).includes(field);
+  return `<label class="bc-calc-field">
+    <span>${label} <button type="button" class="lock-toggle ${isLocked ? 'locked' : ''}" data-lock-field="${field}" title="${isLocked ? 'Låst pr AO' : 'Global · klik for at låse'}">${isLocked ? '🔒' : '🔓'}</button></span>
+    <select data-modal-field="${field}" data-calc-input="1">
+      ${options.map(o => `<option value="${o}" ${Number(value) === o ? "selected" : ""}>${fmt(o)}</option>`).join("")}
+    </select>
+  </label>`;
+}
+
 function openAoModal(cvr) {
   const ao = state.pool.find((p) => p.cvr === cvr);
   if (!ao) return;
@@ -608,57 +779,52 @@ function openAoModal(cvr) {
     </div>
 
     <div class="modal-section">
-      <h3>Antagelser for denne AO</h3>
-      <div class="ao-overrides">
+      <h3>Antagelser</h3>
+      <div class="ao-overrides compact">
         <label class="ao-override-field">
-          <span>Pris pr Brugervirksomhed (default ${defaultPrice} kr)</span>
+          <span>Antal ekstra Brugervirks. (default ${dkNum.format(eff.defaultExtra)})</span>
+          <input type="number" min="0" step="10" placeholder="${eff.defaultExtra}" value="${ov.customExtraSmvs != null && ov.customExtraSmvs !== '' ? ov.customExtraSmvs : ''}" data-modal-field="customExtraSmvs" />
+          <small>${eff.isCustom
+            ? `<strong>${dkNum.format(eff.expandSmvs)}</strong> ekstra + ${dkNum.format(ao.active)} aktive = <strong>${dkNum.format(eff.targetAtRate)}</strong> total (<strong>${eff.percentOfDecl.toFixed(1)}%</strong> af ${dkNum.format(eff.decl)})`
+            : `Segmentets ${(ao.rate*100).toFixed(0)}% · total ${dkNum.format(eff.targetAtRate)} (${eff.percentOfDecl.toFixed(1)}%)`}</small>
+        </label>
+        <label class="ao-override-field">
+          <span>Pris pr Brugervirks. (default ${defaultPrice})</span>
           <input type="number" min="0" step="50" placeholder="${defaultPrice}" value="${priceOverridden ? ov.price : ''}" data-modal-field="price" />
           <small>${priceOverridden ? 'Brugerdefineret' : 'Bruger global'}</small>
         </label>
         <label class="ao-override-field">
-          <span>Antal EKSTRA Brugervirks. der skal aktiveres (default ${dkNum.format(eff.defaultExtra)} · segmentets ${(ao.rate*100).toFixed(0)}% rate)</span>
-          <input type="number" min="0" step="10" placeholder="${eff.defaultExtra}" value="${ov.customExtraSmvs != null && ov.customExtraSmvs !== '' ? ov.customExtraSmvs : ''}" data-modal-field="customExtraSmvs" />
-          <small>${eff.isCustom
-            ? `<strong>${dkNum.format(eff.expandSmvs)} ekstra</strong> + ${dkNum.format(ao.active)} aktive i dag = <strong>${dkNum.format(eff.targetAtRate)} i alt</strong> = <strong>${eff.percentOfDecl.toFixed(1)}%</strong> af ${dkNum.format(eff.decl)} effektive erklæringer`
-            : `Bruger segmentets ${(ao.rate*100).toFixed(0)}% rate. Aktive: ${dkNum.format(ao.active)} · Ekstra ved default: ${dkNum.format(eff.expandSmvs)} · Total: ${dkNum.format(eff.targetAtRate)}`}</small>
-        </label>
-        <label class="ao-override-field">
-          <span>Deadline (default ${MONTH_LABELS[defaultDeadline]})</span>
+          <span>Deadline</span>
           <select data-modal-field="deadline">
-            <option value="">Brug segment-default (${MONTH_LABELS[defaultDeadline]})</option>
+            <option value="">Segment (${MONTH_LABELS[defaultDeadline]})</option>
             ${["jul","aug","sep","okt","nov","dec"].map(m => `<option value="${m}" ${ov.deadline === m ? "selected" : ""}>${MONTH_LABELS[m]}</option>`).join("")}
           </select>
-          <small>${deadlineOverridden ? 'Brugerdefineret' : 'Bruger segment-default'}</small>
         </label>
         <label class="ao-override-field">
           <span>Forventet luk-måned</span>
           <select data-modal-field="closeMonth">
             ${MONTHS.map(m => `<option value="${m}" ${closeMonth === m ? "selected" : ""}>${MONTH_LABELS[m]}</option>`).join("")}
           </select>
-          <small>Standard = deadline måned</small>
         </label>
-        <label class="ao-override-field">
-          <span>Stadie</span>
+        <label class="ao-override-field ao-stage-field">
+          <span>Stadie ${ao.segment === "existing" ? "(eksisterende kunde)" : "(ny kunde)"}</span>
           <select data-modal-field="stage">
             <option value="">Ikke sat</option>
-            ${STAGES.map(s => `<option value="${s}" ${(status.stage || "") === s ? "selected" : ""}>${s}</option>`).join("")}
+            ${(ao.segment === "existing" ? STAGES_EXISTING : STAGES_NEW).map(s => `<option value="${s}" ${(status.stage || "") === s ? "selected" : ""}>${s}</option>`).join("")}
           </select>
-          <small>Fra pipe.html · påvirker ikke beregning endnu</small>
+          <small>${ao.segment === "existing" ? "Tvivlsom · Expand indikation · Expand klar · Won · Tabt" : "Kold · Prospect · Demo · Trial · Contract · Won · Tabt"}</small>
         </label>
       </div>
     </div>
 
+    ${renderBusinessCaseSection(ao)}
+
     <div class="modal-section">
-      <h3>Business Case ved luk i ${MONTH_LABELS[closeMonth]}</h3>
+      <h3>Forventet Ny ARR i timeline (ved luk i ${MONTH_LABELS[closeMonth]})</h3>
       <div class="stat-grid">
-        <div class="stat"><span>Total Brugervirks. ved mål</span><strong>${dkNum.format(eff.targetAtRate)}</strong></div>
-        <div class="stat"><span>Ekstra der skal aktiveres</span><strong>${dkNum.format(eff.expandSmvs)}</strong></div>
-        <div class="stat"><span>${eff.isCustom ? 'Din valgte' : 'Segment'} procent</span><strong>${eff.percentOfDecl.toFixed(1)}%</strong></div>
-        <div class="stat"><span>Mulig ny ARR ved mål</span><strong>${dkCur.format(eff.expandSmvs * price)}</strong></div>
         <div class="stat"><span>Realiseringsgrad</span><strong>${(factor*100).toFixed(0)}%</strong></div>
-        <div class="stat"><span>Forventet Ny ARR</span><strong style="color:var(--good)">${dkCur.format(bidrag)}</strong></div>
-        <div class="stat"><span>Investering (expand-only)</span><strong>${dkCur.format(eff.expandSmvs * price)}</strong></div>
-        <div class="stat"><span>ROI</span><strong>${roi === null ? "–" : roi.toFixed(1) + "x"}</strong></div>
+        <div class="stat"><span>Mulig ny ARR fuld impl.</span><strong>${dkCur.format(eff.expandSmvs * price)}</strong></div>
+        <div class="stat"><span>Forventet Ny ARR (efter erosion + scenarier)</span><strong style="color:var(--good)">${dkCur.format(bidrag)}</strong></div>
       </div>
     </div>
 
@@ -670,6 +836,7 @@ function openAoModal(cvr) {
   `;
 
   // Bind modal input handlers
+  const CALC_FIELDS = new Set(['hours','rate','qualityFactor','annualReportHours','assistanceHours','reportingCustomers','reportingHours','annualReportPrice','assistancePrice']);
   document.querySelectorAll('[data-modal-field]').forEach((el) => {
     el.addEventListener('change', (e) => {
       const field = e.target.dataset.modalField;
@@ -679,11 +846,43 @@ function openAoModal(cvr) {
         saveJson(CLOSE_MONTHS_KEY, state.closeMonths);
       } else if (field === 'stage') {
         setAoStatus(cvr, { stage: v || null });
+      } else if (CALC_FIELDS.has(field)) {
+        // Er feltet låst pr AO? Så gem pr AO. Ellers global.
+        const ovNow = state.aoOverrides[cvr] || {};
+        const isLocked = (ovNow.lockedFields || []).includes(field);
+        if (isLocked) {
+          setAoOverride(cvr, field, Number(v));
+        } else {
+          state.calcSettings[field] = Number(v);
+          saveJson(CALC_SETTINGS_KEY, state.calcSettings);
+        }
       } else if (field === 'price' || field === 'customExtraSmvs') {
         setAoOverride(cvr, field, v === '' ? null : Number(v));
       } else {
         setAoOverride(cvr, field, v === '' ? null : v);
       }
+      rerender();
+      openAoModal(cvr);
+    });
+  });
+
+  // Lock-toggle knapper
+  document.querySelectorAll('[data-lock-field]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const field = btn.dataset.lockField;
+      const existing = state.aoOverrides[cvr] || {};
+      const locked = new Set(existing.lockedFields || []);
+      if (locked.has(field)) {
+        locked.delete(field);
+        // Fjern per-AO værdi (bruger nu global igen)
+        setAoOverride(cvr, field, null);
+      } else {
+        locked.add(field);
+        // Gem nuværende værdi som per-AO
+        setAoOverride(cvr, field, state.calcSettings[field]);
+      }
+      setAoOverride(cvr, 'lockedFields', locked.size > 0 ? [...locked] : null);
       rerender();
       openAoModal(cvr);
     });
