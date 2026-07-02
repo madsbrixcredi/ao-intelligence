@@ -22,57 +22,6 @@ const TOP_PROSPECT_GROUPS = [
   { name: "Dansk Revision Holbæk", cvrs: ["28853343"] }, { name: "Dansk Revision Søborg", cvrs: ["14649905"] },
   { name: "Lars-olsen", cvrs: ["37135119"] },
   { name: "Revisionscentret", cvrs: ["29695636", "38951394", "18936305", "10352231", "26279534", "13976295", "41578513"] },
-  // Tilføjet 1. juli 2026 · Top 50 nye · rate 5% (kan overrides pr AO)
-  { name: "BDO", cvrs: ["45719375"] },
-  { name: "Aros", cvrs: ["29690065"] },
-  { name: "Crowe", cvrs: ["33256876"] },
-  { name: "RéVision+", cvrs: ["41695609"] },
-  { name: "Dansk Revision Odense", cvrs: ["82218912"] },
-  { name: "Øernes Revision", cvrs: ["37121924"] },
-  { name: "Kvalitetsrevision", cvrs: ["36480254"] },
-  { name: "Blicher Revision & Rådgivning", cvrs: ["78337818"] },
-  { name: "Revision Ry & Hammel", cvrs: ["26267439"] },
-  { name: "Harboe Consult", cvrs: ["35649417"] },
-  { name: "Rådgivning & Revision", cvrs: ["10158117"] },
-  { name: "Søby Revisorer", cvrs: ["19125742"] },
-  { name: "Dansk Revision Esbjerg", cvrs: ["26993695"] },
-  { name: "Trekroner Revision", cvrs: ["28991355"] },
-  { name: "Revisionsfirmaet Albrechtsen", cvrs: ["77926410"] },
-  { name: "Revision og Rådgivningsgruppen", cvrs: ["33771177"] },
-  { name: "Status Revision", cvrs: ["30707907"] },
-  { name: "RevisorGården Holbæk", cvrs: ["45071391"] },
-  { name: "Lægård Revision", cvrs: ["18437082"] },
-  { name: "Kreston SR", cvrs: ["33948794"] },
-  { name: "Eco-Team", cvrs: ["27966675"] },
-  { name: "JL Revisorer", cvrs: ["31332699"] },
-  { name: "Revisions-Partner", cvrs: ["69305210"] },
-  { name: "Danica", cvrs: ["37603686"] },
-  { name: "Bays Revisionskontor", cvrs: ["20183497"] },
-  { name: "Dansk Revision Roskilde", cvrs: ["14678093"] },
-  { name: "Advosion", cvrs: ["37557064"] },
-  { name: "Anker Høst", cvrs: ["31626536"] },
-  { name: "Boreco", cvrs: ["36074981"] },
-  { name: "Nordkyst Revision", cvrs: ["37605255"] },
-  { name: "Optimal Revision", cvrs: ["19233383"] },
-  { name: "LPOG", cvrs: ["33167288"] },
-  { name: "K.T. Revision Vejle", cvrs: ["70969815"] },
-  { name: "Tønder Revision", cvrs: ["29142807"] },
-  { name: "Rønne Revision", cvrs: ["74717810"] },
-  { name: "RevisorDK", cvrs: ["38257846"] },
-  { name: "Dansk Revision Viborg", cvrs: ["20336390"] },
-  { name: "Lou Revision", cvrs: ["31579309"] },
-  { name: "Dansk Revision Hillerød", cvrs: ["26580390"] },
-  { name: "Dalsgaard, Stahl & Wøldike", cvrs: ["21696382"] },
-  { name: "Revision 2", cvrs: ["16968137"] },
-  { name: "Revision København", cvrs: ["34619654"] },
-  { name: "Revisionsfirmaet John Schantz", cvrs: ["28312393"] },
-  { name: "BHA Statsautoriseret Revision", cvrs: ["18967901"] },
-  { name: "Dahl, Rask & Partnere", cvrs: ["10422183"] },
-  { name: "Aage Maagensen", cvrs: ["12901038"] },
-  { name: "Algade Revision", cvrs: ["35663916"] },
-  { name: "Barrett", cvrs: ["28842562"] },
-  { name: "Vadskær Krømmelbein", cvrs: ["40689745"] },
-  { name: "VKST Revision", cvrs: ["34351961"] },
 ];
 const ACCRU_GROUPS = [
   { name: "Albjerg", cvrs: ["35382879"] }, { name: "Bille & Buch-Andersen", cvrs: ["18282046"] },
@@ -124,6 +73,9 @@ const MONTHS = ["jul", "aug", "sep", "okt", "nov", "dec", "ikke_i_aar"];
 const MONTH_LABELS = { jul: "Jul", aug: "Aug", sep: "Sep", okt: "Okt", nov: "Nov", dec: "Dec", ikke_i_aar: "Ikke i år" };
 const SEGMENTS = ["existing", "top", "next20", "accru", "rgd"];
 const SEGMENT_LABELS = { existing: "Existing", top: "Top Prospects", next20: "Næste 20", accru: "Accru", rgd: "RGD" };
+
+// Stadier fra pipe.html
+const STAGES = ["Kold", "Prospect", "Demo", "Trial", "Contract", "Won", "Tabt"];
 
 // Default deadline (deadline måned pr segment)
 const DEFAULT_DEADLINES = { existing: "sep", top: "okt", next20: "okt", accru: "nov", rgd: "nov" };
@@ -281,9 +233,14 @@ function setAoDeclType(cvr, type, enabled) {
 function effectiveDeclarationsAndExpand(ao) {
   const t = getAoDeclTypes(ao.cvr);
   const decl = (t.audits ? ao.audits : 0) + (t.reviews ? ao.reviews : 0) + (t.extended_reviews ? ao.extendedReviews : 0) + (t.assistance ? ao.assistance : 0);
-  const targetAtRate = Math.round(decl * ao.rate);
-  const expandSmvs = Math.max(targetAtRate - ao.active, 0);
-  return { decl, targetAtRate, expandSmvs };
+  const ov = state.aoOverrides[ao.cvr] || {};
+  // Custom antal EKSTRA Brugervirks. der skal aktiveres (semantik matcher Mads' tankegang)
+  const customExtra = ov.customExtraSmvs != null && ov.customExtraSmvs !== "" ? Number(ov.customExtraSmvs) : null;
+  const defaultExtra = Math.max(Math.round(decl * ao.rate) - ao.active, 0);
+  const expandSmvs = customExtra != null ? customExtra : defaultExtra;
+  const targetAtRate = ao.active + expandSmvs;
+  const percentOfDecl = decl > 0 ? (targetAtRate / decl) * 100 : 0;
+  return { decl, targetAtRate, expandSmvs, percentOfDecl, isCustom: customExtra != null, defaultExtra };
 }
 
 function contributionOf(ao) {
@@ -454,9 +411,10 @@ function renderAoTable() {
     const status = getAoStatus(ao.cvr);
     const dot = status.trafiklys ? `<span class="tl-dot tl-${status.trafiklys}" title="${status.trafiklys === 'green' ? 'Grøn · god sandsynlighed' : status.trafiklys === 'yellow' ? 'Gul · i dialog' : 'Rød · i risiko'}"></span>` : "";
     const noteDot = status.note ? `<span class="note-icon" title="Har note">✏</span>` : "";
+    const stageBadge = status.stage ? `<span class="stage-badge stage-${status.stage.toLowerCase()}" title="Stadie">${status.stage}</span>` : "";
     return `<tr data-cvr="${ao.cvr}" onclick="openAoModal('${ao.cvr}')">
       <td><span class="seg-badge seg-${ao.segment}">${SEGMENT_LABELS[ao.segment]} ${(ao.rate*100).toFixed(0)}%</span></td>
-      <td>${dot}${ao.name}${ao.isGt ? " ⭐" : ""}${hasOverride ? ' <span class="ao-override-badge">Tilpasset</span>' : ""}${noteDot}</td>
+      <td>${dot}${ao.name}${ao.isGt ? " ⭐" : ""} ${stageBadge}${hasOverride ? ' <span class="ao-override-badge">Tilpasset</span>' : ""}${noteDot}</td>
       <td class="numeric">${dkNum.format(ao.active)}</td>
       <td class="numeric">${dkNum.format(expandSmvs)}</td>
       <td class="numeric">${dkCur.format(maxArr)}</td>
@@ -658,6 +616,13 @@ function openAoModal(cvr) {
           <small>${priceOverridden ? 'Brugerdefineret' : 'Bruger global'}</small>
         </label>
         <label class="ao-override-field">
+          <span>Antal EKSTRA Brugervirks. der skal aktiveres (default ${dkNum.format(eff.defaultExtra)} · segmentets ${(ao.rate*100).toFixed(0)}% rate)</span>
+          <input type="number" min="0" step="10" placeholder="${eff.defaultExtra}" value="${ov.customExtraSmvs != null && ov.customExtraSmvs !== '' ? ov.customExtraSmvs : ''}" data-modal-field="customExtraSmvs" />
+          <small>${eff.isCustom
+            ? `<strong>${dkNum.format(eff.expandSmvs)} ekstra</strong> + ${dkNum.format(ao.active)} aktive i dag = <strong>${dkNum.format(eff.targetAtRate)} i alt</strong> = <strong>${eff.percentOfDecl.toFixed(1)}%</strong> af ${dkNum.format(eff.decl)} effektive erklæringer`
+            : `Bruger segmentets ${(ao.rate*100).toFixed(0)}% rate. Aktive: ${dkNum.format(ao.active)} · Ekstra ved default: ${dkNum.format(eff.expandSmvs)} · Total: ${dkNum.format(eff.targetAtRate)}`}</small>
+        </label>
+        <label class="ao-override-field">
           <span>Deadline (default ${MONTH_LABELS[defaultDeadline]})</span>
           <select data-modal-field="deadline">
             <option value="">Brug segment-default (${MONTH_LABELS[defaultDeadline]})</option>
@@ -672,13 +637,23 @@ function openAoModal(cvr) {
           </select>
           <small>Standard = deadline måned</small>
         </label>
+        <label class="ao-override-field">
+          <span>Stadie</span>
+          <select data-modal-field="stage">
+            <option value="">Ikke sat</option>
+            ${STAGES.map(s => `<option value="${s}" ${(status.stage || "") === s ? "selected" : ""}>${s}</option>`).join("")}
+          </select>
+          <small>Fra pipe.html · påvirker ikke beregning endnu</small>
+        </label>
       </div>
     </div>
 
     <div class="modal-section">
       <h3>Business Case ved luk i ${MONTH_LABELS[closeMonth]}</h3>
       <div class="stat-grid">
-        <div class="stat"><span>Brugervirks. ved ${(ao.rate*100).toFixed(0)}% mål</span><strong>${dkNum.format(eff.expandSmvs)}</strong></div>
+        <div class="stat"><span>Total Brugervirks. ved mål</span><strong>${dkNum.format(eff.targetAtRate)}</strong></div>
+        <div class="stat"><span>Ekstra der skal aktiveres</span><strong>${dkNum.format(eff.expandSmvs)}</strong></div>
+        <div class="stat"><span>${eff.isCustom ? 'Din valgte' : 'Segment'} procent</span><strong>${eff.percentOfDecl.toFixed(1)}%</strong></div>
         <div class="stat"><span>Mulig ny ARR ved mål</span><strong>${dkCur.format(eff.expandSmvs * price)}</strong></div>
         <div class="stat"><span>Realiseringsgrad</span><strong>${(factor*100).toFixed(0)}%</strong></div>
         <div class="stat"><span>Forventet Ny ARR</span><strong style="color:var(--good)">${dkCur.format(bidrag)}</strong></div>
@@ -702,8 +677,12 @@ function openAoModal(cvr) {
       if (field === 'closeMonth') {
         state.closeMonths[cvr] = v;
         saveJson(CLOSE_MONTHS_KEY, state.closeMonths);
+      } else if (field === 'stage') {
+        setAoStatus(cvr, { stage: v || null });
+      } else if (field === 'price' || field === 'customExtraSmvs') {
+        setAoOverride(cvr, field, v === '' ? null : Number(v));
       } else {
-        setAoOverride(cvr, field, v === '' ? null : (field === 'price' ? Number(v) : v));
+        setAoOverride(cvr, field, v === '' ? null : v);
       }
       rerender();
       openAoModal(cvr);
@@ -786,6 +765,91 @@ function exportBackup() {
   URL.revokeObjectURL(url);
 }
 
+function exportExcel() {
+  // CSV med UTF-8 BOM så Excel læser danske tegn korrekt
+  const headers = [
+    "Segment", "Revisionshus", "CVR", "Stadie", "Trafiklys", "Note",
+    "Antal Brugervirks.", "% af effektive erklæringer",
+    "Pris pr Brugervirks.", "Forventet luk", "Deadline", "Realiseringsgrad %",
+    "Mulig ny ARR", "Forventet Ny ARR",
+    "Aktive Brugervirks. på Crediwire", "Total erklæringer",
+    "Revisionspåtegninger", "Reviews", "Udvidet gennemgang", "Assistanceerklæringer",
+    "Erklæringstyper valgt",
+  ];
+
+  const rows = [...state.pool]
+    .sort((a, b) => {
+      const segPri = { existing: 0, top: 1, next20: 2, accru: 3, rgd: 4 };
+      return (segPri[a.segment] - segPri[b.segment]) || (b.expandSmvs - a.expandSmvs);
+    })
+    .map((ao) => {
+      const c = contributionOf(ao);
+      const status = getAoStatus(ao.cvr);
+      const ov = state.aoOverrides[ao.cvr] || {};
+      const declTypes = getAoDeclTypes(ao.cvr);
+      const eff = effectiveDeclarationsAndExpand(ao);
+      const trafiklysLabel = { green: "Grøn", yellow: "Gul", red: "Rød" }[status.trafiklys] || "";
+      const typesSelected = ["Revisionspåtegning", "Review", "Udvidet gennemgang", "Assistance"]
+        .filter((_, i) => [declTypes.audits, declTypes.reviews, declTypes.extended_reviews, declTypes.assistance][i])
+        .join(" · ");
+      return [
+        SEGMENT_LABELS[ao.segment],
+        ao.name,
+        ao.cvr,
+        status.stage || "",
+        trafiklysLabel,
+        (status.note || "").replace(/\n/g, " · "),
+        eff.targetAtRate,
+        eff.percentOfDecl.toFixed(1).replace(".", ","),
+        c.price,
+        MONTH_LABELS[c.closeMonth],
+        MONTH_LABELS[getAoDeadline(ao.cvr, ao.segment)],
+        (c.factor * 100).toFixed(0),
+        Math.round(eff.expandSmvs * c.price),
+        Math.round(c.bidrag),
+        ao.active,
+        ao.declarations,
+        ao.audits,
+        ao.reviews,
+        ao.extendedReviews,
+        ao.assistance,
+        typesSelected,
+      ];
+    });
+
+  // CSV escape (danske semikolon-separator som Excel foretrækker i DK-locale)
+  const escape = (v) => {
+    if (v == null) return "";
+    const s = String(v);
+    if (/[";\n]/.test(s)) return `"${s.replace(/"/g, '""')}"`;
+    return s;
+  };
+
+  const lines = [headers.map(escape).join(";")];
+  rows.forEach((row) => lines.push(row.map(escape).join(";")));
+
+  // Total-linje i bunden
+  const total = rows.reduce((s, r) => s + Number(r[13] || 0), 0);
+  lines.push("");
+  lines.push(`Total Forventet Ny ARR;;;;;;;;;;;;;${Math.round(total)}`);
+  lines.push(`Antal huse;${rows.length}`);
+  lines.push(`Genereret;${new Date().toLocaleString("da-DK")}`);
+
+  // Tilføj UTF-8 BOM så Excel viser danske tegn korrekt
+  const bom = "﻿";
+  const csv = bom + lines.join("\n");
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  const date = new Date().toISOString().slice(0, 10);
+  a.href = url;
+  a.download = `timeline-export-${date}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
 function importBackup(file) {
   const reader = new FileReader();
   reader.onload = (e) => {
@@ -818,6 +882,16 @@ async function init() {
 
   // Konsoliderings-migration: flyt notes/overrides fra alias CVRs til primary
   migrateAliases();
+
+  // Ryd gammel customTargetSmvs (tidligere "i alt"-semantik erstattet af customExtraSmvs)
+  let cleaned = false;
+  Object.keys(state.aoOverrides).forEach((cvr) => {
+    if (state.aoOverrides[cvr].customTargetSmvs != null) {
+      delete state.aoOverrides[cvr].customTargetSmvs;
+      cleaned = true;
+    }
+  });
+  if (cleaned) saveJson(AO_OVERRIDES_KEY, state.aoOverrides);
 
   renderErosionTable();
   renderDeadlineTable();
@@ -881,6 +955,7 @@ async function init() {
 
   // Eksport / import
   document.getElementById("exportBtn")?.addEventListener("click", exportBackup);
+  document.getElementById("exportExcelBtn")?.addEventListener("click", exportExcel);
   document.getElementById("importBtn")?.addEventListener("click", () => document.getElementById("importFile")?.click());
   document.getElementById("importFile")?.addEventListener("change", (e) => {
     const f = e.target.files?.[0];

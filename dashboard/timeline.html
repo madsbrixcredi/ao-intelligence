@@ -125,6 +125,14 @@
       .decl-type-count { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--text); font-size: 13px; }
       .decl-sum { text-align: right; padding: 8px 12px; font-size: 13px; color: var(--muted); background: #fafbff; border-radius: 8px; }
       .decl-sum strong { color: var(--text); font-size: 14px; }
+      .stage-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-left: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+      .stage-kold { background: #e0f2fe; color: #075985; }
+      .stage-prospect { background: #f3e8ff; color: #6b21a8; }
+      .stage-demo { background: #fef3c7; color: #92400e; }
+      .stage-trial { background: #fed7aa; color: #9a3412; }
+      .stage-contract { background: #dbeafe; color: #1e40af; }
+      .stage-won { background: #dcfce7; color: #166534; }
+      .stage-tabt { background: #fee2e2; color: #991b1b; }
       .scenario-controls { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; padding: 12px; background: #fafbff; border-radius: 10px; border: 1px solid var(--border); }
       .scenario-row { display: flex; align-items: center; gap: 12px; }
       .scenario-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; min-width: 80px; }
@@ -159,7 +167,8 @@
           <p class="lead">Per revisionshus luk-måned med realiseringsgrad pr segment. Data-tjekket mod ao_master.csv + ao_connections_current.csv.</p>
         </div>
         <div class="backup-controls">
-          <button class="btn primary" id="exportBtn" title="Download alle mine notater, trafiklys, luk-måneder som backup">💾 Eksportér mine notater</button>
+          <button class="btn primary" id="exportExcelBtn" title="Download hele tabellen inkl. noter, stadier og tal som CSV/Excel">📊 Excel-eksport</button>
+          <button class="btn" id="exportBtn" title="Download alle mine notater, trafiklys, luk-måneder som backup">💾 JSON backup</button>
           <button class="btn" id="importBtn" title="Upload en tidligere backup for at gendanne">📂 Importér backup</button>
           <input type="file" id="importFile" accept="application/json" style="display:none" />
         </div>
@@ -311,6 +320,6 @@
       </div>
     </div>
 
-    <script src="timeline.js?v=20260701-top50-added"></script>
+    <script src="timeline.js?v=20260702-ekstra-fokus"></script>
   </body>
 </html>
