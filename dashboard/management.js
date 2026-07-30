@@ -185,20 +185,23 @@ function buildMetrics() {
   const active = conn ? num(conn.active_erp_connections) : 0;
   const purchased = conn ? num(conn.purchased_companies) : 0;
   const hasAgreement = Boolean(conn);
-  // Erklæringstal kommer fra det fuldstændige regionsudtræk (30. juli 2026).
-  // ao_master bruges kun som reserve for huse der ikke kunne navnematches.
-  const declarations = decl ? num(decl.declarations) : (master ? num(master.total_declarations) : 0);
-  const declSource = decl ? "Erklæringsregister 2025 til 2026" : "ao_master.csv";
+  // Crediwire arbejder kun med regnskabsklasse B. Derfor er klasse B
+  // grundlaget for potentiale, målsætning og markedsdækning. Klasse A, C og D
+  // opgøres separat som det marked der ligger uden for produktet.
+  const declarationsAll = decl ? num(decl.declarations) : (master ? num(master.total_declarations) : 0);
+  const declarations = decl ? num(decl.class_b) : declarationsAll;
+  const outsideScope = decl ? Math.max(0, num(decl.declarations) - num(decl.class_b)) : 0;
+  const declSource = decl ? "Erklæringsregister 2025 til 2026 · regnskabsklasse B" : "ao_master.csv";
   const analyses = master ? num(master.total_analyses) : 0;
   const activeUsers = master ? num(master.active_users) : 0;
   const analysedCompanies = master ? num(master.distinct_clients_analysed) : 0;
   const latestActivity = master?.latest_activity_date || "";
 
   const byType = decl ? {
-    audits: num(decl.audits),
-    reviews: num(decl.reviews),
-    extended: num(decl.extended_reviews),
-    assistance: num(decl.assistance),
+    audits: num(decl.class_b_audits),
+    reviews: num(decl.class_b_reviews),
+    extended: num(decl.class_b_extended_reviews),
+    assistance: num(decl.class_b_assistance),
   } : {
     audits: master ? num(master.audits) : 0,
     reviews: master ? num(master.reviews) : 0,
@@ -243,6 +246,7 @@ function buildMetrics() {
     yoy: activityYoY(monthly),
     top3: topThreeShare(riskRow),
     riskLabel: riskRow?.implementation_risk || null,
+    declarationsAll, outsideScope,
     classB: decl ? num(decl.class_b) : null,
     addressableAnnual: decl ? num(decl.addressable_annual_reports) : null,
     classBAssistance: decl ? num(decl.class_b_assistance) : null,
@@ -368,8 +372,8 @@ function healthComponents(m) {
     score: m.marketCoverage === null ? null : clamp(m.marketCoverage / 0.25, 0, 1) * 100,
     basis: m.marketCoverage === null
       ? "Ingen erklæringsdata"
-      : `${n0(m.active)} af ${n0(m.declarations)} erklæringer er dækket`,
-    curve: "25% dækning af erklæringerne giver 100 point.",
+      : `${n0(m.active)} af ${n0(m.declarations)} klasse B-erklæringer er dækket`,
+    curve: "25% dækning af klasse B-erklæringerne giver 100 point.",
   });
 
   return comp;
@@ -413,8 +417,8 @@ function render() {
 
   document.getElementById("firmName").textContent = m.name;
   document.getElementById("firmSub").textContent = m.hasAgreement
-    ? `CVR ${m.cvr} · ${n0(m.declarations)} erklæringer · ${n0(m.active)} aktive virksomheder`
-    : `CVR ${m.cvr} · ${n0(m.declarations)} erklæringer · ingen Crediwire-aftale endnu`;
+    ? `CVR ${m.cvr} · ${n0(m.declarations)} klasse B-erklæringer · ${n0(m.active)} aktive virksomheder`
+    : `CVR ${m.cvr} · ${n0(m.declarations)} klasse B-erklæringer · ingen Crediwire-aftale endnu`;
 
   renderHealth(m);
   renderKpis(m);
@@ -565,12 +569,12 @@ function renderRecommendation(m) {
   let head, body;
   if (!m.hasAgreement) {
     head = "Start med en aftale";
-    body = `Huset laver ${n0(m.declarations)} erklæringer om året og har ingen Crediwire-aftale endnu.`;
+    body = `Huset laver ${n0(m.declarations)} klasse B-erklæringer om året og har ingen Crediwire-aftale endnu.`;
   } else if (m.notActivated > 0 && m.notActivated / Math.max(1, m.purchased) > 0.1) {
     head = `Aktivér de ${n0(m.notActivated)} virksomheder der mangler`;
     body = "De er allerede betalt for, så det kræver ingen ny aftale. Det er den hurtigste vej til mere værdi.";
   } else {
-    head = `Udvid til ${pct0(m.a.targetPct)} af erklæringerne`;
+    head = `Udvid til ${pct0(m.a.targetPct)} af klasse B-porteføljen`;
     body = `Det kræver at ${n0(m.additional)} flere virksomheder kommer på platformen.`;
   }
 
@@ -717,7 +721,7 @@ function renderFocus(m) {
 function renderBusinessCase(m) {
   document.getElementById("targetPctLabel").textContent = pct0(m.a.targetPct);
   document.getElementById("targetReadout").textContent =
-    `Svarer til ${n0(m.target)} af ${n0(m.declarations)} erklæringer`;
+    `Svarer til ${n0(m.target)} af ${n0(m.declarations)} klasse B-erklæringer`;
 
   const annualEl = document.getElementById("annualDefault");
   if (annualEl) annualEl.textContent = m.addressableAnnual
@@ -836,6 +840,7 @@ function renderDataStatus(m) {
       <tr><td>Aktive og købte virksomheder</td><td>${esc(conn?.snapshot_date || "ukendt")}</td></tr>
       <tr><td>Erklæringer, analyser og brugere</td><td>ao_master.csv</td></tr>
       <tr><td>Erklæringer, typer og regnskabsklasse</td><td>${esc(m.declSource)}</td></tr>
+      <tr><td>Uden for produktets rækkevidde</td><td>${n0(m.outsideScope)} erklæringer i klasse A, C og D</td></tr>
       <tr><td>Revisordækning</td><td>${n0(m.auditors.length)} af ${m.auditorsWithMne === null ? "?" : n0(m.auditorsWithMne)} revisorer med MNE-nummer</td></tr>
     </table>
     <br />
@@ -843,6 +848,12 @@ function renderDataStatus(m) {
     Anbefalingen er regelbaseret, ikke genereret af en AI-model. Er mere end 10%
     af de købte virksomheder ikke aktiveret, anbefales aktivering først. Ellers
     anbefales udvidelse til den valgte målsætning.
+    <br /><br />
+    <b>Afgrænsning til regnskabsklasse B</b><br />
+    Crediwire arbejder kun med regnskabsklasse B. Alle tal for potentiale,
+    målsætning og markedsdækning regnes derfor på klasse B alene. Huset laver
+    ${n0(m.declarationsAll)} erklæringer i alt, hvoraf ${n0(m.declarations)} er klasse B
+    og ${n0(m.outsideScope)} ligger i klasse A, C eller D og indgår ikke.
     <br /><br />
     <b>Kendte begrænsninger</b><br />
     Der findes kun ét snapshot af aktiverede virksomheder, så udvikling i
@@ -889,7 +900,7 @@ function selectFirm(cvr) {
     if (el) el.value = String(value);
   };
   set("countAnnual", decl ? num(decl.addressable_annual_reports) : 0);
-  set("countAssist", decl ? num(decl.assistance) : (master ? num(master.assistance) : 0));
+  set("countAssist", decl ? num(decl.class_b_assistance) : (master ? num(master.assistance) : 0));
   set("countReporting", 0);
 
   render();
