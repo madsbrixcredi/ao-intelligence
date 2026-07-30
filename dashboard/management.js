@@ -16,7 +16,7 @@ const FILES = {
   monthly: "monthly_activity.csv",
   risk: "implementation_risk.csv",
   users: "user_master.csv",
-  declClass: "ao_declaration_class.csv",
+  declarations: "ao_declarations.csv",
   auditors: "ao_auditor_coverage.csv",
 };
 
@@ -174,7 +174,7 @@ function buildMetrics() {
   const master = d.aoMaster.find((r) => cvrOf(r) === c) || null;
   const conn = d.connections.find((r) => cvrOf(r) === c) || null;
   const riskRow = d.risk.find((r) => cvrOf(r) === c) || null;
-  const cls = d.declClass.find((r) => cvrOf(r) === c) || null;
+  const decl = d.declarations.find((r) => cvrOf(r) === c) || null;
   const monthly = d.monthly.filter((r) => cvrOf(r) === c);
   const users = d.users.filter((r) => cvrOf(r) === c);
   const auditors = d.auditors.filter((r) => cvrOf(r) === c);
@@ -185,13 +185,21 @@ function buildMetrics() {
   const active = conn ? num(conn.active_erp_connections) : 0;
   const purchased = conn ? num(conn.purchased_companies) : 0;
   const hasAgreement = Boolean(conn);
-  const declarations = master ? num(master.total_declarations) : 0;
+  // Erklæringstal kommer fra det fuldstændige regionsudtræk (30. juli 2026).
+  // ao_master bruges kun som reserve for huse der ikke kunne navnematches.
+  const declarations = decl ? num(decl.declarations) : (master ? num(master.total_declarations) : 0);
+  const declSource = decl ? "Erklæringsregister 2025 til 2026" : "ao_master.csv";
   const analyses = master ? num(master.total_analyses) : 0;
   const activeUsers = master ? num(master.active_users) : 0;
   const analysedCompanies = master ? num(master.distinct_clients_analysed) : 0;
   const latestActivity = master?.latest_activity_date || "";
 
-  const byType = {
+  const byType = decl ? {
+    audits: num(decl.audits),
+    reviews: num(decl.reviews),
+    extended: num(decl.extended_reviews),
+    assistance: num(decl.assistance),
+  } : {
     audits: master ? num(master.audits) : 0,
     reviews: master ? num(master.reviews) : 0,
     extended: master ? num(master.extended_reviews) : 0,
@@ -235,11 +243,12 @@ function buildMetrics() {
     yoy: activityYoY(monthly),
     top3: topThreeShare(riskRow),
     riskLabel: riskRow?.implementation_risk || null,
-    classB: cls ? num(cls.class_b) : null,
-    classBTotal: cls ? num(cls.declarations_2025_2026) : null,
-    addressableAnnual: cls ? num(cls.addressable_annual_reports) : null,
-    classBAssistance: cls ? num(cls.class_b_assistance) : null,
-    classBExtended: cls ? num(cls.class_b_extended_review) : null,
+    classB: decl ? num(decl.class_b) : null,
+    addressableAnnual: decl ? num(decl.addressable_annual_reports) : null,
+    classBAssistance: decl ? num(decl.class_b_assistance) : null,
+    classBExtended: decl ? num(decl.class_b_extended_reviews) : null,
+    auditorsWithMne: decl ? num(decl.auditors_with_mne) : null,
+    declSource,
     auditors,
     users,
     a, vpc, target, additional,
@@ -819,13 +828,15 @@ function renderBusinessCase(m) {
 
 function renderDataStatus(m) {
   const conn = state.data.connections.find((r) => cvrOf(r) === m.cvr);
+  const masterRow = state.data.aoMaster.find((r) => cvrOf(r) === m.cvr);
+  const masterDecl = masterRow ? num(masterRow.total_declarations) : 0;
   document.getElementById("dataStatus").innerHTML = `
     <b>Kilder og forbehold</b>
     <table>
       <tr><td>Aktive og købte virksomheder</td><td>${esc(conn?.snapshot_date || "ukendt")}</td></tr>
       <tr><td>Erklæringer, analyser og brugere</td><td>ao_master.csv</td></tr>
-      <tr><td>Regnskabsklasse og årsrapportmarked</td><td>Erklæringsregister 2025 til 2026</td></tr>
-      <tr><td>Revisordækning</td><td>${n0(m.auditors.length)} revisorer med MNE-nummer</td></tr>
+      <tr><td>Erklæringer, typer og regnskabsklasse</td><td>${esc(m.declSource)}</td></tr>
+      <tr><td>Revisordækning</td><td>${n0(m.auditors.length)} af ${m.auditorsWithMne === null ? "?" : n0(m.auditorsWithMne)} revisorer med MNE-nummer</td></tr>
     </table>
     <br />
     <b>Sådan er anbefalingen dannet</b><br />
@@ -841,8 +852,8 @@ function renderDataStatus(m) {
     Revisordækning beregnes på klient-CVR og ikke på personnavn, fordi
     MNE-nummeret tilhører den underskrivende revisor, mens Crediwire-brugeren
     typisk er medarbejderen der udfører arbejdet.
-    ${m.classBTotal && m.declarations
-      ? `<br /><br />Erklæringsregistret opgør ${n0(m.classBTotal)} erklæringer for dette hus i 2025 til 2026, mens det samlede grundlag er ${n0(m.declarations)}. Forskellen skyldes forskellige perioder og er ikke fuldt afstemt.`
+    ${masterDecl && m.declarations && Math.abs(masterDecl - m.declarations) / m.declarations > 0.01
+      ? `<br /><br />Erklæringstallet ${n0(m.declarations)} kommer fra regionsudtrækket af 30. juli 2026, som dækker alle fem regioner og Grønland. Den tidligere kilde ao_master.csv opgør ${n0(masterDecl)} for dette hus. Forskellen er ${pct1(Math.abs(masterDecl - m.declarations) / masterDecl)} og skyldes at ao_master bygger på ældre udtræk fra 10. juni, hvor en stor del af juni-indberetningerne endnu ikke var offentliggjort.`
       : ""}`;
 }
 
@@ -870,15 +881,15 @@ function selectFirm(cvr) {
   state.cvr = cvr;
 
   const d = state.data;
-  const cls = d.declClass.find((r) => cvrOf(r) === cvr);
+  const decl = d.declarations.find((r) => cvrOf(r) === cvr);
   const master = d.aoMaster.find((r) => cvrOf(r) === cvr);
 
   const set = (id, value) => {
     const el = document.getElementById(id);
     if (el) el.value = String(value);
   };
-  set("countAnnual", cls ? num(cls.addressable_annual_reports) : 0);
-  set("countAssist", master ? num(master.assistance) : 0);
+  set("countAnnual", decl ? num(decl.addressable_annual_reports) : 0);
+  set("countAssist", decl ? num(decl.assistance) : (master ? num(master.assistance) : 0));
   set("countReporting", 0);
 
   render();
