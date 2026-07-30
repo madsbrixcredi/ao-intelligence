@@ -290,6 +290,13 @@ function readAssumptions() {
 
 const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
 
+/** Samme skala for både den samlede score og hver delscore. */
+const scoreBand = (score) =>
+  score >= 90 ? { cls: "excellent", label: "Excellent" }
+  : score >= 75 ? { cls: "strong", label: "Strong" }
+  : score >= 60 ? { cls: "developing", label: "Developing" }
+  : { cls: "attention", label: "Needs attention" };
+
 /** Opremsning på dansk: "a, b og c". */
 const joinDa = (arr) =>
   arr.length <= 1 ? (arr[0] || "") : `${arr.slice(0, -1).join(", ")} og ${arr.at(-1)}`;
@@ -380,10 +387,7 @@ function healthScore(m) {
 
   const score = Math.round(usable.reduce((s, c) => s + c.score * (c.weight / totalWeight), 0));
 
-  const band = score >= 90 ? { cls: "excellent", label: "Excellent" }
-    : score >= 75 ? { cls: "strong", label: "Strong" }
-    : score >= 60 ? { cls: "developing", label: "Developing" }
-    : { cls: "attention", label: "Needs attention" };
+  const band = scoreBand(score);
 
   return {
     score, band, comp,
@@ -413,51 +417,62 @@ function render() {
   renderDataStatus(m);
 }
 
+/** Ring som WHOOP Recovery Score. Farven bærer beskeden, tallet står i midten. */
+function scoreRing(score, band) {
+  const R = 78, C = 2 * Math.PI * R;
+  const pct = score === null ? 0 : clamp(score, 0, 100) / 100;
+  const color = band ? `var(--band-${band.cls})` : "var(--line-2)";
+  return `
+    <div class="ring-wrap">
+      <svg class="ring" viewBox="0 0 180 180" role="img" aria-label="${score === null ? "Ingen score" : `Score ${score} af 100`}">
+        <circle cx="90" cy="90" r="${R}" class="ring-track" />
+        <circle cx="90" cy="90" r="${R}" class="ring-fill"
+          style="stroke:${color}; stroke-dasharray:${C.toFixed(1)}; stroke-dashoffset:${(C * (1 - pct)).toFixed(1)}" />
+      </svg>
+      <div class="ring-center">
+        ${score === null
+          ? `<span class="ring-none">Ingen<br />score</span>`
+          : `<strong class="ring-score" style="color:${color}">${score}</strong>
+             <span class="ring-band" style="color:${color}">${esc(band.label)}</span>`}
+      </div>
+    </div>`;
+}
+
 function renderHealth(m) {
   const h = healthScore(m);
   const el = document.getElementById("healthRows");
 
-  if (h.score === null) {
-    el.innerHTML = `
-      <div class="health-main">
-        <div class="score-block no-score">
-          <strong class="score-none">${m.hasAgreement ? "Ikke nok data" : "Ikke kunde endnu"}</strong>
-          <span class="status na">Ingen score</span>
-        </div>
-        <div class="sub-scores">
-          ${h.comp.map((c) => `
-            <div class="sub ${c.score === null ? "is-na" : ""}">
-              <span class="sub-label">${esc(c.label)}</span>
-              <div class="sub-bar"><i style="width:${c.score === null ? 0 : c.score.toFixed(0)}%"></i></div>
-              <span class="sub-val">${c.score === null ? "n/a" : Math.round(c.score)}</span>
-            </div>`).join("")}
-        </div>
+  const subs = h.comp.map((c) => {
+    const cls = c.score === null ? null : scoreBand(c.score).cls;
+    const col = cls ? `var(--band-${cls})` : "var(--line-2)";
+    return `
+    <div class="sub ${c.score === null ? "is-na" : ""}">
+      <span class="sub-label">${esc(c.label)}</span>
+      <div class="sub-bar"><i style="width:${c.score === null ? 0 : c.score.toFixed(0)}%; background:${col}"></i></div>
+      <span class="sub-val" style="${cls ? `color:${col}` : ""}">${c.score === null ? "n/a" : Math.round(c.score)}</span>
+    </div>`;
+  }).join("");
+
+  const note = h.score === null
+    ? `${esc(joinDa(h.excluded))} kan ikke beregnes for dette hus. Der er kun grundlag for ${pct0(h.coverage)} af scorens vægt, og en samlet score ville derfor sige mere om manglende data end om huset.`
+    : h.reweighted
+      ? `${esc(joinDa(h.excluded))} kan ikke beregnes for dette hus. Vægten er fordelt på de øvrige delscorer.`
+      : "";
+
+  el.innerHTML = `
+    <div class="health-main">
+      ${scoreRing(h.score, h.band)}
+      <div class="health-right">
+        <p class="health-lead">${esc(healthLead(m, h))}</p>
+        <div class="sub-scores">${subs}</div>
       </div>
-      <p class="muted small health-note">${esc(joinDa(h.excluded))} kan ikke beregnes for dette hus. Der er kun grundlag for ${pct0(h.coverage)} af scorens vægt, og en samlet score ville derfor sige mere om manglende data end om huset.</p>`;
-  } else {
-    el.innerHTML = `
-      <div class="health-main">
-        <div class="score-block">
-          <strong class="score">${h.score}</strong>
-          <span class="score-max">af 100</span>
-          <span class="status ${h.band.cls}">${h.band.label}</span>
-        </div>
-        <div class="sub-scores">
-          ${h.comp.map((c) => `
-            <div class="sub ${c.score === null ? "is-na" : ""}">
-              <span class="sub-label">${esc(c.label)}</span>
-              <div class="sub-bar"><i style="width:${c.score === null ? 0 : c.score.toFixed(0)}%"></i></div>
-              <span class="sub-val">${c.score === null ? "n/a" : Math.round(c.score)}</span>
-            </div>`).join("")}
-        </div>
-      </div>
-      ${h.reweighted ? `<p class="muted small health-note">${esc(joinDa(h.excluded))} kan ikke beregnes for dette hus. Vægten er fordelt på de øvrige delscorer.</p>` : ""}`;
-  }
+    </div>
+    ${note ? `<p class="muted small health-note">${note}</p>` : ""}`;
 
   document.getElementById("healthHelp").innerHTML = `
     <b>Sådan beregnes scoren</b><br />
     Fem delscorer, hver med sin egen kurve og vægt. Mangler en delscore, fordeles
-    dens vægt på de øvrige, så scoren stadig kan sammenlignes.
+    dens vægt på de øvrige. Kan under 60% af vægten beregnes, vises ingen score.
     <table>
       ${h.comp.map((c) => `<tr>
         <td><b>${esc(c.label)}</b> · vægt ${pct0(c.weight)}<br />${esc(c.curve)}<br /><span style="color:var(--muted)">${esc(c.basis)}</span></td>
@@ -473,6 +488,20 @@ function renderHealth(m) {
     Der findes kun ét snapshot af aktiverede virksomheder, dateret
     ${esc(state.data.connections.find((r) => cvrOf(r) === m.cvr)?.snapshot_date || "ukendt")}.
     En sammenligning med sidste år ville derfor være et gæt.`;
+}
+
+/** Én sætning der siger hvad scoren betyder, og hvad der trækker mest ned. */
+function healthLead(m, h) {
+  if (h.score === null) {
+    return m.hasAgreement
+      ? "Der er ikke nok datagrundlag til at give huset en samlet score."
+      : "Huset er ikke kunde endnu, så der er intet at score på.";
+  }
+  const usable = h.comp.filter((c) => c.score !== null);
+  const weakest = usable.slice().sort((a, b) => a.score - b.score)[0];
+  const strongest = usable.slice().sort((a, b) => b.score - a.score)[0];
+  return `${strongest.label} trækker op med ${Math.round(strongest.score)} point. `
+    + `${weakest.label} er det svageste med ${Math.round(weakest.score)} og er der, hvor der er mest at hente.`;
 }
 
 /**
