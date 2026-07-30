@@ -435,12 +435,12 @@ b, strong { font-weight: 600; }
 /* --- Business case ----------------------------------------------------- */
 .bc-grid {
   display: grid;
-  grid-template-columns: minmax(320px, 380px) 1fr;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
   gap: 14px;
   align-items: start;
 }
 
-.bc-result { display: grid; gap: 14px; }
+.bc-assumptions-wrap { display: block; }
 
 .fld { display: grid; gap: 6px; margin-bottom: 14px; }
 .fld > span { font-size: 13px; color: var(--muted); }
@@ -581,3 +581,117 @@ b, strong { font-weight: 600; }
 .fld-grid .fld > em { min-height: 30px; }
 .assumptions > .fld:first-of-type { margin-top: 16px; }
 .hero > strong { word-break: keep-all; }
+
+/* ==========================================================================
+   Health score
+   ========================================================================== */
+.health-main {
+  display: grid;
+  grid-template-columns: minmax(140px, 168px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.score-block {
+  display: grid;
+  justify-items: start;
+  gap: 2px;
+  padding-right: 24px;
+  border-right: 1px solid var(--line);
+}
+
+.score-block .score {
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.score-block .score-max { font-size: 12.5px; color: var(--muted); margin-bottom: 8px; }
+
+.sub-scores { display: grid; gap: 9px; min-width: 0; }
+
+.sub {
+  display: grid;
+  grid-template-columns: minmax(110px, 148px) minmax(0, 1fr) 34px;
+  gap: 12px;
+  align-items: center;
+}
+
+.sub-label { font-size: 13px; color: var(--muted); }
+
+.sub-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.sub-bar > i { display: block; height: 100%; border-radius: 999px; background: var(--accent); }
+
+.sub-val {
+  font-size: 13px;
+  font-weight: 600;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.sub.is-na .sub-val { color: var(--muted); font-weight: 400; }
+.sub.is-na .sub-bar { opacity: 0.45; }
+
+.health-note { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+
+.help table tr td { padding: 6px 0; }
+.help table tr:not(:last-child) td { border-bottom: 1px solid var(--line); }
+
+/* ==========================================================================
+   Aktivitet
+   ========================================================================== */
+.yoy-change { font-size: 21px; font-weight: 600; letter-spacing: -0.02em; }
+.yoy-change.up { color: var(--pos); }
+.yoy-change.down { color: var(--neg); }
+.bar > i.faded { opacity: 0.42; }
+.footnote { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); }
+
+/* ==========================================================================
+   Forudsætninger · bredt kort så felterne har plads
+   ========================================================================== */
+.assumptions .fld-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0 18px;
+}
+
+.assumptions > .fld:first-of-type {
+  max-width: 520px;
+  margin-top: 16px;
+}
+
+/* Alle grid- og flexbørn skal kunne krympe, ellers stikker indhold ud */
+.bc-grid > *, .assumptions, .fld, .fld-grid, .more, .kpi, .card, .health-main > * {
+  min-width: 0;
+}
+
+.more > div, .more .fld-grid { min-width: 0; }
+
+@media (max-width: 980px) {
+  .health-main { grid-template-columns: 1fr; gap: 18px; }
+  .score-block { border-right: none; border-bottom: 1px solid var(--line); padding: 0 0 14px; }
+}
+
+/* Business case · tabel og fordeling stables, så der ikke opstår tomme huller
+   når fordelingen kun har én kilde. */
+.bc-grid { grid-template-columns: minmax(0, 1fr); }
+
+/* Labels der brører to linjer må ikke forskyde deres inputfelt */
+.assumptions .fld > span { min-height: 40px; align-items: flex-start; }
+.assumptions .fld > em { min-height: 0; margin-top: 2px; }
+
+/* Health uden score */
+.score-block.no-score { gap: 8px; }
+.score-none {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}

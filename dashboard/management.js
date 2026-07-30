@@ -154,6 +154,14 @@ function activityYoY(rows) {
   };
 }
 
+/** Dage siden en ISO-dato. Null hvis datoen mangler eller ikke kan læses. */
+function daysSince(isoDate) {
+  if (!isoDate) return null;
+  const then = Date.parse(isoDate);
+  if (!Number.isFinite(then)) return null;
+  return Math.max(0, Math.round((Date.now() - then) / 86400000));
+}
+
 const MONTHS = ["januar", "februar", "marts", "april", "maj", "juni", "juli", "august", "september", "oktober", "november", "december"];
 
 /* ==========================================================================
@@ -219,6 +227,7 @@ function buildMetrics() {
   return {
     name, cvr: c, hasAgreement,
     active, purchased, declarations, analyses, activeUsers, analysedCompanies, latestActivity, byType,
+    daysSinceActivity: daysSince(latestActivity),
     activationRate: activationRate(active, purchased),
     marketCoverage: marketCoverage(active, declarations),
     notActivated: Math.max(0, purchased - active),
@@ -272,77 +281,115 @@ function readAssumptions() {
 }
 
 /* ==========================================================================
-   HEALTH · fire sporbare vurderinger, ingen sammensat score
-   Der findes kun ét snapshot af aktiverede virksomheder (2026-07-02), så en
-   samlet score med årstrend kan ikke beregnes uden at opdigte tal.
+   HEALTH SCORE · 0 til 100
+   Sammensat af fem delscorer der alle kan beregnes fra data. Hver delscore
+   har en dokumenteret kurve, så tallet kan efterprøves og diskuteres.
+   Der vises ingen udvikling på scoren, fordi der kun findes ét snapshot af
+   aktiverede virksomheder. En årstrend ville være opdigtet.
    ========================================================================== */
-const THRESHOLDS = {
-  activation: [[0.9, "excellent", "Excellent"], [0.75, "strong", "Strong"], [0.5, "developing", "Developing"], [0, "attention", "Needs attention"]],
-  activity:   [[0.25, "excellent", "Excellent"], [0.05, "strong", "Strong"], [-0.05, "developing", "Developing"], [-Infinity, "attention", "Needs attention"]],
-  spread:     [[0, "excellent", "Excellent"]], // håndteres særskilt, lavere er bedre
-  coverage:   [[0.25, "excellent", "Excellent"], [0.1, "strong", "Strong"], [0.03, "developing", "Developing"], [0, "attention", "Needs attention"]],
-};
 
-/** Returnerer { cls, grade }. Feltet heder bevidst "grade" og ikke "label",
- *  så det ikke overskriver områdets navn når objektet spredes. */
-function grade(scale, value) {
-  if (value === null || value === undefined) return { cls: "na", grade: "Ikke tilgængelig" };
-  for (const [min, cls, label] of THRESHOLDS[scale]) if (value >= min) return { cls, grade: label };
-  return { cls: "attention", grade: "Needs attention" };
-}
+const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
 
-function healthRows(m) {
-  const rows = [];
+/** Opremsning på dansk: "a, b og c". */
+const joinDa = (arr) =>
+  arr.length <= 1 ? (arr[0] || "") : `${arr.slice(0, -1).join(", ")} og ${arr.at(-1)}`;
 
-  // Aktivering. Over 100% betyder at der er flere aktive end købte, altså at
-  // de to kilder ikke stemmer. Det er ikke "Excellent", det er et dataforhold.
-  if (m.activationRate === null) {
-    rows.push({ label: "Aktivering", cls: "na", grade: "Ikke kunde endnu",
-      evidence: `Ingen Crediwire-aftale registreret · huset laver ${n0(m.declarations)} erklæringer` });
-  } else if (m.activationRate > 1.01) {
-    rows.push({ label: "Aktivering", cls: "developing", grade: "Skal afstemmes",
-      evidence: `${n0(m.active)} aktive mod ${n0(m.purchased)} købte. Flere er i brug end der er købt, så aftaletallet skal afstemmes.` });
-  } else {
-    rows.push({ label: "Aktivering", ...grade("activation", m.activationRate),
-      evidence: `${pct1(m.activationRate)} af aftalen i brug · ${n0(m.active)} af ${n0(m.purchased)}` });
-  }
+/** Delscorer. Returnerer null når datagrundlaget mangler, så vægten kan flyttes. */
+function healthComponents(m) {
+  const comp = [];
 
-  rows.push({
-    label: "Aktivitet",
-    ...grade("activity", m.yoy?.change ?? null),
-    evidence: m.yoy && m.yoy.change !== null
-      ? `${m.yoy.change >= 0 ? "+" : ""}${pct0(m.yoy.change)} år mod år · ${MONTHS[m.yoy.monthFrom - 1]} til ${MONTHS[m.yoy.monthTo - 1]}`
-      : "For lidt historik til at sammenligne år mod år",
+  // 1) Aktivering · hvor stor en del af det købte er i brug. 100% = fuld score.
+  const activationUnreliable = m.activationRate !== null && m.activationRate > 1.01;
+  comp.push({
+    key: "aktivering", label: "Aktivering", weight: 0.25,
+    // Er der flere aktive end købte, stemmer kilderne ikke. Så udelades delscoren
+    // i stedet for at give topkarakter på et forkert grundlag.
+    score: m.activationRate === null || activationUnreliable ? null : clamp(m.activationRate, 0, 1) * 100,
+    basis: m.activationRate === null
+      ? "Ingen aftale registreret"
+      : activationUnreliable
+        ? `${n0(m.active)} aktive mod kun ${n0(m.purchased)} købte · aftaletallet skal afstemmes`
+        : `${n0(m.active)} af ${n0(m.purchased)} købte virksomheder er i brug`,
+    curve: "100% af aftalen i brug giver 100 point. Halvdelen giver 50.",
   });
 
-  // Organisatorisk bredde følger husets egen risikoklassifikation fra
-  // implementation_risk.csv, så dashboardet ikke kan modsige sin egen model.
-  const RISK_GRADE = {
-    LOW: { cls: "excellent", grade: "Excellent" },
-    MEDIUM: { cls: "developing", grade: "Developing" },
-    HIGH: { cls: "attention", grade: "Needs attention" },
+  // 2) Vækst · analyser år mod år. Uændret giver 50, +50% eller mere giver 100.
+  const g = m.yoy?.change ?? null;
+  comp.push({
+    key: "vaekst", label: "Vækst", weight: 0.20,
+    score: g === null ? null : clamp((g + 0.5) * 100, 0, 100),
+    basis: g === null
+      ? "For lidt historik til at sammenligne år mod år"
+      : `${g >= 0 ? "+" : ""}${pct0(g)} i analyser mod samme periode sidste år`,
+    curve: "Uændret giver 50 point. +50% eller mere giver 100. −50% eller værre giver 0.",
+  });
+
+  // 3) Udnyttelse · hvor dybt platformen bruges pr. virksomhed.
+  const apc = m.analysesPerCompany;
+  comp.push({
+    key: "udnyttelse", label: "Udnyttelse", weight: 0.20,
+    score: apc === null ? null : clamp(apc / 12, 0, 1) * 100,
+    basis: apc === null
+      ? "Ingen aktive virksomheder at måle på"
+      : `${nf1.format(apc)} analyser pr. aktiv virksomhed`,
+    curve: "12 analyser pr. virksomhed om året, altså én om måneden, giver 100 point.",
+  });
+
+  // 4) Brugerbredde · hvor bredt brugen er fordelt. Omvendt af koncentration.
+  const hasUsers = m.activeUsers > 0 && m.top3 !== null;
+  comp.push({
+    key: "bredde", label: "Brugerbredde", weight: 0.15,
+    score: hasUsers ? clamp((1 - m.top3) / 0.67, 0, 1) * 100 : null,
+    basis: hasUsers
+      ? `${n0(m.activeUsers)} aktive brugere · de tre mest aktive står for ${pct1(m.top3)}`
+      : "Ingen brugere har downloadet en analyse endnu",
+    curve: "Står de tre mest aktive for en tredjedel eller mindre, gives 100 point. Står de for alt, gives 0.",
+  });
+
+  // 5) Markedsdækning · hvor stor en del af husets erklæringer der er dækket.
+  comp.push({
+    key: "daekning", label: "Markedsdækning", weight: 0.20,
+    score: m.marketCoverage === null ? null : clamp(m.marketCoverage / 0.25, 0, 1) * 100,
+    basis: m.marketCoverage === null
+      ? "Ingen erklæringsdata"
+      : `${n0(m.active)} af ${n0(m.declarations)} erklæringer er dækket`,
+    curve: "25% dækning af erklæringerne giver 100 point.",
+  });
+
+  return comp;
+}
+
+/** Vægtet samlet score. Mangler en delscore, fordeles vægten på de øvrige. */
+const MIN_WEIGHT_FOR_SCORE = 0.6;
+
+function healthScore(m) {
+  const comp = healthComponents(m);
+  const usable = comp.filter((c) => c.score !== null);
+  const totalWeight = usable.reduce((s, c) => s + c.weight, 0);
+
+  // Kan under 60% af vægten beregnes, ville en samlet score sige mere om
+  // manglende data end om huset. Så viser vi ingen score.
+  if (totalWeight < MIN_WEIGHT_FOR_SCORE) {
+    return {
+      score: null, band: null, comp,
+      excluded: comp.filter((c) => c.score === null).map((c) => c.label),
+      tooLittleData: true,
+      coverage: totalWeight,
+    };
+  }
+
+  const score = Math.round(usable.reduce((s, c) => s + c.score * (c.weight / totalWeight), 0));
+
+  const band = score >= 90 ? { cls: "excellent", label: "Excellent" }
+    : score >= 75 ? { cls: "strong", label: "Strong" }
+    : score >= 60 ? { cls: "developing", label: "Developing" }
+    : { cls: "attention", label: "Needs attention" };
+
+  return {
+    score, band, comp,
+    excluded: comp.filter((c) => c.score === null).map((c) => c.label),
+    reweighted: usable.length < comp.length,
   };
-  if (m.activeUsers === 0) {
-    rows.push({ label: "Organisatorisk bredde", cls: "na", grade: "Ingen brugere endnu",
-      evidence: "Ingen har downloadet en dataanalyse, så brugen kan ikke fordeles" });
-  } else {
-    const rg = RISK_GRADE[String(m.riskLabel || "").toUpperCase()] || { cls: "na", grade: "Ikke tilgængelig" };
-    rows.push({ label: "Organisatorisk bredde", ...rg,
-      evidence: `${n0(m.activeUsers)} aktive brugere · de tre mest aktive står for ${pct1(m.top3)} af analyserne` });
-  }
-
-  // Markedsdækning giver kun mening som vurdering hvis huset er kunde.
-  if (!m.hasAgreement || m.declarations === 0) {
-    rows.push({ label: "Markedsdækning", cls: "na", grade: "Ikke kunde endnu",
-      evidence: m.declarations
-        ? `${n0(m.declarations)} erklæringer om året er potentialet`
-        : "Ingen erklæringsdata for dette hus" });
-  } else {
-    rows.push({ label: "Markedsdækning", ...grade("coverage", m.marketCoverage),
-      evidence: `${pct1(m.marketCoverage)} af ${n0(m.declarations)} erklæringer kører på Crediwire` });
-  }
-
-  return rows;
 }
 
 /* ==========================================================================
@@ -367,29 +414,72 @@ function render() {
 }
 
 function renderHealth(m) {
-  document.getElementById("healthRows").innerHTML = healthRows(m)
-    .map((r) => `<div class="health-row">
-      <span>${esc(r.label)}</span>
-      <span class="status ${r.cls}">${esc(r.grade)}</span>
-      <span class="evidence">${esc(r.evidence)}</span>
-    </div>`)
-    .join("");
+  const h = healthScore(m);
+  const el = document.getElementById("healthRows");
+
+  if (h.score === null) {
+    el.innerHTML = `
+      <div class="health-main">
+        <div class="score-block no-score">
+          <strong class="score-none">${m.hasAgreement ? "Ikke nok data" : "Ikke kunde endnu"}</strong>
+          <span class="status na">Ingen score</span>
+        </div>
+        <div class="sub-scores">
+          ${h.comp.map((c) => `
+            <div class="sub ${c.score === null ? "is-na" : ""}">
+              <span class="sub-label">${esc(c.label)}</span>
+              <div class="sub-bar"><i style="width:${c.score === null ? 0 : c.score.toFixed(0)}%"></i></div>
+              <span class="sub-val">${c.score === null ? "n/a" : Math.round(c.score)}</span>
+            </div>`).join("")}
+        </div>
+      </div>
+      <p class="muted small health-note">${esc(joinDa(h.excluded))} kan ikke beregnes for dette hus. Der er kun grundlag for ${pct0(h.coverage)} af scorens vægt, og en samlet score ville derfor sige mere om manglende data end om huset.</p>`;
+  } else {
+    el.innerHTML = `
+      <div class="health-main">
+        <div class="score-block">
+          <strong class="score">${h.score}</strong>
+          <span class="score-max">af 100</span>
+          <span class="status ${h.band.cls}">${h.band.label}</span>
+        </div>
+        <div class="sub-scores">
+          ${h.comp.map((c) => `
+            <div class="sub ${c.score === null ? "is-na" : ""}">
+              <span class="sub-label">${esc(c.label)}</span>
+              <div class="sub-bar"><i style="width:${c.score === null ? 0 : c.score.toFixed(0)}%"></i></div>
+              <span class="sub-val">${c.score === null ? "n/a" : Math.round(c.score)}</span>
+            </div>`).join("")}
+        </div>
+      </div>
+      ${h.reweighted ? `<p class="muted small health-note">${esc(joinDa(h.excluded))} kan ikke beregnes for dette hus. Vægten er fordelt på de øvrige delscorer.</p>` : ""}`;
+  }
 
   document.getElementById("healthHelp").innerHTML = `
-    <b>Health er fire selvstændige vurderinger, ikke én samlet score.</b><br />
-    En samlet score ville kræve historik og et samlet medarbejdertal. Der findes
-    kun ét snapshot af aktiverede virksomheder, og vi kender ikke husets samlede
-    antal medarbejdere. Derfor vurderes hvert område for sig, og hvert udsagn kan
-    spores til et tal i data.
+    <b>Sådan beregnes scoren</b><br />
+    Fem delscorer, hver med sin egen kurve og vægt. Mangler en delscore, fordeles
+    dens vægt på de øvrige, så scoren stadig kan sammenlignes.
     <table>
-      <tr><td>Aktivering · Excellent</td><td>90% eller mere af aftalen i brug</td></tr>
-      <tr><td>Aktivitet · Excellent</td><td>Vækst på 25% eller mere år mod år</td></tr>
-      <tr><td>Organisatorisk bredde · Excellent</td><td>De tre mest aktive står for 40% eller mindre</td></tr>
-      <tr><td>Markedsdækning · Excellent</td><td>25% eller mere af erklæringerne</td></tr>
-    </table>`;
+      ${h.comp.map((c) => `<tr>
+        <td><b>${esc(c.label)}</b> · vægt ${pct0(c.weight)}<br />${esc(c.curve)}<br /><span style="color:var(--muted)">${esc(c.basis)}</span></td>
+        <td>${c.score === null ? "ikke beregnet" : Math.round(c.score) + " point"}</td>
+      </tr>`).join("")}
+      ${h.score !== null ? `<tr><td><b>Samlet</b></td><td><b>${h.score} · ${esc(h.band.label)}</b></td></tr>` : ""}
+    </table>
+    <br />
+    <b>Niveauer</b><br />
+    90 til 100 Excellent · 75 til 89 Strong · 60 til 74 Developing · under 60 Needs attention
+    <br /><br />
+    <b>Hvorfor der ikke vises udvikling på scoren</b><br />
+    Der findes kun ét snapshot af aktiverede virksomheder, dateret
+    ${esc(state.data.connections.find((r) => cvrOf(r) === m.cvr)?.snapshot_date || "ukendt")}.
+    En sammenligning med sidste år ville derfor være et gæt.`;
 }
 
-
+/**
+ * KPI-rækken viser kun tal der ikke står andre steder på siden.
+ * Aktivering, vækst, udnyttelse, brugerbredde og dækning ligger i Health.
+ * Årstal og analysetal ligger i aktivitetskortet.
+ */
 function renderKpis(m) {
   const cards = [];
 
@@ -397,37 +487,33 @@ function renderKpis(m) {
     <span>Nettoværdi skabt <span class="chip chip-assume">Antagelse</span></span>
     <strong>${m.active > 0 ? money(m.netToday) : "Ingen endnu"}</strong>
     <em>${m.active > 0
-      ? `${money(m.createdToday)} skabt værdi minus ${money(m.investToday)} investering`
+      ? `Efter investering i Crediwire`
       : "Ingen aktive virksomheder at regne værdi på endnu"}</em>
   </article>`);
 
+  const belowToday = m.target <= m.active;
   cards.push(`<article class="kpi">
     <span>Uudnyttet nettoværdi <span class="chip chip-assume">Antagelse</span></span>
-    <strong>${money(m.unrealizedNet)}</strong>
-    <em>Ved ${pct0(m.a.targetPct)} af erklæringerne · kræver ${n0(m.additional)} flere virksomheder</em>
+    <strong>${belowToday ? "Allerede nået" : money(m.unrealizedNet)}</strong>
+    <em>${belowToday
+      ? `Målsætningen ligger under antallet af aktive virksomheder`
+      : `Ved den valgte målsætning nedenfor`}</em>
   </article>`);
 
-  // Aktivering over 100% betyder at kilderne ikke stemmer. Vi viser ikke en
-  // procent der ser ud som en topkarakter, når den i virkeligheden er et
-  // dataforhold der skal afstemmes.
-  const overActivated = m.activationRate !== null && m.activationRate > 1.01;
-  const arCls = m.activationRate === null ? "" : ` style="width:${Math.min(100, m.activationRate * 100).toFixed(1)}%"`;
   cards.push(`<article class="kpi">
-    <span>Aktivering <span class="chip chip-measured">Målt</span></span>
-    <strong>${m.activationRate === null ? "Ingen aftale" : overActivated ? "Skal afstemmes" : pct1(m.activationRate)}</strong>
-    ${m.activationRate === null || overActivated ? "" : `<div class="bar pos"><i${arCls}></i></div>`}
-    <em>${m.activationRate === null
-      ? `${n0(m.declarations)} erklæringer om året og ingen aftale endnu`
-      : overActivated
-        ? `${n0(m.active)} aktive mod kun ${n0(m.purchased)} købte · aftaletallet skal afstemmes`
-        : `${n0(m.active)} af ${n0(m.purchased)} virksomheder aktiveret`}</em>
+    <span>Dataanalyser <span class="chip chip-measured">Målt</span></span>
+    <strong>${n0(m.analyses)}</strong>
+    <em>${m.analysedCompanies ? `Fordelt på ${n0(m.analysedCompanies)} virksomheder` : "Ingen virksomheder analyseret endnu"}</em>
   </article>`);
 
-  const ch = m.yoy?.change;
   cards.push(`<article class="kpi">
-    <span>Aktivitet <span class="chip chip-measured">Målt</span></span>
-    <strong>${ch === null || ch === undefined ? "Ikke nok historik" : `${ch >= 0 ? "+" : ""}${pct0(ch)}`}</strong>
-    <em>${m.yoy ? `${MONTHS[m.yoy.monthFrom - 1]} til ${MONTHS[m.yoy.monthTo - 1]} ${m.yoy.currentYear} mod ${m.yoy.previousYear}` : "Ingen månedsdata"}</em>
+    <span>Aktive revisorer <span class="chip chip-measured">Målt</span></span>
+    <strong>${n0(m.activeUsers)}</strong>
+    <em>${m.daysSinceActivity === null
+      ? "Ingen registreret aktivitet"
+      : m.daysSinceActivity <= 31
+        ? "Aktive inden for den seneste måned"
+        : `Seneste aktivitet for ${n0(m.daysSinceActivity)} dage siden`}</em>
   </article>`);
 
   document.getElementById("kpiRow").innerHTML = cards.join("");
@@ -437,16 +523,17 @@ function renderRecommendation(m) {
   const el = document.getElementById("recommendation");
 
   // Regelbaseret. Reglen står i datastatus, så den kan efterprøves.
+  // Beløbet gentages ikke her, det står i KPI-rækken.
   let head, body;
   if (!m.hasAgreement) {
     head = "Start med en aftale";
-    body = `Huset laver ${n0(m.declarations)} erklæringer om året og har ingen Crediwire-aftale. Ved ${pct0(m.a.targetPct)} dækning svarer det til ${n0(m.target)} virksomheder.`;
+    body = `Huset laver ${n0(m.declarations)} erklæringer om året og har ingen Crediwire-aftale endnu.`;
   } else if (m.notActivated > 0 && m.notActivated / Math.max(1, m.purchased) > 0.1) {
     head = `Aktivér de ${n0(m.notActivated)} virksomheder der mangler`;
-    body = `De er allerede betalt for. Værdien er ${money(m.notActivated * m.vpc)} om året, og det kræver ingen ny aftale`;
+    body = "De er allerede betalt for, så det kræver ingen ny aftale. Det er den hurtigste vej til mere værdi.";
   } else {
     head = `Udvid til ${pct0(m.a.targetPct)} af erklæringerne`;
-    body = `Det svarer til ${n0(m.target)} virksomheder, altså ${n0(m.additional)} flere end i dag, og øger nettoværdien med ${money(m.unrealizedNet)}`;
+    body = `Det kræver at ${n0(m.additional)} flere virksomheder kommer på platformen.`;
   }
 
   el.innerHTML = `
@@ -458,11 +545,12 @@ function renderRecommendation(m) {
     <button class="btn" data-goto="business">Se business case</button>`;
 }
 
+/** Aktivitetskortet er det eneste sted årstal og analysetal pr. år står. */
 function renderActivity(m) {
   const el = document.getElementById("activityCard");
   if (!m.yoy) {
-    el.innerHTML = `<div class="card-head"><h2>Aktivitet</h2></div>
-      <p class="muted small">Der er ikke nok månedsdata til at sammenligne år mod år.</p>`;
+    el.innerHTML = `<div class="card-head"><h2>Aktivitet over tid</h2></div>
+      <p class="muted small">Der er ikke nok månedsdata til at sammenligne år mod år for dette hus.</p>`;
     return;
   }
   const y = m.yoy;
@@ -473,9 +561,9 @@ function renderActivity(m) {
     <div class="card-head">
       <div>
         <h2>${growing ? "Aktiviteten vokser" : "Aktiviteten falder"}</h2>
-        <p class="muted small">${MONTHS[y.monthFrom - 1]} til ${MONTHS[y.monthTo - 1]}</p>
+        <p class="muted small">${MONTHS[y.monthFrom - 1]} til ${MONTHS[y.monthTo - 1]}, år mod år</p>
       </div>
-      <strong style="font-size:19px">${y.change === null ? "—" : `${growing ? "+" : ""}${pct0(y.change)}`}</strong>
+      <strong class="yoy-change ${growing ? "up" : "down"}">${y.change === null ? "—" : `${growing ? "+" : ""}${pct0(y.change)}`}</strong>
     </div>
     <div class="yoy">
       <div class="yoy-row">
@@ -484,15 +572,10 @@ function renderActivity(m) {
       </div>
       <div class="yoy-row">
         <div><span class="yr">${y.previousYear}</span><span class="val">${n0(y.previous)} analyser</span></div>
-        <div class="bar"><i style="width:${(y.previous / max * 100).toFixed(1)}%;opacity:.45"></i></div>
+        <div class="bar"><i class="faded" style="width:${(y.previous / max * 100).toFixed(1)}%"></i></div>
       </div>
     </div>
-    <div class="mini-stats">
-      <div><span>Analyser i alt</span><b>${n0(m.analyses)}</b></div>
-      <div><span>Aktive revisorer</span><b>${n0(m.activeUsers)}</b></div>
-      <div><span>Pr. virksomhed</span><b>${m.analysesPerCompany === null ? "—" : nf1.format(m.analysesPerCompany)}</b></div>
-    </div>
-    <p class="muted small" style="margin-top:12px">${MONTHS[y.excludedMonth - 1]} er udeladt som ufuldstændig måned. Revisorernes aktivitet er sæsonbetonet, så en delvis måned ville ligne tilbagegang.</p>`;
+    <p class="muted small footnote">${MONTHS[y.excludedMonth - 1]} er udeladt som ufuldstændig måned. Aktiviteten er sæsonbetonet, så en delvis måned ville ligne tilbagegang.</p>`;
 }
 
 /* ---------- fokuspunkter, delt mellem Overblik og Fokus ---------- */
@@ -596,7 +679,7 @@ function renderFocus(m) {
 function renderBusinessCase(m) {
   document.getElementById("targetPctLabel").textContent = pct0(m.a.targetPct);
   document.getElementById("targetReadout").textContent =
-    `${n0(m.target)} virksomheder af ${n0(m.declarations)} erklæringer · ${n0(m.additional)} skal aktiveres`;
+    `Svarer til ${n0(m.target)} af ${n0(m.declarations)} erklæringer`;
 
   const annualEl = document.getElementById("annualDefault");
   if (annualEl) annualEl.textContent = m.addressableAnnual
@@ -614,9 +697,9 @@ function renderBusinessCase(m) {
     ? `<span>Målsætning ved ${pct0(m.a.targetPct)} af erklæringerne</span>
        <strong>Allerede nået</strong>
        <em>Målet svarer til ${n0(m.target)} virksomheder, og der er allerede ${n0(m.active)} aktive. Sæt målsætningen højere for at se et potentiale.</em>`
-    : `<span>Uudnyttet nettoværdi ved ${pct0(m.a.targetPct)} af erklæringerne</span>
+    : `<span>Uudnyttet nettoværdi</span>
        <strong>${money(m.unrealizedNet)}</strong>
-       <em>Kræver at ${n0(m.additional)} flere virksomheder aktiveres. Bygger på antagelserne til venstre.</em>`;
+       <em>Forskellen mellem nettoværdien i dag og ved målet. Bygger på forudsætningerne nedenfor.</em>`;
 
   const row = (label, today, target, opts = {}) => {
     const delta = target - today;
@@ -686,7 +769,17 @@ function renderBusinessCase(m) {
 
   const split = Object.entries(m.valueSplit).filter(([, v]) => v > 0);
   const total = split.reduce((s, [, v]) => s + v, 0) || 1;
-  document.getElementById("bcBreakdown").innerHTML = `
+  const breakdownEl = document.getElementById("bcBreakdown");
+
+  // Med kun én værdikilde ville kortet blot gentage totalen fra tabellen.
+  if (split.length < 2) {
+    breakdownEl.innerHTML = `
+      <div class="card-head"><h2>Hvor værdien kommer fra</h2></div>
+      <p class="muted small">Al værdi kommer i dag fra dataanalyse. Sæt timer og pris på årsrapport eller assistance i forudsætningerne for at se en fordeling.</p>`;
+    return;
+  }
+
+  breakdownEl.innerHTML = `
     <div class="card-head"><h2>Hvor værdien kommer fra</h2><span class="muted small">Ved målet</span></div>
     ${split.map(([k, v]) => `<div class="split-row">
       <div><span class="lbl">${esc(k[0].toUpperCase() + k.slice(1))}</span><span class="amt">${money(v)}</span></div>

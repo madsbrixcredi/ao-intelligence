@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="management.css?v=5" />
+    <link rel="stylesheet" href="management.css?v=9" />
   </head>
   <body>
     <div class="wrap">
@@ -61,8 +61,15 @@
 
       <!-- ================= BUSINESS CASE ================= -->
       <section id="business" class="view" hidden>
+        <!-- Resultat øverst, forudsætninger under. Beslutningstageren skal se
+             tallet først og først derefter hvad det bygger på. -->
+        <div id="bcHeadline" class="hero"></div>
         <div class="bc-grid">
-          <!-- Forudsætninger -->
+          <div id="bcCompare" class="card"></div>
+          <div id="bcBreakdown" class="card"></div>
+        </div>
+
+        <div class="bc-assumptions-wrap">
           <div class="card assumptions">
             <div class="card-head">
               <h2>Forudsætninger</h2>
@@ -140,13 +147,6 @@
               </div>
             </details>
           </div>
-
-          <!-- Resultat -->
-          <div class="bc-result">
-            <div id="bcHeadline" class="hero"></div>
-            <div id="bcCompare" class="card"></div>
-            <div id="bcBreakdown" class="card"></div>
-          </div>
         </div>
       </section>
 
@@ -163,6 +163,6 @@
       </footer>
     </div>
 
-    <script src="management.js?v=5"></script>
+    <script src="management.js?v=9"></script>
   </body>
 </html>
