@@ -574,3 +574,10 @@ b, strong { font-weight: 600; }
   .view { display: grid !important; page-break-after: always; }
   .card, .kpi, .reco, .hero { border: 1px solid #999; box-shadow: none; }
 }
+
+/* Rettelser efter QA · feltjustering og luft omkring målsætning */
+.fld-grid { align-items: start; }
+.fld-grid .fld > span { min-height: 34px; display: flex; align-items: flex-start; }
+.fld-grid .fld > em { min-height: 30px; }
+.assumptions > .fld:first-of-type { margin-top: 16px; }
+.hero > strong { word-break: keep-all; }

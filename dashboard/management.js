@@ -294,13 +294,18 @@ function grade(scale, value) {
 function healthRows(m) {
   const rows = [];
 
-  rows.push({
-    label: "Aktivering",
-    ...grade("activation", m.activationRate),
-    evidence: m.activationRate === null
-      ? "Ingen aftale registreret"
-      : `${pct1(m.activationRate)} af aftalen i brug · ${n0(m.active)} af ${n0(m.purchased)}`,
-  });
+  // Aktivering. Over 100% betyder at der er flere aktive end købte, altså at
+  // de to kilder ikke stemmer. Det er ikke "Excellent", det er et dataforhold.
+  if (m.activationRate === null) {
+    rows.push({ label: "Aktivering", cls: "na", grade: "Ikke kunde endnu",
+      evidence: `Ingen Crediwire-aftale registreret · huset laver ${n0(m.declarations)} erklæringer` });
+  } else if (m.activationRate > 1.01) {
+    rows.push({ label: "Aktivering", cls: "developing", grade: "Skal afstemmes",
+      evidence: `${n0(m.active)} aktive mod ${n0(m.purchased)} købte. Flere er i brug end der er købt, så aftaletallet skal afstemmes.` });
+  } else {
+    rows.push({ label: "Aktivering", ...grade("activation", m.activationRate),
+      evidence: `${pct1(m.activationRate)} af aftalen i brug · ${n0(m.active)} af ${n0(m.purchased)}` });
+  }
 
   rows.push({
     label: "Aktivitet",
@@ -310,29 +315,32 @@ function healthRows(m) {
       : "For lidt historik til at sammenligne år mod år",
   });
 
-  // Organisatorisk bredde: lavere koncentration er bedre, så skalaen er omvendt.
-  let spread = { cls: "na", grade: "Ikke tilgængelig" };
-  if (m.top3 !== null) {
-    if (m.top3 <= 0.4) spread = { cls: "excellent", grade: "Excellent" };
-    else if (m.top3 <= 0.6) spread = { cls: "strong", grade: "Strong" };
-    else if (m.top3 <= 0.8) spread = { cls: "developing", grade: "Developing" };
-    else spread = { cls: "attention", grade: "Needs attention" };
+  // Organisatorisk bredde følger husets egen risikoklassifikation fra
+  // implementation_risk.csv, så dashboardet ikke kan modsige sin egen model.
+  const RISK_GRADE = {
+    LOW: { cls: "excellent", grade: "Excellent" },
+    MEDIUM: { cls: "developing", grade: "Developing" },
+    HIGH: { cls: "attention", grade: "Needs attention" },
+  };
+  if (m.activeUsers === 0) {
+    rows.push({ label: "Organisatorisk bredde", cls: "na", grade: "Ingen brugere endnu",
+      evidence: "Ingen har downloadet en dataanalyse, så brugen kan ikke fordeles" });
+  } else {
+    const rg = RISK_GRADE[String(m.riskLabel || "").toUpperCase()] || { cls: "na", grade: "Ikke tilgængelig" };
+    rows.push({ label: "Organisatorisk bredde", ...rg,
+      evidence: `${n0(m.activeUsers)} aktive brugere · de tre mest aktive står for ${pct1(m.top3)} af analyserne` });
   }
-  rows.push({
-    label: "Organisatorisk bredde",
-    ...spread,
-    evidence: m.top3 === null
-      ? "Ingen brugerdata"
-      : `De tre mest aktive står for ${pct1(m.top3)} af analyserne${m.riskLabel ? ` · risikoniveau ${m.riskLabel}` : ""}`,
-  });
 
-  rows.push({
-    label: "Markedsdækning",
-    ...grade("coverage", m.marketCoverage),
-    evidence: m.marketCoverage === null
-      ? "Ingen erklæringsdata"
-      : `${pct1(m.marketCoverage)} af ${n0(m.declarations)} erklæringer kører på Crediwire`,
-  });
+  // Markedsdækning giver kun mening som vurdering hvis huset er kunde.
+  if (!m.hasAgreement || m.declarations === 0) {
+    rows.push({ label: "Markedsdækning", cls: "na", grade: "Ikke kunde endnu",
+      evidence: m.declarations
+        ? `${n0(m.declarations)} erklæringer om året er potentialet`
+        : "Ingen erklæringsdata for dette hus" });
+  } else {
+    rows.push({ label: "Markedsdækning", ...grade("coverage", m.marketCoverage),
+      evidence: `${pct1(m.marketCoverage)} af ${n0(m.declarations)} erklæringer kører på Crediwire` });
+  }
 
   return rows;
 }
@@ -399,14 +407,20 @@ function renderKpis(m) {
     <em>Ved ${pct0(m.a.targetPct)} af erklæringerne · kræver ${n0(m.additional)} flere virksomheder</em>
   </article>`);
 
+  // Aktivering over 100% betyder at kilderne ikke stemmer. Vi viser ikke en
+  // procent der ser ud som en topkarakter, når den i virkeligheden er et
+  // dataforhold der skal afstemmes.
+  const overActivated = m.activationRate !== null && m.activationRate > 1.01;
   const arCls = m.activationRate === null ? "" : ` style="width:${Math.min(100, m.activationRate * 100).toFixed(1)}%"`;
   cards.push(`<article class="kpi">
     <span>Aktivering <span class="chip chip-measured">Målt</span></span>
-    <strong>${m.activationRate === null ? "Ingen aftale" : pct1(m.activationRate)}</strong>
-    ${m.activationRate === null ? "" : `<div class="bar pos"><i${arCls}></i></div>`}
+    <strong>${m.activationRate === null ? "Ingen aftale" : overActivated ? "Skal afstemmes" : pct1(m.activationRate)}</strong>
+    ${m.activationRate === null || overActivated ? "" : `<div class="bar pos"><i${arCls}></i></div>`}
     <em>${m.activationRate === null
       ? `${n0(m.declarations)} erklæringer om året og ingen aftale endnu`
-      : `${n0(m.active)} af ${n0(m.purchased)} virksomheder aktiveret`}</em>
+      : overActivated
+        ? `${n0(m.active)} aktive mod kun ${n0(m.purchased)} købte · aftaletallet skal afstemmes`
+        : `${n0(m.active)} af ${n0(m.purchased)} virksomheder aktiveret`}</em>
   </article>`);
 
   const ch = m.yoy?.change;
@@ -593,17 +607,23 @@ function renderBusinessCase(m) {
     ? `Huset laver ${n0(m.byType.assistance)} assistanceerklæringer`
     : "Ingen assistancedata";
 
-  document.getElementById("bcHeadline").innerHTML = `
-    <span>Uudnyttet nettoværdi ved ${pct0(m.a.targetPct)} af erklæringerne</span>
-    <strong>${money(m.unrealizedNet)}</strong>
-    <em>Kræver at ${n0(m.additional)} flere virksomheder aktiveres. Bygger på antagelserne til venstre.</em>`;
+  // Er målet lavere end antallet af aktive i dag, findes der intet uudnyttet
+  // potentiale. Et negativt tal her ville være meningsløst for læseren.
+  const belowToday = m.target <= m.active;
+  document.getElementById("bcHeadline").innerHTML = belowToday
+    ? `<span>Målsætning ved ${pct0(m.a.targetPct)} af erklæringerne</span>
+       <strong>Allerede nået</strong>
+       <em>Målet svarer til ${n0(m.target)} virksomheder, og der er allerede ${n0(m.active)} aktive. Sæt målsætningen højere for at se et potentiale.</em>`
+    : `<span>Uudnyttet nettoværdi ved ${pct0(m.a.targetPct)} af erklæringerne</span>
+       <strong>${money(m.unrealizedNet)}</strong>
+       <em>Kræver at ${n0(m.additional)} flere virksomheder aktiveres. Bygger på antagelserne til venstre.</em>`;
 
   const row = (label, today, target, opts = {}) => {
     const delta = target - today;
     const cls = opts.neutral ? "neu" : delta > 0 ? "pos" : "neu";
     const sign = delta > 0 ? "+" : delta < 0 ? "−" : "";
     return `<tr class="${opts.strong ? "strong" : ""}">
-      <td>${esc(label)}${opts.why ? `<button class="why" data-open="${opts.why}">hvorfor</button>` : ""}</td>
+      <td>${esc(label)}${opts.why ? ` <button class="why" data-open="${opts.why}">hvorfor</button>` : ""}</td>
       <td class="today">${opts.fmt ? opts.fmt(today) : money(today)}</td>
       <td>${opts.fmt ? opts.fmt(target) : money(target)}</td>
       <td class="delta ${cls}">${sign}${opts.fmt ? opts.fmt(Math.abs(delta)) : money(Math.abs(delta))}</td>
@@ -718,6 +738,30 @@ function showView(id) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+/**
+ * Skifter revisionshus.
+ * Antal årsrapporter og assistanceerklæringer er husets egne tal og må ikke
+ * følge med til næste hus. Uden dette ville fx GT's 5.695 årsrapporter blive
+ * brugt på et hus med 1.497 erklæringer i alt.
+ */
+function selectFirm(cvr) {
+  state.cvr = cvr;
+
+  const d = state.data;
+  const cls = d.declClass.find((r) => cvrOf(r) === cvr);
+  const master = d.aoMaster.find((r) => cvrOf(r) === cvr);
+
+  const set = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.value = String(value);
+  };
+  set("countAnnual", cls ? num(cls.addressable_annual_reports) : 0);
+  set("countAssist", master ? num(master.assistance) : 0);
+  set("countReporting", 0);
+
+  render();
+}
+
 function officeList() {
   const conn = new Map(state.data.connections.map((r) => [cvrOf(r), r]));
   return state.data.aoMaster
@@ -756,10 +800,9 @@ function wireFirmPicker() {
   results.addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-cvr]");
     if (!btn) return;
-    state.cvr = btn.dataset.cvr;
+    selectFirm(btn.dataset.cvr);
     input.value = "";
     results.classList.remove("open");
-    render();
   });
 
   document.addEventListener("click", (e) => {
@@ -811,7 +854,7 @@ async function init() {
     wireFirmPicker();
     wireGlobalClicks();
     wireInputs();
-    render();
+    selectFirm(state.cvr);
   } catch (err) {
     document.getElementById("loading").textContent = `Kunne ikke indlæse data: ${err.message}`;
   }
