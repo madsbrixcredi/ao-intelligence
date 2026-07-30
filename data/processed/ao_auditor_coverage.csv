@@ -1,1218 +1,1230 @@
 accounting_office_cvr,accounting_office_name,mne,auditor_name,clients,clients_on_crediwire,coverage_pct,untapped_clients
-12901038,Aage Maagensen,mne26784,Thomas Henckel,106,0,0.0,106
-12901038,Aage Maagensen,mne30218,Tina Ørum Hansen,66,2,0.0303,64
-12901038,Aage Maagensen,mne35784,Christina Wibholm,37,0,0.0,37
-12901038,Aage Maagensen,Ukendt revisor,Ukendt revisor,7,0,0.0,7
-12901038,Aage Maagensen,mne49058,Anne Grete Bøgh,7,0,0.0,7
-34589992,Addere Revision,mne40762,Rasmus Emil Dehn Larsen,193,0,0.0,193
-34589992,Addere Revision,mne31474,Brian Hildskov Hansen,166,0,0.0,166
-34589992,Addere Revision,mne10798,Søren Nielsen,112,0,0.0,112
-34589992,Addere Revision,mne28700,Lars Christian Schjødt Ankersen,91,0,0.0,91
-34589992,Addere Revision,mne50628,Eva Lynge Nielsen,66,0,0.0,66
-34589992,Addere Revision,mne26911,Leo Kjeldsmark,52,0,0.0,52
-34589992,Addere Revision,Ukendt revisor,Ukendt revisor,14,0,0.0,14
-35382879,Albjerg,mne40143,Anders Christian Salomonsen,175,1,0.0057,174
-35382879,Albjerg,mne16567,Palle Valentin Kubach,104,1,0.0096,103
-35382879,Albjerg,mne27747,Sara Lissen Hammer,86,0,0.0,86
-35382879,Albjerg,mne34138,Michel Vincent van Overdijk Laursen,88,6,0.0682,82
-35382879,Albjerg,mne32774,Dorthe Brandt Andersen,73,0,0.0,73
-35382879,Albjerg,Ukendt revisor,Ukendt revisor,10,0,0.0,10
-35382879,Albjerg,mne15008,Pia Søndergaard,6,0,0.0,6
-35382879,Albjerg,mne46620,Anders Mathias Jessen,2,0,0.0,2
-35382879,Albjerg,mne10061,Tommy Nørskov Rasmussen,1,0,0.0,1
-31626536,Anker Høst,mne16922,Flemming Brunsgaard Mørup,189,0,0.0,189
-31626536,Anker Høst,mne31411,Karsten Nielsen,117,2,0.0171,115
-31626536,Anker Høst,mne4334,Jørgen Eluf Paulsen,7,0,0.0,7
+12901038,Aage Maagensen,mne26784,Thomas Henckel,183,0,0.0,183
+12901038,Aage Maagensen,mne30218,Tina Ørum Hansen,112,2,0.0179,110
+12901038,Aage Maagensen,mne35784,Christina Wibholm,72,0,0.0,72
+12901038,Aage Maagensen,mne49058,Anne Grete Bøgh,34,0,0.0,34
+12901038,Aage Maagensen,Ukendt revisor,Ukendt revisor,11,0,0.0,11
+34589992,Addere Revision,mne40762,Rasmus Emil Dehn Larsen,292,1,0.0034,291
+34589992,Addere Revision,mne31474,Brian Hildskov Hansen,262,0,0.0,262
+34589992,Addere Revision,mne10798,Søren Nielsen,165,0,0.0,165
+34589992,Addere Revision,mne50628,Eva Lynge Nielsen,126,0,0.0,126
+34589992,Addere Revision,mne28700,Lars Christian Schjødt Ankersen,125,0,0.0,125
+34589992,Addere Revision,mne26911,Leo Kjeldsmark,95,0,0.0,95
+34589992,Addere Revision,Ukendt revisor,Ukendt revisor,30,0,0.0,30
+35382879,Albjerg,mne40143,Anders Christian Salomonsen,431,1,0.0023,430
+35382879,Albjerg,mne34138,Michel Vincent van Overdijk Laursen,240,8,0.0333,232
+35382879,Albjerg,mne16567,Palle Valentin Kubach,188,1,0.0053,187
+35382879,Albjerg,mne27747,Sara Lissen Hammer,160,0,0.0,160
+35382879,Albjerg,mne32774,Dorthe Brandt Andersen,118,0,0.0,118
+35382879,Albjerg,mne46620,Anders Mathias Jessen,23,0,0.0,23
+35382879,Albjerg,Ukendt revisor,Ukendt revisor,9,0,0.0,9
+35382879,Albjerg,mne15008,Pia Søndergaard,8,0,0.0,8
+35382879,Albjerg,mne10061,Tommy Nørskov Rasmussen,2,0,0.0,2
+31626536,Anker Høst,mne16922,Flemming Brunsgaard Mørup,307,0,0.0,307
+31626536,Anker Høst,mne31411,Karsten Nielsen,199,2,0.0101,197
+31626536,Anker Høst,mne4334,Jørgen Eluf Paulsen,8,0,0.0,8
 31626536,Anker Høst,Ukendt revisor,Ukendt revisor,1,0,0.0,1
-29690065,Aros,mne29462,Henning Juel Møller,241,0,0.0,241
-29690065,Aros,mne34278,Morten Boye Ballum Birkebæk,193,0,0.0,193
-29690065,Aros,mne10547,Kai Marius Møller,117,0,0.0,117
-29690065,Aros,mne34279,Villy Rabe Bech Mousten,111,0,0.0,111
-29690065,Aros,mne35664,Martin Edvardsen Vad,47,0,0.0,47
-29690065,Aros,Ukendt revisor,Ukendt revisor,13,0,0.0,13
-36427205,Attent Statsautoriseret Revisionsanpartsselskab,mne19789,Allan Hess Andersen,81,0,0.0,81
-36427205,Attent Statsautoriseret Revisionsanpartsselskab,mne46609,Thomas Søgaard Christensen,78,1,0.0128,77
-21148148,Baagøe Schou,mne34097,Torben Brun Petersen,200,0,0.0,200
-21148148,Baagøe Schou,mne35405,Nikolaj Kure Jensen,166,0,0.0,166
-21148148,Baagøe Schou,mne21443,Bent Pallesen,128,0,0.0,128
-21148148,Baagøe Schou,mne34597,Niklas Tullberg Hoff,59,3,0.0508,56
-21148148,Baagøe Schou,mne10850,Søren Henrik Larsen,55,0,0.0,55
-21148148,Baagøe Schou,mne40142,Louis Frits Strøm,54,0,0.0,54
-21148148,Baagøe Schou,Ukendt revisor,Ukendt revisor,12,0,0.0,12
-21148148,Baagøe Schou,mne8843,Per Kold,5,0,0.0,5
-35257691,Baker Tilly Denmark,mne34482,Morten Friis Munksgaard,299,0,0.0,299
-35257691,Baker Tilly Denmark,mne41287,Peter Aagesen,174,0,0.0,174
-35257691,Baker Tilly Denmark,mne21318,Henrik Ulvsgaard,159,0,0.0,159
-35257691,Baker Tilly Denmark,mne33677,Jeppe Pedersen,155,2,0.0129,153
-35257691,Baker Tilly Denmark,mne3901,Søren Vestermark Hansen,150,0,0.0,150
-35257691,Baker Tilly Denmark,mne17323,Ole Schmidt,148,0,0.0,148
-35257691,Baker Tilly Denmark,mne32172,Morten Søndergaard Schwensen,148,0,0.0,148
-35257691,Baker Tilly Denmark,mne36180,Christoffer Pedersen,135,0,0.0,135
-35257691,Baker Tilly Denmark,mne33711,Thomas Clausen,133,1,0.0075,132
-35257691,Baker Tilly Denmark,mne32779,Ramazan Turan,129,0,0.0,129
-35257691,Baker Tilly Denmark,mne33281,Povl Henrik Sadolin Jørgensen,121,0,0.0,121
-35257691,Baker Tilly Denmark,mne33313,Christian Hansen,108,0,0.0,108
-35257691,Baker Tilly Denmark,mne34481,Helle Brandt Møller,91,0,0.0,91
-35257691,Baker Tilly Denmark,mne41368,Anne Cathrine Nielsen,61,0,0.0,61
-35257691,Baker Tilly Denmark,Ukendt revisor,Ukendt revisor,55,0,0.0,55
-35257691,Baker Tilly Denmark,mne23256,Michael Brink Larsen,31,0,0.0,31
-35257691,Baker Tilly Denmark,mne44119,Henrik Meng Funch,19,0,0.0,19
-35257691,Baker Tilly Denmark,mne50154,Muqadas Rasheed,15,0,0.0,15
-35257691,Baker Tilly Denmark,mne6513,Peter Ørnfeldt Thomsen,5,0,0.0,5
-35257691,Baker Tilly Denmark,mne50621,Martin Fruergaard Knudsen,4,0,0.0,4
+29690065,Aros,mne29462,Henning Juel Møller,360,0,0.0,360
+29690065,Aros,mne34278,Morten Boye Ballum Birkebæk,334,0,0.0,334
+29690065,Aros,mne34279,Villy Rabe Bech Mousten,207,0,0.0,207
+29690065,Aros,mne10547,Kai Marius Møller,164,0,0.0,164
+29690065,Aros,mne35664,Martin Edvardsen Vad,108,0,0.0,108
+29690065,Aros,Ukendt revisor,Ukendt revisor,10,0,0.0,10
+36427205,Attent Statsautoriseret Revisionsanpartsselskab,mne46609,Thomas Søgaard Christensen,174,1,0.0057,173
+36427205,Attent Statsautoriseret Revisionsanpartsselskab,mne19789,Allan Hess Andersen,153,0,0.0,153
+36427205,Attent Statsautoriseret Revisionsanpartsselskab,Ukendt revisor,Ukendt revisor,1,0,0.0,1
+36029374,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,mne29456,Ulrik Nørskov,302,6,0.0199,296
+36029374,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,mne27764,Søren Skouboe Tholle,209,0,0.0,209
+36029374,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,mne44149,Benjamin Møller Obel,200,0,0.0,200
+36029374,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,mne34295,Michael Thorngreen Markussen,194,1,0.0052,193
+36029374,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,mne27757,Arne Otto Sørensen,144,1,0.0069,143
+36029374,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,mne32825,Lotte Nørskov,140,0,0.0,140
+36029374,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,mne34128,Thomas Lehmann Jensen,127,0,0.0,127
+36029374,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,mne47790,Peter Leth Keller,86,10,0.1163,76
+36029374,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,mne6251,Ole Marquard,50,1,0.02,49
+36029374,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,mne34277,Christoffer Jensen,32,0,0.0,32
+36029374,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,mne34129,Kristian Klarholt Jensen,24,1,0.0417,23
+36029374,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,mne10067,Gerhard Henrik Paaske,12,0,0.0,12
+36029374,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,Ukendt revisor,Ukendt revisor,3,0,0.0,3
+21148148,Baagøe Schou,mne34097,Torben Brun Petersen,385,0,0.0,385
+21148148,Baagøe Schou,mne35405,Nikolaj Kure Jensen,266,0,0.0,266
+21148148,Baagøe Schou,mne21443,Bent Pallesen,197,0,0.0,197
+21148148,Baagøe Schou,mne34597,Niklas Tullberg Hoff,156,5,0.0321,151
+21148148,Baagøe Schou,mne40142,Louis Frits Strøm,125,0,0.0,125
+21148148,Baagøe Schou,mne10850,Søren Henrik Larsen,83,0,0.0,83
+21148148,Baagøe Schou,Ukendt revisor,Ukendt revisor,15,0,0.0,15
+35257691,Baker Tilly Denmark,mne34482,Morten Friis Munksgaard,623,1,0.0016,622
+35257691,Baker Tilly Denmark,mne41287,Peter Aagesen,376,0,0.0,376
+35257691,Baker Tilly Denmark,mne32172,Morten Søndergaard Schwensen,319,0,0.0,319
+35257691,Baker Tilly Denmark,mne36180,Christoffer Pedersen,294,0,0.0,294
+35257691,Baker Tilly Denmark,mne17323,Ole Schmidt,268,0,0.0,268
+35257691,Baker Tilly Denmark,mne21318,Henrik Ulvsgaard,255,0,0.0,255
+35257691,Baker Tilly Denmark,mne33677,Jeppe Pedersen,252,2,0.0079,250
+35257691,Baker Tilly Denmark,mne33711,Thomas Clausen,246,1,0.0041,245
+35257691,Baker Tilly Denmark,mne3901,Søren Vestermark Hansen,233,0,0.0,233
+35257691,Baker Tilly Denmark,mne32779,Ramazan Turan,215,0,0.0,215
+35257691,Baker Tilly Denmark,mne33281,Povl Henrik Sadolin Jørgensen,213,0,0.0,213
+35257691,Baker Tilly Denmark,mne34481,Helle Brandt Møller,186,0,0.0,186
+35257691,Baker Tilly Denmark,mne33313,Christian Hansen,134,0,0.0,134
+35257691,Baker Tilly Denmark,mne50154,Muqadas Rasheed,97,0,0.0,97
+35257691,Baker Tilly Denmark,mne41368,Anne Cathrine Nielsen,77,0,0.0,77
+35257691,Baker Tilly Denmark,mne50621,Martin Fruergaard Knudsen,40,0,0.0,40
+35257691,Baker Tilly Denmark,Ukendt revisor,Ukendt revisor,23,0,0.0,23
+35257691,Baker Tilly Denmark,mne44119,Henrik Meng Funch,20,0,0.0,20
+35257691,Baker Tilly Denmark,mne23256,Michael Brink Larsen,11,0,0.0,11
+35257691,Baker Tilly Denmark,mne6513,Peter Ørnfeldt Thomsen,4,0,0.0,4
 35257691,Baker Tilly Denmark,mne16652,Claus Ejsing Andreasen,1,0,0.0,1
-35257691,Baker Tilly Denmark,mne35501,Allan Nørgaard,1,0,0.0,1
-32895468,Beierholm,mne27703,Carsten Andersen,296,0,0.0,296
-32895468,Beierholm,mne33244,Peter Vinstrup Henriksen,292,0,0.0,292
-32895468,Beierholm,mne31404,Claus Bredvig,288,0,0.0,288
-32895468,Beierholm,Ukendt revisor,Ukendt revisor,285,0,0.0,285
-32895468,Beierholm,mne19740,Jan Lundqvist,284,0,0.0,284
-32895468,Beierholm,mne34536,Jesper Resdal Thomsen,267,0,0.0,267
-32895468,Beierholm,mne34280,Philip Heick-Poulsen,257,0,0.0,257
-32895468,Beierholm,mne32204,Martin Olesen Furbo,251,0,0.0,251
-32895468,Beierholm,mne21382,Henrik Holmegaard Frandsen,248,0,0.0,248
-32895468,Beierholm,mne32739,Torben Regnar Pedersen,239,0,0.0,239
-32895468,Beierholm,mne30183,Peder Pedersen,236,0,0.0,236
-32895468,Beierholm,mne26713,Jørgen Jakobsen,223,0,0.0,223
-32895468,Beierholm,mne28606,Henrik Bjørn,218,0,0.0,218
-32895468,Beierholm,mne18574,Jesper Birn,210,0,0.0,210
-32895468,Beierholm,mne33207,Thomas Skou Jacobsen,208,0,0.0,208
-32895468,Beierholm,mne45864,Simon Boye Andersen,205,0,0.0,205
-32895468,Beierholm,mne23293,Per Lund Nielsen,203,0,0.0,203
-32895468,Beierholm,mne11738,Jørgen Bo Stegmann,202,0,0.0,202
-32895468,Beierholm,mne36181,Casper Jensby,200,0,0.0,200
-32895468,Beierholm,mne33779,Brian Nielsen,199,0,0.0,199
-32895468,Beierholm,mne34272,Allan Galsgaard,195,0,0.0,195
-32895468,Beierholm,mne23366,Henrik Welinder,193,0,0.0,193
-32895468,Beierholm,mne23319,Michael Vejgaard Hansen,190,0,0.0,190
-32895468,Beierholm,mne35822,Jesper Lundtoft Sandal,189,0,0.0,189
-32895468,Beierholm,mne26695,Ole Poulsen,186,0,0.0,186
-32895468,Beierholm,mne29417,Kim Møller Nielsen,185,0,0.0,185
-32895468,Beierholm,mne32741,Joan Valentin Christensen,185,0,0.0,185
-32895468,Beierholm,mne47767,Lasse Glud Dybbøl,183,0,0.0,183
-32895468,Beierholm,mne34133,Marianne Christoffersen,182,0,0.0,182
-32895468,Beierholm,mne33689,Thomas Nicolaj Jacobi Nielsen,176,0,0.0,176
-32895468,Beierholm,mne34326,Anders Søding Paulsen,173,0,0.0,173
-32895468,Beierholm,mne35432,Morten Clement Skov,172,0,0.0,172
-32895468,Beierholm,mne34271,Klaus Viborg Pedersen,172,0,0.0,172
-32895468,Beierholm,mne47777,Tony Ahle Mouridsen,171,0,0.0,171
-32895468,Beierholm,mne24813,Bjørn Jakobsen,170,0,0.0,170
-32895468,Beierholm,mne26805,Peter Thor Kellmer,169,0,0.0,169
-32895468,Beierholm,mne46629,Joachim Laumark Stephansen,167,0,0.0,167
-32895468,Beierholm,mne32736,Morten Klarskov Larsen,164,0,0.0,164
-32895468,Beierholm,mne29479,Lars Strange Hansen,163,0,0.0,163
-32895468,Beierholm,mne35807,Dennis Høyer,162,0,0.0,162
-32895468,Beierholm,mne33284,Lars Pedersen,160,0,0.0,160
-32895468,Beierholm,mne32725,Anders Nyberg,160,0,0.0,160
-32895468,Beierholm,mne32849,Martin Rasmussen,159,0,0.0,159
-32895468,Beierholm,mne34090,Jan Stender,158,0,0.0,158
-32895468,Beierholm,mne44109,Boye Graversen,156,0,0.0,156
-32895468,Beierholm,mne34079,Thomas Rechter Thomsen,154,0,0.0,154
-32895468,Beierholm,mne18040,Torben Mortensen,154,0,0.0,154
-32895468,Beierholm,mne35856,Mads Bjørndal,152,0,0.0,152
-32895468,Beierholm,mne33725,Jacob Pedersen,146,0,0.0,146
-32895468,Beierholm,mne32133,Rikke Holmslykke Kristensen,146,0,0.0,146
-32895468,Beierholm,mne31427,Jesper Hartmann Olesen,144,0,0.0,144
-32895468,Beierholm,mne24622,Allan Østergaard Jørgensen,144,0,0.0,144
-32895468,Beierholm,mne21424,Svend Skaarup Sand,144,0,0.0,144
-32895468,Beierholm,mne29497,Flemming Laigaard,142,0,0.0,142
-32895468,Beierholm,mne18830,Anders Gosvig Ladegaard,141,0,0.0,141
-32895468,Beierholm,mne33213,Kasper Green Jensen,140,0,0.0,140
-32895468,Beierholm,mne29447,Dorte Grøndal Hansen,139,0,0.0,139
-32895468,Beierholm,mne15007,Ole Skou,138,0,0.0,138
-32895468,Beierholm,mne32173,Glenn Hartmann,137,0,0.0,137
-32895468,Beierholm,mne31457,Kasper Rabing Christensen,133,0,0.0,133
-32895468,Beierholm,mne34114,Michael Lindskov Pedersen,133,0,0.0,133
-32895468,Beierholm,mne32727,Daniel Ulrich,131,0,0.0,131
-32895468,Beierholm,mne42779,Simon Bach Nielsen,129,0,0.0,129
-32895468,Beierholm,mne19689,Torben Skov,128,0,0.0,128
-32895468,Beierholm,mne28682,Henrik Agner Hansen,126,0,0.0,126
-32895468,Beierholm,mne44141,Morten Zanoni Lønsbo,125,1,0.008,124
-32895468,Beierholm,mne21381,Per Lindholdt Christensen,123,0,0.0,123
-32895468,Beierholm,mne21427,Henrik Holmer Bretlau,123,0,0.0,123
-32895468,Beierholm,mne33240,Mogens Rasmussen,121,0,0.0,121
-32895468,Beierholm,mne34080,Morten Alsted,121,0,0.0,121
-32895468,Beierholm,mne46627,Jakob Dahl Jensen,119,0,0.0,119
-32895468,Beierholm,mne48475,Randi Landergreen Andersen,118,0,0.0,118
-32895468,Beierholm,mne36189,Kristian Tudborg Nielsen,117,0,0.0,117
-32895468,Beierholm,mne16640,Henrik Bjerre,115,0,0.0,115
-32895468,Beierholm,mne11503,Jens Jørgen Bay Simonsen,113,0,0.0,113
-32895468,Beierholm,mne35403,Michael Steen Khathi - Jacobsen,112,0,0.0,112
-32895468,Beierholm,mne45910,Mette Elmann Johansen,111,0,0.0,111
-32895468,Beierholm,mne27741,Vivi Ruseng Hansen,110,0,0.0,110
-32895468,Beierholm,mne51087,Martin Bækgaard,110,0,0.0,110
-32895468,Beierholm,mne26753,Niels Christian Boll,109,0,0.0,109
-32895468,Beierholm,mne27841,Troels Vibe Carlsen,109,0,0.0,109
-32895468,Beierholm,mne29388,Jesper Nørrelund Bentzen,108,0,0.0,108
-32895468,Beierholm,mne26778,Lars Koudal Jensen,106,0,0.0,106
-32895468,Beierholm,mne30216,Michael Kirkegaard Dalberg,106,0,0.0,106
-32895468,Beierholm,mne34332,Uffe Black Jensen,105,0,0.0,105
-32895468,Beierholm,mne50619,Michael Vestergaard Jensen,105,0,0.0,105
-32895468,Beierholm,mne36029,Chris Bay,102,0,0.0,102
-32895468,Beierholm,mne33780,Rickard Halfdan Patel,102,0,0.0,102
-32895468,Beierholm,mne34083,Kasper Toftegaard Winkler,103,1,0.0097,102
-32895468,Beierholm,mne35460,Jesper Mosskov Møller,101,0,0.0,101
-32895468,Beierholm,mne7552,Michael Kjeldgaard Nielsen,101,0,0.0,101
-32895468,Beierholm,mne34517,Louise Corneliussen,100,0,0.0,100
-32895468,Beierholm,mne29490,Carsten Johnsen,100,0,0.0,100
-32895468,Beierholm,mne35413,Jesper Kiilerich Viborg,98,0,0.0,98
-32895468,Beierholm,mne42896,Lasse Rosenborg Petersen,97,0,0.0,97
-32895468,Beierholm,mne27796,Richard Hyldgaard Hansen,97,0,0.0,97
-32895468,Beierholm,mne623,Henning Jensen,96,0,0.0,96
-32895468,Beierholm,mne24681,Søren Deleuran Andersen,96,0,0.0,96
-32895468,Beierholm,mne41286,Kenneth Brøndum,95,0,0.0,95
-32895468,Beierholm,mne32182,Morten Stener,95,0,0.0,95
-32895468,Beierholm,mne28583,Jan Sørensen,94,0,0.0,94
-32895468,Beierholm,mne29438,Morten Egholm Alsted,93,0,0.0,93
-32895468,Beierholm,mne45893,Martin Ødum Madsen,93,0,0.0,93
-32895468,Beierholm,mne11743,Jan Nygaard,92,0,0.0,92
-32895468,Beierholm,mne28909,Birgit Rønsbro Sode,92,0,0.0,92
-32895468,Beierholm,mne47802,Maria Gammelgaard Poulsen,89,0,0.0,89
-32895468,Beierholm,mne34458,Jacob Louis Mogensen,89,0,0.0,89
-32895468,Beierholm,mne32063,Dorte Sørensen,89,0,0.0,89
-32895468,Beierholm,mne45859,Frederik Geer Harvest,88,0,0.0,88
-32895468,Beierholm,mne34467,Kasper Sand Jensen,87,0,0.0,87
-32895468,Beierholm,mne17802,Gert Hunosøe,84,0,0.0,84
-32895468,Beierholm,mne32170,Søren Rasmussen,83,0,0.0,83
-32895468,Beierholm,mne48487,Dan Visti Abildgaard,83,0,0.0,83
-32895468,Beierholm,mne26806,Lars Østergaard,82,0,0.0,82
-32895468,Beierholm,mne15867,Heidi Rokkjær Pedersen,81,0,0.0,81
-32895468,Beierholm,mne17801,Lars Heinrich Ballebye Jensen,80,0,0.0,80
-32895468,Beierholm,mne35803,Lisbeth Merrild Elkjær,79,0,0.0,79
-32895468,Beierholm,mne45340,Daniel Lindebæk Hansen,78,0,0.0,78
-32895468,Beierholm,mne31487,Mads Lundgaard Christensen,78,0,0.0,78
-32895468,Beierholm,mne36025,Anne Albertsen-Evald,78,0,0.0,78
-32895468,Beierholm,mne34347,Pia Axelsen,76,0,0.0,76
-32895468,Beierholm,mne27865,Morten Kristoffer Nielsen,74,0,0.0,74
-32895468,Beierholm,mne49094,Suzette Hansen,73,0,0.0,73
-32895468,Beierholm,mne44106,Christian Buchwald Nielsen,73,0,0.0,73
-32895468,Beierholm,mne33252,Allan Erik Nielsen,72,0,0.0,72
-32895468,Beierholm,mne47904,Jens Christian Andersen,71,0,0.0,71
-32895468,Beierholm,mne23310,Poul Sunn Pedersen,71,0,0.0,71
-32895468,Beierholm,mne29445,Johnny Bækholm,68,0,0.0,68
-32895468,Beierholm,mne31413,Aslak Arved Lyster Linde,66,0,0.0,66
-32895468,Beierholm,mne23296,Thomas Skinbjerg,65,0,0.0,65
-32895468,Beierholm,mne32179,Kim Holm Larsen,64,0,0.0,64
-32895468,Beierholm,mne27738,Lene Vinum Andersen,61,0,0.0,61
-32895468,Beierholm,mne16850,Lene Jeppesen,60,0,0.0,60
-32895468,Beierholm,mne49135,Emil Enggaard Knudsen,60,0,0.0,60
-32895468,Beierholm,mne31407,Thomas Andersen,59,0,0.0,59
-32895468,Beierholm,mne18599,Lars Steinbach,59,0,0.0,59
-32895468,Beierholm,mne50563,Frederik Søndergaard Kjelkvist,58,0,0.0,58
-32895468,Beierholm,mne42777,Rasmus Ørskov,58,0,0.0,58
-32895468,Beierholm,mne2501,Troels Nørgaard Ifversen,57,0,0.0,57
-32895468,Beierholm,mne537,Erik Guldbrandt Henningsen,56,0,0.0,56
-32895468,Beierholm,mne2812,Flemming Karger Bernth,54,0,0.0,54
-32895468,Beierholm,mne47784,Jacob Skals,53,0,0.0,53
-32895468,Beierholm,mne34512,Jakob Wraae Kastor,51,0,0.0,51
-32895468,Beierholm,mne46632,Jacob Dahl Allentoft,51,0,0.0,51
-32895468,Beierholm,mne52100,Frederik Koldby Ekmann,51,0,0.0,51
-32895468,Beierholm,mne49077,Jonas Søren Due Haustrøm,49,0,0.0,49
-32895468,Beierholm,mne3097,Chresten Clemmensen,48,0,0.0,48
-32895468,Beierholm,mne49054,Martin Aaager Juell-Hansen,48,0,0.0,48
-32895468,Beierholm,mne17268,Torben Gudmundsen,47,0,0.0,47
-32895468,Beierholm,mne4338,Yvonne Kjeldal Pauly,47,0,0.0,47
-32895468,Beierholm,mne47795,Kevin Mejborn Schøller,45,0,0.0,45
-32895468,Beierholm,mne34155,Michael Krath,45,0,0.0,45
-32895468,Beierholm,mne50558,Mathias Estrup Hornbæk,44,0,0.0,44
-32895468,Beierholm,mne47303,Morten Staghøj,44,0,0.0,44
-32895468,Beierholm,mne12357,Helle Vestergård Ebsen,43,0,0.0,43
-32895468,Beierholm,mne46254,Dennis Skovby,42,0,0.0,42
-32895468,Beierholm,mne5591,Hans Michael Anker,41,0,0.0,41
-32895468,Beierholm,mne52169,Mathias René Kristensen,41,0,0.0,41
-32895468,Beierholm,mne17094,Dan Kobbernagel Andresen,41,0,0.0,41
-32895468,Beierholm,mne16817,Peter Henriksen,40,0,0.0,40
-32895468,Beierholm,mne21558,Søren Lindholm Mikkelsen,40,0,0.0,40
-32895468,Beierholm,mne2511,Klaus Hjort-Enemark,40,0,0.0,40
-32895468,Beierholm,mne49065,Jakob Ladefoged Hove,39,0,0.0,39
-32895468,Beierholm,mne24737,Erik Pedersen,37,0,0.0,37
-32895468,Beierholm,mne35475,Jonas Kirk Kristiansen,37,0,0.0,37
-32895468,Beierholm,mne3189,Bjarne Nielsen,37,0,0.0,37
-32895468,Beierholm,mne34282,Kenneth Klitgaard Thomsen,35,0,0.0,35
-32895468,Beierholm,mne17237,Hans Friis Børsting,35,0,0.0,35
-32895468,Beierholm,mne17153,Jeanette Vetlov,33,0,0.0,33
-32895468,Beierholm,mne33804,Jeanne Kubel,33,0,0.0,33
-32895468,Beierholm,mne51058,Heidi Hvid Bertelsen,32,0,0.0,32
-32895468,Beierholm,mne35463,Allan Aakmann Christensen,31,0,0.0,31
-32895468,Beierholm,mne10288,John Kej Hansen,30,0,0.0,30
-32895468,Beierholm,mne2582,Bjarne Dahl,29,0,0.0,29
-32895468,Beierholm,mne35423,Anders Flymer-Dindler,27,0,0.0,27
-32895468,Beierholm,mne10149,Johnny Peter Kofoed-Jensen,26,0,0.0,26
-32895468,Beierholm,mne11122,Arne Lauritsen,24,0,0.0,24
-32895468,Beierholm,mne35448,Jacob Nissen Kronow,24,0,0.0,24
-32895468,Beierholm,mne51056,Anders Vind,23,0,0.0,23
-32895468,Beierholm,mne15018,Anders Bisgaard,23,0,0.0,23
-32895468,Beierholm,mne51532,Claus Træholt Bak,20,0,0.0,20
-32895468,Beierholm,mne41306,Karin German Jensen,18,0,0.0,18
-32895468,Beierholm,mne50781,Peter Bjerregaard Stensgaard,17,0,0.0,17
-32895468,Beierholm,mne29499,Søren Vestergaard Pedersen,17,0,0.0,17
-32895468,Beierholm,mne49075,Mette Guldmann,17,0,0.0,17
-32895468,Beierholm,mne35472,Jette Agerholm Pedersen,16,0,0.0,16
-32895468,Beierholm,mne11700,Leif Breum,14,0,0.0,14
-32895468,Beierholm,mne46630,Jette Jordan Andersen,13,0,0.0,13
-32895468,Beierholm,mne50625,Mathilde Sørensen Lund,12,0,0.0,12
-32895468,Beierholm,mne44180,Christian Engelbrecht Friis,10,0,0.0,10
-32895468,Beierholm,mne51510,Mads Daugbjerg Villadsen,10,0,0.0,10
-32895468,Beierholm,mne21406,Helle Lorenzen,10,0,0.0,10
-32895468,Beierholm,mne52093,Nicholas Brager Væring Loumann,10,0,0.0,10
-32895468,Beierholm,mne1313,Claus Meldgaard,10,0,0.0,10
-32895468,Beierholm,mne33688,Joan Silberbauer,10,1,0.1,9
-32895468,Beierholm,mne897,John Laursen,9,0,0.0,9
-32895468,Beierholm,mne9539,Ole Olsen,9,0,0.0,9
-32895468,Beierholm,mne1932,Joan Flansmose Trelborg,8,0,0.0,8
-32895468,Beierholm,mne8926,Svend Aage Stolten,8,0,0.0,8
-32895468,Beierholm,mne45829,Anders Kloster Rasmussen,7,0,0.0,7
-32895468,Beierholm,mne18546,Claus Knudsen Tilsted,6,0,0.0,6
-32895468,Beierholm,mne9246,Jens Peter Elgum,5,0,0.0,5
-32895468,Beierholm,mne52086,Lina Margrethe Bunk,5,0,0.0,5
-32895468,Beierholm,mne51531,Tobias Hyttel Amstrup,4,0,0.0,4
-32895468,Beierholm,mne52102,Henrik Møltrup Daasbjerg,4,0,0.0,4
+35257691,Baker Tilly Denmark,mne30154,Kenn Wolff Hansen,1,0,0.0,1
+32895468,Beierholm,mne31404,Claus Bredvig,558,0,0.0,558
+32895468,Beierholm,mne34536,Jesper Resdal Thomsen,537,0,0.0,537
+32895468,Beierholm,mne33244,Peter Vinstrup Henriksen,508,0,0.0,508
+32895468,Beierholm,mne34280,Philip Heick-Poulsen,478,0,0.0,478
+32895468,Beierholm,mne32204,Martin Olesen Furbo,460,0,0.0,460
+32895468,Beierholm,mne27703,Carsten Andersen,451,0,0.0,451
+32895468,Beierholm,mne32739,Torben Regnar Pedersen,423,0,0.0,423
+32895468,Beierholm,mne19740,Jan Lundqvist,411,0,0.0,411
+32895468,Beierholm,mne21382,Henrik Holmegaard Frandsen,408,0,0.0,408
+32895468,Beierholm,mne28606,Henrik Bjørn,397,0,0.0,397
+32895468,Beierholm,mne45864,Simon Boye Andersen,391,1,0.0026,390
+32895468,Beierholm,mne33207,Thomas Skou Jacobsen,384,0,0.0,384
+32895468,Beierholm,mne35822,Jesper Lundtoft Sandal,379,0,0.0,379
+32895468,Beierholm,mne23366,Henrik Welinder,357,0,0.0,357
+32895468,Beierholm,mne34272,Allan Galsgaard,347,0,0.0,347
+32895468,Beierholm,mne11738,Jørgen Bo Stegmann,344,0,0.0,344
+32895468,Beierholm,mne30183,Peder Pedersen,343,0,0.0,343
+32895468,Beierholm,Ukendt revisor,Ukendt revisor,333,0,0.0,333
+32895468,Beierholm,mne23293,Per Lund Nielsen,333,0,0.0,333
+32895468,Beierholm,mne34326,Anders Søding Paulsen,330,0,0.0,330
+32895468,Beierholm,mne26713,Jørgen Jakobsen,329,0,0.0,329
+32895468,Beierholm,mne34133,Marianne Christoffersen,328,0,0.0,328
+32895468,Beierholm,mne46629,Joachim Laumark Stephansen,327,0,0.0,327
+32895468,Beierholm,mne36181,Casper Jensby,327,0,0.0,327
+32895468,Beierholm,mne33779,Brian Nielsen,311,0,0.0,311
+32895468,Beierholm,mne26695,Ole Poulsen,307,0,0.0,307
+32895468,Beierholm,mne33284,Lars Pedersen,303,0,0.0,303
+32895468,Beierholm,mne18574,Jesper Birn,302,0,0.0,302
+32895468,Beierholm,mne32741,Joan Valentin Christensen,287,0,0.0,287
+32895468,Beierholm,mne35432,Morten Clement Skov,285,0,0.0,285
+32895468,Beierholm,mne47767,Lasse Glud Dybbøl,285,0,0.0,285
+32895468,Beierholm,mne18830,Anders Gosvig Ladegaard,284,0,0.0,284
+32895468,Beierholm,mne33725,Jacob Pedersen,284,0,0.0,284
+32895468,Beierholm,mne33689,Thomas Nicolaj Jacobi Nielsen,283,0,0.0,283
+32895468,Beierholm,mne32849,Martin Rasmussen,283,0,0.0,283
+32895468,Beierholm,mne35807,Dennis Høyer,283,0,0.0,283
+32895468,Beierholm,mne47777,Tony Ahle Mouridsen,282,0,0.0,282
+32895468,Beierholm,mne32725,Anders Nyberg,279,0,0.0,279
+32895468,Beierholm,mne34271,Klaus Viborg Pedersen,279,0,0.0,279
+32895468,Beierholm,mne32736,Morten Klarskov Larsen,277,0,0.0,277
+32895468,Beierholm,mne35856,Mads Bjørndal,273,0,0.0,273
+32895468,Beierholm,mne44109,Boye Graversen,272,0,0.0,272
+32895468,Beierholm,mne24813,Bjørn Jakobsen,270,0,0.0,270
+32895468,Beierholm,mne29479,Lars Strange Hansen,266,0,0.0,266
+32895468,Beierholm,mne34079,Thomas Rechter Thomsen,266,0,0.0,266
+32895468,Beierholm,mne46627,Jakob Dahl Jensen,263,0,0.0,263
+32895468,Beierholm,mne23319,Michael Vejgaard Hansen,260,0,0.0,260
+32895468,Beierholm,mne34090,Jan Stender,248,0,0.0,248
+32895468,Beierholm,mne32173,Glenn Hartmann,248,0,0.0,248
+32895468,Beierholm,mne31427,Jesper Hartmann Olesen,244,0,0.0,244
+32895468,Beierholm,mne29417,Kim Møller Nielsen,242,0,0.0,242
+32895468,Beierholm,mne26805,Peter Thor Kellmer,242,0,0.0,242
+32895468,Beierholm,mne34080,Morten Alsted,242,0,0.0,242
+32895468,Beierholm,mne18040,Torben Mortensen,241,0,0.0,241
+32895468,Beierholm,mne29497,Flemming Laigaard,241,0,0.0,241
+32895468,Beierholm,mne34083,Kasper Toftegaard Winkler,240,1,0.0042,239
+32895468,Beierholm,mne29447,Dorte Grøndal Hansen,236,0,0.0,236
+32895468,Beierholm,mne28682,Henrik Agner Hansen,233,0,0.0,233
+32895468,Beierholm,mne33213,Kasper Green Jensen,232,0,0.0,232
+32895468,Beierholm,mne21424,Svend Skaarup Sand,230,0,0.0,230
+32895468,Beierholm,mne50619,Michael Vestergaard Jensen,228,0,0.0,228
+32895468,Beierholm,mne32133,Rikke Holmslykke Kristensen,227,0,0.0,227
+32895468,Beierholm,mne32182,Morten Stener,226,0,0.0,226
+32895468,Beierholm,mne42779,Simon Bach Nielsen,216,0,0.0,216
+32895468,Beierholm,mne51087,Martin Bækgaard,215,0,0.0,215
+32895468,Beierholm,mne19689,Torben Skov,215,0,0.0,215
+32895468,Beierholm,mne44141,Morten Zanoni Lønsbo,216,1,0.0046,215
+32895468,Beierholm,mne31457,Kasper Rabing Christensen,214,1,0.0047,213
+32895468,Beierholm,mne45910,Mette Elmann Johansen,210,0,0.0,210
+32895468,Beierholm,mne16640,Henrik Bjerre,205,0,0.0,205
+32895468,Beierholm,mne36189,Kristian Tudborg Nielsen,201,0,0.0,201
+32895468,Beierholm,mne27841,Troels Vibe Carlsen,201,0,0.0,201
+32895468,Beierholm,mne27741,Vivi Ruseng Hansen,202,1,0.005,201
+32895468,Beierholm,mne33240,Mogens Rasmussen,199,0,0.0,199
+32895468,Beierholm,mne48475,Randi Landergreen Andersen,196,0,0.0,196
+32895468,Beierholm,mne36029,Chris Bay,196,0,0.0,196
+32895468,Beierholm,mne32727,Daniel Ulrich,195,0,0.0,195
+32895468,Beierholm,mne24622,Allan Østergaard Jørgensen,194,0,0.0,194
+32895468,Beierholm,mne21381,Per Lindholdt Christensen,192,0,0.0,192
+32895468,Beierholm,mne34114,Michael Lindskov Pedersen,188,0,0.0,188
+32895468,Beierholm,mne35403,Michael Steen Khathi - Jacobsen,185,0,0.0,185
+32895468,Beierholm,mne15007,Ole Skou,182,0,0.0,182
+32895468,Beierholm,mne35460,Jesper Mosskov Møller,179,0,0.0,179
+32895468,Beierholm,mne26753,Niels Christian Boll,175,0,0.0,175
+32895468,Beierholm,mne48487,Dan Visti Abildgaard,175,0,0.0,175
+32895468,Beierholm,mne34517,Louise Corneliussen,174,0,0.0,174
+32895468,Beierholm,mne45859,Frederik Geer Harvest,174,0,0.0,174
+32895468,Beierholm,mne11503,Jens Jørgen Bay Simonsen,172,0,0.0,172
+32895468,Beierholm,mne44106,Christian Buchwald Nielsen,171,0,0.0,171
+32895468,Beierholm,mne47802,Maria Gammelgaard Poulsen,170,0,0.0,170
+32895468,Beierholm,mne42896,Lasse Rosenborg Petersen,170,0,0.0,170
+32895468,Beierholm,mne41286,Kenneth Brøndum,168,0,0.0,168
+32895468,Beierholm,mne21427,Henrik Holmer Bretlau,164,0,0.0,164
+32895468,Beierholm,mne32170,Søren Rasmussen,162,0,0.0,162
+32895468,Beierholm,mne45893,Martin Ødum Madsen,160,0,0.0,160
+32895468,Beierholm,mne29490,Carsten Johnsen,160,0,0.0,160
+32895468,Beierholm,mne27796,Richard Hyldgaard Hansen,158,0,0.0,158
+32895468,Beierholm,mne29388,Jesper Nørrelund Bentzen,157,0,0.0,157
+32895468,Beierholm,mne32063,Dorte Sørensen,156,0,0.0,156
+32895468,Beierholm,mne34458,Jacob Louis Mogensen,154,0,0.0,154
+32895468,Beierholm,mne26806,Lars Østergaard,154,0,0.0,154
+32895468,Beierholm,mne7552,Michael Kjeldgaard Nielsen,152,0,0.0,152
+32895468,Beierholm,mne17801,Lars Heinrich Ballebye Jensen,151,0,0.0,151
+32895468,Beierholm,mne30216,Michael Kirkegaard Dalberg,148,0,0.0,148
+32895468,Beierholm,mne42777,Rasmus Ørskov,148,0,0.0,148
+32895468,Beierholm,mne623,Henning Jensen,147,0,0.0,147
+32895468,Beierholm,mne49135,Emil Enggaard Knudsen,147,0,0.0,147
+32895468,Beierholm,mne26778,Lars Koudal Jensen,147,0,0.0,147
+32895468,Beierholm,mne24681,Søren Deleuran Andersen,145,0,0.0,145
+32895468,Beierholm,mne52100,Frederik Koldby Ekmann,145,0,0.0,145
+32895468,Beierholm,mne34467,Kasper Sand Jensen,145,0,0.0,145
+32895468,Beierholm,mne47784,Jacob Skals,145,0,0.0,145
+32895468,Beierholm,mne33780,Rickard Halfdan Patel,144,0,0.0,144
+32895468,Beierholm,mne45340,Daniel Lindebæk Hansen,143,0,0.0,143
+32895468,Beierholm,mne29438,Morten Egholm Alsted,143,0,0.0,143
+32895468,Beierholm,mne46254,Dennis Skovby,143,0,0.0,143
+32895468,Beierholm,mne15867,Heidi Rokkjær Pedersen,143,0,0.0,143
+32895468,Beierholm,mne34332,Uffe Black Jensen,141,0,0.0,141
+32895468,Beierholm,mne33252,Allan Erik Nielsen,138,0,0.0,138
+32895468,Beierholm,mne35413,Jesper Kiilerich Viborg,137,0,0.0,137
+32895468,Beierholm,mne47904,Jens Christian Andersen,136,0,0.0,136
+32895468,Beierholm,mne31487,Mads Lundgaard Christensen,135,0,0.0,135
+32895468,Beierholm,mne36025,Anne Albertsen-Evald,134,0,0.0,134
+32895468,Beierholm,mne29445,Johnny Bækholm,131,0,0.0,131
+32895468,Beierholm,mne28583,Jan Sørensen,130,0,0.0,130
+32895468,Beierholm,mne35803,Lisbeth Merrild Elkjær,129,0,0.0,129
+32895468,Beierholm,mne50563,Frederik Søndergaard Kjelkvist,127,0,0.0,127
+32895468,Beierholm,mne11743,Jan Nygaard,123,0,0.0,123
+32895468,Beierholm,mne17802,Gert Hunosøe,121,0,0.0,121
+32895468,Beierholm,mne28909,Birgit Rønsbro Sode,120,0,0.0,120
+32895468,Beierholm,mne31413,Aslak Arved Lyster Linde,120,0,0.0,120
+32895468,Beierholm,mne32179,Kim Holm Larsen,119,0,0.0,119
+32895468,Beierholm,mne34347,Pia Axelsen,117,0,0.0,117
+32895468,Beierholm,mne34512,Jakob Wraae Kastor,115,0,0.0,115
+32895468,Beierholm,mne50558,Mathias Estrup Hornbæk,112,0,0.0,112
+32895468,Beierholm,mne27865,Morten Kristoffer Nielsen,112,0,0.0,112
+32895468,Beierholm,mne27738,Lene Vinum Andersen,112,0,0.0,112
+32895468,Beierholm,mne23296,Thomas Skinbjerg,106,0,0.0,106
+32895468,Beierholm,mne31407,Thomas Andersen,105,0,0.0,105
+32895468,Beierholm,mne23310,Poul Sunn Pedersen,105,0,0.0,105
+32895468,Beierholm,mne16850,Lene Jeppesen,104,0,0.0,104
+32895468,Beierholm,mne47795,Kevin Mejborn Schøller,97,0,0.0,97
+32895468,Beierholm,mne46632,Jacob Dahl Allentoft,95,0,0.0,95
+32895468,Beierholm,mne49065,Jakob Ladefoged Hove,94,0,0.0,94
+32895468,Beierholm,mne52169,Mathias René Kristensen,93,0,0.0,93
+32895468,Beierholm,mne2501,Troels Nørgaard Ifversen,93,0,0.0,93
+32895468,Beierholm,mne49054,Martin Aaager Juell-Hansen,92,0,0.0,92
+32895468,Beierholm,mne17268,Torben Gudmundsen,91,0,0.0,91
+32895468,Beierholm,mne49077,Jonas Søren Due Haustrøm,91,0,0.0,91
+32895468,Beierholm,mne34155,Michael Krath,86,0,0.0,86
+32895468,Beierholm,mne4338,Yvonne Kjeldal Pauly,86,0,0.0,86
+32895468,Beierholm,mne35475,Jonas Kirk Kristiansen,85,0,0.0,85
+32895468,Beierholm,mne47303,Morten Staghøj,82,0,0.0,82
+32895468,Beierholm,mne35448,Jacob Nissen Kronow,80,0,0.0,80
+32895468,Beierholm,mne18599,Lars Steinbach,79,0,0.0,79
+32895468,Beierholm,mne3097,Chresten Clemmensen,77,0,0.0,77
+32895468,Beierholm,mne2812,Flemming Karger Bernth,74,0,0.0,74
+32895468,Beierholm,mne33804,Jeanne Kubel,74,0,0.0,74
+32895468,Beierholm,mne17237,Hans Friis Børsting,74,0,0.0,74
+32895468,Beierholm,mne21558,Søren Lindholm Mikkelsen,75,1,0.0133,74
+32895468,Beierholm,mne537,Erik Guldbrandt Henningsen,72,0,0.0,72
+32895468,Beierholm,mne12357,Helle Vestergård Ebsen,71,0,0.0,71
+32895468,Beierholm,mne17094,Dan Kobbernagel Andresen,65,0,0.0,65
+32895468,Beierholm,mne2511,Klaus Hjort-Enemark,65,0,0.0,65
+32895468,Beierholm,mne51056,Anders Vind,65,1,0.0154,64
+32895468,Beierholm,mne49094,Suzette Hansen,62,0,0.0,62
+32895468,Beierholm,mne3189,Bjarne Nielsen,61,0,0.0,61
+32895468,Beierholm,mne24737,Erik Pedersen,59,0,0.0,59
+32895468,Beierholm,mne10149,Johnny Peter Kofoed-Jensen,59,0,0.0,59
+32895468,Beierholm,mne17153,Jeanette Vetlov,57,0,0.0,57
+32895468,Beierholm,mne51058,Heidi Hvid Bertelsen,57,0,0.0,57
+32895468,Beierholm,mne34282,Kenneth Klitgaard Thomsen,56,0,0.0,56
+32895468,Beierholm,mne51532,Claus Træholt Bak,51,0,0.0,51
+32895468,Beierholm,mne11122,Arne Lauritsen,46,0,0.0,46
+32895468,Beierholm,mne49075,Mette Guldmann,46,0,0.0,46
+32895468,Beierholm,mne2582,Bjarne Dahl,44,0,0.0,44
+32895468,Beierholm,mne50781,Peter Bjerregaard Stensgaard,43,0,0.0,43
+32895468,Beierholm,mne35463,Allan Aakmann Christensen,43,0,0.0,43
+32895468,Beierholm,mne46630,Jette Jordan Andersen,40,0,0.0,40
+32895468,Beierholm,mne10288,John Kej Hansen,40,0,0.0,40
+32895468,Beierholm,mne51510,Mads Daugbjerg Villadsen,39,0,0.0,39
+32895468,Beierholm,mne29499,Søren Vestergaard Pedersen,32,0,0.0,32
+32895468,Beierholm,mne52093,Nicholas Brager Væring Loumann,30,0,0.0,30
+32895468,Beierholm,mne50625,Mathilde Sørensen Lund,30,0,0.0,30
+32895468,Beierholm,mne16817,Peter Henriksen,26,0,0.0,26
+32895468,Beierholm,mne35472,Jette Agerholm Pedersen,25,0,0.0,25
+32895468,Beierholm,mne21406,Helle Lorenzen,25,0,0.0,25
+32895468,Beierholm,mne15018,Anders Bisgaard,24,0,0.0,24
+32895468,Beierholm,mne1313,Claus Meldgaard,24,0,0.0,24
+32895468,Beierholm,mne51531,Tobias Hyttel Amstrup,18,0,0.0,18
+32895468,Beierholm,mne18546,Claus Knudsen Tilsted,18,0,0.0,18
+32895468,Beierholm,mne33688,Joan Silberbauer,19,1,0.0526,18
+32895468,Beierholm,mne8926,Svend Aage Stolten,17,0,0.0,17
+32895468,Beierholm,mne11700,Leif Breum,16,0,0.0,16
+32895468,Beierholm,mne897,John Laursen,13,0,0.0,13
+32895468,Beierholm,mne52102,Henrik Møltrup Daasbjerg,12,0,0.0,12
+32895468,Beierholm,mne9539,Ole Olsen,12,0,0.0,12
+32895468,Beierholm,mne41306,Karin German Jensen,11,0,0.0,11
+32895468,Beierholm,mne1932,Joan Flansmose Trelborg,10,0,0.0,10
+32895468,Beierholm,mne44180,Christian Engelbrecht Friis,8,0,0.0,8
+32895468,Beierholm,mne27711,Trine Rasch,8,0,0.0,8
+32895468,Beierholm,mne26802,Susanne Sørensen,8,0,0.0,8
+32895468,Beierholm,mne52086,Lina Margrethe Bunk,6,0,0.0,6
+32895468,Beierholm,mne5591,Hans Michael Anker,5,0,0.0,5
 32895468,Beierholm,mne19787,Ole Nørrelund Hansen,4,0,0.0,4
 32895468,Beierholm,mne673,Jørgen Leif Joost,4,0,0.0,4
+32895468,Beierholm,mne35423,Anders Flymer-Dindler,4,0,0.0,4
 32895468,Beierholm,mne34172,Jacob Sejer Christensen,3,0,0.0,3
-32895468,Beierholm,mne26802,Susanne Sørensen,3,0,0.0,3
-32895468,Beierholm,mne27711,Trine Rasch,3,0,0.0,3
-32895468,Beierholm,mne29498,Dorthe Søndergaard Mikkelsen,2,0,0.0,2
-32895468,Beierholm,mne34137,Leon Lillholm Stokkebye,2,0,0.0,2
-32895468,Beierholm,mne2720,Torben Fritzbøger,2,0,0.0,2
+32895468,Beierholm,mne16679,Michael Bach,2,0,0.0,2
 32895468,Beierholm,mne19784,Steffen Møller Jensen,2,0,0.0,2
+32895468,Beierholm,mne29498,Dorthe Søndergaard Mikkelsen,2,0,0.0,2
+32895468,Beierholm,mne18589,Carl Verner Christiansen,2,0,0.0,2
 32895468,Beierholm,mne9577,Carsten Øhauge Pedersen,1,0,0.0,1
-32895468,Beierholm,mne4452,Per Dyg,1,0,0.0,1
-32895468,Beierholm,mne3698,Michael Honore,1,0,0.0,1
+32895468,Beierholm,mne34137,Leon Lillholm Stokkebye,1,0,0.0,1
+32895468,Beierholm,mne2720,Torben Fritzbøger,1,0,0.0,1
 32895468,Beierholm,mne41365,Morten Almtoft Lund,1,0,0.0,1
-32895468,Beierholm,mne18589,Carl Verner Christiansen,1,0,0.0,1
-32895468,Beierholm,mne8281,Søren Kahr,1,0,0.0,1
-32895468,Beierholm,mne16679,Michael Bach,1,0,0.0,1
+32895468,Beierholm,mne9246,Jens Peter Elgum,1,0,0.0,1
 32895468,Beierholm,mne23419,Hakon Rønn Jensen,1,0,0.0,1
+32895468,Beierholm,mne34129,Kristian Klarholt Jensen,1,0,0.0,1
+32895468,Beierholm,mne9405,Søren Piilgaard Henschel,1,0,0.0,1
+32895468,Beierholm,mne51498,Pernille Louise Jensen,1,0,0.0,1
+32895468,Beierholm,mne4452,Per Dyg,1,0,0.0,1
 32895468,Beierholm,mne18213,Lars Thruesen,1,0,0.0,1
 32895468,Beierholm,mne45897,Jes Vestergaard,1,0,0.0,1
-32895468,Beierholm,mne34129,Kristian Klarholt Jensen,1,0,0.0,1
-78337818,Blicher Revision & Rådgivning,mne33733,Per Jensen,121,0,0.0,121
-78337818,Blicher Revision & Rådgivning,mne33194,Kim Rune Christensen,73,0,0.0,73
-78337818,Blicher Revision & Rådgivning,mne52143,Jonas Kristoffer Haulund Langhoff,69,0,0.0,69
-78337818,Blicher Revision & Rådgivning,mne270,Svend Lykke Bohnsen,65,0,0.0,65
-78337818,Blicher Revision & Rådgivning,mne15242,Jan Hjorth,53,0,0.0,53
-78337818,Blicher Revision & Rådgivning,mne6143,Jan Heesgaard,48,1,0.0208,47
-37858498,Bornholms Revision,mne15625,Jens Otto Arboe Sonne,67,0,0.0,67
-37858498,Bornholms Revision,mne33232,Henrik Westh Thorsen,49,1,0.0204,48
-36029374,Buus Jensen,mne29456,Ulrik Nørskov,208,5,0.024,203
-36029374,Buus Jensen,mne27764,Søren Skouboe Tholle,143,0,0.0,143
-36029374,Buus Jensen,mne44149,Benjamin Møller Obel,124,0,0.0,124
-36029374,Buus Jensen,mne32825,Lotte Nørskov,95,0,0.0,95
-36029374,Buus Jensen,mne34295,Michael Thorngreen Markussen,92,2,0.0217,90
-36029374,Buus Jensen,mne27757,Arne Otto Sørensen,91,2,0.022,89
-36029374,Buus Jensen,mne34128,Thomas Lehmann Jensen,56,0,0.0,56
-36029374,Buus Jensen,mne47790,Peter Leth Keller,45,7,0.1556,38
-36029374,Buus Jensen,mne34277,Christoffer Jensen,35,1,0.0286,34
-36029374,Buus Jensen,mne6251,Ole Marquard,25,1,0.04,24
-36029374,Buus Jensen,mne10067,Gerhard Henrik Paaske,6,0,0.0,6
-36029374,Buus Jensen,Ukendt revisor,Ukendt revisor,5,0,0.0,5
-36029374,Buus Jensen,mne34129,Kristian Klarholt Jensen,4,0,0.0,4
-15897473,CDO Revison,mne4274,Claus Bjarne Overgaard Olsen,25,0,0.0,25
-15915641,Christensen Kjærulff,mne26748,John Mikkelsen,248,0,0.0,248
-15915641,Christensen Kjærulff,mne34390,Kenneth Bang Iversen,247,0,0.0,247
-15915641,Christensen Kjærulff,mne42832,Anders Nielsen,178,0,0.0,178
-15915641,Christensen Kjærulff,mne33765,Elan Lieck Schapiro,137,0,0.0,137
-15915641,Christensen Kjærulff,mne34372,Egon Ramskov Laursen,110,0,0.0,110
-15915641,Christensen Kjærulff,mne32726,Anders Ingemann Hansen,101,0,0.0,101
-15915641,Christensen Kjærulff,mne11651,Torben Laurentz Wiberg,98,0,0.0,98
-15915641,Christensen Kjærulff,mne47811,Anders Lund,98,0,0.0,98
-15915641,Christensen Kjærulff,mne25075,Sven-Erik Vejlby,91,0,0.0,91
-15915641,Christensen Kjærulff,mne19760,Hans Christian Grube,79,0,0.0,79
-15915641,Christensen Kjærulff,mne33311,Brian Hansen,78,0,0.0,78
-15915641,Christensen Kjærulff,mne19771,Peter Lund,68,0,0.0,68
-15915641,Christensen Kjærulff,mne24819,Kristian Henning Pryds,65,0,0.0,65
-15915641,Christensen Kjærulff,mne23492,Peter Steffen Schnedler Clausen,59,0,0.0,59
-15915641,Christensen Kjærulff,mne34367,Christian Carl Agerholm,58,0,0.0,58
-15915641,Christensen Kjærulff,mne10023,Rene Flemming Mina Jakobsen,50,0,0.0,50
-15915641,Christensen Kjærulff,mne7418,Jan Mogens Jefting,27,0,0.0,27
-15915641,Christensen Kjærulff,Ukendt revisor,Ukendt revisor,25,0,0.0,25
-15915641,Christensen Kjærulff,mne34194,Vanja Margrethe Lawaetz Schultz,23,0,0.0,23
-15915641,Christensen Kjærulff,mne35395,Mads Kokholm,22,0,0.0,22
-15915641,Christensen Kjærulff,mne8923,Mogens Stern,19,0,0.0,19
-15915641,Christensen Kjærulff,mne41362,Martin Robert Dyhr Jørgensen,14,0,0.0,14
-15915641,Christensen Kjærulff,mne49097,Lars Hvidt Benneborg,4,0,0.0,4
-15915641,Christensen Kjærulff,mne8201,Henrik Wulff Jørgensen,3,0,0.0,3
-15915641,Christensen Kjærulff,mne34292,Jakob Lund,1,0,0.0,1
+32895468,Beierholm,mne34451,Jesper Frank,1,0,0.0,1
+32895468,Beierholm,mne32775,Søren Vintersborg Nejmann,1,0,0.0,1
+78337818,Blicher Revision & Rådgivning,mne33733,Per Jensen,234,1,0.0043,233
+78337818,Blicher Revision & Rådgivning,mne52143,Jonas Kristoffer Haulund Langhoff,156,0,0.0,156
+78337818,Blicher Revision & Rådgivning,mne33194,Kim Rune Christensen,137,0,0.0,137
+78337818,Blicher Revision & Rådgivning,mne270,Svend Lykke Bohnsen,119,0,0.0,119
+78337818,Blicher Revision & Rådgivning,mne15242,Jan Hjorth,84,0,0.0,84
+78337818,Blicher Revision & Rådgivning,mne6143,Jan Heesgaard,42,0,0.0,42
+78337818,Blicher Revision & Rådgivning,Ukendt revisor,Ukendt revisor,3,0,0.0,3
+78337818,Blicher Revision & Rådgivning,mne3224,Ewe Britt Bünsov Brøns,1,0,0.0,1
+37858498,Bornholms Revision,mne15625,Jens Otto Arboe Sonne,87,0,0.0,87
+37858498,Bornholms Revision,mne33232,Henrik Westh Thorsen,85,2,0.0235,83
+37858498,Bornholms Revision,Ukendt revisor,Ukendt revisor,1,0,0.0,1
+15897473,CDO Revison,mne4274,Claus Bjarne Overgaard Olsen,50,1,0.02,49
+15915641,Christensen Kjærulff,mne34390,Kenneth Bang Iversen,463,0,0.0,463
+15915641,Christensen Kjærulff,mne26748,John Mikkelsen,425,0,0.0,425
+15915641,Christensen Kjærulff,mne42832,Anders Nielsen,270,0,0.0,270
+15915641,Christensen Kjærulff,mne33765,Elan Lieck Schapiro,252,0,0.0,252
+15915641,Christensen Kjærulff,mne34372,Egon Ramskov Laursen,182,0,0.0,182
+15915641,Christensen Kjærulff,mne32726,Anders Ingemann Hansen,167,0,0.0,167
+15915641,Christensen Kjærulff,mne11651,Torben Laurentz Wiberg,162,0,0.0,162
+15915641,Christensen Kjærulff,mne47811,Anders Lund,157,0,0.0,157
+15915641,Christensen Kjærulff,mne25075,Sven-Erik Vejlby,155,0,0.0,155
+15915641,Christensen Kjærulff,mne34367,Christian Carl Agerholm,149,0,0.0,149
+15915641,Christensen Kjærulff,mne33311,Brian Hansen,126,0,0.0,126
+15915641,Christensen Kjærulff,mne19760,Hans Christian Grube,105,0,0.0,105
+15915641,Christensen Kjærulff,mne10023,Rene Flemming Mina Jakobsen,82,0,0.0,82
+15915641,Christensen Kjærulff,mne23492,Peter Steffen Schnedler Clausen,80,0,0.0,80
+15915641,Christensen Kjærulff,mne19771,Peter Lund,80,0,0.0,80
+15915641,Christensen Kjærulff,mne24819,Kristian Henning Pryds,77,0,0.0,77
+15915641,Christensen Kjærulff,mne41362,Martin Robert Dyhr Jørgensen,57,0,0.0,57
+15915641,Christensen Kjærulff,mne35395,Mads Kokholm,53,0,0.0,53
+15915641,Christensen Kjærulff,mne7418,Jan Mogens Jefting,37,0,0.0,37
+15915641,Christensen Kjærulff,mne8923,Mogens Stern,27,0,0.0,27
+15915641,Christensen Kjærulff,Ukendt revisor,Ukendt revisor,11,0,0.0,11
+15915641,Christensen Kjærulff,mne34194,Vanja Margrethe Lawaetz Schultz,8,0,0.0,8
+15915641,Christensen Kjærulff,mne49097,Lars Hvidt Benneborg,6,0,0.0,6
+15915641,Christensen Kjærulff,mne8201,Henrik Wulff Jørgensen,4,0,0.0,4
+15915641,Christensen Kjærulff,mne10678,Iver Haugsted,3,0,0.0,3
 15915641,Christensen Kjærulff,mne49107,Josef Steen Renner Petersen,1,0,0.0,1
+15915641,Christensen Kjærulff,mne9880,Inge Nilsson,1,0,0.0,1
 31071097,DANSK REVISION A/S,mne35800,Christian Haaning,1,0,0.0,1
-19674193,DSH-Revision,mne3835,Leif Hansen,114,2,0.0175,112
-19674193,DSH-Revision,Ukendt revisor,Ukendt revisor,1,0,0.0,1
-33074441,Damgaard Revision,mne15369,Rene Kenneth Damgaard,53,2,0.0377,51
-41552204,DanRevision Statsautoriseret Revisionsanpartsselskab,mne34546,Henrik Rummenhoff,42,0,0.0,42
+19674193,DSH-Revision,mne3835,Leif Hansen,232,2,0.0086,230
+19674193,DSH-Revision,Ukendt revisor,Ukendt revisor,4,0,0.0,4
+33074441,Damgaard Revision,mne15369,Rene Kenneth Damgaard,113,2,0.0177,111
+33074441,Damgaard Revision,Ukendt revisor,Ukendt revisor,2,0,0.0,2
+41552204,DanRevision Statsautoriseret Revisionsanpartsselskab,mne34546,Henrik Rummenhoff,98,0,0.0,98
 41552204,DanRevision Statsautoriseret Revisionsanpartsselskab,Ukendt revisor,Ukendt revisor,7,0,0.0,7
-10019699,Danrevi Løgstør,mne40065,Tom Holm Cortsen,102,12,0.1176,90
-10019699,Danrevi Løgstør,Ukendt revisor,Ukendt revisor,6,0,0.0,6
+10019699,Danrevi Løgstør,mne40065,Tom Holm Cortsen,210,14,0.0667,196
+10019699,Danrevi Løgstør,Ukendt revisor,Ukendt revisor,7,1,0.1429,6
 10019699,Danrevi Løgstør,mne545,Jens Henry Hedegaard,1,0,0.0,1
-86141019,Dansk Revision Frederikssund,mne12506,Dorte Lodahl Krusaa,116,0,0.0,116
-86141019,Dansk Revision Frederikssund,mne2537,Susanne Hedegaard Pedersen,81,0,0.0,81
-86141019,Dansk Revision Frederikssund,mne35786,Jens Kolby,32,0,0.0,32
-86141019,Dansk Revision Frederikssund,mne51050,Kevin Klitgaard Lindgaard,12,0,0.0,12
-86141019,Dansk Revision Frederikssund,Ukendt revisor,Ukendt revisor,3,1,0.3333,2
+86141019,Dansk Revision Frederikssund,mne12506,Dorte Lodahl Krusaa,195,0,0.0,195
+86141019,Dansk Revision Frederikssund,mne2537,Susanne Hedegaard Pedersen,123,0,0.0,123
+86141019,Dansk Revision Frederikssund,mne35786,Jens Kolby,70,0,0.0,70
+86141019,Dansk Revision Frederikssund,mne51050,Kevin Klitgaard Lindgaard,61,2,0.0328,59
+86141019,Dansk Revision Frederikssund,Ukendt revisor,Ukendt revisor,2,0,0.0,2
 31778530,Dansk Revision Randers,mne34300,Michael Carstens,1,0,0.0,1
 31778530,Dansk Revision Randers,mne970,Erik Foged Lund,1,0,0.0,1
-29919801,Dansk Revision Slagelse,mne28660,Kim Thomas Nielsen,119,0,0.0,119
-29919801,Dansk Revision Slagelse,mne15744,Jesper Risom,118,0,0.0,118
-29919801,Dansk Revision Slagelse,mne51485,Claus Dyrelund Johansen,109,1,0.0092,108
-29919801,Dansk Revision Slagelse,mne31443,Karsten Ramsing Thunbo,63,0,0.0,63
-29919801,Dansk Revision Slagelse,mne16036,Arne Laursen,46,0,0.0,46
-29919801,Dansk Revision Slagelse,mne18514,Karsten Bøgelund Pedersen,17,1,0.0588,16
-29919801,Dansk Revision Slagelse,Ukendt revisor,Ukendt revisor,9,0,0.0,9
-29919801,Dansk Revision Slagelse,mne5316,Christian Fuglsbjerg,2,0,0.0,2
-29919801,Dansk Revision Slagelse,mne27701,Brian Skovhus Jakobsen,1,0,0.0,1
-26717671,Dansk Revision Århus,mne18617,Søren Aarup Iversen,102,1,0.0098,101
-26717671,Dansk Revision Århus,mne4109,Per Henrik Laursen,102,2,0.0196,100
-26717671,Dansk Revision Århus,mne2427,Torben Bisgaard,80,0,0.0,80
-26717671,Dansk Revision Århus,mne29387,Claus Guldborg Nyvold,69,5,0.0725,64
-26717671,Dansk Revision Århus,mne42831,Steffen Melin Henriksen,49,1,0.0204,48
-26717671,Dansk Revision Århus,mne10157,Henry Vesterholm,34,0,0.0,34
-26717671,Dansk Revision Århus,mne52080,Sebastian Pedersen,8,3,0.375,5
-26717671,Dansk Revision Århus,Ukendt revisor,Ukendt revisor,2,0,0.0,2
-35407359,Din Revisor,mne34273,Anders Bærentzen,124,1,0.0081,123
-35407359,Din Revisor,mne45914,Torben Rankenberg Hansen,1,0,0.0,1
+29919801,Dansk Revision Slagelse,mne51485,Claus Dyrelund Johansen,240,2,0.0083,238
+29919801,Dansk Revision Slagelse,mne28660,Kim Thomas Nielsen,231,0,0.0,231
+29919801,Dansk Revision Slagelse,mne15744,Jesper Risom,214,0,0.0,214
+29919801,Dansk Revision Slagelse,mne16036,Arne Laursen,70,0,0.0,70
+29919801,Dansk Revision Slagelse,mne31443,Karsten Ramsing Thunbo,68,0,0.0,68
+29919801,Dansk Revision Slagelse,mne18514,Karsten Bøgelund Pedersen,28,1,0.0357,27
+29919801,Dansk Revision Slagelse,mne27701,Brian Skovhus Jakobsen,2,0,0.0,2
+26717671,Dansk Revision Århus,mne18617,Søren Aarup Iversen,158,1,0.0063,157
+26717671,Dansk Revision Århus,mne4109,Per Henrik Laursen,134,3,0.0224,131
+26717671,Dansk Revision Århus,mne29387,Claus Guldborg Nyvold,109,5,0.0459,104
+26717671,Dansk Revision Århus,mne2427,Torben Bisgaard,103,0,0.0,103
+26717671,Dansk Revision Århus,mne42831,Steffen Melin Henriksen,85,2,0.0235,83
+26717671,Dansk Revision Århus,mne10157,Henry Vesterholm,36,0,0.0,36
+26717671,Dansk Revision Århus,mne52080,Sebastian Pedersen,19,3,0.1579,16
+26717671,Dansk Revision Århus,Ukendt revisor,Ukendt revisor,1,0,0.0,1
+35407359,Din Revisor,mne34273,Anders Bærentzen,260,1,0.0038,259
+35407359,Din Revisor,mne45914,Torben Rankenberg Hansen,2,0,0.0,2
 35407359,Din Revisor,mne3626,Torben Hansen,1,0,0.0,1
-30700228,EY,mne33819,Kaare Kristensen Lendorf,313,0,0.0,313
-30700228,EY,mne31450,Søren Smedegaard Hvid,301,3,0.01,298
-30700228,EY,mne34502,Peter Ulrik Faurschou,291,0,0.0,291
-30700228,EY,mne32129,Morten Schougård Sørensen,277,0,0.0,277
-30700228,EY,Ukendt revisor,Ukendt revisor,231,0,0.0,231
-30700228,EY,mne33198,Allan Terp,193,0,0.0,193
-30700228,EY,mne32743,Lars Gosvig Mortensen,187,3,0.016,184
-30700228,EY,mne24820,Tom Barreth Lassen,177,0,0.0,177
-30700228,EY,mne27701,Brian Skovhus Jakobsen,166,0,0.0,166
-30700228,EY,mne28654,Henrik Strange Meldahl,154,0,0.0,154
-30700228,EY,mne35420,Morten Østergaard Koch,138,0,0.0,138
-30700228,EY,mne28603,Mogens Keldbo Andreasen,126,0,0.0,126
-30700228,EY,mne24825,Henrik Pungvig Jensen,126,0,0.0,126
-30700228,EY,mne31429,Jan Thietje,126,0,0.0,126
-30700228,EY,mne32171,Christian Svane Christiansen,118,0,0.0,118
-30700228,EY,mne32775,Søren Vintersborg Nejmann,110,0,0.0,110
-30700228,EY,mne33732,Ole Rønne Becker,102,0,0.0,102
-30700228,EY,mne32748,Kenneth Skov Hansen,102,0,0.0,102
-30700228,EY,mne23254,Hans Børge Sinding Vistisen,96,0,0.0,96
-30700228,EY,mne28657,Jon Midtgaard,94,1,0.0106,93
-30700228,EY,mne44108,Claes Jensen,89,0,0.0,89
-30700228,EY,mne34495,Allan Lunde Pedersen,88,0,0.0,88
-30700228,EY,mne47833,Emil Overlund,87,0,0.0,87
-30700228,EY,mne24830,Henrik Reedtz Petersen,85,0,0.0,85
-30700228,EY,mne26738,Michael Nicolaj Czelinski Nielsen,84,0,0.0,84
-30700228,EY,mne21326,Jesper Jørn Pedersen,82,0,0.0,82
-30700228,EY,mne40036,Kennet Hartmann,79,0,0.0,79
-30700228,EY,mne21334,Claus Hammer-Pedersen,77,0,0.0,77
-30700228,EY,mne32128,Michael Anker,75,0,0.0,75
-30700228,EY,mne32777,Anders Flou,74,0,0.0,74
-30700228,EY,mne32732,Morten Kronborg Friis,73,0,0.0,73
-30700228,EY,mne33748,Thomas Hjortkjær Petersen,72,0,0.0,72
-30700228,EY,mne35461,Rasmus Berntsen,65,0,0.0,65
-30700228,EY,mne28632,Lars Rhod Søndergaard,60,0,0.0,60
-30700228,EY,mne47798,Kasper Hartvig Kortegaard,59,0,0.0,59
-30700228,EY,mne34333,Thomas Skovsgaard,58,0,0.0,58
-30700228,EY,mne16652,Claus Ejsing Andreasen,58,0,0.0,58
-30700228,EY,mne34313,Peter Andersen,56,0,0.0,56
-30700228,EY,mne34456,Lene Kamper Jørgensen,54,0,0.0,54
-30700228,EY,mne46588,Mads Olesen Klausen,54,0,0.0,54
-30700228,EY,mne35456,Henrik West Rohden Pedersen,50,0,0.0,50
-30700228,EY,mne26693,Mikkel Sthyr,46,0,0.0,46
-30700228,EY,mne29379,Jane Haugaard Petersen,40,0,0.0,40
-30700228,EY,mne36193,Henrik Kjær Andersen,40,0,0.0,40
-30700228,EY,mne26804,Michael Laursen,39,0,0.0,39
-30700228,EY,mne49102,Jacob Thøgersen,38,0,0.0,38
-30700228,EY,mne42771,Jonas Busk Tangsgaard,36,0,0.0,36
-30700228,EY,mne44060,Simon Kallesøe Blendstrup,36,0,0.0,36
-30700228,EY,mne35501,Allan Nørgaard,34,0,0.0,34
-30700228,EY,mne35422,Thomas Stubberup Kallehauge,33,0,0.0,33
-30700228,EY,mne40030,Jan Krarup Mortensen,31,0,0.0,31
-30700228,EY,mne28677,Thomas Bruun Kofoed,30,0,0.0,30
-30700228,EY,mne16653,Robert Christensen,30,0,0.0,30
-30700228,EY,mne40035,Martin Bøgsted,30,0,0.0,30
-30700228,EY,mne18513,Kim Rosholm Mortensen,28,0,0.0,28
-30700228,EY,mne45892,Steffen Michael Bach,26,0,0.0,26
-30700228,EY,mne23314,Claus Tanggaard Jacobsen,24,0,0.0,24
-30700228,EY,mne42791,Morten Weinreich Larsen,24,0,0.0,24
-30700228,EY,mne35419,Henrik Tranberg Madsen,24,0,0.0,24
-30700228,EY,mne31471,Christian Lindegaard Jøker,23,0,0.0,23
-30700228,EY,mne19709,Steen Skorstengaard,23,0,0.0,23
-30700228,EY,mne42792,Mads Vinding,23,0,0.0,23
-30700228,EY,mne21337,Birgit Morville Schrøder,22,0,0.0,22
-30700228,EY,mne34110,Michael Sig,22,0,0.0,22
-30700228,EY,mne48485,Louise Egebæk Greve,19,0,0.0,19
-30700228,EY,mne32212,Jens Thordahl Nøhr,17,0,0.0,17
-30700228,EY,mne35406,Dan Mose Andersen,16,0,0.0,16
+35407359,Din Revisor,Ukendt revisor,Ukendt revisor,1,0,0.0,1
+30700228,EY,mne34502,Peter Ulrik Faurschou,656,0,0.0,656
+30700228,EY,mne33819,Kaare Kristensen Lendorf,614,0,0.0,614
+30700228,EY,mne32129,Morten Schougård Sørensen,571,0,0.0,571
+30700228,EY,mne31450,Søren Smedegaard Hvid,487,3,0.0062,484
+30700228,EY,mne33198,Allan Terp,329,0,0.0,329
+30700228,EY,mne28654,Henrik Strange Meldahl,284,0,0.0,284
+30700228,EY,mne32743,Lars Gosvig Mortensen,276,3,0.0109,273
+30700228,EY,Ukendt revisor,Ukendt revisor,272,0,0.0,272
+30700228,EY,mne24820,Tom Barreth Lassen,264,0,0.0,264
+30700228,EY,mne27701,Brian Skovhus Jakobsen,255,0,0.0,255
+30700228,EY,mne35420,Morten Østergaard Koch,236,0,0.0,236
+30700228,EY,mne24830,Henrik Reedtz Petersen,225,0,0.0,225
+30700228,EY,mne28603,Mogens Keldbo Andreasen,214,0,0.0,214
+30700228,EY,mne24825,Henrik Pungvig Jensen,204,0,0.0,204
+30700228,EY,mne47833,Emil Overlund,197,0,0.0,197
+30700228,EY,mne28657,Jon Midtgaard,193,1,0.0052,192
+30700228,EY,mne31429,Jan Thietje,178,0,0.0,178
+30700228,EY,mne33732,Ole Rønne Becker,177,0,0.0,177
+30700228,EY,mne35461,Rasmus Berntsen,171,0,0.0,171
+30700228,EY,mne32775,Søren Vintersborg Nejmann,157,0,0.0,157
+30700228,EY,mne33748,Thomas Hjortkjær Petersen,156,0,0.0,156
+30700228,EY,mne32171,Christian Svane Christiansen,156,1,0.0064,155
+30700228,EY,mne23254,Hans Børge Sinding Vistisen,141,0,0.0,141
+30700228,EY,mne32748,Kenneth Skov Hansen,141,0,0.0,141
+30700228,EY,mne21334,Claus Hammer-Pedersen,138,0,0.0,138
+30700228,EY,mne40036,Kennet Hartmann,133,0,0.0,133
+30700228,EY,mne44108,Claes Jensen,133,0,0.0,133
+30700228,EY,mne32732,Morten Kronborg Friis,131,0,0.0,131
+30700228,EY,mne32128,Michael Anker,130,0,0.0,130
+30700228,EY,mne34495,Allan Lunde Pedersen,126,0,0.0,126
+30700228,EY,mne28632,Lars Rhod Søndergaard,120,0,0.0,120
+30700228,EY,mne32777,Anders Flou,118,0,0.0,118
+30700228,EY,mne21326,Jesper Jørn Pedersen,117,0,0.0,117
+30700228,EY,mne26693,Mikkel Sthyr,114,0,0.0,114
+30700228,EY,mne26738,Michael Nicolaj Czelinski Nielsen,111,0,0.0,111
+30700228,EY,mne44060,Simon Kallesøe Blendstrup,102,0,0.0,102
+30700228,EY,mne35456,Henrik West Rohden Pedersen,98,0,0.0,98
+30700228,EY,mne34333,Thomas Skovsgaard,98,0,0.0,98
+30700228,EY,mne49102,Jacob Thøgersen,96,0,0.0,96
+30700228,EY,mne47798,Kasper Hartvig Kortegaard,97,1,0.0103,96
+30700228,EY,mne36193,Henrik Kjær Andersen,90,0,0.0,90
+30700228,EY,mne46588,Mads Olesen Klausen,79,0,0.0,79
+30700228,EY,mne16652,Claus Ejsing Andreasen,75,0,0.0,75
+30700228,EY,mne35501,Allan Nørgaard,71,0,0.0,71
+30700228,EY,mne34456,Lene Kamper Jørgensen,70,0,0.0,70
+30700228,EY,mne42771,Jonas Busk Tangsgaard,63,0,0.0,63
+30700228,EY,mne40030,Jan Krarup Mortensen,62,0,0.0,62
+30700228,EY,mne46362,Tobias Oppermann Kristensen,60,0,0.0,60
+30700228,EY,mne29379,Jane Haugaard Petersen,60,0,0.0,60
+30700228,EY,mne48485,Louise Egebæk Greve,57,0,0.0,57
+30700228,EY,mne45892,Steffen Michael Bach,53,0,0.0,53
+30700228,EY,mne28677,Thomas Bruun Kofoed,51,0,0.0,51
+30700228,EY,mne26804,Michael Laursen,45,0,0.0,45
+30700228,EY,mne18513,Kim Rosholm Mortensen,44,0,0.0,44
+30700228,EY,mne35422,Thomas Stubberup Kallehauge,44,0,0.0,44
+30700228,EY,mne19709,Steen Skorstengaard,43,0,0.0,43
+30700228,EY,mne34313,Peter Andersen,40,0,0.0,40
+30700228,EY,mne40035,Martin Bøgsted,40,0,0.0,40
+30700228,EY,mne42791,Morten Weinreich Larsen,34,0,0.0,34
+30700228,EY,mne21337,Birgit Morville Schrøder,34,0,0.0,34
+30700228,EY,mne35419,Henrik Tranberg Madsen,31,0,0.0,31
+30700228,EY,mne31471,Christian Lindegaard Jøker,29,0,0.0,29
+30700228,EY,mne23314,Claus Tanggaard Jacobsen,28,0,0.0,28
+30700228,EY,mne34132,Søren Jensen,26,0,0.0,26
+30700228,EY,mne32212,Jens Thordahl Nøhr,24,0,0.0,24
+30700228,EY,mne42792,Mads Vinding,24,0,0.0,24
+30700228,EY,mne32085,Lone Nørgaard Eskildsen,23,0,0.0,23
+30700228,EY,mne47765,Henrik Carstensen,23,0,0.0,23
+30700228,EY,mne34110,Michael Sig,23,0,0.0,23
+30700228,EY,mne26797,Søren Skov Larsen,22,0,0.0,22
+30700228,EY,mne24687,Henrik Kronborg Iversen,21,0,0.0,21
+30700228,EY,mne35503,Rasmus Bloch Jespersen,21,0,0.0,21
+30700228,EY,mne35406,Dan Mose Andersen,20,0,0.0,20
+30700228,EY,mne28627,Martin Alsbæk,20,0,0.0,20
+30700228,EY,mne33234,Christian Schwenn Albrecht Johansen,18,0,0.0,18
+30700228,EY,mne49068,Tinne Kruse,17,0,0.0,17
+30700228,EY,mne32827,Ulrik Benedict Vassing,16,0,0.0,16
 30700228,EY,mne33691,Finn Thomassen,16,0,0.0,16
-30700228,EY,mne46362,Tobias Oppermann Kristensen,15,0,0.0,15
-30700228,EY,mne28627,Martin Alsbæk,15,0,0.0,15
-30700228,EY,mne32085,Lone Nørgaard Eskildsen,15,0,0.0,15
-30700228,EY,mne34132,Søren Jensen,14,0,0.0,14
-30700228,EY,mne24687,Henrik Kronborg Iversen,13,0,0.0,13
-30700228,EY,mne26797,Søren Skov Larsen,12,0,0.0,12
-30700228,EY,mne10157,Henry Vesterholm,12,0,0.0,12
-30700228,EY,mne40029,Karen Jørgensen,11,0,0.0,11
-30700228,EY,mne35503,Rasmus Bloch Jespersen,11,0,0.0,11
-30700228,EY,mne32827,Ulrik Benedict Vassing,10,0,0.0,10
-30700228,EY,mne32084,Henrik Andersen,10,0,0.0,10
-30700228,EY,mne47765,Henrik Carstensen,10,0,0.0,10
+30700228,EY,mne42788,Chris Mark,15,0,0.0,15
+30700228,EY,mne10157,Henry Vesterholm,15,0,0.0,15
+30700228,EY,mne46667,Anders Roe Eriksen,13,0,0.0,13
+30700228,EY,mne44147,Rasmus Friborg Andersen,13,0,0.0,13
+30700228,EY,mne11697,Mona Blønd,12,0,0.0,12
+30700228,EY,mne32084,Henrik Andersen,12,0,0.0,12
 30700228,EY,mne47789,Rolan Atl Caballero Pena Espedal,10,0,0.0,10
-30700228,EY,mne42245,Jesper Stier,9,0,0.0,9
-30700228,EY,mne11697,Mona Blønd,9,0,0.0,9
-30700228,EY,mne33234,Christian Schwenn Albrecht Johansen,9,0,0.0,9
-30700228,EY,mne42788,Chris Mark,7,0,0.0,7
-30700228,EY,mne19682,Lars Koch-Pedersen,7,0,0.0,7
-30700228,EY,mne46667,Anders Roe Eriksen,7,0,0.0,7
-30700228,EY,mne44147,Rasmus Friborg Andersen,5,0,0.0,5
-30700228,EY,mne33717,Jan Cotte Olsen,4,0,0.0,4
-30700228,EY,mne17390,Gitte Nybro Søndergaard,4,0,0.0,4
-30700228,EY,mne24732,Anders Duedahl-Olesen,3,0,0.0,3
+30700228,EY,mne17390,Gitte Nybro Søndergaard,9,0,0.0,9
+30700228,EY,mne33717,Jan Cotte Olsen,7,0,0.0,7
+30700228,EY,mne45895,Anders Hoberg Hedegaard,7,0,0.0,7
+30700228,EY,mne40029,Karen Jørgensen,6,0,0.0,6
+30700228,EY,mne24732,Anders Duedahl-Olesen,5,0,0.0,5
+30700228,EY,mne48534,Louise Hänsch Olsen,5,0,0.0,5
+30700228,EY,mne28675,Claus Kronbak,4,0,0.0,4
+30700228,EY,mne50642,Stig Magne Tran Nielsen,4,0,0.0,4
+30700228,EY,mne45891,Lasse Poulsen,4,0,0.0,4
+30700228,EY,mne21332,Torben Poul Bender,4,0,0.0,4
+30700228,EY,mne16653,Robert Christensen,3,0,0.0,3
 30700228,EY,mne29495,Jesper Pedersen,2,0,0.0,2
-30700228,EY,mne28675,Claus Kronbak,2,0,0.0,2
-30700228,EY,mne46623,Majken Simone Bech Larsen,2,0,0.0,2
-30700228,EY,mne45891,Lasse Poulsen,2,0,0.0,2
+30700228,EY,mne46359,Rikke Nanet Bach Buchholt,2,0,0.0,2
 30700228,EY,mne32736,Morten Klarskov Larsen,2,0,0.0,2
-30700228,EY,mne16912,Solveig Nielsen,1,0,0.0,1
 30700228,EY,mne18473,Karsten Mehlsen,1,0,0.0,1
-30700228,EY,mne50642,Stig Magne Tran Nielsen,1,0,0.0,1
+30700228,EY,mne32772,Michael Maass,1,0,0.0,1
+30700228,EY,mne50629,Lars Andersen,1,0,0.0,1
+30700228,EY,mne16912,Solveig Nielsen,1,0,0.0,1
 30700228,EY,mne8217,Niels Jørgen Jørgensen,1,0,0.0,1
 30700228,EY,mne11663,Kaj Christian Glochau,1,0,0.0,1
-30700228,EY,mne45895,Anders Hoberg Hedegaard,1,0,0.0,1
 30700228,EY,mne44113,Peter Kjeldsen,1,0,0.0,1
 30700228,EY,mne40045,Rene` Kirkegaard,1,0,0.0,1
-28939523,Ecovis Danmark,mne27872,Bo Langtoft Larsen,119,0,0.0,119
-28939523,Ecovis Danmark,mne3112,Kurt Bülow,58,0,0.0,58
-28939523,Ecovis Danmark,mne27702,Preben Pedersen,14,0,0.0,14
-28939523,Ecovis Danmark,mne46584,Jerrik Olsen,8,0,0.0,8
-43325000,Ellebæk Revision godkendt revisionsanpartsselskab,mne34400,Steen Ellebæk Nielsen,63,5,0.0794,58
-43325000,Ellebæk Revision godkendt revisionsanpartsselskab,Ukendt revisor,Ukendt revisor,5,0,0.0,5
+30700228,EY,mne40962,Hans Høj Nygaard,1,0,0.0,1
+30700228,EY,mne42245,Jesper Stier,1,0,0.0,1
+28939523,Ecovis Danmark,mne27872,Bo Langtoft Larsen,211,0,0.0,211
+28939523,Ecovis Danmark,mne3112,Kurt Bülow,106,0,0.0,106
+28939523,Ecovis Danmark,mne27702,Preben Pedersen,10,0,0.0,10
+28939523,Ecovis Danmark,mne46584,Jerrik Olsen,6,0,0.0,6
+43325000,Ellebæk Revision godkendt revisionsanpartsselskab,mne34400,Steen Ellebæk Nielsen,105,8,0.0762,97
 30821963,GLB Revision,Ukendt revisor,Ukendt revisor,1,0,0.0,1
-37205907,GoAudit,mne35537,Jesper Præst,17,0,0.0,17
-34209936,Grant Thornton,mne32109,Bo Lysen,335,11,0.0328,324
-34209936,Grant Thornton,mne23451,Claus Carlsen,273,4,0.0147,269
-34209936,Grant Thornton,mne30140,Claus Koskelin,282,22,0.078,260
-34209936,Grant Thornton,mne32794,Michael Beuchert,233,17,0.073,216
-34209936,Grant Thornton,mne34336,Thomas Hedegaard,232,31,0.1336,201
-34209936,Grant Thornton,mne31397,Anders Flensted Nielsen,208,9,0.0433,199
-34209936,Grant Thornton,mne32071,Carsten Ingemann Johansen,195,11,0.0564,184
-34209936,Grant Thornton,mne9459,Jan Poul Crilles Tønnesen,168,2,0.0119,166
-34209936,Grant Thornton,mne35438,Brian Christensen,166,9,0.0542,157
-34209936,Grant Thornton,mne14950,Jens Ludvig Aaen,162,8,0.0494,154
-34209936,Grant Thornton,mne19677,Finn Jensen Vammen,169,17,0.1006,152
-34209936,Grant Thornton,mne34491,Morten Grønbek,157,6,0.0382,151
-34209936,Grant Thornton,mne35471,Jonas Bødker-Iversen,173,26,0.1503,147
-34209936,Grant Thornton,mne48483,Philip Just Paulsen,155,9,0.0581,146
-34209936,Grant Thornton,mne31400,Jacob Vinther Kvist,150,9,0.06,141
-34209936,Grant Thornton,mne35794,Bo Sønder Andersen,178,48,0.2697,130
-34209936,Grant Thornton,mne31373,Lasse Kirkegaard Nejsum,135,6,0.0444,129
-34209936,Grant Thornton,mne28679,Steen Kofod Bager,136,12,0.0882,124
-34209936,Grant Thornton,Ukendt revisor,Ukendt revisor,130,7,0.0538,123
-34209936,Grant Thornton,mne31448,Morten Skovbjerg Kristiansen,143,23,0.1608,120
-34209936,Grant Thornton,mne34327,Ruben Stæhr,115,4,0.0348,111
-34209936,Grant Thornton,mne51529,Michael Helvig Nielsen Jensen,112,1,0.0089,111
-34209936,Grant Thornton,mne32793,Martin Seidelin Haaning,125,20,0.16,105
-34209936,Grant Thornton,mne35840,Morten Bo Hansen,116,11,0.0948,105
-34209936,Grant Thornton,mne29452,Kim Kjellberg,102,1,0.0098,101
-34209936,Grant Thornton,mne34117,Martin Bomholtz,99,3,0.0303,96
-34209936,Grant Thornton,mne35809,Allan Breiling,94,2,0.0213,92
-34209936,Grant Thornton,mne36191,Sebastian With Raunstrup,102,11,0.1078,91
-34209936,Grant Thornton,mne24769,Brian Levring Sørensen,89,1,0.0112,88
-34209936,Grant Thornton,mne44100,Casper Christiansen,83,0,0.0,83
-34209936,Grant Thornton,mne47887,Michael Brønnerup Madsen,90,8,0.0889,82
-34209936,Grant Thornton,mne1068,Michael Morild Møller,79,4,0.0506,75
-34209936,Grant Thornton,mne50608,Emil Odfeldt,80,8,0.1,72
-34209936,Grant Thornton,mne46622,Simon Mørner Nielsen,70,1,0.0143,69
-34209936,Grant Thornton,mne34493,Henrik Nordentoft Jensen,71,2,0.0282,69
-34209936,Grant Thornton,mne34346,Kaspar Holländer-Mieritz,67,1,0.0149,66
-34209936,Grant Thornton,mne47843,Kristian Randløv Lydolph,67,2,0.0299,65
-34209936,Grant Thornton,mne16226,Sten Vedsted Kristensen,63,2,0.0317,61
-34209936,Grant Thornton,mne34283,Morten Høgh-Petersen,59,1,0.0169,58
-34209936,Grant Thornton,mne47770,Jacob Rod Andersen,66,8,0.1212,58
-34209936,Grant Thornton,mne14773,Thøger Rude Andersen,68,11,0.1618,57
-34209936,Grant Thornton,mne18499,Carsten Mønster,57,0,0.0,57
-34209936,Grant Thornton,mne41308,Ronnie Lund Jensen,56,0,0.0,56
-34209936,Grant Thornton,mne46619,Chresta Egeberg Salling,63,9,0.1429,54
-34209936,Grant Thornton,mne34112,Ulrik Dyreby Kock,58,5,0.0862,53
-34209936,Grant Thornton,mne15974,Heine Johansen,53,0,0.0,53
-34209936,Grant Thornton,mne46601,Morten Michael Kertesz,55,5,0.0909,50
-34209936,Grant Thornton,mne45866,Brian Bay,57,8,0.1404,49
-34209936,Grant Thornton,mne30153,Brian Rasmussen,47,0,0.0,47
-34209936,Grant Thornton,mne41306,Karin German Jensen,52,7,0.1346,45
-34209936,Grant Thornton,mne2913,Ulrik Bloch-Sørensen,45,1,0.0222,44
-34209936,Grant Thornton,mne36169,Jacob Helly Juell-Hansen,43,1,0.0233,42
-34209936,Grant Thornton,mne48468,Peter Birk Stokholm,47,6,0.1277,41
-34209936,Grant Thornton,mne34111,Anders Holmgaard Christiansen,43,3,0.0698,40
-34209936,Grant Thornton,mne36175,Kasper Sone Randrup,37,0,0.0,37
-34209936,Grant Thornton,mne6161,Jens Max Haugbyrd,32,0,0.0,32
-34209936,Grant Thornton,mne33249,Jens Vadekær,33,3,0.0909,30
-34209936,Grant Thornton,mne49037,Daniel Gaardsdal Lauridsen,23,0,0.0,23
-34209936,Grant Thornton,mne24773,Sean Mogens Christensen,21,1,0.0476,20
-34209936,Grant Thornton,mne47768,Dennis Nielsen,20,2,0.1,18
-34209936,Grant Thornton,mne47829,Alice Garðalið,13,0,0.0,13
-34209936,Grant Thornton,mne47799,Jannik Lehmann Lausten,14,1,0.0714,13
-34209936,Grant Thornton,mne47918,Christoffer Anholm Salmon,14,1,0.0714,13
-34209936,Grant Thornton,mne47837,Mathias John Stensgaard Vintersbølle,12,0,0.0,12
-34209936,Grant Thornton,mne50701,Johannes Sønderris Pedersen,12,2,0.1667,10
-34209936,Grant Thornton,mne28708,Michael Winther Rasmussen,8,0,0.0,8
-34209936,Grant Thornton,mne51513,Markus Skøtt Clausen,8,0,0.0,8
-34209936,Grant Thornton,mne51512,Jonas Lyngberg,6,0,0.0,6
-34209936,Grant Thornton,mne52069,Jacob Dalsgaard Enkebølle,3,0,0.0,3
-34209936,Grant Thornton,mne47763,Stine Julie Nielsen,3,0,0.0,3
-34209936,Grant Thornton,mne42812,Nikolai Selch,3,0,0.0,3
-34209936,Grant Thornton,mne4493,Kurt Møller Pedersen,2,0,0.0,2
-34209936,Grant Thornton,mne51495,Sebastian Frøkjær-Lorendsen,2,0,0.0,2
-34209936,Grant Thornton,mne9567,Jan Nielsen,1,0,0.0,1
-33649452,Harboe og B.,mne40120,Mads Harboe Vainisto Nørring,85,15,0.1765,70
-36762454,Hedelund revision & rådgivning,mne19849,Carsten Hedelund,6,0,0.0,6
-36762454,Hedelund revision & rådgivning,mne3775,Jan Hansen,5,0,0.0,5
-19263096,Inforevision,mne23408,Sten Pedersen,206,1,0.0049,205
-19263096,Inforevision,mne29419,Ulrik Fog Christensen,177,0,0.0,177
-19263096,Inforevision,mne32178,Søren Moesgaard,156,0,0.0,156
-19263096,Inforevision,mne47780,Morten Ahrenst,143,0,0.0,143
-19263096,Inforevision,mne33718,Kenny Madsen,143,0,0.0,143
-19263096,Inforevision,mne35453,John Richardt Søbjærg,136,0,0.0,136
-19263096,Inforevision,mne33745,Simon Høgenhav,122,0,0.0,122
-19263096,Inforevision,mne34154,Mark Schneekloth Jensen,116,0,0.0,116
-19263096,Inforevision,mne29383,Simon Morthorst,102,0,0.0,102
-19263096,Inforevision,mne36161,Michael Dam-Johansen,97,0,0.0,97
-19263096,Inforevision,mne35841,Jesper Tranegaard Berril Andersen,93,0,0.0,93
-19263096,Inforevision,mne47779,Shpend Rasimi,63,0,0.0,63
+37205907,GoAudit,mne35537,Jesper Præst,25,0,0.0,25
+34209936,Grant Thornton,mne23451,Claus Carlsen,542,6,0.0111,536
+34209936,Grant Thornton,mne32109,Bo Lysen,497,13,0.0262,484
+34209936,Grant Thornton,mne30140,Claus Koskelin,524,42,0.0802,482
+34209936,Grant Thornton,mne35471,Jonas Bødker-Iversen,461,40,0.0868,421
+34209936,Grant Thornton,mne32794,Michael Beuchert,397,28,0.0705,369
+34209936,Grant Thornton,mne32071,Carsten Ingemann Johansen,387,20,0.0517,367
+34209936,Grant Thornton,mne34336,Thomas Hedegaard,395,37,0.0937,358
+34209936,Grant Thornton,mne31397,Anders Flensted Nielsen,321,10,0.0312,311
+34209936,Grant Thornton,mne35438,Brian Christensen,298,11,0.0369,287
+34209936,Grant Thornton,mne19677,Finn Jensen Vammen,307,43,0.1401,264
+34209936,Grant Thornton,mne9459,Jan Poul Crilles Tønnesen,263,3,0.0114,260
+34209936,Grant Thornton,mne48483,Philip Just Paulsen,263,10,0.038,253
+34209936,Grant Thornton,mne31400,Jacob Vinther Kvist,256,12,0.0469,244
+34209936,Grant Thornton,mne35794,Bo Sønder Andersen,298,59,0.198,239
+34209936,Grant Thornton,mne14950,Jens Ludvig Aaen,249,11,0.0442,238
+34209936,Grant Thornton,mne31373,Lasse Kirkegaard Nejsum,242,7,0.0289,235
+34209936,Grant Thornton,mne34283,Morten Høgh-Petersen,235,2,0.0085,233
+34209936,Grant Thornton,mne34491,Morten Grønbek,239,8,0.0335,231
+34209936,Grant Thornton,mne34327,Ruben Stæhr,231,5,0.0216,226
+34209936,Grant Thornton,mne32793,Martin Seidelin Haaning,237,27,0.1139,210
+34209936,Grant Thornton,mne44100,Casper Christiansen,204,0,0.0,204
+34209936,Grant Thornton,mne51529,Michael Helvig Nielsen Jensen,205,3,0.0146,202
+34209936,Grant Thornton,mne31448,Morten Skovbjerg Kristiansen,228,29,0.1272,199
+34209936,Grant Thornton,mne36191,Sebastian With Raunstrup,217,22,0.1014,195
+34209936,Grant Thornton,mne35840,Morten Bo Hansen,205,16,0.078,189
+34209936,Grant Thornton,mne28679,Steen Kofod Bager,202,14,0.0693,188
+34209936,Grant Thornton,mne47770,Jacob Rod Andersen,209,23,0.11,186
+34209936,Grant Thornton,mne47843,Kristian Randløv Lydolph,189,6,0.0317,183
+34209936,Grant Thornton,mne35809,Allan Breiling,184,4,0.0217,180
+34209936,Grant Thornton,mne34117,Martin Bomholtz,173,3,0.0173,170
+34209936,Grant Thornton,mne29452,Kim Kjellberg,165,1,0.0061,164
+34209936,Grant Thornton,mne46619,Chresta Egeberg Salling,177,14,0.0791,163
+34209936,Grant Thornton,mne46622,Simon Mørner Nielsen,156,2,0.0128,154
+34209936,Grant Thornton,mne24769,Brian Levring Sørensen,138,3,0.0217,135
+34209936,Grant Thornton,mne34493,Henrik Nordentoft Jensen,129,3,0.0233,126
+34209936,Grant Thornton,mne47887,Michael Brønnerup Madsen,134,9,0.0672,125
+34209936,Grant Thornton,mne41306,Karin German Jensen,138,13,0.0942,125
+34209936,Grant Thornton,mne34346,Kaspar Holländer-Mieritz,124,1,0.0081,123
+34209936,Grant Thornton,mne50608,Emil Odfeldt,132,9,0.0682,123
+34209936,Grant Thornton,mne48468,Peter Birk Stokholm,133,16,0.1203,117
+34209936,Grant Thornton,mne16226,Sten Vedsted Kristensen,116,6,0.0517,110
+34209936,Grant Thornton,mne1068,Michael Morild Møller,109,4,0.0367,105
+34209936,Grant Thornton,mne14773,Thøger Rude Andersen,118,16,0.1356,102
+34209936,Grant Thornton,mne41308,Ronnie Lund Jensen,102,1,0.0098,101
+34209936,Grant Thornton,mne34112,Ulrik Dyreby Kock,99,7,0.0707,92
+34209936,Grant Thornton,mne45866,Brian Bay,102,13,0.1275,89
+34209936,Grant Thornton,mne15974,Heine Johansen,87,0,0.0,87
+34209936,Grant Thornton,mne18499,Carsten Mønster,82,0,0.0,82
+34209936,Grant Thornton,mne34111,Anders Holmgaard Christiansen,86,5,0.0581,81
+34209936,Grant Thornton,mne46601,Morten Michael Kertesz,88,10,0.1136,78
+34209936,Grant Thornton,mne2913,Ulrik Bloch-Sørensen,77,2,0.026,75
+34209936,Grant Thornton,mne36175,Kasper Sone Randrup,72,0,0.0,72
+34209936,Grant Thornton,mne36169,Jacob Helly Juell-Hansen,72,2,0.0278,70
+34209936,Grant Thornton,Ukendt revisor,Ukendt revisor,61,0,0.0,61
+34209936,Grant Thornton,mne33249,Jens Vadekær,60,4,0.0667,56
+34209936,Grant Thornton,mne47768,Dennis Nielsen,57,2,0.0351,55
+34209936,Grant Thornton,mne30153,Brian Rasmussen,49,2,0.0408,47
+34209936,Grant Thornton,mne47837,Mathias John Stensgaard Vintersbølle,44,1,0.0227,43
+34209936,Grant Thornton,mne51512,Jonas Lyngberg,39,1,0.0256,38
+34209936,Grant Thornton,mne49037,Daniel Gaardsdal Lauridsen,33,0,0.0,33
+34209936,Grant Thornton,mne47829,Alice Garðalið,33,0,0.0,33
+34209936,Grant Thornton,mne6161,Jens Max Haugbyrd,30,0,0.0,30
+34209936,Grant Thornton,mne50701,Johannes Sønderris Pedersen,33,5,0.1515,28
+34209936,Grant Thornton,mne47799,Jannik Lehmann Lausten,26,2,0.0769,24
+34209936,Grant Thornton,mne47918,Christoffer Anholm Salmon,19,0,0.0,19
+34209936,Grant Thornton,mne52069,Jacob Dalsgaard Enkebølle,18,0,0.0,18
+34209936,Grant Thornton,mne28708,Michael Winther Rasmussen,14,0,0.0,14
+34209936,Grant Thornton,mne49079,Mohammad Zoraiz Khushdil,14,0,0.0,14
+34209936,Grant Thornton,mne51495,Sebastian Frøkjær-Lorendsen,11,0,0.0,11
+34209936,Grant Thornton,mne51513,Markus Skøtt Clausen,6,0,0.0,6
+34209936,Grant Thornton,mne42812,Nikolai Selch,5,0,0.0,5
+34209936,Grant Thornton,mne4493,Kurt Møller Pedersen,5,0,0.0,5
+34209936,Grant Thornton,mne52096,Peter Grønholdt Martensen,4,0,0.0,4
+34209936,Grant Thornton,mne24773,Sean Mogens Christensen,4,0,0.0,4
+34209936,Grant Thornton,mne778,Poul Lundsgaard,1,0,0.0,1
+33649452,Harboe og B.,mne40120,Mads Harboe Vainisto Nørring,148,18,0.1216,130
+36762454,Hedelund revision & rådgivning,mne19849,Carsten Hedelund,18,0,0.0,18
+36762454,Hedelund revision & rådgivning,mne3775,Jan Hansen,3,0,0.0,3
+19263096,Inforevision,mne23408,Sten Pedersen,383,1,0.0026,382
+19263096,Inforevision,mne29419,Ulrik Fog Christensen,320,0,0.0,320
+19263096,Inforevision,mne32178,Søren Moesgaard,255,0,0.0,255
+19263096,Inforevision,mne47780,Morten Ahrenst,251,0,0.0,251
+19263096,Inforevision,mne33745,Simon Høgenhav,238,0,0.0,238
+19263096,Inforevision,mne33718,Kenny Madsen,237,0,0.0,237
+19263096,Inforevision,mne35453,John Richardt Søbjærg,236,0,0.0,236
+19263096,Inforevision,mne36161,Michael Dam-Johansen,224,0,0.0,224
+19263096,Inforevision,mne29383,Simon Morthorst,208,0,0.0,208
+19263096,Inforevision,mne34154,Mark Schneekloth Jensen,192,0,0.0,192
+19263096,Inforevision,mne35841,Jesper Tranegaard Berril Andersen,157,0,0.0,157
+19263096,Inforevision,mne47779,Shpend Rasimi,153,0,0.0,153
+19263096,Inforevision,mne34318,Lasse Sværke,59,0,0.0,59
+19263096,Inforevision,mne45104,Martin Hansen,46,0,0.0,46
 19263096,Inforevision,Ukendt revisor,Ukendt revisor,39,0,0.0,39
-19263096,Inforevision,mne45104,Martin Hansen,34,0,0.0,34
-19263096,Inforevision,mne34318,Lasse Sværke,27,0,0.0,27
-19263096,Inforevision,mne11673,Vibeke Düring Reyes Jensen,14,0,0.0,14
-19263096,Inforevision,mne19759,Flemming Andreasen,13,0,0.0,13
-19263096,Inforevision,mne45858,Daniel Castiblanco Jakobsen,10,0,0.0,10
-19263096,Inforevision,mne45834,Øzgür Atan,10,0,0.0,10
+19263096,Inforevision,mne45858,Daniel Castiblanco Jakobsen,25,0,0.0,25
+19263096,Inforevision,mne11673,Vibeke Düring Reyes Jensen,25,0,0.0,25
+19263096,Inforevision,mne45834,Øzgür Atan,17,0,0.0,17
+19263096,Inforevision,mne32175,Tore Randinsen Falk Kolby,2,0,0.0,2
+19263096,Inforevision,mne19759,Flemming Andreasen,1,0,0.0,1
 19263096,Inforevision,mne51605,Mette Schüsler,1,0,0.0,1
-19263096,Inforevision,mne32175,Tore Randinsen Falk Kolby,1,0,0.0,1
-25578198,KPMG,mne32737,Steffen Sjørslev Hansen,89,0,0.0,89
-25578198,KPMG,mne33205,Klaus Rytz,80,0,0.0,80
-25578198,KPMG,mne33220,Nikolaj Møller Hansen,58,0,0.0,58
-25578198,KPMG,mne35442,Henrik Yoouphasook Jensen,58,0,0.0,58
-25578198,KPMG,mne30154,Kenn Wolff Hansen,52,0,0.0,52
-25578198,KPMG,mne42778,Jesper Bo Pedersen,46,0,0.0,46
-25578198,KPMG,Ukendt revisor,Ukendt revisor,44,0,0.0,44
-25578198,KPMG,mne32271,Martin Melchior Eiler,35,0,0.0,35
-25578198,KPMG,mne35458,Simon Vinberg Andersen,31,0,0.0,31
-25578198,KPMG,mne34459,Mikkel Trabjerg Knudsen,28,0,0.0,28
-25578198,KPMG,mne41364,Michael Emanuel Kraul Rasmussen,27,0,0.0,27
-25578198,KPMG,mne45848,Katrine Søgaard Gybel,21,1,0.0476,20
-25578198,KPMG,mne28662,Michael Lund Siegumfeldt,15,0,0.0,15
-25578198,KPMG,mne47781,Niklas Rosenmaier Filipsen,15,0,0.0,15
-25578198,KPMG,mne49092,Dennis Valdeck Hansen,14,0,0.0,14
-25578198,KPMG,mne26779,Anja Bjørnholt Lüthcke,14,0,0.0,14
-25578198,KPMG,mne19737,David Olafsson,13,0,0.0,13
-25578198,KPMG,mne47771,Stine Inger Pedersen,10,0,0.0,10
-25578198,KPMG,mne34191,Sara Carstensen,9,0,0.0,9
-25578198,KPMG,mne32169,Jon Wilson Beck,7,0,0.0,7
-25578198,KPMG,mne50643,Simon Mohammadi Andersen,7,0,0.0,7
-25578198,KPMG,mne49095,Simon Boling Tønnesen,6,0,0.0,6
-25578198,KPMG,mne50702,Christian Miltersen Sørensen,6,0,0.0,6
-25578198,KPMG,mne10778,Henrik Barner Christiansen,5,0,0.0,5
+25578198,KPMG,mne32737,Steffen Sjørslev Hansen,138,0,0.0,138
+25578198,KPMG,mne33205,Klaus Rytz,132,0,0.0,132
+25578198,KPMG,mne35442,Henrik Yoouphasook Jensen,126,0,0.0,126
+25578198,KPMG,mne33220,Nikolaj Møller Hansen,92,0,0.0,92
+25578198,KPMG,mne30154,Kenn Wolff Hansen,81,0,0.0,81
+25578198,KPMG,mne42778,Jesper Bo Pedersen,78,0,0.0,78
+25578198,KPMG,mne35458,Simon Vinberg Andersen,70,0,0.0,70
+25578198,KPMG,mne34459,Mikkel Trabjerg Knudsen,69,1,0.0145,68
+25578198,KPMG,mne32271,Martin Melchior Eiler,52,0,0.0,52
+25578198,KPMG,mne45848,Katrine Søgaard Gybel,49,1,0.0204,48
+25578198,KPMG,mne41364,Michael Emanuel Kraul Rasmussen,48,0,0.0,48
+25578198,KPMG,Ukendt revisor,Ukendt revisor,35,0,0.0,35
+25578198,KPMG,mne28662,Michael Lund Siegumfeldt,32,0,0.0,32
+25578198,KPMG,mne47781,Niklas Rosenmaier Filipsen,30,0,0.0,30
+25578198,KPMG,mne47771,Stine Inger Pedersen,29,0,0.0,29
+25578198,KPMG,mne49092,Dennis Valdeck Hansen,21,0,0.0,21
+25578198,KPMG,mne26779,Anja Bjørnholt Lüthcke,20,0,0.0,20
+25578198,KPMG,mne50702,Christian Miltersen Sørensen,20,0,0.0,20
+25578198,KPMG,mne34191,Sara Carstensen,18,0,0.0,18
+25578198,KPMG,mne50643,Simon Mohammadi Andersen,15,0,0.0,15
+25578198,KPMG,mne51528,Lars Jouper,8,0,0.0,8
+25578198,KPMG,mne47792,David Bonde-Jørgensen,7,0,0.0,7
+25578198,KPMG,mne10778,Henrik Barner Christiansen,6,0,0.0,6
+25578198,KPMG,mne51530,Nicolai Vöge Grønvall Elleby,6,0,0.0,6
+25578198,KPMG,mne49095,Simon Boling Tønnesen,5,0,0.0,5
+25578198,KPMG,mne19737,David Olafsson,4,0,0.0,4
+25578198,KPMG,mne47842,Ilhan Dogan,3,0,0.0,3
 25578198,KPMG,mne46614,Christian Møllegaard Larsen,3,0,0.0,3
-25578198,KPMG,mne50649,Rune Andreas Berg Vølding,3,0,0.0,3
-25578198,KPMG,mne47842,Ilhan Dogan,2,0,0.0,2
-25578198,KPMG,mne19812,Jette Kjær Bach,2,0,0.0,2
-25578198,KPMG,mne34283,Morten Høgh-Petersen,3,1,0.3333,2
-25578198,KPMG,mne32171,Christian Svane Christiansen,1,0,0.0,1
+25578198,KPMG,mne34283,Morten Høgh-Petersen,4,1,0.25,3
 25578198,KPMG,mne51550,Andreas Lottrup Windahl,1,0,0.0,1
-25578198,KPMG,mne51528,Lars Jouper,1,0,0.0,1
+25578198,KPMG,mne49860,Onur Yüksel,1,0,0.0,1
 25578198,KPMG,mne3545,Margit Søgaard Paaske Svendsen,1,0,0.0,1
-25578198,KPMG,mne51530,Nicolai Vöge Grønvall Elleby,1,0,0.0,1
-11790577,Kappelskov Revision,mne16045,Susanne Jensen,45,0,0.0,45
-11790577,Kappelskov Revision,mne12193,Peter Henriksen,45,1,0.0222,44
-11790577,Kappelskov Revision,mne7637,Jonna Henriette Roth,36,0,0.0,36
-11790577,Kappelskov Revision,Ukendt revisor,Ukendt revisor,2,0,0.0,2
-37984558,Kjær Revision,mne29436,Steen Kjær,32,0,0.0,32
-37984558,Kjær Revision,mne5502,Lone Østergaard Andersen,20,0,0.0,20
-38751646,Kovsted & Skovgård,mne32079,Johnny Skovgaard Rasmussen,154,0,0.0,154
-38751646,Kovsted & Skovgård,mne33710,René Ferrer Ruiz,146,0,0.0,146
-38751646,Kovsted & Skovgård,mne34460,Karen Kragesand Thomsen,114,0,0.0,114
-38751646,Kovsted & Skovgård,mne28824,Tonny Løbner,107,0,0.0,107
-38751646,Kovsted & Skovgård,mne35437,Diana Skovmand Poulsen,76,0,0.0,76
-38751646,Kovsted & Skovgård,mne92,Michael Bagner,57,0,0.0,57
-38751646,Kovsted & Skovgård,mne52074,Lisette Røjkjær Kansy,39,0,0.0,39
-38751646,Kovsted & Skovgård,mne8361,Ulla Hogan,36,0,0.0,36
-38751646,Kovsted & Skovgård,Ukendt revisor,Ukendt revisor,25,0,0.0,25
-39463113,Kreston CM,mne31406,Michel Kenneth Hansen,245,0,0.0,245
-39463113,Kreston CM,mne11664,Bent Lind Kofoed,217,4,0.0184,213
-39463113,Kreston CM,mne35842,Christian Berg Dohn,147,6,0.0408,141
-39463113,Kreston CM,mne33750,Jacob Hjort,116,4,0.0345,112
-39463113,Kreston CM,mne9191,Lise Foss Nielsen,22,0,0.0,22
-39463113,Kreston CM,Ukendt revisor,Ukendt revisor,10,0,0.0,10
-39463113,Kreston CM,mne51050,Kevin Klitgaard Lindgaard,9,1,0.1111,8
-33948794,Kreston SR,mne34088,Ulrik Kølbæk Alminde,93,2,0.0215,91
-33948794,Kreston SR,mne34151,Jens Villemann,60,0,0.0,60
-33948794,Kreston SR,mne33822,Michael Daugaard Hansen,43,0,0.0,43
-33948794,Kreston SR,mne33731,Jesper Sand,40,0,0.0,40
-33948794,Kreston SR,mne50633,Jeppe Birk Laursen,28,0,0.0,28
-33948794,Kreston SR,mne34546,Henrik Rummenhoff,8,0,0.0,8
-33948794,Kreston SR,mne49051,Jesper Graakjær,7,0,0.0,7
-33948794,Kreston SR,Ukendt revisor,Ukendt revisor,2,0,0.0,2
-38225804,Krydsrevision,mne18185,Johnny Larsen,38,2,0.0526,36
-89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne18620,Hans Madsen,25,0,0.0,25
-89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne32792,Klaus Lund Kristensen,12,0,0.0,12
-89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne31444,Uffe Larsen,10,0,0.0,10
-89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne30127,Jens-Ole Bøgild,8,0,0.0,8
-89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne47800,Jeppe Hillersborg Kristensen,7,0,0.0,7
-89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne49100,Jeppe Lynggaard Kongensholm,5,0,0.0,5
-89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne29385,Søren Knudsen,3,0,0.0,3
-89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne48490,Kenneth Taulbjerg,2,0,0.0,2
+25578198,KPMG,mne50649,Rune Andreas Berg Vølding,1,0,0.0,1
+25578198,KPMG,mne47788,Rune Vangsøe Sunesen,1,0,0.0,1
+11790577,Kappelskov Revision,mne16045,Susanne Jensen,77,0,0.0,77
+11790577,Kappelskov Revision,mne12193,Peter Henriksen,58,1,0.0172,57
+11790577,Kappelskov Revision,mne7637,Jonna Henriette Roth,50,0,0.0,50
+37984558,Kjær Revision,mne32372,Peter Nørgaard Kjær,274,0,0.0,274
+37984558,Kjær Revision,mne29436,Steen Kjær,89,0,0.0,89
+37984558,Kjær Revision,mne5502,Lone Østergaard Andersen,29,0,0.0,29
+38751646,Kovsted & Skovgård,mne32079,Johnny Skovgaard Rasmussen,258,0,0.0,258
+38751646,Kovsted & Skovgård,mne33710,René Ferrer Ruiz,222,0,0.0,222
+38751646,Kovsted & Skovgård,mne28824,Tonny Løbner,180,1,0.0056,179
+38751646,Kovsted & Skovgård,mne34460,Karen Kragesand Thomsen,173,0,0.0,173
+38751646,Kovsted & Skovgård,mne35437,Diana Skovmand Poulsen,149,0,0.0,149
+38751646,Kovsted & Skovgård,mne52074,Lisette Røjkjær Kansy,104,0,0.0,104
+38751646,Kovsted & Skovgård,mne92,Michael Bagner,83,0,0.0,83
+38751646,Kovsted & Skovgård,Ukendt revisor,Ukendt revisor,53,0,0.0,53
+38751646,Kovsted & Skovgård,mne8361,Ulla Hogan,50,0,0.0,50
+38751646,Kovsted & Skovgård,mne44113,Peter Kjeldsen,1,0,0.0,1
+39463113,Kreston CM,mne31406,Michel Kenneth Hansen,366,0,0.0,366
+39463113,Kreston CM,mne11664,Bent Lind Kofoed,366,4,0.0109,362
+39463113,Kreston CM,mne35842,Christian Berg Dohn,250,8,0.032,242
+39463113,Kreston CM,mne33750,Jacob Hjort,203,4,0.0197,199
+39463113,Kreston CM,mne9191,Lise Foss Nielsen,43,0,0.0,43
+39463113,Kreston CM,mne51050,Kevin Klitgaard Lindgaard,21,1,0.0476,20
+39463113,Kreston CM,Ukendt revisor,Ukendt revisor,7,0,0.0,7
+33948794,Kreston SR,mne34088,Ulrik Kølbæk Alminde,185,3,0.0162,182
+33948794,Kreston SR,mne34151,Jens Villemann,102,0,0.0,102
+33948794,Kreston SR,mne33822,Michael Daugaard Hansen,94,0,0.0,94
+33948794,Kreston SR,mne33731,Jesper Sand,77,0,0.0,77
+33948794,Kreston SR,mne50633,Jeppe Birk Laursen,50,0,0.0,50
+33948794,Kreston SR,mne34546,Henrik Rummenhoff,13,0,0.0,13
+33948794,Kreston SR,Ukendt revisor,Ukendt revisor,5,0,0.0,5
+33948794,Kreston SR,mne49051,Jesper Graakjær,1,0,0.0,1
+33948794,Kreston SR,mne34547,Louise Camilla Kring,1,0,0.0,1
+38225804,Krydsrevision,mne18185,Johnny Larsen,98,3,0.0306,95
+89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne32792,Klaus Lund Kristensen,197,0,0.0,197
+89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne31444,Uffe Larsen,173,0,0.0,173
+89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne29385,Søren Knudsen,139,0,0.0,139
+89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne30127,Jens-Ole Bøgild,140,1,0.0071,139
+89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne49100,Jeppe Lynggaard Kongensholm,133,1,0.0075,132
+89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne47800,Jeppe Hillersborg Kristensen,123,0,0.0,123
+89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne48490,Kenneth Taulbjerg,70,0,0.0,70
+89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne18620,Hans Madsen,65,0,0.0,65
+89224918,Krøyer Pedersen Statsautoriserede Revisorer,Ukendt revisor,Ukendt revisor,46,0,0.0,46
 89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne9738,Jan Noer Sahl,2,0,0.0,2
 89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne26812,Bent Nordestgaard Rønnest,1,0,0.0,1
 89224918,Krøyer Pedersen Statsautoriserede Revisorer,mne42772,Lasse Lei Kjærsgaard,1,0,0.0,1
-89224918,Krøyer Pedersen Statsautoriserede Revisorer P/S,mne32792,Klaus Lund Kristensen,104,0,0.0,104
-89224918,Krøyer Pedersen Statsautoriserede Revisorer P/S,mne31444,Uffe Larsen,102,0,0.0,102
-89224918,Krøyer Pedersen Statsautoriserede Revisorer P/S,mne29385,Søren Knudsen,85,0,0.0,85
-89224918,Krøyer Pedersen Statsautoriserede Revisorer P/S,Ukendt revisor,Ukendt revisor,80,0,0.0,80
-89224918,Krøyer Pedersen Statsautoriserede Revisorer P/S,mne49100,Jeppe Lynggaard Kongensholm,66,0,0.0,66
-89224918,Krøyer Pedersen Statsautoriserede Revisorer P/S,mne47800,Jeppe Hillersborg Kristensen,54,0,0.0,54
-89224918,Krøyer Pedersen Statsautoriserede Revisorer P/S,mne30127,Jens-Ole Bøgild,49,1,0.0204,48
-89224918,Krøyer Pedersen Statsautoriserede Revisorer P/S,mne48490,Kenneth Taulbjerg,39,0,0.0,39
-89224918,Krøyer Pedersen Statsautoriserede Revisorer P/S,mne18620,Hans Madsen,32,0,0.0,32
-36480254,Kvalitetsrevision,mne34465,Martin Bech Østergaard Jensen,237,3,0.0127,234
-36480254,Kvalitetsrevision,mne17429,Stig Henriksen,166,0,0.0,166
-36480254,Kvalitetsrevision,mne343,Lisette Pedersen,12,0,0.0,12
-36480254,Kvalitetsrevision,Ukendt revisor,Ukendt revisor,2,0,0.0,2
-33167288,LPOG ApS,mne28605,Morten Gøttsche,128,1,0.0078,127
-33167288,LPOG ApS,mne34550,Anders Pedersen,102,3,0.0294,99
-33167288,LPOG ApS,mne49852,Søren Grundtvig Hansen,49,0,0.0,49
-32676421,Leif Mikkelsen & Partnere,mne10948,Frank Lynge Jensen,98,0,0.0,98
-32676421,Leif Mikkelsen & Partnere,mne2483,Poul Erik Brodersen,70,0,0.0,70
-32676421,Leif Mikkelsen & Partnere,mne33214,Henrik Sørensen,75,6,0.08,69
-32676421,Leif Mikkelsen & Partnere,mne7943,Jan Guldager Rundstrøm,62,2,0.0323,60
-32676421,Leif Mikkelsen & Partnere,mne34489,Christian Lind Andreasen,54,2,0.037,52
-32676421,Leif Mikkelsen & Partnere,Ukendt revisor,Ukendt revisor,9,0,0.0,9
-30563670,Lejenregnskabschef.dk,mne15450,Dorte Juel Viborg,36,0,0.0,36
-41943661,Lokal Revision - statsautoriseret revisionsanpartsselskab,mne34535,Mikkel Thomsen,119,0,0.0,119
-41943661,Lokal Revision - statsautoriseret revisionsanpartsselskab,Ukendt revisor,Ukendt revisor,5,0,0.0,5
-18437082,Lægård Revision,mne15013,Kurt Lægaard,331,9,0.0272,322
-18437082,Lægård Revision,Ukendt revisor,Ukendt revisor,2,0,0.0,2
-18437082,Lægård Revision,mne34128,Thomas Lehmann Jensen,1,0,0.0,1
-32285201,Martinsen,mne34103,Jesper Hørby Jensen,294,0,0.0,294
-32285201,Martinsen,mne33686,Jørn Dam Jensen,276,0,0.0,276
-32285201,Martinsen,mne11645,Erling Kirk Brødbæk,245,0,0.0,245
-32285201,Martinsen,mne30193,Torben Holm Laursen,240,0,0.0,240
-32285201,Martinsen,mne24721,Alexander Hardy Josef Müller Rasmussen,238,0,0.0,238
-32285201,Martinsen,mne36186,Andy Philipp Gøttig,223,0,0.0,223
-32285201,Martinsen,mne24818,Hans Peter Hartzberg,219,0,0.0,219
-32285201,Martinsen,mne32199,Lars Greve Jensen,217,0,0.0,217
-32285201,Martinsen,mne32783,Kaj Kromann Laschewski,195,0,0.0,195
-32285201,Martinsen,mne33693,Lars Æbelø-Nielsen,169,0,0.0,169
-32285201,Martinsen,mne34371,Mikkel Boeck Eisgart,158,0,0.0,158
-32285201,Martinsen,mne34159,Jacob Hall,150,0,0.0,150
-32285201,Martinsen,mne25346,Leif Tomasson,147,0,0.0,147
-32285201,Martinsen,mne10734,Kim Rune Brarup,143,0,0.0,143
-32285201,Martinsen,mne34140,Michael Rechnagel,139,0,0.0,139
-32285201,Martinsen,mne46636,Jakob Bjerrum Olsen,136,0,0.0,136
-32285201,Martinsen,mne48482,Uffe Conradsen,126,0,0.0,126
-32285201,Martinsen,mne45930,Morten Østerkjærhus,125,0,0.0,125
-32285201,Martinsen,mne32857,Lene Minor Brødsgaard,120,0,0.0,120
-32285201,Martinsen,mne48473,Mike Bork Jun,116,0,0.0,116
-32285201,Martinsen,mne35478,Maj-Britt Lykke Viskum,99,1,0.0101,98
-32285201,Martinsen,mne29425,Christian Holm Pedersen,90,0,0.0,90
-32285201,Martinsen,mne51049,Anders Meyer Hansen,89,0,0.0,89
-32285201,Martinsen,mne50652,Anders Olesen,86,0,0.0,86
-32285201,Martinsen,mne34473,Chris Winther Bjørholm Dyhr,82,0,0.0,82
-32285201,Martinsen,mne34178,Line Kovsted,73,1,0.0137,72
-32285201,Martinsen,mne17313,Jan Kristensen,69,0,0.0,69
-32285201,Martinsen,mne49147,Kamilla Gadgaard Jensen,67,0,0.0,67
-32285201,Martinsen,mne5675,Arne Mørch Jakobsen,62,0,0.0,62
-32285201,Martinsen,mne2376,Torben Bastrup,59,0,0.0,59
-32285201,Martinsen,mne49841,Anders Bramming Vestergaard,51,0,0.0,51
-32285201,Martinsen,Ukendt revisor,Ukendt revisor,45,0,0.0,45
-32285201,Martinsen,mne27728,Henrik Esmann,45,0,0.0,45
-32285201,Martinsen,mne10154,Søren Anthon Thorup Pedersen,41,0,0.0,41
-32285201,Martinsen,mne9795,Knud Østrup,36,0,0.0,36
-32285201,Martinsen,mne236,Claus Elley,32,0,0.0,32
-32285201,Martinsen,mne52070,Jens Erik Tougård Elbæk,32,0,0.0,32
-32285201,Martinsen,mne17154,Inger Hedegaard Kristensen,30,0,0.0,30
-32285201,Martinsen,mne30212,Carsten Nielsen,30,0,0.0,30
-32285201,Martinsen,mne12250,Michael Kim Frejvald Petersen,26,0,0.0,26
-32285201,Martinsen,mne34486,Anders Arentoft,14,0,0.0,14
-32285201,Martinsen,mne51513,Markus Skøtt Clausen,11,0,0.0,11
-32285201,Martinsen,mne52104,Simon Lind Johannessen,10,0,0.0,10
+36480254,Kvalitetsrevision,mne34465,Martin Bech Østergaard Jensen,535,3,0.0056,532
+36480254,Kvalitetsrevision,mne17429,Stig Henriksen,245,0,0.0,245
+36480254,Kvalitetsrevision,mne343,Lisette Pedersen,26,0,0.0,26
+36480254,Kvalitetsrevision,Ukendt revisor,Ukendt revisor,4,0,0.0,4
+33167288,LPOG ApS,mne34550,Anders Pedersen,195,3,0.0154,192
+33167288,LPOG ApS,mne28605,Morten Gøttsche,157,1,0.0064,156
+33167288,LPOG ApS,mne49852,Søren Grundtvig Hansen,113,0,0.0,113
+33167288,LPOG ApS,Ukendt revisor,Ukendt revisor,1,0,0.0,1
+32676421,Leif Mikkelsen & Partnere,mne10948,Frank Lynge Jensen,191,0,0.0,191
+32676421,Leif Mikkelsen & Partnere,mne2483,Poul Erik Brodersen,123,0,0.0,123
+32676421,Leif Mikkelsen & Partnere,mne33214,Henrik Sørensen,110,7,0.0636,103
+32676421,Leif Mikkelsen & Partnere,mne7943,Jan Guldager Rundstrøm,96,2,0.0208,94
+32676421,Leif Mikkelsen & Partnere,mne34489,Christian Lind Andreasen,69,4,0.058,65
+32676421,Leif Mikkelsen & Partnere,Ukendt revisor,Ukendt revisor,33,1,0.0303,32
+30563670,Lejenregnskabschef.dk,mne15450,Dorte Juel Viborg,79,0,0.0,79
+41943661,Lokal Revision - statsautoriseret revisionsanpartsselskab,mne34535,Mikkel Thomsen,339,1,0.0029,338
+41943661,Lokal Revision - statsautoriseret revisionsanpartsselskab,Ukendt revisor,Ukendt revisor,8,0,0.0,8
+18437082,Lægård Revision,mne15013,Kurt Lægaard,556,12,0.0216,544
+18437082,Lægård Revision,Ukendt revisor,Ukendt revisor,3,0,0.0,3
+18437082,Lægård Revision,mne34128,Thomas Lehmann Jensen,2,0,0.0,2
+32285201,Martinsen,mne34103,Jesper Hørby Jensen,538,0,0.0,538
+32285201,Martinsen,mne33686,Jørn Dam Jensen,485,0,0.0,485
+32285201,Martinsen,mne24818,Hans Peter Hartzberg,447,0,0.0,447
+32285201,Martinsen,mne32199,Lars Greve Jensen,445,0,0.0,445
+32285201,Martinsen,mne24721,Alexander Hardy Josef Müller Rasmussen,402,0,0.0,402
+32285201,Martinsen,mne30193,Torben Holm Laursen,393,0,0.0,393
+32285201,Martinsen,mne11645,Erling Kirk Brødbæk,382,0,0.0,382
+32285201,Martinsen,mne36186,Andy Philipp Gøttig,367,1,0.0027,366
+32285201,Martinsen,mne32783,Kaj Kromann Laschewski,341,0,0.0,341
+32285201,Martinsen,mne34159,Jacob Hall,307,0,0.0,307
+32285201,Martinsen,mne45930,Morten Østerkjærhus,278,0,0.0,278
+32285201,Martinsen,mne33693,Lars Æbelø-Nielsen,265,0,0.0,265
+32285201,Martinsen,mne34371,Mikkel Boeck Eisgart,259,0,0.0,259
+32285201,Martinsen,mne50652,Anders Olesen,245,0,0.0,245
+32285201,Martinsen,mne25346,Leif Tomasson,244,0,0.0,244
+32285201,Martinsen,mne46636,Jakob Bjerrum Olsen,236,0,0.0,236
+32285201,Martinsen,mne34140,Michael Rechnagel,227,0,0.0,227
+32285201,Martinsen,mne48473,Mike Bork Jun,211,0,0.0,211
+32285201,Martinsen,mne48482,Uffe Conradsen,198,0,0.0,198
+32285201,Martinsen,mne10734,Kim Rune Brarup,196,0,0.0,196
+32285201,Martinsen,mne32857,Lene Minor Brødsgaard,185,0,0.0,185
+32285201,Martinsen,mne51049,Anders Meyer Hansen,177,0,0.0,177
+32285201,Martinsen,mne49841,Anders Bramming Vestergaard,171,0,0.0,171
+32285201,Martinsen,mne29425,Christian Holm Pedersen,168,0,0.0,168
+32285201,Martinsen,mne35478,Maj-Britt Lykke Viskum,148,0,0.0,148
+32285201,Martinsen,mne34473,Chris Winther Bjørholm Dyhr,143,0,0.0,143
+32285201,Martinsen,mne49147,Kamilla Gadgaard Jensen,127,0,0.0,127
+32285201,Martinsen,mne2376,Torben Bastrup,121,0,0.0,121
+32285201,Martinsen,mne17313,Jan Kristensen,111,0,0.0,111
+32285201,Martinsen,mne5675,Arne Mørch Jakobsen,107,0,0.0,107
+32285201,Martinsen,mne34178,Line Kovsted,101,1,0.0099,100
+32285201,Martinsen,mne52070,Jens Erik Tougård Elbæk,88,0,0.0,88
+32285201,Martinsen,Ukendt revisor,Ukendt revisor,64,0,0.0,64
+32285201,Martinsen,mne17154,Inger Hedegaard Kristensen,48,0,0.0,48
+32285201,Martinsen,mne30212,Carsten Nielsen,47,0,0.0,47
+32285201,Martinsen,mne236,Claus Elley,36,0,0.0,36
+32285201,Martinsen,mne51513,Markus Skøtt Clausen,34,0,0.0,34
+32285201,Martinsen,mne12250,Michael Kim Frejvald Petersen,27,0,0.0,27
+32285201,Martinsen,mne9795,Knud Østrup,25,0,0.0,25
+32285201,Martinsen,mne34486,Anders Arentoft,21,0,0.0,21
+32285201,Martinsen,mne52104,Simon Lind Johannessen,20,0,0.0,20
+32285201,Martinsen,mne10154,Søren Anthon Thorup Pedersen,16,0,0.0,16
+32285201,Martinsen,mne27728,Henrik Esmann,16,0,0.0,16
+32285201,Martinsen,mne51604,Abdallah Mohamed Said Sheikh Farah,13,0,0.0,13
 32285201,Martinsen,mne21329,Brian Majlund,2,0,0.0,2
-32285201,Martinsen,mne51604,Abdallah Mohamed Said Sheikh Farah,2,0,0.0,2
 32285201,Martinsen,mne1870,Per Tranekær Nielsen,1,0,0.0,1
-33088205,MunkStrunge,mne32810,Jesper Strunge,138,0,0.0,138
-33088205,MunkStrunge,Ukendt revisor,Ukendt revisor,2,0,0.0,2
+33088205,MunkStrunge,mne32810,Jesper Strunge,240,0,0.0,240
 33088205,MunkStrunge,mne36026,Henrik Lund Jensen,1,0,0.0,1
-30835654,Møller & Madsen,mne35448,Jacob Nissen Kronow,14,0,0.0,14
-30835654,Møller & Madsen,mne17268,Torben Gudmundsen,8,0,0.0,8
-30835654,Møller & Madsen,mne12357,Helle Vestergård Ebsen,8,0,0.0,8
-12868693,Nejstgaard & Vetlov,mne15805,Michael Ryding,111,0,0.0,111
-12868693,Nejstgaard & Vetlov,mne34152,Henrik Bremerskov Broe,84,0,0.0,84
-12868693,Nejstgaard & Vetlov,mne33697,Lars Kenneth Hansen Larsø,77,1,0.013,76
-12868693,Nejstgaard & Vetlov,mne49045,Anders Westphal Klinke,40,2,0.05,38
-12868693,Nejstgaard & Vetlov,mne29494,Jens Michael Colstrup,30,0,0.0,30
-12868693,Nejstgaard & Vetlov,Ukendt revisor,Ukendt revisor,4,0,0.0,4
-37605255,Nordkyst Revision Godkendt Revisionspartnerselskab,mne2940,Jens Jørgen Damberg,165,34,0.2061,131
-37605255,Nordkyst Revision Godkendt Revisionspartnerselskab,mne51546,Stefan Baundal,72,13,0.1806,59
-17524305,Nærrevision,mne33799,Dennis Mikkelsen,132,0,0.0,132
-17524305,Nærrevision,mne45863,Lasse Babiel Vilhelm,95,0,0.0,95
-17524305,Nærrevision,mne33236,Henrik Gislum Jacobsen,76,0,0.0,76
-17524305,Nærrevision,mne28695,Claus Hansen,59,0,0.0,59
-17524305,Nærrevision,mne18146,Stig Lennart Suttiwanna Skovly,56,1,0.0179,55
-17524305,Nærrevision,mne18256,Jørgen Raymond Jensen,50,0,0.0,50
-17524305,Nærrevision,mne4533,Jimmy Vestphael,28,0,0.0,28
-17524305,Nærrevision,mne16682,Kenneth Lehmann Andersen,16,0,0.0,16
-17524305,Nærrevision,Ukendt revisor,Ukendt revisor,10,0,0.0,10
-17524305,Nærrevision,mne7203,Jørgen Krøyer,5,0,0.0,5
-31131928,Nørgaard Revision,mne982,Flemming Nørgaard,19,0,0.0,19
+30835654,Møller & Madsen,mne12357,Helle Vestergård Ebsen,9,0,0.0,9
+30835654,Møller & Madsen,mne35448,Jacob Nissen Kronow,4,0,0.0,4
+30835654,Møller & Madsen,mne17268,Torben Gudmundsen,4,1,0.25,3
+12868693,Nejstgaard & Vetlov,mne15805,Michael Ryding,186,0,0.0,186
+12868693,Nejstgaard & Vetlov,mne34152,Henrik Bremerskov Broe,171,0,0.0,171
+12868693,Nejstgaard & Vetlov,mne33697,Lars Kenneth Hansen Larsø,134,1,0.0075,133
+12868693,Nejstgaard & Vetlov,mne49045,Anders Westphal Klinke,99,2,0.0202,97
+12868693,Nejstgaard & Vetlov,mne29494,Jens Michael Colstrup,44,0,0.0,44
+37605255,Nordkyst Revision Godkendt Revisionspartnerselskab,mne2940,Jens Jørgen Damberg,380,43,0.1132,337
+37605255,Nordkyst Revision Godkendt Revisionspartnerselskab,mne51546,Stefan Baundal,133,17,0.1278,116
+37605255,Nordkyst Revision Godkendt Revisionspartnerselskab,mne15273,Kjeld Torben Birk,1,1,1.0,0
+17524305,Nærrevision,mne33799,Dennis Mikkelsen,243,0,0.0,243
+17524305,Nærrevision,mne45863,Lasse Babiel Vilhelm,187,0,0.0,187
+17524305,Nærrevision,mne33236,Henrik Gislum Jacobsen,101,0,0.0,101
+17524305,Nærrevision,mne18146,Stig Lennart Suttiwanna Skovly,97,1,0.0103,96
+17524305,Nærrevision,mne28695,Claus Hansen,91,0,0.0,91
+17524305,Nærrevision,mne18256,Jørgen Raymond Jensen,87,0,0.0,87
+17524305,Nærrevision,mne4533,Jimmy Vestphael,35,0,0.0,35
+17524305,Nærrevision,mne16682,Kenneth Lehmann Andersen,28,0,0.0,28
+17524305,Nærrevision,mne7203,Jørgen Krøyer,8,0,0.0,8
+17524305,Nærrevision,Ukendt revisor,Ukendt revisor,8,0,0.0,8
+17524305,Nærrevision,mne12354,Jakob Bo Løkke,4,0,0.0,4
+31131928,Nørgaard Revision,mne982,Flemming Nørgaard,26,0,0.0,26
 39090279,One Revision,mne46609,Thomas Søgaard Christensen,1,0,0.0,1
 31495288,PK Revision,mne11903,Palle Knudsen,2,0,0.0,2
-15807776,Partner Revision,mne32848,Peter Vinderslev,319,2,0.0063,317
-15807776,Partner Revision,mne32096,Tom Østergaard,263,2,0.0076,261
-15807776,Partner Revision,mne32735,Morten Broberg Lind,238,1,0.0042,237
-15807776,Partner Revision,mne23420,Søren Høgsgaard Andersen,228,1,0.0044,227
-15807776,Partner Revision,mne33753,Ole Jespersen-Skree,207,0,0.0,207
-15807776,Partner Revision,mne31399,Tommy Haubjerg Andersen,203,0,0.0,203
-15807776,Partner Revision,mne32101,Rene Meilandt Mortensen,175,1,0.0057,174
-15807776,Partner Revision,mne32205,Henning Jager Neldeberg,160,0,0.0,160
-15807776,Partner Revision,mne32733,Søren Nørgaard Jensen,157,0,0.0,157
-15807776,Partner Revision,mne31436,Flemming Sillesen,150,0,0.0,150
-15807776,Partner Revision,mne27765,Henrik Ludvigsen,147,0,0.0,147
-15807776,Partner Revision,mne34028,Henrik Dalgaard,139,0,0.0,139
-15807776,Partner Revision,mne43455,Morten Olesen,135,0,0.0,135
-15807776,Partner Revision,mne50559,Jesper Majkjær Ramlov,135,0,0.0,135
-15807776,Partner Revision,mne10823,Ole Baastrup Søndergaard,77,0,0.0,77
-15807776,Partner Revision,mne50564,Nikolai Bundgaard Thomassen,72,0,0.0,72
-15807776,Partner Revision,mne10776,Claus Lykke Jensen,71,0,0.0,71
-15807776,Partner Revision,mne46607,Lars Risager Bormann,70,0,0.0,70
-15807776,Partner Revision,mne34480,Ove Iversen,65,0,0.0,65
-15807776,Partner Revision,mne8217,Niels Jørgen Jørgensen,61,0,0.0,61
-15807776,Partner Revision,mne34475,Helle Medom Jensen,61,0,0.0,61
-15807776,Partner Revision,mne2505,Knud Erik Hjøllund,53,0,0.0,53
-15807776,Partner Revision,mne27779,John Andersen,38,0,0.0,38
-15807776,Partner Revision,mne47866,Steffan Bækgaard Knudsen,33,0,0.0,33
-15807776,Partner Revision,mne33285,Allan Østergaard,29,1,0.0345,28
-15807776,Partner Revision,mne2378,Aksel Bech,25,0,0.0,25
-15807776,Partner Revision,Ukendt revisor,Ukendt revisor,23,0,0.0,23
+15807776,Partner Revision,mne32848,Peter Vinderslev,514,2,0.0039,512
+15807776,Partner Revision,mne32096,Tom Østergaard,428,2,0.0047,426
+15807776,Partner Revision,mne23420,Søren Høgsgaard Andersen,386,2,0.0052,384
+15807776,Partner Revision,mne32735,Morten Broberg Lind,376,1,0.0027,375
+15807776,Partner Revision,mne33753,Ole Jespersen-Skree,359,0,0.0,359
+15807776,Partner Revision,mne32733,Søren Nørgaard Jensen,330,0,0.0,330
+15807776,Partner Revision,mne50559,Jesper Majkjær Ramlov,328,0,0.0,328
+15807776,Partner Revision,mne31399,Tommy Haubjerg Andersen,298,0,0.0,298
+15807776,Partner Revision,mne32101,Rene Meilandt Mortensen,299,1,0.0033,298
+15807776,Partner Revision,mne32205,Henning Jager Neldeberg,254,0,0.0,254
+15807776,Partner Revision,mne31436,Flemming Sillesen,250,0,0.0,250
+15807776,Partner Revision,mne43455,Morten Olesen,227,0,0.0,227
+15807776,Partner Revision,mne27765,Henrik Ludvigsen,215,0,0.0,215
+15807776,Partner Revision,mne34028,Henrik Dalgaard,214,0,0.0,214
+15807776,Partner Revision,mne50564,Nikolai Bundgaard Thomassen,139,0,0.0,139
+15807776,Partner Revision,mne34480,Ove Iversen,134,0,0.0,134
+15807776,Partner Revision,mne10823,Ole Baastrup Søndergaard,131,0,0.0,131
+15807776,Partner Revision,mne46607,Lars Risager Bormann,121,0,0.0,121
+15807776,Partner Revision,mne47866,Steffan Bækgaard Knudsen,115,0,0.0,115
+15807776,Partner Revision,mne10776,Claus Lykke Jensen,99,0,0.0,99
+15807776,Partner Revision,mne8217,Niels Jørgen Jørgensen,96,0,0.0,96
+15807776,Partner Revision,mne2505,Knud Erik Hjøllund,79,0,0.0,79
+15807776,Partner Revision,mne34475,Helle Medom Jensen,79,0,0.0,79
+15807776,Partner Revision,mne33285,Allan Østergaard,43,1,0.0233,42
+15807776,Partner Revision,mne2378,Aksel Bech,41,0,0.0,41
+15807776,Partner Revision,Ukendt revisor,Ukendt revisor,24,0,0.0,24
+15807776,Partner Revision,mne27779,John Andersen,17,0,0.0,17
 15807776,Partner Revision,mne16538,Lars Ole Mortensen,2,0,0.0,2
-25160037,Piaster Revisorerne,mne29455,Steen Dahl Andersen,149,1,0.0067,148
-25160037,Piaster Revisorerne,mne45833,Kaspar Hartmann-Petersen,108,2,0.0185,106
-25160037,Piaster Revisorerne,mne34123,Stefan Sølvhøj Johansson,102,1,0.0098,101
-25160037,Piaster Revisorerne,mne35462,Niels Kristian Tordrup Mørk,89,1,0.0112,88
-25160037,Piaster Revisorerne,mne45851,Emil Lagstrøm,61,0,0.0,61
-25160037,Piaster Revisorerne,mne21333,Kim Hansen Schwartz,43,0,0.0,43
-25160037,Piaster Revisorerne,mne15091,Jesper Peter Falk,42,0,0.0,42
-25160037,Piaster Revisorerne,mne49954,Philip Bak Vienberg,37,0,0.0,37
-25160037,Piaster Revisorerne,Ukendt revisor,Ukendt revisor,15,0,0.0,15
-25160037,Piaster Revisorerne,mne30263,Claus Pio,12,0,0.0,12
-44282380,Powered-By Statsautoriseret Revisionspartnerselskab,mne24684,Søren Strandby,124,5,0.0403,119
-44282380,Powered-By Statsautoriseret Revisionspartnerselskab,mne11675,Sten Peters,52,3,0.0577,49
-44282380,Powered-By Statsautoriseret Revisionspartnerselskab,mne32206,Troels Løvschall,36,0,0.0,36
-44282380,Powered-By Statsautoriseret Revisionspartnerselskab,mne32789,Niels Høj Nygaard,27,1,0.037,26
-44282380,Powered-By Statsautoriseret Revisionspartnerselskab,Ukendt revisor,Ukendt revisor,26,2,0.0769,24
-44282380,Powered-By Statsautoriseret Revisionspartnerselskab,mne9384,Eigil Hansen,15,1,0.0667,14
-44282380,Powered-By Statsautoriseret Revisionspartnerselskab,mne31471,Christian Lindegaard Jøker,4,0,0.0,4
-33771231,PricewaterhouseCoopers,Ukendt revisor,Ukendt revisor,293,0,0.0,293
-33771231,PricewaterhouseCoopers,mne17120,Henrik Aslund Pedersen,292,0,0.0,292
-33771231,PricewaterhouseCoopers,mne30224,Jan Bunk Harbo Larsen,272,0,0.0,272
-33771231,PricewaterhouseCoopers,mne33714,Christian Roding,267,0,0.0,267
-33771231,PricewaterhouseCoopers,mne32806,Morten Jørgensen,238,0,0.0,238
-33771231,PricewaterhouseCoopers,mne33762,Mads Hornbæk,233,0,0.0,233
-33771231,PricewaterhouseCoopers,mne33726,Brian Rønne Nielsen,233,1,0.0043,232
-33771231,PricewaterhouseCoopers,mne23324,Poul Spencer Poulsen,212,0,0.0,212
-33771231,PricewaterhouseCoopers,mne36027,Martin Sloth Langhoff Hansen,212,0,0.0,212
-33771231,PricewaterhouseCoopers,mne23318,Mikael Johansen,201,0,0.0,201
-33771231,PricewaterhouseCoopers,mne28701,Brian Pedersen,196,0,0.0,196
-33771231,PricewaterhouseCoopers,mne24826,Mads Meldgaard,187,0,0.0,187
-33771231,PricewaterhouseCoopers,mne30221,Flemming Vang Eghoff,183,0,0.0,183
-33771231,PricewaterhouseCoopers,mne34169,Henrik Forthoft Lind,173,0,0.0,173
-33771231,PricewaterhouseCoopers,mne29440,Jannick Kjersgaard,171,0,0.0,171
-33771231,PricewaterhouseCoopers,mne24817,Lars Almskou Ohmeyer,157,0,0.0,157
-33771231,PricewaterhouseCoopers,mne27768,Line Hedam,142,0,0.0,142
-33771231,PricewaterhouseCoopers,mne26745,Claus Dalager,141,0,0.0,141
-33771231,PricewaterhouseCoopers,mne35811,Lasse Fuglsbæk Berg,140,0,0.0,140
-33771231,PricewaterhouseCoopers,mne32115,Palle Habekost Jensen,140,0,0.0,140
-33771231,PricewaterhouseCoopers,mne33722,Brian Petersen,138,0,0.0,138
-33771231,PricewaterhouseCoopers,mne33256,Kim Ruby Vorret,137,0,0.0,137
-33771231,PricewaterhouseCoopers,mne27864,Henning Tønder Olesen,130,0,0.0,130
-33771231,PricewaterhouseCoopers,mne12318,Kim Nygaard,130,0,0.0,130
-33771231,PricewaterhouseCoopers,mne33245,Lars Vagner Hansen,130,0,0.0,130
-33771231,PricewaterhouseCoopers,mne34539,Claus Lyngsø Sørensen,126,0,0.0,126
-33771231,PricewaterhouseCoopers,mne27778,Per Henrik Larsen,124,0,0.0,124
-33771231,PricewaterhouseCoopers,mne35804,Steffen Damsgaard Sørensen,119,0,0.0,119
-33771231,PricewaterhouseCoopers,mne33262,Ulrik Ræbild,112,0,0.0,112
-33771231,PricewaterhouseCoopers,mne42827,Stefan Gabriel Dracea,112,0,0.0,112
-33771231,PricewaterhouseCoopers,mne26783,Henrik Kragh,109,0,0.0,109
-33771231,PricewaterhouseCoopers,mne50676,Lone Dalsgaard,100,0,0.0,100
-33771231,PricewaterhouseCoopers,mne42817,Kristian Rath,99,0,0.0,99
-33771231,PricewaterhouseCoopers,mne18473,Karsten Mehlsen,96,0,0.0,96
-33771231,PricewaterhouseCoopers,mne34162,Mette Plambech Jensen,94,0,0.0,94
-33771231,PricewaterhouseCoopers,mne18628,Jacob Fromm Christiansen,93,0,0.0,93
-33771231,PricewaterhouseCoopers,mne26718,René Otto Poulsen,89,0,0.0,89
-33771231,PricewaterhouseCoopers,mne32209,Martin Lunden,88,0,0.0,88
-33771231,PricewaterhouseCoopers,mne40760,Mads Johansson,86,0,0.0,86
-33771231,PricewaterhouseCoopers,mne42824,Søren Alexander,80,0,0.0,80
-33771231,PricewaterhouseCoopers,mne34161,Rasmus Mellergaard Stenskrog,79,0,0.0,79
-33771231,PricewaterhouseCoopers,mne40037,Keld Allan Martor Nielsen,76,0,0.0,76
-33771231,PricewaterhouseCoopers,mne45828,Kasper Olesen,76,0,0.0,76
-33771231,PricewaterhouseCoopers,mne47262,Kenneth Eliasen Østergaard,75,0,0.0,75
-33771231,PricewaterhouseCoopers,mne32797,Michael Blom,73,0,0.0,73
-33771231,PricewaterhouseCoopers,mne23327,Leif Ulbæk Jensen,73,0,0.0,73
-33771231,PricewaterhouseCoopers,mne34166,Claus Damhave,72,0,0.0,72
-33771231,PricewaterhouseCoopers,mne34157,Henrik Berring Rasmussen,72,0,0.0,72
-33771231,PricewaterhouseCoopers,mne28703,Bo Schou-Jacobsen,71,0,0.0,71
-33771231,PricewaterhouseCoopers,mne44062,Nikolaj Frausing Borch,68,0,0.0,68
-33771231,PricewaterhouseCoopers,mne47816,Morten Dyrholm Lykkeskov Porup,68,0,0.0,68
-33771231,PricewaterhouseCoopers,mne30211,Hans Jørgen Burgaard Andersen,67,0,0.0,67
-33771231,PricewaterhouseCoopers,mne34353,Line Borregaard,62,0,0.0,62
-33771231,PricewaterhouseCoopers,mne18651,Torben Jensen,60,0,0.0,60
-33771231,PricewaterhouseCoopers,mne16675,Niels Henrik Bechsøfft Mikkelsen,58,0,0.0,58
-33771231,PricewaterhouseCoopers,mne31489,Henrik Ødegaard,56,0,0.0,56
-33771231,PricewaterhouseCoopers,mne42816,Jakob Thisted Binder,54,0,0.0,54
-33771231,PricewaterhouseCoopers,mne30141,Thomas Wraae Holm,54,0,0.0,54
-33771231,PricewaterhouseCoopers,mne48524,René Daniel Poulsen,52,0,0.0,52
-33771231,PricewaterhouseCoopers,mne32198,Maj-Britt Nørskov Nannestad,51,0,0.0,51
-33771231,PricewaterhouseCoopers,mne23333,Henrik Trangeled Kristensen,46,0,0.0,46
-33771231,PricewaterhouseCoopers,mne32174,Thomas Riis,46,0,0.0,46
-33771231,PricewaterhouseCoopers,mne35483,Thomas Baunkjær Andersen,45,0,0.0,45
-33771231,PricewaterhouseCoopers,mne27737,Morten Elbæk Jensen,43,0,0.0,43
-33771231,PricewaterhouseCoopers,mne11629,Ulrich Kaare von Cappeln,43,0,0.0,43
-33771231,PricewaterhouseCoopers,mne44112,Kristian Højgaard Carlsen,43,0,0.0,43
-33771231,PricewaterhouseCoopers,mne49078,Malene Hvidt Haslund,41,0,0.0,41
-33771231,PricewaterhouseCoopers,mne27727,Torben Toft Kristensen,39,0,0.0,39
-33771231,PricewaterhouseCoopers,mne15009,Benny Erik Voss,39,0,0.0,39
-33771231,PricewaterhouseCoopers,mne44140,Morten Jacobsen,38,0,0.0,38
-33771231,PricewaterhouseCoopers,mne23370,Preben Bøgeskov Eriksen,37,0,0.0,37
-33771231,PricewaterhouseCoopers,mne15126,Allan Kamp Jensen,36,0,0.0,36
-33771231,PricewaterhouseCoopers,mne47863,Christopher Thor Kowalczyk,36,0,0.0,36
-33771231,PricewaterhouseCoopers,mne19908,Jens Olsson,35,0,0.0,35
-33771231,PricewaterhouseCoopers,mne42184,Yvonne Dalsgaard Bager,34,0,0.0,34
-33771231,PricewaterhouseCoopers,mne44181,Mads Lundemann,33,0,0.0,33
-33771231,PricewaterhouseCoopers,mne34359,Mette Holy Jørgensen,33,0,0.0,33
-33771231,PricewaterhouseCoopers,mne42818,Henrik Juul Junker,32,0,0.0,32
-33771231,PricewaterhouseCoopers,mne45831,Daniel Warming Mogensen,32,0,0.0,32
-33771231,PricewaterhouseCoopers,mne45827,Hans Baunsgaard Eskildsen,32,0,0.0,32
-33771231,PricewaterhouseCoopers,mne42786,Martin Stenstrup Toft,31,0,0.0,31
-33771231,PricewaterhouseCoopers,mne32201,Kim Danstrup,30,0,0.0,30
-33771231,PricewaterhouseCoopers,mne23328,Claus Lindholm Jacobsen,29,0,0.0,29
-33771231,PricewaterhouseCoopers,mne32802,Henrik Hornbæk,29,0,0.0,29
-33771231,PricewaterhouseCoopers,mne32800,Anders Stig Lauritsen,29,0,0.0,29
-33771231,PricewaterhouseCoopers,mne40028,Henrik Kyhnauv,29,0,0.0,29
-33771231,PricewaterhouseCoopers,mne33804,Jeanne Kubel,27,0,0.0,27
-33771231,PricewaterhouseCoopers,mne26846,John Lindvig Christiansen,26,0,0.0,26
-33771231,PricewaterhouseCoopers,mne3043,Jørn Viggo Jørgensen,26,0,0.0,26
-33771231,PricewaterhouseCoopers,mne46584,Jerrik Olsen,26,0,0.0,26
-33771231,PricewaterhouseCoopers,mne45855,Casper Larsen,25,0,0.0,25
-33771231,PricewaterhouseCoopers,mne28705,Rasmus Friis Jørgensen,25,0,0.0,25
-33771231,PricewaterhouseCoopers,mne29465,Allan Knudsen,24,0,0.0,24
-33771231,PricewaterhouseCoopers,mne33687,Claus Christensen,23,0,0.0,23
-33771231,PricewaterhouseCoopers,mne32200,Tue Stensgaard Sørensen,23,0,0.0,23
-33771231,PricewaterhouseCoopers,mne33226,Søren Ørjan Jensen,20,0,0.0,20
-33771231,PricewaterhouseCoopers,mne34366,Kasper Elkjær Nielsen,20,0,0.0,20
-33771231,PricewaterhouseCoopers,mne46065,Mads Blichfeldt Fjord,20,0,0.0,20
-33771231,PricewaterhouseCoopers,mne28699,Anders Røjleskov,19,0,0.0,19
-33771231,PricewaterhouseCoopers,mne35412,Kristian Pedersen,18,0,0.0,18
-33771231,PricewaterhouseCoopers,mne15094,Henrik Skriver Lykke,18,0,0.0,18
-33771231,PricewaterhouseCoopers,mne42815,Heidi Bonde,18,0,0.0,18
-33771231,PricewaterhouseCoopers,mne34352,Jesper Randall Petersen,17,0,0.0,17
-33771231,PricewaterhouseCoopers,mne47814,Thomas Bernth Jensen,16,0,0.0,16
-33771231,PricewaterhouseCoopers,mne10901,Jesper Otto Edelbo,16,0,0.0,16
-33771231,PricewaterhouseCoopers,mne44111,Christian Møller Gyrsting,16,0,0.0,16
-33771231,PricewaterhouseCoopers,mne50738,Kasper Ladekjær,16,0,0.0,16
-33771231,PricewaterhouseCoopers,mne24822,Per Rolf Larssen,15,0,0.0,15
-33771231,PricewaterhouseCoopers,mne45821,Gösta Luis Gauffin,15,0,0.0,15
-33771231,PricewaterhouseCoopers,mne15125,Helle Rugaard,15,0,0.0,15
-33771231,PricewaterhouseCoopers,mne34341,Christine Tveteraas,15,0,0.0,15
-33771231,PricewaterhouseCoopers,mne10954,Carsten Hedegård Jensen,13,0,0.0,13
-33771231,PricewaterhouseCoopers,mne30222,Thyge Belter,13,0,0.0,13
-33771231,PricewaterhouseCoopers,mne47815,Frederik Tvedeskov Jantzen,13,0,0.0,13
-33771231,PricewaterhouseCoopers,mne33228,Michael Groth Funck Hansen,12,0,0.0,12
-33771231,PricewaterhouseCoopers,mne35447,Jacob Brinch,12,0,0.0,12
-33771231,PricewaterhouseCoopers,mne52103,Lukasz Dawid Nidental,12,0,0.0,12
-33771231,PricewaterhouseCoopers,mne23331,Lars Baungaard,11,0,0.0,11
-33771231,PricewaterhouseCoopers,mne34342,Thomas Lillemose Lauritsen,11,0,0.0,11
-33771231,PricewaterhouseCoopers,mne33507,Rikke Lund-Kühl,11,0,0.0,11
-33771231,PricewaterhouseCoopers,mne32799,Kim Ladegaard,11,0,0.0,11
-33771231,PricewaterhouseCoopers,mne50609,Mathias Skovdahl Hansen,10,0,0.0,10
-33771231,PricewaterhouseCoopers,mne10030,Per Sørensen,10,0,0.0,10
-33771231,PricewaterhouseCoopers,mne47886,Jacob Dannefer,9,0,0.0,9
+15807776,Partner Revision,mne24692,Kenn Klejnstrup Jensen,1,0,0.0,1
+25160037,Piaster Revisorerne,mne29455,Steen Dahl Andersen,334,1,0.003,333
+25160037,Piaster Revisorerne,mne45833,Kaspar Hartmann-Petersen,245,2,0.0082,243
+25160037,Piaster Revisorerne,mne35462,Niels Kristian Tordrup Mørk,192,1,0.0052,191
+25160037,Piaster Revisorerne,mne34123,Stefan Sølvhøj Johansson,170,1,0.0059,169
+25160037,Piaster Revisorerne,mne45851,Emil Lagstrøm,139,0,0.0,139
+25160037,Piaster Revisorerne,mne21333,Kim Hansen Schwartz,115,0,0.0,115
+25160037,Piaster Revisorerne,mne49954,Philip Bak Vienberg,93,1,0.0108,92
+25160037,Piaster Revisorerne,mne15091,Jesper Peter Falk,68,0,0.0,68
+25160037,Piaster Revisorerne,Ukendt revisor,Ukendt revisor,19,0,0.0,19
+25160037,Piaster Revisorerne,mne30263,Claus Pio,14,0,0.0,14
+44282380,Powered-By Statsautoriseret Revisionspartnerselskab,mne24684,Søren Strandby,237,10,0.0422,227
+44282380,Powered-By Statsautoriseret Revisionspartnerselskab,mne11675,Sten Peters,127,8,0.063,119
+44282380,Powered-By Statsautoriseret Revisionspartnerselskab,mne32206,Troels Løvschall,92,0,0.0,92
+44282380,Powered-By Statsautoriseret Revisionspartnerselskab,Ukendt revisor,Ukendt revisor,53,2,0.0377,51
+44282380,Powered-By Statsautoriseret Revisionspartnerselskab,mne32789,Niels Høj Nygaard,37,2,0.0541,35
+44282380,Powered-By Statsautoriseret Revisionspartnerselskab,mne31471,Christian Lindegaard Jøker,29,1,0.0345,28
+44282380,Powered-By Statsautoriseret Revisionspartnerselskab,mne9384,Eigil Hansen,19,1,0.0526,18
+44282380,Powered-By Statsautoriseret Revisionspartnerselskab,mne49901,Lars Kristian Poulsen,4,0,0.0,4
+33771231,PricewaterhouseCoopers,mne30224,Jan Bunk Harbo Larsen,477,0,0.0,477
+33771231,PricewaterhouseCoopers,mne33714,Christian Roding,454,0,0.0,454
+33771231,PricewaterhouseCoopers,mne32806,Morten Jørgensen,445,0,0.0,445
+33771231,PricewaterhouseCoopers,mne17120,Henrik Aslund Pedersen,419,0,0.0,419
+33771231,PricewaterhouseCoopers,mne23324,Poul Spencer Poulsen,391,0,0.0,391
+33771231,PricewaterhouseCoopers,mne33726,Brian Rønne Nielsen,361,1,0.0028,360
+33771231,PricewaterhouseCoopers,mne33762,Mads Hornbæk,358,0,0.0,358
+33771231,PricewaterhouseCoopers,mne23318,Mikael Johansen,355,0,0.0,355
+33771231,PricewaterhouseCoopers,mne24826,Mads Meldgaard,353,0,0.0,353
+33771231,PricewaterhouseCoopers,mne36027,Martin Sloth Langhoff Hansen,351,0,0.0,351
+33771231,PricewaterhouseCoopers,Ukendt revisor,Ukendt revisor,329,0,0.0,329
+33771231,PricewaterhouseCoopers,mne30221,Flemming Vang Eghoff,324,0,0.0,324
+33771231,PricewaterhouseCoopers,mne29440,Jannick Kjersgaard,304,0,0.0,304
+33771231,PricewaterhouseCoopers,mne33722,Brian Petersen,294,0,0.0,294
+33771231,PricewaterhouseCoopers,mne24817,Lars Almskou Ohmeyer,283,0,0.0,283
+33771231,PricewaterhouseCoopers,mne35811,Lasse Fuglsbæk Berg,282,0,0.0,282
+33771231,PricewaterhouseCoopers,mne34169,Henrik Forthoft Lind,281,0,0.0,281
+33771231,PricewaterhouseCoopers,mne42827,Stefan Gabriel Dracea,279,0,0.0,279
+33771231,PricewaterhouseCoopers,mne28701,Brian Pedersen,266,0,0.0,266
+33771231,PricewaterhouseCoopers,mne12318,Kim Nygaard,265,0,0.0,265
+33771231,PricewaterhouseCoopers,mne32115,Palle Habekost Jensen,236,0,0.0,236
+33771231,PricewaterhouseCoopers,mne33245,Lars Vagner Hansen,230,0,0.0,230
+33771231,PricewaterhouseCoopers,mne26783,Henrik Kragh,223,0,0.0,223
+33771231,PricewaterhouseCoopers,mne27768,Line Hedam,221,0,0.0,221
+33771231,PricewaterhouseCoopers,mne33256,Kim Ruby Vorret,220,0,0.0,220
+33771231,PricewaterhouseCoopers,mne35804,Steffen Damsgaard Sørensen,219,0,0.0,219
+33771231,PricewaterhouseCoopers,mne27864,Henning Tønder Olesen,218,0,0.0,218
+33771231,PricewaterhouseCoopers,mne40037,Keld Allan Martor Nielsen,211,0,0.0,211
+33771231,PricewaterhouseCoopers,mne33262,Ulrik Ræbild,208,0,0.0,208
+33771231,PricewaterhouseCoopers,mne42824,Søren Alexander,206,0,0.0,206
+33771231,PricewaterhouseCoopers,mne27778,Per Henrik Larsen,200,0,0.0,200
+33771231,PricewaterhouseCoopers,mne34539,Claus Lyngsø Sørensen,198,0,0.0,198
+33771231,PricewaterhouseCoopers,mne50676,Lone Dalsgaard,192,0,0.0,192
+33771231,PricewaterhouseCoopers,mne26745,Claus Dalager,187,0,0.0,187
+33771231,PricewaterhouseCoopers,mne26718,René Otto Poulsen,175,0,0.0,175
+33771231,PricewaterhouseCoopers,mne47816,Morten Dyrholm Lykkeskov Porup,172,0,0.0,172
+33771231,PricewaterhouseCoopers,mne42817,Kristian Rath,172,0,0.0,172
+33771231,PricewaterhouseCoopers,mne18628,Jacob Fromm Christiansen,165,0,0.0,165
+33771231,PricewaterhouseCoopers,mne34161,Rasmus Mellergaard Stenskrog,162,0,0.0,162
+33771231,PricewaterhouseCoopers,mne34162,Mette Plambech Jensen,158,0,0.0,158
+33771231,PricewaterhouseCoopers,mne40760,Mads Johansson,154,0,0.0,154
+33771231,PricewaterhouseCoopers,mne32198,Maj-Britt Nørskov Nannestad,138,0,0.0,138
+33771231,PricewaterhouseCoopers,mne30141,Thomas Wraae Holm,136,0,0.0,136
+33771231,PricewaterhouseCoopers,mne28703,Bo Schou-Jacobsen,134,0,0.0,134
+33771231,PricewaterhouseCoopers,mne34157,Henrik Berring Rasmussen,134,0,0.0,134
+33771231,PricewaterhouseCoopers,mne18473,Karsten Mehlsen,133,0,0.0,133
+33771231,PricewaterhouseCoopers,mne32209,Martin Lunden,126,0,0.0,126
+33771231,PricewaterhouseCoopers,mne45828,Kasper Olesen,123,0,0.0,123
+33771231,PricewaterhouseCoopers,mne16675,Niels Henrik Bechsøfft Mikkelsen,122,0,0.0,122
+33771231,PricewaterhouseCoopers,mne34166,Claus Damhave,120,0,0.0,120
+33771231,PricewaterhouseCoopers,mne47262,Kenneth Eliasen Østergaard,117,0,0.0,117
+33771231,PricewaterhouseCoopers,mne23327,Leif Ulbæk Jensen,112,0,0.0,112
+33771231,PricewaterhouseCoopers,mne44062,Nikolaj Frausing Borch,108,0,0.0,108
+33771231,PricewaterhouseCoopers,mne42816,Jakob Thisted Binder,106,0,0.0,106
+33771231,PricewaterhouseCoopers,mne30211,Hans Jørgen Burgaard Andersen,106,0,0.0,106
+33771231,PricewaterhouseCoopers,mne18651,Torben Jensen,105,0,0.0,105
+33771231,PricewaterhouseCoopers,mne44112,Kristian Højgaard Carlsen,101,0,0.0,101
+33771231,PricewaterhouseCoopers,mne50738,Kasper Ladekjær,99,0,0.0,99
+33771231,PricewaterhouseCoopers,mne32797,Michael Blom,96,0,0.0,96
+33771231,PricewaterhouseCoopers,mne49078,Malene Hvidt Haslund,89,0,0.0,89
+33771231,PricewaterhouseCoopers,mne31489,Henrik Ødegaard,88,0,0.0,88
+33771231,PricewaterhouseCoopers,mne42786,Martin Stenstrup Toft,88,0,0.0,88
+33771231,PricewaterhouseCoopers,mne42818,Henrik Juul Junker,86,0,0.0,86
+33771231,PricewaterhouseCoopers,mne44140,Morten Jacobsen,85,0,0.0,85
+33771231,PricewaterhouseCoopers,mne32200,Tue Stensgaard Sørensen,80,0,0.0,80
+33771231,PricewaterhouseCoopers,mne34353,Line Borregaard,79,0,0.0,79
+33771231,PricewaterhouseCoopers,mne35483,Thomas Baunkjær Andersen,78,0,0.0,78
+33771231,PricewaterhouseCoopers,mne48524,René Daniel Poulsen,78,0,0.0,78
+33771231,PricewaterhouseCoopers,mne40028,Henrik Kyhnauv,75,0,0.0,75
+33771231,PricewaterhouseCoopers,mne45831,Daniel Warming Mogensen,73,0,0.0,73
+33771231,PricewaterhouseCoopers,mne44181,Mads Lundemann,72,0,0.0,72
+33771231,PricewaterhouseCoopers,mne23333,Henrik Trangeled Kristensen,72,0,0.0,72
+33771231,PricewaterhouseCoopers,mne26846,John Lindvig Christiansen,72,0,0.0,72
+33771231,PricewaterhouseCoopers,mne47863,Christopher Thor Kowalczyk,69,0,0.0,69
+33771231,PricewaterhouseCoopers,mne27737,Morten Elbæk Jensen,67,0,0.0,67
+33771231,PricewaterhouseCoopers,mne46584,Jerrik Olsen,65,0,0.0,65
+33771231,PricewaterhouseCoopers,mne24822,Per Rolf Larssen,61,0,0.0,61
+33771231,PricewaterhouseCoopers,mne32174,Thomas Riis,61,0,0.0,61
+33771231,PricewaterhouseCoopers,mne19908,Jens Olsson,60,0,0.0,60
+33771231,PricewaterhouseCoopers,mne42184,Yvonne Dalsgaard Bager,60,0,0.0,60
+33771231,PricewaterhouseCoopers,mne15009,Benny Erik Voss,57,0,0.0,57
+33771231,PricewaterhouseCoopers,mne11629,Ulrich Kaare von Cappeln,53,0,0.0,53
+33771231,PricewaterhouseCoopers,mne23328,Claus Lindholm Jacobsen,52,0,0.0,52
+33771231,PricewaterhouseCoopers,mne23370,Preben Bøgeskov Eriksen,52,1,0.0192,51
+33771231,PricewaterhouseCoopers,mne29465,Allan Knudsen,50,0,0.0,50
+33771231,PricewaterhouseCoopers,mne32802,Henrik Hornbæk,49,0,0.0,49
+33771231,PricewaterhouseCoopers,mne32201,Kim Danstrup,49,0,0.0,49
+33771231,PricewaterhouseCoopers,mne32800,Anders Stig Lauritsen,48,0,0.0,48
+33771231,PricewaterhouseCoopers,mne28705,Rasmus Friis Jørgensen,47,0,0.0,47
+33771231,PricewaterhouseCoopers,mne35412,Kristian Pedersen,46,0,0.0,46
+33771231,PricewaterhouseCoopers,mne10901,Jesper Otto Edelbo,46,0,0.0,46
+33771231,PricewaterhouseCoopers,mne34352,Jesper Randall Petersen,45,0,0.0,45
+33771231,PricewaterhouseCoopers,mne45827,Hans Baunsgaard Eskildsen,44,0,0.0,44
+33771231,PricewaterhouseCoopers,mne34359,Mette Holy Jørgensen,42,0,0.0,42
+33771231,PricewaterhouseCoopers,mne3043,Jørn Viggo Jørgensen,37,0,0.0,37
+33771231,PricewaterhouseCoopers,mne33687,Claus Christensen,35,0,0.0,35
+33771231,PricewaterhouseCoopers,mne42815,Heidi Bonde,35,0,0.0,35
+33771231,PricewaterhouseCoopers,mne45855,Casper Larsen,34,0,0.0,34
+33771231,PricewaterhouseCoopers,mne46065,Mads Blichfeldt Fjord,33,0,0.0,33
+33771231,PricewaterhouseCoopers,mne34366,Kasper Elkjær Nielsen,32,0,0.0,32
+33771231,PricewaterhouseCoopers,mne33226,Søren Ørjan Jensen,30,0,0.0,30
+33771231,PricewaterhouseCoopers,mne15094,Henrik Skriver Lykke,30,0,0.0,30
+33771231,PricewaterhouseCoopers,mne47814,Thomas Bernth Jensen,29,0,0.0,29
+33771231,PricewaterhouseCoopers,mne30222,Thyge Belter,29,0,0.0,29
+33771231,PricewaterhouseCoopers,mne32799,Kim Ladegaard,28,0,0.0,28
+33771231,PricewaterhouseCoopers,mne47815,Frederik Tvedeskov Jantzen,27,0,0.0,27
+33771231,PricewaterhouseCoopers,mne52103,Lukasz Dawid Nidental,27,0,0.0,27
+33771231,PricewaterhouseCoopers,mne50609,Mathias Skovdahl Hansen,26,0,0.0,26
+33771231,PricewaterhouseCoopers,mne44150,Sigurd Skov Nielsen,26,0,0.0,26
+33771231,PricewaterhouseCoopers,mne52171,Lasse Berg Rosfeldt,25,0,0.0,25
+33771231,PricewaterhouseCoopers,mne28699,Anders Røjleskov,23,0,0.0,23
+33771231,PricewaterhouseCoopers,mne34342,Thomas Lillemose Lauritsen,23,0,0.0,23
+33771231,PricewaterhouseCoopers,mne35447,Jacob Brinch,23,0,0.0,23
+33771231,PricewaterhouseCoopers,mne34341,Christine Tveteraas,23,0,0.0,23
+33771231,PricewaterhouseCoopers,mne15125,Helle Rugaard,22,0,0.0,22
+33771231,PricewaterhouseCoopers,mne33228,Michael Groth Funck Hansen,22,0,0.0,22
+33771231,PricewaterhouseCoopers,mne44111,Christian Møller Gyrsting,21,0,0.0,21
+33771231,PricewaterhouseCoopers,mne49837,Oliver Svane,21,0,0.0,21
+33771231,PricewaterhouseCoopers,mne45868,Peter Krogh Johansen,21,0,0.0,21
+33771231,PricewaterhouseCoopers,mne34453,Elife Savas,20,0,0.0,20
+33771231,PricewaterhouseCoopers,mne10954,Carsten Hedegård Jensen,20,0,0.0,20
+33771231,PricewaterhouseCoopers,mne45821,Gösta Luis Gauffin,19,0,0.0,19
+33771231,PricewaterhouseCoopers,mne50641,Camilla Blegholm Hansen,19,0,0.0,19
+33771231,PricewaterhouseCoopers,mne34528,Allan Wøhlk Høgh,18,0,0.0,18
+33771231,PricewaterhouseCoopers,mne50648,Ane Hørbye Karlsen,17,0,0.0,17
+33771231,PricewaterhouseCoopers,mne51051,Mikkel Kenneth Helsby,16,0,0.0,16
+33771231,PricewaterhouseCoopers,mne23331,Lars Baungaard,16,0,0.0,16
+33771231,PricewaterhouseCoopers,mne47886,Jacob Dannefer,15,0,0.0,15
+33771231,PricewaterhouseCoopers,mne47826,Philip Kjær,14,0,0.0,14
+33771231,PricewaterhouseCoopers,mne33251,Kim Tromholt,12,0,0.0,12
+33771231,PricewaterhouseCoopers,mne46624,André Nielsen,11,0,0.0,11
+33771231,PricewaterhouseCoopers,mne47889,Daniel Kønigsfeld Sitch,11,0,0.0,11
+33771231,PricewaterhouseCoopers,mne34160,Rune Kjeldsen,11,0,0.0,11
+33771231,PricewaterhouseCoopers,mne23371,Brian Christiansen,10,0,0.0,10
+33771231,PricewaterhouseCoopers,mne51533,Anders Falslund Hansen,10,0,0.0,10
+33771231,PricewaterhouseCoopers,mne47769,Søren Kjeldgaard Stadel,9,0,0.0,9
 33771231,PricewaterhouseCoopers,mne21328,Jesper Møller Langvad,9,0,0.0,9
-33771231,PricewaterhouseCoopers,mne50648,Ane Hørbye Karlsen,8,0,0.0,8
-33771231,PricewaterhouseCoopers,mne49837,Oliver Svane,8,0,0.0,8
-33771231,PricewaterhouseCoopers,mne16560,Carsten Blicher,7,0,0.0,7
-33771231,PricewaterhouseCoopers,mne42825,Martin Lennart Birch,7,0,0.0,7
-33771231,PricewaterhouseCoopers,mne45868,Peter Krogh Johansen,7,0,0.0,7
-33771231,PricewaterhouseCoopers,mne47826,Philip Kjær,6,0,0.0,6
-33771231,PricewaterhouseCoopers,mne34548,Lone Vindbjerg Larsen,6,0,0.0,6
-33771231,PricewaterhouseCoopers,mne46258,Lars Dalgaard Agersted,5,0,0.0,5
-33771231,PricewaterhouseCoopers,mne51051,Mikkel Kenneth Helsby,5,0,0.0,5
-33771231,PricewaterhouseCoopers,mne33251,Kim Tromholt,5,0,0.0,5
-33771231,PricewaterhouseCoopers,mne51057,Frederik Kjeldgaard,5,0,0.0,5
-33771231,PricewaterhouseCoopers,mne49062,Henrik Bøye Laursen,5,0,0.0,5
-33771231,PricewaterhouseCoopers,mne47889,Daniel Kønigsfeld Sitch,5,0,0.0,5
-33771231,PricewaterhouseCoopers,mne44150,Sigurd Skov Nielsen,5,0,0.0,5
-33771231,PricewaterhouseCoopers,mne29461,Claus Køhler Carlsson,4,0,0.0,4
-33771231,PricewaterhouseCoopers,mne23316,Jan Hetland Møller,4,0,0.0,4
-33771231,PricewaterhouseCoopers,mne50641,Camilla Blegholm Hansen,4,0,0.0,4
-33771231,PricewaterhouseCoopers,mne47264,Nikolaj Bo Pedersen,4,0,0.0,4
-33771231,PricewaterhouseCoopers,mne23371,Brian Christiansen,4,0,0.0,4
-33771231,PricewaterhouseCoopers,mne50610,Rasmus Søgaard Nielsen,4,0,0.0,4
-33771231,PricewaterhouseCoopers,mne34160,Rune Kjeldsen,3,0,0.0,3
-33771231,PricewaterhouseCoopers,mne34453,Elife Savas,3,0,0.0,3
-33771231,PricewaterhouseCoopers,mne44142,Anders Kronborg Choy,3,0,0.0,3
-33771231,PricewaterhouseCoopers,mne52171,Lasse Berg Rosfeldt,3,0,0.0,3
-33771231,PricewaterhouseCoopers,mne34528,Allan Wøhlk Høgh,3,0,0.0,3
-33771231,PricewaterhouseCoopers,mne52109,Victoria Åkerlund Niemeier,3,0,0.0,3
+33771231,PricewaterhouseCoopers,mne46258,Lars Dalgaard Agersted,8,0,0.0,8
+33771231,PricewaterhouseCoopers,mne34548,Lone Vindbjerg Larsen,8,0,0.0,8
+33771231,PricewaterhouseCoopers,mne49062,Henrik Bøye Laursen,8,0,0.0,8
+33771231,PricewaterhouseCoopers,mne52164,Tobias Mads-Emil Christiansen,8,0,0.0,8
+33771231,PricewaterhouseCoopers,mne50598,Amanda Sommer Degn,8,0,0.0,8
+33771231,PricewaterhouseCoopers,mne51057,Frederik Kjeldgaard,8,0,0.0,8
+33771231,PricewaterhouseCoopers,mne29461,Claus Køhler Carlsson,7,0,0.0,7
+33771231,PricewaterhouseCoopers,mne34354,Mads Blak Melgaard,7,0,0.0,7
+33771231,PricewaterhouseCoopers,mne47264,Nikolaj Bo Pedersen,7,0,0.0,7
+33771231,PricewaterhouseCoopers,mne51517,Mikkel Glenn Lauritsen,7,0,0.0,7
+33771231,PricewaterhouseCoopers,mne33804,Jeanne Kubel,6,0,0.0,6
+33771231,PricewaterhouseCoopers,mne52109,Victoria Åkerlund Niemeier,6,0,0.0,6
+33771231,PricewaterhouseCoopers,mne47832,Sune Christensen Bjerre,6,0,0.0,6
+33771231,PricewaterhouseCoopers,mne23316,Jan Hetland Møller,5,0,0.0,5
+33771231,PricewaterhouseCoopers,mne50617,Jens Peter Brusen Rasmussen,4,0,0.0,4
+33771231,PricewaterhouseCoopers,mne45854,Anette Beltrão-Primdahl,4,0,0.0,4
+33771231,PricewaterhouseCoopers,mne27727,Torben Toft Kristensen,4,0,0.0,4
+33771231,PricewaterhouseCoopers,mne32126,Stefan Vastrup,3,0,0.0,3
+33771231,PricewaterhouseCoopers,mne34503,Poul Peter Petersen,3,0,0.0,3
+33771231,PricewaterhouseCoopers,mne15126,Allan Kamp Jensen,3,0,0.0,3
 33771231,PricewaterhouseCoopers,mne44159,Qasam Hussain,3,0,0.0,3
-33771231,PricewaterhouseCoopers,mne50617,Jens Peter Brusen Rasmussen,3,0,0.0,3
+33771231,PricewaterhouseCoopers,mne34155,Michael Krath,3,0,0.0,3
+33771231,PricewaterhouseCoopers,mne51059,Patrick Orbæk,3,0,0.0,3
+33771231,PricewaterhouseCoopers,mne855,Jørgen Knudsen,3,0,0.0,3
+33771231,PricewaterhouseCoopers,mne10030,Per Sørensen,3,0,0.0,3
 33771231,PricewaterhouseCoopers,mne32167,Anne Cathrine Allentoft,2,0,0.0,2
-33771231,PricewaterhouseCoopers,mne34503,Poul Peter Petersen,2,0,0.0,2
-33771231,PricewaterhouseCoopers,mne32126,Stefan Vastrup,2,0,0.0,2
 33771231,PricewaterhouseCoopers,mne34355,Henrik Bernhardt Nyvang,2,0,0.0,2
-33771231,PricewaterhouseCoopers,mne34354,Mads Blak Melgaard,2,0,0.0,2
-33771231,PricewaterhouseCoopers,mne52164,Tobias Mads-Emil Christiansen,2,0,0.0,2
+33771231,PricewaterhouseCoopers,mne33260,Peter Frankov Nissen,2,0,0.0,2
+33771231,PricewaterhouseCoopers,mne33507,Rikke Lund-Kühl,2,0,0.0,2
+33771231,PricewaterhouseCoopers,mne16560,Carsten Blicher,2,0,0.0,2
+33771231,PricewaterhouseCoopers,mne42825,Martin Lennart Birch,2,0,0.0,2
 33771231,PricewaterhouseCoopers,mne40041,Jeppe Smed Sørensen,2,0,0.0,2
-33771231,PricewaterhouseCoopers,mne34155,Michael Krath,2,0,0.0,2
-33771231,PricewaterhouseCoopers,mne46624,André Nielsen,2,0,0.0,2
-33771231,PricewaterhouseCoopers,mne47832,Sune Christensen Bjerre,2,0,0.0,2
-33771231,PricewaterhouseCoopers,mne855,Jørgen Knudsen,1,0,0.0,1
-33771231,PricewaterhouseCoopers,mne33240,Mogens Rasmussen,1,0,0.0,1
 33771231,PricewaterhouseCoopers,mne21360,Jess Kjær Mogensen,1,0,0.0,1
-33771231,PricewaterhouseCoopers,mne24828,Lars Hansen,1,0,0.0,1
-33771231,PricewaterhouseCoopers,mne18652,Per Timmermann,1,0,0.0,1
+33771231,PricewaterhouseCoopers,mne51542,Christian Lønne,1,0,0.0,1
+33771231,PricewaterhouseCoopers,mne29453,Martin Vadgaard Kristensen,1,0,0.0,1
 33771231,PricewaterhouseCoopers,mne4326,Gert Overgaard Ovesen,1,0,0.0,1
 33771231,PricewaterhouseCoopers,mne24746,Jim Laursen,1,0,0.0,1
-33771231,PricewaterhouseCoopers,mne51517,Mikkel Glenn Lauritsen,1,0,0.0,1
-33771231,PricewaterhouseCoopers,mne10745,Poul Madsen,1,0,0.0,1
-33771231,PricewaterhouseCoopers,mne51542,Christian Lønne,1,0,0.0,1
-33771231,PricewaterhouseCoopers,mne47769,Søren Kjeldgaard Stadel,1,0,0.0,1
 33771231,PricewaterhouseCoopers,mne26807,Henrik Skjøtt Sørensen,1,0,0.0,1
-33771231,PricewaterhouseCoopers,mne33260,Peter Frankov Nissen,1,0,0.0,1
 33771231,PricewaterhouseCoopers,mne23430,Kristian Bredgaard Lassen,1,0,0.0,1
-33771231,PricewaterhouseCoopers,mne29453,Martin Vadgaard Kristensen,1,0,0.0,1
-33771231,PricewaterhouseCoopers,mne51533,Anders Falslund Hansen,1,0,0.0,1
-25492145,RSM,mne27866,Carsten Eckhaus Pedersen,281,1,0.0036,280
-25492145,RSM,mne35467,Martin Santino Lo Turco,210,0,0.0,210
-25492145,RSM,mne33208,Frederik Bille,187,0,0.0,187
-25492145,RSM,mne34276,Lars Fruensgaard Lundtoft,185,0,0.0,185
-25492145,RSM,mne34321,Konrad Frederik Jensen-Dahm,117,0,0.0,117
-25492145,RSM,mne33195,Frank Lennart Bo Falk Hedegaard Mouritzen,116,0,0.0,116
-25492145,RSM,mne33708,Anders Holdgaard Jensen,114,0,0.0,114
-25492145,RSM,mne33683,Hans Peter Ingerslev Roug,113,0,0.0,113
-25492145,RSM,mne19674,Tage Holm,103,0,0.0,103
-25492145,RSM,mne34478,Malene Stagelund Mogensen,97,0,0.0,97
-25492145,RSM,mne35434,Kim Ulrik Buus Mogensen,95,0,0.0,95
-25492145,RSM,mne46626,Niclas Kruse Lyhne,91,0,0.0,91
-25492145,RSM,mne34302,Steen Hestbech Capuzzi,90,0,0.0,90
-25492145,RSM,mne48507,Jens Schnack-Petersen,90,0,0.0,90
-25492145,RSM,mne33206,Tom Hedegaard-Kristensen,90,0,0.0,90
-25492145,RSM,Ukendt revisor,Ukendt revisor,87,0,0.0,87
-25492145,RSM,mne30151,Stig Raadkjær Enevoldsen,78,0,0.0,78
-25492145,RSM,mne34262,Søren Fricke,75,0,0.0,75
-25492145,RSM,mne17897,Lotte Thomsen,73,0,0.0,73
-25492145,RSM,mne35457,Dan Hinnerup,70,0,0.0,70
-25492145,RSM,mne32244,Flemming Hansen,66,0,0.0,66
-25492145,RSM,mne35785,Peter Arent Benkjer,56,0,0.0,56
-25492145,RSM,mne32840,John Lindholm Bode,53,0,0.0,53
-25492145,RSM,mne34101,Søren Yde,51,0,0.0,51
-25492145,RSM,mne47788,Rune Vangsøe Sunesen,50,0,0.0,50
-25492145,RSM,mne40044,Martin Enderberg Lassen,49,0,0.0,49
-25492145,RSM,mne34301,Michael Pode Kristensen,48,0,0.0,48
-25492145,RSM,mne29476,Per Bonnevie,46,0,0.0,46
-25492145,RSM,mne17140,Bjarne Ringgaard,37,0,0.0,37
-25492145,RSM,mne43515,Kenny Dam Handberg,34,0,0.0,34
-25492145,RSM,mne46625,Christina Smærup Hove,31,0,0.0,31
-25492145,RSM,mne49081,Marco Mosegaard Brøndsted,26,0,0.0,26
-25492145,RSM,mne3913,Erik Dahl,15,0,0.0,15
-25492145,RSM,mne51499,Mathias Kock,13,0,0.0,13
-25492145,RSM,mne29466,Christian Jensen,12,0,0.0,12
-25492145,RSM,mne50610,Rasmus Søgaard Nielsen,6,0,0.0,6
-25492145,RSM,mne44119,Henrik Meng Funch,3,0,0.0,3
-25492145,RSM,mne47806,Troels Stenholm,3,0,0.0,3
+25492145,RSM,mne27866,Carsten Eckhaus Pedersen,525,1,0.0019,524
+25492145,RSM,mne34276,Lars Fruensgaard Lundtoft,472,0,0.0,472
+25492145,RSM,mne35467,Martin Santino Lo Turco,415,0,0.0,415
+25492145,RSM,mne33208,Frederik Bille,329,0,0.0,329
+25492145,RSM,mne48507,Jens Schnack-Petersen,218,0,0.0,218
+25492145,RSM,mne34321,Konrad Frederik Jensen-Dahm,208,0,0.0,208
+25492145,RSM,mne33708,Anders Holdgaard Jensen,191,0,0.0,191
+25492145,RSM,mne33195,Frank Lennart Bo Falk Hedegaard Mouritzen,184,0,0.0,184
+25492145,RSM,mne35434,Kim Ulrik Buus Mogensen,176,0,0.0,176
+25492145,RSM,mne19674,Tage Holm,166,0,0.0,166
+25492145,RSM,mne33683,Hans Peter Ingerslev Roug,163,0,0.0,163
+25492145,RSM,mne33206,Tom Hedegaard-Kristensen,161,0,0.0,161
+25492145,RSM,mne46626,Niclas Kruse Lyhne,156,0,0.0,156
+25492145,RSM,mne34478,Malene Stagelund Mogensen,149,0,0.0,149
+25492145,RSM,mne34302,Steen Hestbech Capuzzi,143,0,0.0,143
+25492145,RSM,mne17897,Lotte Thomsen,140,0,0.0,140
+25492145,RSM,mne34262,Søren Fricke,136,0,0.0,136
+25492145,RSM,mne34301,Michael Pode Kristensen,127,0,0.0,127
+25492145,RSM,mne35457,Dan Hinnerup,120,0,0.0,120
+25492145,RSM,mne30151,Stig Raadkjær Enevoldsen,119,0,0.0,119
+25492145,RSM,mne32244,Flemming Hansen,113,0,0.0,113
+25492145,RSM,mne47788,Rune Vangsøe Sunesen,107,0,0.0,107
+25492145,RSM,mne34101,Søren Yde,91,0,0.0,91
+25492145,RSM,mne35785,Peter Arent Benkjer,89,0,0.0,89
+25492145,RSM,mne43515,Kenny Dam Handberg,82,0,0.0,82
+25492145,RSM,mne32840,John Lindholm Bode,77,0,0.0,77
+25492145,RSM,mne29476,Per Bonnevie,74,0,0.0,74
+25492145,RSM,mne40044,Martin Enderberg Lassen,72,0,0.0,72
+25492145,RSM,mne46625,Christina Smærup Hove,67,0,0.0,67
+25492145,RSM,Ukendt revisor,Ukendt revisor,63,0,0.0,63
+25492145,RSM,mne17140,Bjarne Ringgaard,53,0,0.0,53
+25492145,RSM,mne49081,Marco Mosegaard Brøndsted,47,0,0.0,47
+25492145,RSM,mne51499,Mathias Kock,36,0,0.0,36
+25492145,RSM,mne47806,Troels Stenholm,27,0,0.0,27
+25492145,RSM,mne50610,Rasmus Søgaard Nielsen,26,0,0.0,26
+25492145,RSM,mne29466,Christian Jensen,23,0,0.0,23
+25492145,RSM,mne44119,Henrik Meng Funch,19,0,0.0,19
+25492145,RSM,mne3913,Erik Dahl,16,0,0.0,16
 25492145,RSM,mne45825,Jens René Serup,1,0,0.0,1
 25492145,RSM,mne19797,Jan Knudsen,1,0,0.0,1
 25492145,RSM,mne2479,Niels Steenholm Brandt,1,0,0.0,1
-29442789,Redmark,mne33705,Alex Hoffmann Kristensen,215,0,0.0,215
-29442789,Redmark,mne31477,Søren Korgaard-Mollerup,154,0,0.0,154
-29442789,Redmark,mne18281,Kent Nymark Christensen,153,0,0.0,153
-29442789,Redmark,mne34289,Jens Palsgård Nørgaard,146,0,0.0,146
-29442789,Redmark,mne11512,Flemming Nielsen,145,0,0.0,145
-29442789,Redmark,mne32221,Preben Pedersen,142,0,0.0,142
-29442789,Redmark,mne32107,Ole Skouboe,139,0,0.0,139
-29442789,Redmark,mne34468,Jesper Havgaard Kongsted,138,0,0.0,138
-29442789,Redmark,mne29432,Peter Ingemann Jensen,132,0,0.0,132
-29442789,Redmark,mne31488,Johnny Vedsted Jensen,129,0,0.0,129
-29442789,Redmark,mne33221,Morten Ryberg Nielsen,126,0,0.0,126
-29442789,Redmark,mne34300,Michael Carstens,125,0,0.0,125
-29442789,Redmark,mne31446,Henrik Sondrup,119,0,0.0,119
-29442789,Redmark,mne45819,Mads Anker Jensen,118,0,0.0,118
-29442789,Redmark,mne32116,Darnell Vagnild,115,0,0.0,115
-29442789,Redmark,mne32730,Anders Hübertz Mortensen,115,0,0.0,115
-29442789,Redmark,mne35787,Peter Seeberg Nielsen,114,0,0.0,114
-29442789,Redmark,mne30220,Anders Schelde-Mollerup Funder,115,1,0.0087,114
-29442789,Redmark,mne21405,Marianne Fog Jørgensen,110,0,0.0,110
-29442789,Redmark,mne24699,Marian Fruergaard,108,0,0.0,108
-29442789,Redmark,mne11905,Jens Amstrup,97,0,0.0,97
-29442789,Redmark,mne27739,Steen Jensen,96,0,0.0,96
-29442789,Redmark,mne29474,Thomas Amby,93,0,0.0,93
-29442789,Redmark,mne42871,Rasmus Sværke,91,0,0.0,91
-29442789,Redmark,mne44151,Thomas Pedersen,87,0,0.0,87
-29442789,Redmark,mne33734,Henrik Juul Thomsen,86,0,0.0,86
-29442789,Redmark,mne680,Jesper Thorup Nielsen,67,0,0.0,67
-29442789,Redmark,mne27773,Frank Nørgaard,60,0,0.0,60
-29442789,Redmark,mne19802,Mark Leerdrup Hansen,56,0,0.0,56
-29442789,Redmark,mne49093,Malene Schröder Pedersen,52,0,0.0,52
-29442789,Redmark,mne49858,Helle Herbst,47,0,0.0,47
-29442789,Redmark,mne34334,Søren Kristiansen Bünger,44,0,0.0,44
-29442789,Redmark,Ukendt revisor,Ukendt revisor,42,0,0.0,42
-29442789,Redmark,mne51054,Mads Dyreborg Top,41,0,0.0,41
-29442789,Redmark,mne51501,Johan Skjødt Christensen,39,0,0.0,39
-29442789,Redmark,mne32798,Johny Jensen,38,0,0.0,38
-29442789,Redmark,mne52078,Michael Christiansen,22,0,0.0,22
-29442789,Redmark,mne16553,Henrik Hougaard,19,0,0.0,19
-29442789,Redmark,mne50622,Kasper Pagter Gjerløv,18,0,0.0,18
-29442789,Redmark,mne41385,Tim Dürr Nielsen,14,0,0.0,14
-29442789,Redmark,mne52106,Jacob Møldrup Larsen,7,0,0.0,7
-29442789,Redmark,mne970,Erik Foged Lund,1,0,0.0,1
+29442789,Redmark,mne33705,Alex Hoffmann Kristensen,345,0,0.0,345
+29442789,Redmark,mne31477,Søren Korgaard-Mollerup,270,0,0.0,270
+29442789,Redmark,mne18281,Kent Nymark Christensen,255,0,0.0,255
+29442789,Redmark,mne11512,Flemming Nielsen,245,0,0.0,245
+29442789,Redmark,mne29432,Peter Ingemann Jensen,243,0,0.0,243
+29442789,Redmark,mne34289,Jens Palsgård Nørgaard,232,0,0.0,232
+29442789,Redmark,mne34468,Jesper Havgaard Kongsted,232,0,0.0,232
+29442789,Redmark,mne45819,Mads Anker Jensen,219,0,0.0,219
+29442789,Redmark,mne32221,Preben Pedersen,215,0,0.0,215
+29442789,Redmark,mne32107,Ole Skouboe,214,0,0.0,214
+29442789,Redmark,mne24699,Marian Fruergaard,214,0,0.0,214
+29442789,Redmark,mne34300,Michael Carstens,209,0,0.0,209
+29442789,Redmark,mne29474,Thomas Amby,209,0,0.0,209
+29442789,Redmark,mne32116,Darnell Vagnild,203,0,0.0,203
+29442789,Redmark,mne35787,Peter Seeberg Nielsen,197,0,0.0,197
+29442789,Redmark,mne33221,Morten Ryberg Nielsen,196,0,0.0,196
+29442789,Redmark,mne31446,Henrik Sondrup,193,0,0.0,193
+29442789,Redmark,mne31488,Johnny Vedsted Jensen,192,0,0.0,192
+29442789,Redmark,mne30220,Anders Schelde-Mollerup Funder,192,1,0.0052,191
+29442789,Redmark,mne21405,Marianne Fog Jørgensen,183,0,0.0,183
+29442789,Redmark,mne27739,Steen Jensen,174,0,0.0,174
+29442789,Redmark,mne32730,Anders Hübertz Mortensen,153,0,0.0,153
+29442789,Redmark,mne33734,Henrik Juul Thomsen,147,0,0.0,147
+29442789,Redmark,mne42871,Rasmus Sværke,146,0,0.0,146
+29442789,Redmark,mne44151,Thomas Pedersen,123,0,0.0,123
+29442789,Redmark,mne680,Jesper Thorup Nielsen,103,0,0.0,103
+29442789,Redmark,mne49093,Malene Schröder Pedersen,99,0,0.0,99
+29442789,Redmark,mne27773,Frank Nørgaard,99,0,0.0,99
+29442789,Redmark,mne19802,Mark Leerdrup Hansen,93,0,0.0,93
+29442789,Redmark,mne51054,Mads Dyreborg Top,92,0,0.0,92
+29442789,Redmark,mne49858,Helle Herbst,84,0,0.0,84
+29442789,Redmark,mne52078,Michael Christiansen,72,0,0.0,72
+29442789,Redmark,mne34334,Søren Kristiansen Bünger,71,0,0.0,71
+29442789,Redmark,mne51501,Johan Skjødt Christensen,69,0,0.0,69
+29442789,Redmark,mne11905,Jens Amstrup,67,0,0.0,67
+29442789,Redmark,mne50622,Kasper Pagter Gjerløv,61,0,0.0,61
+29442789,Redmark,mne32798,Johny Jensen,61,0,0.0,61
+29442789,Redmark,Ukendt revisor,Ukendt revisor,40,0,0.0,40
+29442789,Redmark,mne16553,Henrik Hougaard,16,0,0.0,16
+29442789,Redmark,mne52106,Jacob Møldrup Larsen,10,0,0.0,10
+29442789,Redmark,mne41385,Tim Dürr Nielsen,4,0,0.0,4
+29442789,Redmark,mne970,Erik Foged Lund,2,0,0.0,2
 29442789,Redmark,mne31449,Jakob Westerdahl,1,0,0.0,1
-34480370,Revimidt,mne29356,Dennis Damborg Jensen,79,7,0.0886,72
-34480370,Revimidt,mne26645,Michael Kirkebæk Andreasen,76,5,0.0658,71
-34480370,Revimidt,mne2974,Jens Jørgen Johnsen,51,2,0.0392,49
-34480370,Revimidt,mne24773,Sean Mogens Christensen,32,4,0.125,28
-34480370,Revimidt,Ukendt revisor,Ukendt revisor,2,0,0.0,2
-31611520,Revipoint,mne34348,Morten Willemar Kristensen,1,0,0.0,1
-37984558,Revision Kjær,mne32372,Peter Nørgaard Kjær,156,0,0.0,156
-37984558,Revision Kjær,Ukendt revisor,Ukendt revisor,1,0,0.0,1
-26267439,Revision Ry & Hammel,mne2896,Niels Jørn Brink Jeppesen,166,0,0.0,166
-26267439,Revision Ry & Hammel,mne6353,Ole Martin Mikkelsen,154,2,0.013,152
-26267439,Revision Ry & Hammel,mne18225,Torben Reib,72,0,0.0,72
-26267439,Revision Ry & Hammel,mne49962,Dennis Jarl Jensen,29,1,0.0345,28
-26267439,Revision Ry & Hammel,mne882,Finn Boe Nielsen,21,0,0.0,21
-26267439,Revision Ry & Hammel,mne1425,Jørgen Krogh Tind,9,0,0.0,9
-26267439,Revision Ry & Hammel,Ukendt revisor,Ukendt revisor,9,0,0.0,9
-27433863,Revision Vadestedet,mne34329,Christian Bjørk Hansen,107,0,0.0,107
-27433863,Revision Vadestedet,mne32117,Leif Stolberg-Rohr Nørskov,38,0,0.0,38
-27433863,Revision Vadestedet,mne51490,Michela Stine Bjørk Hansen,14,0,0.0,14
-27433863,Revision Vadestedet,mne6032,Ebbe Jensen,6,0,0.0,6
-27433863,Revision Vadestedet,Ukendt revisor,Ukendt revisor,2,0,0.0,2
-29695636,Revisionscentret Aabenraa,mne34189,Lars Duisberg Jørgensen,186,3,0.0161,183
-29695636,Revisionscentret Aabenraa,mne43433,Claus Møller Hansen,130,1,0.0077,129
-29695636,Revisionscentret Aabenraa,mne689,Carl Olaf Krag,127,0,0.0,127
-29695636,Revisionscentret Aabenraa,mne49137,Michael Hansen,23,0,0.0,23
-29695636,Revisionscentret Aabenraa,mne1516,Hans Christian Christensen,14,0,0.0,14
+29442789,Redmark,mne29494,Jens Michael Colstrup,1,0,0.0,1
+29442789,Redmark,mne33724,Claus Vium Jensen,1,0,0.0,1
+34480370,Revimidt,mne29356,Dennis Damborg Jensen,157,11,0.0701,146
+34480370,Revimidt,mne26645,Michael Kirkebæk Andreasen,145,7,0.0483,138
+34480370,Revimidt,mne2974,Jens Jørgen Johnsen,87,5,0.0575,82
+34480370,Revimidt,mne24773,Sean Mogens Christensen,57,4,0.0702,53
+34480370,Revimidt,Ukendt revisor,Ukendt revisor,3,0,0.0,3
+31611520,Revipoint,mne34348,Morten Willemar Kristensen,2,0,0.0,2
+31611520,Revipoint,mne19740,Jan Lundqvist,1,0,0.0,1
+26267439,Revision Ry & Hammel,mne2896,Niels Jørn Brink Jeppesen,282,0,0.0,282
+26267439,Revision Ry & Hammel,mne6353,Ole Martin Mikkelsen,280,2,0.0071,278
+26267439,Revision Ry & Hammel,mne18225,Torben Reib,128,0,0.0,128
+26267439,Revision Ry & Hammel,mne49962,Dennis Jarl Jensen,80,2,0.025,78
+26267439,Revision Ry & Hammel,mne882,Finn Boe Nielsen,33,0,0.0,33
+26267439,Revision Ry & Hammel,mne1425,Jørgen Krogh Tind,14,0,0.0,14
+26267439,Revision Ry & Hammel,Ukendt revisor,Ukendt revisor,3,0,0.0,3
+27433863,Revision Vadestedet,mne34329,Christian Bjørk Hansen,176,0,0.0,176
+27433863,Revision Vadestedet,mne32117,Leif Stolberg-Rohr Nørskov,60,0,0.0,60
+27433863,Revision Vadestedet,mne51490,Michela Stine Bjørk Hansen,20,0,0.0,20
+27433863,Revision Vadestedet,mne6032,Ebbe Jensen,1,0,0.0,1
+27433863,Revision Vadestedet,Ukendt revisor,Ukendt revisor,1,0,0.0,1
+29695636,Revisionscentret Aabenraa,mne34189,Lars Duisberg Jørgensen,384,3,0.0078,381
+29695636,Revisionscentret Aabenraa,mne43433,Claus Møller Hansen,242,1,0.0041,241
+29695636,Revisionscentret Aabenraa,mne689,Carl Olaf Krag,181,0,0.0,181
+29695636,Revisionscentret Aabenraa,mne49137,Michael Hansen,76,0,0.0,76
+29695636,Revisionscentret Aabenraa,mne27750,John Momme Lauritzen,7,0,0.0,7
+29695636,Revisionscentret Aabenraa,mne1153,Harry Pharao,6,0,0.0,6
 29695636,Revisionscentret Aabenraa,Ukendt revisor,Ukendt revisor,5,0,0.0,5
-29695636,Revisionscentret Aabenraa,mne1153,Harry Pharao,4,0,0.0,4
-29695636,Revisionscentret Aabenraa,mne27750,John Momme Lauritzen,4,0,0.0,4
+29695636,Revisionscentret Aabenraa,mne1516,Hans Christian Christensen,4,0,0.0,4
 29695636,Revisionscentret Aabenraa,mne1051,Kai Momme,1,0,0.0,1
 32149863,Revisionsfirmaet Asger Wiuff Andersen,mne5292,Asger Briete Wiuff,2,0,0.0,2
-16645699,Revisionsfirmaet Axel Gram,mne23413,Morten Damgaard Møller,81,23,0.284,58
-16645699,Revisionsfirmaet Axel Gram,mne50650,Nikolaj Wædegaard Kallesøe,63,6,0.0952,57
-16645699,Revisionsfirmaet Axel Gram,mne859,Søren Bøggild Lund,2,1,0.5,1
-35486178,Revisionsfirmaet Edelbo,mne34290,Michael Jensby Jakobsen,222,13,0.0586,209
-35486178,Revisionsfirmaet Edelbo,mne31470,Morten Troels Pedersen,226,22,0.0973,204
-35486178,Revisionsfirmaet Edelbo,mne11737,Ole Bernhard Nielsen,119,12,0.1008,107
-35486178,Revisionsfirmaet Edelbo,mne4404,Jan Ole Edelbo,33,2,0.0606,31
-35486178,Revisionsfirmaet Edelbo,mne11630,Johan Groth,16,0,0.0,16
-35486178,Revisionsfirmaet Edelbo,mne48485,Louise Egebæk Greve,11,0,0.0,11
-35486178,Revisionsfirmaet Edelbo,Ukendt revisor,Ukendt revisor,5,0,0.0,5
-13254192,Revisionsfirmaet Gutfelt,mne517,Lennart Gutfelt,57,0,0.0,57
-13254192,Revisionsfirmaet Gutfelt,mne745,Lisa Charlotte Bébe Kolbye,32,1,0.0312,31
-12848544,Revisionshuset,mne7517,Svend Erik Rahbek,10,1,0.1,9
-37315664,Revisionshuset Tal & Tanker,mne33224,Kuno Hesel,120,21,0.175,99
-37315664,Revisionshuset Tal & Tanker,mne34324,Jacob Højgaard Andersen,116,17,0.1466,99
-37315664,Revisionshuset Tal & Tanker,mne42828,Anders Bundgaard,94,0,0.0,94
-37315664,Revisionshuset Tal & Tanker,mne34087,Per Jensen,104,11,0.1058,93
-37315664,Revisionshuset Tal & Tanker,mne34266,Martin Husted,83,15,0.1807,68
-37315664,Revisionshuset Tal & Tanker,mne35449,Martin Brinch Therkelsen,71,8,0.1127,63
-37315664,Revisionshuset Tal & Tanker,mne34276,Lars Fruensgaard Lundtoft,59,0,0.0,59
-37315664,Revisionshuset Tal & Tanker,mne21387,Poul Holmboe Borghus,64,13,0.2031,51
-37315664,Revisionshuset Tal & Tanker,mne48471,Mathias Blaabjerg Laursen,59,9,0.1525,50
-37315664,Revisionshuset Tal & Tanker,mne35812,Joan Pedersen,27,0,0.0,27
-37315664,Revisionshuset Tal & Tanker,Ukendt revisor,Ukendt revisor,23,0,0.0,23
-37315664,Revisionshuset Tal & Tanker,mne2371,Lars Ole Bärthel,23,4,0.1739,19
-37315664,Revisionshuset Tal & Tanker,mne29466,Christian Jensen,12,0,0.0,12
-37315664,Revisionshuset Tal & Tanker,mne47867,Mikkel Bjørk Jeppsson,2,0,0.0,2
-19720705,RevisorGården,mne34443,Helle Schulz Jørgensen,7,0,0.0,7
+16645699,Revisionsfirmaet Axel Gram,mne50650,Nikolaj Wædegaard Kallesøe,136,7,0.0515,129
+16645699,Revisionsfirmaet Axel Gram,mne23413,Morten Damgaard Møller,154,39,0.2532,115
+16645699,Revisionsfirmaet Axel Gram,mne859,Søren Bøggild Lund,5,1,0.2,4
+35486178,Revisionsfirmaet Edelbo,mne31470,Morten Troels Pedersen,396,38,0.096,358
+35486178,Revisionsfirmaet Edelbo,mne34290,Michael Jensby Jakobsen,378,21,0.0556,357
+35486178,Revisionsfirmaet Edelbo,mne11737,Ole Bernhard Nielsen,198,15,0.0758,183
+35486178,Revisionsfirmaet Edelbo,mne4404,Jan Ole Edelbo,52,3,0.0577,49
+35486178,Revisionsfirmaet Edelbo,mne48485,Louise Egebæk Greve,13,0,0.0,13
+35486178,Revisionsfirmaet Edelbo,mne11630,Johan Groth,5,0,0.0,5
+35486178,Revisionsfirmaet Edelbo,Ukendt revisor,Ukendt revisor,2,0,0.0,2
+35486178,Revisionsfirmaet Edelbo,mne33728,Michael Nymark Jensen,2,0,0.0,2
+13254192,Revisionsfirmaet Gutfelt,mne517,Lennart Gutfelt,102,0,0.0,102
+13254192,Revisionsfirmaet Gutfelt,mne745,Lisa Charlotte Bébe Kolbye,45,1,0.0222,44
+13254192,Revisionsfirmaet Gutfelt,Ukendt revisor,Ukendt revisor,1,0,0.0,1
+13254192,Revisionsfirmaet Gutfelt,mne44102,Salina Sørensen,1,0,0.0,1
+37915718,Revisionsfirmaet Henrik Tange,mne30213,Niels Henrik Tange,1,0,0.0,1
+12848544,Revisionshuset,mne7517,Svend Erik Rahbek,18,1,0.0556,17
+37315664,Revisionshuset Tal & Tanker,mne42828,Anders Bundgaard,313,0,0.0,313
+37315664,Revisionshuset Tal & Tanker,mne34324,Jacob Højgaard Andersen,228,18,0.0789,210
+37315664,Revisionshuset Tal & Tanker,mne33224,Kuno Hesel,232,28,0.1207,204
+37315664,Revisionshuset Tal & Tanker,mne34087,Per Jensen,153,12,0.0784,141
+37315664,Revisionshuset Tal & Tanker,mne35449,Martin Brinch Therkelsen,154,16,0.1039,138
+37315664,Revisionshuset Tal & Tanker,mne34266,Martin Husted,148,17,0.1149,131
+37315664,Revisionshuset Tal & Tanker,mne21387,Poul Holmboe Borghus,104,14,0.1346,90
+37315664,Revisionshuset Tal & Tanker,mne48471,Mathias Blaabjerg Laursen,99,12,0.1212,87
+37315664,Revisionshuset Tal & Tanker,mne35812,Joan Pedersen,83,0,0.0,83
+37315664,Revisionshuset Tal & Tanker,mne34276,Lars Fruensgaard Lundtoft,49,0,0.0,49
+37315664,Revisionshuset Tal & Tanker,mne2371,Lars Ole Bärthel,32,5,0.1562,27
+37315664,Revisionshuset Tal & Tanker,mne47867,Mikkel Bjørk Jeppsson,25,0,0.0,25
+37315664,Revisionshuset Tal & Tanker,Ukendt revisor,Ukendt revisor,13,0,0.0,13
+37315664,Revisionshuset Tal & Tanker,mne29466,Christian Jensen,3,0,0.0,3
+19720705,RevisorGården,mne34443,Helle Schulz Jørgensen,14,0,0.0,14
 19720705,RevisorGården,mne48474,Lisbeth Wierling Schimmelmann,1,0,0.0,1
 19720705,RevisorGården,mne1087,Lene Kildegaard,1,0,0.0,1
-27335616,Revisorerne Bastian og Krause,mne30354,Per Hailand,86,1,0.0116,85
-27335616,Revisorerne Bastian og Krause,Ukendt revisor,Ukendt revisor,7,0,0.0,7
-26593093,Revisorhuset,mne15942,Gert Kjeld Andersen,65,0,0.0,65
-26593093,Revisorhuset,mne15370,Torben Bang,47,1,0.0213,46
-26593093,Revisorhuset,mne35793,Jacob Wetke Kronborg,43,0,0.0,43
-26593093,Revisorhuset,Ukendt revisor,Ukendt revisor,1,0,0.0,1
-21164577,ReviØst,mne11349,Jess Hæstrup,55,0,0.0,55
-17169483,Revsbæk Revision,mne12470,Søren Revsbæk,95,11,0.1158,84
-53371914,Ri Statsautoriseret Revisionspartnerselskab,mne42244,Joachim Bardrum Munch,70,3,0.0429,67
-53371914,Ri Statsautoriseret Revisionspartnerselskab,mne28702,Kristian Stenholm Koch,26,0,0.0,26
-53371914,Ri Statsautoriseret Revisionspartnerselskab,mne34149,Martin Jon Pedersen,25,0,0.0,25
-53371914,Ri Statsautoriseret Revisionspartnerselskab,mne28631,Lars Jørgen Rasmussen,25,0,0.0,25
-53371914,Ri Statsautoriseret Revisionspartnerselskab,mne48673,Brian Bilde Sørensen,14,0,0.0,14
-53371914,Ri Statsautoriseret Revisionspartnerselskab,Ukendt revisor,Ukendt revisor,9,0,0.0,9
-53371914,Ri Statsautoriseret Revisionspartnerselskab,mne12790,Hannah Rasmussen,5,0,0.0,5
-53371914,Ri Statsautoriseret Revisionspartnerselskab,mne34139,Allan Auning-Hansen,1,0,0.0,1
-37543128,Roesgaard,mne35838,Dorrit Kirckhoff Hansen,253,0,0.0,253
-37543128,Roesgaard,mne35455,Flemming Nymann,227,0,0.0,227
-37543128,Roesgaard,mne28681,Jens Roesgaard,222,2,0.009,220
-37543128,Roesgaard,mne42773,Anne Kragh Nørgaard,185,0,0.0,185
-37543128,Roesgaard,mne33225,Søren Roesgaard,169,1,0.0059,168
-37543128,Roesgaard,mne47422,Marianne Seeberg,159,0,0.0,159
-37543128,Roesgaard,mne34108,Michael Mortensen,151,0,0.0,151
-37543128,Roesgaard,mne44061,Kasper Rostgaard Munk,121,0,0.0,121
-37543128,Roesgaard,mne12478,Laila Olsen,71,0,0.0,71
-37543128,Roesgaard,Ukendt revisor,Ukendt revisor,40,0,0.0,40
-37543128,Roesgaard,mne605,Susanne Kamuk Hansen,26,0,0.0,26
-37543128,Roesgaard,mne11182,Britta Kristensen,19,0,0.0,19
-37543128,Roesgaard,mne7033,Hanne Tønnesen Godskesen,19,0,0.0,19
-37543128,Roesgaard,mne47823,Søren Strandgaard Nielsen,9,0,0.0,9
-37543128,Roesgaard,mne17672,Kurt Bjarke Beck Pedersen,5,0,0.0,5
-37543128,Roesgaard,mne18618,Poul Erik Nielsen,4,0,0.0,4
-10158117,Rådgivning & Revision,mne31480,Thomas Rosendahl Kroghede,346,0,0.0,346
-10158117,Rådgivning & Revision,Ukendt revisor,Ukendt revisor,5,0,0.0,5
-74717810,Rønne Revision,mne7399,Anders Kofoed,129,0,0.0,129
-74717810,Rønne Revision,mne35435,Dan Linddal Bechmann Andersen,83,0,0.0,83
-74717810,Rønne Revision,mne50627,Jacob Vejdiksen,44,0,0.0,44
-74717810,Rønne Revision,mne34293,Ole Bonderup,19,1,0.0526,18
-29529507,Schmidt Revision,mne12365,Charlotte Schmidt,44,0,0.0,44
-29529507,Schmidt Revision,Ukendt revisor,Ukendt revisor,3,0,0.0,3
+27335616,Revisorerne Bastian og Krause,mne30354,Per Hailand,170,2,0.0118,168
+26593093,Revisorhuset,mne15942,Gert Kjeld Andersen,109,0,0.0,109
+26593093,Revisorhuset,mne15370,Torben Bang,89,1,0.0112,88
+26593093,Revisorhuset,mne35793,Jacob Wetke Kronborg,76,0,0.0,76
+26593093,Revisorhuset,Ukendt revisor,Ukendt revisor,4,0,0.0,4
+21164577,ReviØst,mne11349,Jess Hæstrup,75,0,0.0,75
+17169483,Revsbæk Revision,mne12470,Søren Revsbæk,170,12,0.0706,158
+53371914,"Ri, Statsautoriseret Revisionsaktieselskab",mne42244,Joachim Bardrum Munch,136,3,0.0221,133
+53371914,"Ri, Statsautoriseret Revisionsaktieselskab",mne34149,Martin Jon Pedersen,72,1,0.0139,71
+53371914,"Ri, Statsautoriseret Revisionsaktieselskab",mne28631,Lars Jørgen Rasmussen,42,0,0.0,42
+53371914,"Ri, Statsautoriseret Revisionsaktieselskab",mne48673,Brian Bilde Sørensen,40,1,0.025,39
+53371914,"Ri, Statsautoriseret Revisionsaktieselskab",mne28702,Kristian Stenholm Koch,35,0,0.0,35
+53371914,"Ri, Statsautoriseret Revisionsaktieselskab",mne12790,Hannah Rasmussen,9,0,0.0,9
+53371914,"Ri, Statsautoriseret Revisionsaktieselskab",Ukendt revisor,Ukendt revisor,4,0,0.0,4
+53371914,"Ri, Statsautoriseret Revisionsaktieselskab",mne34139,Allan Auning-Hansen,1,0,0.0,1
+37543128,Roesgaard,mne35455,Flemming Nymann,451,0,0.0,451
+37543128,Roesgaard,mne35838,Dorrit Kirckhoff Hansen,414,0,0.0,414
+37543128,Roesgaard,mne42773,Anne Kragh Nørgaard,344,0,0.0,344
+37543128,Roesgaard,mne28681,Jens Roesgaard,333,0,0.0,333
+37543128,Roesgaard,mne33225,Søren Roesgaard,283,1,0.0035,282
+37543128,Roesgaard,mne47422,Marianne Seeberg,278,0,0.0,278
+37543128,Roesgaard,mne34108,Michael Mortensen,258,0,0.0,258
+37543128,Roesgaard,mne44061,Kasper Rostgaard Munk,205,0,0.0,205
+37543128,Roesgaard,mne12478,Laila Olsen,121,0,0.0,121
+37543128,Roesgaard,Ukendt revisor,Ukendt revisor,96,2,0.0208,94
+37543128,Roesgaard,mne605,Susanne Kamuk Hansen,35,0,0.0,35
+37543128,Roesgaard,mne7033,Hanne Tønnesen Godskesen,35,0,0.0,35
+37543128,Roesgaard,mne47823,Søren Strandgaard Nielsen,28,0,0.0,28
+37543128,Roesgaard,mne11182,Britta Kristensen,22,0,0.0,22
+37543128,Roesgaard,mne17672,Kurt Bjarke Beck Pedersen,6,0,0.0,6
+37543128,Roesgaard,mne18618,Poul Erik Nielsen,5,0,0.0,5
+10158117,Rådgivning & Revision,mne31480,Thomas Rosendahl Kroghede,661,0,0.0,661
+10158117,Rådgivning & Revision,Ukendt revisor,Ukendt revisor,8,0,0.0,8
+74717810,Rønne Revision,mne7399,Anders Kofoed,225,0,0.0,225
+74717810,Rønne Revision,mne35435,Dan Linddal Bechmann Andersen,148,0,0.0,148
+74717810,Rønne Revision,mne50627,Jacob Vejdiksen,64,0,0.0,64
+74717810,Rønne Revision,mne34293,Ole Bonderup,29,1,0.0345,28
+29529507,Schmidt Revision,mne12365,Charlotte Schmidt,86,0,0.0,86
+29529507,Schmidt Revision,Ukendt revisor,Ukendt revisor,5,0,0.0,5
 30607236,Skanderborg Revision,mne2573,Dorthe Kristiansen,7,0,0.0,7
-27525989,Skov Revision,mne16912,Solveig Nielsen,81,19,0.2346,62
-27525989,Skov Revision,mne40962,Hans Høj Nygaard,69,23,0.3333,46
-27525989,Skov Revision,mne44113,Peter Kjeldsen,28,1,0.0357,27
-25510461,Sædding Revision,mne8317,Simon Hessellund,113,0,0.0,113
-25510461,Sædding Revision,mne8315,Henning Daniel Hoppe,1,0,0.0,1
-18061635,Sønderjyllands revision,mne45950,Jesper Rosenvinge,208,0,0.0,208
-18061635,Sønderjyllands revision,mne19744,Claus Brink Thomsen,147,0,0.0,147
-18061635,Sønderjyllands revision,mne19693,Niels Christian Schjøth,130,0,0.0,130
-18061635,Sønderjyllands revision,mne31458,Søren Kring,108,0,0.0,108
-18061635,Sønderjyllands revision,mne49108,Lars Ehmsen Boysen,101,0,0.0,101
-18061635,Sønderjyllands revision,mne49105,Kasper Spile Otten,95,0,0.0,95
-18061635,Sønderjyllands revision,mne41402,Maj Kirkegaard Rotne,81,0,0.0,81
-18061635,Sønderjyllands revision,mne18512,Allan Schøne,78,0,0.0,78
-18061635,Sønderjyllands revision,mne30192,Jesper Hansen,15,0,0.0,15
-18061635,Sønderjyllands revision,Ukendt revisor,Ukendt revisor,11,0,0.0,11
-27905072,Sønderup & Partnere,mne18078,Palle Lysbjerg Hansen,221,0,0.0,221
-27905072,Sønderup & Partnere,mne4043,Niels Walther Larsen,35,0,0.0,35
-27905072,Sønderup & Partnere,Ukendt revisor,Ukendt revisor,3,0,0.0,3
-29168504,TT REVISION,mne33231,Torben Peter Madsen,95,1,0.0105,94
-29168504,TT REVISION,mne50703,Jesper Madsen,12,0,0.0,12
-29168504,TT REVISION,mne45105,Daniel Nielsen,9,0,0.0,9
+27525989,Skov Revision,mne40962,Hans Høj Nygaard,162,43,0.2654,119
+27525989,Skov Revision,mne16912,Solveig Nielsen,148,37,0.25,111
+27525989,Skov Revision,mne44113,Peter Kjeldsen,27,3,0.1111,24
+25510461,Sædding Revision,mne8317,Simon Hessellund,260,0,0.0,260
+25510461,Sædding Revision,mne8315,Henning Daniel Hoppe,3,0,0.0,3
+18061635,Sønderjyllands revision,mne45950,Jesper Rosenvinge,312,0,0.0,312
+18061635,Sønderjyllands revision,mne19693,Niels Christian Schjøth,227,0,0.0,227
+18061635,Sønderjyllands revision,mne19744,Claus Brink Thomsen,220,0,0.0,220
+18061635,Sønderjyllands revision,mne31458,Søren Kring,206,0,0.0,206
+18061635,Sønderjyllands revision,mne49108,Lars Ehmsen Boysen,187,0,0.0,187
+18061635,Sønderjyllands revision,mne49105,Kasper Spile Otten,149,0,0.0,149
+18061635,Sønderjyllands revision,mne41402,Maj Kirkegaard Rotne,137,0,0.0,137
+18061635,Sønderjyllands revision,mne18512,Allan Schøne,128,0,0.0,128
+18061635,Sønderjyllands revision,mne30192,Jesper Hansen,34,0,0.0,34
+18061635,Sønderjyllands revision,Ukendt revisor,Ukendt revisor,14,0,0.0,14
+18061635,Sønderjyllands revision,mne24695,Michael Johansen,1,0,0.0,1
+27905072,Sønderup & Partnere,mne18078,Palle Lysbjerg Hansen,394,2,0.0051,392
+27905072,Sønderup & Partnere,mne4043,Niels Walther Larsen,50,0,0.0,50
+27905072,Sønderup & Partnere,Ukendt revisor,Ukendt revisor,2,0,0.0,2
+29168504,TT REVISION,mne33231,Torben Peter Madsen,127,1,0.0079,126
+29168504,TT REVISION,mne45105,Daniel Nielsen,31,0,0.0,31
+29168504,TT REVISION,mne50703,Jesper Madsen,22,0,0.0,22
+29168504,TT REVISION,mne46601,Morten Michael Kertesz,1,0,0.0,1
+38267132,TimeVision,mne4338,Yvonne Kjeldal Pauly,2,0,0.0,2
+38267132,TimeVision,mne29388,Jesper Nørrelund Bentzen,2,0,0.0,2
+38267132,TimeVision,mne5456,Michael Vinther Andersen,2,0,0.0,2
 38267132,TimeVision,mne623,Henning Jensen,2,0,0.0,2
-38267132,TimeVision,mne4338,Yvonne Kjeldal Pauly,1,0,0.0,1
 38267132,TimeVision,mne35403,Michael Steen Khathi - Jacobsen,1,0,0.0,1
-38267132,TimeVision,mne29388,Jesper Nørrelund Bentzen,1,0,0.0,1
-38267132,TimeVision,mne5456,Michael Vinther Andersen,1,0,0.0,1
 38267132,TimeVision,mne17094,Dan Kobbernagel Andresen,1,0,0.0,1
-29142807,Tønder Revision,mne15969,Jan Callesen,141,0,0.0,141
-29142807,Tønder Revision,mne49099,Jakob Matthiesen,82,0,0.0,82
-32093272,Ullits & Winther,mne30145,Claus Søndergaard Nielsen,142,1,0.007,141
-32093272,Ullits & Winther,mne27708,Henrik Lundsgaard,115,0,0.0,115
-32093272,Ullits & Winther,mne32066,Alex Kirkegaard,102,0,0.0,102
-32093272,Ullits & Winther,mne29531,Bo Skårup Sørensen,100,0,0.0,100
-32093272,Ullits & Winther,mne42772,Lasse Lei Kjærsgaard,38,0,0.0,38
-32093272,Ullits & Winther,mne47885,Allan Vissing Andersen,20,0,0.0,20
-32093272,Ullits & Winther,Ukendt revisor,Ukendt revisor,3,0,0.0,3
-17871080,VH Revision,mne11348,Klaus Arvad Johansen,174,0,0.0,174
-17871080,VH Revision,mne6529,Steen Halager Søgaard,157,1,0.0064,156
-17871080,VH Revision,mne12510,Steven Anthony Frandsen,46,0,0.0,46
-17871080,VH Revision,mne15927,Helle Halager Søgaard,31,0,0.0,31
+38267132,TimeVision,mne17802,Gert Hunosøe,1,0,0.0,1
+38267132,TimeVision,Ukendt revisor,Ukendt revisor,1,0,0.0,1
+29142807,Tønder Revision,mne15969,Jan Callesen,252,0,0.0,252
+29142807,Tønder Revision,mne49099,Jakob Matthiesen,190,0,0.0,190
+32093272,Ullits & Winther,mne30145,Claus Søndergaard Nielsen,233,1,0.0043,232
+32093272,Ullits & Winther,mne29531,Bo Skårup Sørensen,181,0,0.0,181
+32093272,Ullits & Winther,mne32066,Alex Kirkegaard,168,1,0.006,167
+32093272,Ullits & Winther,mne27708,Henrik Lundsgaard,149,0,0.0,149
+32093272,Ullits & Winther,mne42772,Lasse Lei Kjærsgaard,82,1,0.0122,81
+32093272,Ullits & Winther,mne47885,Allan Vissing Andersen,25,0,0.0,25
+32093272,Ullits & Winther,Ukendt revisor,Ukendt revisor,4,0,0.0,4
+32093272,Ullits & Winther,mne36173,Lars Fogtmann Juelsen,1,0,0.0,1
+17871080,VH Revision,mne11348,Klaus Arvad Johansen,296,0,0.0,296
+17871080,VH Revision,mne6529,Steen Halager Søgaard,241,1,0.0041,240
+17871080,VH Revision,mne12510,Steven Anthony Frandsen,80,0,0.0,80
+17871080,VH Revision,mne15927,Helle Halager Søgaard,55,0,0.0,55
 17871080,VH Revision,Ukendt revisor,Ukendt revisor,1,0,0.0,1
-10110807,Vendelbo,mne8900,Esbern Vendelbo Andersen,45,2,0.0444,43
-39886871,Verum Cura,mne33775,Anders Jos Ilsøe,2,0,0.0,2
-39886871,"Verum Cura, Godkendt Revisionsanpartsselskab",mne33775,Anders Jos Ilsøe,153,6,0.0392,147
-39886871,"Verum Cura, Godkendt Revisionsanpartsselskab",Ukendt revisor,Ukendt revisor,1,0,0.0,1
+10110807,Vendelbo,mne8900,Esbern Vendelbo Andersen,76,2,0.0263,74
+39886871,Verum Cura,mne33775,Anders Jos Ilsøe,258,6,0.0233,252
+39886871,Verum Cura,Ukendt revisor,Ukendt revisor,3,0,0.0,3
+35658432,Vistisen & Lunde,mne30207,Lars Brændgaard,6,0,0.0,6
 35658432,Vistisen & Lunde,mne31436,Flemming Sillesen,2,0,0.0,2
 35658432,Vistisen & Lunde,mne34484,Jakob Stiel Korshøj,2,0,0.0,2
-35658432,Vistisen & Lunde,mne30207,Lars Brændgaard,2,0,0.0,2
 39325608,gills-economics,Ukendt revisor,Ukendt revisor,1,0,0.0,1

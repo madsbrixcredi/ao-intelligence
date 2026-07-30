@@ -1,0 +1,3 @@
+# Store raa erklaeringsudtraek og det samlede CSV (70 MB) holdes uden for git
+data/raw/Erklaeringer*.xlsx
+data/processed/declarations_all.csv
