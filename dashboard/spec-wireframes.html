@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ledelsesdashboard · Spec og wireframes</title>
+<style>
+  :root{
+    --ink:#1c2230; --muted:#5b6472; --faint:#8a93a3;
+    --line:#dfe3ea; --bg:#eef0f4; --card:#ffffff;
+    --ph:#e7eaf0; --ph-line:#c3cad6;
+    --accent:#2f6df0; --good:#1f9d57; --warn:#e08a2b; --bad:#d6483b;
+    --chip:#f1f4f9;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:32px 24px 120px}
+  header.top{padding:8px 0 4px}
+  h1{font-size:30px;margin:0 0 6px;letter-spacing:-.02em}
+  h2{font-size:22px;margin:0 0 4px;letter-spacing:-.01em}
+  .lead{color:var(--muted);font-size:16px;max-width:70ch}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .divider{height:1px;background:var(--line);margin:40px 0}
+  section.block{margin-top:40px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:16px;
+    box-shadow:0 1px 2px rgba(20,30,50,.04)}
+  .card h3{margin:0 0 10px;font-size:17px}
+  p{margin:0 0 12px}
+  ul{margin:0 0 12px;padding-left:20px}
+  li{margin:4px 0}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0 4px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--faint)}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--chip);color:var(--muted)}
+  .pill.good{background:#e7f6ee;color:var(--good)} .pill.warn{background:#fbf0dd;color:var(--warn)}
+  .pill.bad{background:#fbe6e3;color:var(--bad)} .pill.info{background:#e7effd;color:var(--accent)}
+
+  /* wireframe primitives */
+  .frame{background:#f7f8fb;border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:16px}
+  .wf-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:12px;display:flex;gap:8px;align-items:center}
+  .wf-label::before{content:"WIREFRAME";background:#eceff5;color:#8a93a3;padding:2px 7px;border-radius:6px;font-size:10px}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .ph{background:repeating-linear-gradient(135deg,#eef1f6,#eef1f6 8px,#e7ebf2 8px,#e7ebf2 16px);
+    border:1px dashed var(--ph-line);border-radius:10px;color:#8a93a3;font-size:12px;
+    display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;min-height:52px}
+  .grid{display:grid;gap:14px}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:1fr 1fr 1fr}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:760px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .tile .cap{font-size:12px;color:var(--muted);margin-bottom:4px}
+  .tile .big{font-size:24px;font-weight:700;letter-spacing:-.01em}
+  .tile .sub{font-size:12px;color:var(--faint);margin-top:2px}
+  .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .spread{justify-content:space-between}
+
+  /* score ring */
+  .ring-wrap{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+  .ring{position:relative;width:150px;height:150px;flex:0 0 150px}
+  .ring svg{transform:rotate(-90deg)}
+  .ring .center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring .center b{font-size:40px;line-height:1}
+  .ring .center span{font-size:11px;color:var(--muted);margin-top:2px}
+  .sub-scores{flex:1;min-width:240px;display:flex;flex-direction:column;gap:9px}
+  .ss{display:grid;grid-template-columns:130px 1fr 40px;gap:10px;align-items:center;font-size:13px}
+  .bar{height:8px;border-radius:6px;background:#eceff5;overflow:hidden}
+  .bar>i{display:block;height:100%;border-radius:6px}
+  .ss .val{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+
+  .barchart{display:flex;align-items:flex-end;gap:10px;height:130px;padding:8px 4px 0}
+  .barchart .col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:3px;align-items:center}
+  .barchart .col .pair{display:flex;gap:3px;align-items:flex-end;width:100%;justify-content:center;height:100%}
+  .barchart .b1,.barchart .b2{width:40%;border-radius:4px 4px 0 0}
+  .barchart .b1{background:#c6d4ef} .barchart .b2{background:var(--accent)}
+  .barchart .col small{font-size:10px;color:var(--faint)}
+
+  .legend{display:flex;gap:16px;font-size:12px;color:var(--muted);margin-top:8px}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:middle}
+
+  .slider{display:grid;grid-template-columns:1fr 80px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+  .slider:last-child{border-bottom:0}
+  .track{height:6px;background:#eceff5;border-radius:6px;position:relative;margin-top:7px}
+  .track>i{position:absolute;top:-4px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+  .val-input{border:1px solid var(--line);border-radius:8px;padding:5px 8px;text-align:right;font-variant-numeric:tabular-nums;background:#fbfcfe}
+  .note{font-size:12px;color:var(--faint);margin-top:6px}
+  .grp{font-size:14px;font-weight:700;margin-bottom:2px;display:flex;gap:8px;align-items:center}
+  .grp .gn{background:var(--accent);color:#fff;width:20px;height:20px;border-radius:6px;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 20px}
+  .grp-sub{font-size:12px;color:var(--faint);margin:0 0 10px 28px}
+  .grp-result{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;justify-content:space-between;align-items:baseline}
+  .grp-result b{color:var(--ink);font-size:16px}
+  .callout{border-left:3px solid var(--accent);background:#f2f6fe;padding:12px 14px;border-radius:0 10px 10px 0;font-size:14px;margin:12px 0}
+  .opp{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--card)}
+  .opp h4{margin:0 0 8px;font-size:15px}
+  .opp .meta{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;margin-top:8px}
+  .opp .meta div span{display:block;color:var(--faint);font-size:11px}
+  .tag{font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:6px;padding:2px 7px}
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .select{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:8px 12px;font-size:14px;display:flex;gap:8px;align-items:center}
+  .select b{font-weight:600}
+  .navtabs{display:flex;gap:4px;background:#e7eaf1;border-radius:11px;padding:4px}
+  .navtabs .t{padding:8px 14px;border-radius:8px;font-size:14px;color:var(--muted);font-weight:600}
+  .navtabs .t.on{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  .meta-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:6px}
+  .meta-legend .m{display:inline-flex;gap:6px;align-items:center}
+  .dotm{width:9px;height:9px;border-radius:50%;background:var(--good)}
+  .dota{width:9px;height:9px;border-radius:2px;background:var(--warn)}
+  .footnote{font-size:12px;color:var(--faint)}
+  .toc{columns:2;font-size:14px;color:var(--accent)}
+  @media(max-width:600px){.toc{columns:1}}
+  .toc a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="kicker">Crediwire · Ledelsesdashboard</div>
+  <h1>Produktspecifikation og wireframes</h1>
+  <p class="lead">Dette dokument samler alle beslutninger ét sted og viser en skitse af hvordan
+  dashboardet kommer til at se ud. Skitserne er ikke det færdige design: de viser <b>hvad der står hvor</b>,
+  med Grant Thorntons rigtige tal, så du kan mærke om strukturen er rigtig. Grå stribede felter er
+  pladsholdere for grafer og lister.</p>
+  <div class="card" style="margin-top:18px">
+    <div class="kicker" style="color:var(--faint)">Indhold</div>
+    <div class="toc">
+      <a href="#formaal">1 · Formål og målgruppe</a><br>
+      <a href="#principper">2 · Bærende principper</a><br>
+      <a href="#grupper">3 · Huse og grupper</a><br>
+      <a href="#beslutninger">4 · Afklarede beslutninger</a><br>
+      <a href="#score">5 · Crediwire Score</a><br>
+      <a href="#wf">6 · Wireframes (fire sektioner)</a><br>
+      <a href="#wf1">6.1 · Overblik</a><br>
+      <a href="#wf2">6.2 · Udvikling</a><br>
+      <a href="#wf3">6.3 · Business case</a><br>
+      <a href="#wf4">6.4 · Muligheder</a><br>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SPEC ============ -->
+<section class="block" id="formaal">
+  <div class="kicker">Del 1 · Specifikation</div>
+  <h2>1 · Formål og målgruppe</h2>
+  <div class="card">
+    <p><b>Hvem ser det:</b> Beslutningstageren i et revisionshus, typisk managing partner eller
+    digitaliseringsansvarlig. Eksempel: Rune hos Grant Thornton. Bruges i møder, ofte med en Crediwire-sælger til stede.</p>
+    <p><b>Hvad det skal svare på, på 30 sekunder:</b></p>
+    <ul>
+      <li><b>Hvor står vi</b> · en samlet score og de vigtigste nøgletal</li>
+      <li><b>Går det fremad</b> · udvikling over tid, altid år mod år</li>
+      <li><b>Hvad er det værd</b> · værdi i dag og uudnyttet potentiale i kroner</li>
+      <li><b>Hvad gør vi nu</b> · fire konkrete muligheder med navne og tal</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="principper">
+  <h2>2 · Bærende principper</h2>
+  <div class="card">
+    <ol>
+      <li><b>Intet tal opdigtes.</b> Mangler datagrundlaget, står der hvorfor i stedet.</li>
+      <li><b>Målt adskilles fra antaget.</b> Hvert tal mærkes, så revisoren kan se forskel.</li>
+      <li><b>Nettoværdi vægter mere end ROI.</b> Kronerne er det der betyder noget.</li>
+      <li><b>Sæson må aldrig ligne tilbagegang.</b> Al udvikling vises år mod år.</li>
+      <li><b>Alt afgrænses til regnskabsklasse B.</b> Det er Crediwires marked. Klasse A, C og D udelades.</li>
+    </ol>
+    <div class="meta-legend">
+      <span class="m"><span class="dotm"></span> Målt tal · fra data</span>
+      <span class="m"><span class="dota"></span> Antaget tal · sat af revisoren</span>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="grupper">
+  <h2>3 · Huse og grupper</h2>
+  <div class="card">
+    <p>Dashboardet kan vise <b>alle huse</b> og filtrere på de fem grupper du har defineret. Big 4 holdes ude af pipe-visninger.</p>
+    <table>
+      <tr><th>Gruppe</th><th>Indhold</th></tr>
+      <tr><td>Eksisterende kunder</td><td>Jeres nuværende kunder</td></tr>
+      <tr><td>Top prospects</td><td>28 udvalgte huse</td></tr>
+      <tr><td>Accru Partners</td><td>12 huse</td></tr>
+      <tr><td>RGD</td><td>21 huse i RGD-netværket</td></tr>
+      <tr><td>Næste 20 fokus</td><td>Top 20 efter potentiale, uden top prospects, kunder og Big 4</td></tr>
+    </table>
+    <p class="note">Et hus vælges enten direkte (fx Grant Thornton) eller via en gruppe. Alt på siden følger valget.</p>
+  </div>
+</section>
+
+<section class="block" id="beslutninger">
+  <h2>4 · Afklarede beslutninger</h2>
+  <div class="card">
+    <table>
+      <tr><th>Emne</th><th>Beslutning</th></tr>
+      <tr><td>Virksomheder pr. AO</td><td><b>Aktive</b> er det sande tal (GT: 715). <b>Købte</b> (740) viser det oprindelige køb. Aktive over købte betyder ekspansion og er positivt.</td></tr>
+      <tr><td>Brugerbredde</td><td>Måles som de 3 mest aktive brugeres andel af arbejdet. Ingen nævner om ansatte nødvendig.</td></tr>
+      <tr><td>Klasse A, C og D</td><td>Udelades.</td></tr>
+      <tr><td>Budget-ark</td><td>Fokuseres på klasse B.</td></tr>
+      <tr><td>Navn på score</td><td>Crediwire Score.</td></tr>
+      <tr><td>Erklæringskilde</td><td>Det nye, fuldstændige regionsudtræk (264.077 rækker).</td></tr>
+      <tr><td>Viderefakturering</td><td>Alle tre Crediwire-priser kan viderefaktureres til kunderne til kostpris.</td></tr>
+      <tr><td>Revisorliste</td><td>Fuld liste, ikke kun top 10.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="score">
+  <h2>5 · Crediwire Score</h2>
+  <div class="card">
+    <p>Fem delscorer, vægtet sum, 0 til 100. Vist som en ring hvor farven bærer beskeden.</p>
+    <table>
+      <tr><th>Delscore</th><th class="num">Vægt</th><th>Hvornår 100 point</th><th class="num">GT</th></tr>
+      <tr><td>Aktivering</td><td class="num">25%</td><td>Hele aftalen i brug</td><td class="num">97</td></tr>
+      <tr><td>Vækst</td><td class="num">20%</td><td>+50% eller mere år mod år</td><td class="num">100</td></tr>
+      <tr><td>Udnyttelse</td><td class="num">20%</td><td>12 analyser pr. virksomhed om året</td><td class="num">50</td></tr>
+      <tr><td>Brugerbredde</td><td class="num">15%</td><td>Top 3 står for en tredjedel eller mindre</td><td class="num">85</td></tr>
+      <tr><td>Markedsdækning</td><td class="num">20%</td><td>25% dækning af klasse B</td><td class="num">25</td></tr>
+    </table>
+    <p><b>Niveauer:</b>
+      <span class="pill good">90-100 Excellent</span>
+      <span class="pill info">75-89 Strong</span>
+      <span class="pill warn">60-74 Value opportunity</span>
+      <span class="pill bad">under 60 Needs attention</span>
+    </p>
+    <p class="note">To regler: kan under 60% af vægten beregnes, vises ingen score. Er der flere aktive end købte, udelades Aktivering.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ WIREFRAMES ============ -->
+<section class="block" id="wf">
+  <div class="kicker">Del 2 · Wireframes</div>
+  <h2>6 · Sådan kommer det til at se ud</h2>
+  <p class="lead">Fire sektioner, samme øverste linje på alle. Tallene er Grant Thorntons rigtige, verificerede tal.</p>
+
+  <!-- global top bar -->
+  <div class="frame">
+    <div class="wf-label">Øverste linje · samme på alle sektioner</div>
+    <div class="box">
+      <div class="row spread">
+        <div class="toolbar">
+          <div class="select">Hus: <b>Grant Thornton</b> ▾</div>
+          <div class="select">Gruppe: <b>Alle huse</b> ▾</div>
+        </div>
+        <div class="navtabs">
+          <div class="t on">Overblik</div>
+          <div class="t">Udvikling</div>
+          <div class="t">Business case</div>
+          <div class="t">Muligheder</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 1 OVERBLIK ===== -->
+  <h3 id="wf1" style="margin-top:34px">6.1 · Overblik</h3>
+  <div class="frame">
+    <div class="wf-label">Sektion 1 · Overblik</div>
+
+    <div class="box">
+      <div class="ring-wrap">
+        <div class="ring">
+          <svg width="150" height="150" viewBox="0 0 150 150">
+            <circle cx="75" cy="75" r="64" fill="none" stroke="#eceff5" stroke-width="14"/>
+            <circle cx="75" cy="75" r="64" fill="none" stroke="#e08a2b" stroke-width="14"
+              stroke-linecap="round" stroke-dasharray="402" stroke-dashoffset="113"/>
+          </svg>
+          <div class="center"><b>72</b><span>Value opportunity</span></div>
+        </div>
+        <div class="sub-scores">
+          <div class="ss"><span>Aktivering</span><div class="bar"><i style="width:97%;background:#1f9d57"></i></div><span class="val">97</span></div>
+          <div class="ss"><span>Vækst</span><div class="bar"><i style="width:100%;background:#1f9d57"></i></div><span class="val">100</span></div>
+          <div class="ss"><span>Udnyttelse</span><div class="bar"><i style="width:50%;background:#e08a2b"></i></div><span class="val">50</span></div>
+          <div class="ss"><span>Brugerbredde</span><div class="bar"><i style="width:85%;background:#1f9d57"></i></div><span class="val">85</span></div>
+          <div class="ss"><span>Markedsdækning</span><div class="bar"><i style="width:25%;background:#d6483b"></i></div><span class="val">25</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g4" style="margin-top:14px">
+      <div class="box tile"><div class="cap">Aktiveringsgrad <span class="dotm" title="målt"></span></div><div class="big">96,6%</div><div class="sub">715 aktive af 740 købte</div></div>
+      <div class="box tile"><div class="cap">Aktive brugere <span class="dotm"></span></div><div class="big">83</div><div class="sub">i huset</div></div>
+      <div class="box tile"><div class="cap">Analyser seneste år <span class="dotm"></span></div><div class="big">4.306</div><div class="sub">på 518 virksomheder</div></div>
+      <div class="box tile"><div class="cap">Vækst i analyser <span class="dotm"></span></div><div class="big" style="color:#1f9d57">+140%</div><div class="sub">jan-maj 2026 mod 2025</div></div>
+    </div>
+
+    <div class="grid g2" style="margin-top:14px">
+      <div class="box">
+        <div class="cap" style="font-size:13px;font-weight:600;margin-bottom:8px">Hvor jeres kunder ligger <span class="footnote">· top 3 kommuner</span></div>
+        <table style="margin:0">
+          <tr><td>1 · København</td><td class="num">1.240</td></tr>
+          <tr><td>2 · Aarhus</td><td class="num">980</td></tr>
+          <tr><td style="border:0">3 · Aalborg</td><td class="num" style="border:0">610</td></tr>
+        </table>
+        <div class="note">Det er kundernes geografi, ikke revisionshusets kontorer.</div>
+      </div>
+      <div class="grid" style="grid-template-columns:1fr">
+        <div class="box tile"><div class="cap">Værdi i dag <span class="dota" title="antaget"></span></div><div class="big">6.864.000 kr.</div><div class="sub">ved standardantagelser</div></div>
+        <div class="box tile"><div class="cap">Uudnyttet potentiale <span class="dota"></span></div><div class="big" style="color:var(--accent)">16.578.936 kr.</div><div class="sub">netto, ved 25% implementering</div></div>
+      </div>
+    </div>
+
+    <div class="callout">Business case-teaser: <b>Ved 25% implementering kan I skabe 22 mio. kr. i nettoværdi.</b> Se regnestykket under Business case. →</div>
+  </div>
+
+  <!-- ===== 2 UDVIKLING ===== -->
+  <h3 id="wf2" style="margin-top:34px">6.2 · Udvikling</h3>
+  <div class="frame">
+    <div class="wf-label">Sektion 2 · Udvikling · alt vises år mod år</div>
+
+    <div class="grid g2">
+      <div class="box">
+        <div class="cap" style="font-size:13px;font-weight:600;margin-bottom:6px">Analyser pr. måned</div>
+        <div class="barchart">
+          <div class="col"><div class="pair"><div class="b1" style="height:30%"></div><div class="b2" style="height:55%"></div></div><small>jan</small></div>
+          <div class="col"><div class="pair"><div class="b1" style="height:35%"></div><div class="b2" style="height:70%"></div></div><small>feb</small></div>
+          <div class="col"><div class="pair"><div class="b1" style="height:45%"></div><div class="b2" style="height:85%"></div></div><small>mar</small></div>
+          <div class="col"><div class="pair"><div class="b1" style="height:40%"></div><div class="b2" style="height:75%"></div></div><small>apr</small></div>
+          <div class="col"><div class="pair"><div class="b1" style="height:50%"></div><div class="b2" style="height:100%"></div></div><small>maj</small></div>
+        </div>
+        <div class="legend"><span><i style="background:#c6d4ef"></i>2025</span><span><i style="background:#2f6df0"></i>2026</span></div>
+      </div>
+      <div class="box">
+        <div class="cap" style="font-size:13px;font-weight:600;margin-bottom:6px">Aktive brugere over tid</div>
+        <div class="ph" style="min-height:132px">Linjediagram: aktive brugere pr. måned, i år mod sidste år</div>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:14px">
+      <div class="box">
+        <div class="cap" style="font-size:13px;font-weight:600;margin-bottom:8px">Top 10 brugere</div>
+        <div class="ph" style="min-height:150px">Liste: navn · antal analyser</div>
+      </div>
+      <div class="box">
+        <div class="cap" style="font-size:13px;font-weight:600;margin-bottom:8px">Top 10 kommuner</div>
+        <div class="ph" style="min-height:150px">Liste: kommune · antal kunder</div>
+      </div>
+      <div class="box">
+        <div class="cap" style="font-size:13px;font-weight:600;margin-bottom:8px">Top 10 underskrivende revisorer</div>
+        <div class="ph" style="min-height:150px">Aktivitet på deres kunder</div>
+        <div class="note">Den underskrivende revisor trykker ikke selv. Overskriften siger det.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 3 BUSINESS CASE ===== -->
+  <h3 id="wf3" style="margin-top:34px">6.3 · Business case</h3>
+  <div class="frame">
+    <div class="wf-label">Sektion 3 · Business case · resultatet forrest, regnemaskinen foldet væk</div>
+
+    <div class="box" style="margin-bottom:14px">
+      <div class="row spread" style="align-items:flex-end">
+        <div>
+          <div class="cap" style="font-size:14px;font-weight:600">Hvor stor en del af markedet vil I nå?</div>
+          <div class="note" style="margin-top:2px">Træk i skyderen. Alt herunder opdaterer med det samme.</div>
+        </div>
+        <div style="text-align:right"><div class="big" style="font-size:26px">25%</div><div class="sub" style="color:var(--faint);font-size:12px">2.893 af 11.571 virksomheder</div></div>
+      </div>
+      <div class="track" style="margin-top:16px;height:8px"><i style="left:25%;width:16px;height:16px;top:-4px"></i></div>
+      <div class="row" style="justify-content:space-between;font-size:11px;color:var(--faint);margin-top:8px"><span>0%</span><span>Forsigtig 10%</span><span>Realistisk 25%</span><span>Ambitiøs 50%</span><span>100%</span></div>
+    </div>
+
+    <div class="grid g3">
+      <div class="box tile"><div class="cap">Nettoværdi i dag <span class="dota" title="antaget"></span></div><div class="big">5.442.580 kr.</div><div class="sub">6,9 mio. skabt · 1,4 mio. investeret</div><div class="note" style="color:var(--accent);margin-top:8px">▸ Beregning</div></div>
+      <div class="box tile"><div class="cap">Nettoværdi ved mål <span class="dota"></span></div><div class="big">22.021.516 kr.</div><div class="sub">ved 25% · 2.893 virksomheder</div><div class="note" style="color:var(--accent);margin-top:8px">▸ Beregning</div></div>
+      <div class="box tile" style="border:1.5px solid var(--accent);background:#f2f6fe"><div class="cap">Uudnyttet nettoværdi <span class="dota"></span></div><div class="big" style="color:var(--accent)">16.578.936 kr.</div><div class="sub">husets vigtigste tal</div><div class="note" style="color:var(--accent);margin-top:8px">▸ Beregning</div></div>
+    </div>
+
+    <div class="row spread" style="margin-top:14px">
+      <span class="pill info">ROI i dag 4,8x · vokser med viderefakturering</span>
+      <div class="select">Viderefaktureres til kunder: <b>Fra</b> ⚪</div>
+    </div>
+
+    <div class="box" style="margin-top:14px">
+      <div class="row spread"><div class="grp" style="margin:0">▸ Business Case Regnemaskine</div><span class="footnote">foldet væk som standard · åbnes kun for at skrue på antagelserne</span></div>
+      <div style="border-top:1px solid var(--line);margin-top:12px;padding-top:14px">
+        <div class="grid g4">
+          <div>
+            <div class="grp-sub" style="margin:0 0 8px;font-weight:700;color:var(--ink)">Tid</div>
+            <div class="slider"><div>Timepris<div class="track"><i style="left:40%"></i></div></div><div class="val-input">1.200</div></div>
+            <div class="slider"><div>Timer pr. analyse<div class="track"><i style="left:35%"></i></div></div><div class="val-input">4</div></div>
+            <div class="slider"><div>Timer pr. årsrapport<div class="track"><i style="left:30%"></i></div></div><div class="val-input">2</div></div>
+            <div class="slider"><div>Timer pr. assistance<div class="track"><i style="left:20%"></i></div></div><div class="val-input">1</div></div>
+          </div>
+          <div>
+            <div class="grp-sub" style="margin:0 0 8px;font-weight:700;color:var(--ink)">Kvalitet</div>
+            <div class="slider"><div>Kvalitetsfaktor (0-10)<div class="track"><i style="left:20%"></i></div></div><div class="val-input">2</div></div>
+            <div class="note">1 = ingen ekstra værdi. 2 = dobbelt værdi.</div>
+          </div>
+          <div>
+            <div class="grp-sub" style="margin:0 0 8px;font-weight:700;color:var(--ink)">Omfang</div>
+            <div class="slider"><div>Antal årsrapporter<div class="track"><i style="left:35%"></i></div></div><div class="val-input">543</div></div>
+            <div class="slider"><div>Antal assistance<div class="track"><i style="left:25%"></i></div></div><div class="val-input">1.583</div></div>
+          </div>
+          <div>
+            <div class="grp-sub" style="margin:0 0 8px;font-weight:700;color:var(--ink)">Pris</div>
+            <div class="slider"><div>Pr. aktiv virksomhed<div class="track"><i style="left:30%"></i></div></div><div class="val-input">1.988</div></div>
+            <div class="slider"><div>Pr. årsrapport<div class="track"><i style="left:30%"></i></div></div><div class="val-input">0</div></div>
+            <div class="slider"><div>Pr. assistance<div class="track"><i style="left:30%"></i></div></div><div class="val-input">0</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 4 MULIGHEDER ===== -->
+  <h3 id="wf4" style="margin-top:34px">6.4 · Muligheder</h3>
+  <div class="frame">
+    <div class="wf-label">Sektion 4 · Muligheder · fire konkrete, klar til handling</div>
+
+    <div class="row" style="margin-bottom:14px">
+      <div class="select">Filter: <b>Region</b> ▾</div>
+      <div class="select"><b>Kommune</b> ▾</div>
+      <div class="select"><b>Revisor</b> ▾</div>
+      <div class="select"><b>Erklæringstype</b> ▾</div>
+    </div>
+
+    <div class="grid g2">
+      <div class="opp">
+        <span class="tag">Mulighed 1</span>
+        <h4 style="margin-top:8px">Flere virksomheder hos jeres mest aktive revisorer</h4>
+        <p class="note" style="margin:0">Claus Koskelin, Morten Skovbjerg, Finn Vammen. 100 nye hver.</p>
+        <div class="meta">
+          <div><span>Virksomheder</span>300</div>
+          <div><span>Investering</span>596.400 kr.</div>
+          <div><span>Værdi</span>2.880.000 kr.</div>
+          <div><span>Netto</span><b>2.283.600 kr.</b></div>
+        </div>
+      </div>
+      <div class="opp">
+        <span class="tag">Mulighed 2</span>
+        <h4 style="margin-top:8px">Revisorer med stor portefølje og lav dækning</h4>
+        <p class="note" style="margin:0">Claus Carlsen, Bo Lysen, Anders Flensted Nielsen.</p>
+        <div class="meta">
+          <div><span>Uudnyttede klienter</span>1.319</div>
+          <div><span>Dækning i dag</span>1-3%</div>
+          <div><span>Næste skridt</span>Målrettet salg</div>
+        </div>
+      </div>
+      <div class="opp">
+        <span class="tag">Mulighed 3</span>
+        <h4 style="margin-top:8px">Produkter I ikke bruger endnu</h4>
+        <p class="note" style="margin:0">Årsrapporter, assistanceerklæringer, rapporter.</p>
+        <div class="meta">
+          <div><span>Adresserbart årsrapportmarked</span>10.669</div>
+          <div><span>Næste skridt</span>Aktivér produkt</div>
+        </div>
+      </div>
+      <div class="opp">
+        <span class="tag">Mulighed 4</span>
+        <h4 style="margin-top:8px">Få mere ud af det I allerede har</h4>
+        <p class="note" style="margin:0">432 af 581 aktive virksomheder er brugt seneste år. 149 venter, ejet af 40 revisorer.</p>
+        <div class="meta">
+          <div><span>Klar og venter</span>149</div>
+          <div><span>Næste skridt</span>Målrettet træning</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box" style="margin-top:14px">
+      <div class="cap" style="font-size:13px;font-weight:600;margin-bottom:8px">Fuld revisorliste · sorterbar og filtrerbar</div>
+      <table style="margin:0">
+        <tr><th>Revisor</th><th>Kundetyngdepunkt</th><th class="num">Klienter</th><th class="num">Aktive</th><th class="num">I brug 12 mdr.</th><th class="num">Uudnyttet</th><th class="num">Potentiel værdi</th></tr>
+        <tr><td>Claus Koskelin</td><td>Hovedstaden 88%</td><td class="num">503</td><td class="num">37</td><td class="num">29</td><td class="num">466</td><td class="num">4,5 mio.</td></tr>
+        <tr><td>Bo Lysen</td><td>Hovedstaden 90%</td><td class="num">490</td><td class="num">13</td><td class="num">11</td><td class="num">477</td><td class="num">4,6 mio.</td></tr>
+        <tr><td style="border:0" colspan="7" class="footnote">... alle revisorer, ikke kun top 10</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<p class="footnote">Skitse til godkendelse · Grant Thorntons tal er verificeret 31. juli 2026 · farver og præcist design fastlægges under byg.</p>
+
+</div>
+</body>
+</html>
