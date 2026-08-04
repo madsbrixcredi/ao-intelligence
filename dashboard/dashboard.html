@@ -82,7 +82,17 @@
       #mneFilter:focus{outline:none;border-color:#2f6df0}
       .wheel-controls{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:14px;font-size:14px;align-items:center}
       .wheel-controls label{display:flex;gap:8px;align-items:center;color:#5c6572}
-      .wheel-controls select{font:inherit;padding:8px 11px;border:1px solid var(--line,#e7eaf0);border-radius:9px;background:#fff}
+      .wheel-controls select,.wheel-controls input[type=number]{font:inherit;padding:8px 11px;border:1px solid var(--line,#e7eaf0);border-radius:9px;background:#fff}
+      .wheel-controls input[type=number]{width:74px}
+      .wheel-controls label.chk{gap:6px}
+      .wheel-chart{margin:4px 0 18px}
+      .wheel-chart svg{width:100%;height:auto;display:block}
+      .wheel-chart .wc-bar{fill:#2f6df0}
+      .wheel-chart .wc-bar.peak{fill:#e0902b}
+      .wheel-chart .wc-lbl{fill:#8a93a3;font-size:13px}
+      .wheel-chart .wc-val{fill:#141821;font-size:12px;font-weight:700}
+      .wheel-chart .wc-even{stroke:#d6483b;stroke-dasharray:5 4;stroke-width:1.5}
+      .wheel-chart .wc-even-lbl{fill:#d6483b;font-size:11px;font-weight:700}
       .wheel-insight{background:#f2f6fe;border:1px solid #dbe6fd;border-radius:12px;padding:14px 16px;margin-bottom:16px;font-size:14px;line-height:1.5}
       .wheel-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
       @media(max-width:900px){.wheel-grid{grid-template-columns:repeat(3,1fr)}}
@@ -437,8 +447,14 @@
           <div class="wheel-controls">
             <label>Revisor <select id="wheelRevisor"><option value="">Hele huset</option></select></label>
             <label>Arbejdsvindue <select id="wheelWindow"><option value="2">2 mdr. før</option><option value="3" selected>3 mdr. før</option></select></label>
+            <label>Erklæringstype <select id="wheelType"><option value="">Alle</option><option value="revision">Revision</option><option value="udvidet">Udvidet gennemgang</option><option value="assistance">Assistance</option><option value="review">Review</option></select></label>
+            <label>På Crediwire <select id="wheelActive"><option value="">Alle</option><option value="0">Kun emner (ikke aktive)</option><option value="1">Kun aktive</option></select></label>
+            <label>Økonomisystem <select id="wheelErp"><option value="">Alle</option></select></label>
+            <label>Min. ansatte <input id="wheelAnsatte" type="number" min="0" value="0" /></label>
+            <label class="chk"><input type="checkbox" id="wheelGode" /> Kun gode Crediwire-emner</label>
           </div>
           <div id="wheelInsight" class="wheel-insight"></div>
+          <div id="wheelChart" class="wheel-chart"></div>
           <div class="wheel-grid" id="wheelGrid"></div>
           <div id="wheelDetail" class="wheel-detail"></div>
         </section>
@@ -966,76 +982,118 @@
     /* ===== Årshjul: hvornår arbejder revisorerne ===== */
     (function(){
       const MONTHS=['Jan','Feb','Mar','Apr','Maj','Jun','Jul','Aug','Sep','Okt','Nov','Dec'];
-      let summary=[], mneMap={}, bigRows=null, curMonth=null;
-      const houseName=()=>{ const s=document.getElementById('aoSearch'); return (s&&s.value.trim())||''; };
+      let cal=null, mneMap={}, curMonth=null, loading=false;
+      const $=id=>document.getElementById(id);
+      const houseName=()=>{ const s=$('aoSearch'); return (s&&s.value.trim())||''; };
       function splitCsv(l){ const out=[]; let cur='',q=false; for(let i=0;i<l.length;i++){ const ch=l[i]; if(ch==='"')q=!q; else if(ch===','&&!q){out.push(cur);cur='';} else cur+=ch; } out.push(cur); return out; }
       function parse(txt){ const L=txt.trim().split('\n'); const h=splitCsv(L[0]); return L.slice(1).map(l=>{const c=splitCsv(l);const o={};h.forEach((k,i)=>o[k]=c[i]);return o;}); }
       function scopedMnes(){
-        const rev=document.getElementById('wheelRevisor').value;
-        if(rev) return [rev];
-        const hn=houseName().toLowerCase();
-        const all=Object.keys(mneMap);
-        return hn ? all.filter(m=>(mneMap[m].firma||'').toLowerCase().includes(hn)) : all;
+        const rev=$('wheelRevisor').value;
+        if(rev) return new Set([rev]);
+        const hn=houseName().toLowerCase(); const all=Object.keys(mneMap);
+        return new Set(hn ? all.filter(m=>(mneMap[m].firma||'').toLowerCase().includes(hn)) : all);
+      }
+      function typeMatch(t,f){ t=(t||'').toLowerCase();
+        if(f==='revision') return t.includes('revision');
+        if(f==='udvidet') return t.includes('udvidet');
+        if(f==='assistance') return t.includes('assistance');
+        if(f==='review') return t==='review';
+        return true; }
+      function goodFit(r){ const t=(r.type||'').toLowerCase();
+        return r.aktiv==='0' && (t.includes('assistance')||t.includes('udvidet')) && r.ansatte!=='' && (+r.ansatte>=1); }
+      function filtered(){
+        if(!cal) return [];
+        const set=scopedMnes();
+        const ft=$('wheelType').value, fa=$('wheelActive').value, fe=$('wheelErp').value, fan=+$('wheelAnsatte').value||0, gode=$('wheelGode').checked;
+        return cal.filter(r=>{
+          if(!set.has(r.mne)) return false;
+          if(gode) return goodFit(r) && typeMatch(r.type,ft) && (!fe||r.erp===fe);
+          if(!typeMatch(r.type,ft)) return false;
+          if(fa!==''&&r.aktiv!==fa) return false;
+          if(fe&&r.erp!==fe) return false;
+          if(fan>0 && (r.ansatte===''|| +r.ansatte<fan)) return false;
+          return true; });
+      }
+      function agg(rows){
+        const sign=new Array(13).fill(0);
+        rows.forEach(r=>{ const m=+r.pub_month; if(m>=1&&m<=12) sign[m]++; });
+        const win=+$('wheelWindow').value; const work=new Array(13).fill(0);
+        for(let M=1;M<=12;M++){ let s=0; for(let k=0;k<win;k++) s+=sign[((M-1+k)%12)+1]; work[M]=s; }
+        return {sign,work};
+      }
+      function chart(work){
+        const W=1000,H=250,padL=8,padR=8,padT=26,padB=28;
+        const bw=(W-padL-padR)/12, maxW=Math.max(1,...work.slice(1));
+        const total=work.slice(1).reduce((a,b)=>a+b,0), even=total/12;
+        let peak=1; for(let M=2;M<=12;M++) if(work[M]>work[peak]) peak=M;
+        let s='';
+        for(let M=1;M<=12;M++){
+          const h=(H-padT-padB)*(work[M]/maxW); const x=padL+(M-1)*bw+bw*0.15, w=bw*0.7;
+          s+=`<rect class="wc-bar${M===peak?' peak':''}" x="${x.toFixed(1)}" y="${(H-padB-h).toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="4"></rect>`;
+          s+=`<text class="wc-val" x="${(x+w/2).toFixed(1)}" y="${(H-padB-h-6).toFixed(1)}" text-anchor="middle">${work[M].toLocaleString('da-DK')}</text>`;
+          s+=`<text class="wc-lbl" x="${(x+w/2).toFixed(1)}" y="${H-8}" text-anchor="middle">${MONTHS[M-1]}</text>`;
+        }
+        const ey=(H-padB)-(H-padT-padB)*(even/maxW);
+        s=`<line class="wc-even" x1="${padL}" y1="${ey.toFixed(1)}" x2="${W-padR}" y2="${ey.toFixed(1)}"></line><text class="wc-even-lbl" x="${W-padR}" y="${(ey-5).toFixed(1)}" text-anchor="end">jævn ~${Math.round(even).toLocaleString('da-DK')}</text>`+s;
+        $('wheelChart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Arbejdsbelastning pr. måned">${s}</svg>`;
+      }
+      function build(){
+        if(!$('wheelGrid')||!cal) return;
+        const rows=filtered(); const {sign,work}=agg(rows);
+        chart(work);
+        const maxW=Math.max(1,...work.slice(1));
+        $('wheelGrid').innerHTML=MONTHS.map((nm,i)=>{ const M=i+1,h=Math.round(work[M]/maxW*100);
+          return `<div class="wheel-month${curMonth===M?' on':''}" data-m="${M}"><div class="mn">${nm}</div><div class="wheel-bar"><i style="height:${h}%"></i></div><div class="wk">${work[M].toLocaleString('da-DK')}</div><div class="sg">underskriver ${sign[M].toLocaleString('da-DK')}</div></div>`;
+        }).join('');
+        let peak=1,low=1; for(let M=2;M<=12;M++){ if(work[M]>work[peak])peak=M; if(work[M]<work[low])low=M; }
+        const total=work.slice(1).reduce((a,b)=>a+b,0), even=Math.round(total/12);
+        const ins=$('wheelInsight');
+        if(total===0) ins.innerHTML='Ingen kunder matcher filtrene i det valgte scope.';
+        else ins.innerHTML=`<b>Flaskehals:</b> ${MONTHS[peak-1]} er travlest med ca. ${work[peak].toLocaleString('da-DK')} kunder i arbejde, mens ${MONTHS[low-1]} kun har ca. ${work[low].toLocaleString('da-DK')}. En jævn fordeling ville være ca. ${even.toLocaleString('da-DK')} pr. måned. Klik på en måned for at se kunderne.`;
+        document.querySelectorAll('#wheelGrid .wheel-month').forEach(el=>el.onclick=()=>{ curMonth=(curMonth===+el.dataset.m)?null:+el.dataset.m; detail(); build(); });
+      }
+      function detail(){
+        const box=$('wheelDetail'); if(!box) return;
+        if(curMonth===null){ box.innerHTML=''; return; }
+        const list=filtered().filter(r=>+r.pub_month===curMonth)
+          .map(r=>Object.assign({revisor:(mneMap[r.mne]||{}).revisor||'—'},r))
+          .sort((a,b)=> a.revisor.localeCompare(b.revisor)||String(a.client_navn).localeCompare(String(b.client_navn)));
+        box.innerHTML=`<div class="panel-header"><h3>Underskrives i ${MONTHS[curMonth-1]} · ${list.length.toLocaleString('da-DK')} kunder</h3></div>
+          <div class="table-wrap fold-scroll"><table><thead><tr><th>Revisor</th><th>Kunde</th><th>CVR</th><th>Kommune</th><th>Erklæringstype</th><th class="numeric">Ansatte</th><th>På Crediwire</th></tr></thead>
+          <tbody>${list.slice(0,500).map(r=>`<tr><td>${r.revisor}</td><td>${r.client_navn||'—'}</td><td>${r.client_cvr}</td><td>${r.kommune||'—'}</td><td>${r.type||'—'}</td><td class="numeric">${r.ansatte||'—'}</td><td>${r.aktiv==='1'?'Ja':'Nej'}</td></tr>`).join('')}</tbody></table></div>`;
       }
       function populateRevisor(){
         const hn=houseName().toLowerCase();
         const inHouse=Object.keys(mneMap).filter(m=>!hn||(mneMap[m].firma||'').toLowerCase().includes(hn));
-        const sel=document.getElementById('wheelRevisor'); if(!sel) return; const cur=sel.value;
-        sel.innerHTML='<option value="">Hele huset</option>'+inHouse
-          .sort((a,b)=>(mneMap[a].revisor||'').localeCompare(mneMap[b].revisor||''))
-          .map(m=>`<option value="${m}">${mneMap[m].revisor||m}</option>`).join('');
+        const sel=$('wheelRevisor'); if(!sel) return; const cur=sel.value;
+        sel.innerHTML='<option value="">Hele huset</option>'+inHouse.sort((a,b)=>(mneMap[a].revisor||'').localeCompare(mneMap[b].revisor||'')).map(m=>`<option value="${m}">${mneMap[m].revisor||m}</option>`).join('');
         if([...sel.options].some(o=>o.value===cur)) sel.value=cur;
       }
-      function build(){
-        if(!document.getElementById('wheelGrid')) return;
-        const set=new Set(scopedMnes());
-        const sign=new Array(13).fill(0);
-        summary.forEach(r=>{ if(set.has(r.mne)){ const m=+r.pub_month; if(m>=1&&m<=12) sign[m]+=(+r.antal||0); } });
-        const win=+document.getElementById('wheelWindow').value;
-        const work=new Array(13).fill(0);
-        for(let M=1;M<=12;M++){ let s=0; for(let k=0;k<win;k++){ s+=sign[((M-1+k)%12)+1]; } work[M]=s; }
-        const maxW=Math.max(1,...work.slice(1));
-        document.getElementById('wheelGrid').innerHTML=MONTHS.map((nm,i)=>{
-          const M=i+1, h=Math.round(work[M]/maxW*100);
-          return `<div class="wheel-month${curMonth===M?' on':''}" data-m="${M}">
-            <div class="mn">${nm}</div><div class="wheel-bar"><i style="height:${h}%"></i></div>
-            <div class="wk">${work[M].toLocaleString('da-DK')}</div>
-            <div class="sg">underskriver ${sign[M].toLocaleString('da-DK')}</div></div>`;
-        }).join('');
-        let peak=1,low=1; for(let M=2;M<=12;M++){ if(work[M]>work[peak])peak=M; if(work[M]<work[low])low=M; }
-        const total=work.slice(1).reduce((a,b)=>a+b,0), even=Math.round(total/12);
-        const ins=document.getElementById('wheelInsight');
-        if(total===0){ ins.innerHTML='Ingen klasse B-regnskaber i det valgte scope.'; }
-        else ins.innerHTML=`<b>Flaskehals:</b> ${MONTHS[peak-1]} er travlest med ca. ${work[peak].toLocaleString('da-DK')} kunder i arbejde, mens ${MONTHS[low-1]} kun har ca. ${work[low].toLocaleString('da-DK')}. En jævn fordeling ville være ca. ${even.toLocaleString('da-DK')} pr. måned. Forslag: start kunder med fast 31/12-regnskab tidligere for at flade ${MONTHS[peak-1]}-toppen. Klik på en måned for at se hvilke kunder der underskrives.`;
-        document.querySelectorAll('#wheelGrid .wheel-month').forEach(el=>el.onclick=()=>{ curMonth=(curMonth===+el.dataset.m)?null:+el.dataset.m; showDetail(); build(); });
+      function populateErp(){
+        const sel=$('wheelErp'); if(!sel||!cal) return; const cur=sel.value;
+        const erps=[...new Set(cal.map(r=>r.erp).filter(Boolean))].sort();
+        sel.innerHTML='<option value="">Alle</option>'+erps.map(e=>`<option value="${e}">${e}</option>`).join('');
+        if([...sel.options].some(o=>o.value===cur)) sel.value=cur;
       }
-      function showDetail(){
-        const box=document.getElementById('wheelDetail'); if(!box) return;
-        if(curMonth===null){ box.innerHTML=''; return; }
-        box.innerHTML='<p class="wheel-loading">Indlæser kunder…</p>';
-        const render=()=>{
-          const set=new Set(scopedMnes());
-          const list=bigRows.filter(r=>set.has(r.mne)&&(+r.pub_month)===curMonth)
-            .map(r=>Object.assign({revisor:(mneMap[r.mne]||{}).revisor||'—'}, r))
-            .sort((a,b)=> a.revisor.localeCompare(b.revisor) || String(a.client_navn).localeCompare(String(b.client_navn)));
-          box.innerHTML=`<div class="panel-header"><h3>Underskrives i ${MONTHS[curMonth-1]} · ${list.length.toLocaleString('da-DK')} kunder</h3></div>
-            <div class="table-wrap fold-scroll"><table><thead><tr><th>Revisor</th><th>Kunde</th><th>CVR</th><th>Kommune</th><th>Erklæringstype</th><th>Økonomisystem</th><th>På Crediwire</th></tr></thead>
-            <tbody>${list.slice(0,400).map(r=>`<tr><td>${r.revisor}</td><td>${r.client_navn||'—'}</td><td>${r.client_cvr}</td><td>${r.kommune||'—'}</td><td>${r.type||'—'}</td><td>${r.erp||'—'}</td><td>${r.aktiv==='1'?'Ja':'Nej'}</td></tr>`).join('')}</tbody></table></div>`;
-        };
-        if(bigRows) render();
-        else fetch('../data/processed/revisor_calendar.csv').then(r=>r.text()).then(t=>{ bigRows=parse(t); render(); });
+      function loadCal(){
+        if(cal||loading) return; loading=true;
+        $('wheelInsight').innerHTML='<span class="wheel-loading">Indlæser årshjul…</span>';
+        fetch('../data/processed/revisor_calendar.csv').then(r=>r.text()).then(t=>{ cal=parse(t); loading=false; populateErp(); build(); })
+          .catch(()=>{ $('wheelInsight').innerHTML='Kan ikke indlæse årshjul-data.'; loading=false; });
       }
-      Promise.all([
-        fetch('../data/processed/revisor_calendar_summary.csv').then(r=>r.text()),
-        fetch('../data/processed/mne_declarations.csv').then(r=>r.text())
-      ]).then(([s,m])=>{
-        summary=parse(s);
+      fetch('../data/processed/mne_declarations.csv').then(r=>r.text()).then(m=>{
         parse(m).forEach(r=>{ mneMap[r.mne]={firma:r.ao_firma,revisor:r.revisor}; });
-        populateRevisor(); build();
-        const kpis=document.getElementById('primaryKpis');
-        if(kpis) new MutationObserver(()=>{ populateRevisor(); if(curMonth!==null){curMonth=null;document.getElementById('wheelDetail').innerHTML='';} build(); }).observe(kpis,{childList:true});
-      }).catch(()=>{ const g=document.getElementById('wheelGrid'); if(g) g.innerHTML='<p class="wheel-loading">Kan ikke indlæse årshjul-data.</p>'; });
-      document.addEventListener('change',e=>{ if(e.target&&(e.target.id==='wheelRevisor'||e.target.id==='wheelWindow')){ curMonth=null; document.getElementById('wheelDetail').innerHTML=''; build(); }});
+        populateRevisor();
+        const anchor=document.querySelector('#tab-muligheder .wheel-controls');
+        if(anchor && 'IntersectionObserver' in window){
+          const io=new IntersectionObserver(es=>{ if(es.some(e=>e.isIntersecting)) loadCal(); }, {rootMargin:'200px'});
+          io.observe(anchor);
+        } else loadCal();
+        const kpis=$('primaryKpis');
+        if(kpis) new MutationObserver(()=>{ populateRevisor(); if(curMonth!==null){curMonth=null;$('wheelDetail').innerHTML='';} if(cal) build(); }).observe(kpis,{childList:true});
+      });
+      document.addEventListener('change',e=>{ if(e.target&&['wheelRevisor','wheelWindow','wheelType','wheelActive','wheelErp','wheelGode'].includes(e.target.id)){ curMonth=null; $('wheelDetail').innerHTML=''; if(cal) build(); }});
+      document.addEventListener('input',e=>{ if(e.target&&e.target.id==='wheelAnsatte'){ curMonth=null; $('wheelDetail').innerHTML=''; if(cal) build(); }});
     })();
     </script>
   </body>
