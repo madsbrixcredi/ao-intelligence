@@ -77,6 +77,26 @@
       .focus-tx{font-size:14px;color:#141821;line-height:1.4;display:block}
       .focus-tx b{font-weight:800}
       .focus-go{font-size:12px;color:#8a93a3;margin-top:4px;display:block}
+      .mne-controls{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+      #mneFilter{flex:1;max-width:380px;padding:9px 13px;border:1px solid var(--line,#e7eaf0);border-radius:10px;font:inherit;font-size:14px}
+      #mneFilter:focus{outline:none;border-color:#2f6df0}
+      .wheel-controls{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:14px;font-size:14px;align-items:center}
+      .wheel-controls label{display:flex;gap:8px;align-items:center;color:#5c6572}
+      .wheel-controls select{font:inherit;padding:8px 11px;border:1px solid var(--line,#e7eaf0);border-radius:9px;background:#fff}
+      .wheel-insight{background:#f2f6fe;border:1px solid #dbe6fd;border-radius:12px;padding:14px 16px;margin-bottom:16px;font-size:14px;line-height:1.5}
+      .wheel-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+      @media(max-width:900px){.wheel-grid{grid-template-columns:repeat(3,1fr)}}
+      @media(max-width:560px){.wheel-grid{grid-template-columns:repeat(2,1fr)}}
+      .wheel-month{border:1px solid #e7eaf0;border-radius:12px;padding:12px 12px 10px;background:#fff;cursor:pointer;transition:.15s}
+      .wheel-month:hover{border-color:#c9d7f2;box-shadow:0 4px 14px rgba(20,30,50,.07)}
+      .wheel-month.on{border-color:#2f6df0;background:#f2f6fe}
+      .wheel-month .mn{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8a93a3}
+      .wheel-bar{height:56px;display:flex;align-items:flex-end;margin:8px 0 6px}
+      .wheel-bar i{display:block;width:100%;background:#2f6df0;border-radius:5px 5px 0 0;min-height:2px;transition:height .5s}
+      .wheel-month .wk{font-size:21px;font-weight:800;letter-spacing:-.01em}
+      .wheel-month .sg{font-size:12px;color:#5c6572}
+      .wheel-detail{margin-top:16px}
+      .wheel-loading{color:#8a93a3;font-size:14px}
     </style>
   </head>
   <body>
@@ -373,6 +393,51 @@
 
       <!-- ========== MULIGHEDER ========== -->
       <div class="tabpane" id="tab-muligheder">
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Revisorer og erklæringer</h2>
+            <span class="badge muted">MNE · fordelt på erklæringstype</span>
+          </div>
+          <div class="mne-controls">
+            <input id="mneFilter" type="search" placeholder="Filtrér på AO, revisor eller MNE" />
+            <span id="mneCount" class="badge muted"></span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>MNE</th>
+                  <th>Revisor</th>
+                  <th>AO (revisorfirma)</th>
+                  <th class="numeric">Revision</th>
+                  <th class="numeric">Review</th>
+                  <th class="numeric">Udv. gennemgang</th>
+                  <th class="numeric">Assistance</th>
+                  <th class="numeric">Kunder</th>
+                  <th class="numeric">Aktive</th>
+                  <th class="numeric">Uudnyttet</th>
+                  <th class="numeric">Potentiale</th>
+                </tr>
+              </thead>
+              <tbody id="mneBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Årshjul: hvornår arbejder revisorerne</h2>
+            <span class="badge muted">projiceret til næste år</span>
+          </div>
+          <div class="wheel-controls">
+            <label>Revisor <select id="wheelRevisor"><option value="">Hele huset</option></select></label>
+            <label>Arbejdsvindue <select id="wheelWindow"><option value="2">2 mdr. før</option><option value="3" selected>3 mdr. før</option></select></label>
+          </div>
+          <div id="wheelInsight" class="wheel-insight"></div>
+          <div class="wheel-grid" id="wheelGrid"></div>
+          <div id="wheelDetail" class="wheel-detail"></div>
+        </section>
+
         <section class="panel">
           <div class="panel-header">
             <h2 id="opportunityTitle">Hvor skal vi fokusere næste gang?</h2>
@@ -674,11 +739,14 @@
     (function(){
       const btns = document.querySelectorAll('.tabnav button');
       const panes = document.querySelectorAll('.tabpane');
-      btns.forEach(b => b.addEventListener('click', () => {
-        btns.forEach(x => x.classList.toggle('on', x===b));
-        panes.forEach(p => p.classList.toggle('on', p.id===b.dataset.tab));
-        window.scrollTo({top:0, behavior:'smooth'});
-      }));
+      function showTab(id){
+        if(!document.getElementById(id)) return;
+        btns.forEach(x => x.classList.toggle('on', x.dataset.tab===id));
+        panes.forEach(p => p.classList.toggle('on', p.id===id));
+        if(location.hash!=='#'+id) history.replaceState(null,'','#'+id);
+      }
+      btns.forEach(b => b.addEventListener('click', () => { showTab(b.dataset.tab); window.scrollTo({top:0, behavior:'smooth'}); }));
+      if(location.hash && document.getElementById(location.hash.slice(1))) showTab(location.hash.slice(1));
     })();
 
     /* ===== Crediwire Score-ring ===== */
@@ -839,6 +907,132 @@
         if(kpis) new MutationObserver(()=>render()).observe(kpis, {childList:true});
       }
       ready();
+    })();
+
+    /* ===== MNE-liste: revisorer og erklæringer (Muligheder) ===== */
+    (function(){
+      let rows=[], userTyped=false;
+      const daN = s => { const n=parseInt(s,10)||0; return n.toLocaleString('da-DK'); };
+      const houseName = () => { const s=document.getElementById('aoSearch'); return (s && s.value.trim()) || ''; };
+      function parseLine(l){
+        const out=[]; let cur='', q=false;
+        for(let i=0;i<l.length;i++){ const ch=l[i];
+          if(ch==='"'){ q=!q; } else if(ch===',' && !q){ out.push(cur); cur=''; } else cur+=ch; }
+        out.push(cur); return out;
+      }
+      function valPerCompany(){
+        const v=id=>parseFloat((document.getElementById(id)||{}).value)||0;
+        const h=v('hoursInput'), r=v('rateInput'), q=v('qualityFactorInput')||1;
+        return h*r*q;
+      }
+      function render(){
+        const body=document.getElementById('mneBody'); if(!body) return;
+        const q=(userTyped ? (document.getElementById('mneFilter').value||'') : houseName()).trim().toLowerCase();
+        let list = q ? rows.filter(r => (r.ao_firma+' '+r.revisor+' '+r.mne).toLowerCase().includes(q)) : rows;
+        list = list.slice().sort((a,b)=>(parseInt(b.uudnyttede_kunder,10)||0)-(parseInt(a.uudnyttede_kunder,10)||0));
+        document.getElementById('mneCount').textContent = list.length.toLocaleString('da-DK')+' revisorer';
+        const vpc=valPerCompany();
+        body.innerHTML = list.slice(0,500).map(r=>{
+          const pot=(parseInt(r.uudnyttede_kunder,10)||0)*vpc;
+          return `<tr>
+          <td>${r.mne}</td><td>${r.revisor||'—'}</td><td>${r.ao_firma||'—'}</td>
+          <td class="numeric">${daN(r.revision)}</td>
+          <td class="numeric">${daN(r.review)}</td>
+          <td class="numeric">${daN(r.udvidet_gennemgang)}</td>
+          <td class="numeric">${daN(r.assistance)}</td>
+          <td class="numeric">${daN(r.distinkte_kunder)}</td>
+          <td class="numeric"><strong>${daN(r.aktive_kunder)}</strong></td>
+          <td class="numeric">${daN(r.uudnyttede_kunder)}</td>
+          <td class="numeric">${Math.round(pot).toLocaleString('da-DK')} kr.</td>
+        </tr>`;}).join('') || '<tr><td colspan="11">Ingen revisorer matcher.</td></tr>';
+      }
+      fetch('../data/processed/mne_declarations.csv').then(r=>r.text()).then(txt=>{
+        const lines=txt.trim().split('\n'); const hdr=parseLine(lines[0]);
+        rows=lines.slice(1).map(l=>{ const c=parseLine(l); const o={}; hdr.forEach((h,i)=>o[h]=c[i]); return o; });
+        render();
+        const kpis=document.getElementById('primaryKpis');
+        if(kpis) new MutationObserver(()=>{ if(!userTyped) render(); }).observe(kpis,{childList:true});
+      }).catch(e=>{
+        const body=document.getElementById('mneBody');
+        if(body) body.innerHTML='<tr><td colspan="8">Kan ikke indlæse MNE-data.</td></tr>';
+      });
+      document.addEventListener('input', e=>{
+        if(e.target && e.target.id==='mneFilter'){ userTyped = e.target.value.trim()!==''; render(); }
+      });
+    })();
+
+    /* ===== Årshjul: hvornår arbejder revisorerne ===== */
+    (function(){
+      const MONTHS=['Jan','Feb','Mar','Apr','Maj','Jun','Jul','Aug','Sep','Okt','Nov','Dec'];
+      let summary=[], mneMap={}, bigRows=null, curMonth=null;
+      const houseName=()=>{ const s=document.getElementById('aoSearch'); return (s&&s.value.trim())||''; };
+      function splitCsv(l){ const out=[]; let cur='',q=false; for(let i=0;i<l.length;i++){ const ch=l[i]; if(ch==='"')q=!q; else if(ch===','&&!q){out.push(cur);cur='';} else cur+=ch; } out.push(cur); return out; }
+      function parse(txt){ const L=txt.trim().split('\n'); const h=splitCsv(L[0]); return L.slice(1).map(l=>{const c=splitCsv(l);const o={};h.forEach((k,i)=>o[k]=c[i]);return o;}); }
+      function scopedMnes(){
+        const rev=document.getElementById('wheelRevisor').value;
+        if(rev) return [rev];
+        const hn=houseName().toLowerCase();
+        const all=Object.keys(mneMap);
+        return hn ? all.filter(m=>(mneMap[m].firma||'').toLowerCase().includes(hn)) : all;
+      }
+      function populateRevisor(){
+        const hn=houseName().toLowerCase();
+        const inHouse=Object.keys(mneMap).filter(m=>!hn||(mneMap[m].firma||'').toLowerCase().includes(hn));
+        const sel=document.getElementById('wheelRevisor'); if(!sel) return; const cur=sel.value;
+        sel.innerHTML='<option value="">Hele huset</option>'+inHouse
+          .sort((a,b)=>(mneMap[a].revisor||'').localeCompare(mneMap[b].revisor||''))
+          .map(m=>`<option value="${m}">${mneMap[m].revisor||m}</option>`).join('');
+        if([...sel.options].some(o=>o.value===cur)) sel.value=cur;
+      }
+      function build(){
+        if(!document.getElementById('wheelGrid')) return;
+        const set=new Set(scopedMnes());
+        const sign=new Array(13).fill(0);
+        summary.forEach(r=>{ if(set.has(r.mne)){ const m=+r.pub_month; if(m>=1&&m<=12) sign[m]+=(+r.antal||0); } });
+        const win=+document.getElementById('wheelWindow').value;
+        const work=new Array(13).fill(0);
+        for(let M=1;M<=12;M++){ let s=0; for(let k=0;k<win;k++){ s+=sign[((M-1+k)%12)+1]; } work[M]=s; }
+        const maxW=Math.max(1,...work.slice(1));
+        document.getElementById('wheelGrid').innerHTML=MONTHS.map((nm,i)=>{
+          const M=i+1, h=Math.round(work[M]/maxW*100);
+          return `<div class="wheel-month${curMonth===M?' on':''}" data-m="${M}">
+            <div class="mn">${nm}</div><div class="wheel-bar"><i style="height:${h}%"></i></div>
+            <div class="wk">${work[M].toLocaleString('da-DK')}</div>
+            <div class="sg">underskriver ${sign[M].toLocaleString('da-DK')}</div></div>`;
+        }).join('');
+        let peak=1,low=1; for(let M=2;M<=12;M++){ if(work[M]>work[peak])peak=M; if(work[M]<work[low])low=M; }
+        const total=work.slice(1).reduce((a,b)=>a+b,0), even=Math.round(total/12);
+        const ins=document.getElementById('wheelInsight');
+        if(total===0){ ins.innerHTML='Ingen klasse B-regnskaber i det valgte scope.'; }
+        else ins.innerHTML=`<b>Flaskehals:</b> ${MONTHS[peak-1]} er travlest med ca. ${work[peak].toLocaleString('da-DK')} kunder i arbejde, mens ${MONTHS[low-1]} kun har ca. ${work[low].toLocaleString('da-DK')}. En jævn fordeling ville være ca. ${even.toLocaleString('da-DK')} pr. måned. Forslag: start kunder med fast 31/12-regnskab tidligere for at flade ${MONTHS[peak-1]}-toppen. Klik på en måned for at se hvilke kunder der underskrives.`;
+        document.querySelectorAll('#wheelGrid .wheel-month').forEach(el=>el.onclick=()=>{ curMonth=(curMonth===+el.dataset.m)?null:+el.dataset.m; showDetail(); build(); });
+      }
+      function showDetail(){
+        const box=document.getElementById('wheelDetail'); if(!box) return;
+        if(curMonth===null){ box.innerHTML=''; return; }
+        box.innerHTML='<p class="wheel-loading">Indlæser kunder…</p>';
+        const render=()=>{
+          const set=new Set(scopedMnes());
+          const list=bigRows.filter(r=>set.has(r.mne)&&(+r.pub_month)===curMonth)
+            .sort((a,b)=>(b.aktiv-a.aktiv)||String(a.client_navn).localeCompare(String(b.client_navn)));
+          box.innerHTML=`<div class="panel-header"><h3>Kunder der underskrives i ${MONTHS[curMonth-1]} · ${list.length.toLocaleString('da-DK')}</h3></div>
+            <div class="table-wrap"><table><thead><tr><th>Kunde</th><th>CVR</th><th>Kommune</th><th>Erklæringstype</th><th>Økonomisystem</th><th>På Crediwire</th></tr></thead>
+            <tbody>${list.slice(0,400).map(r=>`<tr><td>${r.client_navn||'—'}</td><td>${r.client_cvr}</td><td>${r.kommune||'—'}</td><td>${r.type||'—'}</td><td>${r.erp||'—'}</td><td>${r.aktiv==='1'?'Ja':'Nej'}</td></tr>`).join('')}</tbody></table></div>`;
+        };
+        if(bigRows) render();
+        else fetch('../data/processed/revisor_calendar.csv').then(r=>r.text()).then(t=>{ bigRows=parse(t); render(); });
+      }
+      Promise.all([
+        fetch('../data/processed/revisor_calendar_summary.csv').then(r=>r.text()),
+        fetch('../data/processed/mne_declarations.csv').then(r=>r.text())
+      ]).then(([s,m])=>{
+        summary=parse(s);
+        parse(m).forEach(r=>{ mneMap[r.mne]={firma:r.ao_firma,revisor:r.revisor}; });
+        populateRevisor(); build();
+        const kpis=document.getElementById('primaryKpis');
+        if(kpis) new MutationObserver(()=>{ populateRevisor(); if(curMonth!==null){curMonth=null;document.getElementById('wheelDetail').innerHTML='';} build(); }).observe(kpis,{childList:true});
+      }).catch(()=>{ const g=document.getElementById('wheelGrid'); if(g) g.innerHTML='<p class="wheel-loading">Kan ikke indlæse årshjul-data.</p>'; });
+      document.addEventListener('change',e=>{ if(e.target&&(e.target.id==='wheelRevisor'||e.target.id==='wheelWindow')){ curMonth=null; document.getElementById('wheelDetail').innerHTML=''; build(); }});
     })();
     </script>
   </body>
