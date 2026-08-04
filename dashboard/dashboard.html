@@ -85,10 +85,13 @@
       .wheel-controls select,.wheel-controls input[type=number]{font:inherit;padding:8px 11px;border:1px solid var(--line,#e7eaf0);border-radius:9px;background:#fff}
       .wheel-controls input[type=number]{width:74px}
       .wheel-controls label.chk{gap:6px}
-      .wheel-chart{margin:4px 0 18px}
+      .wheel-chart{margin:4px 0 8px}
       .wheel-chart svg{width:100%;height:auto;display:block}
-      .wheel-chart .wc-bar{fill:#2f6df0}
+      .wheel-chart .wc-hit{fill:transparent;cursor:pointer}
+      .wheel-chart .wc-hit:hover + .wc-bar{fill:#1b4fd0}
+      .wheel-chart .wc-bar{fill:#2f6df0;cursor:pointer}
       .wheel-chart .wc-bar.peak{fill:#e0902b}
+      .wheel-chart .wc-bar.sel{stroke:#141821;stroke-width:2}
       .wheel-chart .wc-lbl{fill:#8a93a3;font-size:13px}
       .wheel-chart .wc-val{fill:#141821;font-size:12px;font-weight:700}
       .wheel-chart .wc-even{stroke:#d6483b;stroke-dasharray:5 4;stroke-width:1.5}
@@ -455,7 +458,6 @@
           </div>
           <div id="wheelInsight" class="wheel-insight"></div>
           <div id="wheelChart" class="wheel-chart"></div>
-          <div class="wheel-grid" id="wheelGrid"></div>
           <div id="wheelDetail" class="wheel-detail"></div>
         </section>
 
@@ -1021,36 +1023,33 @@
         for(let M=1;M<=12;M++){ let s=0; for(let k=0;k<win;k++) s+=sign[((M-1+k)%12)+1]; work[M]=s; }
         return {sign,work};
       }
-      function chart(work){
-        const W=1000,H=250,padL=8,padR=8,padT=26,padB=28;
-        const bw=(W-padL-padR)/12, maxW=Math.max(1,...work.slice(1));
+      function chart(work,sign){
+        const W=1200,H=200,padL=8,padR=8,padT=24,padB=26;
+        const bw=(W-padL-padR)/12, plotH=H-padT-padB, maxW=Math.max(1,...work.slice(1));
         const total=work.slice(1).reduce((a,b)=>a+b,0), even=total/12;
         let peak=1; for(let M=2;M<=12;M++) if(work[M]>work[peak]) peak=M;
-        let s='';
+        const ey=(H-padB)-plotH*(even/maxW);
+        let s=`<line class="wc-even" x1="${padL}" y1="${ey.toFixed(1)}" x2="${W-padR}" y2="${ey.toFixed(1)}"></line><text class="wc-even-lbl" x="${W-padR}" y="${(ey-5).toFixed(1)}" text-anchor="end">jævn ~${Math.round(even).toLocaleString('da-DK')}</text>`;
         for(let M=1;M<=12;M++){
-          const h=(H-padT-padB)*(work[M]/maxW); const x=padL+(M-1)*bw+bw*0.15, w=bw*0.7;
-          s+=`<rect class="wc-bar${M===peak?' peak':''}" x="${x.toFixed(1)}" y="${(H-padB-h).toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="4"></rect>`;
-          s+=`<text class="wc-val" x="${(x+w/2).toFixed(1)}" y="${(H-padB-h-6).toFixed(1)}" text-anchor="middle">${work[M].toLocaleString('da-DK')}</text>`;
-          s+=`<text class="wc-lbl" x="${(x+w/2).toFixed(1)}" y="${H-8}" text-anchor="middle">${MONTHS[M-1]}</text>`;
+          const h=plotH*(work[M]/maxW); const gx=padL+(M-1)*bw, x=gx+bw*0.15, w=bw*0.7;
+          const cls='wc-bar'+(M===peak?' peak':'')+(curMonth===M?' sel':'');
+          s+=`<rect class="wc-hit" data-m="${M}" x="${gx.toFixed(1)}" y="${padT}" width="${bw.toFixed(1)}" height="${plotH.toFixed(1)}"><title>${MONTHS[M-1]}: ${work[M].toLocaleString('da-DK')} i arbejde · underskriver ${sign[M].toLocaleString('da-DK')}</title></rect>`;
+          s+=`<rect class="${cls}" data-m="${M}" x="${x.toFixed(1)}" y="${(H-padB-h).toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="4"></rect>`;
+          s+=`<text class="wc-val" x="${(x+w/2).toFixed(1)}" y="${(H-padB-h-5).toFixed(1)}" text-anchor="middle">${work[M].toLocaleString('da-DK')}</text>`;
+          s+=`<text class="wc-lbl" x="${(x+w/2).toFixed(1)}" y="${H-7}" text-anchor="middle">${MONTHS[M-1]}</text>`;
         }
-        const ey=(H-padB)-(H-padT-padB)*(even/maxW);
-        s=`<line class="wc-even" x1="${padL}" y1="${ey.toFixed(1)}" x2="${W-padR}" y2="${ey.toFixed(1)}"></line><text class="wc-even-lbl" x="${W-padR}" y="${(ey-5).toFixed(1)}" text-anchor="end">jævn ~${Math.round(even).toLocaleString('da-DK')}</text>`+s;
         $('wheelChart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Arbejdsbelastning pr. måned">${s}</svg>`;
+        $('wheelChart').querySelectorAll('[data-m]').forEach(el=>el.addEventListener('click',()=>{ const M=+el.dataset.m; curMonth=(curMonth===M)?null:M; detail(); build(); }));
       }
       function build(){
-        if(!$('wheelGrid')||!cal) return;
+        if(!$('wheelChart')||!cal) return;
         const rows=filtered(); const {sign,work}=agg(rows);
-        chart(work);
-        const maxW=Math.max(1,...work.slice(1));
-        $('wheelGrid').innerHTML=MONTHS.map((nm,i)=>{ const M=i+1,h=Math.round(work[M]/maxW*100);
-          return `<div class="wheel-month${curMonth===M?' on':''}" data-m="${M}"><div class="mn">${nm}</div><div class="wheel-bar"><i style="height:${h}%"></i></div><div class="wk">${work[M].toLocaleString('da-DK')}</div><div class="sg">underskriver ${sign[M].toLocaleString('da-DK')}</div></div>`;
-        }).join('');
+        chart(work,sign);
         let peak=1,low=1; for(let M=2;M<=12;M++){ if(work[M]>work[peak])peak=M; if(work[M]<work[low])low=M; }
         const total=work.slice(1).reduce((a,b)=>a+b,0), even=Math.round(total/12);
         const ins=$('wheelInsight');
         if(total===0) ins.innerHTML='Ingen kunder matcher filtrene i det valgte scope.';
-        else ins.innerHTML=`<b>Flaskehals:</b> ${MONTHS[peak-1]} er travlest med ca. ${work[peak].toLocaleString('da-DK')} kunder i arbejde, mens ${MONTHS[low-1]} kun har ca. ${work[low].toLocaleString('da-DK')}. En jævn fordeling ville være ca. ${even.toLocaleString('da-DK')} pr. måned. Klik på en måned for at se kunderne.`;
-        document.querySelectorAll('#wheelGrid .wheel-month').forEach(el=>el.onclick=()=>{ curMonth=(curMonth===+el.dataset.m)?null:+el.dataset.m; detail(); build(); });
+        else ins.innerHTML=`<b>Flaskehals:</b> ${MONTHS[peak-1]} er travlest med ca. ${work[peak].toLocaleString('da-DK')} kunder i arbejde, mens ${MONTHS[low-1]} kun har ca. ${work[low].toLocaleString('da-DK')}. En jævn fordeling ville være ca. ${even.toLocaleString('da-DK')} pr. måned. Klik på en søjle for at se kunderne.`;
       }
       function detail(){
         const box=$('wheelDetail'); if(!box) return;
