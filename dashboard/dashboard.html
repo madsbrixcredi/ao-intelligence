@@ -108,9 +108,6 @@
       .wheel-chart .wc-bar{fill:#2f6df0;cursor:pointer}
       .wheel-chart .wc-bar.peak{fill:#e0902b}
       .wheel-chart .wc-sign.sel,.wheel-chart .wc-bar.sel{stroke:#141821;stroke-width:1.5}
-      .wheel-chart .wc-on{fill:#14a06a;cursor:pointer}
-      .wheel-chart .wc-off{fill:#e0902b;cursor:pointer}
-      .wheel-chart .wc-on.sel,.wheel-chart .wc-off.sel{stroke:#141821;stroke-width:1.5}
       .wheel-chart .wc-lbl{fill:#8a93a3;font-size:12px}
       .wheel-chart .wc-val{fill:#141821;font-size:10px;font-weight:700}
       .wheel-chart .wc-val2{fill:#8a93a3;font-size:10px}
@@ -1069,57 +1066,52 @@
           return true; });
       }
       function agg(rows){
-        const sOn=new Array(13).fill(0), sOff=new Array(13).fill(0), sign=new Array(13).fill(0);
-        rows.forEach(r=>{ const m=+r.pub_month; if(m>=1&&m<=12){ sign[m]++; if(r.aktiv==='1') sOn[m]++; else sOff[m]++; } });
-        const off=+$('wheelWindow').value;
-        const workOn=new Array(13).fill(0), workOff=new Array(13).fill(0);
-        for(let M=1;M<=12;M++){ const p=((M-1+off)%12)+1; workOn[M]=sOn[p]; workOff[M]=sOff[p]; }
-        return {sign,workOn,workOff};
+        const sign=new Array(13).fill(0);
+        rows.forEach(r=>{ const m=+r.pub_month; if(m>=1&&m<=12) sign[m]++; });
+        const off=+$('wheelWindow').value; const work=new Array(13).fill(0);
+        for(let M=1;M<=12;M++){ work[M]=sign[((M-1+off)%12)+1]; }
+        return {sign,work};
       }
-      function chart(workOn,workOff){
+      function chart(sign,work){
         const W=1200,H=214,padL=8,padR=8,padT=34,padB=26;
-        const slot=(W-padL-padR)/12, plotH=H-padT-padB;
-        const tot=new Array(13).fill(0); for(let M=1;M<=12;M++) tot[M]=workOn[M]+workOff[M];
-        const maxV=Math.max(1,...tot.slice(1));
-        const bw=slot*0.5;
-        let s=`<rect x="${padL}" y="8" width="12" height="12" rx="2" fill="#14a06a"></rect><text class="wc-leg" x="${padL+18}" y="18">På Crediwire</text>`;
-        s+=`<rect x="${padL+128}" y="8" width="12" height="12" rx="2" fill="#e0902b"></rect><text class="wc-leg" x="${padL+146}" y="18">Ikke på Crediwire (onboard)</text>`;
+        const slot=(W-padL-padR)/12, plotH=H-padT-padB, maxV=Math.max(1,...sign.slice(1),...work.slice(1));
+        let peak=1; for(let M=2;M<=12;M++) if(work[M]>work[peak]) peak=M;
+        const bw=slot*0.32, gap=slot*0.06;
+        let s=`<rect x="${padL}" y="8" width="12" height="12" rx="2" fill="#c9d7f2"></rect><text class="wc-leg" x="${padL+18}" y="18">Underskrift</text>`;
+        s+=`<rect x="${padL+112}" y="8" width="12" height="12" rx="2" fill="#2f6df0"></rect><text class="wc-leg" x="${padL+130}" y="18">Arbejde i gang</text>`;
         for(let M=1;M<=12;M++){
-          const gx=padL+(M-1)*slot, cx=gx+slot/2, x=cx-bw/2;
-          const hOn=plotH*(workOn[M]/maxV), hOff=plotH*(workOff[M]/maxV);
-          const yOn=H-padB-hOn, yOff=yOn-hOff;
-          s+=`<rect class="wc-hit" data-m="${M}" x="${gx.toFixed(1)}" y="${padT}" width="${slot.toFixed(1)}" height="${plotH.toFixed(1)}"><title>${MONTHS[M-1]}: arbejde starter på ${tot[M].toLocaleString('da-DK')}, heraf ${workOff[M].toLocaleString('da-DK')} ikke på Crediwire</title></rect>`;
-          if(hOn>0) s+=`<rect class="wc-on${curMonth===M?' sel':''}" data-m="${M}" x="${x.toFixed(1)}" y="${yOn.toFixed(1)}" width="${bw.toFixed(1)}" height="${hOn.toFixed(1)}"></rect>`;
-          if(hOff>0) s+=`<rect class="wc-off${curMonth===M?' sel':''}" data-m="${M}" x="${x.toFixed(1)}" y="${yOff.toFixed(1)}" width="${bw.toFixed(1)}" height="${hOff.toFixed(1)}"></rect>`;
-          s+=`<text class="wc-val" x="${cx.toFixed(1)}" y="${((hOff>0?yOff:yOn)-5).toFixed(1)}" text-anchor="middle" style="fill:#b9741d">${workOff[M].toLocaleString('da-DK')}</text>`;
+          const gx=padL+(M-1)*slot, cx=gx+slot/2;
+          const hs=plotH*(sign[M]/maxV), hw=plotH*(work[M]/maxV);
+          const x1=cx-bw-gap/2, x2=cx+gap/2;
+          s+=`<rect class="wc-hit" data-m="${M}" x="${gx.toFixed(1)}" y="${padT}" width="${slot.toFixed(1)}" height="${plotH.toFixed(1)}"><title>${MONTHS[M-1]}: underskriver ${sign[M].toLocaleString('da-DK')} · ${work[M].toLocaleString('da-DK')} i arbejde</title></rect>`;
+          s+=`<rect class="wc-sign${curMonth===M?' sel':''}" data-m="${M}" x="${x1.toFixed(1)}" y="${(H-padB-hs).toFixed(1)}" width="${bw.toFixed(1)}" height="${hs.toFixed(1)}" rx="3"></rect>`;
+          s+=`<rect class="wc-bar${M===peak?' peak':''}${curMonth===M?' sel':''}" data-m="${M}" x="${x2.toFixed(1)}" y="${(H-padB-hw).toFixed(1)}" width="${bw.toFixed(1)}" height="${hw.toFixed(1)}" rx="3"></rect>`;
+          s+=`<text class="wc-val2" x="${(x1+bw/2).toFixed(1)}" y="${(H-padB-hs-4).toFixed(1)}" text-anchor="middle">${sign[M].toLocaleString('da-DK')}</text>`;
+          s+=`<text class="wc-val" x="${(x2+bw/2).toFixed(1)}" y="${(H-padB-hw-4).toFixed(1)}" text-anchor="middle">${work[M].toLocaleString('da-DK')}</text>`;
           s+=`<text class="wc-lbl" x="${cx.toFixed(1)}" y="${H-7}" text-anchor="middle">${MONTHS[M-1]}</text>`;
         }
-        $('wheelChart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Arbejdsstart pr. måned, delt på Crediwire-status">${s}</svg>`;
+        $('wheelChart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Underskrift og arbejde pr. måned">${s}</svg>`;
         $('wheelChart').querySelectorAll('[data-m]').forEach(el=>el.addEventListener('click',()=>{ const M=+el.dataset.m; curMonth=(curMonth===M)?null:M; detail(); build(); }));
       }
       function build(){
         if(!$('wheelChart')||!cal) return;
-        const rows=filtered(); const {workOn,workOff}=agg(rows);
-        chart(workOn,workOff);
-        let peak=1; for(let M=2;M<=12;M++) if(workOff[M]>workOff[peak]) peak=M;
-        const totOff=workOff.slice(1).reduce((a,b)=>a+b,0), totAll=totOff+workOn.slice(1).reduce((a,b)=>a+b,0);
+        const rows=filtered(); const {sign,work}=agg(rows);
+        chart(sign,work);
+        let peak=1,low=1; for(let M=2;M<=12;M++){ if(work[M]>work[peak])peak=M; if(work[M]<work[low])low=M; }
+        const total=work.slice(1).reduce((a,b)=>a+b,0), even=Math.round(total/12);
         const ins=$('wheelInsight');
-        if(totAll===0) ins.innerHTML='Ingen kunder matcher filtrene i det valgte scope.';
-        else ins.innerHTML=`<b>Onboarding-timing:</b> flest emner at få på Crediwire er i <b>${MONTHS[peak-1]}</b>, hvor arbejdet starter på ca. <b>${workOff[peak].toLocaleString('da-DK')}</b> virksomheder der ikke er på Crediwire endnu. I alt <b>${totOff.toLocaleString('da-DK')}</b> onboarding-emner over året. Klik på en måned for at se hvilke.`;
+        if(total===0) ins.innerHTML='Ingen kunder matcher filtrene i det valgte scope.';
+        else ins.innerHTML=`<b>Flaskehals:</b> ${MONTHS[peak-1]} er travlest med ca. ${work[peak].toLocaleString('da-DK')} kunder i arbejde, mens ${MONTHS[low-1]} kun har ca. ${work[low].toLocaleString('da-DK')}. En jævn fordeling ville være ca. ${even.toLocaleString('da-DK')} pr. måned. Klik på en søjle for at se kunderne.`;
       }
       function detail(){
         const box=$('wheelDetail'); if(!box) return;
         if(curMonth===null){ box.innerHTML=''; return; }
-        const off=+$('wheelWindow').value; const targetPub=((curMonth-1+off)%12)+1;
-        const all=filtered().filter(r=>+r.pub_month===targetPub);
-        const onboard=all.filter(r=>r.aktiv!=='1');
-        const already=all.length-onboard.length;
-        const list=onboard.map(r=>Object.assign({revisor:(mneMap[r.mne]||{}).revisor||'—'},r))
+        const list=filtered().filter(r=>+r.pub_month===curMonth)
+          .map(r=>Object.assign({revisor:(mneMap[r.mne]||{}).revisor||'—'},r))
           .sort((a,b)=> a.revisor.localeCompare(b.revisor)||String(a.client_navn).localeCompare(String(b.client_navn)));
-        box.innerHTML=`<div class="panel-header"><h3>Arbejdet starter i ${MONTHS[curMonth-1]} · ${onboard.length.toLocaleString('da-DK')} at onboarde</h3><span class="badge muted">underskrives i ${MONTHS[targetPub-1]} · ${already.toLocaleString('da-DK')} er allerede på Crediwire</span></div>
-          <p class="wheel-loading" style="margin:0 0 10px">Disse virksomheder er ikke på Crediwire. Arbejdet går snart i gang: få dem på Crediwire nu.</p>
-          <div class="table-wrap fold-scroll"><table><thead><tr><th>Revisor</th><th>Kunde</th><th>CVR</th><th>Kommune</th><th>Erklæringstype</th><th class="numeric">Ansatte</th></tr></thead>
-          <tbody>${list.slice(0,500).map(r=>`<tr><td>${r.revisor}</td><td>${r.client_navn||'—'}</td><td>${r.client_cvr}</td><td>${r.kommune||'—'}</td><td>${r.type||'—'}</td><td class="numeric">${r.ansatte||'—'}</td></tr>`).join('')||'<tr><td colspan="6">Ingen onboarding-emner denne måned.</td></tr>'}</tbody></table></div>`;
+        box.innerHTML=`<div class="panel-header"><h3>Underskrives i ${MONTHS[curMonth-1]} · ${list.length.toLocaleString('da-DK')} kunder</h3></div>
+          <div class="table-wrap fold-scroll"><table><thead><tr><th>Revisor</th><th>Kunde</th><th>CVR</th><th>Kommune</th><th>Erklæringstype</th><th class="numeric">Ansatte</th><th>På Crediwire</th></tr></thead>
+          <tbody>${list.slice(0,500).map(r=>`<tr><td>${r.revisor}</td><td>${r.client_navn||'—'}</td><td>${r.client_cvr}</td><td>${r.kommune||'—'}</td><td>${r.type||'—'}</td><td class="numeric">${r.ansatte||'—'}</td><td>${r.aktiv==='1'?'Ja':'Nej'}</td></tr>`).join('')}</tbody></table></div>`;
       }
       function populateRevisor(){
         const hn=houseName().toLowerCase();
