@@ -97,6 +97,12 @@
       .wheel-month .sg{font-size:12px;color:#5c6572}
       .wheel-detail{margin-top:16px}
       .wheel-loading{color:#8a93a3;font-size:14px}
+      .fold>summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:center;padding:2px 0}
+      .fold>summary::-webkit-details-marker{display:none}
+      .fold>summary::before{content:"▸";color:#8a93a3;font-size:14px}
+      .fold[open]>summary::before{content:"▾"}
+      .fold-h{font-size:19px;font-weight:800;letter-spacing:-.01em}
+      .fold-scroll{max-height:520px;overflow:auto;margin-top:12px}
     </style>
   </head>
   <body>
@@ -394,15 +400,13 @@
       <!-- ========== MULIGHEDER ========== -->
       <div class="tabpane" id="tab-muligheder">
         <section class="panel">
-          <div class="panel-header">
-            <h2>Revisorer og erklæringer</h2>
-            <span class="badge muted">MNE · fordelt på erklæringstype</span>
-          </div>
-          <div class="mne-controls">
+          <details class="fold">
+          <summary class="fold-summary"><span class="fold-h">Revisorer og erklæringer</span><span class="badge muted">fuld liste · MNE, aktive og potentiale · klik for at åbne</span></summary>
+          <div class="mne-controls" style="margin-top:14px">
             <input id="mneFilter" type="search" placeholder="Filtrér på AO, revisor eller MNE" />
             <span id="mneCount" class="badge muted"></span>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap fold-scroll">
             <table>
               <thead>
                 <tr>
@@ -422,6 +426,7 @@
               <tbody id="mneBody"></tbody>
             </table>
           </div>
+          </details>
         </section>
 
         <section class="panel">
@@ -470,13 +475,9 @@
         </section>
 
         <section class="panel implementation-plan-panel">
-          <div class="panel-header">
-            <div>
-              <h2>Implementeringsplan</h2>
-              <p class="panel-intro">Interne aktiviteter der gør Crediwire let at vælge i erklæringsarbejdet.</p>
-            </div>
-            <span class="badge muted">Handlinger for revisionshuset</span>
-          </div>
+          <details class="fold">
+          <summary class="fold-summary"><span class="fold-h">Implementeringsplan</span><span class="badge muted">handlinger for revisionshuset · klik for at åbne</span></summary>
+          <p class="panel-intro" style="margin-top:10px">Interne aktiviteter der gør Crediwire let at vælge i erklæringsarbejdet.</p>
           <div class="implementation-plan-control">
             <label for="implementationTimelineInput">
               <span>Tidshorisont</span>
@@ -499,6 +500,7 @@
             </div>
           </div>
           <div id="implementationPlan"></div>
+          </details>
         </section>
       </div>
 
@@ -1014,10 +1016,11 @@
         const render=()=>{
           const set=new Set(scopedMnes());
           const list=bigRows.filter(r=>set.has(r.mne)&&(+r.pub_month)===curMonth)
-            .sort((a,b)=>(b.aktiv-a.aktiv)||String(a.client_navn).localeCompare(String(b.client_navn)));
-          box.innerHTML=`<div class="panel-header"><h3>Kunder der underskrives i ${MONTHS[curMonth-1]} · ${list.length.toLocaleString('da-DK')}</h3></div>
-            <div class="table-wrap"><table><thead><tr><th>Kunde</th><th>CVR</th><th>Kommune</th><th>Erklæringstype</th><th>Økonomisystem</th><th>På Crediwire</th></tr></thead>
-            <tbody>${list.slice(0,400).map(r=>`<tr><td>${r.client_navn||'—'}</td><td>${r.client_cvr}</td><td>${r.kommune||'—'}</td><td>${r.type||'—'}</td><td>${r.erp||'—'}</td><td>${r.aktiv==='1'?'Ja':'Nej'}</td></tr>`).join('')}</tbody></table></div>`;
+            .map(r=>Object.assign({revisor:(mneMap[r.mne]||{}).revisor||'—'}, r))
+            .sort((a,b)=> a.revisor.localeCompare(b.revisor) || String(a.client_navn).localeCompare(String(b.client_navn)));
+          box.innerHTML=`<div class="panel-header"><h3>Underskrives i ${MONTHS[curMonth-1]} · ${list.length.toLocaleString('da-DK')} kunder</h3></div>
+            <div class="table-wrap fold-scroll"><table><thead><tr><th>Revisor</th><th>Kunde</th><th>CVR</th><th>Kommune</th><th>Erklæringstype</th><th>Økonomisystem</th><th>På Crediwire</th></tr></thead>
+            <tbody>${list.slice(0,400).map(r=>`<tr><td>${r.revisor}</td><td>${r.client_navn||'—'}</td><td>${r.client_cvr}</td><td>${r.kommune||'—'}</td><td>${r.type||'—'}</td><td>${r.erp||'—'}</td><td>${r.aktiv==='1'?'Ja':'Nej'}</td></tr>`).join('')}</tbody></table></div>`;
         };
         if(bigRows) render();
         else fetch('../data/processed/revisor_calendar.csv').then(r=>r.text()).then(t=>{ bigRows=parse(t); render(); });
