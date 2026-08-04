@@ -906,13 +906,11 @@
         document.getElementById('recoTitle').textContent = `Udvid implementeringen til ${tgtPct}% af kundeporteføljen`;
         document.getElementById('recoBody').textContent = `Det svarer til ${fmtN(m.targetActiveCompanies)} virksomheder og kan øge den samlede nettoværdi med ca. ${fmtMio(m.unusedPotential)}`;
 
-        const t3 = top3Share();
-        const focus = [
-          (m.remainingPurchasedActivation>0 ? {ic:'warn', sym:'+', tx:`<b>${fmtN(m.remainingPurchasedActivation)}</b> købte virksomheder er endnu ikke aktiveret.`, go:'tab-muligheder'} : null),
-          (t3!=null ? {ic:'info', sym:'%', tx:`Top 3 brugere står for <b>${fmtPct(t3)}</b> af alle analyser.`, go:'tab-udvikling'} : null),
-          {ic:'info', sym:'→', tx:`<b>${fmtN(m.missingActivation)}</b> flere virksomheder skal aktiveres for at nå målet på ${tgtPct}%.`, go:'tab-muligheder'},
-          {ic:'info', sym:'≡', tx:`<b>${fmtN(m.annualReportTasks)}</b> erklæringer er relevante for årsrapport-produktet.`, go:'tab-case'},
-        ].filter(Boolean).slice(0,4);
+        const onboardF = m.remainingPurchasedActivation>0 ? {ic:'warn', sym:'+', tx:`Onboard de sidste <b>${fmtN(m.remainingPurchasedActivation)}</b> uaktiverede virksomheder.`, go:'tab-muligheder'} : null;
+        const top3F = {ic:'info', sym:'★', tx:`<b>Top 3 revisorer</b> med størst uudnyttet potentiale.`, go:'tab-muligheder'};
+        const stepsF = {ic:'info', sym:'→', tx:`<b>${fmtN(m.missingActivation)}</b> flere virksomheder til målet på ${tgtPct}%.`, go:'tab-muligheder'};
+        const arrF = {ic:'good', sym:'≡', tx:`<b>${fmtN(m.annualReportTasks)}</b> erklæringer relevante for årsrapport-produktet.`, go:'tab-muligheder'};
+        const focus = onboardF ? [onboardF, top3F, stepsF, arrF] : [stepsF, top3F, arrF];
         document.getElementById('focusGrid').innerHTML = focus.map(f=>`
           <button class="focus-card" data-go="${f.go}">
             <span class="focus-ic ${f.ic}">${f.sym}</span>
