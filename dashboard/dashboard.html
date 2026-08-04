@@ -78,7 +78,7 @@
       .focus-card{text-align:left;background:#fff;border:1px solid #e7eaf0;border-radius:14px;padding:16px 18px;cursor:pointer;font:inherit;transition:.15s;display:flex;align-items:flex-start;gap:13px;width:100%}
       .focus-card:hover{border-color:#c9d7f2;box-shadow:0 5px 16px rgba(20,30,50,.07)}
       .focus-ic{width:34px;height:34px;border-radius:9px;flex:0 0 34px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800}
-      .focus-ic.warn{background:#fbf1de;color:#b9741d}.focus-ic.info{background:#e7effd;color:#2f6df0}.focus-ic.bad{background:#fbe7e6;color:#d6483b}
+      .focus-ic.warn{background:#fbf1de;color:#b9741d}.focus-ic.info{background:#e7effd;color:#2f6df0}.focus-ic.bad{background:#fbe7e6;color:#d6483b}.focus-ic.good{background:#e6f6ee;color:#14a06a}
       .focus-tx{font-size:14px;color:#141821;line-height:1.4;display:block}
       .focus-tx b{font-weight:800}
       .focus-go{font-size:12px;color:#8a93a3;margin-top:4px;display:block}
@@ -908,7 +908,7 @@
 
         const t3 = top3Share();
         const focus = [
-          {ic:'warn', sym:'+', tx:`<b>${fmtN(m.remainingPurchasedActivation)}</b> købte virksomheder er endnu ikke aktiveret.`, go:'tab-muligheder'},
+          (m.remainingPurchasedActivation>0 ? {ic:'warn', sym:'+', tx:`<b>${fmtN(m.remainingPurchasedActivation)}</b> købte virksomheder er endnu ikke aktiveret.`, go:'tab-muligheder'} : {ic:'good', sym:'✓', tx:`Alle købte virksomheder er aktiveret.`, go:'tab-muligheder'}),
           (t3!=null ? {ic:'info', sym:'%', tx:`Top 3 brugere står for <b>${fmtPct(t3)}</b> af alle analyser.`, go:'tab-udvikling'} : null),
           {ic:'info', sym:'→', tx:`<b>${fmtN(m.missingActivation)}</b> flere virksomheder skal aktiveres for at nå målet på ${tgtPct}%.`, go:'tab-muligheder'},
           {ic:'info', sym:'≡', tx:`<b>${fmtN(m.annualReportTasks)}</b> erklæringer er relevante for årsrapport-produktet.`, go:'tab-case'},
@@ -997,7 +997,9 @@
           const top3=houseList.slice(0,3).map(r=>r.revisor).filter(Boolean).join(' · ')||'—';
           const rem=m.remainingPurchasedActivation||0, miss=m.missingActivation||0, tgt=Math.round((m.implementationRate||0)*100), pace=Math.round(miss/12), arr=m.annualReportTasks||0;
           const cards=[
-            {ic:'+',cls:'warn',t:'Onboard de sidste '+daN(rem),d:daN(rem)+' købte virksomheder er endnu ikke aktiveret. Aktivér dem for at få fuld værdi af aftalen.',go:'scroll:sec-fokus',lnk:'Se fokus-listen →'},
+            (rem>0
+              ? {ic:'+',cls:'warn',t:'Onboard de sidste '+daN(rem),d:daN(rem)+' købte virksomheder er endnu ikke aktiveret. Aktivér dem for at få fuld værdi af aftalen.',go:'scroll:sec-fokus',lnk:'Se fokus-listen →'}
+              : {ic:'✓',cls:'good',t:'Fuldt aktiveret',d:'Alle købte virksomheder er aktiveret. Fokusér nu på øget brug og nye produkter.',go:'scroll:sec-plan',lnk:'Se næste skridt →'}),
             {ic:'★',cls:'info',t:'Top 3 revisorer',d:'Størst uudnyttet potentiale: '+top3+'.',go:'scroll:sec-revisorer',lnk:'Se revisorlisten →'},
             {ic:'→',cls:'info',t:'Steps mod næste mål',d:daN(miss)+' virksomheder mangler for at nå målet på '+tgt+'%. Ca. '+daN(pace)+' aktiveringer om måneden over et år.',go:'scroll:sec-plan',lnk:'Se implementeringsplanen →'},
             {ic:'≡',cls:'good',t:'Muligheder med årsrapporter',d:daN(arr)+' erklæringer er relevante for årsrapport-produktet: et nyt indtægtsområde ud over dataanalyser.',go:'tab:tab-case',lnk:'Åbn business case →'},
