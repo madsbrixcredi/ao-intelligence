@@ -444,7 +444,7 @@
           </div>
           <div class="wheel-controls">
             <label>Revisor <select id="wheelRevisor"><option value="">Hele huset</option></select></label>
-            <label>Arbejdsvindue <select id="wheelWindow"><option value="1">1 mdr. før</option><option value="2">2 mdr. før</option><option value="3" selected>3 mdr. før</option></select></label>
+            <label>Arbejdet foregår <select id="wheelWindow"><option value="3">3 mdr. før</option><option value="2" selected>2 mdr. før</option><option value="1">1 mdr. før</option><option value="0">Samme måned</option></select></label>
             <label>Erklæringstype <select id="wheelType"><option value="">Alle</option><option value="revision">Revision</option><option value="udvidet">Udvidet gennemgang</option><option value="assistance">Assistance</option><option value="review">Review</option></select></label>
             <label>På Crediwire <select id="wheelActive"><option value="">Alle</option><option value="0">Kun emner (ikke aktive)</option><option value="1">Kun aktive</option></select></label>
             <label>Min. ansatte <input id="wheelAnsatte" type="number" min="0" value="0" /></label>
@@ -1020,8 +1020,8 @@
       function agg(rows){
         const sign=new Array(13).fill(0);
         rows.forEach(r=>{ const m=+r.pub_month; if(m>=1&&m<=12) sign[m]++; });
-        const win=+$('wheelWindow').value; const work=new Array(13).fill(0);
-        for(let M=1;M<=12;M++){ let s=0; for(let k=0;k<win;k++) s+=sign[((M-1+k)%12)+1]; work[M]=s; }
+        const off=+$('wheelWindow').value; const work=new Array(13).fill(0);
+        for(let M=1;M<=12;M++){ work[M]=sign[((M-1+off)%12)+1]; }
         return {sign,work};
       }
       function chart(sign,work){
