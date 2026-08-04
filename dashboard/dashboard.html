@@ -957,7 +957,7 @@
         const q=(document.getElementById('mneFilter').value||'').trim().toLowerCase();
         const hn=houseName().toLowerCase();
         let list = q ? rows.filter(r => (r.ao_firma+' '+r.revisor+' '+r.mne).toLowerCase().includes(q))
-                     : (hn ? rows.filter(r=>(r.ao_firma||'').toLowerCase().includes(hn)) : rows.slice());
+                     : (hn ? rows.filter(r=>{const a=(r.ao_firma||'').toLowerCase();return a.startsWith(hn)||hn.startsWith(a);}) : rows.slice());
         list.sort(sortPot);
         const total=list.length;
         const shown=(q||showAll) ? list.slice(0,500) : list.slice(0,3);
@@ -995,7 +995,7 @@
         const rev=$('wheelRevisor').value;
         if(rev) return new Set([rev]);
         const hn=houseName().toLowerCase(); const all=Object.keys(mneMap);
-        return new Set(hn ? all.filter(m=>(mneMap[m].firma||'').toLowerCase().includes(hn)) : all);
+        return new Set(hn ? all.filter(m=>{const a=(mneMap[m].firma||'').toLowerCase();return a.startsWith(hn)||hn.startsWith(a);}) : all);
       }
       function typeMatch(t,f){ t=(t||'').toLowerCase();
         if(f==='revision') return t.includes('revision');
@@ -1067,7 +1067,7 @@
       }
       function populateRevisor(){
         const hn=houseName().toLowerCase();
-        const inHouse=Object.keys(mneMap).filter(m=>!hn||(mneMap[m].firma||'').toLowerCase().includes(hn));
+        const inHouse=Object.keys(mneMap).filter(m=>{if(!hn)return true;const a=(mneMap[m].firma||'').toLowerCase();return a.startsWith(hn)||hn.startsWith(a);});
         const sel=$('wheelRevisor'); if(!sel) return; const cur=sel.value;
         sel.innerHTML='<option value="">Hele huset</option>'+inHouse.sort((a,b)=>(mneMap[a].revisor||'').localeCompare(mneMap[b].revisor||'')).map(m=>`<option value="${m}">${mneMap[m].revisor||m}</option>`).join('');
         if([...sel.options].some(o=>o.value===cur)) sel.value=cur;
