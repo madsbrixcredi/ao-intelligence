@@ -84,6 +84,8 @@
       .mne-controls{display:flex;gap:12px;align-items:center;margin-bottom:14px}
       #mneFilter{flex:1;max-width:380px;padding:9px 13px;border:1px solid var(--line,#e7eaf0);border-radius:10px;font:inherit;font-size:14px}
       #mneFilter:focus{outline:none;border-color:#2f6df0}
+      .mne-toggle{margin-top:12px;background:none;border:0;color:#2f6df0;font:inherit;font-weight:700;font-size:14px;cursor:pointer;padding:4px 0}
+      .mne-toggle:hover{text-decoration:underline}
       .wheel-controls{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:14px;font-size:14px;align-items:center}
       .wheel-controls label{display:flex;gap:8px;align-items:center;color:#5c6572}
       .wheel-controls select,.wheel-controls input[type=number]{font:inherit;padding:8px 11px;border:1px solid var(--line,#e7eaf0);border-radius:9px;background:#fff}
@@ -419,38 +421,24 @@
         <section class="panel">
           <div class="panel-header">
             <h2>Revisorer og erklæringer</h2>
-            <span class="badge muted">top 3 efter potentiale</span>
+            <span class="badge muted" id="mneCount"></span>
           </div>
-          <div class="table-wrap">
+          <div class="mne-controls">
+            <input id="mneFilter" type="search" placeholder="Filtrér på AO, revisor eller MNE" />
+          </div>
+          <div class="table-wrap fold-scroll">
             <table>
               <thead>
                 <tr>
                   <th>MNE</th><th>Revisor</th><th>AO (revisorfirma)</th>
+                  <th class="numeric">Revision</th><th class="numeric">Review</th><th class="numeric">Udv. gennemgang</th><th class="numeric">Assistance</th>
                   <th class="numeric">Kunder</th><th class="numeric">Aktive</th><th class="numeric">Uudnyttet</th><th class="numeric">Potentiale</th>
                 </tr>
               </thead>
-              <tbody id="mneTop3"></tbody>
+              <tbody id="mneBody"></tbody>
             </table>
           </div>
-          <details class="fold" style="margin-top:16px">
-            <summary class="fold-summary"><span class="fold-h" style="font-size:15px">Vis alle revisorer</span><span class="badge muted" id="mneAllCount"></span></summary>
-            <div class="mne-controls" style="margin-top:14px">
-              <input id="mneFilter" type="search" placeholder="Filtrér på AO, revisor eller MNE" />
-              <span id="mneCount" class="badge muted"></span>
-            </div>
-            <div class="table-wrap fold-scroll">
-              <table>
-                <thead>
-                  <tr>
-                    <th>MNE</th><th>Revisor</th><th>AO (revisorfirma)</th>
-                    <th class="numeric">Revision</th><th class="numeric">Review</th><th class="numeric">Udv. gennemgang</th><th class="numeric">Assistance</th>
-                    <th class="numeric">Kunder</th><th class="numeric">Aktive</th><th class="numeric">Uudnyttet</th><th class="numeric">Potentiale</th>
-                  </tr>
-                </thead>
-                <tbody id="mneBody"></tbody>
-              </table>
-            </div>
-          </details>
+          <button type="button" id="mneToggle" class="mne-toggle"></button>
         </section>
 
         <section class="panel">
@@ -942,7 +930,7 @@
 
     /* ===== MNE-liste: revisorer og erklæringer (Muligheder) ===== */
     (function(){
-      let rows=[], userTyped=false;
+      let rows=[], showAll=false;
       const daN = s => { const n=parseInt(s,10)||0; return n.toLocaleString('da-DK'); };
       const houseName = () => { const s=document.getElementById('aoSearch'); return (s && s.value.trim()) || ''; };
       function parseLine(l){
@@ -971,29 +959,33 @@
       function render(){
         const body=document.getElementById('mneBody'); if(!body) return;
         const vpc=valPerCompany();
-        const q=(userTyped ? (document.getElementById('mneFilter').value||'') : houseName()).trim().toLowerCase();
-        let list = (q ? rows.filter(r => (r.ao_firma+' '+r.revisor+' '+r.mne).toLowerCase().includes(q)) : rows).slice().sort(sortPot);
-        document.getElementById('mneCount').textContent = list.length.toLocaleString('da-DK')+' revisorer';
-        body.innerHTML = list.slice(0,500).map(r=>fullRow(r,vpc)).join('') || '<tr><td colspan="11">Ingen revisorer matcher.</td></tr>';
+        const q=(document.getElementById('mneFilter').value||'').trim().toLowerCase();
         const hn=houseName().toLowerCase();
-        const houseList=(hn ? rows.filter(r=>(r.ao_firma||'').toLowerCase().includes(hn)) : rows).slice().sort(sortPot);
-        const t3=document.getElementById('mneTop3');
-        if(t3) t3.innerHTML = houseList.slice(0,3).map(r=>top3Row(r,vpc)).join('') || '<tr><td colspan="7">Ingen revisorer.</td></tr>';
-        const allc=document.getElementById('mneAllCount'); if(allc) allc.textContent = houseList.length.toLocaleString('da-DK')+' revisorer i alt';
+        let list = q ? rows.filter(r => (r.ao_firma+' '+r.revisor+' '+r.mne).toLowerCase().includes(q))
+                     : (hn ? rows.filter(r=>(r.ao_firma||'').toLowerCase().includes(hn)) : rows.slice());
+        list.sort(sortPot);
+        const total=list.length;
+        const shown=(q||showAll) ? list.slice(0,500) : list.slice(0,3);
+        body.innerHTML = shown.map(r=>fullRow(r,vpc)).join('') || '<tr><td colspan="11">Ingen revisorer matcher.</td></tr>';
+        document.getElementById('mneCount').textContent = total.toLocaleString('da-DK')+' revisorer';
+        const tog=document.getElementById('mneToggle');
+        if(tog){
+          if(q||total<=3){ tog.style.display='none'; }
+          else { tog.style.display=''; tog.textContent = showAll ? 'Vis kun top 3' : ('Vis alle '+total.toLocaleString('da-DK')+' revisorer'); }
+        }
       }
       fetch('../data/processed/mne_declarations.csv').then(r=>r.text()).then(txt=>{
         const lines=txt.trim().split('\n'); const hdr=parseLine(lines[0]);
         rows=lines.slice(1).map(l=>{ const c=parseLine(l); const o={}; hdr.forEach((h,i)=>o[h]=c[i]); return o; });
         render();
         const kpis=document.getElementById('primaryKpis');
-        if(kpis) new MutationObserver(()=>{ if(!userTyped) render(); }).observe(kpis,{childList:true});
+        if(kpis) new MutationObserver(()=>render()).observe(kpis,{childList:true});
       }).catch(e=>{
         const body=document.getElementById('mneBody');
         if(body) body.innerHTML='<tr><td colspan="8">Kan ikke indlæse MNE-data.</td></tr>';
       });
-      document.addEventListener('input', e=>{
-        if(e.target && e.target.id==='mneFilter'){ userTyped = e.target.value.trim()!==''; render(); }
-      });
+      document.addEventListener('input', e=>{ if(e.target && e.target.id==='mneFilter'){ render(); } });
+      document.addEventListener('click', e=>{ if(e.target && e.target.id==='mneToggle'){ showAll=!showAll; render(); } });
     })();
 
     /* ===== Årshjul: hvornår arbejder revisorerne ===== */
