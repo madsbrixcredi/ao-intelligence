@@ -892,7 +892,7 @@
         const kpis = [
           {lbl:'Aktiveringsrate', assumed:false, big:fmtPct(m.activationRate), cls:'good', sub:fmtN(m.activeConnections)+' af '+fmtN(m.purchasedCompanies)+' virksomheder aktiveret', go:'tab-muligheder'},
           {lbl:'Aktivitet', assumed:false, big:(g!=null?('+'+Math.round(g*100)+'%'):'–'), cls:'good', sub:'jan–maj 2026 mod samme periode 2025', go:'tab-udvikling'},
-          {lbl:'Dataanalyser downloadet', assumed:false, big:fmtN(m.totalAnalyses), cls:'', sub:'seneste 12 måneder', go:'tab-udvikling'},
+          {lbl:'Dataanalyser downloadet', assumed:false, big:fmtN(m.totalAnalyses), cls:'', sub:'i alt siden opstart', go:'tab-udvikling'},
           {lbl:'Nettoværdi skabt', assumed:true, big:fmtMio(netToday), cls:'', sub:fmtKr(m.realizedValue)+' skabt · '+fmtKr(m.currentInvestment)+' investering · åbner business case', go:'tab-case'},
         ];
         document.getElementById('execKpis').innerHTML = kpis.map(k=>`
