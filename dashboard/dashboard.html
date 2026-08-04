@@ -87,6 +87,13 @@
       #mneFilter:focus{outline:none;border-color:#2f6df0}
       .mne-toggle{margin-top:12px;background:none;border:0;color:#2f6df0;font:inherit;font-weight:700;font-size:14px;cursor:pointer;padding:4px 0}
       .mne-toggle:hover{text-decoration:underline}
+      .opp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+      @media(max-width:700px){.opp-grid{grid-template-columns:1fr}}
+      .opp-card{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #e7eaf0;border-radius:14px;padding:16px 18px}
+      .opp-ic{width:38px;height:38px;border-radius:10px;flex:0 0 38px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800}
+      .opp-ic.warn{background:#fbf1de;color:#b9741d}.opp-ic.info{background:#e7effd;color:#2f6df0}.opp-ic.good{background:#e6f6ee;color:#14a06a}
+      .opp-card h4{margin:0 0 4px;font-size:15px}
+      .opp-card p{margin:0;font-size:13.5px;color:#5c6572;line-height:1.45}
       .wheel-controls{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:14px;font-size:14px;align-items:center}
       .wheel-controls label{display:flex;gap:8px;align-items:center;color:#5c6572}
       .wheel-controls select,.wheel-controls input[type=number]{font:inherit;padding:8px 11px;border:1px solid var(--line,#e7eaf0);border-radius:9px;background:#fff}
@@ -414,6 +421,14 @@
 
       <!-- ========== MULIGHEDER ========== -->
       <div class="tabpane" id="tab-muligheder">
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Muligheder</h2>
+            <span class="badge muted">konkrete næste skridt for det valgte hus</span>
+          </div>
+          <div class="opp-grid" id="oppGrid"></div>
+        </section>
+
         <section class="panel">
           <div class="panel-header">
             <h2>Revisorer og erklæringer</h2>
@@ -968,6 +983,24 @@
           if(q||total<=3){ tog.style.display='none'; }
           else { tog.style.display=''; tog.textContent = showAll ? 'Vis kun top 3' : ('Vis alle '+total.toLocaleString('da-DK')+' revisorer'); }
         }
+        renderOpp(hn);
+      }
+      function renderOpp(hn){
+        const og=document.getElementById('oppGrid'); if(!og) return;
+        try{
+          if(typeof scopeMetrics!=='function') return;
+          const m=scopeMetrics();
+          const houseList=(hn?rows.filter(r=>{const a=(r.ao_firma||'').toLowerCase();return a.startsWith(hn)||hn.startsWith(a);}):rows).slice().sort(sortPot);
+          const top3=houseList.slice(0,3).map(r=>r.revisor).filter(Boolean).join(' · ')||'—';
+          const rem=m.remainingPurchasedActivation||0, miss=m.missingActivation||0, tgt=Math.round((m.implementationRate||0)*100), pace=Math.round(miss/12), arr=m.annualReportTasks||0;
+          const cards=[
+            {ic:'!',cls:'warn',t:'Onboard de sidste '+daN(rem),d:daN(rem)+' købte virksomheder er endnu ikke aktiveret. Aktivér dem for at få fuld værdi af aftalen.'},
+            {ic:'★',cls:'info',t:'Top 3 revisorer',d:'Størst uudnyttet potentiale: '+top3+'. Se den fulde liste nedenfor.'},
+            {ic:'→',cls:'info',t:'Steps mod næste mål',d:daN(miss)+' virksomheder mangler for at nå målet på '+tgt+'%. Ca. '+daN(pace)+' aktiveringer om måneden over et år. Se implementeringsplanen nedenfor.'},
+            {ic:'≡',cls:'good',t:'Muligheder med årsrapporter',d:daN(arr)+' erklæringer er relevante for årsrapport-produktet: et nyt indtægtsområde ud over dataanalyser.'},
+          ];
+          og.innerHTML=cards.map(c=>`<div class="opp-card"><span class="opp-ic ${c.cls}">${c.ic}</span><div><h4>${c.t}</h4><p>${c.d}</p></div></div>`).join('');
+        }catch(e){}
       }
       fetch('../data/processed/mne_declarations.csv').then(r=>r.text()).then(txt=>{
         const lines=txt.trim().split('\n'); const hdr=parseLine(lines[0]);
