@@ -990,12 +990,19 @@
       function renderOpp(hn){
         const og=document.getElementById('oppGrid'); if(!og) return;
         try{
+          const fokusSec=document.getElementById('sec-fokus');
+          if(fokusSec && typeof state!=='undefined'){
+            const isGroup=(typeof GROUP_FILTERS!=='undefined') && GROUP_FILTERS[state.selectedCvr];
+            fokusSec.style.display=(state.selectedCvr && !isGroup) ? 'none' : '';
+          }
+        }catch(e){}
+        try{
           if(typeof scopeMetrics!=='function') return;
           const m=scopeMetrics();
           const houseList=(hn?rows.filter(r=>{const a=(r.ao_firma||'').toLowerCase();return a.startsWith(hn)||hn.startsWith(a);}):rows).slice().sort(sortPot);
           const top3=houseList.slice(0,3).map(r=>r.revisor).filter(Boolean).join(' · ')||'—';
           const rem=m.remainingPurchasedActivation||0, miss=m.missingActivation||0, tgt=Math.round((m.implementationRate||0)*100), pace=Math.round(miss/12), arr=m.annualReportTasks||0;
-          const onboard={ic:'+',cls:'warn',t:'Onboard de sidste '+daN(rem),d:daN(rem)+' købte virksomheder er endnu ikke aktiveret. Aktivér dem for at få fuld værdi af aftalen.',go:'scroll:sec-fokus',lnk:'Se fokus-listen →'};
+          const onboard={ic:'+',cls:'warn',t:'Onboard de sidste '+daN(rem),d:daN(rem)+' købte virksomheder er endnu ikke aktiveret. Aktivér dem for at få fuld værdi af aftalen.',go:'scroll:sec-plan',lnk:'Se implementeringsplanen →'};
           const steps={ic:'→',cls:'info',t:'Steps mod næste mål',d:daN(miss)+' virksomheder mangler for at nå målet på '+tgt+'%. Ca. '+daN(pace)+' aktiveringer om måneden over et år.',go:'scroll:sec-plan',lnk:'Se implementeringsplanen →'};
           const top3c={ic:'★',cls:'info',t:'Top 3 revisorer',d:'Størst uudnyttet potentiale: '+top3+'.',go:'scroll:sec-revisorer',lnk:'Se revisorlisten →'};
           const arrc={ic:'≡',cls:'good',t:'Muligheder med årsrapporter',d:daN(arr)+' erklæringer er relevante for årsrapport-produktet: et nyt indtægtsområde ud over dataanalyser.',go:'tab:tab-case',lnk:'Åbn business case →'};
