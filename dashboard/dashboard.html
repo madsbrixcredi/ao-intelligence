@@ -417,32 +417,39 @@
       <!-- ========== MULIGHEDER ========== -->
       <div class="tabpane" id="tab-muligheder">
         <section class="panel">
-          <details class="fold">
-          <summary class="fold-summary"><span class="fold-h">Revisorer og erklæringer</span><span class="badge muted">fuld liste · MNE, aktive og potentiale · klik for at åbne</span></summary>
-          <div class="mne-controls" style="margin-top:14px">
-            <input id="mneFilter" type="search" placeholder="Filtrér på AO, revisor eller MNE" />
-            <span id="mneCount" class="badge muted"></span>
+          <div class="panel-header">
+            <h2>Revisorer og erklæringer</h2>
+            <span class="badge muted">top 3 efter potentiale</span>
           </div>
-          <div class="table-wrap fold-scroll">
+          <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>MNE</th>
-                  <th>Revisor</th>
-                  <th>AO (revisorfirma)</th>
-                  <th class="numeric">Revision</th>
-                  <th class="numeric">Review</th>
-                  <th class="numeric">Udv. gennemgang</th>
-                  <th class="numeric">Assistance</th>
-                  <th class="numeric">Kunder</th>
-                  <th class="numeric">Aktive</th>
-                  <th class="numeric">Uudnyttet</th>
-                  <th class="numeric">Potentiale</th>
+                  <th>MNE</th><th>Revisor</th><th>AO (revisorfirma)</th>
+                  <th class="numeric">Kunder</th><th class="numeric">Aktive</th><th class="numeric">Uudnyttet</th><th class="numeric">Potentiale</th>
                 </tr>
               </thead>
-              <tbody id="mneBody"></tbody>
+              <tbody id="mneTop3"></tbody>
             </table>
           </div>
+          <details class="fold" style="margin-top:16px">
+            <summary class="fold-summary"><span class="fold-h" style="font-size:15px">Vis alle revisorer</span><span class="badge muted" id="mneAllCount"></span></summary>
+            <div class="mne-controls" style="margin-top:14px">
+              <input id="mneFilter" type="search" placeholder="Filtrér på AO, revisor eller MNE" />
+              <span id="mneCount" class="badge muted"></span>
+            </div>
+            <div class="table-wrap fold-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>MNE</th><th>Revisor</th><th>AO (revisorfirma)</th>
+                    <th class="numeric">Revision</th><th class="numeric">Review</th><th class="numeric">Udv. gennemgang</th><th class="numeric">Assistance</th>
+                    <th class="numeric">Kunder</th><th class="numeric">Aktive</th><th class="numeric">Uudnyttet</th><th class="numeric">Potentiale</th>
+                  </tr>
+                </thead>
+                <tbody id="mneBody"></tbody>
+              </table>
+            </div>
           </details>
         </section>
 
@@ -949,26 +956,30 @@
         const h=v('hoursInput'), r=v('rateInput'), q=v('qualityFactorInput')||1;
         return h*r*q;
       }
+      const sortPot=(a,b)=>(parseInt(b.uudnyttede_kunder,10)||0)-(parseInt(a.uudnyttede_kunder,10)||0);
+      const potKr=(r,vpc)=>Math.round((parseInt(r.uudnyttede_kunder,10)||0)*vpc).toLocaleString('da-DK')+' kr.';
+      function fullRow(r,vpc){ return `<tr>
+        <td>${r.mne}</td><td>${r.revisor||'—'}</td><td>${r.ao_firma||'—'}</td>
+        <td class="numeric">${daN(r.revision)}</td><td class="numeric">${daN(r.review)}</td>
+        <td class="numeric">${daN(r.udvidet_gennemgang)}</td><td class="numeric">${daN(r.assistance)}</td>
+        <td class="numeric">${daN(r.distinkte_kunder)}</td><td class="numeric"><strong>${daN(r.aktive_kunder)}</strong></td>
+        <td class="numeric">${daN(r.uudnyttede_kunder)}</td><td class="numeric">${potKr(r,vpc)}</td></tr>`; }
+      function top3Row(r,vpc){ return `<tr>
+        <td>${r.mne}</td><td>${r.revisor||'—'}</td><td>${r.ao_firma||'—'}</td>
+        <td class="numeric">${daN(r.distinkte_kunder)}</td><td class="numeric"><strong>${daN(r.aktive_kunder)}</strong></td>
+        <td class="numeric">${daN(r.uudnyttede_kunder)}</td><td class="numeric"><strong>${potKr(r,vpc)}</strong></td></tr>`; }
       function render(){
         const body=document.getElementById('mneBody'); if(!body) return;
-        const q=(userTyped ? (document.getElementById('mneFilter').value||'') : houseName()).trim().toLowerCase();
-        let list = q ? rows.filter(r => (r.ao_firma+' '+r.revisor+' '+r.mne).toLowerCase().includes(q)) : rows;
-        list = list.slice().sort((a,b)=>(parseInt(b.uudnyttede_kunder,10)||0)-(parseInt(a.uudnyttede_kunder,10)||0));
-        document.getElementById('mneCount').textContent = list.length.toLocaleString('da-DK')+' revisorer';
         const vpc=valPerCompany();
-        body.innerHTML = list.slice(0,500).map(r=>{
-          const pot=(parseInt(r.uudnyttede_kunder,10)||0)*vpc;
-          return `<tr>
-          <td>${r.mne}</td><td>${r.revisor||'—'}</td><td>${r.ao_firma||'—'}</td>
-          <td class="numeric">${daN(r.revision)}</td>
-          <td class="numeric">${daN(r.review)}</td>
-          <td class="numeric">${daN(r.udvidet_gennemgang)}</td>
-          <td class="numeric">${daN(r.assistance)}</td>
-          <td class="numeric">${daN(r.distinkte_kunder)}</td>
-          <td class="numeric"><strong>${daN(r.aktive_kunder)}</strong></td>
-          <td class="numeric">${daN(r.uudnyttede_kunder)}</td>
-          <td class="numeric">${Math.round(pot).toLocaleString('da-DK')} kr.</td>
-        </tr>`;}).join('') || '<tr><td colspan="11">Ingen revisorer matcher.</td></tr>';
+        const q=(userTyped ? (document.getElementById('mneFilter').value||'') : houseName()).trim().toLowerCase();
+        let list = (q ? rows.filter(r => (r.ao_firma+' '+r.revisor+' '+r.mne).toLowerCase().includes(q)) : rows).slice().sort(sortPot);
+        document.getElementById('mneCount').textContent = list.length.toLocaleString('da-DK')+' revisorer';
+        body.innerHTML = list.slice(0,500).map(r=>fullRow(r,vpc)).join('') || '<tr><td colspan="11">Ingen revisorer matcher.</td></tr>';
+        const hn=houseName().toLowerCase();
+        const houseList=(hn ? rows.filter(r=>(r.ao_firma||'').toLowerCase().includes(hn)) : rows).slice().sort(sortPot);
+        const t3=document.getElementById('mneTop3');
+        if(t3) t3.innerHTML = houseList.slice(0,3).map(r=>top3Row(r,vpc)).join('') || '<tr><td colspan="7">Ingen revisorer.</td></tr>';
+        const allc=document.getElementById('mneAllCount'); if(allc) allc.textContent = houseList.length.toLocaleString('da-DK')+' revisorer i alt';
       }
       fetch('../data/processed/mne_declarations.csv').then(r=>r.text()).then(txt=>{
         const lines=txt.trim().split('\n'); const hdr=parseLine(lines[0]);
