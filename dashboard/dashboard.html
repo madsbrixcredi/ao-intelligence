@@ -467,6 +467,7 @@
             <label>Min. ansatte <input id="wheelAnsatte" type="number" min="0" value="0" /></label>
             <label class="chk"><input type="checkbox" id="wheelGode" /> Kun gode Crediwire-emner</label>
             <label class="chk"><input type="checkbox" id="wheelNoHolding" /> Fravælg holdingselskaber</label>
+            <label class="chk"><input type="checkbox" id="wheelNoEjendom" /> Fravælg ejendomsselskaber</label>
           </div>
           <div id="wheelInsight" class="wheel-insight"></div>
           <div id="wheelChart" class="wheel-chart"></div>
@@ -1055,10 +1056,11 @@
       function filtered(){
         if(!cal) return [];
         const set=scopedMnes();
-        const ft=$('wheelType').value, fa=$('wheelActive').value, fan=+$('wheelAnsatte').value||0, gode=$('wheelGode').checked, noHold=$('wheelNoHolding').checked;
+        const ft=$('wheelType').value, fa=$('wheelActive').value, fan=+$('wheelAnsatte').value||0, gode=$('wheelGode').checked, noHold=$('wheelNoHolding').checked, noEj=$('wheelNoEjendom').checked;
         return cal.filter(r=>{
           if(!set.has(r.mne)) return false;
           if(noHold && /holding/i.test(r.client_navn||'')) return false;
+          if(noEj && r.ejendom==='1') return false;
           if(gode) return goodFit(r) && typeMatch(r.type,ft);
           if(!typeMatch(r.type,ft)) return false;
           if(fa!==''&&r.aktiv!==fa) return false;
@@ -1137,7 +1139,7 @@
         const kpis=$('primaryKpis');
         if(kpis) new MutationObserver(()=>{ populateRevisor(); if(curMonth!==null){curMonth=null;$('wheelDetail').innerHTML='';} if(cal) build(); }).observe(kpis,{childList:true});
       });
-      document.addEventListener('change',e=>{ if(e.target&&['wheelRevisor','wheelWindow','wheelType','wheelActive','wheelGode','wheelNoHolding'].includes(e.target.id)){ curMonth=null; $('wheelDetail').innerHTML=''; if(cal) build(); }});
+      document.addEventListener('change',e=>{ if(e.target&&['wheelRevisor','wheelWindow','wheelType','wheelActive','wheelGode','wheelNoHolding','wheelNoEjendom'].includes(e.target.id)){ curMonth=null; $('wheelDetail').innerHTML=''; if(cal) build(); }});
       document.addEventListener('input',e=>{ if(e.target&&e.target.id==='wheelAnsatte'){ curMonth=null; $('wheelDetail').innerHTML=''; if(cal) build(); }});
     })();
     </script>
