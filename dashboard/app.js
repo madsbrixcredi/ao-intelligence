@@ -3888,9 +3888,22 @@ function selectedOfficeLabel() {
 }
 
 function filteredOffices(query) {
-  const normalizedQuery = query.trim().toLowerCase();
-  if (!normalizedQuery) return state.offices;
-  return state.offices.filter((office) => office.searchText.includes(normalizedQuery));
+  const q = query.trim().toLowerCase();
+  if (!q) return state.offices;
+  const rank = (office) => {
+    const n = office.name.toLowerCase();
+    if (n === q) return 0;
+    if (n.startsWith(q)) return 1;
+    if (n.split(/[^a-zæøå0-9]+/).some((w) => w.startsWith(q))) return 2;
+    return 3;
+  };
+  return state.offices
+    .filter((office) => office.searchText.includes(q))
+    .sort((a, b) => {
+      const ra = rank(a);
+      const rb = rank(b);
+      return ra === rb ? a.name.toLowerCase().localeCompare(b.name.toLowerCase(), "da") : ra - rb;
+    });
 }
 
 function closeOfficeSearch() {
