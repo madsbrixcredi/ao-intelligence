@@ -3903,12 +3903,13 @@ function closeOfficeSearch() {
 function renderOfficeSearchResults(query = "") {
   const results = document.getElementById("aoSearchResults");
   const matches = filteredOffices(query).slice(0, 80);
+  const hasQuery = query.trim().length > 0;
   const allSelected = !state.selectedCvr;
-  const allButton = `<button class="search-result${allSelected ? " is-selected" : ""}" type="button" data-cvr="" role="option">
+  const allButton = hasQuery ? "" : `<button class="search-result${allSelected ? " is-selected" : ""}" type="button" data-cvr="" role="option">
     <strong>Alle revisionshuse</strong>
     <small>Vis samlet dashboard</small>
   </button>`;
-  const groupButtons = Object.entries(GROUP_FILTERS)
+  const groupButtons = hasQuery ? "" : Object.entries(GROUP_FILTERS)
     .map(([filterValue, group]) => `<button class="search-result${state.selectedCvr === filterValue ? " is-selected" : ""}" type="button" data-cvr="${filterValue}" role="option">
       <strong>${escapeHtml(group.label)}</strong>
       <small>${escapeHtml(groupDescription(group))}</small>
