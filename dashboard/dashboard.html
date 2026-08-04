@@ -907,7 +907,7 @@
 
         const t3 = top3Share();
         const focus = [
-          {ic:'warn', sym:'!', tx:`<b>${fmtN(m.remainingPurchasedActivation)}</b> købte virksomheder er endnu ikke aktiveret.`, go:'tab-muligheder'},
+          {ic:'warn', sym:'+', tx:`<b>${fmtN(m.remainingPurchasedActivation)}</b> købte virksomheder er endnu ikke aktiveret.`, go:'tab-muligheder'},
           (t3!=null ? {ic:'info', sym:'%', tx:`Top 3 brugere står for <b>${fmtPct(t3)}</b> af alle analyser.`, go:'tab-udvikling'} : null),
           {ic:'info', sym:'→', tx:`<b>${fmtN(m.missingActivation)}</b> flere virksomheder skal aktiveres for at nå målet på ${tgtPct}%.`, go:'tab-muligheder'},
           {ic:'info', sym:'≡', tx:`<b>${fmtN(m.annualReportTasks)}</b> erklæringer er relevante for årsrapport-produktet.`, go:'tab-case'},
@@ -996,7 +996,7 @@
           const top3=houseList.slice(0,3).map(r=>r.revisor).filter(Boolean).join(' · ')||'—';
           const rem=m.remainingPurchasedActivation||0, miss=m.missingActivation||0, tgt=Math.round((m.implementationRate||0)*100), pace=Math.round(miss/12), arr=m.annualReportTasks||0;
           const cards=[
-            {ic:'!',cls:'warn',t:'Onboard de sidste '+daN(rem),d:daN(rem)+' købte virksomheder er endnu ikke aktiveret. Aktivér dem for at få fuld værdi af aftalen.',go:'scroll:sec-fokus',lnk:'Se fokus-listen →'},
+            {ic:'+',cls:'warn',t:'Onboard de sidste '+daN(rem),d:daN(rem)+' købte virksomheder er endnu ikke aktiveret. Aktivér dem for at få fuld værdi af aftalen.',go:'scroll:sec-fokus',lnk:'Se fokus-listen →'},
             {ic:'★',cls:'info',t:'Top 3 revisorer',d:'Størst uudnyttet potentiale: '+top3+'.',go:'scroll:sec-revisorer',lnk:'Se revisorlisten →'},
             {ic:'→',cls:'info',t:'Steps mod næste mål',d:daN(miss)+' virksomheder mangler for at nå målet på '+tgt+'%. Ca. '+daN(pace)+' aktiveringer om måneden over et år.',go:'scroll:sec-plan',lnk:'Se implementeringsplanen →'},
             {ic:'≡',cls:'good',t:'Muligheder med årsrapporter',d:daN(arr)+' erklæringer er relevante for årsrapport-produktet: et nyt indtægtsområde ud over dataanalyser.',go:'tab:tab-case',lnk:'Åbn business case →'},
