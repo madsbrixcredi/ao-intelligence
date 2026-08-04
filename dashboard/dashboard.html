@@ -94,14 +94,14 @@
       .wheel-chart{margin:4px 0 8px}
       .wheel-chart svg{width:100%;height:auto;display:block}
       .wheel-chart .wc-hit{fill:transparent;cursor:pointer}
-      .wheel-chart .wc-hit:hover + .wc-bar{fill:#1b4fd0}
+      .wheel-chart .wc-sign{fill:#c9d7f2;cursor:pointer}
       .wheel-chart .wc-bar{fill:#2f6df0;cursor:pointer}
       .wheel-chart .wc-bar.peak{fill:#e0902b}
-      .wheel-chart .wc-bar.sel{stroke:#141821;stroke-width:2}
-      .wheel-chart .wc-lbl{fill:#8a93a3;font-size:13px}
-      .wheel-chart .wc-val{fill:#141821;font-size:12px;font-weight:700}
-      .wheel-chart .wc-even{stroke:#d6483b;stroke-dasharray:5 4;stroke-width:1.5}
-      .wheel-chart .wc-even-lbl{fill:#d6483b;font-size:11px;font-weight:700}
+      .wheel-chart .wc-sign.sel,.wheel-chart .wc-bar.sel{stroke:#141821;stroke-width:1.5}
+      .wheel-chart .wc-lbl{fill:#8a93a3;font-size:12px}
+      .wheel-chart .wc-val{fill:#141821;font-size:10px;font-weight:700}
+      .wheel-chart .wc-val2{fill:#8a93a3;font-size:10px}
+      .wheel-chart .wc-leg{fill:#5c6572;font-size:12px}
       .wheel-insight{background:#f2f6fe;border:1px solid #dbe6fd;border-radius:12px;padding:14px 16px;margin-bottom:16px;font-size:14px;line-height:1.5}
       .wheel-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
       @media(max-width:900px){.wheel-grid{grid-template-columns:repeat(3,1fr)}}
@@ -448,10 +448,9 @@
           </div>
           <div class="wheel-controls">
             <label>Revisor <select id="wheelRevisor"><option value="">Hele huset</option></select></label>
-            <label>Arbejdsvindue <select id="wheelWindow"><option value="2">2 mdr. før</option><option value="3" selected>3 mdr. før</option></select></label>
+            <label>Arbejdsvindue <select id="wheelWindow"><option value="1">1 mdr. før</option><option value="2">2 mdr. før</option><option value="3" selected>3 mdr. før</option></select></label>
             <label>Erklæringstype <select id="wheelType"><option value="">Alle</option><option value="revision">Revision</option><option value="udvidet">Udvidet gennemgang</option><option value="assistance">Assistance</option><option value="review">Review</option></select></label>
             <label>På Crediwire <select id="wheelActive"><option value="">Alle</option><option value="0">Kun emner (ikke aktive)</option><option value="1">Kun aktive</option></select></label>
-            <label>Økonomisystem <select id="wheelErp"><option value="">Alle</option></select></label>
             <label>Min. ansatte <input id="wheelAnsatte" type="number" min="0" value="0" /></label>
             <label class="chk"><input type="checkbox" id="wheelGode" /> Kun gode Crediwire-emner</label>
           </div>
@@ -1013,13 +1012,12 @@
       function filtered(){
         if(!cal) return [];
         const set=scopedMnes();
-        const ft=$('wheelType').value, fa=$('wheelActive').value, fe=$('wheelErp').value, fan=+$('wheelAnsatte').value||0, gode=$('wheelGode').checked;
+        const ft=$('wheelType').value, fa=$('wheelActive').value, fan=+$('wheelAnsatte').value||0, gode=$('wheelGode').checked;
         return cal.filter(r=>{
           if(!set.has(r.mne)) return false;
-          if(gode) return goodFit(r) && typeMatch(r.type,ft) && (!fe||r.erp===fe);
+          if(gode) return goodFit(r) && typeMatch(r.type,ft);
           if(!typeMatch(r.type,ft)) return false;
           if(fa!==''&&r.aktiv!==fa) return false;
-          if(fe&&r.erp!==fe) return false;
           if(fan>0 && (r.ansatte===''|| +r.ansatte<fan)) return false;
           return true; });
       }
@@ -1030,28 +1028,31 @@
         for(let M=1;M<=12;M++){ let s=0; for(let k=0;k<win;k++) s+=sign[((M-1+k)%12)+1]; work[M]=s; }
         return {sign,work};
       }
-      function chart(work,sign){
-        const W=1200,H=200,padL=8,padR=8,padT=24,padB=26;
-        const bw=(W-padL-padR)/12, plotH=H-padT-padB, maxW=Math.max(1,...work.slice(1));
-        const total=work.slice(1).reduce((a,b)=>a+b,0), even=total/12;
+      function chart(sign,work){
+        const W=1200,H=214,padL=8,padR=8,padT=34,padB=26;
+        const slot=(W-padL-padR)/12, plotH=H-padT-padB, maxV=Math.max(1,...sign.slice(1),...work.slice(1));
         let peak=1; for(let M=2;M<=12;M++) if(work[M]>work[peak]) peak=M;
-        const ey=(H-padB)-plotH*(even/maxW);
-        let s=`<line class="wc-even" x1="${padL}" y1="${ey.toFixed(1)}" x2="${W-padR}" y2="${ey.toFixed(1)}"></line><text class="wc-even-lbl" x="${W-padR}" y="${(ey-5).toFixed(1)}" text-anchor="end">jævn ~${Math.round(even).toLocaleString('da-DK')}</text>`;
+        const bw=slot*0.32, gap=slot*0.06;
+        let s=`<rect x="${padL}" y="8" width="12" height="12" rx="2" fill="#c9d7f2"></rect><text class="wc-leg" x="${padL+18}" y="18">Underskrift</text>`;
+        s+=`<rect x="${padL+112}" y="8" width="12" height="12" rx="2" fill="#2f6df0"></rect><text class="wc-leg" x="${padL+130}" y="18">Arbejde i gang</text>`;
         for(let M=1;M<=12;M++){
-          const h=plotH*(work[M]/maxW); const gx=padL+(M-1)*bw, x=gx+bw*0.15, w=bw*0.7;
-          const cls='wc-bar'+(M===peak?' peak':'')+(curMonth===M?' sel':'');
-          s+=`<rect class="wc-hit" data-m="${M}" x="${gx.toFixed(1)}" y="${padT}" width="${bw.toFixed(1)}" height="${plotH.toFixed(1)}"><title>${MONTHS[M-1]}: ${work[M].toLocaleString('da-DK')} i arbejde · underskriver ${sign[M].toLocaleString('da-DK')}</title></rect>`;
-          s+=`<rect class="${cls}" data-m="${M}" x="${x.toFixed(1)}" y="${(H-padB-h).toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="4"></rect>`;
-          s+=`<text class="wc-val" x="${(x+w/2).toFixed(1)}" y="${(H-padB-h-5).toFixed(1)}" text-anchor="middle">${work[M].toLocaleString('da-DK')}</text>`;
-          s+=`<text class="wc-lbl" x="${(x+w/2).toFixed(1)}" y="${H-7}" text-anchor="middle">${MONTHS[M-1]}</text>`;
+          const gx=padL+(M-1)*slot, cx=gx+slot/2;
+          const hs=plotH*(sign[M]/maxV), hw=plotH*(work[M]/maxV);
+          const x1=cx-bw-gap/2, x2=cx+gap/2;
+          s+=`<rect class="wc-hit" data-m="${M}" x="${gx.toFixed(1)}" y="${padT}" width="${slot.toFixed(1)}" height="${plotH.toFixed(1)}"><title>${MONTHS[M-1]}: underskriver ${sign[M].toLocaleString('da-DK')} · ${work[M].toLocaleString('da-DK')} i arbejde</title></rect>`;
+          s+=`<rect class="wc-sign${curMonth===M?' sel':''}" data-m="${M}" x="${x1.toFixed(1)}" y="${(H-padB-hs).toFixed(1)}" width="${bw.toFixed(1)}" height="${hs.toFixed(1)}" rx="3"></rect>`;
+          s+=`<rect class="wc-bar${M===peak?' peak':''}${curMonth===M?' sel':''}" data-m="${M}" x="${x2.toFixed(1)}" y="${(H-padB-hw).toFixed(1)}" width="${bw.toFixed(1)}" height="${hw.toFixed(1)}" rx="3"></rect>`;
+          s+=`<text class="wc-val2" x="${(x1+bw/2).toFixed(1)}" y="${(H-padB-hs-4).toFixed(1)}" text-anchor="middle">${sign[M].toLocaleString('da-DK')}</text>`;
+          s+=`<text class="wc-val" x="${(x2+bw/2).toFixed(1)}" y="${(H-padB-hw-4).toFixed(1)}" text-anchor="middle">${work[M].toLocaleString('da-DK')}</text>`;
+          s+=`<text class="wc-lbl" x="${cx.toFixed(1)}" y="${H-7}" text-anchor="middle">${MONTHS[M-1]}</text>`;
         }
-        $('wheelChart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Arbejdsbelastning pr. måned">${s}</svg>`;
+        $('wheelChart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Underskrift og arbejde pr. måned">${s}</svg>`;
         $('wheelChart').querySelectorAll('[data-m]').forEach(el=>el.addEventListener('click',()=>{ const M=+el.dataset.m; curMonth=(curMonth===M)?null:M; detail(); build(); }));
       }
       function build(){
         if(!$('wheelChart')||!cal) return;
         const rows=filtered(); const {sign,work}=agg(rows);
-        chart(work,sign);
+        chart(sign,work);
         let peak=1,low=1; for(let M=2;M<=12;M++){ if(work[M]>work[peak])peak=M; if(work[M]<work[low])low=M; }
         const total=work.slice(1).reduce((a,b)=>a+b,0), even=Math.round(total/12);
         const ins=$('wheelInsight');
@@ -1075,16 +1076,10 @@
         sel.innerHTML='<option value="">Hele huset</option>'+inHouse.sort((a,b)=>(mneMap[a].revisor||'').localeCompare(mneMap[b].revisor||'')).map(m=>`<option value="${m}">${mneMap[m].revisor||m}</option>`).join('');
         if([...sel.options].some(o=>o.value===cur)) sel.value=cur;
       }
-      function populateErp(){
-        const sel=$('wheelErp'); if(!sel||!cal) return; const cur=sel.value;
-        const erps=[...new Set(cal.map(r=>r.erp).filter(Boolean))].sort();
-        sel.innerHTML='<option value="">Alle</option>'+erps.map(e=>`<option value="${e}">${e}</option>`).join('');
-        if([...sel.options].some(o=>o.value===cur)) sel.value=cur;
-      }
       function loadCal(){
         if(cal||loading) return; loading=true;
         $('wheelInsight').innerHTML='<span class="wheel-loading">Indlæser årshjul…</span>';
-        fetch('../data/processed/revisor_calendar.csv').then(r=>r.text()).then(t=>{ cal=parse(t); loading=false; populateErp(); build(); })
+        fetch('../data/processed/revisor_calendar.csv').then(r=>r.text()).then(t=>{ cal=parse(t); loading=false; build(); })
           .catch(()=>{ $('wheelInsight').innerHTML='Kan ikke indlæse årshjul-data.'; loading=false; });
       }
       fetch('../data/processed/mne_declarations.csv').then(r=>r.text()).then(m=>{
@@ -1098,7 +1093,7 @@
         const kpis=$('primaryKpis');
         if(kpis) new MutationObserver(()=>{ populateRevisor(); if(curMonth!==null){curMonth=null;$('wheelDetail').innerHTML='';} if(cal) build(); }).observe(kpis,{childList:true});
       });
-      document.addEventListener('change',e=>{ if(e.target&&['wheelRevisor','wheelWindow','wheelType','wheelActive','wheelErp','wheelGode'].includes(e.target.id)){ curMonth=null; $('wheelDetail').innerHTML=''; if(cal) build(); }});
+      document.addEventListener('change',e=>{ if(e.target&&['wheelRevisor','wheelWindow','wheelType','wheelActive','wheelGode'].includes(e.target.id)){ curMonth=null; $('wheelDetail').innerHTML=''; if(cal) build(); }});
       document.addEventListener('input',e=>{ if(e.target&&e.target.id==='wheelAnsatte'){ curMonth=null; $('wheelDetail').innerHTML=''; if(cal) build(); }});
     })();
     </script>
