@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="styles.css?v=20260629-drop-resterende" />
     <style>
       /* fire-faners struktur + WHOOP-ring · alt andet arves fra styles.css */
+      /* hindr at brede grafer/tabeller skubber siden ud i bredden (grid-fælde) */
+      main{grid-template-columns:minmax(0,1fr)}
+      .tabpane,.tabpane section,.panel,.wheel-chart{min-width:0}
+      .table-wrap{max-width:100%}
       .tabnav{display:flex;gap:4px;background:#eceff4;border-radius:14px;padding:5px;margin:6px 0 22px;width:fit-content}
       .tabnav button{border:0;background:transparent;font:inherit;font-weight:800;font-size:14px;color:#5c6572;padding:10px 20px;border-radius:10px;cursor:pointer;letter-spacing:.01em}
       .tabnav button.on{background:#fff;color:#141821;box-shadow:0 1px 3px rgba(20,30,50,.12)}
