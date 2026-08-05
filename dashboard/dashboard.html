@@ -97,6 +97,13 @@
       .opp-ic.warn{background:#fbf1de;color:#b9741d}.opp-ic.info{background:#e7effd;color:#2f6df0}.opp-ic.good{background:#e6f6ee;color:#14a06a}
       .opp-card h4{margin:0 0 4px;font-size:15px}
       .opp-card p{margin:0;font-size:13.5px;color:#5c6572;line-height:1.45}
+      .bc-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+      @media(max-width:800px){.bc-benefits{grid-template-columns:1fr 1fr}}
+      @media(max-width:520px){.bc-benefits{grid-template-columns:1fr}}
+      .bc-benefit{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid #e7eaf0;border-radius:12px;padding:14px 16px}
+      .bc-ic{width:34px;height:34px;border-radius:9px;flex:0 0 34px;display:flex;align-items:center;justify-content:center;font-size:16px;background:#eef3fe;color:#2f6df0}
+      .bc-benefit b{font-size:14px}
+      .bc-benefit small{display:block;color:#8a93a3;font-size:12px;margin-top:3px}
       .wheel-controls{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:14px;font-size:14px;align-items:center}
       .wheel-controls label{display:flex;gap:8px;align-items:center;color:#5c6572}
       .wheel-controls select,.wheel-controls input[type=number]{font:inherit;padding:8px 11px;border:1px solid var(--line,#e7eaf0);border-radius:9px;background:#fff}
@@ -418,6 +425,15 @@
             </div>
             <div id="businessCaseEquation" class="business-case-equation" aria-label="Business Case sammenhæng"></div>
             <div id="pdfBusinessCaseInsight" class="print-only pdf-insight-block"></div>
+
+            <h3 class="subheading">Hvad får du for din investering?</h3>
+            <div class="bc-benefits">
+              <div class="bc-benefit"><span class="bc-ic">⟳</span><div><b>Ens arbejdsgange</b></div></div>
+              <div class="bc-benefit"><span class="bc-ic">▤</span><div><b>Ens output</b></div></div>
+              <div class="bc-benefit"><span class="bc-ic">★</span><div><b>Øget kvalitet</b></div></div>
+              <div class="bc-benefit"><span class="bc-ic">⏱</span><div><b>Frigivet tid</b><small>Kun værdifuldt, hvis du bruger det til at skabe værdi.</small></div></div>
+              <div class="bc-benefit"><span class="bc-ic">☺</span><div><b>Gladere medarbejdere</b></div></div>
+            </div>
           </div>
         </section>
       </div>
