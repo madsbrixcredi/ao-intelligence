@@ -104,6 +104,10 @@
       .bc-ic{width:34px;height:34px;border-radius:9px;flex:0 0 34px;display:flex;align-items:center;justify-content:center;font-size:16px;background:#eef3fe;color:#2f6df0}
       .bc-benefit b{font-size:14px}
       .bc-benefit small{display:block;color:#8a93a3;font-size:12px;margin-top:3px}
+      .rebill-row{display:flex;gap:12px;align-items:flex-start;background:#f2f6fe;border:1px solid #dbe6fd;border-radius:12px;padding:14px 16px;margin:12px 0 0;cursor:pointer}
+      .rebill-row input{margin-top:3px;width:18px;height:18px;flex:0 0 18px}
+      .rebill-row b{font-size:14px}
+      .rebill-row small{display:block;color:#5c6572;font-size:12.5px;margin-top:3px;line-height:1.45}
       .wheel-controls{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:14px;font-size:14px;align-items:center}
       .wheel-controls label{display:flex;gap:8px;align-items:center;color:#5c6572}
       .wheel-controls select,.wheel-controls input[type=number]{font:inherit;padding:8px 11px;border:1px solid var(--line,#e7eaf0);border-radius:9px;background:#fff}
@@ -389,6 +393,7 @@
                 </div>
               </div>
               <p id="businessCaseInvestmentNote" class="investment-note">Business Casen bruger samlet investering ved den valgte implementeringsgrad.</p>
+              <label class="rebill-row"><input type="checkbox" id="rebillToggle" /><span><b>Viderefaktureres til kunder (til kostpris)</b><small>Fakturerer I Crediwire-prisen videre til kunderne, bliver jeres nettoinvestering 0 kr. og hele værdien tilfalder huset.</small></span></label>
               <input id="advisoryHoursInput" type="hidden" value="0" />
 
             <h3 class="subheading">Nøgletal</h3>
@@ -784,6 +789,29 @@
     </div>
 
     <script src="app.js?v=20260804-1"></script>
+    <script>
+    /* ===== Viderefakturering: netto-investering 0, ROI fuldt dækket ===== */
+    (function(){
+      const $=id=>document.getElementById(id);
+      function applyRebill(){
+        const t=$('rebillToggle'); if(!t||!t.checked) return;
+        const vaerdi = $('futureInvestmentValue') ? $('futureInvestmentValue').textContent : null;
+        if($('selectedImplementationNetValue')) $('selectedImplementationNetValue').textContent='0 kr. · viderefaktureret';
+        if(vaerdi && $('futureNetValue')) $('futureNetValue').textContent=vaerdi;
+        if($('businessCaseRoiValue')) $('businessCaseRoiValue').textContent='Fuldt dækket';
+        if($('businessCaseTargetRoiInline')) $('businessCaseTargetRoiInline').textContent='Investeringen viderefaktureres · netto 0 kr.';
+        if($('targetInvestmentValue')) $('targetInvestmentValue').textContent='0 kr.';
+      }
+      function ready(){
+        const anchor=$('primaryKpis');
+        if(!anchor) return setTimeout(ready,150);
+        new MutationObserver(()=>applyRebill()).observe(anchor,{childList:true});
+        applyRebill();
+        document.addEventListener('change',e=>{ if(e.target&&e.target.id==='rebillToggle'){ if(typeof renderDashboard==='function') renderDashboard(); applyRebill(); }});
+      }
+      ready();
+    })();
+    </script>
     <script>
     /* ===== Fire faner ===== */
     (function(){
