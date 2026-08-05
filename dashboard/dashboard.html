@@ -108,6 +108,7 @@
       .rebill-row input{margin-top:3px;width:18px;height:18px;flex:0 0 18px}
       .rebill-row b{font-size:14px}
       .rebill-row small{display:block;color:#5c6572;font-size:12.5px;margin-top:3px;line-height:1.45}
+      .permonth{display:block;color:#2f6df0;font-weight:700;font-size:12.5px;margin-top:6px}
       .wheel-controls{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:14px;font-size:14px;align-items:center}
       .wheel-controls label{display:flex;gap:8px;align-items:center;color:#5c6572}
       .wheel-controls select,.wheel-controls input[type=number]{font:inherit;padding:8px 11px;border:1px solid var(--line,#e7eaf0);border-radius:9px;background:#fff}
@@ -355,11 +356,12 @@
               <h3 class="subheading">Investering</h3>
               <div id="investmentSection" class="investment-section">
                 <label class="investment-panel investment-price-panel">
-                  <span>Softwarepris pr. aktiv virksomhed pr. år</span>
+                  <span>Pris for Dataanalyser (Softwarepris pr. aktiv virksomhed pr. år)</span>
                   <div class="price-input-wrap">
                     <input id="pricePerActiveCompanyInput" type="text" inputmode="numeric" value="1.988" />
                     <span>kr.</span>
                   </div>
+                  <small class="permonth" id="priceMonthly"></small>
                 </label>
                 <label class="investment-panel investment-price-panel">
                   <span>Pris pr. årsrapport</span>
@@ -389,6 +391,7 @@
                 <div class="investment-panel investment-result expected-investment">
                   <span id="targetInvestmentLabel">Samlet investering ved business case</span>
                   <strong id="targetInvestmentValue">0 DKK</strong>
+                  <p id="targetInvestmentMonthly" class="permonth"></p>
                   <p id="targetInvestmentFormula"><span id="investmentTargetCustomers">0</span> kunder × pris (i dag + expand).</p>
                 </div>
               </div>
@@ -802,12 +805,25 @@
         if($('businessCaseTargetRoiInline')) $('businessCaseTargetRoiInline').textContent='Investeringen viderefaktureres · netto 0 kr.';
         if($('targetInvestmentValue')) $('targetInvestmentValue').textContent='0 kr.';
       }
+      function updateMonthly(){
+        const pv=$('pricePerActiveCompanyInput');
+        if(pv && $('priceMonthly')){
+          const yr=parseInt((pv.value||'').replace(/\D/g,''),10)||0;
+          $('priceMonthly').textContent = yr ? ('≈ '+Math.round(yr/12).toLocaleString('da-DK')+' kr./md pr. virksomhed') : '';
+        }
+        const tv=$('targetInvestmentValue');
+        if(tv && $('targetInvestmentMonthly')){
+          const tot=parseInt((tv.textContent||'').replace(/[^0-9]/g,''),10)||0;
+          $('targetInvestmentMonthly').textContent = tot ? ('≈ '+Math.round(tot/12).toLocaleString('da-DK')+' kr./md samlet at fakturere') : '';
+        }
+      }
       function ready(){
         const anchor=$('primaryKpis');
         if(!anchor) return setTimeout(ready,150);
-        new MutationObserver(()=>applyRebill()).observe(anchor,{childList:true});
-        applyRebill();
-        document.addEventListener('change',e=>{ if(e.target&&e.target.id==='rebillToggle'){ if(typeof renderDashboard==='function') renderDashboard(); applyRebill(); }});
+        new MutationObserver(()=>{ applyRebill(); updateMonthly(); }).observe(anchor,{childList:true});
+        applyRebill(); updateMonthly();
+        document.addEventListener('input',e=>{ if(e.target&&e.target.id==='pricePerActiveCompanyInput') updateMonthly(); });
+        document.addEventListener('change',e=>{ if(e.target&&e.target.id==='rebillToggle'){ if(typeof renderDashboard==='function') renderDashboard(); applyRebill(); updateMonthly(); }});
       }
       ready();
     })();
