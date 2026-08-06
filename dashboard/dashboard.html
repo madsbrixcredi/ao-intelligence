@@ -109,6 +109,8 @@
       .rebill-row b{font-size:14px}
       .rebill-row small{display:block;color:#5c6572;font-size:12.5px;margin-top:3px;line-height:1.45}
       .permonth{display:block;color:#2f6df0;font-weight:700;font-size:12.5px;margin-top:6px}
+      .value-hours-box{background:#e6f6ee;border:1px solid #bfe6cf;border-left:5px solid #14a06a;border-radius:12px;padding:16px 18px;margin-top:16px;font-size:14px;line-height:1.55}
+      .value-hours-box b{color:#0f7a48}
       .wheel-controls{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:14px;font-size:14px;align-items:center}
       .wheel-controls label{display:flex;gap:8px;align-items:center;color:#5c6572}
       .wheel-controls select,.wheel-controls input[type=number]{font:inherit;padding:8px 11px;border:1px solid var(--line,#e7eaf0);border-radius:9px;background:#fff}
@@ -433,6 +435,7 @@
                 <div id="businessCaseRoiHelp" class="card-detail">Afkast ved mål med status i dag som reference.</div>
               </div>
             </div>
+            <div class="value-hours-box" id="valueHoursBox" hidden></div>
             <div id="businessCaseEquation" class="business-case-equation" aria-label="Business Case sammenhæng"></div>
             <div id="pdfBusinessCaseInsight" class="print-only pdf-insight-block"></div>
 
@@ -822,11 +825,25 @@
           $('targetInvestmentMonthly').textContent = tot ? ('≈ '+Math.round(tot/12).toLocaleString('da-DK')+' kr./md samlet at fakturere') : '';
         }
       }
+      function updateHours(){
+        const box=$('valueHoursBox'); if(!box) return;
+        try{
+          if(typeof scopeMetrics!=='function'){ box.hidden=true; return; }
+          const m=scopeMetrics();
+          const timer=Math.round(m.realisticHours||0);
+          const fteBase=(typeof HOURS_PER_FTE!=='undefined' && HOURS_PER_FTE)?HOURS_PER_FTE:1924;
+          const pct=Math.round((m.implementationRate||0)*100);
+          if(timer>0){
+            box.hidden=false;
+            box.innerHTML=`Værdien er reelt <b>${timer.toLocaleString('da-DK')} frigjorte timer</b> om året ved ${pct}% implementering (≈ <b>${(timer/fteBase).toLocaleString('da-DK',{maximumFractionDigits:1})} årsværk</b>). Selv når investeringen viderefaktureres og ROI er "fuldt dækket", er den frigjorte tid stadig reel: den bliver først til værdi når den bruges til at skabe værdi.`;
+          } else box.hidden=true;
+        }catch(e){}
+      }
       function ready(){
         const anchor=$('primaryKpis');
         if(!anchor) return setTimeout(ready,150);
-        new MutationObserver(()=>{ applyRebill(); updateMonthly(); }).observe(anchor,{childList:true});
-        applyRebill(); updateMonthly();
+        new MutationObserver(()=>{ applyRebill(); updateMonthly(); updateHours(); }).observe(anchor,{childList:true});
+        applyRebill(); updateMonthly(); updateHours();
         document.addEventListener('input',e=>{ if(e.target&&['pricePerActiveCompanyInput','annualReportPriceInput','assistancePriceInput'].includes(e.target.id)) updateMonthly(); });
         document.addEventListener('change',e=>{ if(e.target&&e.target.id==='rebillToggle'){ if(typeof renderDashboard==='function') renderDashboard(); applyRebill(); updateMonthly(); }});
       }
