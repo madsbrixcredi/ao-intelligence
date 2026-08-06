@@ -111,6 +111,9 @@
       .permonth{display:block;color:#2f6df0;font-weight:700;font-size:12.5px;margin-top:6px}
       .value-hours-box{background:#e6f6ee;border:1px solid #bfe6cf;border-left:5px solid #14a06a;border-radius:12px;padding:16px 18px;margin-top:16px;font-size:14px;line-height:1.55}
       .value-hours-box b{color:#0f7a48}
+      #tab-case .roi-output{grid-template-columns:repeat(6,minmax(0,1fr))}
+      @media(max-width:1100px){#tab-case .roi-output{grid-template-columns:repeat(3,minmax(0,1fr))}}
+      @media(max-width:640px){#tab-case .roi-output{grid-template-columns:repeat(2,minmax(0,1fr))}}
       .wheel-controls{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:14px;font-size:14px;align-items:center}
       .wheel-controls label{display:flex;gap:8px;align-items:center;color:#5c6572}
       .wheel-controls select,.wheel-controls input[type=number]{font:inherit;padding:8px 11px;border:1px solid var(--line,#e7eaf0);border-radius:9px;background:#fff}
@@ -433,6 +436,11 @@
                 <strong id="businessCaseRoiValue">Ved mål: ikke beregnet</strong>
                 <em id="businessCaseTargetRoiInline" class="inline-roi">I dag: ikke beregnet</em>
                 <div id="businessCaseRoiHelp" class="card-detail">Afkast ved mål med status i dag som reference.</div>
+              </div>
+              <div class="investment-output implementation-business-card">
+                <span>Frigivet tid</span>
+                <strong id="valueHoursValue">–</strong>
+                <div id="valueHoursDetail" class="card-detail">Timer sparet om året.</div>
               </div>
             </div>
             <div class="value-hours-box" id="valueHoursBox" hidden></div>
@@ -833,6 +841,9 @@
           const timer=Math.round(m.realisticHours||0);
           const fteBase=(typeof HOURS_PER_FTE!=='undefined' && HOURS_PER_FTE)?HOURS_PER_FTE:1924;
           const pct=Math.round((m.implementationRate||0)*100);
+          const hv=$('valueHoursValue'), hd=$('valueHoursDetail');
+          if(hv) hv.textContent = timer>0 ? (timer.toLocaleString('da-DK')+' timer') : '–';
+          if(hd) hd.textContent = timer>0 ? ('≈ '+(timer/fteBase).toLocaleString('da-DK',{maximumFractionDigits:1})+' årsværk frigjort om året') : 'Timer sparet om året.';
           if(timer>0){
             box.hidden=false;
             box.innerHTML=`Værdien er reelt <b>${timer.toLocaleString('da-DK')} frigjorte timer</b> om året ved ${pct}% implementering (≈ <b>${(timer/fteBase).toLocaleString('da-DK',{maximumFractionDigits:1})} årsværk</b>). Selv når investeringen viderefaktureres og ROI er "fuldt dækket", er den frigjorte tid stadig reel: den bliver først til værdi når den bruges til at skabe værdi.`;
