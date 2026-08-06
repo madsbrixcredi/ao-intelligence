@@ -862,6 +862,26 @@
     })();
     </script>
     <script>
+    /* ===== Fælles scope: alle huse · gruppe · enkelt hus ===== */
+    function scopeNames(){
+      try{
+        if(typeof state==='undefined' || !state.selectedCvr) return null; // Alle revisionshuse = intet filter
+        const grp=(typeof GROUP_FILTERS!=='undefined') && GROUP_FILTERS[state.selectedCvr];
+        if(grp){
+          let cvrs=(typeof groupCvrs==='function') ? groupCvrs(grp) : (grp.cvrList||[]);
+          if(typeof cvrs==='function') cvrs=cvrs();
+          const cvrSet=new Set((cvrs||[]).map(String));
+          return (state.offices||[]).filter(o=>cvrSet.has(String(o.cvr))).map(o=>(o.name||'').toLowerCase()).filter(Boolean);
+        }
+        const s=document.getElementById('aoSearch');
+        return [((s&&s.value)||'').toLowerCase().trim()].filter(Boolean);
+      }catch(e){ return null; }
+    }
+    function matchesScope(firma, names){
+      if(!names) return true;
+      const f=(firma||'').toLowerCase();
+      return names.some(n=> n && (f.startsWith(n)||n.startsWith(f)));
+    }
     /* ===== Fire faner ===== */
     (function(){
       const btns = document.querySelectorAll('.tabnav button');
@@ -1066,9 +1086,9 @@
         const body=document.getElementById('mneBody'); if(!body) return;
         const vpc=valPerCompany();
         const q=(document.getElementById('mneFilter').value||'').trim().toLowerCase();
-        const hn=houseName().toLowerCase();
+        const names=scopeNames();
         let list = q ? rows.filter(r => (r.ao_firma+' '+r.revisor+' '+r.mne).toLowerCase().includes(q))
-                     : (hn ? rows.filter(r=>{const a=(r.ao_firma||'').toLowerCase();return a.startsWith(hn)||hn.startsWith(a);}) : rows.slice());
+                     : rows.filter(r=>matchesScope(r.ao_firma,names));
         list.sort(sortPot);
         const total=list.length;
         const shown=(q||showAll) ? list.slice(0,500) : list.slice(0,3);
@@ -1079,9 +1099,9 @@
           if(q||total<=3){ tog.style.display='none'; }
           else { tog.style.display=''; tog.textContent = showAll ? 'Vis kun top 3' : ('Vis alle '+total.toLocaleString('da-DK')+' revisorer'); }
         }
-        renderOpp(hn);
+        renderOpp();
       }
-      function renderOpp(hn){
+      function renderOpp(){
         const og=document.getElementById('oppGrid'); if(!og) return;
         try{
           const fokusSec=document.getElementById('sec-fokus');
@@ -1093,7 +1113,7 @@
         try{
           if(typeof scopeMetrics!=='function') return;
           const m=scopeMetrics();
-          const houseList=(hn?rows.filter(r=>{const a=(r.ao_firma||'').toLowerCase();return a.startsWith(hn)||hn.startsWith(a);}):rows).slice().sort(sortPot);
+          const houseList=rows.filter(r=>matchesScope(r.ao_firma,scopeNames())).slice().sort(sortPot);
           const top3=houseList.slice(0,3).map(r=>r.revisor).filter(Boolean).join(' · ')||'—';
           const rem=m.remainingPurchasedActivation||0, miss=m.missingActivation||0, tgt=Math.round((m.implementationRate||0)*100), pace=Math.round(miss/12), arr=m.annualReportTasks||0;
           const onboard={ic:'+',cls:'warn',t:'Onboard de sidste '+daN(rem),d:daN(rem)+' købte virksomheder er endnu ikke aktiveret. Aktivér dem for at få fuld værdi af aftalen.',go:'scroll:sec-plan',lnk:'Se implementeringsplanen →'};
@@ -1143,8 +1163,8 @@
       function scopedMnes(){
         const rev=$('wheelRevisor').value;
         if(rev) return new Set([rev]);
-        const hn=houseName().toLowerCase(); const all=Object.keys(mneMap);
-        return new Set(hn ? all.filter(m=>{const a=(mneMap[m].firma||'').toLowerCase();return a.startsWith(hn)||hn.startsWith(a);}) : all);
+        const names=scopeNames();
+        return new Set(Object.keys(mneMap).filter(m=>matchesScope(mneMap[m].firma,names)));
       }
       function typeMatch(t,f){ t=(t||'').toLowerCase();
         if(f==='revision') return t.includes('revision');
@@ -1217,8 +1237,8 @@
           <tbody>${list.slice(0,500).map(r=>`<tr><td>${r.revisor}</td><td>${r.client_navn||'—'}</td><td>${r.client_cvr}</td><td>${r.kommune||'—'}</td><td>${r.type||'—'}</td><td class="numeric">${r.ansatte||'—'}</td><td>${r.aktiv==='1'?'Ja':'Nej'}</td></tr>`).join('')}</tbody></table></div>`;
       }
       function populateRevisor(){
-        const hn=houseName().toLowerCase();
-        const inHouse=Object.keys(mneMap).filter(m=>{if(!hn)return true;const a=(mneMap[m].firma||'').toLowerCase();return a.startsWith(hn)||hn.startsWith(a);});
+        const names=scopeNames();
+        const inHouse=Object.keys(mneMap).filter(m=>matchesScope(mneMap[m].firma,names));
         const sel=$('wheelRevisor'); if(!sel) return; const cur=sel.value;
         sel.innerHTML='<option value="">Hele huset</option>'+inHouse.sort((a,b)=>(mneMap[a].revisor||'').localeCompare(mneMap[b].revisor||'')).map(m=>`<option value="${m}">${mneMap[m].revisor||m}</option>`).join('');
         if([...sel.options].some(o=>o.value===cur)) sel.value=cur;
