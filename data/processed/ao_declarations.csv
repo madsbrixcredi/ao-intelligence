@@ -1,0 +1,675 @@
+accounting_office_cvr,accounting_office_name,declarations,audits,reviews,extended_reviews,assistance,other_types,class_b,class_b_assistance,class_b_extended_reviews,class_b_audits,class_b_reviews,class_other,addressable_annual_reports,auditors_with_mne,source_names
+32895468,Beierholm,35200,7439,313,10194,17239,15,34234,17236,10193,6491,313,951,27429,226,Beierholm
+45719375,BDO,24556,2993,8,9538,11964,53,23764,11964,9538,2253,8,738,21502,193,BDO
+33771231,PricewaterhouseCoopers,16447,7601,12,4042,4570,222,14246,4570,4042,5613,12,1985,8612,176,PricewaterhouseCoopers
+24213714,Deloitte,13553,6101,31,4653,2617,151,11991,2617,4651,4691,31,1410,7268,161,Deloitte
+34209936,Grant Thornton,11860,1125,37,4340,6333,25,11571,6331,4338,862,37,266,10669,75,Grant Thornton
+30700228,EY,10097,5538,31,1997,2209,322,8587,2209,1996,4348,31,1185,4205,109,EY
+32285201,Martinsen,8483,1310,48,2749,4371,5,8324,4368,2749,1157,48,156,7117,46,Martinsen
+29442789,Redmark,6247,1392,6,1750,3096,3,6122,3095,1750,1271,6,122,4845,45,Redmark
+15807776,Partner Revision,5599,989,3,1511,3094,2,5461,3094,1511,852,3,137,4605,29,Partner Revision
+25492145,RSM,5383,653,22,1425,3281,2,5299,3280,1425,572,22,82,4705,41,RSM
+35257691,Baker Tilly Denmark,3888,845,8,1212,1823,0,3815,1823,1212,772,8,73,3035,22,Baker Tilly Denmark
+15915641,Christensen Kjærulff,3140,765,20,933,1420,2,3053,1420,933,679,20,86,2353,27,Christensen Kjærulff
+19263096,Inforevision,3069,1199,18,677,1173,2,2976,1163,671,1123,18,69,1834,21,Inforevision
+37543128,Roesgaard,2914,959,2,804,1148,1,2809,1148,804,854,2,105,1952,16,Roesgaard
+31824559,Sønderup,1922,180,24,530,1186,2,1899,1186,530,159,24,21,1716,16,Sønderup + Sønderup Godkendt Revisionsaktieselskab
+33241763,Aaen & Co.,1684,272,4,412,994,2,1666,994,412,256,4,16,1406,8,Aaen & Co.
+37315664,Revisionshuset Tal & Tanker,1636,70,9,512,1045,0,1633,1045,512,67,9,3,1557,14,Revisionshuset Tal & Tanker
+18061635,Sønderjyllands revision,1615,288,1,636,690,0,1569,690,636,242,1,46,1326,11,Sønderjyllands revision
+36029374,BUUS JENSEN I/S STATSAUTORISEREDE REVISORER,1523,522,29,269,703,0,1499,703,269,498,29,24,972,13,Buus Jensen
+37999687,"JS Revision, Godkendt Revisionsaktieselskab",1413,121,1,242,1049,0,1408,1049,242,116,1,5,1291,5,"JS Revision, Godkendt Revisionsaktieselskab"
+25160037,Piaster Revisorerne,1389,216,2,361,807,3,1376,807,361,204,2,12,1168,10,Piaster Revisorerne
+38751646,Kovsted & Skovgård,1273,93,2,376,802,0,1267,802,376,87,2,6,1178,10,Kovsted & Skovgård
+39463113,Kreston CM,1256,332,4,270,650,0,1235,650,270,311,4,21,920,7,Kreston CM
+21148148,Baagøe Schou,1227,364,9,214,637,3,1217,637,214,355,9,9,851,7,Baagøe Schou
+33256876,Crowe,1219,288,12,368,551,0,1199,551,368,268,12,20,919,6,Crowe
+25578198,KPMG,1206,835,48,168,128,27,864,128,168,515,48,322,296,34,KPMG
+29690065,Aros,1183,63,0,386,734,0,1178,734,386,58,0,5,1120,6,Aros
+35382879,Albjerg,1179,369,4,92,714,0,1168,714,92,358,4,11,806,9,Albjerg
+34589992,Addere Revision,1095,351,3,181,560,0,1069,560,181,325,3,26,741,7,Addere Revision
+89224918,Krøyer Pedersen Statsautoriserede Revisorer,1090,213,20,308,549,0,1056,549,308,179,20,34,857,12,Krøyer Pedersen Statsautoriserede Revisorer + Krøyer Pedersen Statsautoriserede Revisorer P/S
+35486178,Revisionsfirmaet Edelbo,1046,465,1,157,422,1,1023,422,157,443,1,22,579,8,Revisionsfirmaet Edelbo
+38914766,RéVision+,1008,25,2,196,783,2,1008,783,196,25,2,0,979,11,R-Vision + RéVision+ + RéVision+ Statsautoriseret Revisionsanpartsselskab
+37121924,Øernes Revision,956,59,2,209,681,5,941,681,209,49,2,10,890,13,Øernes Revision
+82218912,Dansk Revision Odense,950,66,1,331,552,0,944,551,331,61,1,5,882,9,Dansk Revision Odense
+29695636,Revisionscentret Aabenraa,906,40,0,397,469,0,895,469,397,29,0,11,866,9,Revisionscentret Aabenraa
+17524305,Nærrevision,889,68,1,154,666,0,881,666,154,60,1,8,820,11,Nærrevision
+29919801,Dansk Revision Slagelse,853,49,2,245,556,1,842,556,245,39,2,10,801,7,Dansk Revision Slagelse
+32093272,Ullits & Winther,843,173,1,242,427,0,818,427,242,148,1,25,669,8,Ullits & Winther
+25593995,Råd & Revision,836,57,0,361,418,0,828,418,361,49,0,8,779,8,REVISION & RÅD STATSAUTORISERET REVISIONSPARTNERSELSKAB + Revision & Råd + Råd & Revision
+14649905,Dansk Revision Søborg,823,111,1,171,535,5,814,535,171,106,1,5,706,5,Dansk Revision Søborg
+26267439,Revision Ry & Hammel,820,80,0,153,586,1,816,586,153,77,0,3,739,7,Revision Ry & Hammel
+28853343,Dansk Revision Holbæk,811,95,3,214,498,1,804,498,214,89,3,6,712,7,Dansk Revision Holbæk
+36480254,Kvalitetsrevision,810,29,0,208,573,0,808,573,208,27,0,2,781,4,Kvalitetsrevision
+28309791,Revision Sjælland,796,66,1,176,552,1,792,552,176,63,1,3,728,5,Revision Sjælland
+78337818,Blicher Revision & Rådgivning,776,143,9,141,483,0,771,483,141,138,9,5,624,8,Blicher Revision & Rådgivning
+39701863,2+ Revision,772,98,0,271,402,1,766,402,271,92,0,6,673,6,2+ Revision + Revision 2
+14119299,PKF Munkebo Vindelev,733,508,2,39,184,0,724,184,39,499,2,9,223,5,PKF Munkebo Vindelev
+30195264,Kallermann Revision,728,274,0,76,378,0,721,378,76,267,0,7,454,5,Kallermann Revision
+35649417,Harboe Consult,715,50,0,95,568,2,713,568,95,50,0,0,663,4,Harboe Consult
+17871080,VH Revision,673,22,0,224,427,0,673,427,224,22,0,0,651,5,VH Revision
+10158117,Rådgivning & Revision,669,222,2,18,427,0,665,427,18,218,2,4,445,2,Rådgivning & Revision
+26993695,Dansk Revision Esbjerg,667,38,1,152,475,1,658,475,152,30,1,8,627,5,Dansk Revision Esbjerg
+19125742,Søby Revisorer,651,25,1,151,473,1,651,473,151,25,1,0,624,6,Søby Revisorer
+26717671,Dansk Revision Århus,645,76,7,149,411,2,634,411,149,67,7,9,560,8,Dansk Revision Århus
+12868693,Nejstgaard & Vetlov,634,68,0,129,437,0,632,437,129,66,0,2,566,5,Nejstgaard & Vetlov
+32676421,Leif Mikkelsen & Partnere,622,23,0,147,452,0,618,452,147,19,0,4,599,6,Leif Mikkelsen & Partnere
+28991355,Trekroner Revision,612,161,3,120,328,0,612,328,120,161,3,0,448,6,Trekroner Revision
+44282380,Powered-By Statsautoriseret Revisionspartnerselskab,598,21,0,231,346,0,592,345,231,16,0,6,576,8,Powered-By Statsautoriseret Revisionspartnerselskab
+27096174,Lidegaard Revision & Rådgivning,596,18,4,94,480,0,595,480,94,17,4,1,574,5,Lidegaard Revision & Rådgivning + Lidegaard Revision&Rådgivning
+36563877,TJEK Revision & Rådgivning,581,25,0,181,375,0,579,375,181,23,0,2,556,9,TJEK Revision & Rådgivning
+77926410,Revisionsfirmaet Albrechtsen,579,158,0,94,326,1,572,326,94,151,0,7,420,5,Revisionsfirmaet Albrechtsen
+33771177,Revision og Rådgivningsgruppen,565,67,0,133,365,0,562,365,133,64,0,3,498,4,Revision og Rådgivningsgruppen
+11286380,JL Revision,565,25,4,159,376,1,558,376,159,19,4,6,535,8,JL Revisorer
+18437082,Lægård Revision,561,44,3,154,359,1,555,359,154,38,3,6,513,3,Lægård Revision + Lægård Revision Statsautoriseret Revisionsfirma ApS
+27966675,Eco-Team,558,112,6,6,434,0,557,434,6,111,6,1,440,2,Eco-Team
+33946406,Robæk,556,31,2,182,341,0,553,341,182,28,2,3,523,4,Robæk
+30707907,Status Revision,549,11,0,106,432,0,549,432,106,11,0,0,538,5,Status Revision
+45071391,RevisorGården Holbæk A/S,541,34,0,124,383,0,539,383,123,33,0,2,506,4,RevisorGården Holbæk A/S
+14678093,Dansk Revision Roskilde,536,153,5,71,307,0,533,307,71,150,5,3,378,6,Dansk Revision Roskilde
+37557064,Advosion,535,93,0,129,313,0,518,313,129,76,0,17,442,6,Advosion
+69305210,Revisions-Partner,529,55,1,73,400,0,529,400,73,55,1,0,473,4,Revisions-Partner
+33948794,Kreston SR,528,46,0,102,380,0,521,380,102,39,0,7,482,9,Kreston SR
+20183497,Bays Revisionskontor,521,4,0,64,453,0,520,453,64,3,0,1,517,2,Bays Revisionskontor
+31626536,Anker Høst,515,7,0,153,355,0,515,355,153,7,0,0,508,4,Anker Høst
+37605255,Nordkyst Revision Godkendt Revisionspartnerselskab,514,21,0,73,420,0,514,420,73,21,0,0,493,3,Nordkyst Revision Godkendt Revisionspartnerselskab
+70969815,K.T. Revision Vejle,505,42,0,169,293,1,502,293,169,40,0,2,462,3,K.T. Revision Vejle
+19233383,Optimal Revision,488,29,1,118,340,0,488,340,118,29,1,0,458,2,Optimal Revision
+37135119,Revisionsfirmaet Lars Olsen,486,2,0,182,302,0,486,302,182,2,0,0,484,6,Revisionsfirmaet Lars Olsen
+37603686,Danica,485,3,0,38,444,0,485,444,38,3,0,0,482,1,Danica
+36074981,Boreco,484,33,1,111,339,0,484,339,111,33,1,0,450,4,Boreco
+33167288,LPOG ApS,466,20,2,116,328,0,463,328,116,17,2,3,444,4,LPOG ApS
+74717810,Rønne Revision,466,27,0,147,292,0,461,292,147,22,0,5,439,4,Rønne Revision
+16206407,W. Kragh,458,36,1,122,299,0,452,299,122,30,1,6,421,4,W. Kragh
+18282046,Bille & Buch-Andersen,457,51,5,92,309,0,456,309,92,50,5,1,401,4,Bille & Buch-Andersen
+32451195,DLBR Revision,454,15,0,377,62,0,453,62,376,15,0,0,438,3,DLBR Revision
+26580390,Dansk Revision Hillerød,452,77,0,108,264,3,443,264,108,71,0,6,372,4,Dansk Revision Hillerød
+86141019,Dansk Revision Frederikssund,451,49,1,81,320,0,450,320,81,48,1,1,401,5,Dansk Revision Frederikssund
+34480370,Revimidt,449,15,1,72,360,1,442,360,72,9,1,6,432,5,Revimidt
+27905072,Sønderup & Partnere,446,5,0,176,265,0,445,265,176,4,0,1,441,3,Sønderup & Partnere
+20336390,Dansk Revision Viborg,446,31,1,54,360,0,443,360,54,28,1,3,414,5,Dansk Revision Viborg
+31579309,Lou Revision,445,26,1,164,254,0,441,254,164,22,1,4,418,5,Lou Revision
+29142807,Tønder Revision,442,50,0,70,322,0,442,322,70,50,0,0,392,2,Tønder Revision
+38257846,RevisorDK,442,1,0,75,366,0,442,366,75,1,0,0,441,2,RevisorDK
+21696382,"Dalsgaard, Stahl & Wøldike",438,22,0,131,285,0,435,285,131,19,0,3,416,3,"Dalsgaard, Stahl & Wøldike"
+34619654,Revision København Godkendt Revisionspartnerselskab,418,26,2,66,324,0,415,324,66,23,2,3,390,3,Revision København Godkendt Revisionspartnerselskab
+28312393,Revisionsfirmaet John Schantz,416,19,1,71,325,0,416,325,71,19,1,0,396,4,Revisionsfirmaet John Schantz
+12901038,Aage Maagensen,412,50,8,144,210,0,401,210,144,39,8,11,354,5,Aage Maagensen
+10422183,"Dahl, Rask & Partnere",405,7,0,117,280,1,404,280,117,6,0,1,397,3,"Dahl, Rask & Partnere"
+18967901,BHA Statsautoriseret Revision,401,52,0,85,264,0,400,264,85,51,0,1,349,4,BHA Statsautoriseret Revision
+37984558,Kjær Revision,392,7,0,61,324,0,392,324,61,7,0,0,385,3,Kjær Revision + Revision Kjær
+35663916,Algade Revision,389,50,1,68,270,0,389,270,68,50,1,0,338,2,Algade Revision
+19536890,SR Revision,385,41,0,128,216,0,382,216,128,38,0,3,344,4,SR Revision
+10108454,Andersen,383,63,4,117,198,1,378,198,117,58,4,5,315,3,Andersen + Andersen Revision
+19857298,ReviTotal Statsautoriseret Revisionsfirma,370,5,3,74,288,0,370,288,74,5,3,0,362,2,ReviTotal Statsautoriseret Revisionsfirma
+26429862,PJ Revision ApS Registrerede Revisorer,369,7,0,28,334,0,369,334,28,7,0,0,362,4,PJ Revision ApS Registrerede Revisorer + PJ Revision Statsautoriseret Revisionsanpartsselskab
+34351961,VKST Revision,368,13,2,71,282,0,368,282,71,13,2,0,353,3,VKST Revision
+36920289,Dansk Revision Wulff & Haaning,362,39,0,94,229,0,356,229,94,33,0,6,323,4,Dansk Revision Wulff & Haaning
+40689745,Vadskær Krømmelbein,361,3,0,85,273,0,361,273,85,3,0,0,358,3,Vadskær Krømmelbein
+30816471,Dansk Revision Sønderborg,360,18,0,89,253,0,351,253,89,9,0,9,342,4,Dansk Revision Sønderborg
+26923891,Revisionsfirmaet Lars Jeppesen,351,8,0,34,309,0,351,309,34,8,0,0,343,2,Revisionsfirmaet Lars Jeppesen + Revisionsfirmaet Lars Jeppesen ApS
+36464852,ADDCO P/S Godkendte Revisorer,349,20,1,60,266,2,347,266,60,20,1,0,326,4,ADDCO P/S Godkendte Revisorer
+41943661,Lokal Revision - statsautoriseret revisionsanpartsselskab,347,46,2,45,254,0,346,254,45,45,2,1,299,2,Lokal Revision - statsautoriseret revisionsanpartsselskab
+33534841,Talkompagniet,343,17,1,100,225,0,342,225,100,16,1,1,325,2,Talkompagniet
+38951394,Revisionscentret Sønderborg,342,2,1,66,272,1,342,272,66,2,1,0,338,2,Revisionscentret Sønderborg
+53371914,"Ri, Statsautoriseret Revisionsaktieselskab",339,124,1,43,171,0,330,171,43,115,1,9,214,8,Ri Statsautoriseret Revisionspartnerselskab
+73953413,RR Revision v/Benny Jakobsen,337,6,0,68,263,0,337,263,68,6,0,0,331,1,RR Revision v/Benny Jakobsen
+27525989,Skov Revision,337,8,1,77,251,0,337,251,77,8,1,0,328,3,Skov Revision
+28939523,Ecovis Danmark,333,95,7,73,158,0,322,158,73,84,7,11,231,4,Ecovis Danmark
+30077288,Complet Revision,333,2,0,72,259,0,333,259,72,2,0,0,331,2,Complet Revision
+41578513,Revisions-Centret ApS,333,11,0,89,233,0,329,233,89,7,0,4,322,1,Revisions-Centret ApS
+18936305,Revisionscentret Ribe,333,10,0,80,243,0,331,243,80,8,0,2,323,4,Revisionscentret Ribe
+13835640,Korsgaard Revision,330,3,0,66,261,0,330,261,66,3,0,0,327,1,Korsgaard Revision
+17835998,Dansk Revision Aalborg,328,32,0,92,204,0,326,204,92,30,0,2,296,4,Dansk Revision Aalborg
+36427205,Attent Statsautoriseret Revisionsanpartsselskab,328,47,0,105,175,1,322,175,105,42,0,5,280,3,Attent Statsautoriseret Revisionsanpartsselskab
+29091331,2TalRevision,324,4,0,93,227,0,323,227,93,3,0,1,320,3,2TalRevision
+32327249,Revisionsfirmaet Edelbo & Lund-Larsen,320,103,0,15,198,4,315,198,15,102,0,1,213,3,Revisionsfirmaet Edelbo & Lund-Larsen
+34879753,Revisionsfirmaet Tage Sørensen,310,15,0,86,209,0,309,209,86,14,0,1,295,1,Revisionsfirmaet Tage Sørensen
+59051318,Profil Revision,306,3,0,47,256,0,306,256,47,3,0,0,303,1,Profil Revision
+12475780,Revision & Data,303,0,0,32,271,0,303,271,32,0,0,0,303,1,Revision & Data
+21872741,Revisionsfirmaet Peder Holt,297,1,0,104,192,0,297,192,104,1,0,0,296,2,Revisionsfirmaet Peder Holt
+45000370,Agillix Fmba,295,0,0,0,295,0,295,295,0,0,0,0,295,9,Agillix Fmba
+16645699,Revisionsfirmaet Axel Gram,295,0,0,90,205,0,295,205,90,0,0,0,295,3,Revisionsfirmaet Axel Gram
+76893713,ReviVision,294,12,0,44,238,0,294,238,44,12,0,0,282,4,ReviVision
+28320124,Christensen & Kjær,294,40,3,72,179,0,293,179,72,39,3,1,251,2,Christensen & Kjær
+28842562,Barrett revisionsanpartsselskab,293,9,0,13,271,0,293,271,13,9,0,0,284,4,Barrett revisionsanpartsselskab
+44775530,Revision 360 Statsautoriseret Revisionsinteressentskab,291,55,0,54,182,0,290,182,54,54,0,1,236,2,Revision 360 Statsautoriseret Revisionsinteressentskab
+29619670,Willads & Vibe-Hastrup,287,8,0,80,199,0,287,199,80,8,0,0,279,4,Willads & Vibe-Hastrup
+26659817,Revisionsfirmaet Per Kronborg,286,44,0,158,84,0,286,84,158,44,0,0,242,1,Revisionsfirmaet Per Kronborg
+39065797,Midt Revision,282,0,0,0,282,0,282,282,0,0,0,0,282,1,Midt Revision
+17610430,GBH Revision & Rådgivning,280,10,3,54,213,0,280,213,54,10,3,0,267,4,GBH Revision & Rådgivning
+26593093,Revisorhuset,278,0,0,67,211,0,278,211,67,0,0,0,278,4,Revisorhuset
+32697674,Revisionsfirmaet Seiersen Revision,278,9,0,40,229,0,278,229,40,9,0,0,269,1,Revisionsfirmaet Seiersen Revision
+19952193,Revisorerne i Skals,277,9,0,43,225,0,277,225,43,9,0,0,268,3,Revisorerne i Skals
+27619096,Kreston JC,276,45,0,55,176,0,274,176,55,43,0,2,231,2,Kreston JC
+32291090,Revice,273,6,0,63,204,0,269,204,63,2,0,4,267,2,Revice
+34622310,V & CO,266,25,0,89,152,0,266,152,89,25,0,0,241,2,V & CO
+35407359,Din Revisor,264,0,1,46,217,0,264,217,46,0,1,0,263,4,Din Revisor
+25510461,Sædding Revision,263,0,0,0,263,0,263,263,0,0,0,0,263,2,Sædding Revision
+39886871,Verum Cura,261,25,0,74,162,0,261,162,74,25,0,0,236,2,"Verum Cura + Verum Cura, Godkendt Revisionsanpartsselskab"
+44401231,REVIFJORD Godkendt Revisionspartnerselskab,260,1,0,51,208,0,260,208,51,1,0,0,259,2,REVIFJORD Godkendt Revisionspartnerselskab
+27433863,Revision Vadestedet,258,34,7,66,151,0,256,151,65,33,7,2,216,5,Revision Vadestedet
+30905652,Ib Rohde,258,25,0,36,197,0,258,197,36,25,0,0,233,2,Ib Rohde
+38695916,N.G. Christensen Statsautoriseret Revisionsanpartsselskab,257,2,0,117,137,1,256,137,117,2,0,0,254,2,N.G. Christensen Statsautoriseret Revisionsanpartsselskab
+34213798,Advisor-Revision,256,59,1,0,196,0,256,196,0,59,1,0,196,1,Advisor-Revision
+32671594,Bjørnlaursen,256,58,0,16,182,0,255,182,16,57,0,1,198,2,Bjørnlaursen
+27428843,Sagro,256,0,0,128,128,0,256,128,128,0,0,0,256,12,Sagro
+33150482,MBA Statsautoriseret Revisionsanpartsselskab,245,49,1,38,157,0,245,157,38,49,1,0,195,1,MBA Statsautoriseret Revisionsanpartsselskab
+25172795,Dansk Revision Skive,245,14,0,81,150,0,242,150,81,11,0,3,231,3,Dansk Revision Skive
+31501741,Revisionsfirmaet Ole Vestergaard,244,79,0,26,139,0,242,139,26,77,0,2,165,4,Revisionsfirmaet Ole Vestergaard
+29618038,Center Revision Kjellerup,243,13,0,62,168,0,240,168,62,10,0,3,230,2,Center Revision Kjellerup
+43196863,BG Statsautoriserede revisorer ApS,242,17,0,50,175,0,242,175,50,17,0,0,225,2,BG Statsautoriserede revisorer ApS
+33088205,MunkStrunge,241,0,0,71,170,0,241,170,71,0,0,0,241,2,MunkStrunge
+32344720,Mer Revision,239,0,0,23,216,0,239,216,23,0,0,0,239,2,Mer Revision
+24256995,Haamann A/S,237,36,1,40,160,0,232,160,40,31,1,5,200,3,Haamann A/S + Haamann Statsautoriseret Revisionspartnerselskab
+87948412,Revida,236,7,4,41,184,0,236,184,41,7,4,0,225,2,Revida
+19674193,DSH-Revision,236,7,0,64,163,2,231,163,64,4,0,3,227,2,DSH-Revision
+19154408,Krogh & Thomsen,235,2,0,101,132,0,235,132,101,2,0,0,233,2,Krogh & Thomsen
+31929342,Multi Revision,234,3,0,42,189,0,232,189,42,1,0,2,231,1,Multi Revision
+21631930,"Dueholm & Partnere, Godkendt Revisionshus",233,34,0,41,158,0,233,158,41,34,0,0,199,2,"Dueholm & Partnere, Godkendt Revisionshus"
+32160565,Agenda Revision,230,17,0,68,145,0,225,145,68,12,0,5,213,4,Agenda Revision
+39886227,Talmennesker,230,12,0,47,171,0,230,171,47,12,0,0,218,2,Talmennesker
+33357966,Attiri,228,5,0,49,174,0,228,174,49,5,0,0,223,2,Attiri
+15618175,Compu Revision,227,0,1,83,143,0,227,143,83,0,1,0,226,1,Compu Revision
+14788107,Aktiv Revision Silkeborg,226,7,0,51,168,0,225,168,51,6,0,1,219,2,Aktiv Revision Silkeborg
+45016501,Din Revisor Svaneke ApS Godkendte revisorer,225,12,0,51,162,0,225,162,51,12,0,0,213,1,Din Revisor Svaneke ApS Statsautoriserede revisorer
+42936847,APEX Statsautoriserede revisorer ApS,224,5,0,81,138,0,224,138,81,5,0,0,219,1,APEX Statsautoriserede revisorer ApS
+37596272,Revisionsfirmaet KRH,219,0,1,26,192,0,219,192,26,0,1,0,218,1,Revisionsfirmaet KRH + Revisionsfirmaet KRH ApS
+10019699,Danrevi Løgstør,218,5,0,60,153,0,218,153,60,5,0,0,213,3,Danrevi Løgstør
+37821055,Lindeberg Storm Fischer,217,84,2,8,123,0,217,123,8,84,2,0,131,2,Lindeberg Storm Fischer
+21447587,FER Fyns Erhvervsrevision,217,12,1,54,150,0,214,150,54,9,1,3,204,3,FER Fyns Erhvervsrevision
+41762667,"Grønlands Revision A/S, statsautoriserede revisorer",213,69,0,61,82,1,197,82,61,54,0,15,143,5,"Grønlands Revision A/S, statsautoriserede revisorer + Grønlands Revision Godkendt Revisionspartnerselskab"
+35679154,Revisorhuset Hinnerup,207,1,1,58,147,0,207,147,58,1,1,0,205,2,Revisorhuset Hinnerup
+39751445,Consens,206,11,0,75,120,0,206,120,75,11,0,0,195,2,Consens
+35827943,Klar Revision,203,8,0,25,170,0,203,170,25,8,0,0,195,2,Klar Revision
+36412143,E-Revisor.com,201,1,0,29,171,0,201,171,29,1,0,0,200,2,E-Revisor.com
+40844899,Solveo Statsautoriseret Revisionspartnerselskab,200,0,0,54,146,0,200,146,54,0,0,0,200,3,Solveo Statsautoriseret Revisionspartnerselskab
+32789153,Leth & Partnere,198,12,0,18,168,0,198,168,18,12,0,0,186,2,Leth & Partnere
+35235892,Nem Revisor ApS,197,12,0,96,87,2,197,87,96,12,0,0,183,2,Nem Revisor ApS
+38980149,Regnskabsfabrikanten,196,0,0,43,152,1,196,152,43,0,0,0,195,2,Regnskabsfabrikanten
+26812372,Revisioncentret Tønder/Skærbæk,195,17,0,44,134,0,195,134,44,17,0,0,178,2,Revisioncentret Tønder/Skærbæk
+31782139,CKF Revision ApS Godkendt revisionsfirma,193,0,0,52,141,0,193,141,52,0,0,0,193,1,CKF Revision ApS Godkendt revisionsfirma
+14795707,Dansk Revision Brønderslev,191,10,0,25,156,0,191,156,25,10,0,0,181,1,Dansk Revision Brønderslev
+14327746,BJ Regnskab,190,25,0,55,108,2,188,108,55,24,0,1,163,2,BJ Regnskab
+28902867,Revision- og Regnskabskontoret,189,38,0,22,129,0,188,129,22,37,0,1,151,2,Revision- og Regnskabskontoret
+32469345,Schyberg Lykke Registreret Revisionsanpartsselskab,188,3,0,43,142,0,188,142,43,3,0,0,185,2,Schyberg Lykke Registreret Revisionsanpartsselskab
+31061741,Mazars Statsautoriseret Revisionspartnerselskab,188,111,0,27,43,7,154,43,27,84,0,27,70,7,Mazars Statsautoriseret Revisionspartnerselskab
+39164388,Helledie Revision,186,14,0,26,146,0,186,146,26,14,0,0,172,1,Helledie Revision
+11790577,Kappelskov Revision,185,7,0,36,142,0,185,142,36,7,0,0,178,3,Kappelskov Revision
+35071199,Revisorgruppen v/Eva Kristensen og Lars Gotfredsen,182,19,1,27,135,0,182,135,27,19,1,0,162,3,Revisorgruppen v/Eva Kristensen og Lars Gotfredsen
+29168504,TT REVISION,181,7,0,63,111,0,179,111,63,5,0,2,174,4,TT REVISION
+31885191,Bjarke Kjær,181,2,0,33,146,0,181,146,33,2,0,0,179,1,Bjarke Kjær
+41657332,Bro Søndergaard Statsautoriseret Revisionsanpartsselskab,180,34,9,57,80,0,179,80,57,33,9,1,137,1,Bro Søndergaard Statsautoriseret Revisionsanpartsselskab
+37029815,Revidata,179,42,0,26,111,0,177,111,26,40,0,2,137,1,Revidata
+54472455,Revisor Finn Erik Rasmussen,177,0,0,0,177,0,177,177,0,0,0,0,177,1,Revisor Finn Erik Rasmussen
+38140515,HJ Revision ApS,177,0,0,0,177,0,177,177,0,0,0,0,177,1,HJ Revision ApS
+44984326,Slebo Revision Statsautoriseret Revisionsanpartsselskab,175,12,1,81,79,2,172,79,81,11,1,1,160,2,Slebo Revision Statsautoriseret Revisionsanpartsselskab
+18587246,RevisorGruppen v/Lilly Jeppesen,174,11,0,48,115,0,174,115,48,11,0,0,163,1,RevisorGruppen v/Lilly Jeppesen
+37858498,Bornholms Revision,173,38,0,69,66,0,165,66,69,30,0,8,135,3,Bornholms Revision
+36493372,RevisionsCentrum,173,0,0,22,151,0,173,151,22,0,0,0,173,1,RevisionsCentrum
+68497817,Møller-Jensen Statsautoriseret Revisionsanpartsselskab,171,5,0,54,112,0,170,112,54,4,0,1,166,1,Møller-Jensen Statsautoriseret Revisionsanpartsselskab
+27335616,Revisorerne Bastian og Krause,170,26,0,20,124,0,170,124,20,26,0,0,144,1,Revisorerne Bastian og Krause
+17169483,Revsbæk Revision,170,3,2,42,116,7,163,116,42,3,2,0,158,1,Revsbæk Revision
+26632315,Intension,165,1,0,37,127,0,164,126,37,1,0,1,163,2,Intension
+41109483,Abrahamsen Revision,164,3,0,27,134,0,164,134,27,3,0,0,161,1,Abrahamsen Revision
+30869052,velas I/S,164,0,1,53,110,0,164,110,53,0,1,0,163,6,velas I/S
+21356190,Prima Revision,162,2,0,20,140,0,162,140,20,2,0,0,160,2,Prima Revision
+45086607,eRevision Statsautoriseret Revisionsanpartsselskab,162,0,0,16,146,0,162,146,16,0,0,0,162,1,eRevision Statsautoriseret Revisionsanpartsselskab
+21111511,Kolding Herreds Landbrugsforening,162,11,0,30,121,0,161,121,30,10,0,1,151,4,Kolding Herreds Landbrugsforening
+10352231,Revisionscentret v/Jesper Thygesen,161,0,0,0,161,0,161,161,0,0,0,0,161,1,Revisionscentret v/Jesper Thygesen
+34045607,Revisorkompagniet,161,14,2,60,85,0,158,85,60,11,2,3,145,2,Revisorkompagniet
+20415991,J H Regnskab v/Jan Ekmann Hørsel,160,13,0,6,141,0,160,141,6,13,0,0,147,1,J H Regnskab v/Jan Ekmann Hørsel
+30613791,Revisionsfirmaet Ivan Kjeldsen,159,21,1,13,124,0,159,124,13,21,1,0,137,1,Revisionsfirmaet Ivan Kjeldsen
+30719131,Landbrugsrådgivning Syd,159,0,0,0,159,0,159,159,0,0,0,0,159,3,Landbrugsrådgivning Syd
+29538565,Statsaut. Revisor J Løbner,158,17,0,11,130,0,158,130,11,17,0,0,141,1,Statsaut. Revisor J Løbner
+20142146,Lerfeldt Revision,155,0,0,3,152,0,155,152,3,0,0,0,155,1,Lerfeldt Revision
+25735560,Revisionsfirmaet Woiremose & Partner,154,0,0,0,154,0,154,154,0,0,0,0,154,3,Revisionsfirmaet Woiremose & Partner
+40052992,"JHL Revision, Esbjerg",154,0,0,49,105,0,154,105,49,0,0,0,154,2,"JHL Revision, Esbjerg"
+16347299,ReviNord,153,0,0,28,124,1,152,124,28,0,0,0,152,1,ReviNord
+16953199,Revisionsfirmaet Christian Danielsen,152,8,0,34,107,3,150,107,34,8,0,0,141,2,Revisionsfirmaet Christian Danielsen
+14569391,DM Revision,152,0,0,33,119,0,152,119,33,0,0,0,152,1,DM Revision
+43573810,Jysk Revision og Rådgivning ApS,151,2,0,33,116,0,151,116,33,2,0,0,149,2,Jysk Revision og Rådgivning ApS
+13254192,Revisionsfirmaet Gutfelt,149,5,0,62,82,0,149,82,62,5,0,0,144,4,Revisionsfirmaet Gutfelt
+33649452,Harboe og B.,148,0,0,18,130,0,148,130,18,0,0,0,148,1,Harboe og B.
+98727558,Revisionsfirmaet Tommy Larsen,148,2,0,13,133,0,148,133,13,2,0,0,146,1,Revisionsfirmaet Tommy Larsen
+26279534,Revisionscentret 5R Esbjerg,148,1,0,35,112,0,148,112,35,1,0,0,147,1,Revisionscentret 5R Esbjerg
+35383646,Revisionsfirmaet Jan Kristensen,147,12,0,15,120,0,147,120,15,12,0,0,135,2,Revisionsfirmaet Jan Kristensen
+26306175,FKS Revision,147,0,0,17,130,0,147,130,17,0,0,0,147,1,FKS Revision
+20452897,Plus Revision,146,3,0,32,111,0,146,111,32,3,0,0,143,1,Plus Revision
+28108303,Gilfelt Revision,145,16,0,33,96,0,145,96,33,16,0,0,129,2,Gilfelt Revision
+28309724,Jørn m. Schmidt Statsautoriseret Revisionsanpartsselskab,145,20,0,24,101,0,134,101,24,9,0,11,125,2,Jørn m. Schmidt Statsautoriseret Revisionsanpartsselskab
+14119507,MP Revision,144,1,0,72,71,0,143,71,71,1,0,1,142,1,MP Revision
+54471556,Revisionsfirmaet Jørgen Larsen,142,11,0,32,98,1,141,98,32,11,0,0,130,2,Revisionsfirmaet Jørgen Larsen + Revisionsfirmaet Jørgen Larsen I/S
+28966571,RN - Revision Nordjylland,141,0,0,0,141,0,141,141,0,0,0,0,141,1,RN - Revision Nordjylland
+26273110,Erhvervsrevisorerne i Vejle,140,12,1,29,98,0,140,98,29,12,1,0,127,1,Erhvervsrevisorerne i Vejle
+25076079,Vestjysk Landboforening,140,0,0,0,140,0,140,140,0,0,0,0,140,3,Vestjysk Landboforening
+14262172,Vedbæk Revision,139,5,0,9,125,0,139,125,9,5,0,0,134,2,Vedbæk Revision
+30546792,Nyborg Erhvervsrevision,138,4,0,25,109,0,138,109,25,4,0,0,134,1,Nyborg Erhvervsrevision
+39702215,ABL Revision,136,0,0,0,136,0,136,136,0,0,0,0,136,2,ABL Revision
+37903949,2A Revision,126,0,0,0,126,0,126,126,0,0,0,0,126,1,2A Revision
+12322143,Plan Revision v/Per Petersen,123,0,0,23,100,0,123,100,23,0,0,0,123,2,Plan Revision v/Per Petersen
+25273621,Kongevejens Revision,122,14,0,24,84,0,122,84,24,14,0,0,108,2,Kongevejens Revision
+43661434,TANGSTAD - STATSAUTORISERET REVISIONSANPARTSSELSKAB,121,0,0,8,113,0,121,113,8,0,0,0,121,1,TANGSTAD - STATSAUTORISERET REVISIONSANPARTSSELSKAB
+41503610,Lemvigegnens Landboforening,121,1,0,18,102,0,121,102,18,1,0,0,120,2,Lemvigegnens Landboforening
+31478383,Hartvig & Aalund,119,16,0,1,102,0,119,102,1,16,0,0,103,3,Hartvig & Aalund + Revisionsfirmaet Hartvig & Aalund
+27492487,RND Partner,118,0,0,28,90,0,118,90,28,0,0,0,118,3,RND Partner
+15270144,Revisionsfirmaet Flemming Hansen,117,55,0,6,55,1,115,55,6,53,0,2,61,2,Revisionsfirmaet Flemming Hansen
+72430816,Revfirma Georg Mathiasen,116,55,1,7,48,5,111,48,7,55,1,0,55,1,Revfirma Georg Mathiasen
+28483902,Asla Revision,115,0,0,31,84,0,115,84,31,0,0,0,115,1,Asla Revision
+33074441,Damgaard Revision,115,15,0,7,93,0,115,93,7,15,0,0,100,2,Damgaard Revision
+15396105,Revisionsfirmaet Erik Hultquist,114,4,0,10,100,0,114,100,10,4,0,0,110,1,Revisionsfirmaet Erik Hultquist
+34330042,CURA Revision,114,0,0,14,100,0,114,100,14,0,0,0,114,1,CURA Revision
+41998407,Nexø Revision A/S,112,0,0,17,95,0,112,95,17,0,0,0,112,2,Nexø Revision A/S
+30318269,MN Revision og Rådgivning,111,0,0,0,111,0,111,111,0,0,0,0,111,1,MN Revision og Rådgivning
+36071281,Ostenfeld Revision,109,1,1,18,89,0,109,89,18,1,1,0,107,2,Ostenfeld Revision
+28136196,Revisionsfirmaet Mentor,106,1,0,15,90,0,106,90,15,1,0,0,105,1,Revisionsfirmaet Mentor
+31742781,Agerbor Gruppen,106,1,0,17,88,0,106,88,17,1,0,0,105,1,Agerbor Gruppen
+43325000,Ellebæk Revision godkendt revisionsanpartsselskab,105,15,0,21,69,0,105,69,21,15,0,0,90,1,Ellebæk Revision godkendt revisionsanpartsselskab
+41552204,DanRevision Statsautoriseret Revisionsanpartsselskab,105,11,0,35,59,0,105,59,35,11,0,0,94,2,DanRevision Statsautoriseret Revisionsanpartsselskab
+35238050,Momentum Revision,103,13,0,1,89,0,103,89,1,13,0,0,90,0,Momentum Revision
+32563627,Gronemanns,103,0,0,21,81,1,102,81,21,0,0,0,102,1,Gronemanns
+44535122,Andersen & Novakovic statsautoriseret revisionsanpartsselskab,103,1,0,10,92,0,103,92,10,1,0,0,102,1,Andersen & Novakovic statsautoriseret revisionsanpartsselskab
+38818724,Kvist Revision ApS,103,0,0,15,88,0,103,88,15,0,0,0,103,1,Kvist Revision ApS
+42825379,REVISION THY Registreret Revisionsanpartsselskab,103,7,0,18,78,0,103,78,18,7,0,0,96,1,REVISION THY Registreret Revisionsanpartsselskab
+14335102,Revisorgården i Odense,103,0,0,19,84,0,103,84,19,0,0,0,103,2,Revisorgården i Odense
+26454123,ARIES,101,25,0,23,53,0,100,53,23,24,0,1,76,1,ARIES
+41672625,"Bornhøft & Lindemann, Registreret Revisionsanpartsselskab",101,0,0,17,84,0,101,84,17,0,0,0,101,2,"Bornhøft & Lindemann, Registreret Revisionsanpartsselskab"
+39188678,Rödl & Partner Danmark,98,43,0,12,43,0,96,43,12,41,0,2,55,4,Rödl & Partner Danmark
+38225804,Krydsrevision,98,3,3,5,87,0,98,87,5,3,3,0,92,1,Krydsrevision
+35519432,Revisor-Team,97,0,0,0,97,0,97,97,0,0,0,0,97,1,Team Revision
+45395634,Juul & Blicher ApS,96,21,0,21,54,0,95,54,21,20,0,1,75,1,Juul & Blicher ApS
+46080041,LD&C Statsautoriseret Revisionsanpartsselskab,96,0,0,17,79,0,96,79,17,0,0,0,96,2,LD&C Statsautoriseret Revisionsanpartsselskab
+10686504,Revisionsfirmaet Evan Klarholt,95,0,0,0,95,0,95,95,0,0,0,0,95,1,Revisionsfirmaet Evan Klarholt
+37522945,PN Revision,94,22,1,14,57,0,94,57,14,22,1,0,71,1,PN Revision
+35891986,ECO Revision,94,0,0,0,94,0,94,94,0,0,0,0,94,1,ECO Revision
+18192195,Revisionsfimaet W. Bach Nørgaard,93,8,0,14,71,0,93,71,14,8,0,0,85,1,Revisionsfimaet W. Bach Nørgaard
+26730597,Revisto I/S,93,39,0,0,54,0,93,54,0,39,0,0,54,1,Revisto I/S
+17037307,Centrum Revision V/Kurt Håkonsson,91,28,0,10,53,0,91,53,10,28,0,0,63,1,Centrum Revision V/Kurt Håkonsson
+18216833,Realvision,91,7,0,9,75,0,91,75,9,7,0,0,84,1,Realvision
+71344517,Buch&Nørgaard,91,0,0,37,54,0,91,54,37,0,0,0,91,1,Buch&Nørgaard
+29529507,Schmidt Revision,91,2,1,9,79,0,91,79,9,2,1,0,88,2,Schmidt Revision
+76637415,Høffner Revision,91,0,0,13,78,0,91,78,13,0,0,0,91,1,Høffner Revision
+45328988,"Lorentzen & Partners, Statsautoriserede Revisorer ApS",90,7,0,31,52,0,90,52,31,7,0,0,83,2,"Lorentzen & Partners, Statsautoriserede Revisorer ApS"
+14759840,Aage & Povl Holm,87,6,0,4,77,0,87,77,4,6,0,0,81,1,Aage & Povl Holm
+32500145,THN Revision,87,4,2,31,50,0,87,50,31,4,2,0,81,2,THN Revision
+13737096,Revision Hatting,87,11,0,13,63,0,87,63,13,11,0,0,76,1,Revision Hatting
+33043163,ONreVISION,87,0,0,0,87,0,87,87,0,0,0,0,87,1,ONreVISION
+36908114,Revision Ryttergaarden,86,0,0,0,86,0,86,86,0,0,0,0,86,1,Revision Ryttergaarden
+31888026,Søhøjlandets revision,86,0,0,29,57,0,86,57,29,0,0,0,86,2,Søhøjlandets revision
+20835400,Østdansk Landboforening,85,0,0,0,85,0,85,85,0,0,0,0,85,4,Østdansk Landboforening
+20572043,Revisorhuset Halsnæs,83,0,2,16,65,0,83,65,16,0,2,0,81,2,Revisorhuset Halsnæs
+36909935,MTMLB,83,2,0,8,73,0,83,73,8,2,0,0,81,1,MTMLB
+88248228,Egon Pedersen Revision,81,13,0,15,51,2,78,51,15,10,0,3,66,2,Egon Pedersen Revision
+41835303,Nordisk Revision Godkendt Revisionsanpartsselskab,80,0,0,19,61,0,80,61,19,0,0,0,80,1,Nordisk Revision Godkendt Revisionsanpartsselskab
+30563670,Lejenregnskabschef.dk,79,0,0,0,79,0,79,79,0,0,0,0,79,1,Lejenregnskabschef.dk
+45150437,PRO REVISION STATSAUTORISERET ANPARTSSELSKAB,77,2,0,11,64,0,77,64,11,2,0,0,75,2,PRO REVISION STATSAUTORISERET ANPARTSSELSKAB
+21860506,DVU,76,33,0,0,43,0,76,43,0,33,0,0,43,1,DVU
+10110807,Vendelbo,76,0,0,20,56,0,76,56,20,0,0,0,76,1,Vendelbo
+26668840,Andersen og Partnere,75,3,0,0,72,0,75,72,0,3,0,0,72,1,Andersen og Partnere
+21164577,ReviØst,75,2,0,17,56,0,75,56,17,2,0,0,73,1,ReviØst
+33225172,Lars P Revision,75,0,0,16,59,0,75,59,16,0,0,0,75,1,Lars P Revision
+30348184,Registreret Revisionsvirksomhed Nordskov Revision,74,0,0,0,74,0,74,74,0,0,0,0,74,1,Registreret Revisionsvirksomhed Nordskov Revision
+45852652,Tetras Statsautoriseret Revisionsanpartsselskab,74,6,0,12,56,0,74,56,12,6,0,0,68,2,Tetras Statsautoriseret Revisionsanpartsselskab
+29404992,HE Revision,73,0,1,18,54,0,73,54,18,0,1,0,72,1,HE Revision
+17128973,Unik-Revision,73,2,0,22,49,0,73,49,22,2,0,0,71,1,Unik-Revision
+18743396,Revisionsfirmaet Peder Albertsen,71,13,0,1,57,0,71,57,1,13,0,0,58,2,Revisionsfirmaet Peder Albertsen
+12155662,Revisionsfirmaet Ole Hansen,70,6,0,45,19,0,70,19,45,6,0,0,64,2,"Revisionsfirmaet Ole Hansen, Statsautoriseret Revisionsanpartsselskab"
+21052302,Revisionsfirmaet Peter Berg,70,6,0,24,40,0,70,40,24,6,0,0,64,1,Revisionsfirmaet Peter Berg
+19706974,Fynbo Revision,69,0,0,6,63,0,69,63,6,0,0,0,69,1,Fynbo Revision
+42044040,Sydvestjysk Revision ApS Godkendt Revisionsselskab,69,5,0,18,46,0,69,46,18,5,0,0,64,1,Sydvestjysk Revision ApS Godkendt Revisionsselskab
+19941442,Nordmors Revision v/Peter Djernes,69,10,0,4,55,0,69,55,4,10,0,0,59,1,Nordmors Revision v/Peter Djernes
+18619407,Revisionsfirmaet Jørgen Gilling,68,1,0,0,67,0,68,67,0,1,0,0,67,1,Revisionsfirmaet Jørgen Gilling
+18288389,Revisionsfirmaet Kirch Andersen,68,0,0,7,61,0,68,61,7,0,0,0,68,1,Revisionsfirmaet Kirch Andersen
+13179638,REVISIONSKONTORET AF 2004 ApS,66,0,0,0,66,0,66,66,0,0,0,0,66,2,REVISIONSKONTORET AF 2004 ApS
+16145084,Revision Nord,65,9,0,15,41,0,63,41,15,7,0,2,56,2,Revision Nord
+43629379,Nørgaard Schultz Godkendt Revisionsanpartsselskab,65,0,0,0,65,0,65,65,0,0,0,0,65,1,Nørgaard Schultz Godkendt Revisionsanpartsselskab
+30817222,Kolding Erhvervsservice,65,0,0,0,65,0,65,65,0,0,0,0,65,1,Kolding Erhvervsservice
+26624479,AB-Revision,64,0,0,1,63,0,64,63,1,0,0,0,64,1,AB-Revision
+16933503,Johnny Hansen Registreret Revisionsanpartsselskab,63,0,0,0,63,0,63,63,0,0,0,0,63,1,Johnny Hansen Registreret Revisionsanpartsselskab
+20935790,2TalRevision v/Jan Christensen,63,0,0,23,40,0,63,40,23,0,0,0,63,1,2TalRevision v/Jan Christensen
+10632684,Revision 1-2-3,63,14,0,3,46,0,63,46,3,14,0,0,49,1,Revision 1-2-3
+14135308,Registreret Revisionsanpartsselskab Flemming Juhl Nielsen,63,0,0,14,49,0,63,49,14,0,0,0,63,1,Registreret Revisionsanpartsselskab Flemming Juhl Nielsen
+16609331,Revisionskontoret i Faxe,62,9,0,8,45,0,62,45,8,9,0,0,53,2,Revisionskontoret i Faxe
+26063655,Tranberg,62,4,0,8,50,0,62,50,8,4,0,0,58,3,Tranberg
+42793744,2+ Revision Grønland Statsautoriserede Revisorer ApS,61,6,0,16,39,0,61,39,16,6,0,0,55,2,2+ Revision Grønland Statsautoriserede Revisorer ApS
+15659777,Revisionsfirmaet Svend Dørffer,61,9,0,2,50,0,61,50,2,9,0,0,52,1,Revisionsfirmaet Svend Dørffer
+40032622,MS Revision ApS,61,3,2,11,44,1,57,44,11,0,2,3,55,1,MS Revision ApS
+91259850,Revision 1,61,0,0,0,61,0,61,61,0,0,0,0,61,1,Revision 1
+44405016,Alt i Regnskab & Rådgivning ApS,61,0,0,0,61,0,61,61,0,0,0,0,61,1,Alt i Regnskab & Rådgivning ApS
+76475512,Gundsø Revision,60,18,0,42,0,0,59,0,42,17,0,1,42,1,Gundsø Revision
+36065346,Revisionsfirmaet Kim Jacobsen,60,1,0,6,53,0,60,53,6,1,0,0,59,1,Revisionsfirmaet Kim Jacobsen
+61676228,Patriotisk Selskab,59,3,0,8,48,0,59,48,8,3,0,0,56,2,Patriotisk Selskab
+39473321,"DM Revisionsfirma af 1993, Registreret Revisionsanpartsselskab",59,0,0,15,44,0,59,44,15,0,0,0,59,1,"DM Revisionsfirma af 1993, Registreret Revisionsanpartsselskab"
+14913572,Registreret Revisor Per Obling,59,0,0,0,59,0,59,59,0,0,0,0,59,1,Registreret Revisor Per Obling
+52992753,Greve Strands Revision,59,1,0,3,55,0,59,55,3,1,0,0,58,1,Greve Strands Revision
+27910165,Egtved Revisionskontor,59,2,0,6,51,0,59,51,6,2,0,0,57,2,Egtved Revisionskontor
+12707789,Revisionsfirmaet Revicon,59,0,0,0,59,0,59,59,0,0,0,0,59,1,Revisionsfirmaet Revicon
+35868828,Erhvervs Consult ApS,58,9,0,0,49,0,58,49,0,9,0,0,49,1,Erhvervs Consult ApS
+10290430,PKF Borup ApS,57,0,0,0,57,0,57,57,0,0,0,0,57,1,PKF Borup ApS
+36696486,Revisionsfirmaet Lars Bastholm,57,3,0,29,25,0,57,25,29,3,0,0,54,1,Revisionsfirmaet Lars Bastholm
+19713830,Djurs Revision,57,0,0,15,42,0,57,42,15,0,0,0,57,1,Djurs Revision
+39846144,Revisionsfirmaet Søren Askly,56,0,0,0,56,0,56,56,0,0,0,0,56,1,Revisionsfirmaet Søren Askly
+30201795,TK Revision,56,1,0,1,54,0,56,54,1,1,0,0,55,1,TK Revision
+21706833,RB Revision,56,0,0,1,55,0,56,55,1,0,0,0,56,2,RB Revision
+29033609,RugaardRevision,56,37,0,0,19,0,56,19,0,37,0,0,19,1,RugaardRevision
+46115422,"Kjeldsen Revision, Statsautoriseret Revisionsanpartsselskab",55,0,0,14,41,0,55,41,14,0,0,0,55,2,"Kjeldsen Revision, Statsautoriseret Revisionsanpartsselskab"
+44396033,Din Revisor Amager ApS Godkendte revisorer,54,3,0,10,41,0,54,41,10,3,0,0,51,2,Din Revisor Amager ApS Godkendte revisorer
+28284160,LJ Revision,54,0,0,0,54,0,54,54,0,0,0,0,54,2,LJ Revision
+31165571,Revisionsfirmaet Torlund,53,2,0,14,37,0,53,37,14,2,0,0,51,1,Revisionsfirmaet Torlund
+78682418,Revisionsfirmaet Arne Bang,53,21,0,0,32,0,53,32,0,21,0,0,32,1,Revisionsfirmaet Arne Bang
+33164076,R3 Revision,53,0,0,7,46,0,53,46,7,0,0,0,53,2,R3 Revision
+35143114,Revisionsfirmaet Hanne og Erling Lund,53,2,0,8,43,0,53,43,8,2,0,0,51,1,Revisionsfirmaet Hanne og Erling Lund
+28970641,Luni Revisions Anpartsselskab,52,0,0,0,52,0,52,52,0,0,0,0,52,1,Luni Revisions Anpartsselskab
+32090516,Thrane Consult,52,0,0,0,52,0,52,52,0,0,0,0,52,1,Thrane Consult
+44742969,Bisbjerg & Partners P/S,52,2,0,5,45,0,52,45,5,2,0,0,50,1,Bisbjerg & Partners P/S
+38248677,Lindholm Revision,51,0,0,5,46,0,51,46,5,0,0,0,51,2,Lindholm Revision
+15897473,CDO Revison,50,0,0,0,50,0,50,50,0,0,0,0,50,1,CDO Revison
+17275100,Revision Horsens,50,0,0,0,50,0,50,50,0,0,0,0,50,1,Revision Horsens
+25187091,GE Revision & Rådgivning,49,3,0,7,39,0,49,39,7,3,0,0,46,1,GE Revision & Rådgivning
+42216011,Betternumbers P/S,49,0,0,6,43,0,49,43,6,0,0,0,49,3,Betternumbers P/S
+27616690,Broernes Revision,49,0,0,0,49,0,49,49,0,0,0,0,49,1,Broernes Revision
+25859138,S.J. Revision,48,0,0,4,44,0,48,44,4,0,0,0,48,1,S.J. Revision
+12838840,Toldbodens Revision & Regnskab,48,4,0,0,44,0,48,44,0,4,0,0,44,2,Toldbodens Revision & Regnskab
+34894949,Steen Koch Registrerede revisorer,48,0,1,6,41,0,48,41,6,0,1,0,47,1,Steen Koch Registrerede revisorer
+40375260,MBL Revision,47,0,0,13,34,0,47,34,13,0,0,0,47,1,MBL Revision
+33160364,CTM Revision,47,0,0,0,47,0,47,47,0,0,0,0,47,2,CTM Revision
+37054933,RevisionsHuset-Viborg v/Mogens Bech,47,1,0,16,30,0,47,30,16,1,0,0,46,1,RevisionsHuset-Viborg v/Mogens Bech
+25685229,Lægers & Tandlægers Revisionskontor,47,0,0,0,47,0,47,47,0,0,0,0,47,1,Lægers & Tandlægers Revisionskontor
+15279680,PM Revision,46,0,0,1,45,0,46,45,1,0,0,0,46,1,PM Revision
+75076118,Grønborg Revision,46,1,0,0,45,0,46,45,0,1,0,0,45,1,Grønborg Revision
+30351002,Kirkhoff,46,3,0,5,38,0,45,38,5,2,0,1,43,1,Kirkhoff
+27607764,AA revisionsanpartsselskabet,46,0,0,0,46,0,46,46,0,0,0,0,46,1,AA revisionsanpartsselskabet
+25979907,JBC Revision v/Jørgen Christensen,45,3,1,21,20,0,45,20,21,3,1,0,41,1,JBC Revision v/Jørgen Christensen
+70666758,Revisor/Lasse Larsen,45,0,0,0,45,0,45,45,0,0,0,0,45,1,Revisor/Lasse Larsen
+26291593,Kompas Revision,43,0,0,11,32,0,43,32,11,0,0,0,43,1,Kompas Revision
+69885055,Revisionskontoret,43,1,0,3,39,0,43,39,3,1,0,0,42,1,Revisionskontoret
+32942490,T. Rasmussen Revision,43,21,0,0,22,0,43,22,0,21,0,0,22,2,T. Rasmussen Revision
+12576986,F I Revision,43,2,0,0,41,0,43,41,0,2,0,0,41,1,F I Revision
+28505159,Revisionsanpartsselskabet Jens Carl Nielsen,43,0,0,6,37,0,43,37,6,0,0,0,43,1,Revisionsanpartsselskabet Jens Carl Nielsen
+37183024,Regnskabs- og Revisionskontoret for Storkøbenhavn,42,0,6,2,34,0,42,34,2,0,6,0,36,1,Regnskabs- og Revisionskontoret for Storkøbenhavn
+27489559,AHJ Revision,42,0,0,0,42,0,42,42,0,0,0,0,42,1,AHJ Revision
+29839328,NU-REVI,42,8,0,0,34,0,42,34,0,8,0,0,34,1,NU-REVI
+26310172,TALSTABLEREN REGISTRERET REVISIONSANPARTSSELSKAB,42,0,0,15,27,0,42,27,15,0,0,0,42,2,TALSTABLEREN REGISTRERET REVISIONSANPARTSSELSKAB
+11524192,Nils Knudsen NK - REVI,41,0,0,0,41,0,41,41,0,0,0,0,41,1,Nils Knudsen NK - REVI
+31934354,Revirk Rådgivning,40,0,0,0,40,0,40,40,0,0,0,0,40,1,Revirk Rådgivning + Revirk Rådgivning Statsautoriseret revisionsfirma
+11901840,Revisionvest,40,1,0,5,34,0,40,34,5,1,0,0,39,1,Revisionvest
+16557390,Bæk Revision,40,0,0,1,39,0,40,39,1,0,0,0,40,1,Bæk Revision
+67425618,Mogens Kibsgaard. Statsautoriseretrevisionsanpartsselskab,39,14,0,10,15,0,38,15,10,13,0,1,25,2,Mogens Kibsgaard. Statsautoriseretrevisionsanpartsselskab
+35394206,Skatteinform,39,6,0,0,33,0,39,33,0,6,0,0,33,1,Skatteinform
+91112353,Statsautoriseret Revisor Leif G. Rasmussen,39,0,0,0,39,0,39,39,0,0,0,0,39,1,Statsautoriseret Revisor Leif G. Rasmussen
+17294431,Kobstrup,38,0,0,0,38,0,38,38,0,0,0,0,38,1,Kobstrup
+17022970,L.A. Revision,38,0,0,3,35,0,38,35,3,0,0,0,38,1,L.A. Revision
+10623685,Revisionsfirmaet Lund & Christiansen,38,7,0,6,25,0,38,25,6,7,0,0,31,2,Revisionsfirmaet Lund & Christiansen
+35316957,Kreston AKC,37,4,0,3,30,0,37,30,3,4,0,0,33,1,Kreston AKC
+16342718,Landwirtschaftlicher Hauptverein für Nordschleswig,37,0,0,5,32,0,37,32,5,0,0,0,37,2,Landwirtschaftlicher Hauptverein für Nordschleswig
+15553782,Multi Revision Ballerup,36,0,0,0,36,0,36,36,0,0,0,0,36,1,Multi Revision Ballerup
+25477367,Elite-Revision,36,0,0,9,27,0,36,27,9,0,0,0,36,1,Elite-Revision
+28053665,Revision Køge,35,0,0,8,27,0,35,27,8,0,0,0,35,1,Revision Køge
+28126131,Capture,35,1,0,3,31,0,35,31,3,1,0,0,34,1,Capture
+15681578,Registreret revisionsfirma Torben Andersen,35,0,0,4,31,0,35,31,4,0,0,0,35,1,Registreret revisionsfirma Torben Andersen
+14548599,Centrum Revision v/ Henrik Søeborg,34,2,0,2,30,0,34,30,2,2,0,0,32,1,Centrum Revision v/ Henrik Søeborg
+36479760,DR Revision,34,1,1,8,23,1,34,23,8,1,1,0,31,2,DR Revision
+21849588,Revisionsselskabet Mougaard,34,0,0,0,34,0,34,34,0,0,0,0,34,2,Revisionsselskabet Mougaard
+83005815,Revisionsfirmaet Zinnsgade,33,0,0,0,33,0,33,33,0,0,0,0,33,1,Revisionsfirmaet Zinnsgade
+17578235,Bidstrup Revision,32,0,0,6,26,0,32,26,6,0,0,0,32,1,Bidstrup Revision
+28148585,PT af 27. juli 2004,32,1,0,5,26,0,32,26,5,1,0,0,31,1,PT af 27. juli 2004
+29747792,FN Revision,32,2,13,2,7,8,24,7,2,2,13,0,9,1,FN Revision
+10875781,"RevisionPlus, Grindsted",32,9,0,2,21,0,32,21,2,9,0,0,23,1,"RevisionPlus, Grindsted"
+30553535,Claus Carlsen,31,0,0,0,31,0,31,31,0,0,0,0,31,2,Claus Carlsen
+13672970,Revisionsfirma Bent Madsen,31,0,0,0,31,0,31,31,0,0,0,0,31,1,Revisionsfirma Bent Madsen
+16603473,Revisionskontoret i Asnæs,31,1,0,0,30,0,31,30,0,1,0,0,30,1,Revisionskontoret i Asnæs
+18738007,Revisionsfirmaet Jens Søndergaard,31,0,0,0,31,0,31,31,0,0,0,0,31,1,Revisionsfirmaet Jens Søndergaard
+44304635,Ødegaard Statsautoriseret Revisionsanpartsselskab,30,1,0,15,14,0,30,14,15,1,0,0,29,2,Ødegaard Statsautoriseret Revisionsanpartsselskab
+16147591,MQ Revision,30,0,0,0,30,0,30,30,0,0,0,0,30,1,MQ Revision
+86046717,Revisionsfirmaet Bendt Stendahl,30,0,0,0,30,0,30,30,0,0,0,0,30,1,Revisionsfirmaet Bendt Stendahl
+11328881,Revisionsfirmaet Ole Dahl,30,0,0,0,30,0,30,30,0,0,0,0,30,1,Revisionsfirmaet Ole Dahl
+11211585,Toprevi,29,0,0,0,29,0,29,29,0,0,0,0,29,1,Toprevi
+32821030,Statsautoriseret revisor Ole Tønnesen,29,12,0,0,17,0,29,17,0,12,0,0,17,2,Statsautoriseret revisor Ole Tønnesen
+14604448,CBK Revision,29,24,0,0,5,0,27,5,0,22,0,2,5,1,CBK Revision
+33684096,Verifica,29,0,0,0,29,0,29,29,0,0,0,0,29,1,Verifica
+29573360,Kerteminde Revision v/Charlotte Elwain,28,0,0,0,28,0,28,28,0,0,0,0,28,1,Kerteminde Revision v/Charlotte Elwain
+46151607,HR Revision ApS,27,11,0,16,0,0,27,0,16,11,0,0,16,2,HR Revision ApS
+30276019,Q-Revision,27,0,0,3,24,0,27,24,3,0,0,0,27,1,Q-Revision
+27527027,Eybye Invest,27,0,0,0,27,0,27,27,0,0,0,0,27,1,Eybye Invest
+11303870,Langelinierevisionen,26,0,0,0,26,0,26,26,0,0,0,0,26,1,Langelinierevisionen
+31131928,Nørgaard Revision,26,0,0,0,26,0,26,26,0,0,0,0,26,1,Nørgaard Revision
+34901295,Torsten Rasmussen,26,0,0,0,26,0,26,26,0,0,0,0,26,1,Torsten Rasmussen
+14792074,"Rudersdal Revision, Registrerede revisorer",26,2,0,4,20,0,26,20,4,2,0,0,24,2,"Rudersdal Revision, Registrerede revisorer"
+20868546,Toft Revision,26,0,0,4,22,0,26,22,4,0,0,0,26,1,Toft Revision
+15587008,Kjeld Linnebjerg Registreret Revisionsanpartsselskab,26,0,0,0,26,0,26,26,0,0,0,0,26,1,Kjeld Linnebjerg Registreret Revisionsanpartsselskab
+15664908,Registreret revisor Marianne Mortensen,25,0,0,0,25,0,25,25,0,0,0,0,25,1,Registreret revisor Marianne Mortensen
+27289940,Danborg Revision,25,2,0,0,23,0,25,23,0,2,0,0,23,1,Danborg Revision
+37205907,GoAudit,25,2,0,6,17,0,25,17,6,2,0,0,23,1,GoAudit
+20113138,Nigelema v/Niels Lemmeke Madsen,25,3,0,1,21,0,25,21,1,3,0,0,22,1,Nigelema v/Niels Lemmeke Madsen
+20474882,Egelund Revision,25,4,0,1,20,0,25,20,1,4,0,0,21,1,Egelund Revision
+21090174,aj2,24,0,0,0,24,0,24,24,0,0,0,0,24,1,aj2
+40748083,ON Regnskab & Rådgivning,24,0,0,4,20,0,24,20,4,0,0,0,24,1,ON Regnskab & Rådgivning
+30006674,Klinkby Revision v/Lars Klinkby,23,1,0,0,22,0,23,22,0,1,0,0,22,1,Klinkby Revision v/Lars Klinkby
+57981717,Revisor-fællesskabet af 1976,23,9,0,0,13,1,22,13,0,9,0,0,13,1,Revisor-fællesskabet af 1976
+18767333,HK-revision,23,1,0,0,22,0,23,22,0,1,0,0,22,1,HK-revision
+40127720,Øresund Revision Statsautoriseret Revisionsanpartsselskab,23,15,0,3,3,2,21,3,3,15,0,0,6,1,Øresund Revision Statsautoriseret Revisionsanpartsselskab
+32888658,Addvisers,23,0,0,0,23,0,23,23,0,0,0,0,23,1,Addvisers
+72707710,Revisionsfirmaet A P MØLLER,22,0,0,0,22,0,22,22,0,0,0,0,22,1,Revisionsfirmaet A P MØLLER
+26563976,Dupont Revision,22,4,0,2,16,0,22,16,2,4,0,0,18,1,Dupont Revision
+12140363,BK Revision ApS,22,0,0,0,22,0,22,22,0,0,0,0,22,1,BK-Revision
+33877390,Lægers & Tandlægers Revisionskontor Sjælland,22,0,0,3,19,0,22,19,3,0,0,0,22,2,Lægers & Tandlægers Revisionskontor Sjælland
+34880034,SAa Revision,22,0,0,0,22,0,22,22,0,0,0,0,22,1,SAa Revision
+25122402,GV Revision,22,0,0,0,22,0,22,22,0,0,0,0,22,1,GV Revision
+76534268,F.J. Revision,22,0,0,0,22,0,22,22,0,0,0,0,22,1,F.J. Revision
+45740986,Fidura Statsautoriseret Revisionsanpartsselskab,22,0,0,4,18,0,22,18,4,0,0,0,22,1,Fidura Statsautoriseret Revisionsanpartsselskab
+13976295,Revisionscentret Haderslev,22,2,0,4,16,0,22,16,4,2,0,0,20,3,Revisionscentret Haderslev
+17937987,Revisionsfirmaet Benny Jensen,21,1,0,4,14,2,19,14,4,1,0,0,18,1,Revisionsfirmaet Benny Jensen
+35050175,Lyngen Revision statsautoriseret revisionsanpartsselskab,21,1,0,1,19,0,21,19,1,1,0,0,20,1,Lyngen Revision statsautoriseret revisionsanpartsselskab
+35865136,EMV,21,0,0,0,21,0,21,21,0,0,0,0,21,1,EMV
+21598402,Pryds,21,1,0,0,20,0,21,20,0,1,0,0,20,1,Pryds
+32688179,Revisorfirmaet Skov Jeppesen,21,0,0,7,14,0,21,14,7,0,0,0,21,1,Revisorfirmaet Skov Jeppesen
+36762454,Hedelund revision & rådgivning,21,0,0,0,21,0,21,21,0,0,0,0,21,2,Hedelund revision & rådgivning
+12741766,Oxenvads Regnskabsservice ApS,20,0,0,0,20,0,20,20,0,0,0,0,20,1,Oxenvads Regnskabsservice ApS
+14165088,Regnskabsfirmaet Martin Engbjerg ApS,20,0,0,0,20,0,20,20,0,0,0,0,20,1,Regnskabsfirmaet Martin Engbjerg ApS
+20592699,Registreret Revisor Per Skaarup Rasmussen,20,0,0,0,20,0,20,20,0,0,0,0,20,1,Registreret Revisor Per Skaarup Rasmussen
+36871644,RevisionsHuset Viborg v/Leif Aasten,20,0,0,0,20,0,20,20,0,0,0,0,20,1,RevisionsHuset Viborg v/Leif Aasten
+12246099,MA Revision v/Morten Andersen,20,0,0,0,20,0,20,20,0,0,0,0,20,1,MA Revision v/Morten Andersen
+16579106,Bjarne Engbjerg-Pedersen,20,0,0,0,20,0,20,20,0,0,0,0,20,1,Bjarne Engbjerg-Pedersen
+31115086,CR Revison,20,0,0,0,20,0,20,20,0,0,0,0,20,1,CR Revison
+41982470,Revisor Fritzbøger,19,0,0,0,19,0,19,19,0,0,0,0,19,1,Revisor Fritzbøger
+70697319,Statsaut. Rev. P.B. Matthiesen,19,13,0,6,0,0,19,0,6,13,0,0,6,1,Statsaut. Rev. P.B. Matthiesen
+68216214,OBK Revision,19,0,0,0,19,0,19,19,0,0,0,0,19,1,OBK Revision
+19617203,I.H. Revision v/ Hanne Henningsen,19,0,0,0,19,0,19,19,0,0,0,0,19,1,I.H. Revision v/ Hanne Henningsen
+33219229,Dansk Revision Tønder,19,0,0,1,18,0,19,18,1,0,0,0,19,2,Dansk Revision Tønder
+17366270,JE Regnskabsservice,19,0,0,0,19,0,19,19,0,0,0,0,19,1,JE Regnskabsservice
+25518942,Nordland Revision-Nordland,19,0,0,0,19,0,19,19,0,0,0,0,19,1,Nordland Revision-Nordland
+31888425,Vilstad Revision og Regnskabsservice,18,0,0,0,18,0,18,18,0,0,0,0,18,1,Vilstad Revision og Regnskabsservice
+15202580,Revisionsfirmaet Bayer,18,0,0,1,16,1,17,16,1,0,0,0,17,1,Revisionsfirmaet Bayer
+10261279,Reg. Rev. Mogens Møller Nielsen,18,0,0,3,15,0,18,15,3,0,0,0,18,1,Reg. Rev. Mogens Møller Nielsen
+45756173,"Larsen, Statsautoriseret Revisionsanpartsselskab",18,1,0,9,8,0,18,8,9,1,0,0,17,1,"Larsen, Statsautoriseret Revisionsanpartsselskab"
+36717785,Kvist & Jensen,18,9,0,2,7,0,18,7,2,9,0,0,9,6,Kvist & Jensen
+12848544,Revisionshuset,18,0,0,3,15,0,18,15,3,0,0,0,18,1,Revisionshuset
+13364796,Revisionsfirmaet Gert Ovesen,18,0,1,0,17,0,18,17,0,0,1,0,17,1,Revisionsfirmaet Gert Ovesen
+20716142,Møller & Co.,18,0,0,0,18,0,18,18,0,0,0,0,18,1,Møller & Co.
+25072596,COMPTA,18,0,0,0,18,0,18,18,0,0,0,0,18,1,COMPTA
+30835654,Møller & Madsen,17,0,0,0,17,0,17,17,0,0,0,0,17,3,Møller & Madsen
+81127115,Revisionsfirmaet Poul Rexen Thomsen,17,7,0,1,9,0,17,9,1,7,0,0,10,1,Revisionsfirmaet Poul Rexen Thomsen
+16563579,Wyrwik,17,0,0,0,17,0,17,17,0,0,0,0,17,1,Wyrwik
+57652551,Revisionsfirmaet Bent Jørgensen,17,0,0,0,17,0,17,17,0,0,0,0,17,1,Revisionsfirmaet Bent Jørgensen
+36279079,Talsnedkeren,17,0,0,8,9,0,17,9,8,0,0,0,17,1,Talsnedkeren
+72461312,Torben Jakobsen,17,0,0,0,17,0,17,17,0,0,0,0,17,1,Torben Jakobsen
+27106595,Valsgård Revision,17,0,0,0,17,0,17,17,0,0,0,0,17,1,Valsgård Revision
+18079739,BMM Consult,17,0,0,0,17,0,17,17,0,0,0,0,17,1,BMM Consult
+94431468,Dansk Center Revision,16,0,0,1,15,0,16,15,1,0,0,0,16,1,Dansk Center Revision
+31140986,VERAX,16,0,0,0,16,0,16,16,0,0,0,0,16,1,VERAX
+43576577,Vendia Revision og Regnskab,16,0,0,0,16,0,16,16,0,0,0,0,16,1,Vendia Revision og Regnskab
+32428932,Excell Revision,16,0,0,0,16,0,16,16,0,0,0,0,16,1,Excell Revision
+19720705,RevisorGården,16,0,0,0,16,0,16,16,0,0,0,0,16,3,RevisorGården
+26297974,Revisor Inge Linkamp ApS,16,0,0,0,16,0,16,16,0,0,0,0,16,1,Revisor Inge Linkamp  ApS
+47808650,Revisionsfirmaet Michael Fræmohs,16,0,0,0,16,0,16,16,0,0,0,0,16,1,Revisionsfirmaet Michael Fræmohs
+12354746,HKP Revision,16,2,0,0,14,0,16,14,0,2,0,0,14,1,HKP Revision
+15275677,Revisionsfirmaet Else Høy,15,0,0,0,15,0,15,15,0,0,0,0,15,1,Revisionsfirmaet Else Høy
+46110099,Counted ApS,15,0,0,7,8,0,15,8,7,0,0,0,15,1,Counted ApS
+41832096,Revisionsfirmaet Søren Kahr,15,0,0,0,15,0,15,15,0,0,0,0,15,1,Revisionsfirmaet Søren Kahr
+12911580,Karin Juel Registreret Revisionsvirksomhed,14,0,0,0,14,0,14,14,0,0,0,0,14,1,Karin Juel Registreret Revisionsvirksomhed
+38347799,Andersen Revision & Rådgivning,14,0,0,0,14,0,14,14,0,0,0,0,14,1,Andersen Revision & Rådgivning
+32147437,Revisionsfirmaet Kenneth Birkelund,14,0,0,0,14,0,14,14,0,0,0,0,14,1,Revisionsfirmaet Kenneth Birkelund
+26399610,Revisionsfirmaet Obsen & Nielsen,14,2,0,1,11,0,14,11,1,2,0,0,12,2,Revisionsfirmaet Obsen & Nielsen
+29509026,B.F. Rådgivning Herning,14,0,0,0,14,0,14,14,0,0,0,0,14,1,B.F. Rådgivning Herning
+14149341,Køge Nord Revision,13,0,0,0,13,0,13,13,0,0,0,0,13,1,Køge Nord Revision
+14310533,"Broernes Revision, Reg Revisorer",13,3,0,10,0,0,13,0,10,3,0,0,10,2,"Broernes Revision, Reg Revisorer"
+26344735,JST Revision,13,0,0,0,13,0,13,13,0,0,0,0,13,1,JST Revision
+18897385,Registreret Revisor Mette Storgaard Høffner,13,0,0,0,13,0,13,13,0,0,0,0,13,1,Registreret Revisor Mette Storgaard Høffner
+13850232,Delta Administration,13,0,0,0,13,0,13,13,0,0,0,0,13,1,Delta Administration
+21304476,Talkymisten v/Reg. revisor Susanne Nielsen,13,0,0,0,13,0,13,13,0,0,0,0,13,1,Talkymisten v/Reg. revisor Susanne Nielsen
+14662138,Registreret Revisor Mads Bødker,13,0,0,0,13,0,13,13,0,0,0,0,13,1,Registreret Revisor Mads Bødker
+38518046,Statsaut. Revisor G. Holm-Nielsen,12,1,0,11,0,0,12,0,11,1,0,0,11,1,Statsaut. Revisor G. Holm-Nielsen
+10510945,Uniconsult,12,0,0,0,12,0,12,12,0,0,0,0,12,1,Uniconsult
+83827815,Revifirmaet,12,1,0,0,11,0,12,11,0,1,0,0,11,1,Revifirmaet
+46127307,Audit Advisor ApS,12,0,0,4,8,0,12,8,4,0,0,0,12,1,Audit Advisor ApS
+18485907,Michael Kappelhøj,12,0,0,0,12,0,12,12,0,0,0,0,12,1,Michael Kappelhøj
+38267132,TimeVision,12,2,1,1,8,0,12,8,1,2,1,0,9,8,TimeVision
+27909833,Statsautoriseret revisor Søren Cortsen,12,0,0,0,12,0,12,12,0,0,0,0,12,1,Statsautoriseret revisor Søren Cortsen
+31167140,Revisionsfirmaet MBP,11,11,0,0,0,0,11,0,0,11,0,0,0,1,Revisionsfirmaet MBP
+17811371,Luni Revision,11,3,0,8,0,0,11,0,8,3,0,0,8,1,Luni Revision
+36081848,Fetterlein,11,2,0,0,9,0,11,9,0,2,0,0,9,1,Fetterlein
+26887801,Dupont Revision & Rådgivning,11,0,0,0,11,0,11,11,0,0,0,0,11,1,Dupont Revision & Rådgivning
+38897713,Pandrup Revision,11,0,0,0,11,0,11,11,0,0,0,0,11,1,Pandrup Revision
+28711395,Bjarne Bertelsen,10,1,0,5,4,0,10,4,5,1,0,0,9,1,Bjarne Bertelsen
+31579325,Hestehavens Revison,10,0,0,7,3,0,10,3,7,0,0,0,10,1,Hestehavens Revison
+16914800,Revisorgården v/Jane Lading Pedersen,10,0,0,0,10,0,10,10,0,0,0,0,10,1,Revisorgården v/Jane Lading Pedersen
+33064543,Nordjysk Revision HJ,10,0,0,0,10,0,10,10,0,0,0,0,10,1,Nordjysk Revision HJ
+29316996,Rådgivningsgruppen,10,1,0,1,8,0,10,8,1,1,0,0,9,1,Rådgivningsgruppen
+25491742,Revisionsfirmaet Erik Reinsborg,10,0,0,0,10,0,10,10,0,0,0,0,10,1,Revisionsfirmaet Erik Reinsborg
+42746452,Konsulent Jens H. Hedegaard,10,0,0,3,7,0,10,7,3,0,0,0,10,1,Konsulent Jens H. Hedegaard
+27022863,Revisionsfirmaet Lars Bo,10,2,0,4,4,0,10,4,4,2,0,0,8,2,Revisionsfirmaet Lars Bo
+45945189,Kara Statsautoriseret Revisionsanpartsselskab,10,0,0,2,8,0,10,8,2,0,0,0,10,1,Kara Statsautoriseret Revisionsanpartsselskab
+35658432,Vistisen & Lunde,10,4,0,0,6,0,8,6,0,2,0,2,6,3,Vistisen & Lunde
+25049608,LandboNord,10,0,0,0,10,0,10,10,0,0,0,0,10,4,LandboNord
+12689039,Reg Revisor Uffe Berg Pedersen,9,0,0,0,9,0,9,9,0,0,0,0,9,1,Reg Revisor Uffe Berg Pedersen
+78646411,Lokalrevision,9,1,0,0,8,0,9,8,0,1,0,0,8,1,Lokalrevision
+27192939,"John Dalgaard, Statsautoriseret Revisionsanpartsselskab",9,0,0,0,9,0,9,9,0,0,0,0,9,1,"John Dalgaard, Statsautoriseret Revisionsanpartsselskab"
+41694939,"Jens Rye, Statsautoriseret Revisor",9,0,0,2,7,0,9,7,2,0,0,0,9,1,"Jens Rye, Statsautoriseret Revisor"
+46639715,Revisor Gunnar Kjærgaard Larsen,9,0,0,0,9,0,9,9,0,0,0,0,9,1,Revisor Gunnar Kjærgaard Larsen
+52886252,IGM Revision v/iben green madsen,9,0,0,0,9,0,9,9,0,0,0,0,9,1,IGM Revision v/iben green madsen
+15656042,MN Revision v/statsaut. revisor Mogens Nielsen,9,0,0,0,9,0,9,9,0,0,0,0,9,1,MN Revision v/statsaut. revisor Mogens Nielsen
+16368342,LP Revision & rådgivning,9,1,0,0,8,0,9,8,0,1,0,0,8,1,LP Revision & rådgivning
+27495753,nf plus,9,1,0,2,6,0,9,6,2,1,0,0,8,2,NF Plus Revision + nf plus
+18393387,Revisionsfirma Ulla Svenningsen,9,0,0,1,8,0,9,8,1,0,0,0,9,1,Revisionsfirma Ulla Svenningsen
+30220331,Lars Ole Wiese,9,0,0,0,9,0,9,9,0,0,0,0,9,1,Lars Ole Wiese
+34066698,Revisionsfirmaet Per Abelsen,8,0,0,1,7,0,8,7,1,0,0,0,8,1,Revisionsfirmaet Per Abelsen
+43514172,Nemli & Partnere Statsautoriserede Revisorer ApS,8,0,0,2,6,0,8,6,2,0,0,0,8,1,Nemli & Partnere Statsautoriserede Revisorer ApS
+35042520,Holm Hansen Statsautoriseret Revisionspartnerselskab,8,6,0,0,2,0,8,2,0,6,0,0,2,1,Holm Hansen Statsautoriseret Revisionspartnerselskab
+25452313,Carsten Bjørn Jensen,8,0,0,0,8,0,8,8,0,0,0,0,8,1,Carsten Bjørn Jensen
+30956400,MPB Consult,8,0,0,0,8,0,8,8,0,0,0,0,8,1,MPB Consult
+30175905,K2 TOP Registreret Revisionsanpartsselskab,8,0,0,0,8,0,8,8,0,0,0,0,8,1,K2 TOP Registreret Revisionsanpartsselskab
+26186897,Asgård Finans,8,0,0,0,8,0,8,8,0,0,0,0,8,1,Asgård Finans
+36735465,Revisionsselskabet LKG,7,2,0,5,0,0,6,0,5,1,0,1,5,1,Revisionsselskabet LKG
+27796001,H D Consult,7,0,0,5,2,0,7,2,5,0,0,0,7,1,H D Consult
+20938692,Borg Revision v/Olav Borg Christensen,7,0,0,0,7,0,7,7,0,0,0,0,7,1,Borg Revision v/Olav Borg Christensen
+32560164,Buller Tex Flemming Olsen,7,7,0,0,0,0,7,0,0,7,0,0,0,1,Buller Tex Flemming Olsen
+65608154,Revisionsfirmaet Peter Høg,7,0,0,0,7,0,7,7,0,0,0,0,7,1,Revisionsfirmaet Peter Høg
+48569528,Revisionsselskabet v/ Anders Christian Mogensen,7,2,0,0,5,0,7,5,0,2,0,0,5,1,Revisionsselskabet v/ Anders Christian Mogensen
+30607236,Skanderborg Revision,7,0,0,0,7,0,7,7,0,0,0,0,7,1,Skanderborg Revision
+18186144,A Revision,7,0,0,0,7,0,7,7,0,0,0,0,7,1,A-revisor
+37230359,Revisionsfirmaet Benny Lund Jensen,7,0,0,0,7,0,7,7,0,0,0,0,7,1,Revisionsfirmaet Benny Lund Jensen
+45556158,B.C. Revision,7,0,0,0,7,0,7,7,0,0,0,0,7,1,B.C. Revision
+38575694,Konde ApS,6,0,0,0,6,0,6,6,0,0,0,0,6,1,Konde ApS
+29389918,NET-Revision,6,0,0,0,6,0,6,6,0,0,0,0,6,1,NET-Revision
+28663838,"MADS MYRTUE THOMSEN, STATSAUTORISERET REVISIONSANPARTSSELSKAB",6,0,0,0,6,0,6,6,0,0,0,0,6,1,"MADS MYRTUE THOMSEN, STATSAUTORISERET REVISIONSANPARTSSELSKAB"
+32319998,RH Revision Statsautoriseret Revisionsanpartsselskab,6,2,0,2,2,0,6,2,2,2,0,0,4,1,RH Revision Statsautoriseret Revisionsanpartsselskab
+43113577,Kruse Revision,6,0,0,0,6,0,6,6,0,0,0,0,6,1,Kruse Revision
+26916402,Afrodite Hår og Trend v/Rita Truelsen,6,0,0,0,6,0,6,6,0,0,0,0,6,1,Afrodite Hår og Trend v/Rita Truelsen
+32983618,DataBalance,6,0,0,0,6,0,6,6,0,0,0,0,6,1,DataBalance
+15710373,Damborg Revision og Rådgivning,5,0,0,0,5,0,5,5,0,0,0,0,5,1,Damborg Revision og Rådgivning
+16346578,Revisionsfirmaet Peter Deiborg,5,0,1,0,2,2,3,2,0,0,1,0,2,1,Revisionsfirmaet Peter Deiborg
+35926585,EC Økonomi og regnskab,5,1,0,0,4,0,5,4,0,1,0,0,4,1,EC Økonomi og regnskab
+42491748,DP Hillerød P/S,5,0,0,0,5,0,5,5,0,0,0,0,5,4,DP Hillerød P/S
+36709030,Brønshøj Regnskab,4,2,0,0,2,0,4,2,0,2,0,0,2,1,Brønshøj Regnskab
+18137399,Registreret Revisionsanpartsselskab j. Gilbert Nielsen,4,2,0,1,1,0,4,1,1,2,0,0,2,1,Registreret Revisionsanpartsselskab j. Gilbert Nielsen
+55399719,JH Revision,4,1,0,1,2,0,4,2,1,1,0,0,3,3,JH Revision
+27135730,Osmark,4,1,0,0,3,0,4,3,0,1,0,0,3,1,Osmark
+15083743,Statsaut. Rev. Jan Vegge,4,0,0,0,4,0,4,4,0,0,0,0,4,1,Statsaut. Rev. Jan Vegge
+25504070,KPMG KOMPLEMENTARSELSKAB ApS,4,1,0,3,0,0,4,0,3,1,0,0,3,2,KPMG KOMPLEMENTARSELSKAB ApS
+44387263,Alter Audit ApS,4,2,0,1,1,0,4,1,1,2,0,0,2,1,Alter Audit ApS
+30969103,PC-Revision Gentofte,4,2,0,0,2,0,4,2,0,2,0,0,2,1,PC-Revision Gentofte
+45107787,KOA CPH ApS,4,0,0,0,4,0,4,4,0,0,0,0,4,1,KOA CPH ApS
+31501601,IHC Holding Kolding,4,0,0,0,4,0,4,4,0,0,0,0,4,1,IHC Holding Kolding
+50949656,Registreret Revisor Peter Rose,4,0,0,0,4,0,4,4,0,0,0,0,4,1,Registreret Revisor Peter Rose
+46505190,Beck Mortensen Revision ApS,4,0,0,2,2,0,4,2,2,0,0,0,4,1,Beck Mortensen Revision ApS
+27969933,Furesø Revision,3,0,0,0,3,0,3,3,0,0,0,0,3,1,Furesø Revision
+15592354,Statsautoriseret revisionsfirma Bent Andrup,3,0,0,0,3,0,3,3,0,0,0,0,3,1,Statsautoriseret revisionsfirma Bent Andrup
+29628777,Funder & Henriksen,3,0,0,1,2,0,3,2,1,0,0,0,3,2,Funder & Henriksen
+34274657,Karsten Andersen Registreret Revisionsvirksomhed,3,0,0,2,1,0,3,1,2,0,0,0,3,1,Karsten Andersen Registreret Revisionsvirksomhed
+35657975,Veritas,3,1,0,0,2,0,3,2,0,1,0,0,2,1,Veritas
+11163947,Revisionsfirmaet Svend Rosendahl,3,0,0,0,3,0,3,3,0,0,0,0,3,1,Revisionsfirmaet Svend Rosendahl
+20251883,ReVision+ Brøndby ApS,3,0,0,1,2,0,3,2,1,0,0,0,3,1,ReVision+ Brøndby ApS
+31611520,Revipoint,3,0,0,0,3,0,3,3,0,0,0,0,3,2,Revipoint
+28252102,PS Revision,3,0,0,0,3,0,3,3,0,0,0,0,3,1,PS Revision
+10938694,Elley Revision,3,0,0,0,3,0,3,3,0,0,0,0,3,1,Elley Revision
+27288537,ESSET,3,0,0,0,3,0,3,3,0,0,0,0,3,1,ESSET
+17561391,Registreret Revisor N. C. Sørensen,2,0,0,2,0,0,2,0,2,0,0,0,2,1,Registreret Revisor N. C. Sørensen
+28121717,Global Revision,2,1,0,0,1,0,2,1,0,1,0,0,1,2,Global Revision
+32149863,Revisionsfirmaet Asger Wiuff Andersen,2,2,0,0,0,0,2,0,0,2,0,0,0,1,Revisionsfirmaet Asger Wiuff Andersen
+40847170,Registreret revisor Morten Rasmussen,2,0,0,0,2,0,2,2,0,0,0,0,2,1,Registreret revisor Morten Rasmussen
+82958118,Rehvidsion,2,0,0,0,2,0,2,2,0,0,0,0,2,1,Rehvidsion
+43917455,Revisionsfirmaet Højmose Christiansen ApS,2,1,0,0,1,0,2,1,0,1,0,0,1,1,Revisionsfirmaet Højmose Christiansen ApS
+38294539,Svaneke Revision I/S,2,0,0,2,0,0,2,0,2,0,0,0,2,1,Svaneke Revision I/S
+17016334,Jes Revision,2,0,0,0,2,0,2,2,0,0,0,0,2,1,Jes Revision
+28248598,Revisionsfirmaet Højvar & Skaaning,2,0,0,0,2,0,2,2,0,0,0,0,2,1,Revisionsfirmaet Højvar & Skaaning
+30771508,Revisionsfirmaet Højmose,2,1,0,0,1,0,2,1,0,1,0,0,1,1,Revisionsfirmaet Højmose
+16942375,Bogføring / Regnskab,2,0,0,2,0,0,2,0,2,0,0,0,2,1,Bogføring / Regnskab
+72715454,BJERGGAARD Regnskab og Rådgivning v/ Steen Bjerggaard,2,0,0,0,2,0,2,2,0,0,0,0,2,1,BJERGGAARD Regnskab og Rådgivning v/ Steen Bjerggaard
+31634466,Revisorteamet.dk,2,0,0,0,2,0,2,2,0,0,0,0,2,1,Revisorteamet.dk
+27795188,Revico,2,1,0,0,1,0,2,1,0,1,0,0,1,1,Revico
+31495288,PK Revision,2,1,0,0,1,0,2,1,0,1,0,0,1,1,PK Revision
+31778530,Dansk Revision Randers,2,1,0,0,1,0,2,1,0,1,0,0,1,2,Dansk Revision Randers
+15534397,Revisionsfirmaet Erik Andersen,2,0,0,0,2,0,2,2,0,0,0,0,2,1,Revisionsfirmaet Erik Andersen
+45265897,Søhøjlandets Rådgivning P/S,2,0,0,0,2,0,2,2,0,0,0,0,2,1,Søhøjlandets Rådgivning P/S
+19553876,LDM Revision,2,0,0,0,2,0,2,2,0,0,0,0,2,1,LDM Revision
+15728000,Revikon,2,0,0,0,2,0,2,2,0,0,0,0,2,2,Revikon
+30821963,GLB Revision,1,1,0,0,0,0,1,0,0,1,0,0,0,1,GLB Revision
+31071097,DANSK REVISION A/S,1,0,0,0,1,0,1,1,0,0,0,0,1,1,DANSK REVISION A/S
+35798153,Registreret Revisionsvirksomhed FD Revision,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Registreret Revisionsvirksomhed FD Revision
+15202548,BAYER HOLDING ApS,1,0,0,0,1,0,1,1,0,0,0,0,1,1,BAYER HOLDING ApS
+10477549,Henrik Blixenkrone Registreret Revisionsanpartsselskab,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Henrik Blixenkrone Registreret Revisionsanpartsselskab
+31943582,TimeVision Frederiksberg,1,1,0,0,0,0,1,0,0,1,0,0,0,1,TimeVision Frederiksberg
+19261735,Totalrevision Vordingborg,1,0,0,1,0,0,1,0,1,0,0,0,1,1,Totalrevision Vordingborg
+35050469,AC Revision - Registreret Revisionsanpartsselskab,1,0,0,0,1,0,1,1,0,0,0,0,1,1,AC Revision - Registreret Revisionsanpartsselskab
+36728027,DK Ejendomsadministration & Ejendomsservice ApS,1,0,0,0,1,0,1,1,0,0,0,0,1,1,DK Ejendomsadministration & Ejendomsservice ApS
+39325608,gills-economics,1,0,0,1,0,0,1,0,1,0,0,0,1,1,gills-economics
+54879911,Døssing & Partnere,1,1,0,0,0,0,1,0,0,1,0,0,0,1,Døssing & Partnere
+29234590,ABM-Revision,1,0,0,0,1,0,1,1,0,0,0,0,1,1,ABM-Revision
+77806113,Rigsrevisionen,1,1,0,0,0,0,1,0,0,1,0,0,0,1,Rigsrevisionen
+10741092,REV af 22/12 1989 ApS,1,0,0,0,0,1,0,0,0,0,0,0,0,1,REV af 22/12 1989 ApS
+46408314,Rasmussen Revision,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Rasmussen Revision
+31438748,JuelViborg,1,0,0,0,1,0,1,1,0,0,0,0,1,1,JuelViborg
+41071222,Skovborg & Co. P/S,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Skovborg & Co. P/S
+37381136,FP Revision,1,1,0,0,0,0,1,0,0,1,0,0,0,1,FP Revision
+39791374,Aktiv Regnskab og Skat,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Aktiv Regnskab og Skat
+20082097,Revisionsfirmaet Tommy Jensen,1,0,0,1,0,0,1,0,1,0,0,0,1,1,Revisionsfirmaet Tommy Jensen
+31622565,Lynge Revisor,1,1,0,0,0,0,1,0,0,1,0,0,0,1,Lynge Revisor
+34901694,Asset,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Asset
+30217152,Statsautoriseret revisor Michael Stenskrog,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Statsautoriseret revisor Michael Stenskrog
+33359128,Exacta Gruppen,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Exacta Gruppen
+31123992,Landboforeningen Gefion,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Landboforeningen Gefion
+26326931,C&J Revision,1,0,0,0,1,0,1,1,0,0,0,0,1,1,C&J Revision
+32291171,SOKKELUND ApS,1,0,0,0,1,0,1,1,0,0,0,0,1,1,SOKKELUND ApS
+28931581,HvidebækRevisoren,1,0,0,0,1,0,1,1,0,0,0,0,1,1,HvidebækRevisoren
+40299637,Revision Nordjylland Hjørring ApS,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Revision Nordjylland Hjørring ApS
+26631556,Kildebjerg Revision,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Kildebjerg Revision
+30506804,RGD REVISIONSPARTNERSELSKAB,1,0,0,0,1,0,1,1,0,0,0,0,1,1,RGD REVISIONSPARTNERSELSKAB
+25635868,National Revision,1,1,0,0,0,0,1,0,0,1,0,0,0,1,National Revision
+12549679,Revisorhuset Hasselager,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Revisorhuset Hasselager
+15897996,Revisionsfirmaet Jens Vindfeldt,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Revisionsfirmaet Jens Vindfeldt
+36956658,ReviDK,1,1,0,0,0,0,1,0,0,1,0,0,0,1,ReviDK
+41454555,Revision Limfjord,1,1,0,0,0,0,1,0,0,1,0,0,0,1,Revision Limfjord
+35534156,KOMPLEMENTARANPARTSSELSKABET ANDERSEN REVISION,1,0,0,0,1,0,1,1,0,0,0,0,1,1,KOMPLEMENTARANPARTSSELSKABET ANDERSEN REVISION
+39090279,One Revision,1,0,0,1,0,0,1,0,1,0,0,0,1,1,One Revision
+10841976,OL Revision,1,0,0,1,0,0,1,0,1,0,0,0,1,1,OL Revision
+33773188,PwC Statsautoriseret Revisionsanpartsselskab,1,0,0,0,1,0,1,1,0,0,0,0,1,1,PwC Statsautoriseret Revisionsanpartsselskab
+39875926,ReviGroup,1,1,0,0,0,0,1,0,0,1,0,0,0,1,ReviGroup
+13929297,Revicor,1,1,0,0,0,0,1,0,0,1,0,0,0,1,Revicor
+27478131,"Kvist & Jensen, Grenaa",1,0,0,0,1,0,1,1,0,0,0,0,1,1,"Kvist & Jensen, Grenaa"
+37915718,Revisionsfirmaet Henrik Tange,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Revisionsfirmaet Henrik Tange
+17230239,Pilgaard Revision V/Elna Pilgaard,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Pilgaard Revision V/Elna Pilgaard
+37142042,Linda Lauritsen,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Linda Lauritsen
+15681586,Syddansk Revision,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Syddansk Revision
+30898664,A. Bjørn - Statsautoriseret revisionsanpartsselskab,1,0,0,0,1,0,1,1,0,0,0,0,1,1,A. Bjørn - Statsautoriseret revisionsanpartsselskab
+32348831,Revisionskontoret Fredericia-Vejle,1,0,0,0,1,0,1,1,0,0,0,0,1,1,Revisionskontoret Fredericia-Vejle

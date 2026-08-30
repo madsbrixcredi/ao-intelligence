@@ -1,0 +1,806 @@
+/* ==========================================================================
+   Crediwire Management Dashboard
+   Visuelt sprog: Crediwire-appen. Fladt, lyst, én accentfarve, rolige tal.
+   ========================================================================== */
+
+:root {
+  --bg: #F4F4F7;
+  --card: #FFFFFF;
+  --ink: #17171F;
+  --ink-2: #5B5B6B;
+  --muted: #6E6E7C;
+  --line: #E6E6EC;
+  --line-2: #D6D6DE;
+  --accent: #5B5BD6;
+  --accent-soft: #EEEEFC;
+  --pos: #0F7B4F;
+  --pos-soft: #E7F6EE;
+  --warn: #9A5B00;
+  --warn-soft: #FDF3E3;
+  --neg: #B4231C;
+  --neg-soft: #FDECEA;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 28px 24px 56px;
+}
+
+h1, h2, h3, p { margin: 0; }
+b, strong { font-weight: 600; }
+
+.muted { color: var(--muted); }
+.small { font-size: 12.5px; }
+
+/* --- Header ------------------------------------------------------------ */
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+
+.head h1 {
+  font-size: 27px;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+}
+
+.head-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.head-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+/* Firm picker */
+.firm-picker { position: relative; width: 320px; }
+
+.firm-picker input {
+  width: 100%;
+  height: 38px;
+  border: 1px solid var(--line-2);
+  border-radius: 9px;
+  background: #fff;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 13.5px;
+}
+
+.firm-picker input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.firm-results {
+  position: absolute;
+  z-index: 20;
+  top: 42px;
+  left: 0;
+  right: 0;
+  max-height: 320px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--line-2);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(23, 23, 31, 0.10);
+  display: none;
+}
+
+.firm-results.open { display: block; }
+
+.firm-results button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  padding: 9px 12px;
+  font: inherit;
+  font-size: 13.5px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--line);
+}
+
+.firm-results button:last-child { border-bottom: none; }
+.firm-results button:hover { background: var(--accent-soft); }
+.firm-results small { display: block; color: var(--muted); font-size: 11.5px; }
+
+/* Tabs */
+.tabs { display: flex; gap: 7px; }
+
+.tab {
+  border: 1px solid var(--line-2);
+  background: #fff;
+  border-radius: 9px;
+  padding: 8px 15px;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.tab:hover { border-color: var(--accent); }
+
+.tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* --- Views ------------------------------------------------------------- */
+.view { display: none; }
+.view.active { display: grid; gap: 16px; }
+
+/* --- Kort -------------------------------------------------------------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.card-head h2 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.link {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-size: 12.5px;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.link:hover { text-decoration: underline; }
+
+.help {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: #FAFAFD;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.help b { color: var(--ink); }
+.help table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.help td { padding: 3px 0; vertical-align: top; }
+.help td:last-child { text-align: right; color: var(--ink); font-weight: 500; white-space: nowrap; }
+
+.notice {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 34px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* --- Health ------------------------------------------------------------ */
+.health-rows { display: grid; gap: 0; }
+
+.health-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 1.1fr) 118px minmax(200px, 2fr);
+  gap: 14px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.health-row:last-child { border-bottom: none; }
+.health-row > span:first-child { font-weight: 500; }
+.health-row .evidence { color: var(--muted); font-size: 13px; }
+
+.status {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.status.excellent { background: var(--pos-soft); color: var(--pos); }
+.status.strong    { background: var(--pos-soft); color: var(--pos); }
+.status.developing{ background: var(--warn-soft); color: var(--warn); }
+.status.attention { background: var(--neg-soft); color: var(--neg); }
+.status.na        { background: #F0F0F4; color: var(--muted); }
+
+/* --- KPI --------------------------------------------------------------- */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+.kpi {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+
+.kpi > span { font-size: 13px; color: var(--muted); }
+
+.kpi > strong {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.kpi > em {
+  font-style: normal;
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.bar {
+  height: 5px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+  margin-top: 3px;
+}
+
+.bar > i { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
+.bar.pos > i { background: var(--pos); }
+
+.chip {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.chip-assume { background: var(--warn-soft); color: var(--warn); }
+.chip-measured { background: var(--pos-soft); color: var(--pos); }
+
+/* --- Anbefaling -------------------------------------------------------- */
+.reco {
+  background: var(--accent-soft);
+  border: 1px solid #DEDEFA;
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.reco h3 {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 3px 0 5px;
+}
+
+.reco .eyebrow { color: #5A5A9A; }
+.reco p { font-size: 13.5px; color: #3F3F6B; max-width: 76ch; }
+
+.btn {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 9px;
+  padding: 11px 18px;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn:hover { opacity: 0.9; }
+
+/* --- To kolonner ------------------------------------------------------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+/* --- Aktivitet --------------------------------------------------------- */
+.yoy { display: grid; gap: 12px; margin-top: 4px; }
+
+.yoy-row > div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.yoy-row .yr { color: var(--muted); }
+.yoy-row .val { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.mini-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.mini-stats span { display: block; font-size: 12.5px; color: var(--muted); }
+.mini-stats b { font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* --- Fokusliste -------------------------------------------------------- */
+.focus-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.focus-item:last-child { border-bottom: none; }
+.focus-item .body { flex: 1; }
+.focus-item .body b { display: block; font-size: 14px; margin-bottom: 2px; }
+.focus-item .body span { font-size: 13px; color: var(--muted); }
+
+.prio {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-top: 1px;
+}
+
+.prio.hoj { background: var(--neg-soft); color: var(--neg); }
+.prio.mellem { background: var(--warn-soft); color: var(--warn); }
+.prio.lav { background: #F0F0F4; color: var(--muted); }
+
+.risk-card { margin-bottom: 14px; }
+
+.risk-card .risk-head {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 8px;
+}
+
+.risk-card .risk-head b { font-size: 15px; font-weight: 600; }
+.risk-card p { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+
+.risk-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.risk-meta div span { display: block; font-size: 11.5px; color: var(--muted); margin-bottom: 1px; }
+.risk-meta div b { font-size: 13px; font-weight: 500; }
+
+/* --- Business case ----------------------------------------------------- */
+.bc-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.bc-assumptions-wrap { display: block; }
+
+.fld { display: grid; gap: 6px; margin-bottom: 14px; }
+.fld > span { font-size: 13px; color: var(--muted); }
+.fld > em { font-style: normal; font-size: 11.5px; color: var(--muted); }
+
+.fld input[type="number"] {
+  height: 40px;
+  border: 1px solid var(--line-2);
+  border-radius: 9px;
+  padding: 0 11px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  background: #fff;
+}
+
+.fld input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.fld-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0 14px;
+}
+
+.slider-row { display: flex; align-items: center; gap: 12px; }
+.slider-row input[type="range"] { flex: 1; accent-color: var(--accent); }
+.slider-row b { font-size: 15px; font-variant-numeric: tabular-nums; min-width: 44px; text-align: right; }
+
+.more { margin-top: 4px; }
+
+.more > summary {
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--accent);
+  padding: 9px 0;
+  list-style: none;
+}
+
+.more > summary::-webkit-details-marker { display: none; }
+.more > summary::before { content: "+ "; }
+.more[open] > summary::before { content: "− "; }
+
+/* Hero-tal */
+.hero {
+  background: var(--accent-soft);
+  border: 1px solid #DEDEFA;
+  border-radius: var(--radius);
+  padding: 24px 26px;
+}
+
+.hero > span { display: block; font-size: 13px; color: #5A5A9A; margin-bottom: 5px; }
+
+.hero > strong {
+  display: block;
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+  color: #23235C;
+}
+
+.hero > em { font-style: normal; display: block; font-size: 13px; color: #4A4A7A; margin-top: 7px; }
+
+/* Sammenligningstabel */
+.cmp { width: 100%; border-collapse: collapse; }
+
+.cmp th {
+  text-align: right;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+  padding: 0 0 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cmp th:first-child { text-align: left; }
+
+.cmp td {
+  padding: 11px 0;
+  text-align: right;
+  font-size: 14.5px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.cmp td:first-child {
+  text-align: left;
+  font-weight: 400;
+  font-size: 13.5px;
+  white-space: normal;
+}
+
+.cmp tr:last-child td { border-bottom: none; }
+.cmp tr.strong td { font-size: 16px; font-weight: 600; }
+.cmp tr.strong td:first-child { font-size: 13.5px; font-weight: 500; }
+.cmp .today { color: var(--muted); }
+.cmp .delta.pos { color: var(--pos); }
+.cmp .delta.neu { color: var(--muted); }
+.cmp .why { border: none; background: none; padding: 0; margin-left: 7px; font-size: 11.5px; color: var(--accent); cursor: pointer; }
+.cmp .why:hover { text-decoration: underline; }
+
+/* Værdifordeling */
+.split-row { display: grid; gap: 8px; margin-bottom: 11px; }
+.split-row > div { display: flex; justify-content: space-between; font-size: 13px; }
+.split-row .lbl { color: var(--muted); }
+.split-row .amt { font-weight: 500; font-variant-numeric: tabular-nums; }
+
+/* --- Footer ------------------------------------------------------------ */
+.foot { margin-top: 26px; text-align: center; }
+
+/* --- Responsivt -------------------------------------------------------- */
+@media (max-width: 980px) {
+  .bc-grid, .two-col { grid-template-columns: 1fr; }
+  .health-row { grid-template-columns: 1fr auto; }
+  .health-row .evidence { grid-column: 1 / -1; }
+  .head-right { align-items: stretch; width: 100%; }
+  .firm-picker { width: 100%; }
+}
+
+@media print {
+  body { background: #fff; }
+  .tabs, .firm-picker, .btn, .link { display: none !important; }
+  .view { display: grid !important; page-break-after: always; }
+  .card, .kpi, .reco, .hero { border: 1px solid #999; box-shadow: none; }
+}
+
+/* Rettelser efter QA · feltjustering og luft omkring målsætning */
+.fld-grid { align-items: start; }
+.fld-grid .fld > span { min-height: 34px; display: flex; align-items: flex-start; }
+.fld-grid .fld > em { min-height: 30px; }
+.assumptions > .fld:first-of-type { margin-top: 16px; }
+.hero > strong { word-break: keep-all; }
+
+/* ==========================================================================
+   Health score
+   ========================================================================== */
+.health-main {
+  display: grid;
+  grid-template-columns: minmax(140px, 168px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.score-block {
+  display: grid;
+  justify-items: start;
+  gap: 2px;
+  padding-right: 24px;
+  border-right: 1px solid var(--line);
+}
+
+.score-block .score {
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.score-block .score-max { font-size: 12.5px; color: var(--muted); margin-bottom: 8px; }
+
+.sub-scores { display: grid; gap: 9px; min-width: 0; }
+
+.sub {
+  display: grid;
+  grid-template-columns: minmax(110px, 148px) minmax(0, 1fr) 34px;
+  gap: 12px;
+  align-items: center;
+}
+
+.sub-label { font-size: 13px; color: var(--muted); }
+
+.sub-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.sub-bar > i { display: block; height: 100%; border-radius: 999px; background: var(--accent); }
+
+.sub-val {
+  font-size: 13px;
+  font-weight: 600;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.sub.is-na .sub-val { color: var(--muted); font-weight: 400; }
+.sub.is-na .sub-bar { opacity: 0.45; }
+
+.health-note { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+
+.help table tr td { padding: 6px 0; }
+.help table tr:not(:last-child) td { border-bottom: 1px solid var(--line); }
+
+/* ==========================================================================
+   Aktivitet
+   ========================================================================== */
+.yoy-change { font-size: 21px; font-weight: 600; letter-spacing: -0.02em; }
+.yoy-change.up { color: var(--pos); }
+.yoy-change.down { color: var(--neg); }
+.bar > i.faded { opacity: 0.42; }
+.footnote { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); }
+
+/* ==========================================================================
+   Forudsætninger · bredt kort så felterne har plads
+   ========================================================================== */
+.assumptions .fld-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0 18px;
+}
+
+.assumptions > .fld:first-of-type {
+  max-width: 520px;
+  margin-top: 16px;
+}
+
+/* Alle grid- og flexbørn skal kunne krympe, ellers stikker indhold ud */
+.bc-grid > *, .assumptions, .fld, .fld-grid, .more, .kpi, .card, .health-main > * {
+  min-width: 0;
+}
+
+.more > div, .more .fld-grid { min-width: 0; }
+
+@media (max-width: 980px) {
+  .health-main { grid-template-columns: 1fr; gap: 18px; }
+  .score-block { border-right: none; border-bottom: 1px solid var(--line); padding: 0 0 14px; }
+}
+
+/* Business case · tabel og fordeling stables, så der ikke opstår tomme huller
+   når fordelingen kun har én kilde. */
+.bc-grid { grid-template-columns: minmax(0, 1fr); }
+
+/* Labels der brører to linjer må ikke forskyde deres inputfelt */
+.assumptions .fld > span { min-height: 40px; align-items: flex-start; }
+.assumptions .fld > em { min-height: 0; margin-top: 2px; }
+
+/* Health uden score */
+.score-block.no-score { gap: 8px; }
+.score-none {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   Health · WHOOP-agtig ring. Farven bærer beskeden.
+   Lys palet, fordi Crediwire-appen er lys, men scoren dominerer som hos WHOOP.
+   ========================================================================== */
+:root {
+  --band-excellent: #12A150;
+  --band-strong:    #3D9A5F;
+  --band-developing:#D98A00;
+  --band-attention: #D93B30;
+}
+
+.card.health { padding: 30px 32px; }
+
+.health-main {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.ring-wrap { position: relative; width: 180px; height: 180px; }
+
+.ring { width: 180px; height: 180px; transform: rotate(-90deg); }
+
+.ring-track {
+  fill: none;
+  stroke: #ECECF2;
+  stroke-width: 13;
+}
+
+.ring-fill {
+  fill: none;
+  stroke-width: 13;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.3s ease;
+}
+
+.ring-center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 1px;
+  text-align: center;
+}
+
+.ring-score {
+  font-size: 58px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.ring-band {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.ring-none { font-size: 15px; font-weight: 600; color: var(--muted); line-height: 1.3; }
+
+/* Højre side er bevidst underordnet ringen */
+.health-right { display: grid; gap: 18px; min-width: 0; }
+
+.health-lead {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 62ch;
+}
+
+.sub-scores { display: grid; gap: 7px; min-width: 0; }
+
+.sub {
+  display: grid;
+  grid-template-columns: minmax(104px, 132px) minmax(0, 1fr) 28px;
+  gap: 12px;
+  align-items: center;
+}
+
+.sub-label { font-size: 12.5px; color: var(--muted); }
+
+.sub-bar { height: 4px; border-radius: 999px; background: #ECECF2; overflow: hidden; }
+.sub-bar > i { display: block; height: 100%; border-radius: 999px; background: var(--line-2); }
+
+.sub-val {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.sub.is-na .sub-val { font-weight: 400; }
+
+@media (max-width: 860px) {
+  .health-main { grid-template-columns: 1fr; gap: 24px; justify-items: center; }
+  .health-right { width: 100%; }
+  .health-lead { text-align: center; }
+}
+
+/* Delscorer får deres egen tilstandsfarve, så mønstret kan læses på et blik */
+.sub-bar { height: 6px; background: #EDEDF2; }
+.sub-val { font-weight: 600; }
+.sub.is-na .sub-val { color: var(--muted); font-weight: 400; }
+.sub.is-na .sub-bar { opacity: 0.5; }

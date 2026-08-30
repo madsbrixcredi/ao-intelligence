@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crediwire · Management Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="management.css?v=11" />
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- ================= HEADER ================= -->
+      <header class="head">
+        <div class="head-left">
+          <p class="eyebrow">Crediwire · Management Dashboard</p>
+          <h1 id="firmName">Vælg revisionshus</h1>
+          <p class="head-sub" id="firmSub">Værdi, adoption og uudnyttet potentiale</p>
+        </div>
+        <div class="head-right">
+          <div class="firm-picker">
+            <input id="firmSearch" type="search" placeholder="Søg revisionshus eller CVR" autocomplete="off" />
+            <div id="firmResults" class="firm-results" role="listbox"></div>
+          </div>
+          <nav class="tabs" role="tablist">
+            <button class="tab active" data-target="overview" role="tab">Overblik</button>
+            <button class="tab" data-target="business" role="tab">Business case</button>
+            <button class="tab" data-target="focus" role="tab">Fokus</button>
+          </nav>
+        </div>
+      </header>
+
+      <!-- ================= LOADING / TOM ================= -->
+      <div id="loading" class="notice">Indlæser data…</div>
+
+      <!-- ================= OVERBLIK ================= -->
+      <section id="overview" class="view active" hidden>
+        <!-- Health -->
+        <div class="card health">
+          <div class="card-head">
+            <h2>Health</h2>
+            <button class="link" data-open="healthHelp">Sådan vurderes det</button>
+          </div>
+          <div id="healthRows" class="health-rows"></div>
+          <div id="healthHelp" class="help" hidden></div>
+        </div>
+
+        <!-- KPI -->
+        <div id="kpiRow" class="kpi-row"></div>
+
+        <!-- Anbefaling -->
+        <div id="recommendation" class="reco"></div>
+
+        <!-- Aktivitet + fokus -->
+        <div class="two-col">
+          <div class="card" id="activityCard"></div>
+          <div class="card" id="focusPreview"></div>
+        </div>
+      </section>
+
+      <!-- ================= BUSINESS CASE ================= -->
+      <section id="business" class="view" hidden>
+        <!-- Resultat øverst, forudsætninger under. Beslutningstageren skal se
+             tallet først og først derefter hvad det bygger på. -->
+        <div id="bcHeadline" class="hero"></div>
+        <div class="bc-grid">
+          <div id="bcCompare" class="card"></div>
+          <div id="bcBreakdown" class="card"></div>
+        </div>
+
+        <div class="bc-assumptions-wrap">
+          <div class="card assumptions">
+            <div class="card-head">
+              <h2>Forudsætninger</h2>
+              <span class="chip chip-assume">Antagelser</span>
+            </div>
+            <p class="muted small">Alt herunder er antagelser du selv sætter. De måler ikke noget, de forudsætter noget.</p>
+
+            <label class="fld">
+              <span>Målsætning · andel af klasse B-erklæringer</span>
+              <div class="slider-row">
+                <input id="targetPct" type="range" min="0" max="100" step="1" value="25" />
+                <b id="targetPctLabel">25%</b>
+              </div>
+              <em id="targetReadout"></em>
+            </label>
+
+            <div class="fld-grid">
+              <label class="fld">
+                <span>Timepris</span>
+                <input id="hourlyRate" type="number" min="0" step="50" value="1200" />
+              </label>
+              <label class="fld">
+                <span>Timer sparet pr. dataanalyse</span>
+                <input id="hoursAnalysis" type="number" min="0" max="50" step="0.5" value="4" />
+              </label>
+              <label class="fld">
+                <span>Kvalitetsfaktor</span>
+                <input id="qualityFactor" type="number" min="0" max="10" step="0.25" value="2" />
+                <em>1 = ingen ekstra værdi · 2 = dobbelt samlet værdi</em>
+              </label>
+              <label class="fld">
+                <span>Crediwire pr. virksomhed pr. år</span>
+                <input id="pricePerCompany" type="number" min="1226" step="1" value="1988" />
+                <em>Minimum 1.226 kr.</em>
+              </label>
+            </div>
+
+            <details class="more">
+              <summary>Årsrapport, assistance og rapportering</summary>
+              <div class="fld-grid">
+                <label class="fld">
+                  <span>Timer sparet pr. årsrapport</span>
+                  <input id="hoursAnnual" type="number" min="0" max="50" step="0.5" value="0" />
+                </label>
+                <label class="fld">
+                  <span>Pris pr. årsrapport</span>
+                  <input id="priceAnnual" type="number" min="0" step="1" value="0" />
+                </label>
+                <label class="fld">
+                  <span>Antal årsrapporter</span>
+                  <input id="countAnnual" type="number" min="0" step="1" value="0" />
+                  <em id="annualDefault"></em>
+                </label>
+                <label class="fld">
+                  <span>Timer sparet pr. assistanceerklæring</span>
+                  <input id="hoursAssist" type="number" min="0" max="50" step="0.5" value="0" />
+                </label>
+                <label class="fld">
+                  <span>Pris pr. assistanceerklæring</span>
+                  <input id="priceAssist" type="number" min="0" step="1" value="0" />
+                </label>
+                <label class="fld">
+                  <span>Antal assistanceerklæringer</span>
+                  <input id="countAssist" type="number" min="0" step="1" value="0" />
+                  <em id="assistDefault"></em>
+                </label>
+                <label class="fld">
+                  <span>Rapporteringskunder</span>
+                  <input id="countReporting" type="number" min="0" step="1" value="0" />
+                </label>
+                <label class="fld">
+                  <span>Timer sparet pr. rapporteringskunde</span>
+                  <input id="hoursReporting" type="number" min="0" max="50" step="0.5" value="0" />
+                </label>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FOKUS ================= -->
+      <section id="focus" class="view" hidden>
+        <div id="focusSummary" class="kpi-row"></div>
+        <div id="focusList"></div>
+      </section>
+
+      <!-- ================= DATASTATUS ================= -->
+      <footer class="foot">
+        <button class="link" data-open="dataStatus">Datastatus og kilder</button>
+        <div id="dataStatus" class="help" hidden></div>
+      </footer>
+    </div>
+
+    <script src="management.js?v=13"></script>
+  </body>
+</html>

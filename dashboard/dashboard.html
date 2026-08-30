@@ -1,0 +1,1268 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crediwire · Ledelsesdashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260804-1" />
+    <style>
+      /* fire-faners struktur + WHOOP-ring · alt andet arves fra styles.css */
+      /* hindr at brede grafer/tabeller skubber siden ud i bredden (grid-fælde) */
+      main{grid-template-columns:minmax(0,1fr)}
+      .tabpane,.tabpane section,.panel,.wheel-chart{min-width:0}
+      .table-wrap{max-width:100%}
+      .tabnav{display:flex;gap:4px;background:#eceff4;border-radius:14px;padding:5px;margin:6px 0 22px;width:fit-content}
+      .tabnav button{border:0;background:transparent;font:inherit;font-weight:800;font-size:14px;color:#5c6572;padding:10px 20px;border-radius:10px;cursor:pointer;letter-spacing:.01em}
+      .tabnav button.on{background:#fff;color:#141821;box-shadow:0 1px 3px rgba(20,30,50,.12)}
+      .tabpane{display:none}
+      .tabpane.on{display:block;animation:fadein .22s ease}
+      @keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+      .score-hero{display:grid;grid-template-columns:250px 1fr;gap:26px;align-items:center}
+      @media(max-width:720px){.score-hero{grid-template-columns:1fr;justify-items:center;text-align:center}}
+      .score-ring{position:relative;width:210px;height:210px}
+      .score-ring svg{transform:rotate(-90deg)}
+      .score-ring .track{fill:none;stroke:#edf0f5;stroke-width:16}
+      .score-ring .arc{fill:none;stroke-width:16;stroke-linecap:round;stroke-dasharray:540.35;stroke-dashoffset:540.35;transition:stroke-dashoffset 1s cubic-bezier(.22,1,.36,1),stroke .3s}
+      .score-mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+      .score-mid strong{font-size:62px;font-weight:800;line-height:1;letter-spacing:-.03em;color:#141821}
+      .score-mid span{font-size:12px;color:#8a93a3;margin-top:4px;text-transform:uppercase;letter-spacing:.1em}
+      .score-level{display:inline-block;font-weight:800;font-size:16px;padding:7px 18px;border-radius:999px;margin-bottom:18px}
+      .score-subs{display:flex;flex-direction:column;gap:13px}
+      .score-sub{display:grid;grid-template-columns:150px 1fr 44px;gap:14px;align-items:center}
+      .score-sub .nm{font-size:14px;font-weight:400}
+      .score-sub .nm small{display:block;color:#8a93a3;font-size:11px}
+      .score-sub .meter{height:9px;background:#edf0f5;border-radius:6px;overflow:hidden}
+      .score-sub .meter i{display:block;height:100%;border-radius:6px;width:0;transition:width .9s cubic-bezier(.22,1,.36,1)}
+      .score-sub .v{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+      .lvl-exc{background:#e6f6ee;color:#14a06a}.lvl-strong{background:#e7effd;color:#2f6df0}
+      .lvl-val{background:#fbf1de;color:#b9741d}.lvl-need{background:#fbe7e6;color:#d6483b}
+
+      /* executive-forside */
+      .exec-hero{display:grid;grid-template-columns:230px 1fr;gap:30px;align-items:center}
+      @media(max-width:720px){.exec-hero{grid-template-columns:1fr;justify-items:center;text-align:center}}
+      .score-delta{margin:8px 0 0;color:#5c6572;font-size:13px;max-width:52ch}
+      .score-expl{margin-top:14px}
+      .score-expl>summary{cursor:pointer;color:#2f6df0;font-weight:700;font-size:13px;list-style:none}
+      .score-expl>summary::-webkit-details-marker{display:none}
+      .score-expl>summary::before{content:"▸ ";}
+      .score-expl[open]>summary::before{content:"▾ ";}
+      .score-expl[open]>summary{margin-bottom:14px}
+      #tab-overblik > section, #tab-overblik > .exec-kpis{margin-bottom:24px}
+      .exec-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
+      @media(max-width:900px){.exec-kpis{grid-template-columns:1fr 1fr}}
+      @media(max-width:560px){.exec-kpis{grid-template-columns:1fr}}
+      .kpi-card{text-align:left;background:#fff;border:1px solid #e7eaf0;border-radius:16px;padding:20px 22px;box-shadow:0 1px 2px rgba(20,30,50,.05);cursor:pointer;font:inherit;transition:.15s;display:block}
+      .kpi-card:hover{border-color:#c9d7f2;box-shadow:0 6px 20px rgba(20,30,50,.08);transform:translateY(-1px)}
+      .kpi-card .lbl{font-size:12.5px;color:#5c6572;display:flex;align-items:center;gap:8px;margin-bottom:9px}
+      .kpi-card .big{font-size:27px;font-weight:800;letter-spacing:-.02em;line-height:1.05;color:#141821}
+      .kpi-card .big.good{color:#14a06a}.kpi-card .big.acc{color:#2f6df0}
+      .kpi-card .sub{font-size:12px;color:#8a93a3;margin-top:6px}
+      .kpi-card .go{font-size:12px;color:#2f6df0;font-weight:700;margin-top:12px}
+      .tag-measured,.tag-assumed{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+      .tag-measured{color:#14a06a}.tag-assumed{color:#b9741d}
+      .tag-measured i{width:7px;height:7px;border-radius:50%;background:#14a06a}
+      .tag-assumed i{width:7px;height:7px;border-radius:2px;background:#e0902b}
+      .exec-reco{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:linear-gradient(120deg,#eaf1ff,#e4edfd);border:1px solid #cadbfb;border-left:6px solid #2f6df0}
+      .reco-eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#2f6df0}
+      .exec-reco-text h3{margin:7px 0 6px;font-size:23px;letter-spacing:-.01em}
+      .exec-reco .btn-primary{padding:13px 24px;font-size:15px}
+      .exec-reco-text p{margin:0;color:#4a5568;font-size:14px;max-width:62ch}
+      .exec-reco-btns{display:flex;gap:10px;flex-shrink:0}
+      .btn-primary,.btn-ghost{font:inherit;font-weight:700;font-size:14px;border-radius:10px;padding:11px 18px;cursor:pointer;border:1px solid transparent}
+      .btn-primary{background:#2f6df0;color:#fff}.btn-ghost{background:#fff;color:#141821;border-color:#dbe6fd}
+      .focus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+      @media(max-width:640px){.focus-grid{grid-template-columns:1fr}}
+      .focus-card{text-align:left;background:#fff;border:1px solid #e7eaf0;border-radius:14px;padding:16px 18px;cursor:pointer;font:inherit;transition:.15s;display:flex;align-items:flex-start;gap:13px;width:100%}
+      .focus-card:hover{border-color:#c9d7f2;box-shadow:0 5px 16px rgba(20,30,50,.07)}
+      .focus-ic{width:34px;height:34px;border-radius:9px;flex:0 0 34px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800}
+      .focus-ic.warn{background:#fbf1de;color:#b9741d}.focus-ic.info{background:#e7effd;color:#2f6df0}.focus-ic.bad{background:#fbe7e6;color:#d6483b}.focus-ic.good{background:#e6f6ee;color:#14a06a}
+      .focus-tx{font-size:14px;color:#141821;line-height:1.4;display:block}
+      .focus-tx b{font-weight:800}
+      .focus-go{font-size:12px;color:#8a93a3;margin-top:4px;display:block}
+      .mne-controls{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+      #mneFilter{flex:1;max-width:380px;padding:9px 13px;border:1px solid var(--line,#e7eaf0);border-radius:10px;font:inherit;font-size:14px}
+      #mneFilter:focus{outline:none;border-color:#2f6df0}
+      .mne-toggle{margin-top:12px;background:none;border:0;color:#2f6df0;font:inherit;font-weight:700;font-size:14px;cursor:pointer;padding:4px 0}
+      .mne-toggle:hover{text-decoration:underline}
+      .opp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+      @media(max-width:700px){.opp-grid{grid-template-columns:1fr}}
+      .opp-card{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #e7eaf0;border-radius:14px;padding:16px 18px;cursor:pointer;transition:.15s}
+      .opp-card:hover{border-color:#c9d7f2;box-shadow:0 5px 16px rgba(20,30,50,.07)}
+      .opp-go{display:block;margin-top:8px;color:#2f6df0;font-weight:700;font-size:12px}
+      .opp-ic{width:38px;height:38px;border-radius:10px;flex:0 0 38px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800}
+      .opp-ic.warn{background:#fbf1de;color:#b9741d}.opp-ic.info{background:#e7effd;color:#2f6df0}.opp-ic.good{background:#e6f6ee;color:#14a06a}
+      .opp-card h4{margin:0 0 4px;font-size:15px}
+      .opp-card p{margin:0;font-size:13.5px;color:#5c6572;line-height:1.45}
+      .bc-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+      @media(max-width:800px){.bc-benefits{grid-template-columns:1fr 1fr}}
+      @media(max-width:520px){.bc-benefits{grid-template-columns:1fr}}
+      .bc-benefit{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid #e7eaf0;border-radius:12px;padding:14px 16px}
+      .bc-ic{width:34px;height:34px;border-radius:9px;flex:0 0 34px;display:flex;align-items:center;justify-content:center;font-size:16px;background:#eef3fe;color:#2f6df0}
+      .bc-benefit b{font-size:14px}
+      .bc-benefit small{display:block;color:#8a93a3;font-size:12px;margin-top:3px}
+      .rebill-row{display:flex;gap:12px;align-items:flex-start;background:#f2f6fe;border:1px solid #dbe6fd;border-radius:12px;padding:14px 16px;margin:12px 0 0;cursor:pointer}
+      .rebill-row input{margin-top:3px;width:18px;height:18px;flex:0 0 18px}
+      .rebill-row b{font-size:14px}
+      .rebill-row small{display:block;color:#5c6572;font-size:12.5px;margin-top:3px;line-height:1.45}
+      .permonth{display:block;color:#2f6df0;font-weight:700;font-size:12.5px;margin-top:6px}
+      .value-hours-box{background:#e6f6ee;border:1px solid #bfe6cf;border-left:5px solid #14a06a;border-radius:12px;padding:16px 18px;margin-top:16px;font-size:14px;line-height:1.55}
+      .value-hours-box b{color:#0f7a48}
+      #tab-case .roi-output{grid-template-columns:repeat(6,minmax(0,1fr))}
+      @media(max-width:1100px){#tab-case .roi-output{grid-template-columns:repeat(3,minmax(0,1fr))}}
+      @media(max-width:640px){#tab-case .roi-output{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      .wheel-controls{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:14px;font-size:14px;align-items:center}
+      .wheel-controls label{display:flex;gap:8px;align-items:center;color:#5c6572}
+      .wheel-controls select,.wheel-controls input[type=number]{font:inherit;padding:8px 11px;border:1px solid var(--line,#e7eaf0);border-radius:9px;background:#fff}
+      .wheel-controls input[type=number]{width:74px}
+      .wheel-controls label.chk{gap:6px}
+      .wheel-chart{margin:4px 0 8px}
+      .wheel-chart svg{width:100%;height:auto;display:block}
+      .wheel-chart .wc-hit{fill:transparent;cursor:pointer}
+      .wheel-chart .wc-sign{fill:#c9d7f2;cursor:pointer}
+      .wheel-chart .wc-bar{fill:#2f6df0;cursor:pointer}
+      .wheel-chart .wc-bar.peak{fill:#e0902b}
+      .wheel-chart .wc-sign.sel,.wheel-chart .wc-bar.sel{stroke:#141821;stroke-width:1.5}
+      .wheel-chart .wc-lbl{fill:#8a93a3;font-size:12px}
+      .wheel-chart .wc-val{fill:#141821;font-size:10px;font-weight:700}
+      .wheel-chart .wc-val2{fill:#8a93a3;font-size:10px}
+      .wheel-chart .wc-leg{fill:#5c6572;font-size:12px}
+      .wheel-insight{background:#f2f6fe;border:1px solid #dbe6fd;border-radius:12px;padding:14px 16px;margin-bottom:16px;font-size:14px;line-height:1.5}
+      .wheel-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+      @media(max-width:900px){.wheel-grid{grid-template-columns:repeat(3,1fr)}}
+      @media(max-width:560px){.wheel-grid{grid-template-columns:repeat(2,1fr)}}
+      .wheel-month{border:1px solid #e7eaf0;border-radius:12px;padding:12px 12px 10px;background:#fff;cursor:pointer;transition:.15s}
+      .wheel-month:hover{border-color:#c9d7f2;box-shadow:0 4px 14px rgba(20,30,50,.07)}
+      .wheel-month.on{border-color:#2f6df0;background:#f2f6fe}
+      .wheel-month .mn{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8a93a3}
+      .wheel-bar{height:56px;display:flex;align-items:flex-end;margin:8px 0 6px}
+      .wheel-bar i{display:block;width:100%;background:#2f6df0;border-radius:5px 5px 0 0;min-height:2px;transition:height .5s}
+      .wheel-month .wk{font-size:21px;font-weight:800;letter-spacing:-.01em}
+      .wheel-month .sg{font-size:12px;color:#5c6572}
+      .wheel-detail{margin-top:16px}
+      .wheel-loading{color:#8a93a3;font-size:14px}
+      .fold>summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:center;padding:2px 0}
+      .fold>summary::-webkit-details-marker{display:none}
+      .fold>summary::before{content:"▸";color:#8a93a3;font-size:14px}
+      .fold[open]>summary::before{content:"▾"}
+      .fold-h{font-size:19px;font-weight:800;letter-spacing:-.01em}
+      .fold-scroll{max-height:520px;overflow:auto;margin-top:12px}
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Crediwire · Ledelsesdashboard</h1>
+        <p>Overblik · udvikling · business case · muligheder for det valgte revisionshus.</p>
+      </div>
+      <div class="header-actions">
+        <label class="filter ao-search">
+          <span>Vælg revisionshus</span>
+          <input id="aoSearch" type="search" placeholder="Søg efter revisionshus eller CVR" autocomplete="off" aria-controls="aoSearchResults" aria-expanded="false" />
+          <input id="aoFilter" type="hidden" value="" />
+          <div id="aoSearchResults" class="search-results" role="listbox"></div>
+        </label>
+        <label class="mode-toggle" title="Slå avanceret budget- og scenariovisning til">
+          <input id="advancedModeToggle" type="checkbox" />
+          <span class="mode-toggle-track"><span class="mode-toggle-thumb"></span></span>
+          <span class="mode-toggle-label">Avanceret</span>
+        </label>
+        <button id="pdfExportButton" class="export-button" type="button">Eksportér til PDF</button>
+      </div>
+    </header>
+
+    <section id="pdfExecutiveSummary" class="print-only pdf-page pdf-executive-summary" aria-label="Executive Summary"></section>
+    <section id="pdfImplementationBusinessCase" class="print-only pdf-page pdf-implementation-business-case" aria-label="Business Case"></section>
+    <section id="pdfUsageAdoption" class="print-only pdf-page pdf-usage-adoption" aria-label="Brug og adoption"></section>
+
+    <main>
+      <div id="connectionsSnapshot" hidden></div>
+
+      <nav class="tabnav" role="tablist">
+        <button class="on" data-tab="tab-overblik" role="tab">Overblik</button>
+        <button data-tab="tab-udvikling" role="tab">Udvikling</button>
+        <button data-tab="tab-case" role="tab">Business case</button>
+        <button data-tab="tab-muligheder" role="tab">Muligheder</button>
+      </nav>
+
+      <!-- ========== OVERBLIK · executive, bygget efter prompten ========== -->
+      <div class="tabpane on" id="tab-overblik">
+        <!-- Skjulte beholdere så app.js stadig kan udfylde uden fejl -->
+        <div hidden aria-hidden="true">
+          <div id="primaryKpis"></div>
+          <div id="supportingKpis"></div>
+          <ul id="dataStatus"></ul>
+        </div>
+
+        <section class="panel exec-hero">
+          <div class="score-ring">
+            <svg viewBox="0 0 200 200" width="210" height="210">
+              <circle class="track" cx="100" cy="100" r="86"></circle>
+              <circle class="arc" id="scoreArc" cx="100" cy="100" r="86"></circle>
+            </svg>
+            <div class="score-mid"><strong id="scoreNum">–</strong><span>Crediwire Score</span></div>
+          </div>
+          <div class="score-side">
+            <div class="score-level lvl-val" id="scoreLevel">Beregner…</div>
+            <p class="score-delta" id="scoreDelta"></p>
+            <details class="score-expl">
+              <summary>Sådan beregnes scoren</summary>
+              <div class="score-subs" id="scoreSubs"></div>
+            </details>
+          </div>
+        </section>
+
+        <div class="exec-kpis" id="execKpis"></div>
+
+        <section class="panel exec-reco">
+          <div class="exec-reco-text">
+            <div class="reco-eyebrow">Anbefalet næste skridt</div>
+            <h3 id="recoTitle">–</h3>
+            <p id="recoBody"></p>
+          </div>
+          <div class="exec-reco-btns">
+            <button type="button" class="btn-primary" data-go="tab-muligheder">Se muligheder</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Muligheder</h2>
+            <span class="badge muted">Klik for at gå til detaljerne</span>
+          </div>
+          <div class="focus-grid" id="focusGrid"></div>
+        </section>
+      </div>
+
+      <!-- ========== UDVIKLING ========== -->
+      <div class="tabpane" id="tab-udvikling">
+        <section class="trend-layout">
+          <article class="panel trend-summary-panel">
+            <div class="panel-header">
+              <h2>Går brugen frem eller tilbage?</h2>
+              <div class="segmented-control" role="group" aria-label="Trendperiode">
+                <label><input type="radio" name="trendMode" value="ytd" checked /> <span>YTD</span></label>
+                <label><input type="radio" name="trendMode" value="mom" /> <span>MoM</span></label>
+              </div>
+            </div>
+            <div id="trendCards" class="trend-grid"></div>
+          </article>
+          <article class="panel chart-panel">
+            <div class="panel-header">
+              <h2>Dataanalyser over tid</h2>
+            </div>
+            <div id="analysesChart" class="chart large-chart"></div>
+          </article>
+          <article class="panel chart-panel">
+            <div class="panel-header">
+              <h2>Aktive brugere over tid</h2>
+            </div>
+            <div id="usersChart" class="chart large-chart"></div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Top 10 brugere</h2>
+            <span class="badge muted">Hvem driver brugen?</span>
+          </div>
+          <div id="pdfTopUserInsights" class="print-only pdf-insight-grid"></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Navn</th>
+                  <th>Email</th>
+                  <th>Revisionshus</th>
+                  <th>Dataanalyser i alt</th>
+                  <th>Seneste afsluttede måned</th>
+                  <th>Forrige afsluttede måned</th>
+                  <th>Ændring i antal</th>
+                  <th>Ændring i %</th>
+                </tr>
+              </thead>
+              <tbody id="topUsers"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <!-- ========== BUSINESS CASE ========== -->
+      <div class="tabpane" id="tab-case">
+        <section class="panel business-case-panel">
+          <div id="businessCaseDetails" class="business-case-details">
+            <div class="business-case-summary">
+              <div>
+                <h2>Business Case Regnemaskine</h2>
+              </div>
+            </div>
+            <h3 class="subheading">Antagelser</h3>
+            <div class="roi-grid">
+                <label>
+                  <span>Gennemsnitlig tidsbesparelse pr. dataanalyse</span>
+                  <input id="hoursInput" type="number" min="0" step="0.25" value="4" />
+                </label>
+                <label>
+                  <span>Timepris</span>
+                  <input id="rateInput" type="number" min="0" step="50" value="1200" />
+                </label>
+                <label>
+                  <span>Kvalitetsfaktor</span>
+                  <select id="qualityFactorInput">
+                    <option value="1">x1</option>
+                    <option value="1.5">x1,5</option>
+                    <option value="2" selected>x2</option>
+                    <option value="2.5">x2,5</option>
+                    <option value="3">x3</option>
+                    <option value="3.5">x3,5</option>
+                    <option value="4">x4</option>
+                    <option value="4.5">x4,5</option>
+                    <option value="5">x5</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Forventet implementeringsgrad</span>
+                  <select id="implementationRateInput">
+                    <option value="0.02">2%</option>
+                    <option value="0.05">5%</option>
+                    <option value="0.10">10%</option>
+                    <option value="0.15">15%</option>
+                    <option value="0.20">20%</option>
+                    <option value="0.25" selected>25%</option>
+                    <option value="0.50">50%</option>
+                    <option value="0.60">60%</option>
+                    <option value="0.70">70%</option>
+                    <option value="0.80">80%</option>
+                    <option value="0.90">90%</option>
+                    <option value="1.00">100%</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Timer sparet pr. årsrapport</span>
+                  <input id="annualReportHoursInput" type="number" min="0" step="0.25" value="0" />
+                </label>
+                <label>
+                  <span>Timer sparet pr. assistance</span>
+                  <input id="assistanceHoursInput" type="number" min="0" step="0.25" value="0" />
+                </label>
+                <label>
+                  <span>Rapporteringskunder</span>
+                  <input id="reportingCustomersInput" type="number" min="0" step="1" value="0" />
+                </label>
+                <label>
+                  <span>Timer sparet pr. rapporteringskunde</span>
+                  <input id="reportingHoursInput" type="number" min="0" step="0.25" value="0" />
+                </label>
+              </div>
+              <p class="calculator-help">Værdi beregnes som antal opgaver eller kunder × timer sparet × timepris.</p>
+              <h3 class="subheading">Investering</h3>
+              <div id="investmentSection" class="investment-section">
+                <label class="investment-panel investment-price-panel">
+                  <span>Pris for Dataanalyser (Softwarepris pr. aktiv virksomhed pr. år)</span>
+                  <div class="price-input-wrap">
+                    <input id="pricePerActiveCompanyInput" type="text" inputmode="numeric" value="1.988" />
+                    <span>kr.</span>
+                  </div>
+                  <small class="permonth" id="priceMonthly"></small>
+                </label>
+                <label class="investment-panel investment-price-panel">
+                  <span>Pris pr. årsrapport</span>
+                  <div class="price-input-wrap">
+                    <input id="annualReportPriceInput" type="text" inputmode="numeric" value="0" />
+                    <span>kr.</span>
+                  </div>
+                  <small class="permonth" id="annualPriceMonthly"></small>
+                </label>
+                <label class="investment-panel investment-price-panel">
+                  <span>Pris pr. assistanceopgave</span>
+                  <div class="price-input-wrap">
+                    <input id="assistancePriceInput" type="text" inputmode="numeric" value="0" />
+                    <span>kr.</span>
+                  </div>
+                  <small class="permonth" id="assistPriceMonthly"></small>
+                </label>
+                <div class="investment-panel investment-result" style="display:none">
+                  <span>I dag</span>
+                  <strong id="investmentCalculationValue">0 DKK</strong>
+                  <p id="investmentCalculationFormula"><span id="investmentCurrentCustomers">0</span> kunder × pris.</p>
+                  <p id="currentRoiStatus" class="investment-roi-status">ROI i dag: ikke beregnet</p>
+                </div>
+                <div class="investment-panel investment-result" style="display:none">
+                  <span>Investering for expand</span>
+                  <strong id="expandInvestmentValue">0 DKK</strong>
+                  <p id="expandInvestmentFormula"><span id="investmentExpandCustomers">0</span> nye kunder × pris.</p>
+                </div>
+                <div class="investment-panel investment-result expected-investment">
+                  <span id="targetInvestmentLabel">Samlet investering ved business case</span>
+                  <strong id="targetInvestmentValue">0 DKK</strong>
+                  <p id="targetInvestmentMonthly" class="permonth"></p>
+                  <p id="targetInvestmentFormula"><span id="investmentTargetCustomers">0</span> kunder × pris (i dag + expand).</p>
+                </div>
+              </div>
+              <p id="businessCaseInvestmentNote" class="investment-note">Business Casen bruger samlet investering ved den valgte implementeringsgrad.</p>
+              <label class="rebill-row"><input type="checkbox" id="rebillToggle" /><span><b>Viderefaktureres til kunder (til kostpris)</b><small>Fakturerer I Crediwire-prisen videre til kunderne, bliver jeres nettoinvestering 0 kr. og hele værdien tilfalder huset.</small></span></label>
+              <input id="advisoryHoursInput" type="hidden" value="0" />
+
+            <h3 class="subheading">Nøgletal</h3>
+            <div class="roi-output">
+              <div id="roiRealisticPotentialCard" class="implementation-business-card">
+                <span>Implementeringsmål</span>
+                <strong id="businessCaseImplementationStatus">0 aktive virksomheder</strong>
+                <div id="businessCaseImplementationProgress" class="business-case-progress"></div>
+              </div>
+              <div id="futureInvestmentCard" class="investment-output implementation-business-card">
+                <span>Værdi</span>
+                <strong id="futureInvestmentValue">0 DKK</strong>
+                <em class="inline-roi inline-roi-placeholder" aria-hidden="true">&nbsp;</em>
+                <div id="futureInvestmentHelp" class="card-detail">Total værdi ved valgt implementering.</div>
+              </div>
+              <div id="futureNetValueCard" class="investment-output implementation-business-card">
+                <span>Investering</span>
+                <strong id="selectedImplementationNetValue">0 DKK</strong>
+                <em class="inline-roi inline-roi-placeholder" aria-hidden="true">&nbsp;</em>
+                <div id="remainingPotentialHelp" class="card-detail">Software, årsrapport og assistance.</div>
+              </div>
+              <div id="futureRoiCard" class="investment-output implementation-business-card">
+                <span>Nettoværdi</span>
+                <strong id="futureNetValue">Indtast investering</strong>
+                <em id="futureRoiInline" class="inline-roi"></em>
+                <div id="futureGainHelp" class="card-detail">Efter samlet investering ved målet.</div>
+              </div>
+              <div id="businessCaseRoiCard" class="investment-output implementation-business-card">
+                <span>ROI</span>
+                <strong id="businessCaseRoiValue">Ved mål: ikke beregnet</strong>
+                <em id="businessCaseTargetRoiInline" class="inline-roi">I dag: ikke beregnet</em>
+                <div id="businessCaseRoiHelp" class="card-detail">Afkast ved mål med status i dag som reference.</div>
+              </div>
+              <div class="investment-output implementation-business-card">
+                <span>Frigivet tid</span>
+                <strong id="valueHoursValue">–</strong>
+                <div id="valueHoursDetail" class="card-detail">Timer sparet om året.</div>
+              </div>
+            </div>
+            <div class="value-hours-box" id="valueHoursBox" hidden></div>
+            <div id="businessCaseEquation" class="business-case-equation" aria-label="Business Case sammenhæng"></div>
+            <div id="pdfBusinessCaseInsight" class="print-only pdf-insight-block"></div>
+
+            <h3 class="subheading">Hvad får du for din investering?</h3>
+            <div class="bc-benefits">
+              <div class="bc-benefit"><span class="bc-ic">⟳</span><div><b>Ens arbejdsgange</b></div></div>
+              <div class="bc-benefit"><span class="bc-ic">▤</span><div><b>Ens output</b></div></div>
+              <div class="bc-benefit"><span class="bc-ic">★</span><div><b>Øget kvalitet</b></div></div>
+              <div class="bc-benefit"><span class="bc-ic">⏱</span><div><b>Frigivet tid</b><small>Kun værdifuldt, hvis du bruger det til at skabe værdi.</small></div></div>
+              <div class="bc-benefit"><span class="bc-ic">☺</span><div><b>Gladere medarbejdere</b></div></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ========== MULIGHEDER ========== -->
+      <div class="tabpane" id="tab-muligheder">
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Muligheder</h2>
+            <span class="badge muted">konkrete næste skridt for det valgte hus</span>
+          </div>
+          <div class="opp-grid" id="oppGrid"></div>
+        </section>
+
+        <section class="panel" id="sec-revisorer">
+          <div class="panel-header">
+            <h2>Revisorer og erklæringer</h2>
+            <span class="badge muted" id="mneCount"></span>
+          </div>
+          <div class="mne-controls">
+            <input id="mneFilter" type="search" placeholder="Filtrér på AO, revisor eller MNE" />
+          </div>
+          <div class="table-wrap fold-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>MNE</th><th>Revisor</th><th>AO (revisorfirma)</th>
+                  <th class="numeric">Revision</th><th class="numeric">Review</th><th class="numeric">Udv. gennemgang</th><th class="numeric">Assistance</th>
+                  <th class="numeric">Kunder</th><th class="numeric">Aktive</th><th class="numeric">Uudnyttet</th><th class="numeric">Potentiale</th>
+                </tr>
+              </thead>
+              <tbody id="mneBody"></tbody>
+            </table>
+          </div>
+          <button type="button" id="mneToggle" class="mne-toggle"></button>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Timing</h2>
+            <span class="badge muted">projiceret til næste år</span>
+          </div>
+          <div class="wheel-controls">
+            <label>Revisor <select id="wheelRevisor"><option value="">Hele huset</option></select></label>
+            <label>Arbejdet starter <select id="wheelWindow"><option value="3">3 mdr. før</option><option value="2" selected>2 mdr. før</option><option value="1">1 mdr. før</option><option value="0">Samme måned</option></select></label>
+            <label>Erklæringstype <select id="wheelType"><option value="">Alle</option><option value="revision">Revision</option><option value="udvidet">Udvidet gennemgang</option><option value="assistance">Assistance</option><option value="review">Review</option></select></label>
+            <label>På Crediwire <select id="wheelActive"><option value="">Alle</option><option value="0">Kun emner (ikke aktive)</option><option value="1">Kun aktive</option></select></label>
+            <label>Min. ansatte <input id="wheelAnsatte" type="number" min="0" value="0" /></label>
+            <label class="chk"><input type="checkbox" id="wheelGode" /> Kun gode Crediwire-emner</label>
+            <label class="chk"><input type="checkbox" id="wheelNoHolding" /> Fravælg holdingselskaber</label>
+            <label class="chk"><input type="checkbox" id="wheelNoEjendom" /> Fravælg ejendomsselskaber</label>
+          </div>
+          <div id="wheelInsight" class="wheel-insight"></div>
+          <div id="wheelChart" class="wheel-chart"></div>
+          <div id="wheelDetail" class="wheel-detail"></div>
+        </section>
+
+        <section class="panel" id="sec-fokus">
+          <div class="panel-header">
+            <h2 id="opportunityTitle">Hvor skal vi fokusere næste gang?</h2>
+            <span id="opportunityScopeBadge" class="badge muted">Sorteret efter uudnyttet potentiale</span>
+          </div>
+          <div id="pdfOpportunityRecommendation" class="print-only pdf-recommendation"></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Revisionshus</th>
+                  <th>Prioritet</th>
+                  <th>Næste fokus</th>
+                  <th>Værdi ved valgt implementering</th>
+                  <th>Investering for expand</th>
+                  <th>Samlet investering ved valgt implementering</th>
+                  <th>Nettoværdi ved valgt implementering</th>
+                  <th>Manglende aktive virksomheder</th>
+                  <th>Samlede erklæringer</th>
+                  <th class="analysed-column">Virksomheder analyseret</th>
+                </tr>
+              </thead>
+              <tbody id="opportunities"></tbody>
+            </table>
+          </div>
+          <label class="toggle-row">
+            <input id="showAnalysedCompaniesInput" type="checkbox" />
+            <span>Vis virksomheder analyseret</span>
+          </label>
+        </section>
+
+        <section class="panel implementation-plan-panel" id="sec-plan">
+          <details class="fold">
+          <summary class="fold-summary"><span class="fold-h">Implementeringsplan</span><span class="badge muted">handlinger for revisionshuset · klik for at åbne</span></summary>
+          <p class="panel-intro" style="margin-top:10px">Interne aktiviteter der gør Crediwire let at vælge i erklæringsarbejdet.</p>
+          <div class="implementation-plan-control">
+            <label for="implementationTimelineInput">
+              <span>Tidshorisont</span>
+              <strong id="implementationTimelineLabel">90 dage</strong>
+            </label>
+            <input id="implementationTimelineInput" type="range" min="0" max="4" step="1" value="2" list="implementationTimelineTicks" />
+            <datalist id="implementationTimelineTicks">
+              <option value="0" label="30 dage"></option>
+              <option value="1" label="60 dage"></option>
+              <option value="2" label="90 dage"></option>
+              <option value="3" label="6 mdr."></option>
+              <option value="4" label="12 mdr."></option>
+            </datalist>
+            <div class="timeline-labels" aria-hidden="true">
+              <span>30 dage</span>
+              <span>60 dage</span>
+              <span>90 dage</span>
+              <span>6 mdr.</span>
+              <span>12 mdr.</span>
+            </div>
+          </div>
+          <div id="implementationPlan"></div>
+          </details>
+        </section>
+      </div>
+
+      <!-- Avanceret visning (uden for fanerne · styres af Avanceret-knappen) -->
+      <section id="advancedView" class="advanced-view" hidden>
+        <section class="advanced-section" id="advancedSection1">
+          <header class="advanced-section-header">
+            <span class="advanced-section-num">01 — Bestyrelsesoverblik</span>
+            <h2>Vores fundament i juni 2026.</h2>
+            <p>Hvor vi er, hvad vi har leveret, og hvad det betyder for fortællingen.</p>
+          </header>
+          <section class="panel board-overview" id="boardOverview">
+            <div id="boardSections" class="board-sections"></div>
+          </section>
+          <article class="advanced-module advanced-module-history" id="arrHistoryModule">
+            <header class="advanced-module-header">
+              <div>
+                <h3>ARR-udvikling</h3>
+                <p>Faktisk ARR pr. år fra <code>Data for ARR</code>-pivot. 2026 er år-til-dato.</p>
+              </div>
+              <div class="arr-history-summary" id="arrHistorySummary"></div>
+            </header>
+            <div class="arr-history-chart" id="arrHistoryChart"></div>
+          </article>
+          <article class="advanced-module advanced-module-movement" id="arrMovementModule">
+            <header class="advanced-module-header">
+              <div>
+                <h3>ARR-bevægelse · 2025 → 2026</h3>
+                <p>Brydning af 2026-ARR i New / Expand / Recurring / Contraction / Churn.</p>
+              </div>
+              <div class="arr-history-summary" id="arrMovementSummary"></div>
+            </header>
+            <div class="arr-movement-cards" id="arrMovementCards"></div>
+            <details class="arr-movement-details">
+              <summary>Vis detaljer pr. revisionshus</summary>
+              <div class="table-wrap arr-movement-table-wrap">
+                <table class="arr-table">
+                  <thead>
+                    <tr>
+                      <th>Revisionshus</th>
+                      <th class="numeric">2025</th>
+                      <th class="numeric">2026</th>
+                      <th class="numeric">Δ</th>
+                      <th>Kategori</th>
+                    </tr>
+                  </thead>
+                  <tbody id="arrMovementTableBody"></tbody>
+                </table>
+              </div>
+            </details>
+          </article>
+          <article class="advanced-module advanced-module-yearwheel" id="arrModule">
+            <header class="advanced-module-header">
+              <div>
+                <h3>ARR · Årshjul AO</h3>
+                <p>Faktisk ARR pr. revisionshus baseret på <code>Årshjul AO</code>-arket.</p>
+              </div>
+              <div class="advanced-period-selector" role="tablist" aria-label="Periode">
+                <button type="button" class="period-btn" data-period="full" role="tab" aria-selected="true">Hele året</button>
+                <button type="button" class="period-btn" data-period="h1" role="tab" aria-selected="false">H1</button>
+                <button type="button" class="period-btn" data-period="h2" role="tab" aria-selected="false">H2</button>
+              </div>
+            </header>
+            <div class="arr-kpis" id="arrKpis"></div>
+            <div class="table-wrap arr-table-wrap">
+              <table class="arr-table">
+                <thead>
+                  <tr>
+                    <th>Revisionshus</th>
+                    <th class="numeric">SMEs faktureret</th>
+                    <th class="numeric">ARR · valgt periode</th>
+                    <th class="numeric">Andel</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="arrTableBody"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section class="advanced-section" id="advancedSection2">
+          <header class="advanced-section-header">
+            <span class="advanced-section-num">02 — Fremtiden</span>
+            <h2>Hvad vi vil omsætte for — og hvordan.</h2>
+            <p>Konkrete actions går ind i målet, både fra os og fra kunderne. Tre scenarier viser hvor vi lander ved forskellige antagelser.</p>
+          </header>
+          <section class="panel future-overview" id="futureOverview">
+            <div id="futureSections" class="board-sections"></div>
+          </section>
+          <section class="panel master-list-panel" id="masterListPanel">
+            <div class="panel-header">
+              <div>
+                <h2>Master list · Per-AO commits</h2>
+                <p class="panel-intro">Indtast committed ARR pr. periode, sandsynlighed og handlingsplan pr. AO. Total rulles op nedenfor med sandsynlighedsvægtning.</p>
+              </div>
+              <div class="master-list-controls">
+                <label class="master-list-filter">
+                  <span>Vis</span>
+                  <select id="masterListFilter">
+                    <option value="all">Alle relevante AOs</option>
+                    <option value="existing">Eksisterende kunder</option>
+                    <option value="top_prospects">Top prospects</option>
+                    <option value="next_20">Næste 20 fokus</option>
+                    <option value="accru">Accru Partners</option>
+                    <option value="rgd">RGD</option>
+                    <option value="committed">Kun med commits</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div id="masterListSummary" class="master-list-summary"></div>
+            <div class="table-wrap master-list-table-wrap">
+              <table class="master-list-table" id="masterListTable">
+                <thead>
+                  <tr>
+                    <th>AO</th>
+                    <th>Gruppe</th>
+                    <th class="numeric">ARR nu</th>
+                    <th class="numeric">Aktive SMVs</th>
+                    <th class="numeric">Erkl.</th>
+                    <th class="numeric">H2 2026</th>
+                    <th class="numeric">2027</th>
+                    <th class="numeric">2028</th>
+                    <th class="numeric">2029</th>
+                    <th class="numeric">%</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="masterListBody"></tbody>
+                <tfoot id="masterListFoot"></tfoot>
+              </table>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <section id="pdfCalculationDocumentation" class="print-only pdf-page pdf-calculation-documentation" aria-label="Sådan er Business Casen beregnet"></section>
+
+    <div id="aoOverrideModal" class="ao-override-modal" hidden>
+      <div class="ao-override-backdrop" data-ao-override-close></div>
+      <div class="ao-override-card" role="dialog" aria-labelledby="aoOverrideTitle">
+        <header class="ao-override-header">
+          <div>
+            <p class="ao-override-eyebrow">Tilpas antagelser</p>
+            <h3 id="aoOverrideTitle">—</h3>
+          </div>
+          <button type="button" class="ao-override-close" data-ao-override-close aria-label="Luk">×</button>
+        </header>
+        <p class="ao-override-help">Lad et felt være tomt for at bruge den globale antagelse. Tomme felter arver fra øverste indstillinger.</p>
+        <div class="ao-override-fields">
+          <label class="ao-override-field">
+            <span>Implementeringsgrad</span>
+            <div class="ao-override-input-wrap">
+              <input type="number" min="0" max="100" step="1" data-ao-field="implementationRate" placeholder="—" />
+              <span class="ao-override-suffix">%</span>
+            </div>
+            <small data-ao-default="implementationRate">Global: —</small>
+          </label>
+          <label class="ao-override-field">
+            <span>Softwarepris pr. aktiv virksomhed</span>
+            <div class="ao-override-input-wrap">
+              <input type="number" min="0" step="1" data-ao-field="pricePerActiveCompany" placeholder="—" />
+              <span class="ao-override-suffix">kr.</span>
+            </div>
+            <small data-ao-default="pricePerActiveCompany">Global: —</small>
+          </label>
+          <label class="ao-override-field">
+            <span>Pris pr. årsrapport</span>
+            <div class="ao-override-input-wrap">
+              <input type="number" min="0" step="1" data-ao-field="annualReportPrice" placeholder="—" />
+              <span class="ao-override-suffix">kr.</span>
+            </div>
+            <small data-ao-default="annualReportPrice">Global: —</small>
+          </label>
+          <label class="ao-override-field">
+            <span>Pris pr. assistanceopgave</span>
+            <div class="ao-override-input-wrap">
+              <input type="number" min="0" step="1" data-ao-field="assistancePrice" placeholder="—" />
+              <span class="ao-override-suffix">kr.</span>
+            </div>
+            <small data-ao-default="assistancePrice">Global: —</small>
+          </label>
+        </div>
+
+        <div class="ao-override-section ao-override-budget-section" data-advanced-only>
+          <h4>Mit budget for denne kunde</h4>
+          <p class="ao-override-section-help">Forventet ARR i hver periode. Indtast 0 hvis denne kunde ikke skal med i scenariet.</p>
+          <div class="ao-override-fields ao-override-fields-grid4">
+            <label class="ao-override-field">
+              <span>H2 2026</span>
+              <div class="ao-override-input-wrap">
+                <input type="number" min="0" step="1000" data-ao-forecast="h2_2026" placeholder="0" />
+                <span class="ao-override-suffix">kr.</span>
+              </div>
+            </label>
+            <label class="ao-override-field">
+              <span>2027</span>
+              <div class="ao-override-input-wrap">
+                <input type="number" min="0" step="1000" data-ao-forecast="2027" placeholder="0" />
+                <span class="ao-override-suffix">kr.</span>
+              </div>
+            </label>
+            <label class="ao-override-field">
+              <span>2028</span>
+              <div class="ao-override-input-wrap">
+                <input type="number" min="0" step="1000" data-ao-forecast="2028" placeholder="0" />
+                <span class="ao-override-suffix">kr.</span>
+              </div>
+            </label>
+            <label class="ao-override-field">
+              <span>2029</span>
+              <div class="ao-override-input-wrap">
+                <input type="number" min="0" step="1000" data-ao-forecast="2029" placeholder="0" />
+                <span class="ao-override-suffix">kr.</span>
+              </div>
+            </label>
+          </div>
+          <label class="ao-override-field ao-override-action">
+            <span>Handlingsplan</span>
+            <textarea data-ao-action placeholder="Hvad skal der ske for at lande dette?"></textarea>
+          </label>
+        </div>
+        <footer class="ao-override-footer">
+          <button type="button" class="ao-override-button ghost" id="aoOverrideReset">Nulstil</button>
+          <div class="ao-override-footer-right">
+            <button type="button" class="ao-override-button ghost" data-ao-override-close>Annullér</button>
+            <button type="button" class="ao-override-button primary" id="aoOverrideApply">Anvend</button>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="app.js?v=20260804-1"></script>
+    <script>
+    /* ===== Viderefakturering: netto-investering 0, ROI fuldt dækket ===== */
+    (function(){
+      const $=id=>document.getElementById(id);
+      function applyRebill(){
+        const t=$('rebillToggle'); if(!t||!t.checked) return;
+        const vaerdi = $('futureInvestmentValue') ? $('futureInvestmentValue').textContent : null;
+        if($('selectedImplementationNetValue')) $('selectedImplementationNetValue').textContent='0 kr. · viderefaktureret';
+        if(vaerdi && $('futureNetValue')) $('futureNetValue').textContent=vaerdi;
+        if($('businessCaseRoiValue')) $('businessCaseRoiValue').textContent='Fuldt dækket';
+        if($('businessCaseTargetRoiInline')) $('businessCaseTargetRoiInline').textContent='Investeringen viderefaktureres · netto 0 kr.';
+        if($('targetInvestmentValue')) $('targetInvestmentValue').textContent='0 kr.';
+      }
+      function updateMonthly(){
+        const perMd=(inputId,outId,unit)=>{
+          const el=$(inputId), out=$(outId); if(!el||!out) return;
+          const yr=parseInt((el.value||'').replace(/\D/g,''),10)||0;
+          out.textContent = yr ? ('≈ '+Math.round(yr/12).toLocaleString('da-DK')+' kr./md pr. '+unit) : '';
+        };
+        perMd('pricePerActiveCompanyInput','priceMonthly','virksomhed');
+        perMd('annualReportPriceInput','annualPriceMonthly','årsrapport');
+        perMd('assistancePriceInput','assistPriceMonthly','assistanceopgave');
+        const tv=$('targetInvestmentValue');
+        if(tv && $('targetInvestmentMonthly')){
+          const tot=parseInt((tv.textContent||'').replace(/[^0-9]/g,''),10)||0;
+          $('targetInvestmentMonthly').textContent = tot ? ('≈ '+Math.round(tot/12).toLocaleString('da-DK')+' kr./md samlet at fakturere') : '';
+        }
+      }
+      function updateHours(){
+        const box=$('valueHoursBox'); if(!box) return;
+        try{
+          if(typeof scopeMetrics!=='function'){ box.hidden=true; return; }
+          const m=scopeMetrics();
+          const timer=Math.round(m.realisticHours||0);
+          const fteBase=(typeof HOURS_PER_FTE!=='undefined' && HOURS_PER_FTE)?HOURS_PER_FTE:1924;
+          const pct=Math.round((m.implementationRate||0)*100);
+          const hv=$('valueHoursValue'), hd=$('valueHoursDetail');
+          if(hv) hv.textContent = timer>0 ? (timer.toLocaleString('da-DK')+' timer') : '–';
+          if(hd) hd.textContent = timer>0 ? ('≈ '+(timer/fteBase).toLocaleString('da-DK',{maximumFractionDigits:1})+' årsværk frigjort om året') : 'Timer sparet om året.';
+          if(timer>0){
+            box.hidden=false;
+            box.innerHTML=`Værdien er reelt <b>${timer.toLocaleString('da-DK')} frigjorte timer</b> om året ved ${pct}% implementering (≈ <b>${(timer/fteBase).toLocaleString('da-DK',{maximumFractionDigits:1})} årsværk</b>). Selv når investeringen viderefaktureres og ROI er "fuldt dækket", er den frigjorte tid stadig reel: den bliver først til værdi når den bruges til at skabe værdi.`;
+          } else box.hidden=true;
+        }catch(e){}
+      }
+      function ready(){
+        const anchor=$('primaryKpis');
+        if(!anchor) return setTimeout(ready,150);
+        new MutationObserver(()=>{ applyRebill(); updateMonthly(); updateHours(); }).observe(anchor,{childList:true});
+        applyRebill(); updateMonthly(); updateHours();
+        document.addEventListener('input',e=>{ if(e.target&&['pricePerActiveCompanyInput','annualReportPriceInput','assistancePriceInput'].includes(e.target.id)) updateMonthly(); });
+        document.addEventListener('change',e=>{ if(e.target&&e.target.id==='rebillToggle'){ if(typeof renderDashboard==='function') renderDashboard(); applyRebill(); updateMonthly(); }});
+      }
+      ready();
+    })();
+    </script>
+    <script>
+    /* ===== Fælles scope: alle huse · gruppe · enkelt hus ===== */
+    function scopeNames(){
+      try{
+        if(typeof state==='undefined' || !state.selectedCvr) return null; // Alle revisionshuse = intet filter
+        const grp=(typeof GROUP_FILTERS!=='undefined') && GROUP_FILTERS[state.selectedCvr];
+        if(grp){
+          let cvrs=(typeof groupCvrs==='function') ? groupCvrs(grp) : (grp.cvrList||[]);
+          if(typeof cvrs==='function') cvrs=cvrs();
+          const cvrSet=new Set((cvrs||[]).map(String));
+          return (state.offices||[]).filter(o=>cvrSet.has(String(o.cvr))).map(o=>(o.name||'').toLowerCase()).filter(Boolean);
+        }
+        const s=document.getElementById('aoSearch');
+        return [((s&&s.value)||'').toLowerCase().trim()].filter(Boolean);
+      }catch(e){ return null; }
+    }
+    function matchesScope(firma, names){
+      if(!names) return true;
+      const f=(firma||'').toLowerCase();
+      return names.some(n=> n && (f.startsWith(n)||n.startsWith(f)));
+    }
+    /* ===== Fire faner ===== */
+    (function(){
+      const btns = document.querySelectorAll('.tabnav button');
+      const panes = document.querySelectorAll('.tabpane');
+      function showTab(id){
+        if(!document.getElementById(id)) return;
+        btns.forEach(x => x.classList.toggle('on', x.dataset.tab===id));
+        panes.forEach(p => p.classList.toggle('on', p.id===id));
+        if(location.hash!=='#'+id) history.replaceState(null,'','#'+id);
+      }
+      btns.forEach(b => b.addEventListener('click', () => { showTab(b.dataset.tab); window.scrollTo({top:0, behavior:'smooth'}); }));
+      if(location.hash && document.getElementById(location.hash.slice(1))) showTab(location.hash.slice(1));
+    })();
+
+    /* ===== Crediwire Score-ring ===== */
+    (function(){
+      const clamp = (x,a,b) => Math.max(a, Math.min(b, x));
+      const C = 2*Math.PI*86;
+      const SUBDEF = [
+        {key:'akt', nm:'Aktivering', sub:'Aftalen i brug', w:25},
+        {key:'vak', nm:'Vækst', sub:'År mod år', w:20},
+        {key:'udn', nm:'Udnyttelse', sub:'Analyser pr. virksomhed', w:20},
+        {key:'bre', nm:'Brugerbredde', sub:'Spredning på brugere', w:15},
+        {key:'dae', nm:'Markedsdækning', sub:'Andel af klasse B', w:20},
+      ];
+      const colOf = v => v>=75 ? '#14a06a' : v>=50 ? '#e0902b' : '#d6483b';
+
+      function ytdGrowth(){
+        try{
+          const s = monthlySeries('analyses');
+          const inR = (lbl,yr)=>{ const p=String(lbl).split('-'); return Number(p[0])===yr && Number(p[1])>=1 && Number(p[1])<=5; };
+          const a25 = s.filter(d=>inR(d.label,2025)).reduce((t,d)=>t+d.value,0);
+          const a26 = s.filter(d=>inR(d.label,2026)).reduce((t,d)=>t+d.value,0);
+          return a25>0 ? (a26/a25 - 1) : null;
+        }catch(e){ return null; }
+      }
+      function top3Share(){
+        try{
+          const users = selectedRows(state.data.users).slice().sort((a,b)=>num(b.total_analyses)-num(a.total_analyses));
+          const total = users.reduce((t,u)=>t+num(u.total_analyses),0);
+          const t3 = users.slice(0,3).reduce((t,u)=>t+num(u.total_analyses),0);
+          return total>0 ? t3/total : null;
+        }catch(e){ return null; }
+      }
+
+      function computeScore(){
+        const m = scopeMetrics();
+        const vals = {};
+        // Aktivering (udelades hvis flere aktive end købte)
+        if(!(m.activeConnections > m.purchasedCompanies && m.purchasedCompanies > 0))
+          vals.akt = clamp(m.activationRate,0,1)*100;
+        // Vækst
+        const g = ytdGrowth();
+        if(g!==null) vals.vak = clamp(0.5 + g, 0, 1)*100;
+        // Udnyttelse (mål 12/år)
+        vals.udn = clamp((m.usageIntensity||0)/12, 0, 1)*100;
+        // Brugerbredde
+        const t3 = top3Share();
+        if(t3!==null) vals.bre = clamp((1-t3)/0.67, 0, 1)*100;
+        // Markedsdækning (mål 25%)
+        const cov = m.totalDeclarations>0 ? m.activeConnections/m.totalDeclarations : null;
+        if(cov!==null) vals.dae = clamp(cov/0.25, 0, 1)*100;
+
+        let wSum=0, wVal=0;
+        SUBDEF.forEach(s=>{ if(vals[s.key]!=null){ wSum+=s.w; wVal+=vals[s.key]*s.w; } });
+        const totalW = SUBDEF.reduce((t,s)=>t+s.w,0);
+        const score = wSum/totalW >= 0.6 ? Math.round(wVal/wSum) : null;
+        return {score, vals};
+      }
+
+      function level(score){
+        if(score>=90) return {t:'Excellent', c:'lvl-exc'};
+        if(score>=75) return {t:'Strong', c:'lvl-strong'};
+        if(score>=60) return {t:'Value opportunity', c:'lvl-val'};
+        return {t:'Needs attention', c:'lvl-need'};
+      }
+
+      function render(){
+        const {score, vals} = computeScore();
+        const arc = document.getElementById('scoreArc');
+        const numEl = document.getElementById('scoreNum');
+        const lvlEl = document.getElementById('scoreLevel');
+        const subsEl = document.getElementById('scoreSubs');
+        if(score===null){
+          numEl.textContent='–';
+          lvlEl.className='score-level lvl-val'; lvlEl.textContent='For lidt data til en score';
+          arc.style.strokeDashoffset=C; arc.style.stroke='#c3cad6';
+        } else {
+          numEl.textContent=score;
+          const lv=level(score);
+          lvlEl.className='score-level '+lv.c; lvlEl.textContent=lv.t;
+          arc.style.stroke=colOf(score);
+          arc.style.strokeDashoffset = C*(1-score/100);
+        }
+        subsEl.innerHTML = SUBDEF.map(s=>{
+          const v = vals[s.key];
+          if(v==null) return `<div class="score-sub"><div class="nm">${s.nm}<small>udelades · mangler data</small></div><div class="meter"><i style="width:0"></i></div><div class="v" style="color:#c3cad6">–</div></div>`;
+          const r=Math.round(v), c=colOf(v);
+          return `<div class="score-sub"><div class="nm">${s.nm}<small>${s.sub}</small></div><div class="meter"><i style="width:${r}%;background:${c}"></i></div><div class="v" style="color:${c}">${r}</div></div>`;
+        }).join('');
+        const dEl=document.getElementById('scoreDelta');
+        if(dEl) dEl.textContent='Samlet score for aktivering, vækst, udnyttelse, brugerbredde og markedsdækning.';
+        try{ renderExec(); }catch(e){ console.warn('exec', e); }
+      }
+
+      const fmtMio = n => (n/1e6).toLocaleString('da-DK',{minimumFractionDigits:1,maximumFractionDigits:1})+' mio. kr.';
+      const fmtKr = n => Math.round(n).toLocaleString('da-DK')+' kr.';
+      const fmtN = n => Math.round(n).toLocaleString('da-DK');
+      const fmtPct = x => (x*100).toLocaleString('da-DK',{maximumFractionDigits:1})+'%';
+
+      function goTo(t){
+        document.querySelectorAll('.tabnav button').forEach(x=>x.classList.toggle('on',x.dataset.tab===t));
+        document.querySelectorAll('.tabpane').forEach(p=>p.classList.toggle('on',p.id===t));
+        window.scrollTo({top:0,behavior:'smooth'});
+      }
+
+      function renderExec(){
+        const m = scopeMetrics();
+        const g = ytdGrowth();
+        const netToday = (m.currentNetValue!=null ? m.currentNetValue : (m.realizedValue - m.currentInvestment));
+        const outside = Math.max(0, m.totalDeclarations - m.activeConnections);
+        const tgtPct = Math.round((m.implementationRate||0)*100);
+        const kpis = [
+          {lbl:'Aktiveringsrate', assumed:false, big:fmtPct(m.activationRate), cls:'good', sub:fmtN(m.activeConnections)+' af '+fmtN(m.purchasedCompanies)+' virksomheder aktiveret', go:'tab-muligheder'},
+          {lbl:'Aktivitet', assumed:false, big:(g!=null?('+'+Math.round(g*100)+'%'):'–'), cls:'good', sub:'jan–maj 2026 mod samme periode 2025', go:'tab-udvikling'},
+          {lbl:'Dataanalyser downloadet', assumed:false, big:fmtN(m.totalAnalyses), cls:'', sub:'i alt siden opstart', go:'tab-udvikling'},
+          {lbl:'Nettoværdi skabt', assumed:true, big:fmtMio(netToday), cls:'', sub:fmtKr(m.realizedValue)+' skabt · '+fmtKr(m.currentInvestment)+' investering · åbner business case', go:'tab-case'},
+        ];
+        document.getElementById('execKpis').innerHTML = kpis.map(k=>`
+          <button class="kpi-card" data-go="${k.go}">
+            <div class="lbl">${k.lbl} ${k.assumed?'<span class="tag-assumed"><i></i>antaget</span>':'<span class="tag-measured"><i></i>målt</span>'}</div>
+            <div class="big ${k.cls}">${k.big}</div>
+            <div class="sub">${k.sub}</div>
+            <div class="go">Se detaljer →</div>
+          </button>`).join('');
+
+        document.getElementById('recoTitle').textContent = `Udvid implementeringen til ${tgtPct}% af kundeporteføljen`;
+        document.getElementById('recoBody').textContent = `Det svarer til ${fmtN(m.targetActiveCompanies)} virksomheder og kan øge den samlede nettoværdi med ca. ${fmtMio(m.unusedPotential)}`;
+
+        const onboardF = m.remainingPurchasedActivation>0 ? {ic:'warn', sym:'+', tx:`Onboard de sidste <b>${fmtN(m.remainingPurchasedActivation)}</b> uaktiverede virksomheder.`, go:'tab-muligheder'} : null;
+        const top3F = {ic:'info', sym:'★', tx:`<b>Top 3 revisorer</b> med størst uudnyttet potentiale.`, go:'tab-muligheder'};
+        const stepsF = {ic:'info', sym:'→', tx:`<b>${fmtN(m.missingActivation)}</b> flere virksomheder til målet på ${tgtPct}%.`, go:'tab-muligheder'};
+        const arrF = {ic:'good', sym:'≡', tx:`<b>${fmtN(m.annualReportTasks)}</b> erklæringer relevante for årsrapport-produktet.`, go:'tab-muligheder'};
+        const focus = onboardF ? [onboardF, top3F, stepsF, arrF] : [stepsF, top3F, arrF];
+        document.getElementById('focusGrid').innerHTML = focus.map(f=>`
+          <button class="focus-card" data-go="${f.go}">
+            <span class="focus-ic ${f.ic}">${f.sym}</span>
+            <span><span class="focus-tx">${f.tx}</span><span class="focus-go">Klik for at se mere →</span></span>
+          </button>`).join('');
+
+        document.querySelectorAll('#tab-overblik [data-go]').forEach(b=>{ b.onclick=()=>goTo(b.dataset.go); });
+      }
+
+      // Kør efter hver dashboard-render (hus-skift, antagelser osv.)
+      function ready(){
+        if(typeof scopeMetrics!=='function' || typeof state==='undefined' || !state.data || !state.data.aoMaster){
+          return setTimeout(ready, 120);
+        }
+        // Kundedashboardet er altid hus-specifikt: vælg Grant Thornton som standard.
+        if(!state.selectedCvr){
+          state.selectedCvr='34209936';
+          const f=document.getElementById('aoFilter'); if(f) f.value='34209936';
+          const s=document.getElementById('aoSearch'); if(s) s.value='Grant Thornton';
+          if(typeof renderDashboard==='function') renderDashboard();
+        }
+        render();
+        const kpis = document.getElementById('primaryKpis');
+        if(kpis) new MutationObserver(()=>render()).observe(kpis, {childList:true});
+      }
+      ready();
+    })();
+
+    /* ===== MNE-liste: revisorer og erklæringer (Muligheder) ===== */
+    (function(){
+      let rows=[], showAll=false;
+      const daN = s => { const n=parseInt(s,10)||0; return n.toLocaleString('da-DK'); };
+      const houseName = () => { const s=document.getElementById('aoSearch'); return (s && s.value.trim()) || ''; };
+      function parseLine(l){
+        const out=[]; let cur='', q=false;
+        for(let i=0;i<l.length;i++){ const ch=l[i];
+          if(ch==='"'){ q=!q; } else if(ch===',' && !q){ out.push(cur); cur=''; } else cur+=ch; }
+        out.push(cur); return out;
+      }
+      function valPerCompany(){
+        const v=id=>parseFloat((document.getElementById(id)||{}).value)||0;
+        const h=v('hoursInput'), r=v('rateInput'), q=v('qualityFactorInput')||1;
+        return h*r*q;
+      }
+      const sortPot=(a,b)=>(parseInt(b.uudnyttede_kunder,10)||0)-(parseInt(a.uudnyttede_kunder,10)||0);
+      const potKr=(r,vpc)=>Math.round((parseInt(r.uudnyttede_kunder,10)||0)*vpc).toLocaleString('da-DK')+' kr.';
+      function fullRow(r,vpc){ return `<tr>
+        <td>${r.mne}</td><td>${r.revisor||'—'}</td><td>${r.ao_firma||'—'}</td>
+        <td class="numeric">${daN(r.revision)}</td><td class="numeric">${daN(r.review)}</td>
+        <td class="numeric">${daN(r.udvidet_gennemgang)}</td><td class="numeric">${daN(r.assistance)}</td>
+        <td class="numeric">${daN(r.distinkte_kunder)}</td><td class="numeric"><strong>${daN(r.aktive_kunder)}</strong></td>
+        <td class="numeric">${daN(r.uudnyttede_kunder)}</td><td class="numeric">${potKr(r,vpc)}</td></tr>`; }
+      function top3Row(r,vpc){ return `<tr>
+        <td>${r.mne}</td><td>${r.revisor||'—'}</td><td>${r.ao_firma||'—'}</td>
+        <td class="numeric">${daN(r.distinkte_kunder)}</td><td class="numeric"><strong>${daN(r.aktive_kunder)}</strong></td>
+        <td class="numeric">${daN(r.uudnyttede_kunder)}</td><td class="numeric"><strong>${potKr(r,vpc)}</strong></td></tr>`; }
+      function render(){
+        const body=document.getElementById('mneBody'); if(!body) return;
+        const vpc=valPerCompany();
+        const q=(document.getElementById('mneFilter').value||'').trim().toLowerCase();
+        const names=scopeNames();
+        let list = q ? rows.filter(r => (r.ao_firma+' '+r.revisor+' '+r.mne).toLowerCase().includes(q))
+                     : rows.filter(r=>matchesScope(r.ao_firma,names));
+        list.sort(sortPot);
+        const total=list.length;
+        const shown=(q||showAll) ? list.slice(0,500) : list.slice(0,3);
+        body.innerHTML = shown.map(r=>fullRow(r,vpc)).join('') || '<tr><td colspan="11">Ingen revisorer matcher.</td></tr>';
+        document.getElementById('mneCount').textContent = total.toLocaleString('da-DK')+' revisorer';
+        const tog=document.getElementById('mneToggle');
+        if(tog){
+          if(q||total<=3){ tog.style.display='none'; }
+          else { tog.style.display=''; tog.textContent = showAll ? 'Vis kun top 3' : ('Vis alle '+total.toLocaleString('da-DK')+' revisorer'); }
+        }
+        renderOpp();
+      }
+      function renderOpp(){
+        const og=document.getElementById('oppGrid'); if(!og) return;
+        try{
+          const fokusSec=document.getElementById('sec-fokus');
+          if(fokusSec && typeof state!=='undefined'){
+            const isGroup=(typeof GROUP_FILTERS!=='undefined') && GROUP_FILTERS[state.selectedCvr];
+            fokusSec.style.display=(state.selectedCvr && !isGroup) ? 'none' : '';
+          }
+        }catch(e){}
+        try{
+          if(typeof scopeMetrics!=='function') return;
+          const m=scopeMetrics();
+          const houseList=rows.filter(r=>matchesScope(r.ao_firma,scopeNames())).slice().sort(sortPot);
+          const top3=houseList.slice(0,3).map(r=>r.revisor).filter(Boolean).join(' · ')||'—';
+          const rem=m.remainingPurchasedActivation||0, miss=m.missingActivation||0, tgt=Math.round((m.implementationRate||0)*100), pace=Math.round(miss/12), arr=m.annualReportTasks||0;
+          const onboard={ic:'+',cls:'warn',t:'Onboard de sidste '+daN(rem),d:daN(rem)+' købte virksomheder er endnu ikke aktiveret. Aktivér dem for at få fuld værdi af aftalen.',go:'scroll:sec-plan',lnk:'Se implementeringsplanen →'};
+          const steps={ic:'→',cls:'info',t:'Steps mod næste mål',d:daN(miss)+' virksomheder mangler for at nå målet på '+tgt+'%. Ca. '+daN(pace)+' aktiveringer om måneden over et år.',go:'scroll:sec-plan',lnk:'Se implementeringsplanen →'};
+          const top3c={ic:'★',cls:'info',t:'Top 3 revisorer',d:'Størst uudnyttet potentiale: '+top3+'.',go:'scroll:sec-revisorer',lnk:'Se revisorlisten →'};
+          const arrc={ic:'≡',cls:'good',t:'Muligheder med årsrapporter',d:daN(arr)+' erklæringer er relevante for årsrapport-produktet: et nyt indtægtsområde ud over dataanalyser.',go:'tab:tab-case',lnk:'Åbn business case →'};
+          const cards = rem>0 ? [onboard,top3c,steps,arrc] : [steps,top3c,arrc];
+          og.innerHTML=cards.map(c=>`<div class="opp-card" data-go="${c.go}"><span class="opp-ic ${c.cls}">${c.ic}</span><div><h4>${c.t}</h4><p>${c.d}</p><span class="opp-go">${c.lnk}</span></div></div>`).join('');
+        }catch(e){}
+      }
+      fetch('../data/processed/mne_declarations.csv').then(r=>r.text()).then(txt=>{
+        const lines=txt.trim().split('\n'); const hdr=parseLine(lines[0]);
+        rows=lines.slice(1).map(l=>{ const c=parseLine(l); const o={}; hdr.forEach((h,i)=>o[h]=c[i]); return o; });
+        render();
+        const kpis=document.getElementById('primaryKpis');
+        if(kpis) new MutationObserver(()=>render()).observe(kpis,{childList:true});
+      }).catch(e=>{
+        const body=document.getElementById('mneBody');
+        if(body) body.innerHTML='<tr><td colspan="8">Kan ikke indlæse MNE-data.</td></tr>';
+      });
+      document.addEventListener('input', e=>{ if(e.target && e.target.id==='mneFilter'){ render(); } });
+      document.addEventListener('click', e=>{ if(e.target && e.target.id==='mneToggle'){ showAll=!showAll; render(); } });
+      document.addEventListener('click', e=>{
+        const card=e.target.closest && e.target.closest('.opp-card'); if(!card||!card.dataset.go) return;
+        const go=card.dataset.go;
+        if(go.startsWith('tab:')){
+          const t=go.slice(4);
+          document.querySelectorAll('.tabnav button').forEach(x=>x.classList.toggle('on',x.dataset.tab===t));
+          document.querySelectorAll('.tabpane').forEach(p=>p.classList.toggle('on',p.id===t));
+          window.scrollTo({top:0,behavior:'smooth'});
+        } else if(go.startsWith('scroll:')){
+          const el=document.getElementById(go.slice(7)); if(!el) return;
+          const d=el.querySelector('details.fold'); if(d) d.open=true;
+          el.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
+    })();
+
+    /* ===== Årshjul: hvornår arbejder revisorerne ===== */
+    (function(){
+      const MONTHS=['Jan','Feb','Mar','Apr','Maj','Jun','Jul','Aug','Sep','Okt','Nov','Dec'];
+      let cal=null, mneMap={}, curMonth=null, loading=false;
+      const $=id=>document.getElementById(id);
+      const houseName=()=>{ const s=$('aoSearch'); return (s&&s.value.trim())||''; };
+      function splitCsv(l){ const out=[]; let cur='',q=false; for(let i=0;i<l.length;i++){ const ch=l[i]; if(ch==='"')q=!q; else if(ch===','&&!q){out.push(cur);cur='';} else cur+=ch; } out.push(cur); return out; }
+      function parse(txt){ const L=txt.trim().split('\n'); const h=splitCsv(L[0]); return L.slice(1).map(l=>{const c=splitCsv(l);const o={};h.forEach((k,i)=>o[k]=c[i]);return o;}); }
+      function scopedMnes(){
+        const rev=$('wheelRevisor').value;
+        if(rev) return new Set([rev]);
+        const names=scopeNames();
+        return new Set(Object.keys(mneMap).filter(m=>matchesScope(mneMap[m].firma,names)));
+      }
+      function typeMatch(t,f){ t=(t||'').toLowerCase();
+        if(f==='revision') return t.includes('revision');
+        if(f==='udvidet') return t.includes('udvidet');
+        if(f==='assistance') return t.includes('assistance');
+        if(f==='review') return t==='review';
+        return true; }
+      function goodFit(r){ const t=(r.type||'').toLowerCase();
+        return r.aktiv==='0' && (t.includes('assistance')||t.includes('udvidet')) && r.ansatte!=='' && (+r.ansatte>=1); }
+      function filtered(){
+        if(!cal) return [];
+        const set=scopedMnes();
+        const ft=$('wheelType').value, fa=$('wheelActive').value, fan=+$('wheelAnsatte').value||0, gode=$('wheelGode').checked, noHold=$('wheelNoHolding').checked, noEj=$('wheelNoEjendom').checked;
+        return cal.filter(r=>{
+          if(!set.has(r.mne)) return false;
+          if(noHold && /holding/i.test(r.client_navn||'')) return false;
+          if(noEj && r.ejendom==='1') return false;
+          if(gode) return goodFit(r) && typeMatch(r.type,ft);
+          if(!typeMatch(r.type,ft)) return false;
+          if(fa!==''&&r.aktiv!==fa) return false;
+          if(fan>0 && (r.ansatte===''|| +r.ansatte<fan)) return false;
+          return true; });
+      }
+      function agg(rows){
+        const sign=new Array(13).fill(0);
+        rows.forEach(r=>{ const m=+r.pub_month; if(m>=1&&m<=12) sign[m]++; });
+        const off=+$('wheelWindow').value; const work=new Array(13).fill(0);
+        for(let M=1;M<=12;M++){ work[M]=sign[((M-1+off)%12)+1]; }
+        return {sign,work};
+      }
+      function chart(sign,work){
+        const W=1200,H=214,padL=8,padR=8,padT=34,padB=26;
+        const slot=(W-padL-padR)/12, plotH=H-padT-padB, maxV=Math.max(1,...sign.slice(1),...work.slice(1));
+        let peak=1; for(let M=2;M<=12;M++) if(work[M]>work[peak]) peak=M;
+        const bw=slot*0.32, gap=slot*0.06;
+        let s=`<rect x="${padL}" y="8" width="12" height="12" rx="2" fill="#c9d7f2"></rect><text class="wc-leg" x="${padL+18}" y="18">Underskrift</text>`;
+        s+=`<rect x="${padL+112}" y="8" width="12" height="12" rx="2" fill="#2f6df0"></rect><text class="wc-leg" x="${padL+130}" y="18">Arbejde i gang</text>`;
+        for(let M=1;M<=12;M++){
+          const gx=padL+(M-1)*slot, cx=gx+slot/2;
+          const hs=plotH*(sign[M]/maxV), hw=plotH*(work[M]/maxV);
+          const x1=cx-bw-gap/2, x2=cx+gap/2;
+          s+=`<rect class="wc-hit" data-m="${M}" x="${gx.toFixed(1)}" y="${padT}" width="${slot.toFixed(1)}" height="${plotH.toFixed(1)}"><title>${MONTHS[M-1]}: underskriver ${sign[M].toLocaleString('da-DK')} · ${work[M].toLocaleString('da-DK')} i arbejde</title></rect>`;
+          s+=`<rect class="wc-sign${curMonth===M?' sel':''}" data-m="${M}" x="${x1.toFixed(1)}" y="${(H-padB-hs).toFixed(1)}" width="${bw.toFixed(1)}" height="${hs.toFixed(1)}" rx="3"></rect>`;
+          s+=`<rect class="wc-bar${M===peak?' peak':''}${curMonth===M?' sel':''}" data-m="${M}" x="${x2.toFixed(1)}" y="${(H-padB-hw).toFixed(1)}" width="${bw.toFixed(1)}" height="${hw.toFixed(1)}" rx="3"></rect>`;
+          s+=`<text class="wc-val2" x="${(x1+bw/2).toFixed(1)}" y="${(H-padB-hs-4).toFixed(1)}" text-anchor="middle">${sign[M].toLocaleString('da-DK')}</text>`;
+          s+=`<text class="wc-val" x="${(x2+bw/2).toFixed(1)}" y="${(H-padB-hw-4).toFixed(1)}" text-anchor="middle">${work[M].toLocaleString('da-DK')}</text>`;
+          s+=`<text class="wc-lbl" x="${cx.toFixed(1)}" y="${H-7}" text-anchor="middle">${MONTHS[M-1]}</text>`;
+        }
+        $('wheelChart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Underskrift og arbejde pr. måned">${s}</svg>`;
+        $('wheelChart').querySelectorAll('[data-m]').forEach(el=>el.addEventListener('click',()=>{ const M=+el.dataset.m; curMonth=(curMonth===M)?null:M; detail(); build(); }));
+      }
+      function build(){
+        if(!$('wheelChart')||!cal) return;
+        const rows=filtered(); const {sign,work}=agg(rows);
+        chart(sign,work);
+        let peak=1,low=1; for(let M=2;M<=12;M++){ if(work[M]>work[peak])peak=M; if(work[M]<work[low])low=M; }
+        const total=work.slice(1).reduce((a,b)=>a+b,0), even=Math.round(total/12);
+        const ins=$('wheelInsight');
+        if(total===0) ins.innerHTML='Ingen kunder matcher filtrene i det valgte scope.';
+        else ins.innerHTML=`<b>Flaskehals:</b> ${MONTHS[peak-1]} er travlest med ca. ${work[peak].toLocaleString('da-DK')} kunder i arbejde, mens ${MONTHS[low-1]} kun har ca. ${work[low].toLocaleString('da-DK')}. En jævn fordeling ville være ca. ${even.toLocaleString('da-DK')} pr. måned. Klik på en søjle for at se kunderne.`;
+      }
+      function detail(){
+        const box=$('wheelDetail'); if(!box) return;
+        if(curMonth===null){ box.innerHTML=''; return; }
+        const list=filtered().filter(r=>+r.pub_month===curMonth)
+          .map(r=>Object.assign({revisor:(mneMap[r.mne]||{}).revisor||'—'},r))
+          .sort((a,b)=> a.revisor.localeCompare(b.revisor)||String(a.client_navn).localeCompare(String(b.client_navn)));
+        box.innerHTML=`<div class="panel-header"><h3>Underskrives i ${MONTHS[curMonth-1]} · ${list.length.toLocaleString('da-DK')} kunder</h3></div>
+          <div class="table-wrap fold-scroll"><table><thead><tr><th>Revisor</th><th>Kunde</th><th>CVR</th><th>Kommune</th><th>Erklæringstype</th><th class="numeric">Ansatte</th><th>På Crediwire</th></tr></thead>
+          <tbody>${list.slice(0,500).map(r=>`<tr><td>${r.revisor}</td><td>${r.client_navn||'—'}</td><td>${r.client_cvr}</td><td>${r.kommune||'—'}</td><td>${r.type||'—'}</td><td class="numeric">${r.ansatte||'—'}</td><td>${r.aktiv==='1'?'Ja':'Nej'}</td></tr>`).join('')}</tbody></table></div>`;
+      }
+      function populateRevisor(){
+        const names=scopeNames();
+        const inHouse=Object.keys(mneMap).filter(m=>matchesScope(mneMap[m].firma,names));
+        const sel=$('wheelRevisor'); if(!sel) return; const cur=sel.value;
+        sel.innerHTML='<option value="">Hele huset</option>'+inHouse.sort((a,b)=>(mneMap[a].revisor||'').localeCompare(mneMap[b].revisor||'')).map(m=>`<option value="${m}">${mneMap[m].revisor||m}</option>`).join('');
+        if([...sel.options].some(o=>o.value===cur)) sel.value=cur;
+      }
+      function loadCal(){
+        if(cal||loading) return; loading=true;
+        $('wheelInsight').innerHTML='<span class="wheel-loading">Indlæser årshjul…</span>';
+        fetch('../data/processed/revisor_calendar.csv').then(r=>r.text()).then(t=>{ cal=parse(t); loading=false; build(); })
+          .catch(()=>{ $('wheelInsight').innerHTML='Kan ikke indlæse årshjul-data.'; loading=false; });
+      }
+      fetch('../data/processed/mne_declarations.csv').then(r=>r.text()).then(m=>{
+        parse(m).forEach(r=>{ mneMap[r.mne]={firma:r.ao_firma,revisor:r.revisor}; });
+        populateRevisor();
+        const anchor=document.querySelector('#tab-muligheder .wheel-controls');
+        if(anchor && 'IntersectionObserver' in window){
+          const io=new IntersectionObserver(es=>{ if(es.some(e=>e.isIntersecting)) loadCal(); }, {rootMargin:'200px'});
+          io.observe(anchor);
+        } else loadCal();
+        const kpis=$('primaryKpis');
+        if(kpis) new MutationObserver(()=>{ populateRevisor(); if(curMonth!==null){curMonth=null;$('wheelDetail').innerHTML='';} if(cal) build(); }).observe(kpis,{childList:true});
+      });
+      document.addEventListener('change',e=>{ if(e.target&&['wheelRevisor','wheelWindow','wheelType','wheelActive','wheelGode','wheelNoHolding','wheelNoEjendom'].includes(e.target.id)){ curMonth=null; $('wheelDetail').innerHTML=''; if(cal) build(); }});
+      document.addEventListener('input',e=>{ if(e.target&&e.target.id==='wheelAnsatte'){ curMonth=null; $('wheelDetail').innerHTML=''; if(cal) build(); }});
+    })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>H2 2026 Timeline · Crediwire</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #fafafa; --panel: #fff; --border: #e6e8ee; --text: #1f2330;
+        --muted: #5b6378; --accent: #4f46e5; --good: #16a34a; --warn: #d97706; --bad: #dc2626;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: 'Montserrat', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 24px; }
+      header { max-width: 1440px; margin: 0 auto 20px; }
+      h1 { font-size: 26px; font-weight: 800; margin: 0 0 4px; }
+      h2 { font-size: 18px; margin: 0 0 12px; font-weight: 800; }
+      h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 8px; font-weight: 700; }
+      .lead { color: var(--muted); margin: 0; font-size: 13px; }
+      main { max-width: 1440px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+      .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+
+      .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 12px; }
+      .kpi-card { padding: 14px 16px; border: 1px solid var(--border); border-radius: 10px; }
+      .kpi-card span { display: block; color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; font-weight: 700; }
+      .kpi-card strong { display: block; font-size: 22px; font-weight: 800; }
+      .kpi-card small { color: var(--muted); font-size: 11px; }
+      .kpi-card.status-ok strong { color: var(--good); }
+      .kpi-card.status-warn strong { color: var(--warn); }
+      .kpi-card.status-bad strong { color: var(--bad); }
+
+      .collapsible-panel { cursor: pointer; }
+      .collapsible-panel summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 10px; padding: 0; margin: 0; }
+      .collapsible-panel summary::-webkit-details-marker { display: none; }
+      .collapsible-panel summary::before { content: "▶"; font-size: 12px; color: var(--muted); transition: transform 0.2s; display: inline-block; }
+      .collapsible-panel[open] summary::before { transform: rotate(90deg); }
+      .collapsible-panel summary h2 { font-size: 16px; margin: 0; }
+      .collapsible-panel .collapse-hint { font-size: 11px; color: var(--muted); font-weight: 400; }
+      .collapsible-panel[open] { cursor: default; }
+      .collapsible-panel > *:not(summary) { cursor: default; }
+      .config-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      .config-block h3 { margin-bottom: 10px; }
+      .erosion-table, .deadline-table, .price-inputs { width: 100%; border-collapse: collapse; font-size: 12px; }
+      .erosion-table th, .erosion-table td, .deadline-table th, .deadline-table td { padding: 6px 8px; text-align: right; border-bottom: 1px solid var(--border); }
+      .erosion-table th:first-child, .erosion-table td:first-child, .deadline-table th:first-child, .deadline-table td:first-child { text-align: left; font-weight: 600; }
+      .erosion-table input, .deadline-table input, .price-inputs input, .price-inputs select { width: 60px; padding: 3px 6px; border: 1px solid var(--border); border-radius: 4px; font: inherit; text-align: right; font-size: 12px; }
+      .price-inputs { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+      .price-inputs label { display: flex; gap: 6px; align-items: center; font-size: 12px; color: var(--muted); }
+      .price-inputs input { width: 90px; }
+      .deadline-table select { width: 100px; font-size: 12px; padding: 3px 6px; border: 1px solid var(--border); border-radius: 4px; font: inherit; }
+
+      .ao-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+      .ao-table th { text-align: left; padding: 8px; border-bottom: 2px solid var(--border); font-size: 10px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.06em; font-weight: 700; position: sticky; top: 0; background: var(--panel); }
+      .ao-table td { padding: 8px; border-bottom: 1px solid var(--border); }
+      .ao-table tbody tr:hover { background: #f8f9ff; cursor: pointer; }
+      .ao-table .numeric { text-align: right; font-variant-numeric: tabular-nums; }
+      .ao-table .seg-badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 10px; font-weight: 700; }
+      .seg-existing { background: #dcfce7; color: #166534; }
+      .seg-top { background: #dbeafe; color: #1e40af; }
+      .seg-next20 { background: #fef3c7; color: #92400e; }
+      .seg-accru { background: #f3e8ff; color: #6b21a8; }
+      .seg-rgd { background: #fce7f3; color: #9d174d; }
+      .close-select { width: 68px; padding: 3px 4px; border: 1px solid var(--border); border-radius: 6px; font: inherit; font-size: 11px; }
+      .erosion-tag { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 600; margin-left: 4px; }
+      .erosion-100 { background: #dcfce7; color: #166534; }
+      .erosion-mid { background: #fef3c7; color: #92400e; }
+      .erosion-low { background: #fee2e2; color: #991b1b; }
+      .erosion-0 { background: #f3f4f6; color: var(--muted); }
+
+      .footer-total { margin-top: 16px; padding: 20px; border: 2px solid var(--border); border-radius: 10px; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(to right, #fafbff, #fff); }
+      .footer-total .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 700; }
+      .footer-total .value { font-size: 30px; font-weight: 800; }
+      .footer-total .value.ok { color: var(--good); }
+      .footer-total .value.warn { color: var(--warn); }
+      .footer-total .value.bad { color: var(--bad); }
+
+      /* Modal · overordnet */
+      .modal-backdrop { position: fixed; inset: 0; background: rgba(15,20,40,0.4); display: none; align-items: center; justify-content: center; z-index: 50; backdrop-filter: blur(2px); }
+      .modal-backdrop.open { display: flex; }
+      .modal { background: white; border-radius: 20px; max-width: 960px; width: 94%; max-height: 92vh; overflow: auto; box-shadow: 0 30px 80px rgba(15,20,40,0.35); }
+      .modal-header { padding: 24px 28px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; position: sticky; top: 0; background: white; z-index: 5; border-radius: 20px 20px 0 0; }
+      .modal-header h2 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.01em; }
+      .modal-header .close-btn { background: none; border: none; font-size: 28px; cursor: pointer; color: var(--muted); padding: 0; line-height: 1; transition: color 0.15s; }
+      .modal-header .close-btn:hover { color: var(--text); }
+      .modal-body { padding: 24px 28px 32px; }
+
+      /* Modal · sektioner (ensartet visuel hierarki) */
+      .modal-section { margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+      .modal-section:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+      .modal-section > h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 14px; font-weight: 700; }
+      .modal-section > h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 20px 0 10px; font-weight: 700; }
+      details.modal-section > summary { list-style: none; cursor: pointer; padding: 0; margin: 0 0 14px; display: flex; align-items: center; gap: 8px; }
+      details.modal-section > summary::-webkit-details-marker { display: none; }
+      details.modal-section > summary::before { content: "▶"; font-size: 10px; color: var(--muted); transition: transform 0.2s; }
+      details.modal-section[open] > summary::before { transform: rotate(90deg); }
+      details.modal-section > summary h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; margin: 0; }
+
+      /* Modal · shared stat-grid */
+      .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .stat { padding: 14px 16px; background: #fafbff; border: 1px solid var(--border); border-radius: 10px; transition: border-color 0.15s; }
+      .stat:hover { border-color: #cdd2e0; }
+      .stat span { display: block; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; font-weight: 700; }
+      .stat strong { display: block; font-size: 20px; font-weight: 800; letter-spacing: -0.01em; }
+
+      .modal-actions { display: flex; gap: 8px; margin-top: 8px; padding-top: 16px; }
+      .btn { padding: 8px 14px; background: white; border: 1px solid var(--border); border-radius: 8px; font: inherit; font-size: 13px; cursor: pointer; text-decoration: none; color: var(--text); display: inline-flex; align-items: center; gap: 6px; }
+      .btn:hover { background: #f3f4ff; border-color: var(--accent); color: var(--accent); }
+      .btn.primary { background: var(--accent); color: white; border-color: var(--accent); }
+      .btn.primary:hover { opacity: 0.9; color: white; }
+      .backup-controls { display: flex; gap: 8px; flex-shrink: 0; }
+      .backup-controls .btn { font-size: 13px; padding: 10px 16px; }
+      .ao-overrides { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+      .ao-override-field { display: flex; flex-direction: column; gap: 4px; }
+      .ao-override-field > span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
+      .ao-override-field input, .ao-override-field select { padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; font: inherit; font-size: 13px; }
+      .ao-override-field small { font-size: 11px; color: var(--muted); }
+      .ao-override-badge { display: inline-block; padding: 2px 6px; background: #fef3c7; color: #92400e; border-radius: 4px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+      .tl-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+      .tl-dot.tl-green { background: #16a34a; }
+      .tl-dot.tl-yellow { background: #fbbf24; }
+      .tl-dot.tl-red { background: #dc2626; }
+      .note-icon { margin-left: 6px; opacity: 0.5; font-size: 12px; }
+      /* Trafiklys + noter */
+      .tl-buttons { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+      .tl-btn { padding: 8px 14px; background: white; border: 1.5px solid var(--border); border-radius: 999px; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; color: var(--muted); transition: all 0.15s; }
+      .tl-btn:hover { border-color: var(--text); color: var(--text); }
+      .tl-btn.active.tl-green { background: #dcfce7; border-color: #16a34a; color: #166534; }
+      .tl-btn.active.tl-yellow { background: #fef3c7; border-color: #d97706; color: #92400e; }
+      .tl-btn.active.tl-red { background: #fee2e2; border-color: #dc2626; color: #991b1b; }
+      .tl-btn.active.tl-clear { background: #f3f4f6; border-color: var(--muted); color: var(--text); }
+      .ao-note { width: 100%; min-height: 80px; padding: 12px; border: 1px solid var(--border); border-radius: 10px; font: inherit; font-size: 13px; resize: vertical; transition: border-color 0.15s; }
+      .ao-note:focus { outline: none; border-color: var(--accent); }
+
+      /* Erklæringstyper · pill-style checkboxes */
+      .decl-types { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; margin-bottom: 10px; }
+      .decl-type-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: white; border: 1px solid var(--border); border-radius: 10px; cursor: pointer; transition: all 0.15s; }
+      .decl-type-item:hover { border-color: var(--accent); background: #f8f9ff; }
+      .decl-type-item:has(input:checked) { border-color: var(--accent); background: #f3f4ff; }
+      .decl-type-item input[type="checkbox"] { width: 16px; height: 16px; margin: 0; accent-color: var(--accent); }
+      .decl-type-label { flex: 1; font-size: 13px; color: var(--text); font-weight: 500; }
+      .decl-type-count { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--text); font-size: 13px; }
+      .decl-sum { text-align: right; padding: 10px 14px; font-size: 12px; color: var(--muted); background: #fafbff; border-radius: 8px; }
+      .decl-sum strong { color: var(--text); font-size: 14px; }
+      .stage-badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 10px; font-weight: 700; margin-left: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+      .stage-kold { background: #e0f2fe; color: #075985; }
+      .stage-prospect { background: #f3e8ff; color: #6b21a8; }
+      .stage-demo { background: #fef3c7; color: #92400e; }
+      .stage-trial { background: #fed7aa; color: #9a3412; }
+      .stage-contract { background: #dbeafe; color: #1e40af; }
+      .stage-won { background: #dcfce7; color: #166534; }
+      .stage-tabt { background: #fee2e2; color: #991b1b; }
+      .stage-tvivlsom { background: #fef3c7; color: #92400e; }
+      .stage-expand-indikation { background: #dbeafe; color: #1e40af; }
+      .stage-expand-klar { background: #dcfce7; color: #166534; }
+      /* Antagelser · ensartede felter med sammelignelig højde */
+      .ao-overrides { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: start; }
+      .ao-overrides.compact { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; align-items: start; }
+      .ao-override-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+      .ao-override-field > span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; min-height: 14px; line-height: 1.3; }
+      .ao-override-field input, .ao-override-field select { padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font: inherit; font-size: 13px; background: white; transition: border-color 0.15s; height: 38px; box-sizing: border-box; }
+      .ao-override-field input:focus, .ao-override-field select:focus { outline: none; border-color: var(--accent); }
+      .ao-override-field small { font-size: 11px; color: var(--muted); line-height: 1.4; min-height: 32px; }
+      .ao-override-field small strong { color: var(--text); }
+      .ao-override-badge { display: inline-block; padding: 2px 8px; background: #fef3c7; color: #92400e; border-radius: 999px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+      .ao-stage-field { grid-column: 1 / -1; }
+
+      /* Business Case · 5 store kort · alle samme højde */
+      .bc-cards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; align-items: stretch; }
+      .bc-card { padding: 16px; background: #fafbff; border: 1px solid var(--border); border-radius: 12px; display: flex; flex-direction: column; gap: 8px; transition: border-color 0.15s; min-height: 120px; }
+      .bc-card:hover { border-color: #cdd2e0; }
+      .bc-card-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 700; min-height: 14px; }
+      .bc-card-value { font-size: 18px; font-weight: 800; line-height: 1.25; letter-spacing: -0.01em; }
+      .bc-card-value small { font-size: 11px; font-weight: 400; color: var(--muted); display: block; margin-top: 2px; }
+      .bc-card-sub { font-size: 11px; color: var(--muted); line-height: 1.4; margin-top: auto; }
+
+      /* Progress-bar i implementeringsmål-kort */
+      .bc-progress { margin-top: 6px; }
+      .bc-progress-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700; }
+      .bc-progress-bar { height: 10px; background: #e5e7eb; border-radius: 999px; overflow: hidden; }
+      .bc-progress-bar span { display: block; height: 100%; background: linear-gradient(to right, #16a34a, #4ade80); transition: width 0.3s; }
+      .bc-progress-values { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; margin-top: 4px; }
+      .bc-progress p { font-size: 11px; color: var(--muted); margin: 6px 0 0; line-height: 1.4; }
+
+      /* Business Case Regnemaskine · ensartede felter */
+      .bc-subhead { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 20px 0 12px; font-weight: 700; }
+      .bc-subhead:first-child { margin-top: 0; }
+      .bc-calc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: start; }
+      .bc-calc-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+      .bc-calc-field span { font-size: 11px; color: var(--muted); font-weight: 600; line-height: 1.3; display: flex; align-items: center; justify-content: space-between; gap: 6px; min-height: 32px; }
+      .bc-calc-field input, .bc-calc-field select { padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font: inherit; font-size: 13px; background: white; transition: border-color 0.15s; height: 38px; box-sizing: border-box; }
+      .bc-calc-field input:focus, .bc-calc-field select:focus { outline: none; border-color: var(--accent); }
+      .bc-hint { font-size: 11px; color: var(--muted); margin: 10px 0 0; font-style: italic; line-height: 1.5; }
+      .bc-invest-result { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; align-items: stretch; }
+      .bc-invest-card { padding: 14px 16px; background: #fafbff; border: 1px solid var(--border); border-radius: 10px; display: flex; flex-direction: column; gap: 6px; min-height: 100px; }
+      .bc-invest-card.highlight { background: #f3f4ff; border-color: var(--accent); border-width: 1.5px; }
+      .bc-invest-card span { font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.06em; }
+      .bc-invest-card strong { font-size: 18px; font-weight: 800; letter-spacing: -0.01em; }
+      .bc-invest-card small { font-size: 11px; color: var(--muted); line-height: 1.4; margin-top: auto; }
+
+      /* Lock-toggle knap */
+      .lock-toggle { background: none; border: none; cursor: pointer; padding: 2px 4px; font-size: 12px; line-height: 1; color: var(--muted); border-radius: 4px; opacity: 0.5; transition: all 0.15s; }
+      .lock-toggle:hover { opacity: 1; background: var(--border); }
+      .lock-toggle.locked { opacity: 1; color: var(--accent); background: #f3f4ff; }
+      .scenario-controls { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; padding: 12px; background: #fafbff; border-radius: 10px; border: 1px solid var(--border); }
+      .scenario-row { display: flex; align-items: center; gap: 12px; }
+      .scenario-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; min-width: 80px; }
+      .scenario-btns { display: flex; gap: 4px; flex: 1; }
+      .scenario-btns button { flex: 1; padding: 8px 12px; background: white; border: 1px solid var(--border); border-radius: 6px; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; text-align: center; line-height: 1.3; color: var(--text); transition: all 0.15s; }
+      .scenario-btns button small { color: var(--muted); font-size: 10px; font-weight: 500; }
+      .scenario-btns button:hover { border-color: var(--accent); }
+      .scenario-btns button.active { background: var(--accent); color: white; border-color: var(--accent); }
+      .scenario-btns button.active small { color: rgba(255,255,255,0.85); }
+      .monthly-forecast { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; height: 200px; align-items: end; padding: 12px; background: #fafbff; border-radius: 10px; }
+      .month-column { display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; height: 100%; }
+      .month-column:hover { opacity: 0.85; }
+      .month-column.selected .month-bar { outline: 2px solid var(--accent); }
+      .month-bar-wrap { flex: 1; display: flex; align-items: end; width: 100%; }
+      .month-bar { width: 100%; border-radius: 6px 6px 0 0; min-height: 4px; position: relative; display: flex; align-items: end; justify-content: center; padding-bottom: 4px; color: white; font-size: 10px; font-weight: 700; text-shadow: 0 1px 2px rgba(0,0,0,0.15); }
+      .month-bar.good { background: linear-gradient(to top, #16a34a, #4ade80); }
+      .month-bar.warn { background: linear-gradient(to top, #d97706, #fbbf24); }
+      .month-bar.bad { background: linear-gradient(to top, #dc2626, #f87171); }
+      .month-bar.zero { background: #e5e7eb; color: var(--muted); text-shadow: none; }
+      .month-label { font-size: 11px; color: var(--muted); font-weight: 600; text-align: center; }
+      .month-value { font-size: 10px; color: var(--muted); font-variant-numeric: tabular-nums; }
+      .month-value strong { color: var(--text); font-size: 12px; }
+      .monthly-details { padding: 12px; background: #f8f9ff; border: 1px solid var(--border); border-radius: 8px; font-size: 12px; color: var(--muted); }
+      .monthly-details.hidden { display: none; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap">
+        <div>
+          <h1>H2 2026 Timeline · Realistisk forecast</h1>
+          <p class="lead">Per revisionshus luk-måned med realiseringsgrad pr segment. Data-tjekket mod ao_master.csv + ao_connections_current.csv.</p>
+        </div>
+        <div class="backup-controls">
+          <button class="btn primary" id="exportExcelBtn" title="Download hele tabellen inkl. noter, stadier og tal som CSV/Excel">📊 Excel-eksport</button>
+          <button class="btn" id="exportBtn" title="Download alle mine notater, trafiklys, luk-måneder som backup">💾 JSON backup</button>
+          <button class="btn" id="importBtn" title="Upload en tidligere backup for at gendanne">📂 Importér backup</button>
+          <input type="file" id="importFile" accept="application/json" style="display:none" />
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="panel">
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <span>Nuværende ARR</span>
+            <strong id="kpiCurrent">866K</strong>
+            <small>Pr. juni 2026</small>
+          </div>
+          <div class="kpi-card">
+            <span>Mål EOY 2026</span>
+            <strong id="kpiTarget">2.300K</strong>
+            <small>Fra Revenue budget</small>
+          </div>
+          <div class="kpi-card">
+            <span>H2-gap</span>
+            <strong id="kpiGap">1.434K</strong>
+            <small>Mål − nuværende</small>
+          </div>
+          <div class="kpi-card">
+            <span>Revisionshuse i pipe</span>
+            <strong id="kpiPoolSize">0</strong>
+            <small>Alle 5 segmenter · de-duplikeret</small>
+          </div>
+        </div>
+      </section>
+
+      <details class="panel collapsible-panel" id="erosionPanel">
+        <summary><h2 style="display:inline">Erosion pr segment</h2><span class="collapse-hint">Klik for åbne/lukke</span></summary>
+        <table class="erosion-table" id="erosionTable" style="margin-top:12px">
+          <thead>
+            <tr>
+              <th>Segment</th>
+              <th>Deadline</th>
+              <th>+1 mdr</th>
+              <th>+2 mdr</th>
+              <th>+3 mdr</th>
+              <th>+4 mdr</th>
+              <th>Ikke i år</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </details>
+
+      <details class="panel collapsible-panel" id="basisPanel">
+        <summary><h2 style="display:inline">Basis-antagelser</h2><span class="collapse-hint">Priser, ARR, segment-deadlines (globale defaults)</span></summary>
+        <div style="margin-top:12px">
+          <h3>Segment-deadlines + rater</h3>
+          <table class="deadline-table" id="deadlineTable">
+            <thead>
+              <tr><th>Segment</th><th>Rate</th><th>Deadline måned</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <h3 style="margin-top:16px">Priser + ARR</h3>
+          <div class="price-inputs">
+            <label>Pris pr ny SMV (default for alle ikke-GT AOs)
+              <input id="newSmvPrice" type="number" value="558" min="0" step="50" />
+              <span>kr</span>
+            </label>
+            <label>GT-pris
+              <input id="gtPrice" type="number" value="544" min="0" step="50" />
+              <span>kr</span>
+            </label>
+            <label>Nuværende ARR
+              <input id="currentArr" type="number" value="866000" min="0" step="1000" />
+              <span>kr</span>
+            </label>
+            <label>Mål EOY
+              <input id="targetArr" type="number" value="2300000" min="0" step="10000" />
+              <span>kr</span>
+            </label>
+          </div>
+        </div>
+      </details>
+
+      <section class="panel">
+        <h2 style="margin-bottom:6px">Forventet Ny ARR pr luk-måned</h2>
+        <p class="lead" style="margin-bottom:12px">Grønne søjler = revisionshuse indenfor deadline. Gule = 1-2 mdr forsinket. Røde = 3+ mdr forsinket. Grå = ikke i år.</p>
+        <div class="scenario-controls">
+          <div class="scenario-row">
+            <span class="scenario-label">Antagelse</span>
+            <div class="scenario-btns" id="scenarioBtns">
+              <button data-scenario="conservative">Conservative<br><small>60%</small></button>
+              <button data-scenario="basis" class="active">Basis<br><small>100%</small></button>
+              <button data-scenario="stretch">Stretch<br><small>130%</small></button>
+            </div>
+          </div>
+          <div class="scenario-row">
+            <span class="scenario-label">GT</span>
+            <div class="scenario-btns" id="gtScenarioBtns">
+              <button data-gt="full" class="active">Med GT<br><small>100%</small></button>
+              <button data-gt="half">Med GT<br><small>50%</small></button>
+              <button data-gt="none">Uden GT<br><small>0%</small></button>
+            </div>
+          </div>
+        </div>
+        <div id="monthlyForecast" class="monthly-forecast"></div>
+        <div id="monthlyDetails" class="monthly-details" style="margin-top:16px"></div>
+      </section>
+
+      <section class="panel">
+        <h3 style="margin-bottom:12px">AOs sorteret efter segment → potentiale</h3>
+        <div style="max-height: 520px; overflow: auto;">
+          <table class="ao-table" id="aoTable">
+            <thead>
+              <tr>
+                <th>Segment</th>
+                <th>Revisionshus</th>
+                <th class="numeric">Aktive Brugervirks. på Crediwire</th>
+                <th class="numeric">Brugervirks. ved mål</th>
+                <th class="numeric">Mulig ny ARR</th>
+                <th>Forventet luk</th>
+                <th class="numeric">Realiseringsgrad</th>
+                <th class="numeric">Forventet Ny ARR</th>
+              </tr>
+            </thead>
+            <tbody id="aoTableBody"></tbody>
+          </table>
+        </div>
+        <div class="footer-total">
+          <div>
+            <div class="label">Forventet Ny ARR i H2 (efter realiseringsgrad)</div>
+            <div class="value" id="totalForecast">0 kr</div>
+          </div>
+          <div style="text-align:right">
+            <div class="label">Mod mål (1.434K gap)</div>
+            <div class="value" id="totalStatus">–</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal-backdrop" id="modal" onclick="closeModal(event)">
+      <div class="modal" onclick="event.stopPropagation()">
+        <div class="modal-header">
+          <div>
+            <h2 id="modalTitle">–</h2>
+            <p id="modalSubtitle" style="margin:4px 0 0;color:var(--muted);font-size:12px"></p>
+          </div>
+          <button class="close-btn" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="timeline.js?v=20260702-lock-align"></script>
+  </body>
+</html>

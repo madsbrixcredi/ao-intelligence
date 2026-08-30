@@ -3888,9 +3888,22 @@ function selectedOfficeLabel() {
 }
 
 function filteredOffices(query) {
-  const normalizedQuery = query.trim().toLowerCase();
-  if (!normalizedQuery) return state.offices;
-  return state.offices.filter((office) => office.searchText.includes(normalizedQuery));
+  const q = query.trim().toLowerCase();
+  if (!q) return state.offices;
+  const rank = (office) => {
+    const n = office.name.toLowerCase();
+    if (n === q) return 0;
+    if (n.startsWith(q)) return 1;
+    if (n.split(/[^a-zæøå0-9]+/).some((w) => w.startsWith(q))) return 2;
+    return 3;
+  };
+  return state.offices
+    .filter((office) => office.searchText.includes(q))
+    .sort((a, b) => {
+      const ra = rank(a);
+      const rb = rank(b);
+      return ra === rb ? a.name.toLowerCase().localeCompare(b.name.toLowerCase(), "da") : ra - rb;
+    });
 }
 
 function closeOfficeSearch() {
@@ -3903,12 +3916,13 @@ function closeOfficeSearch() {
 function renderOfficeSearchResults(query = "") {
   const results = document.getElementById("aoSearchResults");
   const matches = filteredOffices(query).slice(0, 80);
+  const hasQuery = query.trim().length > 0;
   const allSelected = !state.selectedCvr;
-  const allButton = `<button class="search-result${allSelected ? " is-selected" : ""}" type="button" data-cvr="" role="option">
+  const allButton = hasQuery ? "" : `<button class="search-result${allSelected ? " is-selected" : ""}" type="button" data-cvr="" role="option">
     <strong>Alle revisionshuse</strong>
     <small>Vis samlet dashboard</small>
   </button>`;
-  const groupButtons = Object.entries(GROUP_FILTERS)
+  const groupButtons = hasQuery ? "" : Object.entries(GROUP_FILTERS)
     .map(([filterValue, group]) => `<button class="search-result${state.selectedCvr === filterValue ? " is-selected" : ""}" type="button" data-cvr="${filterValue}" role="option">
       <strong>${escapeHtml(group.label)}</strong>
       <small>${escapeHtml(groupDescription(group))}</small>
